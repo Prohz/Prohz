@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+  <div class="dashboard-main-container">
+
+
+    <div class="pdf-viewer-top-bar col-lg-12 col-md-12 col-sm-12 col-12 ">
+
+        <div class="pd-viewer-top-buttons">
+            <button id="prev-page" class="btn btn-sm">
+                <i class="fa fa-arrow-left"></i>
+                <span class="prev-text">Prev Page</span>
+            </button>
+
+            <button id="next-page" class="btn btn-sm">
+               <span class="next-text prev-text">Next Page</span>
+               <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+        <span class="page-info">
+            Page <span id="page-num"></span> of <span id="page-count"></span>
+        </span>
+    </div>
+
+
+
+
+
+
+
+    <div class="pdf-holder d-flex justify-content-center">
+        <canvas id="pdf-render"></canvas>
+    </div>
+
+
+
+
+    <div class="pdf-btns">
+        <div class="donwload-pdf  d-flex justify-content-center pt-3">
+            <a href="./docs/pdf.pdf" download> <button type="button" class="btn  green-modal-btn ">Download</button></a>
+        </div>
+        
+    </div>
+
+    </div>
+    

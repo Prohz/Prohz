@@ -1,0 +1,72 @@
+﻿@*@{
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+*@
+
+
+<div class="payment-container-page ">
+    <div class="registration-container-form">
+
+    <div class="main-payment-page">
+        <div class="kopkehome-login-logo-heading text-center">
+            <img src="../images/Kopke-brand-logo.png" width="110" />
+        </div>
+          <div class="main-payment-page-content">
+                <form asp-action="Login" method="post" asp-controller="User">
+                  <div class="login-main-headin">
+                   <h3 class="green-clr">Payment Details</h3>
+                    </div>
+                     <div class="row">
+                         
+                           <div class="form-group col-md-12">
+                            <div class=" rgstr-input-form-box mb-1">
+                            <label  for="Email">Card Number</label>
+                            <input type="number" name="Email" placeholder="Enter Card Number" class="form-control pl-5" />
+                            <span class="payment-input-card-icon">
+                                <span class="fa fa-credit-card"></span>
+                            </span>
+                             <span  class="text-danger"></span>  
+                        </div>
+                          </div>
+                          <div class="form-group col-md-12">
+                            <div class=" rgstr-input-form-box mb-1">
+                            <label  for="Email">Name on Card</label>
+                            <input type="text" name="Email" placeholder="Name on Card" class="form-control input-sm" />
+                             <span  class="text-danger"></span>  
+                        </div>
+                          </div>
+                            <div class="form-group col-md-6">
+                            <div class=" rgstr-input-form-box mb-1">
+                            <label  for="Email">Expiry Date</label>
+                            <input type="text" name="Email" placeholder="MM/YY" class="form-control input-sm" />
+
+                             <span  class="text-danger"></span>  
+                        </div>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <div class=" rgstr-input-form-box mb-1">
+                            <label  for="Email">CVV</label>
+                            <input type="text" name="Email" placeholder="Enter CVV" maxlength="3" class="form-control input-sm" />
+                             <span  class="text-danger"></span>  
+                        </div>
+                          </div>
+                         
+                          
+                          
+                               
+                         <div class="col-md-12 text-center login-cstm-button">
+                            <button type="submit" class="btn payment-btn cstm-green-btn w-100"> <i class="fa fa-lock" aria-hidden="true"></i>
+                               <span >Pay $500.00</span></button>
+                        </div>
+                
+                        <div class=" col-md-12 member-login-link text-center ">
+                            <p class="text-white m-0">Changed your mindset? Choose</p> <p><a href="User/SignIn" class="green-clr green-clr-link">Membership Benefits</a></p>
+                        </div>
+                     </div>    
+             </form>
+             </div>
+         </div>
+    </div>
+</div>
+
+

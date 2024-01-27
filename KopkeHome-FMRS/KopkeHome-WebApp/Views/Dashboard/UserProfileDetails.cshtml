@@ -1,0 +1,306 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.DashboardViewModels.BaseViewModel
+@{
+    Layout = "~/Views/Shared/_DashboardInternal.cshtml";
+}
+@inject IViewLocalizer Localizer
+  <div class="dashboard-main-container">
+
+        <div class="dashboard-top-heading dashboard-top-heading-cstm ">
+            <h3 class="green-clr mb-5">@Localizer["Profile Details"]</h3>
+            <div class="d-flex align-items-center">
+                   <p class="text-white m-0"><a href="@Url.Action("index", "dashboard")" class="text-white"><i class="fa fa-long-arrow-left forgot-back-arrow" aria-hidden="true"></i> @Localizer["Go back"]</a></p>
+                   <a href="@Url.Action("UserProfileBasicEdit", "dashboard")" class="button btn green-modal-btn ml-4 edit-button">@Localizer["Edit"]</a>
+
+            </div>
+        </div>
+      
+
+    
+        <div class="contractor-detail-outerbox User-Profile-BI-inner-content">
+
+            <div class="row">
+
+            @if (Model != null)
+            {
+                <div class="col-md-4">
+                    <div class="dashboard-main-inner-content ">
+                        
+                        <div class="profile-card-outer">
+                                <div class="profile-card-inner-box">
+                                    <div class="view-user-profile-outer-card">
+                                        <div class="view-user-profile-image">
+                                            <div class="profile-circle">
+                                                 @if (Model.LoggedInUser.ProfilePicture != null) 
+                                                {
+                                                    <img id="blah" class="profile-pic" src="../Uploads/@Model.LoggedInUser.ProfilePicture">
+                                                }
+                                                else
+                                                {
+                                                     <img id="blah" class="profile-pic" src="../images/DefaultProfile.png">
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="view-user-profile-name-heading">
+                                            <p id="ProfilePicture-error"></p>
+                                            <h3>@Model.LoggedInUser.FirstName @Model.LoggedInUser.LastName</h3>
+                                            <p>@Model.LoggedInUser.Email</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+ </div>
+                </div>
+                @if (Model.LoggedInUser.RoleId == 4)
+                {
+                    <div class="col-lg-8 col-md-8  contractor-info-outer-box">
+                    <div class="contractor-info-box">
+                        <div class="cont-detail-inner-heading">
+                            <h3 class="orange-clr">@Localizer["Basic Information"]</h3>
+                        </div>
+                        <div class="form-contractor-information">
+                            <div class="form-group row">
+                                 <div class="col-sm-5 ">
+                                    <label class="control-label">@Localizer["First Name"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.FirstName</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                 <div class="col-sm-5 ">
+                                    <label class="control-label">@Localizer["Last Name"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.LastName</span>
+                                </div>
+                            </div>
+                              <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["Unique Member ID"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.UniqueMemberId</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["Email Address"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.Email</span>
+                                </div>
+                            </div>
+                           
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["Phone Number (Mobile)"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.PhoneNumber</span>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-group row">
+                                  <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["City Name"] :</label>
+                                 </div>
+                                 <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.City</span>
+                                </div>
+                            </div>
+                              <div class="form-group row">
+                                 <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["State Name"] :</label>
+                                </div>
+                                 <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.State </span>
+                                 </div>
+                            </div>
+                              
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["Zip Code"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.ZipCode</span>
+                                </div>
+                            </div>
+
+                               
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["Account Type"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    @{
+                                        
+                                        if(Model.LoggedInUser.RoleId==1)
+                                            {
+                                                 <span>@Localizer["Contractor"] </span>
+                                           
+                                        }
+                                        else if(Model.LoggedInUser.RoleId==2)
+                                        {
+                                             <span>@Localizer["Sub-Contractor"] </span>
+                                        }
+                                         else if(Model.LoggedInUser.RoleId==3)
+                                        {
+                                             <span> @Localizer["Independent Contractor"] </span>
+                                        }
+                                         else if(Model.LoggedInUser.RoleId==4)
+                                        {
+                                             <span>@Localizer["Home Owner"]</span>
+                                        }
+                                        
+                                       
+                                    
+                                    }
+                                </div>
+                            </div>
+
+
+                        </div>
+                
+                    </div>
+                </div> 
+                }
+                else
+                {
+                  <div class="col-lg-8 col-md-8  contractor-info-outer-box">
+                    <div class="contractor-info-box">
+                        <div class="cont-detail-inner-heading">
+                            <h3 class="orange-clr">@Localizer["Basic Information"]</h3>
+                        </div>
+                        <div class="form-contractor-information">
+                            <div class="form-group row">
+                                 <div class="col-sm-5 ">
+                                    <label class="control-label">@Localizer["First Name"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.FirstName</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                 <div class="col-sm-5 ">
+                                    <label class="control-label">@Localizer["Last Name"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.LastName</span>
+                                </div>
+                            </div>
+                             <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["Unique Member ID"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.UniqueMemberId</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["Email Address"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.Email</span>
+                                </div>
+                            </div>
+                           
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["Phone Number (Mobile)"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.PhoneNumber</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["Business Name"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.BusinessName</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["Business Address"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.BusinessAddress</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                  <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["City Name"] :</label>
+                                 </div>
+                                 <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.City</span>
+                                </div>
+                            </div>
+                              <div class="form-group row">
+                                 <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["State Name"] :</label>
+                                </div>
+                                 <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.State </span>
+                                 </div>
+                            </div>
+                              
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["Zip Code"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <span>@Model.LoggedInUser.ZipCode</span>
+                                </div>
+                            </div>
+
+                               
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <label class="control-label">@Localizer["Account Type"] :</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    @{
+                                        
+                                        if(Model.LoggedInUser.RoleId==1)
+                                            {
+                                                 <span>@Localizer["Contractor"] </span>
+                                           
+                                        }
+                                        else if(Model.LoggedInUser.RoleId==2)
+                                        {
+                                             <span>@Localizer["Sub-Contractor"] </span>
+                                        }
+                                         else if(Model.LoggedInUser.RoleId==3)
+                                        {
+                                             <span> @Localizer["Independent Contractor"] </span>
+                                        }
+                                         else if(Model.LoggedInUser.RoleId==4)
+                                        {
+                                             <span>@Localizer["Home Owner"]</span>
+                                        }
+                                        
+                                       
+                                    
+                                    }
+                                </div>
+                            </div>
+
+
+                        </div>
+                
+                    </div>
+                </div>   
+
+                }
+               
+                }
+
+                    </div>
+                 
+            </div>
+
+        </div>

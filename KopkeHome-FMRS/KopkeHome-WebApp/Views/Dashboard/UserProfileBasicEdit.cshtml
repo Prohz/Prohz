@@ -1,0 +1,389 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.DashboardViewModels.BasicInfoViewModel
+@{
+    Layout = "~/Views/Shared/_DashboardInternal.cshtml";
+}
+@inject IViewLocalizer Localizer
+<div class="dashboard-main-container errorFl">
+
+    <div class="dashboard-top-heading dashboard-top-heading-cstm ">
+        <h3 class="green-clr mb-5">@Localizer["Edit Basic Info"]</h3>
+        <div>
+            <p class="text-white m-0"><a href="@Url.Action("UserProfileDetails", "dashboard")" class="text-white"><i class="fa fa-long-arrow-left forgot-back-arrow" aria-hidden="true"></i> @Localizer["Go back"]</a></p>
+        </div>
+    </div>
+
+
+    <div class="dashboard-main-inner-content User-Profile-BI-inner-content">
+        <div class="contractor-info-outer-box">
+            <div class="contractor-info-box">
+                @if (Model != null)
+                {
+
+                    if (Model.User.RoleId == 4)
+                    {
+                        <form name="UpdateUserBasicInfo1" asp-action="UpdateUserBasicInfoHomeOwner" enctype="multipart/form-data" onsubmit="return checkPhoneNumberIsNotNull();" method="post" asp-controller="Dashboard">
+                            <input type="hidden" name="Id" value="@Model.User.Id" class="form-control" />
+                            <input type="hidden" name="ProfilePicture" value="" class="form-control" />
+                            <div class="form-contractor-information row">
+
+                                <div class="col-md-4 profile-card-outer">
+                                    <div class="profile-card-inner-box">
+                                        <div class="view-user-profile-outer-card">
+                                            <div class="view-user-profile-image">
+                                                @*<form enctype="multipart/form-data" onsubmit="return UpdateUserBasicInfo(this);">
+                                                    <input accept="image/*" type='file' id="imgInp" />
+                                                    <img id="blah" src="#" alt="your image" />
+                                                    </form>*@
+                                                <div class="profile-circle">
+                                                    @if (Model.User.ProfilePicture != null)
+                                                    {
+                                                        <img id="blah" class="profile-pic" src="../Uploads/@Model.User.ProfilePicture">
+                                                    }
+                                                    else
+                                                    {
+                                                        <img id="blah" class="profile-pic" src="../images/DefaultProfile.png">
+                                                    }
+                                                </div>
+                                                <label for="pro" class="profile-image">
+
+                                                    <i class="fa fa-camera upload-button"></i>
+                                                    <input id="pro" name="ProfilePicture" asp-for="ProfilePicture" onchange="loadFile(event)" type="file" accept="image/*" />
+
+
+                                                </label>
+                                            </div>
+                                            <span asp-validation-for="ProfilePicture" class="text-danger"></span>
+                                            <div class="view-user-profile-name-heading">
+                                                <p id="ProfilePicture-error"></p>
+                                                <h3>@Model.User.FirstName @Model.User.LastName</h3>
+                                                <p>@Model.User.Email</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                                <div class="col-md-8">
+                                    <div class="row">
+
+
+
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="FirstName">@Localizer["First Name"]</label>
+                                                <input maxlength="50" type="text" name="FirstName" asp-for="FirstName" value="@Model.User.FirstName" class="form-control input-sm TextUpperLower" />
+                                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="LastName">@Localizer["Last Name"]</label>
+                                                <input maxlength="50" type="text" name="LastName" asp-for="LastName" value="@Model.User.LastName" class="form-control TextUpperLower" />
+                                                <span asp-validation-for="LastName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="City">@Localizer["City Name"]</label>
+                                                <input maxlength="50" type="text" name="City" asp-for="City" value="@Model.User.City" class="form-control TextUpperLower" />
+                                                <span asp-validation-for="City" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label id="ProfileDetailsState12" for="ProfileDetailsState">@Localizer["State Name"]</label>
+                                                <div>
+                                                    <select name="State" asp-for="State" class="form-select form-control w-100">
+                                                        @foreach (var state in Model.States)
+                                                        {
+
+                                                            if (state.StateName == Model.User.State)
+                                                            {
+                                                                <option selected value="@state.StateName">@state.StateName</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@state.StateName">@state.StateName</option>
+
+                                                            }
+
+                                                        }
+
+                                                    </select>
+                                                </div>
+                                                <span asp-validation-for="State" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="ZipCode">@Localizer["Zip Code"]</label>
+                                                <input maxlength="5" type="number" name="ZipCode" asp-for="ZipCode" value="@Model.User.ZipCode" class="form-control " />
+                                                <span asp-validation-for="ZipCode" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="PhoneNumber">@Localizer["Phone Number (Mobile)"]</label>
+                                                <input id="PhoneNumberEdit" maxlength="12" type="text" name="PhoneNumber" asp-for="PhoneNumber" value="@Model.User.PhoneNumber" class="form-control input-sm" />
+                                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                                <span id="PhoneNumberval" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="Email">@Localizer["Email Address"]</label>
+                                                <input type="text" disabled placeholder="@Model.User.Email" value="" class="form-control" />
+                                                <span class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <div class="col-md-12">
+                                    <div class=" edit-button-section">
+                                        <div class="text-right">
+                                            <a href="@Url.Action("UserProfileDetails", "dashboard")" class="button btn red-modal-btn   cancel-button">@Localizer["Cancel"]</a>
+                                            <button type="submit" class="button btn green-modal-btn ml-1  save-button">@Localizer["Update"]</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    }
+
+                    else
+                    {
+                        <form name="UpdateUserBasicInfo1" asp-action="UpdateUserBasicInfo" enctype="multipart/form-data" method="post" onsubmit="return checkPhoneNumberIsNotNull();" asp-controller="Dashboard">
+                            <input type="hidden" name="Id" value="@Model.User.Id" class="form-control" />
+                            <input type="hidden" name="ProfilePicture" value="" class="form-control" />
+                            <div class="form-contractor-information row">
+
+                                <div class="col-md-4 profile-card-outer">
+                                    <div class="profile-card-inner-box">
+                                        <div class="view-user-profile-outer-card">
+                                            <div class="view-user-profile-image">
+                                                @*<form enctype="multipart/form-data" onsubmit="return UpdateUserBasicInfo(this);">
+                                                    <input accept="image/*" type='file' id="imgInp" />
+                                                    <img id="blah" src="#" alt="your image" />
+                                                    </form>*@
+                                                <div class="profile-circle">
+                                                    @if (Model.User.ProfilePicture != null)
+                                                    {
+                                                        <img id="blah" class="profile-pic" src="../Uploads/@Model.User.ProfilePicture">
+                                                    }
+                                                    else
+                                                    {
+                                                        <img id="blah" class="profile-pic" src="../images/DefaultProfile.png">
+                                                    }
+                                                </div>
+                                                <label for="pro" class="profile-image">
+
+                                                    <i class="fa fa-camera upload-button"></i>
+                                                    <input id="pro" name="ProfilePicture" asp-for="ProfilePicture" onchange="loadFile(event)" type="file" accept="image/*" />
+
+
+                                                </label>
+                                            </div>
+                                            <span asp-validation-for="ProfilePicture" class="text-danger"></span>
+                                            <div class="view-user-profile-name-heading">
+                                                <p id="ProfilePicture-error"></p>
+                                                <h3>@Model.User.FirstName @Model.User.LastName</h3>
+                                                <p>@Model.User.Email</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                                <div class="col-md-8">
+                                    <div class="row">
+
+
+
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="FirstName">@Localizer["First Name"]</label>
+                                                <input maxlength="50" type="text" name="FirstName" asp-for="FirstName" value="@Model.User.FirstName" class="form-control input-sm TextUpperLower" />
+                                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="LastName">@Localizer["Last Name"]</label>
+                                                <input maxlength="50" type="text" name="LastName" asp-for="LastName" value="@Model.User.LastName" class="form-control TextUpperLower" />
+                                                <span asp-validation-for="LastName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="BusinessName">@Localizer["Business Name"]</label>
+                                                <input maxlength="50" type="text" name="BusinessName" asp-for="BusinessName" value="@Model.User.BusinessName" class="form-control TextUpperLower" />
+                                                <span asp-validation-for="BusinessName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="BusinessAddress">@Localizer["Business Address"]</label>
+                                                <input maxlength="100" type="text" name="BusinessAddress" asp-for="BusinessAddress" value="@Model.User.BusinessAddress" class="form-control TextUpperLower" />
+                                                <span asp-validation-for="BusinessAddress" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="City">@Localizer["City Name"]</label>
+                                                <input maxlength="50" type="text" name="City" asp-for="City" value="@Model.User.City" class="form-control TextUpperLower" />
+                                                <span asp-validation-for="City" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label id="ProfileDetailsState12" for="ProfileDetailsState">@Localizer["State Name"]</label>
+                                                <div>
+                                                    <select name="State" asp-for="State" class="form-select form-control w-100">
+                                                        @foreach (var state in Model.States)
+                                                        {
+
+                                                            if (state.StateName == Model.User.State)
+                                                            {
+                                                                <option selected value="@state.StateName">@state.StateName</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@state.StateName">@state.StateName</option>
+
+                                                            }
+
+                                                        }
+
+                                                    </select>
+                                                </div>
+                                                <span asp-validation-for="State" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="ZipCode">@Localizer["Zip Code"]</label>
+                                                <input maxlength="5" type="number" name="ZipCode" asp-for="ZipCode" value="@Model.User.ZipCode" class="form-control " />
+                                                <span asp-validation-for="ZipCode" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="PhoneNumber">@Localizer["Phone Number (Mobile)"]</label>
+                                                <input id="PhoneNumberEdit" maxlength="12" type="text" name="PhoneNumber" asp-for="PhoneNumber" value="@Model.User.PhoneNumber" class="form-control input-sm" />
+                                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                                <span id="PhoneNumberval" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-lg-6   ">
+                                            <div class=" rgstr-input-form-box">
+                                                <label for="Email">@Localizer["Email Address"]</label>
+                                                <input type="text" disabled placeholder="@Model.User.Email" value="" class="form-control" />
+                                                <span class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <div class="col-md-12">
+                                    <div class=" edit-button-section">
+                                        <div class="text-right">
+                                            <a href="@Url.Action("UserProfileDetails", "dashboard")" class="button btn red-modal-btn   cancel-button">@Localizer["Cancel"]</a>
+                                            <button type="submit" class="button btn green-modal-btn ml-1  save-button">@Localizer["Update"]</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    }
+                }
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<style>
+    button, input {
+    overflow: visible;
+    margin-left: 5px;
+}
+
+.fa-camera:before {
+    content: "\f030";
+    margin-left: 7px;
+}
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script>
+      $('#phone-number-field').keyup(function () {
+        $(this).val($(this).val().replace(/(\d{3})\-?(\d{3})\-?(\d{4})/, '$1-$2-$3'))
+    });
+
+    $(function () {
+
+        $('#PhoneNumberEdit').keydown(function (e) {
+            var key = e.charCode || e.keyCode || 0;
+            $text = $(this);
+            if (key !== 8 && key !== 9) {
+                if ($text.val().length === 3) {
+                    $text.val($text.val() + '-');
+                }
+                if ($text.val().length === 7) {
+                    $text.val($text.val() + '-');
+                }
+
+            }
+
+            return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));
+        })
+    });
+
+
+    $(function () {
+
+        $('#PhoneNumberOfficeEdit').keydown(function (e) {
+            var key = e.charCode || e.keyCode || 0;
+            $text = $(this);
+            if (key !== 8 && key !== 9) {
+                if ($text.val().length === 3) {
+                    $text.val($text.val() + '-');
+                }
+                if ($text.val().length === 7) {
+                    $text.val($text.val() + '-');
+                }
+
+            }
+
+            return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));
+        })
+    });
+</script>

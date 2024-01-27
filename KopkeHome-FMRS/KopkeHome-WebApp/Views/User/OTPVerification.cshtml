@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "SignUp";
+}
+<h3>Verification</h3>
+<p>Please Inter the verification code here.</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" offset="3">
+          <form asp-action="VerifyOTP" method="post">
+                <div class="form-group">
+                    <label for="OTP">Verification code</label>
+                    <input type="text" name="OTP" class="form-control input-sm">
+                    
+                    @if (@ViewBag.WrongOTp != null)
+                    {
+                                <span class="text-danger">@ViewBag.WrongOTp</span>
+                    }
+                </div>
+                <input type="Submit" value="Submit" class="btn btn-info btn-block">
+                <div class="container">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@*------------------------------------------------------------*@
+
+<!-- The contractor Modal -->
+<div class="modal p-0 fade contactorModal-email-varification" data-keyboard="false" data-backdrop="static" id="contactorModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Email Verification</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="text-center email-varification-main-heading">
+                    <h3 class="text-white">Enter verification code</h3>
+                    <p>Please check your email and enter the verification code below to verify your email.</p>
+                </div>
+                <input type="text" name="OTP" class="form-control input-sm">
+                
+                @if (@ViewBag.WrongOTp != null)
+                {
+                    <span class="text-danger">@ViewBag.WrongOTp</span>
+                }
+                @*<div class="userInput">
+                    <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
+                    <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+                    <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
+                    <input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')">
+                    <input type="text" id="fifth" maxlength="1" onkeyup="clickEvent(this,'sixth')">
+                    <input type="text" id="sixth" maxlength="1">
+                    </div>*@
+                <div class="verify-email text-center mb-2">
+                    <button type="Submit" class="btn green-email-verify-btn" data-dismiss="modal">Verify</button>
+                </div>
+                <div class="text-center resend-email-otp">
+                    <p class="mb-0"> Didn't receive the verification code?</p>
+                    <a href="#" class="orange-clr">Resend again</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Thecontractor Modal end -->

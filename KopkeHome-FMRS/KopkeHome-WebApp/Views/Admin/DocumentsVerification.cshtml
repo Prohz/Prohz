@@ -1,0 +1,155 @@
+﻿@model List< KopkeHome_ModelLayer.ViewModels.AdminViewModels.DocumentsVerificationViewModels>
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<div class="topCard-sec">
+ <h3 class="dashHeading">Documents Verification</h3>
+   </div>
+ <div class="tableWrapper">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-striped" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Contractor Name</th>
+                                    <th>Profile Picture</th>
+                                     <th>Email</th>
+                                    <th>Business Or Trade License Files</th>
+                                    <th>Liability Insurance File</th>
+                                    <th>Workman Compensation Insurance File</th>
+                                    <th>Verification Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                     <tr>
+                                    <td>@item.FirstName @item.LastName</td>
+                                    <td><img class="ImgCstmTbls" src="../uploads/@item.ProfilePicture" onerror="this.src='../images/DefaultProfile.png'"></td>
+                       <td>@item.Email</td>
+                                    <td> @{
+                                if (!string.IsNullOrEmpty(item.BusinessOrTradeLicenseFiles))
+                                {
+                                   int incNumber=-1;
+                                    string nyNumber = "s" + incNumber.ToString("00");
+
+
+                                    List<string> docs = item.BusinessOrTradeLicenseFiles.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                    foreach (var dox in docs)
+                                    {
+                                        incNumber++;
+                                        if (docs.Count()==1)
+                                        {
+                                            incNumber = 1;
+                                        }
+                                        if (!string.IsNullOrEmpty(dox))
+                                                    {
+  <a class="cstm-anchorForDV" href="../uploads/@dox" target="_blank"><span  class="cstm-anchorForDV-file-elips">File @incNumber</span></a>
+
+                                                  
+                                            
+                                  
+                                                    }
+
+                                                }
+
+                                            }
+                                            }</td>
+                                    <td>
+                            @{
+                                if (!string.IsNullOrEmpty(item.LiabilityInsuranceFile))
+                                {
+                                    int incNumber=-1;
+                                    string nyNumber = "s" + incNumber.ToString("00");
+                                    List<string> docs = item.LiabilityInsuranceFile.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                    foreach (var dox in docs)
+                                    {
+                                        incNumber++;
+                                        if (docs.Count()==1)
+                                        {
+                                            incNumber = 1;
+                                        }
+                                        if (!string.IsNullOrEmpty(dox))
+                                                    {
+  <a class="cstm-anchorForDV" href="../uploads/@dox" target="_blank"><span  class="cstm-anchorForDV-file-elips">File @incNumber</span></a>
+
+                                                  
+                                            
+                                  
+                                                    }
+
+                                                }
+
+                                            }
+                                            }
+                                    </td>
+                        <td>@{
+                                if (!string.IsNullOrEmpty(item.WorkmanCompensationInsuranceFile))
+                                {
+                                    int incNumber=-1;
+                                    string nyNumber = "s" + incNumber.ToString("00");
+                                    List<string> docs = item.WorkmanCompensationInsuranceFile.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                    foreach (var dox in docs)
+                                    {
+                                        incNumber++;
+                                        if (docs.Count()==1)
+                                        {
+                                            incNumber = 1;
+                                        }
+                                                    if (!string.IsNullOrEmpty(dox))
+                                                    {
+                                            <a class="cstm-anchorForDV" href="../uploads/@dox" target="_blank"><span  class="cstm-anchorForDV-file-elips">File @incNumber</span></a>
+
+
+
+
+                                        }
+
+                                    }
+
+                                }
+                            }</td>
+
+                        <td>
+                            @{
+                                string Pending = string.Empty;
+                               
+                                string Verified = string.Empty;
+
+                                if(item.VerificationStatus==3)
+                                {
+                                    Verified="selected";
+                                }
+                                else
+                                {
+                                     Pending="selected";
+                                }
+                               
+                                
+                            }
+                                   <select data-userId="@item.Id" class="UpdateStatusDocumentsVerification" name="Status">
+  <!option @Pending value="1">Pending</!option>
+ 
+  <!option @Verified value="3">Verified</!option>
+</select>
+
+                                </td>
+                               
+                                </tr>
+                                    
+                                }
+                               
+
+                            </tbody>
+                           @* <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </tfoot>*@
+                        </table>
+                    </div>
+                </div>

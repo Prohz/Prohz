@@ -1,0 +1,1012 @@
+[2024-01-23 23:39:02.335 -05:00  INF]  User profile is available. Using 'C:\Users\Percival\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2024-01-23 23:39:02.368 -05:00  INF]  Creating key {0863aa4a-05b0-44aa-989f-39c1fa487e98} with creation date 2024-01-24 04:39:02Z, activation date 2024-01-24 04:39:02Z, and expiration date 2024-04-23 04:39:02Z.
+[2024-01-23 23:39:02.405 -05:00  INF]  Writing data to file 'C:\Users\Percival\AppData\Local\ASP.NET\DataProtection-Keys\key-0863aa4a-05b0-44aa-989f-39c1fa487e98.xml'.
+[2024-01-23 23:39:02.583 -05:00  INF]  Now listening on: https://localhost:7047
+[2024-01-23 23:39:02.583 -05:00  INF]  Now listening on: http://localhost:5047
+[2024-01-23 23:39:02.585 -05:00  INF]  Application started. Press Ctrl+C to shut down.
+[2024-01-23 23:39:02.585 -05:00  INF]  Hosting environment: Development
+[2024-01-23 23:39:02.585 -05:00  INF]  Content root path: C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\
+[2024-01-23 23:40:03.017 -05:00  INF]  Application is shutting down...
+[2024-01-23 23:40:26.970 -05:00  INF]  User profile is available. Using 'C:\Users\Percival\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2024-01-23 23:40:27.055 -05:00  INF]  Now listening on: https://localhost:7047
+[2024-01-23 23:40:27.055 -05:00  INF]  Now listening on: http://localhost:5047
+[2024-01-23 23:40:27.057 -05:00  INF]  Application started. Press Ctrl+C to shut down.
+[2024-01-23 23:40:27.057 -05:00  INF]  Hosting environment: Development
+[2024-01-23 23:40:27.057 -05:00  INF]  Content root path: C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\
+[2024-01-23 23:40:39.114 -05:00  INF]  Request starting HTTP/1.1 GET http://localhost:5047/ - -
+[2024-01-23 23:40:39.124 -05:00  INF]  Request finished HTTP/1.1 GET http://localhost:5047/ - - - 307 0 - 13.5893ms
+[2024-01-23 23:40:41.198 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/ - -
+[2024-01-23 23:40:41.229 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:40:41.240 -05:00  INF]  Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:40:41.295 -05:00  INF]  Executing ViewResult, running view Index.
+[2024-01-23 23:40:41.369 -05:00  INF]  Executed ViewResult - view Index executed in 74.922ms.
+[2024-01-23 23:40:41.370 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp) in 128.4017ms
+[2024-01-23 23:40:41.370 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:40:41.373 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/ - - - 200 - text/html;+charset=utf-8 174.7333ms
+[2024-01-23 23:40:41.393 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/images/Kopke-brand-logo.png - -
+[2024-01-23 23:40:41.393 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/images/prohz-billboard.jpg - -
+[2024-01-23 23:40:41.393 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/css/style.css - -
+[2024-01-23 23:40:41.393 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/css/responsive.css - -
+[2024-01-23 23:40:41.407 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/style.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\style.css'
+[2024-01-23 23:40:41.407 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\responsive.css'
+[2024-01-23 23:40:41.407 -05:00  INF]  Sending file. Request path: '/images/Kopke-brand-logo.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\Kopke-brand-logo.png'
+[2024-01-23 23:40:41.407 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/images/Kopke-brand-logo.png - - - 200 6953 image/png 14.3524ms
+[2024-01-23 23:40:41.408 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/css/style.css - - - 200 24850 text/css 14.8046ms
+[2024-01-23 23:40:41.408 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/css/responsive.css - - - 200 11269 text/css 14.8192ms
+[2024-01-23 23:40:41.408 -05:00  INF]  Sending file. Request path: '/images/prohz-billboard.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\prohz-billboard.jpg'
+[2024-01-23 23:40:41.408 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/images/prohz-billboard.jpg - - - 200 211068 image/jpeg 15.1686ms
+[2024-01-23 23:40:41.409 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/images/prohz-billboard-mobile.jpg - -
+[2024-01-23 23:40:41.412 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/images/prohz-logo.png - -
+[2024-01-23 23:40:41.412 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/images/prohz-logo.jpg - -
+[2024-01-23 23:40:41.414 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/images/apple-app-store.png - -
+[2024-01-23 23:40:41.414 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/images/contractor-retiring.jpg - -
+[2024-01-23 23:40:41.414 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/images/join-the-prohz-network.png - -
+[2024-01-23 23:40:41.418 -05:00  INF]  Sending file. Request path: '/images/prohz-logo.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\prohz-logo.jpg'
+[2024-01-23 23:40:41.418 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/images/prohz-logo.jpg - - - 200 7006 image/jpeg 6.6080ms
+[2024-01-23 23:40:41.419 -05:00  INF]  Sending file. Request path: '/images/prohz-logo.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\prohz-logo.png'
+[2024-01-23 23:40:41.419 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/images/prohz-logo.png - - - 200 4810 image/png 6.9268ms
+[2024-01-23 23:40:41.419 -05:00  INF]  Sending file. Request path: '/images/prohz-billboard-mobile.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\prohz-billboard-mobile.jpg'
+[2024-01-23 23:40:41.420 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/images/prohz-billboard-mobile.jpg - - - 200 167012 image/jpeg 10.3690ms
+[2024-01-23 23:40:41.420 -05:00  INF]  Sending file. Request path: '/images/apple-app-store.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\apple-app-store.png'
+[2024-01-23 23:40:41.420 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/images/apple-app-store.png - - - 200 6796 image/png 6.7191ms
+[2024-01-23 23:40:41.421 -05:00  INF]  Sending file. Request path: '/images/join-the-prohz-network.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\join-the-prohz-network.png'
+[2024-01-23 23:40:41.421 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/images/join-the-prohz-network.png - - - 200 88555 image/png 7.2683ms
+[2024-01-23 23:40:41.422 -05:00  INF]  Sending file. Request path: '/images/contractor-retiring.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\contractor-retiring.jpg'
+[2024-01-23 23:40:41.422 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/images/contractor-retiring.jpg - - - 200 130521 image/jpeg 8.1521ms
+[2024-01-23 23:40:41.463 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/pricing-banner.png - -
+[2024-01-23 23:40:41.463 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - -
+[2024-01-23 23:40:41.463 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - -
+[2024-01-23 23:40:41.463 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/map.png - -
+[2024-01-23 23:40:41.463 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/SubContarctorHomePage.jpg - -
+[2024-01-23 23:40:41.463 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/ContractorImageHomePage.jpg - -
+[2024-01-23 23:40:41.466 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/banner-image.png - -
+[2024-01-23 23:40:41.472 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/SubContarctorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\SubContarctorHomePage.jpg'
+[2024-01-23 23:40:41.472 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/SubContarctorHomePage.jpg - - - 200 43182 image/jpeg 9.3361ms
+[2024-01-23 23:40:41.472 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/IndependentContractorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\IndependentContractorHomePage.jpg'
+[2024-01-23 23:40:41.473 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - - - 200 70927 image/jpeg 9.8357ms
+[2024-01-23 23:40:41.473 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/ContractorImageHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\ContractorImageHomePage.jpg'
+[2024-01-23 23:40:41.474 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/ContractorImageHomePage.jpg - - - 200 119527 image/jpeg 10.9423ms
+[2024-01-23 23:40:41.474 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/banner-image.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\banner-image.png'
+[2024-01-23 23:40:41.474 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/banner-image.png - - - 200 4143 image/png 8.5110ms
+[2024-01-23 23:40:41.475 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/map.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\map.png'
+[2024-01-23 23:40:41.475 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/map.png - - - 200 173378 image/png 12.1963ms
+[2024-01-23 23:40:41.497 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/HomeOwnerHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\HomeOwnerHomePage.jpg'
+[2024-01-23 23:40:41.497 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - - - 200 1913458 image/jpeg 33.9433ms
+[2024-01-23 23:40:41.506 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/pricing-banner.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\pricing-banner.png'
+[2024-01-23 23:40:41.506 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/pricing-banner.png - - - 200 2344671 image/png 43.7014ms
+[2024-01-23 23:40:41.529 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/images/networking-background.jpg - -
+[2024-01-23 23:40:41.529 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/images/service-provider-list-section-background.jpg - -
+[2024-01-23 23:40:41.529 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/images/service-provider-list-pattern.jpg - -
+[2024-01-23 23:40:41.536 -05:00  INF]  Sending file. Request path: '/images/service-provider-list-pattern.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\service-provider-list-pattern.jpg'
+[2024-01-23 23:40:41.536 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/images/service-provider-list-pattern.jpg - - - 200 38024 image/jpeg 6.7158ms
+[2024-01-23 23:40:41.537 -05:00  INF]  Sending file. Request path: '/images/networking-background.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\networking-background.jpg'
+[2024-01-23 23:40:41.537 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/images/networking-background.jpg - - - 200 106218 image/jpeg 7.9763ms
+[2024-01-23 23:40:41.538 -05:00  INF]  Sending file. Request path: '/images/service-provider-list-section-background.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\service-provider-list-section-background.jpg'
+[2024-01-23 23:40:41.538 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/images/service-provider-list-section-background.jpg - - - 200 173468 image/jpeg 8.9619ms
+[2024-01-23 23:40:41.705 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/home/ProhzLegalFiles - -
+[2024-01-23 23:40:41.705 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/home/PromoVideos - -
+[2024-01-23 23:40:41.707 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:40:41.707 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:40:41.711 -05:00  INF]  Route matched with {action = "ProhzLegalFiles", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProhzLegalFiles() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:40:41.711 -05:00  INF]  Route matched with {action = "PromoVideos", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PromoVideos() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:40:41.851 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/favicon.ico - -
+[2024-01-23 23:40:41.857 -05:00  INF]  Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\favicon.ico'
+[2024-01-23 23:40:41.857 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/favicon.ico - - - 200 4286 image/x-icon 6.7121ms
+[2024-01-23 23:40:45.890 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:40:45.890 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:40:45.893 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp) in 4182.5614ms
+[2024-01-23 23:40:45.893 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp) in 4182.516ms
+[2024-01-23 23:40:45.894 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:40:45.894 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:40:45.894 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:40:45.894 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:40:45.895 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/home/PromoVideos - - - 302 0 - 4189.6115ms
+[2024-01-23 23:40:45.895 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/home/ProhzLegalFiles - - - 302 0 - 4189.6166ms
+[2024-01-23 23:40:45.899 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/Home/error - -
+[2024-01-23 23:40:45.903 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:40:45.904 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:40:45.905 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:40:45.995 -05:00  INF]  Executed ViewResult - view Error executed in 90.5508ms.
+[2024-01-23 23:40:45.995 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 91.5018ms
+[2024-01-23 23:40:45.995 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:40:45.996 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/Home/error - - - 200 - text/html;+charset=utf-8 96.9422ms
+[2024-01-23 23:40:45.996 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/Home/error - -
+[2024-01-23 23:40:45.996 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:40:45.996 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:40:45.997 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:40:45.997 -05:00  INF]  Executed ViewResult - view Error executed in 0.6995ms.
+[2024-01-23 23:40:45.997 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.8534ms
+[2024-01-23 23:40:45.997 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:40:45.997 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/Home/error - - - 200 - text/html;+charset=utf-8 1.2543ms
+[2024-01-23 23:43:11.853 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/css/style.css - -
+[2024-01-23 23:43:11.854 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/css/responsive.css - -
+[2024-01-23 23:43:11.854 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\responsive.css'
+[2024-01-23 23:43:11.854 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/css/responsive.css - - - 200 11269 text/css 0.4872ms
+[2024-01-23 23:43:11.854 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/style.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\style.css'
+[2024-01-23 23:43:11.854 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/css/style.css - - - 200 24850 text/css 0.8715ms
+[2024-01-23 23:44:45.917 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/ - -
+[2024-01-23 23:44:45.917 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:44:45.917 -05:00  INF]  Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:44:45.917 -05:00  INF]  Executing ViewResult, running view Index.
+[2024-01-23 23:44:45.919 -05:00  INF]  Executed ViewResult - view Index executed in 1.9196ms.
+[2024-01-23 23:44:45.919 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp) in 2.0467ms
+[2024-01-23 23:44:45.919 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:44:45.919 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/ - - - 200 - text/html;+charset=utf-8 2.6352ms
+[2024-01-23 23:44:46.079 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/pricing-banner.png - -
+[2024-01-23 23:44:46.079 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - -
+[2024-01-23 23:44:46.079 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - -
+[2024-01-23 23:44:46.079 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/map.png - -
+[2024-01-23 23:44:46.079 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/banner-image.png - -
+[2024-01-23 23:44:46.079 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/ContractorImageHomePage.jpg - -
+[2024-01-23 23:44:46.079 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/SubContarctorHomePage.jpg - -
+[2024-01-23 23:44:46.080 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/banner-image.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\banner-image.png'
+[2024-01-23 23:44:46.080 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/banner-image.png - - - 200 4143 image/png 0.8590ms
+[2024-01-23 23:44:46.080 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/SubContarctorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\SubContarctorHomePage.jpg'
+[2024-01-23 23:44:46.081 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/SubContarctorHomePage.jpg - - - 200 43182 image/jpeg 2.0015ms
+[2024-01-23 23:44:46.092 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/map.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\map.png'
+[2024-01-23 23:44:46.093 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/map.png - - - 200 173378 image/png 13.4073ms
+[2024-01-23 23:44:46.093 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/ContractorImageHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\ContractorImageHomePage.jpg'
+[2024-01-23 23:44:46.093 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/ContractorImageHomePage.jpg - - - 200 119527 image/jpeg 13.8127ms
+[2024-01-23 23:44:46.093 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/IndependentContractorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\IndependentContractorHomePage.jpg'
+[2024-01-23 23:44:46.094 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - - - 200 70927 image/jpeg 14.5491ms
+[2024-01-23 23:44:46.111 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/HomeOwnerHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\HomeOwnerHomePage.jpg'
+[2024-01-23 23:44:46.111 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - - - 200 1913458 image/jpeg 31.4457ms
+[2024-01-23 23:44:46.122 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/pricing-banner.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\pricing-banner.png'
+[2024-01-23 23:44:46.123 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/HomePageAssets/assets/image/pricing-banner.png - - - 200 2344671 image/png 43.3392ms
+[2024-01-23 23:44:46.171 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/home/PromoVideos - -
+[2024-01-23 23:44:46.171 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/home/ProhzLegalFiles - -
+[2024-01-23 23:44:46.172 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:44:46.172 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:44:46.172 -05:00  INF]  Route matched with {action = "PromoVideos", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PromoVideos() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:44:46.172 -05:00  INF]  Route matched with {action = "ProhzLegalFiles", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProhzLegalFiles() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:44:46.214 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/favicon.ico - -
+[2024-01-23 23:44:46.215 -05:00  INF]  Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\favicon.ico'
+[2024-01-23 23:44:46.215 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/favicon.ico - - - 200 4286 image/x-icon 0.7613ms
+[2024-01-23 23:44:50.221 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:44:50.222 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp) in 4049.6181ms
+[2024-01-23 23:44:50.222 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:44:50.222 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:44:50.222 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/home/ProhzLegalFiles - - - 302 0 - 4050.3550ms
+[2024-01-23 23:44:50.224 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/Home/error - -
+[2024-01-23 23:44:50.224 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:44:50.225 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:44:50.225 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:44:50.225 -05:00  INF]  Executed ViewResult - view Error executed in 0.5612ms.
+[2024-01-23 23:44:50.225 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.6869ms
+[2024-01-23 23:44:50.225 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:44:50.225 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/Home/error - - - 200 - text/html;+charset=utf-8 1.2536ms
+[2024-01-23 23:44:50.237 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:44:50.237 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp) in 4065.4659ms
+[2024-01-23 23:44:50.237 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:44:50.237 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:44:50.238 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/home/PromoVideos - - - 302 0 - 4066.1685ms
+[2024-01-23 23:44:50.240 -05:00  INF]  Request starting HTTP/2 GET https://localhost:7047/Home/error - -
+[2024-01-23 23:44:50.240 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:44:50.240 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:44:50.240 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:44:50.241 -05:00  INF]  Executed ViewResult - view Error executed in 0.3862ms.
+[2024-01-23 23:44:50.241 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.4862ms
+[2024-01-23 23:44:50.241 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:44:50.241 -05:00  INF]  Request finished HTTP/2 GET https://localhost:7047/Home/error - - - 200 - text/html;+charset=utf-8 0.8564ms
+[2024-01-23 23:47:28.343 -05:00  INF]  Application is shutting down...
+[2024-01-23 23:47:40.823 -05:00  INF]  User profile is available. Using 'C:\Users\Percival\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2024-01-23 23:47:40.911 -05:00  INF]  Now listening on: http://localhost:5000
+[2024-01-23 23:47:40.911 -05:00  INF]  Now listening on: https://localhost:5001
+[2024-01-23 23:47:40.913 -05:00  INF]  Application started. Press Ctrl+C to shut down.
+[2024-01-23 23:47:40.914 -05:00  INF]  Hosting environment: Production
+[2024-01-23 23:47:40.914 -05:00  INF]  Content root path: C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\
+[2024-01-23 23:48:01.452 -05:00  INF]  Request starting HTTP/1.1 GET http://localhost:5000/ - -
+[2024-01-23 23:48:01.465 -05:00  INF]  Request finished HTTP/1.1 GET http://localhost:5000/ - - - 307 0 - 14.6835ms
+[2024-01-23 23:48:01.500 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/ - -
+[2024-01-23 23:48:01.529 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:48:01.538 -05:00  INF]  Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:48:01.574 -05:00  INF]  Executing ViewResult, running view Index.
+[2024-01-23 23:48:01.638 -05:00  INF]  Executed ViewResult - view Index executed in 65.5113ms.
+[2024-01-23 23:48:01.639 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp) in 98.4793ms
+[2024-01-23 23:48:01.639 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:48:01.641 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 141.1148ms
+[2024-01-23 23:48:01.662 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - -
+[2024-01-23 23:48:01.662 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - -
+[2024-01-23 23:48:01.662 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/Kopke-brand-logo.png - -
+[2024-01-23 23:48:01.662 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/prohz-billboard.jpg - -
+[2024-01-23 23:48:01.671 -05:00  INF]  Sending file. Request path: '/images/Kopke-brand-logo.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\Kopke-brand-logo.png'
+[2024-01-23 23:48:01.671 -05:00  INF]  Sending file. Request path: '/images/prohz-billboard.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\prohz-billboard.jpg'
+[2024-01-23 23:48:01.671 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\responsive.css'
+[2024-01-23 23:48:01.671 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/style.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\style.css'
+[2024-01-23 23:48:01.672 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/prohz-billboard.jpg - - - 200 211068 image/jpeg 10.6120ms
+[2024-01-23 23:48:01.672 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - - - 200 24850 text/css 10.6735ms
+[2024-01-23 23:48:01.672 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - - - 200 11269 text/css 10.6520ms
+[2024-01-23 23:48:01.672 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/Kopke-brand-logo.png - - - 200 6953 image/png 10.5851ms
+[2024-01-23 23:48:01.683 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/prohz-billboard-mobile.jpg - -
+[2024-01-23 23:48:01.684 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/prohz-logo.jpg - -
+[2024-01-23 23:48:01.685 -05:00  INF]  Sending file. Request path: '/images/prohz-logo.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\prohz-logo.jpg'
+[2024-01-23 23:48:01.685 -05:00  INF]  Sending file. Request path: '/images/prohz-billboard-mobile.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\prohz-billboard-mobile.jpg'
+[2024-01-23 23:48:01.685 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/prohz-logo.jpg - - - 200 7006 image/jpeg 0.8998ms
+[2024-01-23 23:48:01.685 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/prohz-logo.png - -
+[2024-01-23 23:48:01.685 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/prohz-billboard-mobile.jpg - - - 200 167012 image/jpeg 2.0069ms
+[2024-01-23 23:48:01.686 -05:00  INF]  Sending file. Request path: '/images/prohz-logo.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\prohz-logo.png'
+[2024-01-23 23:48:01.686 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/prohz-logo.png - - - 200 4810 image/png 0.5603ms
+[2024-01-23 23:48:01.691 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/apple-app-store.png - -
+[2024-01-23 23:48:01.691 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+[2024-01-23 23:48:01.691 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/join-the-prohz-network.png - -
+[2024-01-23 23:48:01.691 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/contractor-retiring.jpg - -
+[2024-01-23 23:48:01.691 -05:00  INF]  Sending file. Request path: '/images/apple-app-store.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\apple-app-store.png'
+[2024-01-23 23:48:01.692 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/apple-app-store.png - - - 200 6796 image/png 0.9815ms
+[2024-01-23 23:48:01.692 -05:00  INF]  Sending file. Request path: '/images/join-the-prohz-network.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\join-the-prohz-network.png'
+[2024-01-23 23:48:01.692 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 1.6693ms
+[2024-01-23 23:48:01.692 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/join-the-prohz-network.png - - - 200 88555 image/png 1.7160ms
+[2024-01-23 23:48:01.693 -05:00  INF]  Sending file. Request path: '/images/contractor-retiring.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\contractor-retiring.jpg'
+[2024-01-23 23:48:01.693 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/contractor-retiring.jpg - - - 200 130521 image/jpeg 1.9494ms
+[2024-01-23 23:48:01.792 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/networking-background.jpg - -
+[2024-01-23 23:48:01.792 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/service-provider-list-section-background.jpg - -
+[2024-01-23 23:48:01.792 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/service-provider-list-pattern.jpg - -
+[2024-01-23 23:48:01.793 -05:00  INF]  Sending file. Request path: '/images/networking-background.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\networking-background.jpg'
+[2024-01-23 23:48:01.793 -05:00  INF]  Sending file. Request path: '/images/service-provider-list-pattern.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\service-provider-list-pattern.jpg'
+[2024-01-23 23:48:01.793 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/service-provider-list-pattern.jpg - - - 200 38024 image/jpeg 0.9661ms
+[2024-01-23 23:48:01.793 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/networking-background.jpg - - - 200 106218 image/jpeg 1.5655ms
+[2024-01-23 23:48:01.794 -05:00  INF]  Sending file. Request path: '/images/service-provider-list-section-background.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\service-provider-list-section-background.jpg'
+[2024-01-23 23:48:01.794 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/service-provider-list-section-background.jpg - - - 200 173468 image/jpeg 1.8356ms
+[2024-01-23 23:48:01.858 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - -
+[2024-01-23 23:48:01.858 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - -
+[2024-01-23 23:48:01.858 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - -
+[2024-01-23 23:48:01.858 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - -
+[2024-01-23 23:48:01.858 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - -
+[2024-01-23 23:48:01.858 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - -
+[2024-01-23 23:48:01.859 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - -
+[2024-01-23 23:48:01.861 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/IndependentContractorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\IndependentContractorHomePage.jpg'
+[2024-01-23 23:48:01.862 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/banner-image.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\banner-image.png'
+[2024-01-23 23:48:01.862 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - - - 200 70927 image/jpeg 4.1880ms
+[2024-01-23 23:48:01.862 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/SubContarctorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\SubContarctorHomePage.jpg'
+[2024-01-23 23:48:01.862 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - - - 200 4143 image/png 3.5407ms
+[2024-01-23 23:48:01.862 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - - - 200 43182 image/jpeg 4.0748ms
+[2024-01-23 23:48:01.864 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/map.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\map.png'
+[2024-01-23 23:48:01.864 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/ContractorImageHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\ContractorImageHomePage.jpg'
+[2024-01-23 23:48:01.865 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - - - 200 119527 image/jpeg 6.0472ms
+[2024-01-23 23:48:01.865 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - - - 200 173378 image/png 6.6729ms
+[2024-01-23 23:48:01.895 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/HomeOwnerHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\HomeOwnerHomePage.jpg'
+[2024-01-23 23:48:01.895 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - - - 200 1913458 image/jpeg 37.5283ms
+[2024-01-23 23:48:01.902 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/pricing-banner.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\pricing-banner.png'
+[2024-01-23 23:48:01.902 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - - - 200 2344671 image/png 44.4320ms
+[2024-01-23 23:48:02.008 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - -
+[2024-01-23 23:48:02.008 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/PromoVideos - -
+[2024-01-23 23:48:02.010 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:48:02.010 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:48:02.014 -05:00  INF]  Route matched with {action = "PromoVideos", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PromoVideos() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:48:02.014 -05:00  INF]  Route matched with {action = "ProhzLegalFiles", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProhzLegalFiles() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:48:02.490 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/favicon.ico - -
+[2024-01-23 23:48:02.491 -05:00  INF]  Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\favicon.ico'
+[2024-01-23 23:48:02.491 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/favicon.ico - - - 200 4286 image/x-icon 0.7328ms
+[2024-01-23 23:48:06.115 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:48:06.115 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:48:06.118 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp) in 4104.1195ms
+[2024-01-23 23:48:06.118 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp) in 4104.2721ms
+[2024-01-23 23:48:06.118 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:48:06.118 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:48:06.119 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:48:06.119 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:48:06.120 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - - - 302 0 - 4111.2868ms
+[2024-01-23 23:48:06.120 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/PromoVideos - - - 302 0 - 4111.2155ms
+[2024-01-23 23:48:06.122 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:48:06.126 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:48:06.127 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:48:06.128 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:48:06.145 -05:00  INF]  Executed ViewResult - view Error executed in 17.6035ms.
+[2024-01-23 23:48:06.145 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 18.3286ms
+[2024-01-23 23:48:06.145 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:48:06.145 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 23.1728ms
+[2024-01-23 23:48:06.146 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:48:06.146 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:48:06.146 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:48:06.146 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:48:06.147 -05:00  INF]  Executed ViewResult - view Error executed in 0.9109ms.
+[2024-01-23 23:48:06.147 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 1.0881ms
+[2024-01-23 23:48:06.147 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:48:06.148 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 1.6209ms
+[2024-01-23 23:50:37.623 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/ - -
+[2024-01-23 23:50:37.623 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:50:37.624 -05:00  INF]  Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:50:37.626 -05:00  INF]  Executing ViewResult, running view Index.
+[2024-01-23 23:50:37.639 -05:00  INF]  Executed ViewResult - view Index executed in 14.6353ms.
+[2024-01-23 23:50:37.639 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp) in 14.825ms
+[2024-01-23 23:50:37.639 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:50:37.639 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 16.2968ms
+[2024-01-23 23:50:37.658 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - -
+[2024-01-23 23:50:37.658 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - -
+[2024-01-23 23:50:37.659 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+[2024-01-23 23:50:37.659 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\responsive.css'
+[2024-01-23 23:50:37.659 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/style.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\style.css'
+[2024-01-23 23:50:37.660 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - - - 200 11269 text/css 1.0990ms
+[2024-01-23 23:50:37.660 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - - - 200 24850 text/css 1.1092ms
+[2024-01-23 23:50:37.660 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 0.9589ms
+[2024-01-23 23:50:37.782 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - -
+[2024-01-23 23:50:37.782 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - -
+[2024-01-23 23:50:37.782 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - -
+[2024-01-23 23:50:37.783 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - -
+[2024-01-23 23:50:37.783 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - -
+[2024-01-23 23:50:37.783 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - -
+[2024-01-23 23:50:37.783 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - -
+[2024-01-23 23:50:37.783 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/banner-image.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\banner-image.png'
+[2024-01-23 23:50:37.784 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - - - 200 4143 image/png 1.0855ms
+[2024-01-23 23:50:37.791 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/ContractorImageHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\ContractorImageHomePage.jpg'
+[2024-01-23 23:50:37.791 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/SubContarctorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\SubContarctorHomePage.jpg'
+[2024-01-23 23:50:37.791 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/IndependentContractorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\IndependentContractorHomePage.jpg'
+[2024-01-23 23:50:37.791 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - - - 200 43182 image/jpeg 7.9499ms
+[2024-01-23 23:50:37.791 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - - - 200 70927 image/jpeg 8.4734ms
+[2024-01-23 23:50:37.791 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - - - 200 119527 image/jpeg 8.4010ms
+[2024-01-23 23:50:37.792 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/map.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\map.png'
+[2024-01-23 23:50:37.792 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - - - 200 173378 image/png 9.4775ms
+[2024-01-23 23:50:37.804 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/HomeOwnerHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\HomeOwnerHomePage.jpg'
+[2024-01-23 23:50:37.804 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - - - 200 1913458 image/jpeg 21.9254ms
+[2024-01-23 23:50:37.807 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/pricing-banner.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\pricing-banner.png'
+[2024-01-23 23:50:37.807 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - - - 200 2344671 image/png 24.7587ms
+[2024-01-23 23:50:37.869 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/PromoVideos - -
+[2024-01-23 23:50:37.869 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - -
+[2024-01-23 23:50:37.870 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:50:37.870 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:50:37.872 -05:00  INF]  Route matched with {action = "ProhzLegalFiles", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProhzLegalFiles() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:50:37.872 -05:00  INF]  Route matched with {action = "PromoVideos", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PromoVideos() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:50:38.240 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/favicon.ico - -
+[2024-01-23 23:50:38.240 -05:00  INF]  Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\favicon.ico'
+[2024-01-23 23:50:38.240 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/favicon.ico - - - 200 4286 image/x-icon 0.7652ms
+[2024-01-23 23:50:41.925 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:50:41.925 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:50:41.925 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp) in 4052.9126ms
+[2024-01-23 23:50:41.925 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:50:41.925 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp) in 4053.0477ms
+[2024-01-23 23:50:41.925 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:50:41.925 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:50:41.925 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:50:41.926 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/PromoVideos - - - 302 0 - 4056.0733ms
+[2024-01-23 23:50:41.926 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - - - 302 0 - 4056.1860ms
+[2024-01-23 23:50:41.928 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:50:41.932 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:50:41.933 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:50:41.933 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:50:41.935 -05:00  INF]  Executed ViewResult - view Error executed in 1.6281ms.
+[2024-01-23 23:50:41.935 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 1.7867ms
+[2024-01-23 23:50:41.935 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:50:41.935 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 6.6097ms
+[2024-01-23 23:50:41.936 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:50:41.936 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:50:41.936 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:50:41.936 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:50:41.936 -05:00  INF]  Executed ViewResult - view Error executed in 0.3531ms.
+[2024-01-23 23:50:41.937 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.4429ms
+[2024-01-23 23:50:41.937 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:50:41.937 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 0.7880ms
+[2024-01-23 23:55:01.351 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/ - -
+[2024-01-23 23:55:01.351 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:55:01.352 -05:00  INF]  Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:55:01.353 -05:00  INF]  Executing ViewResult, running view Index.
+[2024-01-23 23:55:01.363 -05:00  INF]  Executed ViewResult - view Index executed in 11.3143ms.
+[2024-01-23 23:55:01.364 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp) in 11.4526ms
+[2024-01-23 23:55:01.364 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:55:01.364 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 12.6989ms
+[2024-01-23 23:55:01.388 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - -
+[2024-01-23 23:55:01.388 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/style.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\style.css'
+[2024-01-23 23:55:01.388 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - - - 200 24850 text/css 0.7797ms
+[2024-01-23 23:55:01.390 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - -
+[2024-01-23 23:55:01.390 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+[2024-01-23 23:55:01.390 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 0.2050ms
+[2024-01-23 23:55:01.391 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\responsive.css'
+[2024-01-23 23:55:01.391 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - - - 200 11269 text/css 0.7104ms
+[2024-01-23 23:55:01.425 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/PromoVideos - -
+[2024-01-23 23:55:01.425 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - -
+[2024-01-23 23:55:01.425 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:55:01.425 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:55:01.427 -05:00  INF]  Route matched with {action = "PromoVideos", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PromoVideos() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:55:01.427 -05:00  INF]  Route matched with {action = "ProhzLegalFiles", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProhzLegalFiles() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:55:01.724 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/favicon.ico - -
+[2024-01-23 23:55:01.725 -05:00  INF]  Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\favicon.ico'
+[2024-01-23 23:55:01.725 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/favicon.ico - - - 200 4286 image/x-icon 0.7800ms
+[2024-01-23 23:55:04.844 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - -
+[2024-01-23 23:55:04.844 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - -
+[2024-01-23 23:55:04.844 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - -
+[2024-01-23 23:55:04.844 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - -
+[2024-01-23 23:55:04.844 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - -
+[2024-01-23 23:55:04.844 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - -
+[2024-01-23 23:55:04.844 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - -
+[2024-01-23 23:55:04.844 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/SubContarctorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\SubContarctorHomePage.jpg'
+[2024-01-23 23:55:04.845 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - - - 200 43182 image/jpeg 1.1265ms
+[2024-01-23 23:55:04.845 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/banner-image.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\banner-image.png'
+[2024-01-23 23:55:04.845 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/IndependentContractorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\IndependentContractorHomePage.jpg'
+[2024-01-23 23:55:04.845 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - - - 200 70927 image/jpeg 1.8465ms
+[2024-01-23 23:55:04.846 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/ContractorImageHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\ContractorImageHomePage.jpg'
+[2024-01-23 23:55:04.846 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - - - 200 119527 image/jpeg 2.1865ms
+[2024-01-23 23:55:04.846 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - - - 200 4143 image/png 2.2569ms
+[2024-01-23 23:55:04.846 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/map.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\map.png'
+[2024-01-23 23:55:04.846 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - - - 200 173378 image/png 2.5396ms
+[2024-01-23 23:55:04.859 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/HomeOwnerHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\HomeOwnerHomePage.jpg'
+[2024-01-23 23:55:04.859 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - - - 200 1913458 image/jpeg 15.3364ms
+[2024-01-23 23:55:04.869 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/pricing-banner.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\pricing-banner.png'
+[2024-01-23 23:55:04.869 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - - - 200 2344671 image/png 25.6984ms
+[2024-01-23 23:55:05.499 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:55:05.500 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp) in 4072.4542ms
+[2024-01-23 23:55:05.500 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:55:05.500 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:55:05.500 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - - - 302 0 - 4074.7286ms
+[2024-01-23 23:55:05.503 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:55:05.506 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:55:05.507 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:55:05.507 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:55:05.509 -05:00  INF]  Executed ViewResult - view Error executed in 1.8691ms.
+[2024-01-23 23:55:05.509 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 2.0608ms
+[2024-01-23 23:55:05.509 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:55:05.509 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 6.5503ms
+[2024-01-23 23:55:05.515 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:55:05.516 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp) in 4088.4727ms
+[2024-01-23 23:55:05.516 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:55:05.516 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:55:05.516 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/PromoVideos - - - 302 0 - 4090.8099ms
+[2024-01-23 23:55:05.518 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:55:05.519 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:55:05.519 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:55:05.519 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:55:05.519 -05:00  INF]  Executed ViewResult - view Error executed in 0.4713ms.
+[2024-01-23 23:55:05.519 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.596ms
+[2024-01-23 23:55:05.519 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:55:05.519 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 1.0348ms
+[2024-01-23 23:55:06.033 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/ - -
+[2024-01-23 23:55:06.034 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:55:06.034 -05:00  INF]  Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:55:06.034 -05:00  INF]  Executing ViewResult, running view Index.
+[2024-01-23 23:55:06.035 -05:00  INF]  Executed ViewResult - view Index executed in 1.3915ms.
+[2024-01-23 23:55:06.036 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp) in 1.5963ms
+[2024-01-23 23:55:06.036 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:55:06.036 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 2.3268ms
+[2024-01-23 23:55:06.053 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - -
+[2024-01-23 23:55:06.054 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+[2024-01-23 23:55:06.054 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - -
+[2024-01-23 23:55:06.054 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 0.2349ms
+[2024-01-23 23:55:06.054 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\responsive.css'
+[2024-01-23 23:55:06.054 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/style.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\style.css'
+[2024-01-23 23:55:06.054 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - - - 200 11269 text/css 0.4666ms
+[2024-01-23 23:55:06.054 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - - - 200 24850 text/css 0.9120ms
+[2024-01-23 23:55:06.153 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - -
+[2024-01-23 23:55:06.154 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - -
+[2024-01-23 23:55:06.154 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/banner-image.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\banner-image.png'
+[2024-01-23 23:55:06.154 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - -
+[2024-01-23 23:55:06.154 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - - - 200 4143 image/png 0.6184ms
+[2024-01-23 23:55:06.154 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - -
+[2024-01-23 23:55:06.154 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - -
+[2024-01-23 23:55:06.155 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/IndependentContractorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\IndependentContractorHomePage.jpg'
+[2024-01-23 23:55:06.155 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - - - 200 70927 image/jpeg 1.1623ms
+[2024-01-23 23:55:06.156 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - -
+[2024-01-23 23:55:06.156 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - -
+[2024-01-23 23:55:06.157 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/map.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\map.png'
+[2024-01-23 23:55:06.157 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/SubContarctorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\SubContarctorHomePage.jpg'
+[2024-01-23 23:55:06.157 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - - - 200 173378 image/png 3.1457ms
+[2024-01-23 23:55:06.157 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - - - 200 43182 image/jpeg 1.5210ms
+[2024-01-23 23:55:06.157 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/ContractorImageHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\ContractorImageHomePage.jpg'
+[2024-01-23 23:55:06.158 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - - - 200 119527 image/jpeg 1.9711ms
+[2024-01-23 23:55:06.170 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/HomeOwnerHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\HomeOwnerHomePage.jpg'
+[2024-01-23 23:55:06.170 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - - - 200 1913458 image/jpeg 16.2551ms
+[2024-01-23 23:55:06.173 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/pricing-banner.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\pricing-banner.png'
+[2024-01-23 23:55:06.173 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - - - 200 2344671 image/png 19.1326ms
+[2024-01-23 23:55:06.252 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/PromoVideos - -
+[2024-01-23 23:55:06.252 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - -
+[2024-01-23 23:55:06.252 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:55:06.252 -05:00  INF]  Route matched with {action = "PromoVideos", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PromoVideos() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:55:06.252 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:55:06.252 -05:00  INF]  Route matched with {action = "ProhzLegalFiles", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProhzLegalFiles() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:55:06.626 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/favicon.ico - -
+[2024-01-23 23:55:06.627 -05:00  INF]  Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\favicon.ico'
+[2024-01-23 23:55:06.627 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/favicon.ico - - - 200 4286 image/x-icon 0.6117ms
+[2024-01-23 23:55:10.295 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:55:10.295 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp) in 4042.7526ms
+[2024-01-23 23:55:10.295 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:55:10.295 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:55:10.296 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - - - 302 0 - 4043.4756ms
+[2024-01-23 23:55:10.298 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:55:10.298 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:55:10.298 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:55:10.298 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:55:10.299 -05:00  INF]  Executed ViewResult - view Error executed in 0.4542ms.
+[2024-01-23 23:55:10.299 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.5708ms
+[2024-01-23 23:55:10.299 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:55:10.299 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 0.9321ms
+[2024-01-23 23:55:10.311 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:55:10.311 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp) in 4058.4597ms
+[2024-01-23 23:55:10.311 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:55:10.311 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:55:10.311 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/PromoVideos - - - 302 0 - 4059.1422ms
+[2024-01-23 23:55:10.313 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:55:10.313 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:55:10.313 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:55:10.314 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:55:10.314 -05:00  INF]  Executed ViewResult - view Error executed in 0.5343ms.
+[2024-01-23 23:55:10.314 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.6643ms
+[2024-01-23 23:55:10.314 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:55:10.314 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 1.0457ms
+[2024-01-23 23:56:37.026 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/ - -
+[2024-01-23 23:56:37.026 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:56:37.027 -05:00  INF]  Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:56:37.028 -05:00  INF]  Executing ViewResult, running view Index.
+[2024-01-23 23:56:37.038 -05:00  INF]  Executed ViewResult - view Index executed in 11.2502ms.
+[2024-01-23 23:56:37.038 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp) in 11.39ms
+[2024-01-23 23:56:37.038 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:56:37.038 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 12.7603ms
+[2024-01-23 23:56:37.063 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - -
+[2024-01-23 23:56:37.064 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/style.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\style.css'
+[2024-01-23 23:56:37.064 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - - - 200 24850 text/css 0.8153ms
+[2024-01-23 23:56:37.068 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - -
+[2024-01-23 23:56:37.068 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+[2024-01-23 23:56:37.068 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 0.1768ms
+[2024-01-23 23:56:37.068 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\responsive.css'
+[2024-01-23 23:56:37.069 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - - - 200 11269 text/css 0.5748ms
+[2024-01-23 23:56:37.104 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/PromoVideos - -
+[2024-01-23 23:56:37.104 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - -
+[2024-01-23 23:56:37.104 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:56:37.104 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:56:37.106 -05:00  INF]  Route matched with {action = "ProhzLegalFiles", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProhzLegalFiles() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:56:37.107 -05:00  INF]  Route matched with {action = "PromoVideos", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PromoVideos() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:56:37.289 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/favicon.ico - -
+[2024-01-23 23:56:37.289 -05:00  INF]  Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\favicon.ico'
+[2024-01-23 23:56:37.289 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/favicon.ico - - - 200 4286 image/x-icon 0.7252ms
+[2024-01-23 23:56:41.147 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:56:41.147 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp) in 4040.8882ms
+[2024-01-23 23:56:41.147 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:56:41.147 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:56:41.147 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - - - 302 0 - 4043.9235ms
+[2024-01-23 23:56:41.150 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - -
+[2024-01-23 23:56:41.150 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - -
+[2024-01-23 23:56:41.150 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/banner-image.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\banner-image.png'
+[2024-01-23 23:56:41.150 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - - - 200 4143 image/png 0.9279ms
+[2024-01-23 23:56:41.154 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - -
+[2024-01-23 23:56:41.154 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - -
+[2024-01-23 23:56:41.154 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - -
+[2024-01-23 23:56:41.154 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - -
+[2024-01-23 23:56:41.154 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - -
+[2024-01-23 23:56:41.155 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/SubContarctorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\SubContarctorHomePage.jpg'
+[2024-01-23 23:56:41.155 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/IndependentContractorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\IndependentContractorHomePage.jpg'
+[2024-01-23 23:56:41.155 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - - - 200 43182 image/jpeg 0.9357ms
+[2024-01-23 23:56:41.155 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - - - 200 70927 image/jpeg 1.0191ms
+[2024-01-23 23:56:41.155 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/ContractorImageHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\ContractorImageHomePage.jpg'
+[2024-01-23 23:56:41.155 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - - - 200 119527 image/jpeg 1.4456ms
+[2024-01-23 23:56:41.157 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/map.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\map.png'
+[2024-01-23 23:56:41.157 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - - - 200 173378 image/png 3.3530ms
+[2024-01-23 23:56:41.163 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:56:41.163 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp) in 4056.5385ms
+[2024-01-23 23:56:41.163 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:56:41.164 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:56:41.164 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/PromoVideos - - - 302 0 - 4060.1326ms
+[2024-01-23 23:56:41.166 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/HomeOwnerHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\HomeOwnerHomePage.jpg'
+[2024-01-23 23:56:41.166 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - - - 200 1913458 image/jpeg 11.7662ms
+[2024-01-23 23:56:41.167 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/pricing-banner.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\pricing-banner.png'
+[2024-01-23 23:56:41.167 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - - - 200 2344671 image/png 17.3835ms
+[2024-01-23 23:56:41.175 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:56:41.175 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:56:41.176 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:56:41.178 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:56:41.180 -05:00  INF]  Executed ViewResult - view Error executed in 3.7889ms.
+[2024-01-23 23:56:41.181 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 4.1197ms
+[2024-01-23 23:56:41.181 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:56:41.181 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 6.0521ms
+[2024-01-23 23:56:41.181 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:56:41.185 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:56:41.185 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:56:41.185 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:56:41.186 -05:00  INF]  Executed ViewResult - view Error executed in 0.4004ms.
+[2024-01-23 23:56:41.186 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.5181ms
+[2024-01-23 23:56:41.186 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:56:41.186 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 4.3687ms
+[2024-01-23 23:56:42.591 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/ - -
+[2024-01-23 23:56:42.591 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:56:42.592 -05:00  INF]  Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:56:42.593 -05:00  INF]  Executing ViewResult, running view Index.
+[2024-01-23 23:56:42.602 -05:00  INF]  Executed ViewResult - view Index executed in 10.1303ms.
+[2024-01-23 23:56:42.602 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp) in 10.2728ms
+[2024-01-23 23:56:42.602 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:56:42.603 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 11.6942ms
+[2024-01-23 23:56:42.620 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - -
+[2024-01-23 23:56:42.620 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - -
+[2024-01-23 23:56:42.621 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\responsive.css'
+[2024-01-23 23:56:42.621 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/style.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\style.css'
+[2024-01-23 23:56:42.621 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - - - 200 11269 text/css 0.8164ms
+[2024-01-23 23:56:42.621 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - - - 200 24850 text/css 0.8943ms
+[2024-01-23 23:56:42.621 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+[2024-01-23 23:56:42.621 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 0.1072ms
+[2024-01-23 23:56:42.723 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - -
+[2024-01-23 23:56:42.723 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - -
+[2024-01-23 23:56:42.723 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - -
+[2024-01-23 23:56:42.723 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/banner-image.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\banner-image.png'
+[2024-01-23 23:56:42.723 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - - - 200 4143 image/png 0.7805ms
+[2024-01-23 23:56:42.724 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - -
+[2024-01-23 23:56:42.724 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - -
+[2024-01-23 23:56:42.724 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - -
+[2024-01-23 23:56:42.724 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - -
+[2024-01-23 23:56:42.726 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/IndependentContractorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\IndependentContractorHomePage.jpg'
+[2024-01-23 23:56:42.727 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - - - 200 70927 image/jpeg 3.2420ms
+[2024-01-23 23:56:42.727 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/SubContarctorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\SubContarctorHomePage.jpg'
+[2024-01-23 23:56:42.727 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - - - 200 43182 image/jpeg 3.6011ms
+[2024-01-23 23:56:42.728 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/map.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\map.png'
+[2024-01-23 23:56:42.728 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/ContractorImageHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\ContractorImageHomePage.jpg'
+[2024-01-23 23:56:42.728 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - - - 200 173378 image/png 4.4408ms
+[2024-01-23 23:56:42.728 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - - - 200 119527 image/jpeg 3.3943ms
+[2024-01-23 23:56:42.736 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/HomeOwnerHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\HomeOwnerHomePage.jpg'
+[2024-01-23 23:56:42.736 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - - - 200 1913458 image/jpeg 12.3569ms
+[2024-01-23 23:56:42.738 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/pricing-banner.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\pricing-banner.png'
+[2024-01-23 23:56:42.738 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - - - 200 2344671 image/png 15.3276ms
+[2024-01-23 23:56:42.816 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/PromoVideos - -
+[2024-01-23 23:56:42.816 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - -
+[2024-01-23 23:56:42.817 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:56:42.817 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:56:42.819 -05:00  INF]  Route matched with {action = "PromoVideos", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PromoVideos() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:56:42.819 -05:00  INF]  Route matched with {action = "ProhzLegalFiles", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProhzLegalFiles() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:56:43.087 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/favicon.ico - -
+[2024-01-23 23:56:43.087 -05:00  INF]  Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\favicon.ico'
+[2024-01-23 23:56:43.087 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/favicon.ico - - - 200 4286 image/x-icon 0.4399ms
+[2024-01-23 23:56:46.857 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:56:46.857 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp) in 4038.6401ms
+[2024-01-23 23:56:46.858 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:56:46.858 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:56:46.858 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/PromoVideos - - - 302 0 - 4041.4208ms
+[2024-01-23 23:56:46.860 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:56:46.860 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:56:46.860 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:56:46.861 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:56:46.861 -05:00  INF]  Executed ViewResult - view Error executed in 0.3765ms.
+[2024-01-23 23:56:46.861 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.484ms
+[2024-01-23 23:56:46.861 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:56:46.861 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 0.8992ms
+[2024-01-23 23:56:46.873 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:56:46.873 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp) in 4054.3496ms
+[2024-01-23 23:56:46.873 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:56:46.873 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:56:46.874 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - - - 302 0 - 4057.1128ms
+[2024-01-23 23:56:46.876 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:56:46.876 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:56:46.876 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:56:46.876 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:56:46.877 -05:00  INF]  Executed ViewResult - view Error executed in 0.3867ms.
+[2024-01-23 23:56:46.877 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.5177ms
+[2024-01-23 23:56:46.877 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:56:46.877 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 0.9537ms
+[2024-01-23 23:57:09.982 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:57:09.983 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:57:09.983 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:57:09.983 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:57:09.984 -05:00  INF]  Executed ViewResult - view Error executed in 0.5486ms.
+[2024-01-23 23:57:09.984 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.6724ms
+[2024-01-23 23:57:09.984 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:57:09.984 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 1.4774ms
+[2024-01-23 23:57:10.076 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/css/master.css?v=4xtgdcSAqD-YMk4TzEBffzlMsUs_9ov4lW-5eDj1FM8 - -
+[2024-01-23 23:57:10.076 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/css/responsive.css?v=t84IkLOJ5UNOy2kUBlzjqbeEELi2GguyDf9OYbVomok - -
+[2024-01-23 23:57:10.076 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/Kopke-brand-logo.png - -
+[2024-01-23 23:57:10.077 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/js/jquery.min.js - -
+[2024-01-23 23:57:10.077 -05:00  INF]  Sending file. Request path: '/images/Kopke-brand-logo.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\Kopke-brand-logo.png'
+[2024-01-23 23:57:10.079 -05:00  INF]  Sending file. Request path: '/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\css\responsive.css'
+[2024-01-23 23:57:10.079 -05:00  INF]  Sending file. Request path: '/css/master.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\css\master.css'
+[2024-01-23 23:57:10.079 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/Kopke-brand-logo.png - - - 200 6953 image/png 2.3074ms
+[2024-01-23 23:57:10.079 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/css/master.css?v=4xtgdcSAqD-YMk4TzEBffzlMsUs_9ov4lW-5eDj1FM8 - - - 200 92699 text/css 2.5955ms
+[2024-01-23 23:57:10.079 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/css/responsive.css?v=t84IkLOJ5UNOy2kUBlzjqbeEELi2GguyDf9OYbVomok - - - 200 49196 text/css 2.6475ms
+[2024-01-23 23:57:10.079 -05:00  INF]  Sending file. Request path: '/js/jquery.min.js'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\js\jquery.min.js'
+[2024-01-23 23:57:10.079 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/js/jquery.min.js - - - 200 107748 application/javascript 2.6433ms
+[2024-01-23 23:57:10.098 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/js/bootstrap.bundle.min.js - -
+[2024-01-23 23:57:10.098 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/js/popper.min.js - -
+[2024-01-23 23:57:10.098 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - -
+[2024-01-23 23:57:10.099 -05:00  INF]  Sending file. Request path: '/js/popper.min.js'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\js\popper.min.js'
+[2024-01-23 23:57:10.099 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/lib/jquery-validation/dist/jquery.validate.js - -
+[2024-01-23 23:57:10.099 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/js/popper.min.js - - - 200 21236 application/javascript 0.6895ms
+[2024-01-23 23:57:10.099 -05:00  INF]  Sending file. Request path: '/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\js\bootstrap.bundle.min.js'
+[2024-01-23 23:57:10.099 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/js/bootstrap.bundle.min.js - - - 200 94682 application/javascript 1.2770ms
+[2024-01-23 23:57:10.099 -05:00  INF]  Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js'
+[2024-01-23 23:57:10.099 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - - - 200 19366 application/javascript 1.0010ms
+[2024-01-23 23:57:10.100 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/js/site.js?v=KeHw2AQnUGnLG2yrXokJBdO-9vijPG749zpSXVVYjaQ - -
+[2024-01-23 23:57:10.100 -05:00  INF]  Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\lib\jquery-validation\dist\jquery.validate.js'
+[2024-01-23 23:57:10.100 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/lib/jquery-validation/dist/jquery.validate.js - - - 200 48675 application/javascript 1.6894ms
+[2024-01-23 23:57:10.100 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/js/ValidateForms.js?v=jPBpqFRmzi1loutYjAONoNUkHrHxIfTmGRmdAz6mPgc - -
+[2024-01-23 23:57:10.100 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/js/custom.js?v=1aC142VqxRCgIYcgzspiYsmBbxghDOPRHkhCLqY9Ncg - -
+[2024-01-23 23:57:10.101 -05:00  INF]  Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\js\site.js'
+[2024-01-23 23:57:10.101 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/js/site.js?v=KeHw2AQnUGnLG2yrXokJBdO-9vijPG749zpSXVVYjaQ - - - 200 38877 application/javascript 0.7034ms
+[2024-01-23 23:57:10.101 -05:00  INF]  Sending file. Request path: '/js/custom.js'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\js\custom.js'
+[2024-01-23 23:57:10.101 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+[2024-01-23 23:57:10.101 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/js/custom.js?v=1aC142VqxRCgIYcgzspiYsmBbxghDOPRHkhCLqY9Ncg - - - 200 11880 application/javascript 0.6264ms
+[2024-01-23 23:57:10.101 -05:00  INF]  Sending file. Request path: '/js/ValidateForms.js'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\js\ValidateForms.js'
+[2024-01-23 23:57:10.101 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/js/ValidateForms.js?v=jPBpqFRmzi1loutYjAONoNUkHrHxIfTmGRmdAz6mPgc - - - 200 32758 application/javascript 0.8458ms
+[2024-01-23 23:57:10.101 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 0.2288ms
+[2024-01-23 23:57:10.130 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/css/master.css?v=4xtgdcSAqD-YMk4TzEBffzlMsUs_9ov4lW-5eDj1FM8 - -
+[2024-01-23 23:57:10.131 -05:00  INF]  Sending file. Request path: '/css/master.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\css\master.css'
+[2024-01-23 23:57:10.131 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/css/master.css?v=4xtgdcSAqD-YMk4TzEBffzlMsUs_9ov4lW-5eDj1FM8 - - - 200 92699 text/css 0.6655ms
+[2024-01-23 23:57:10.206 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/User/StateList - -
+[2024-01-23 23:57:10.206 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.UserController.StateList (KopkeHome_WebApp)'
+[2024-01-23 23:57:10.208 -05:00  INF]  Route matched with {action = "StateList", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] StateList() on controller KopkeHome_WebApp.Controllers.UserController (KopkeHome_WebApp).
+[2024-01-23 23:57:10.273 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/login1.jpg - -
+[2024-01-23 23:57:10.273 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/images/payment-bg-2.jpg - -
+[2024-01-23 23:57:10.280 -05:00  INF]  Sending file. Request path: '/images/login1.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\login1.jpg'
+[2024-01-23 23:57:10.281 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/login1.jpg - - - 200 662027 image/jpeg 7.1407ms
+[2024-01-23 23:57:10.331 -05:00  INF]  Sending file. Request path: '/images/payment-bg-2.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\images\payment-bg-2.jpg'
+[2024-01-23 23:57:10.331 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/images/payment-bg-2.jpg - - - 200 6997871 image/jpeg 57.8651ms
+[2024-01-23 23:57:14.258 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:57:14.273 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.UserController.StateList (KopkeHome_WebApp) in 4064.2763ms
+[2024-01-23 23:57:14.273 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.UserController.StateList (KopkeHome_WebApp)'
+[2024-01-23 23:57:14.273 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:57:14.273 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/User/StateList - - - 0 - - 4066.9507ms
+[2024-01-23 23:57:19.859 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/ - -
+[2024-01-23 23:57:19.860 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:57:19.860 -05:00  INF]  Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:57:19.860 -05:00  INF]  Executing ViewResult, running view Index.
+[2024-01-23 23:57:19.861 -05:00  INF]  Executed ViewResult - view Index executed in 1.3347ms.
+[2024-01-23 23:57:19.861 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp) in 1.4444ms
+[2024-01-23 23:57:19.861 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:57:19.861 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 2.0210ms
+[2024-01-23 23:57:19.882 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - -
+[2024-01-23 23:57:19.882 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - -
+[2024-01-23 23:57:19.882 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\responsive.css'
+[2024-01-23 23:57:19.883 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - - - 200 11269 text/css 0.4206ms
+[2024-01-23 23:57:19.883 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/style.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\style.css'
+[2024-01-23 23:57:19.883 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - - - 200 24850 text/css 0.6287ms
+[2024-01-23 23:57:19.883 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+[2024-01-23 23:57:19.883 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 0.0966ms
+[2024-01-23 23:57:19.989 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - -
+[2024-01-23 23:57:19.990 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - -
+[2024-01-23 23:57:19.990 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/banner-image.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\banner-image.png'
+[2024-01-23 23:57:19.990 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - - - 200 4143 image/png 0.9913ms
+[2024-01-23 23:57:19.991 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - -
+[2024-01-23 23:57:19.991 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - -
+[2024-01-23 23:57:19.991 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - -
+[2024-01-23 23:57:19.991 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - -
+[2024-01-23 23:57:19.993 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - -
+[2024-01-23 23:57:19.993 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/SubContarctorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\SubContarctorHomePage.jpg'
+[2024-01-23 23:57:19.993 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - - - 200 43182 image/jpeg 2.4081ms
+[2024-01-23 23:57:19.993 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/IndependentContractorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\IndependentContractorHomePage.jpg'
+[2024-01-23 23:57:19.993 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - - - 200 70927 image/jpeg 2.6627ms
+[2024-01-23 23:57:19.995 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/ContractorImageHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\ContractorImageHomePage.jpg'
+[2024-01-23 23:57:19.995 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - - - 200 119527 image/jpeg 2.1608ms
+[2024-01-23 23:57:19.995 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/map.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\map.png'
+[2024-01-23 23:57:19.996 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - - - 200 173378 image/png 5.0606ms
+[2024-01-23 23:57:20.012 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/pricing-banner.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\pricing-banner.png'
+[2024-01-23 23:57:20.012 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - - - 200 2344671 image/png 22.5629ms
+[2024-01-23 23:57:20.012 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/HomeOwnerHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\HomeOwnerHomePage.jpg'
+[2024-01-23 23:57:20.013 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - - - 200 1913458 image/jpeg 22.0107ms
+[2024-01-23 23:57:20.089 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/PromoVideos - -
+[2024-01-23 23:57:20.090 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - -
+[2024-01-23 23:57:20.090 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:57:20.090 -05:00  INF]  Route matched with {action = "PromoVideos", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PromoVideos() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:57:20.090 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:57:20.090 -05:00  INF]  Route matched with {action = "ProhzLegalFiles", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProhzLegalFiles() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:57:20.301 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/favicon.ico - -
+[2024-01-23 23:57:20.301 -05:00  INF]  Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\favicon.ico'
+[2024-01-23 23:57:20.302 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/favicon.ico - - - 200 4286 image/x-icon 0.7677ms
+[2024-01-23 23:57:24.162 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:57:24.162 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:57:24.162 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp) in 4072.4697ms
+[2024-01-23 23:57:24.162 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp) in 4072.043ms
+[2024-01-23 23:57:24.163 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:57:24.163 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:57:24.163 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:57:24.163 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:57:24.163 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/PromoVideos - - - 302 0 - 4073.3940ms
+[2024-01-23 23:57:24.163 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - - - 302 0 - 4073.0589ms
+[2024-01-23 23:57:24.165 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:57:24.166 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:57:24.166 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:57:24.166 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:57:24.166 -05:00  INF]  Executed ViewResult - view Error executed in 0.3209ms.
+[2024-01-23 23:57:24.166 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.4311ms
+[2024-01-23 23:57:24.166 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:57:24.166 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 0.8355ms
+[2024-01-23 23:57:24.167 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:57:24.167 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:57:24.167 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:57:24.167 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:57:24.167 -05:00  INF]  Executed ViewResult - view Error executed in 0.2795ms.
+[2024-01-23 23:57:24.167 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.3465ms
+[2024-01-23 23:57:24.167 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:57:24.167 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 0.5597ms
+[2024-01-23 23:59:18.167 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/ - -
+[2024-01-23 23:59:18.168 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:59:18.168 -05:00  INF]  Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:18.170 -05:00  INF]  Executing ViewResult, running view Index.
+[2024-01-23 23:59:18.179 -05:00  INF]  Executed ViewResult - view Index executed in 10.8601ms.
+[2024-01-23 23:59:18.179 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp) in 10.9825ms
+[2024-01-23 23:59:18.179 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:59:18.179 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 12.0441ms
+[2024-01-23 23:59:18.209 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - -
+[2024-01-23 23:59:18.209 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/style.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\style.css'
+[2024-01-23 23:59:18.210 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - - - 200 24850 text/css 0.5044ms
+[2024-01-23 23:59:18.212 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - -
+[2024-01-23 23:59:18.212 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\responsive.css'
+[2024-01-23 23:59:18.212 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - - - 200 11269 text/css 0.3548ms
+[2024-01-23 23:59:18.212 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+[2024-01-23 23:59:18.213 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 0.1647ms
+[2024-01-23 23:59:18.269 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - -
+[2024-01-23 23:59:18.269 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/PromoVideos - -
+[2024-01-23 23:59:18.269 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:59:18.269 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:59:18.271 -05:00  INF]  Route matched with {action = "PromoVideos", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PromoVideos() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:18.271 -05:00  INF]  Route matched with {action = "ProhzLegalFiles", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProhzLegalFiles() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:18.273 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/favicon.ico - -
+[2024-01-23 23:59:18.273 -05:00  INF]  Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\favicon.ico'
+[2024-01-23 23:59:18.273 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/favicon.ico - - - 200 4286 image/x-icon 0.3665ms
+[2024-01-23 23:59:19.835 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - -
+[2024-01-23 23:59:19.836 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - -
+[2024-01-23 23:59:19.836 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/banner-image.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\banner-image.png'
+[2024-01-23 23:59:19.836 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - - - 200 4143 image/png 0.6522ms
+[2024-01-23 23:59:19.836 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - -
+[2024-01-23 23:59:19.836 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - -
+[2024-01-23 23:59:19.838 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/map.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\map.png'
+[2024-01-23 23:59:19.838 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - - - 200 173378 image/png 1.9489ms
+[2024-01-23 23:59:19.839 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - -
+[2024-01-23 23:59:19.839 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - -
+[2024-01-23 23:59:19.839 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - -
+[2024-01-23 23:59:19.839 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/IndependentContractorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\IndependentContractorHomePage.jpg'
+[2024-01-23 23:59:19.839 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/SubContarctorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\SubContarctorHomePage.jpg'
+[2024-01-23 23:59:19.839 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - - - 200 70927 image/jpeg 2.9271ms
+[2024-01-23 23:59:19.839 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - - - 200 43182 image/jpeg 0.7909ms
+[2024-01-23 23:59:19.840 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/ContractorImageHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\ContractorImageHomePage.jpg'
+[2024-01-23 23:59:19.840 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - - - 200 119527 image/jpeg 1.7024ms
+[2024-01-23 23:59:19.847 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/pricing-banner.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\pricing-banner.png'
+[2024-01-23 23:59:19.847 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - - - 200 2344671 image/png 11.5823ms
+[2024-01-23 23:59:19.848 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/HomeOwnerHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\HomeOwnerHomePage.jpg'
+[2024-01-23 23:59:19.848 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - - - 200 1913458 image/jpeg 8.9362ms
+[2024-01-23 23:59:22.329 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:59:22.329 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:59:22.329 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp) in 4057.9703ms
+[2024-01-23 23:59:22.329 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp) in 4058.0178ms
+[2024-01-23 23:59:22.329 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:59:22.329 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:59:22.329 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:59:22.329 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:59:22.329 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/PromoVideos - - - 302 0 - 4060.6056ms
+[2024-01-23 23:59:22.329 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - - - 302 0 - 4060.6667ms
+[2024-01-23 23:59:22.332 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:59:22.336 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:59:22.337 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:22.337 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:59:22.338 -05:00  INF]  Executed ViewResult - view Error executed in 1.7112ms.
+[2024-01-23 23:59:22.338 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 1.8409ms
+[2024-01-23 23:59:22.339 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:59:22.339 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 6.6756ms
+[2024-01-23 23:59:22.339 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:59:22.340 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:59:22.340 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:22.340 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:59:22.340 -05:00  INF]  Executed ViewResult - view Error executed in 0.3988ms.
+[2024-01-23 23:59:22.340 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.534ms
+[2024-01-23 23:59:22.340 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:59:22.340 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 0.9297ms
+[2024-01-23 23:59:39.349 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/ - -
+[2024-01-23 23:59:39.349 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:59:39.350 -05:00  INF]  Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:39.352 -05:00  INF]  Executing ViewResult, running view Index.
+[2024-01-23 23:59:39.362 -05:00  INF]  Executed ViewResult - view Index executed in 11.3975ms.
+[2024-01-23 23:59:39.362 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp) in 11.5232ms
+[2024-01-23 23:59:39.362 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:59:39.362 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 12.7326ms
+[2024-01-23 23:59:39.386 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - -
+[2024-01-23 23:59:39.386 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/style.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\style.css'
+[2024-01-23 23:59:39.386 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - - - 200 24850 text/css 0.7841ms
+[2024-01-23 23:59:39.387 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - -
+[2024-01-23 23:59:39.388 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\responsive.css'
+[2024-01-23 23:59:39.388 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - - - 200 11269 text/css 0.4229ms
+[2024-01-23 23:59:39.389 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+[2024-01-23 23:59:39.389 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 0.1334ms
+[2024-01-23 23:59:39.427 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/PromoVideos - -
+[2024-01-23 23:59:39.427 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - -
+[2024-01-23 23:59:39.427 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:59:39.427 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:59:39.429 -05:00  INF]  Route matched with {action = "ProhzLegalFiles", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProhzLegalFiles() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:39.430 -05:00  INF]  Route matched with {action = "PromoVideos", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PromoVideos() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:39.666 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/favicon.ico - -
+[2024-01-23 23:59:39.666 -05:00  INF]  Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\favicon.ico'
+[2024-01-23 23:59:39.666 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/favicon.ico - - - 200 4286 image/x-icon 0.4495ms
+[2024-01-23 23:59:40.977 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - -
+[2024-01-23 23:59:40.977 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - -
+[2024-01-23 23:59:40.978 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/banner-image.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\banner-image.png'
+[2024-01-23 23:59:40.978 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - - - 200 4143 image/png 0.9199ms
+[2024-01-23 23:59:40.979 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - -
+[2024-01-23 23:59:40.980 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - -
+[2024-01-23 23:59:40.980 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - -
+[2024-01-23 23:59:40.980 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - -
+[2024-01-23 23:59:40.980 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - -
+[2024-01-23 23:59:40.983 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/SubContarctorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\SubContarctorHomePage.jpg'
+[2024-01-23 23:59:40.983 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - - - 200 43182 image/jpeg 3.5323ms
+[2024-01-23 23:59:40.983 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/IndependentContractorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\IndependentContractorHomePage.jpg'
+[2024-01-23 23:59:40.983 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/ContractorImageHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\ContractorImageHomePage.jpg'
+[2024-01-23 23:59:40.983 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - - - 200 70927 image/jpeg 3.8275ms
+[2024-01-23 23:59:40.984 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - - - 200 119527 image/jpeg 3.1417ms
+[2024-01-23 23:59:40.984 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/map.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\map.png'
+[2024-01-23 23:59:40.984 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - - - 200 173378 image/png 5.2453ms
+[2024-01-23 23:59:40.992 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/HomeOwnerHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\HomeOwnerHomePage.jpg'
+[2024-01-23 23:59:40.992 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - - - 200 1913458 image/jpeg 12.5294ms
+[2024-01-23 23:59:40.994 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/pricing-banner.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\pricing-banner.png'
+[2024-01-23 23:59:40.994 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - - - 200 2344671 image/png 16.4495ms
+[2024-01-23 23:59:43.474 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:59:43.474 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:59:43.475 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp) in 4045.214ms
+[2024-01-23 23:59:43.475 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:59:43.475 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp) in 4045.251ms
+[2024-01-23 23:59:43.475 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:59:43.475 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:59:43.475 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:59:43.475 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - - - 302 0 - 4047.6952ms
+[2024-01-23 23:59:43.475 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/PromoVideos - - - 302 0 - 4047.7937ms
+[2024-01-23 23:59:43.477 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:59:43.480 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:59:43.481 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:43.481 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:59:43.483 -05:00  INF]  Executed ViewResult - view Error executed in 1.4314ms.
+[2024-01-23 23:59:43.483 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 1.5627ms
+[2024-01-23 23:59:43.483 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:59:43.483 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 5.7192ms
+[2024-01-23 23:59:43.484 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:59:43.484 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:59:43.484 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:43.484 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:59:43.484 -05:00  INF]  Executed ViewResult - view Error executed in 0.2701ms.
+[2024-01-23 23:59:43.484 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.3435ms
+[2024-01-23 23:59:43.484 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:59:43.484 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 0.5535ms
+[2024-01-23 23:59:53.521 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/ - -
+[2024-01-23 23:59:53.522 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:59:53.523 -05:00  INF]  Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:53.524 -05:00  INF]  Executing ViewResult, running view Index.
+[2024-01-23 23:59:53.535 -05:00  INF]  Executed ViewResult - view Index executed in 11.5798ms.
+[2024-01-23 23:59:53.535 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp) in 11.7135ms
+[2024-01-23 23:59:53.535 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Index (KopkeHome_WebApp)'
+[2024-01-23 23:59:53.535 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 13.4901ms
+[2024-01-23 23:59:53.564 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - -
+[2024-01-23 23:59:53.564 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - -
+[2024-01-23 23:59:53.564 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/responsive.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\responsive.css'
+[2024-01-23 23:59:53.564 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/responsive.css - - - 200 11269 text/css 0.6107ms
+[2024-01-23 23:59:53.564 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/css/style.css'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\css\style.css'
+[2024-01-23 23:59:53.564 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/css/style.css - - - 200 24850 text/css 0.7783ms
+[2024-01-23 23:59:53.566 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+[2024-01-23 23:59:53.566 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 0.1417ms
+[2024-01-23 23:59:53.597 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - -
+[2024-01-23 23:59:53.597 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/home/PromoVideos - -
+[2024-01-23 23:59:53.597 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:59:53.597 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:59:53.599 -05:00  INF]  Route matched with {action = "PromoVideos", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PromoVideos() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:53.599 -05:00  INF]  Route matched with {action = "ProhzLegalFiles", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProhzLegalFiles() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:54.117 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - -
+[2024-01-23 23:59:54.117 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - -
+[2024-01-23 23:59:54.117 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - -
+[2024-01-23 23:59:54.117 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - -
+[2024-01-23 23:59:54.117 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - -
+[2024-01-23 23:59:54.117 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - -
+[2024-01-23 23:59:54.118 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/SubContarctorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\SubContarctorHomePage.jpg'
+[2024-01-23 23:59:54.118 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/SubContarctorHomePage.jpg - - - 200 43182 image/jpeg 1.0866ms
+[2024-01-23 23:59:54.119 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/IndependentContractorHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\IndependentContractorHomePage.jpg'
+[2024-01-23 23:59:54.119 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/IndependentContractorHomePage.jpg - - - 200 70927 image/jpeg 1.6876ms
+[2024-01-23 23:59:54.119 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/banner-image.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\banner-image.png'
+[2024-01-23 23:59:54.119 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/banner-image.png - - - 200 4143 image/png 2.4087ms
+[2024-01-23 23:59:54.120 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/map.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\map.png'
+[2024-01-23 23:59:54.120 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/map.png - - - 200 173378 image/png 3.0986ms
+[2024-01-23 23:59:54.121 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - -
+[2024-01-23 23:59:54.122 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/ContractorImageHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\ContractorImageHomePage.jpg'
+[2024-01-23 23:59:54.122 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/ContractorImageHomePage.jpg - - - 200 119527 image/jpeg 1.6956ms
+[2024-01-23 23:59:54.127 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/HomeOwnerHomePage.jpg'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\HomeOwnerHomePage.jpg'
+[2024-01-23 23:59:54.127 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/HomeOwnerHomePage.jpg - - - 200 1913458 image/jpeg 10.3845ms
+[2024-01-23 23:59:54.129 -05:00  INF]  Sending file. Request path: '/HomePageAssets/assets/image/pricing-banner.png'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\HomePageAssets\assets\image\pricing-banner.png'
+[2024-01-23 23:59:54.129 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/HomePageAssets/assets/image/pricing-banner.png - - - 200 2344671 image/png 12.0941ms
+[2024-01-23 23:59:54.338 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/favicon.ico - -
+[2024-01-23 23:59:54.339 -05:00  INF]  Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-FMRS\KopkeHome-WebApp\wwwroot\favicon.ico'
+[2024-01-23 23:59:54.339 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/favicon.ico - - - 200 4286 image/x-icon 0.5185ms
+[2024-01-23 23:59:57.644 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:59:57.644 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:59:57.644 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp) in 4045.0421ms
+[2024-01-23 23:59:57.644 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.ProhzLegalFiles (KopkeHome_WebApp)'
+[2024-01-23 23:59:57.645 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp) in 4045.2378ms
+[2024-01-23 23:59:57.645 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:59:57.645 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.PromoVideos (KopkeHome_WebApp)'
+[2024-01-23 23:59:57.645 -05:00  ERR]  No connection could be made because the target machine actively refused it. (localhost:7215)
+[2024-01-23 23:59:57.645 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/ProhzLegalFiles - - - 302 0 - 4047.8698ms
+[2024-01-23 23:59:57.645 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/home/PromoVideos - - - 302 0 - 4047.9983ms
+[2024-01-23 23:59:57.647 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:59:57.653 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:59:57.654 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:57.654 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:59:57.656 -05:00  INF]  Executed ViewResult - view Error executed in 1.9217ms.
+[2024-01-23 23:59:57.656 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 2.0778ms
+[2024-01-23 23:59:57.656 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:59:57.656 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 8.3096ms
+[2024-01-23 23:59:57.657 -05:00  INF]  Request starting HTTP/2 GET https://localhost:5001/Home/error - -
+[2024-01-23 23:59:57.657 -05:00  INF]  Executing endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:59:57.657 -05:00  INF]  Route matched with {action = "Error", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Error() on controller KopkeHome_WebApp.Controllers.HomeController (KopkeHome_WebApp).
+[2024-01-23 23:59:57.657 -05:00  INF]  Executing ViewResult, running view Error.
+[2024-01-23 23:59:57.658 -05:00  INF]  Executed ViewResult - view Error executed in 0.4849ms.
+[2024-01-23 23:59:57.658 -05:00  INF]  Executed action KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp) in 0.6253ms
+[2024-01-23 23:59:57.658 -05:00  INF]  Executed endpoint 'KopkeHome_WebApp.Controllers.HomeController.Error (KopkeHome_WebApp)'
+[2024-01-23 23:59:57.658 -05:00  INF]  Request finished HTTP/2 GET https://localhost:5001/Home/error - - - 200 - text/html;+charset=utf-8 1.1240ms

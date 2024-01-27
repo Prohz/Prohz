@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> locOptions
+
+ <link rel="stylesheet" href="~/css/vendor.min.css" asp-append-version="true" />
+ <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+
+<div class="container mainbodysec">
+   <div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">@Localizer["Contact Us"]</h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p class="card-text ">@Localizer["You can contact us using below details"]</p>
+                      
+    <ul class="ml-3">   
+         @*<a class="nav-link" asp-controller="Home" asp-action="Index">Email</a>
+         <a class="nav-link" asp-controller="Home" asp-action="Index">Phone</a>*@
+    <li>@Localizer["Phone"]: 866-250-5316</li>
+    <li>@Localizer["Email"]: info@prohz.net</li>
+    </ul>
+    <a href="@Url.Action("HowDoesItWork","Home")" class="card-link">@Localizer["Learn More"]</a>
+    <a href="@Url.Action("SignUp","User")" class="card-link">@Localizer["Join Prohz"]</a>
+  </div>
+   
+  <script src="~/js/vendor.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+   
+</div>
+</div>

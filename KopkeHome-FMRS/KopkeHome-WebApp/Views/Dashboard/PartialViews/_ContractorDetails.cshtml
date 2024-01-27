@@ -1,0 +1,611 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.BusinessProfileViewModel;
+@{
+    ViewData["Title"] = "Contractor Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*
+@if(ViewBag.data != null)
+{
+    
+} *@
+
+<div class="registration-container black-bg">
+    <div class="registration-container-form">
+     <div class="tab-content">
+         <div id="Contractor" class="contractor-business-prof-form">
+             <div class="rgstr-main-heading">
+                <h3 class="green-clr">Contractor Business Profile</h3>
+             </div>
+
+             <form name="ContractorBusinessProfile" asp-action="BusinessProfileSave" enctype="multipart/form-data" method="post" onsubmit="return ContractorBusinessProfile(this);" asp-controller="BusinessProfile">
+                 <input type="hidden" name="Id" value="@Model.Id" />
+                         <div class="row">
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessDescription">Business Description in terms of services and specialization</label>                         
+                               <textarea maxlength="1000" rows="2" name="BusinessDescription"  class="form-control" placeholder="Describe yourself here..."></textarea>
+                               <span asp-validation-for="BusinessDescription"  class="text-danger"></span>
+                                  </div>
+                            </div>
+                           <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="YearsInBusiness"> How many years have you been in business?</label>
+                                <input type="number" name="YearsInBusiness" placeholder="Enter business years..." class="form-control" />
+                                  <span asp-validation-for="YearsInBusiness" class="text-danger"></span> 
+                            </div>
+                              </div>
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsCompanyWebsite">Do you have a company website?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsCompanyWebsite" id="credit1" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit1">Yes </label>
+                                                        <span asp-for="IsCompanyWebsite" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsCompanyWebsite" id="credit2" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit2">No</label>
+                                                        <span asp-for="IsCompanyWebsite" class="text-danger"></span>
+                                                    </div>
+                                   </div>  
+                                   
+                                   <span name="IsCompanyWebsite1" class="text-danger field-validation-valid" data-valmsg-for="IsCompanyWebsite"></span>
+                               </div>
+                            </div>
+                            <div class="form-group col-md-6 col-lg-4  " id="web3" style="display:none">
+                                <div class=" rgstr-input-form-box">
+                                <label for="CompanyWebsiteURL"> Business URL</label>
+                                <div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon3">https://</span>
+  
+
+                                <input type="text"  name="CompanyWebsiteURL" aria-describedby="basic-addon3" placeholder="example.com" class="form-control" />
+                                </div>
+                                <span asp-validation-for="CompanyWebsiteURL" class="text-danger"></span>
+                            </div>
+                              </div>
+
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsFacebookPage">Do you have Facebook page?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsFacebookPage" id="credit3" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit3">Yes </label>
+                                                        <span asp-for="IsFacebookPage" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsFacebookPage" id="credit4" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit4">No</label>
+                                                        <span asp-for="IsFacebookPage" class="text-danger"></span>
+                                                    </div>
+                                   </div> 
+                                   
+                                    <span name="IsFacebookPage1" class="text-danger field-validation-valid" data-valmsg-for="IsFacebookPage"></span>
+                               </div>
+                            </div>
+
+
+                                  <div id="webfacebook" style="display:none" class="form-group col-md-6 col-lg-4">
+                                <div class=" rgstr-input-form-box">
+                                <label for="FacebookPageURL"> Facebook page name?</label>
+                                <input type="text" name="FacebookPageURL" placeholder="facebook.com/pagename" class="form-control" />
+                                 <span asp-validation-for="FacebookPageURL" class="text-danger"></span>
+                            </div>
+                              </div>
+
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="CommercialLocation">Do you have a commercial location where Sub-contractors can meet with you?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="CommercialLocation" id="credit5" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit5">Yes </label>
+                                                        <span asp-for="CommercialLocation" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="CommercialLocation" id="credit6" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit6">No</label>
+                                                        <span asp-for="CommercialLocation" class="text-danger"></span>
+                                                    </div>
+                                   </div>   
+                                   
+                                   <span name="CommercialLocation1" class="text-danger field-validation-valid" data-valmsg-for="CommercialLocation"></span>
+                               </div>
+                            </div>
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="NumberOfEmployees">How many employees do you have?</label>
+                                <input type="number" name="NumberOfEmployees" placeholder="Enter number of employees" class="form-control" />
+                                   <span asp-validation-for="NumberOfEmployees" class="text-danger"></span>
+                            </div>
+                              </div>
+
+
+
+                                <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="JobSiteCrews">How many job site crews do you have?</label>
+                                <input type="number" name="JobSiteCrews" placeholder="Enter number of job site crews" class="form-control" />
+                                 <span asp-validation-for="JobSiteCrews" class="text-danger"></span>
+                            </div>
+                              </div>
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsPhoneCallSupport">Do you have someone to answer the phone during normal business hours?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsPhoneCallSupport" id="credit7" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit7">Yes </label>
+                                                        <span asp-for="IsPhoneCallSupport" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsPhoneCallSupport" id="credit8" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit8">No</label>
+                                                        <span asp-for="IsPhoneCallSupport" class="text-danger"></span>
+                                                    </div>
+                                   </div>  
+                                   
+                                   
+                                   <span name="IsPhoneCallSupport1" class="text-danger field-validation-valid" data-valmsg-for="IsPhoneCallSupport"></span>
+                               </div>
+                            </div>
+
+
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class="rgstr-input-form-box">
+                                <label for="NormalBusinessHours">What are your normal business hours?</label>
+                                <input maxLength="50" type="text" name="NormalBusinessHours" placeholder="Enter your normal business hours" class="form-control" />
+                                 <span asp-validation-for="NormalBusinessHours" class="text-danger"></span> 
+                            </div>
+                              </div>
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="Is24HoursPhoneAnswering">Do you have 24 hour phone answering? </label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="Is24HoursPhoneAnswering" id="credit9" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit9">Yes </label>
+                                                        <span asp-for="Is24HoursPhoneAnswering" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="Is24HoursPhoneAnswering" id="credit10" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit10">No</label>
+                                                        <span asp-for="Is24HoursPhoneAnswering" class="text-danger"></span>
+                                                    </div>
+                                   </div>   
+                                    <span name="Is24HoursPhoneAnswering1" class="text-danger field-validation-valid" data-valmsg-for="Is24HoursPhoneAnswering"></span>
+                               </div>
+                            </div>
+
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsOfferEmergencyServices">Do you offer emergency services?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsOfferEmergencyServices" id="credit11" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit11">Yes </label>
+                                                        <span asp-for="IsOfferEmergencyServices" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsOfferEmergencyServices" id="credit12" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit12">No</label>
+                                                        <span asp-for="IsOfferEmergencyServices" class="text-danger"></span>
+                                                    </div>
+                                   </div>     
+                                     <span name="IsOfferEmergencyServices1" class="text-danger field-validation-valid" data-valmsg-for="IsOfferEmergencyServices"></span>
+                               </div>
+                            </div>
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsBusinessOrTradeLicense">Do you have a business or trade license(s)?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsBusinessOrTradeLicense" id="credit13" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit13">Yes </label>
+                                                        <span asp-for="IsBusinessOrTradeLicense" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsBusinessOrTradeLicense" id="credit14" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit14">No</label>
+                                                        <span asp-for="IsBusinessOrTradeLicense" class="text-danger"></span>
+                                                    </div>
+                                   </div>  
+                                   
+                                    <span  name="IsBusinessOrTradeLicense1" class="text-danger field-validation-valid" data-valmsg-for="IsBusinessOrTradeLicense"></span>
+                               </div>
+                            </div>
+
+
+
+                                <div class="form-group col-md-6 col-lg-4  "  id="webBusinessOrTradeLicenseFiles" style="display:none">
+                                <div class=" rgstr-input-form-box  rgstr-input-form-box-file-cstm">
+                                <label for="BusinessOrTradeLicenseFiles">Upload business or trade license (4 files)</label>
+                                <div>
+                                    <div id="drop-zone">
+                                           <div id="clickHere">Upload 1
+                                            <input type="file" name="BusinessOrTradeLicenseFiles" id="filenameInput" />
+                                           </div>
+                                           <div id='filename'></div>
+                                    </div>
+                                     <div id="drop-zone1">
+                                           <div id="clickHere">Upload 2
+                                            <input type="file" name="BusinessOrTradeLicenseFiles" id="filename1Input"/>
+                                           </div>
+                                           <div id='filename1'></div>
+                                    </div>
+                                     <div id="drop-zone2">
+                                           <div id="clickHere">Upload 3
+                                            <input type="file" name="BusinessOrTradeLicenseFiles" id="filename2Input"/>
+                                           </div>
+                                           <div id='filename2'></div>
+                                    </div>
+                                     <div id="drop-zone3">
+                                           <div id="clickHere">Upload 4
+                                            <input type="file" name="BusinessOrTradeLicenseFiles" id="filename3Input"/>
+                                           </div>
+                                           <div id='filename3'></div>
+                                    </div>
+                                </div>
+                               @* <input type="file" name="BusinessOrTradeLicenseFiles" placeholder="" multiple class="form-control" />*@
+                                 <span asp-validation-for="BusinessOrTradeLicenseFiles" class="text-danger"></span>
+                            </div>
+                              </div>
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsLiabilityInsurance">Do you have Liability Insurance?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsLiabilityInsurance" id="credit15" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit15">Yes </label>
+                                                        <span asp-for="IsLiabilityInsurance" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsLiabilityInsurance" id="credit16" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit16">No</label>
+                                                        <span asp-for="IsLiabilityInsurance" class="text-danger"></span>
+                                                    </div>
+                                   </div>     
+                                   
+                                     <span name="IsLiabilityInsurance1" class="text-danger field-validation-valid" data-valmsg-for="IsLiabilityInsurance"></span>
+                               </div>
+                            </div>
+
+
+
+                              <div class="form-group col-md-6 col-lg-4  " id="webLiabilityInsuranceFile" style="display:none">
+                                <div class=" rgstr-input-form-box">
+                                <label for="LiabilityInsuranceFile">Upload Liability Insurance file</label>
+                                <input type="file" name="LiabilityInsuranceFile" placeholder="" class="form-control" />
+                                  <span asp-validation-for="LiabilityInsuranceFile" class="text-danger"></span>
+                            </div>
+                              </div>
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsWorkmanCompensationInsurance">Do you have Workman’s Compensation Insurance?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsWorkmanCompensationInsurance" id="credit17" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit17">Yes </label>
+                                                        <span asp-for="IsWorkmanCompensationInsurance" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsWorkmanCompensationInsurance" id="credit18" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit18">No</label>
+                                                        <span asp-for="IsWorkmanCompensationInsurance" class="text-danger"></span>
+                                                    </div>
+                                   </div>  
+                                   
+                                   <span name="IsWorkmanCompensationInsurance1" class="text-danger field-validation-valid" data-valmsg-for="IsWorkmanCompensationInsurance"></span>
+                               </div>
+                            </div>
+
+
+
+
+                            <div class="form-group col-md-6 col-lg-4  " id="webWorkmanCompensationInsuranceFile" style="display:none">
+                                <div class=" rgstr-input-form-box">
+                                <label for="WorkmanCompensationInsuranceFile">Upload Workman’s Compensation Insurance file</label>
+                                <input type="file" name="WorkmanCompensationInsuranceFile" placeholder="" class="form-control" />
+                                  <span asp-validation-for="WorkmanCompensationInsuranceFile" class="text-danger"></span>
+                            </div>
+                              </div>
+
+
+
+                                 <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsEstimateCharge">Do you give “Free Estimates”?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsEstimateCharge" id="credit19" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit19">Yes </label>
+                                                        <span asp-for="IsEstimateCharge" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsEstimateCharge" id="credit20" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit20">No</label>
+                                                        <span asp-for="IsEstimateCharge" class="text-danger"></span>
+                                                    </div>
+                                   </div>   
+                                    <span name="IsEstimateCharge1" class="text-danger field-validation-valid" data-valmsg-for="IsEstimateCharge"></span>
+                               </div>
+                            </div>
+
+                        
+                              <div class="form-group col-md-6 col-lg-4" id="webEstimateCharge" style="display:none">
+                                <div class=" rgstr-input-form-box">
+                                <label for="EstimateCharge">If No, what do you charge for an estimate?</label>
+                                <input type="number" name="EstimateCharge" placeholder="What do you charge for an estimate?" class="form-control" />
+                                 <span asp-validation-for="EstimateCharge" class="text-danger"></span>
+                            </div>
+                              </div>
+
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsDesignServices">Do you offer design services?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsDesignServices" id="credit21" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit21">Yes </label>
+                                                        <span asp-for="IsDesignServices" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsDesignServices" id="credit22" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit22">No</label>
+                                                        <span asp-for="IsDesignServices" class="text-danger"></span>
+                                                    </div>
+                                   </div>
+                                   
+                                   <span name="IsDesignServices1" class="text-danger field-validation-valid" data-valmsg-for="IsDesignServices"></span>
+                               </div>
+                            </div>
+
+                        
+                              <div class="form-group col-md-6 col-lg-4  " id="webDesignServices" style="display:none">
+                                <div class=" rgstr-input-form-box">
+                                <label for="DesignServices">If Yes, what do you charge for design services?</label>
+                                <input type="number" name="DesignServices" placeholder="What do you charge for design service?" class="form-control" />
+                                 <span asp-validation-for="DesignServices" class="text-danger"></span>
+                            </div>
+                              </div>
+
+
+
+
+                                   <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsContactedByHomeowners">Do you want to be contacted directly by Homeowners? </label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsContactedByHomeowners" id="credit23" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit23">Yes </label>
+                                                        <span asp-for="IsContactedByHomeowners" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsContactedByHomeowners" id="credit24" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit24">No</label>
+                                                        <span asp-for="IsContactedByHomeowners" class="text-danger"></span>
+                                                    </div>
+                                   </div>  
+                                    <span name="IsContactedByHomeowners1" class="text-danger field-validation-valid" data-valmsg-for="IsContactedByHomeowners"></span>
+                               </div>
+                            </div>
+
+                                 <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsContactedBySubcontractors">Do you want to be contacted directly by Other Contractors?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsContactedBySubcontractors" id="credit25" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit25">Yes </label>
+                                                        <span asp-for="IsContactedBySubcontractors" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsContactedBySubcontractors" id="credit26" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit26">No</label>
+                                                        <span asp-for="IsContactedBySubcontractors" class="text-danger"></span>
+                                                    </div>
+                                   </div> 
+                                   
+                                    <span  name="IsContactedBySubcontractors1" class="text-danger field-validation-valid" data-valmsg-for="IsContactedBySubcontractors"></span>
+                               </div>
+                            </div>
+
+
+                     </div>    
+
+
+                     <div class="payments-type-section">
+
+                         <h3 class="payment-type-section-heading">What type of payments do you accept?</h3>
+                         <div class="row">
+
+
+
+                              <div class="form-group col-md-6 col-lg-4  " >
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsCash">Cash</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsCash" id="credit27" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit27">Yes </label>
+                                                        <span asp-for="IsCash" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsCash" id="credit28" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit28">No</label>
+                                                        <span asp-for="IsCash" class="text-danger"></span>
+                                                    </div>
+                                   </div>    
+                                   <span name="IsCash1" class="text-danger field-validation-valid" data-valmsg-for="IsCash"></span>
+                               </div>
+                            </div>
+
+                         @*   //gfffhhhhhhhhhh*@
+
+                         <div class="form-group col-md-6 col-lg-4  " >
+                                <div class=" rgstr-input-form-box">
+                                <label for="Cards">Credit Cards ?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="Cards" id="credit35" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit35">Yes </label>
+                                                        <span asp-for="Cards" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="Cards" id="credit36" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit36">No</label>
+                                                        <span asp-for="Cards" class="text-danger"></span>
+                                                    </div>
+                                   </div>    
+                                   <span name="Cards" class="text-danger field-validation-valid" data-valmsg-for="Cards"></span>
+                               </div>
+                            </div>
+
+                              <div class="form-group col-md-6 col-lg-4  " id="creditcards" style="display:none" >
+                                <div class=" rgstr-input-form-box">
+                                <label for="Credit Cards">Select Cards</label>
+                                  <div class="d-flex justify-content-between">
+                                              
+                                                <div class="custom-radio  mb-3">
+
+                                                    <label class="checkbox-inline custome-checkbox-main">
+                                                            <input type="checkbox" id="creditchk" name="MC" class="form-check-input product-list"  value="0" />
+                                                            <span class="geekmark"></span>
+                                                            <label  class="mb-0" for="credit">MC</label>
+                                                        </label>
+
+                                                         <span class="text-danger field-validation-error"></span>
+                                           
+                                                    
+                                                </div>
+
+                                                <div class="custom-radio  mb-3">
+                                                     <label class="checkbox-inline custome-checkbox-main">
+                                                            <input type="checkbox" id="Visachk" name="Visa" class="form-check-input" value="0" />
+                                                            <span class="geekmark"></span>
+                                                            <label  class="mb-0" for="credit">Visa</label>
+                                                        </label>
+
+                                                   
+                                                    <span class="text-danger field-validation-error"></span>
+                                                </div>
+                                                <div class=" custom-radio  mb-3">
+                                                      <label class="checkbox-inline custome-checkbox-main">
+                                                            <input type="checkbox" id="AmExchk" name="AmEx" class="form-check-input" value="0" />
+                                                            <span class="geekmark"></span>
+                                                            <label  class="mb-0" for="AMEX1">Am Ex</label>
+                                                        </label>
+
+
+
+                                                
+                                                    <span  class="text-danger field-validation-error"></span>
+                                                </div>
+                                               @* <div class=" custom-radio  mb-3">
+                                                     <label class="checkbox-inline custome-checkbox-main">
+                                                            <input type="checkbox" id="OtherCreditCardchk" name="OtherCreditCard" class="form-check-input"  value="0" />
+                                                            <span class="geekmark"></span>
+                                                            <label  class="mb-0" for="other1">Other</label>
+                                                        </label>
+
+
+                                                   
+                                                    <span class="text-danger field-validation-error"></span>
+                                               </div>*@
+                                               <span class="text-danger field-validation-error" hidden id="CreditCardsChk"></span>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="PersonalChecks">Personal Checks?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="PersonalChecks" id="credit31" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit31">Yes </label>
+                                                        <span asp-for="PersonalChecks" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="PersonalChecks" id="credit32" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit32">No</label>
+                                                        <span asp-for="PersonalChecks" class="text-danger"></span>
+                                                    </div>
+                                   </div>   
+                                   
+                                    <span name="PersonalChecks1" class="text-danger field-validation-valid" data-valmsg-for="PersonalChecks"></span>
+                               </div>
+                            </div>
+
+                              <div class="form-group col-md-6 col-lg-4  " >
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsPaymentApps">Payment Apps?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsPaymentApps" id="credit33" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit33">Yes </label>
+                                                        <span asp-for="IsPaymentApps" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsPaymentApps" id="credit34" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit34">No</label>
+                                                        <span asp-for="IsPaymentApps" class="text-danger"></span>
+                                                    </div>
+                                   </div>      
+                                   <span name="IsPaymentApps1" class="text-danger field-validation-valid" data-valmsg-for="IsPaymentApps"></span>
+                               </div>
+                            </div>
+
+                            <div class="form-group col-md-6 col-lg-4  " id="webIsPaymentApps" style="display:none">
+                                <div class=" rgstr-input-form-box">
+                                <label for="WhichPaymentApps">Which Apps?</label>
+                                <input type="text" name="WhichPaymentApps" placeholder="Enter Payment App. name" class="form-control" />
+                                 <span asp-validation-for="WhichPaymentApps" class="text-danger"></span>
+                            </div>
+                              </div>
+
+                          
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="ProfilePicture"> Please upload a profile picture of your choice</label>
+                                <input type="file" name="ProfilePicture" placeholder="" class="form-control" />
+                                  <span asp-validation-for="ProfilePicture" class="text-danger"></span> 
+                                  <span id="ProfilePicture1"></span>
+                            </div>
+                              </div>
+
+
+
+                              <div class="col-md-12 text-right">
+                                <button type="submit" class="btn cstm-green-btn">Next</button>
+                            </div>   
+                         </div>
+                     </div>      
+             </form>
+         </div>   
+    </div>
+  </div>
+</div>
+
+

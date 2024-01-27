@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KopkeHome_FMRS.View.Login"
+             xmlns:View="clr-namespace:KopkeHome_FMRS.View.PartialView"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:Local="clr-namespace:KopkeHome_FMRS.Control"
+             BackgroundImageSource="background.png" 
+             xmlns:viewmodel="clr-namespace:KopkeHome_FMRS.ViewModel"
+             NavigationPage.HasNavigationBar="False" >
+    <ContentPage.BindingContext >
+        <viewmodel:LoginViewModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+                <StackLayout Margin="32,44,32,32" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <Image Source="kopke_brand_logo.png" Margin="0,20,0,0" HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="{Local:TranslationExtention Login}" HorizontalOptions="CenterAndExpand" Margin="0,30,0,0" FontAttributes="Bold" FontSize="30" TextColor="White"/>
+                    <Label Margin="0,20,0,0" HorizontalOptions="Center" Text="{Local:TranslationExtention LoginPageHeaderText}" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="16" TextColor="White"/>
+                    <StackLayout Margin="0,29,0,0" Spacing="0">
+                        <Label Text="{Local:TranslationExtention Email}" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="20" TextColor="White"/>
+                        <Frame Margin="0,13,0,0" HasShadow="false" VerticalOptions="StartAndExpand" Padding="0" HeightRequest="60" CornerRadius="46">
+                            <Grid Margin="32,0" ColumnDefinitions="10*,90*" ColumnSpacing="12" VerticalOptions="Center" RowSpacing="0" >
+                                <Image Grid.Column="0" Source="email" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent" HeightRequest="20" WidthRequest="20"/>
+                                <Entry Grid.Column="1" FontSize="20" Text="{Binding Email}" Placeholder="{Local:TranslationExtention Email}"  HorizontalOptions="FillAndExpand"/>
+                            </Grid>
+                        </Frame> 
+                    </StackLayout>
+                    <Label Text="{Binding EmailError}" TextColor="White"  IsVisible="{Binding IsEmailErrorVisible}"/>
+                    <StackLayout Margin="0,25,0,0" Spacing="0">
+                        <Label Text="{Local:TranslationExtention Password}"  HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="20" TextColor="White"/>
+                        <Frame Margin="0,13,0,0" HasShadow="false"  VerticalOptions="StartAndExpand" Padding="0" HeightRequest="60" CornerRadius="46">
+                            <Grid Margin="32,0,16,0" ColumnDefinitions="10*,80*,10*" VerticalOptions="Center" ColumnSpacing="12" RowSpacing="0">
+                                <Image Grid.Column="0" Source="lock" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent" HeightRequest="20" WidthRequest="20"/>
+                                <Entry Grid.Column="1" Placeholder="{Local:TranslationExtention Password}"  FontSize="20" Text="{Binding Password}" IsPassword="{Binding IsPassword}" HorizontalOptions="FillAndExpand"/>
+                                <Image Margin="0,0,30,0" Grid.Column="2" Source="{Binding EyeImage}" HeightRequest="25" WidthRequest="25">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding PasswordEyeCommand}" CommandParameter="{Binding .}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                    <Label Text="{Local:TranslationExtention PleaseEnterPassword}"  TextColor="White"  IsVisible="{Binding IsPasswordErrorVisible}"/>
+                    <Grid ColumnDefinitions="auto,auto,*" ColumnSpacing="0"  Padding="0" Margin="0,30,0,0">
+                        <Label Grid.Row="0" Grid.Column="0" Text="{Local:TranslationExtention RememberMe}" VerticalOptions="Center" HorizontalOptions="Start" TextColor="White" FontSize="15" ></Label>
+                        <Switch Grid.Row="0" Grid.Column="1"  OnColor="White" ThumbColor="{Binding ThumbColor}" IsToggled="{Binding IsRememeberMe}" VerticalOptions="Center" HorizontalOptions="Start"></Switch>
+                        <Label Grid.Row="0" Grid.Column="2" Text="{Local:TranslationExtention ForgotPassword?}" VerticalOptions="Center" FontSize="15" TextDecorations="Underline" TextColor="White"  HorizontalOptions="EndAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>                    
+                    <Frame Margin="0,45,0,0" Padding="0" HasShadow="false" BorderColor="Transparent" HeightRequest="60" BackgroundColor="#add136" CornerRadius="46">
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label Text="{Local:TranslationExtention Login}" HorizontalOptions="CenterAndExpand" Margin="0,0,10,0" FontSize="22" TextColor="White" VerticalOptions="Center"/>
+                            <Image Source="rightarrow1.png" HeightRequest="30" WidthRequest="20" HorizontalOptions="CenterAndExpand" Aspect="AspectFit" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LoginCommand}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+            <View:Loader IsVisible="{Binding IsLoading}" VerticalOptions="Center"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

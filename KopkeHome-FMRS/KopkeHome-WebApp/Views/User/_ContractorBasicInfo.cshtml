@@ -1,0 +1,260 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.UserViewModel;
+@inject IViewLocalizer Localizer
+<form id="contractorbasic" asp-action="SignUp" data-ajax-complete="succesmodal" asp-controller="User" method="post" { enctype="multipart/form-data" } class="sign-from-section" onsubmit="return ddlNext(this);">
+    <!--@*onsubmit="return ddlNext(this);"*@ -->
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <input type="hidden" id="RoleId" name="RoleId" value="1" />
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="FirstName">@Localizer["First Name"]</label>
+                <input maxLength="50" type="text" asp-for="FirstName" placeholder="@Localizer["First Name"]" name="FirstName" class="form-control input-sm">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+                @*<span id="FirstNameVAL" class="text-danger"></span>*@
+            </div>
+        </div>
+
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="LastName">@Localizer["Last Name"]</label>
+                <input maxLength="50" type="text" asp-for="LastName" name="LastName" placeholder="@Localizer["Last Name"]" class="form-control input-sm" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="BusinessName">@Localizer["Business Name"]</label>
+                <input maxLength="50" type="text" asp-for="BusinessName" name="BusinessName" placeholder="@Localizer["Business Name"]" class="form-control input-sm" />
+                <span asp-validation-for="BusinessName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="BusinessAddress">@Localizer["Business Address"]</label>
+                <input maxLength="100" type="text" asp-for="BusinessAddress" name="BusinessAddress" placeholder="@Localizer["Business Address"]" class="form-control input-sm" />
+                <span asp-validation-for="BusinessAddress" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="City">@Localizer["City"]</label>
+                <input maxLength="50" type="text" asp-for="City" name="City" placeholder="@Localizer["City"]" class="form-control input-sm" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for=" State">@Localizer["State"]</label>
+                <div class="">
+                    <select id="ddlStates" name="State" class="form-select form-control w-100">
+                    </select>
+                    @* <input type="text" asp-for="State" name="State" placeholder="Enter State" class="form-control input-sm" />*@
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="ZipCode">@Localizer["Zip Code"]</label>
+                <input type="number" asp-for="ZipCode" maxLength="5" name="ZipCode" placeholder="@Localizer["Enter Zip Code"]" class="form-control input-sm" />
+                <span asp-validation-for="ZipCode" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="PhoneNumber">@Localizer["Phone Number (Mobile)"]</label>
+                <input type="text" asp-for="PhoneNumber" name="PhoneNumber" maxLength="12" id="PhoneNumber" placeholder="@Localizer["Phone Number (Mobile)"]" class="form-control input-sm" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                <span id="PhoneNumberval" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="Email">@Localizer["Email Address"]</label>
+                <input type="text" asp-for="Email" name="Email" placeholder="@Localizer["Email Address"]" class="form-control input-sm" />
+                <span id="idEmailmessage" asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box cstm-pwd-valid">
+                <label class="required-labl" for="Password">@Localizer["Password"]</label>
+                <input maxLength="20" type="password" asp-for="Password" placeholder="@Localizer["Enter Password"]" class="form-control input-sm" />
+                <i class="toggle-password fa fa-fw fa-eye-slash"></i>
+                <div>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="ConfirmPassword">@Localizer["Confirm Password"]</label>
+                <input maxLength="15" type="password" asp-for="ConfirmPassword" placeholder="@Localizer["Enter Confirm Password"]" class="form-control input-sm" />
+                <i class="toggle-password fa fa-fw fa-eye-slash"></i>
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="HeardAboutUs">@Localizer["How did you hear about us?"]</label>
+                <div class="">
+                    <select id="HeardAboutUsContrcactor" asp-for="HeardAboutProhzFrom" class="form-select form-control w-100">
+                        <option value="">@Localizer["---Select---"]</option>
+                        <option value="5">@Localizer["Facebook"]</option>
+                        <option value="6">@Localizer["Instagram"]</option>
+                        <option value="7">@Localizer["Youtube"]</option>
+                        <option value="8">@Localizer["Tik Tok"]</option>
+                        <option value="1">@Localizer["Word of Mouth"]</option>
+                        <option value="15">@Localizer["Other"]</option>
+
+                    </select>
+                    <span asp-validation-for="HeardAboutProhzFrom" class="text-danger"></span>
+                </div>
+
+            </div>
+        </div>
+        <div style="display:none" class="form-group col-md-6 col-lg-4 accept-policy ClosedMemberRef">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="MemberReferralId">@Localizer["Member Id"] #</label>
+                <input maxLength="10" type="number" asp-for="MemberReferralId" placeholder="@Localizer["Member Id"]" class="form-control input-sm" />
+                <span asp-validation-for="MemberReferralId" class="text-danger"></span>
+            </div>
+        </div>
+        <div style="display:none" class="form-group col-md-6 col-lg-4 ClosedSalesAsst">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="SalesAssociate">@Localizer["Sales Associate Name"]</label>
+                <input maxLength="300" type="text" asp-for="SalesAssociate" placeholder="@Localizer["Sales Associate Name"]" class="form-control input-sm" />
+                <span asp-validation-for="SalesAssociate" class="text-danger"></span>
+            </div>
+        </div>
+
+        @* <div class="custom-radio  mb-3">
+
+        <label class="checkbox-inline custome-checkbox-main">
+        <input type="checkbox" id="TermsAndConditionschk" name="TermAndConditions" class="chkTermAndCon form-check-input product-list" value="1">
+        <span class="geekmark"></span>
+        </label>
+        <label style="margin-left: 30px !IMPORTANT" class="mb-0 ml-2 text-white"  for="TermAndConditions">I agree to the <a target="_blank" href="@Url.Action("TermsAndConditions","Home")">Terms of Use and Privacy Policy.</a> </label>
+
+        <span asp-validation-for="TermAndConditions" class="text-danger field-validation-error"></span>
+
+
+        </div>*@
+        <div class=" custom-radio p-3">
+
+            <label style="top: 30px;" class="checkbox-inline custome-checkbox-main">
+                <input type="checkbox" id="TermsAndConditionschk" name="TermAndConditions" class="chkTermAndCon form-check-input product-list" value="1">
+                <span class="geekmark"></span>
+                <label style="margin-left: 30px !IMPORTANT;" class="mb-0 ml-2 text-white" for="TermAndConditions">@Localizer["I agree to the"]  <a target="_blank" href="@Url.Action("TermsAndConditions","home")">@Localizer["Terms of Use"]</a> @Localizer["&"] <a target="_blank" href="@Url.Action("TermsAndConditions","home")">@Localizer["Privacy Policy"].</a> </label>
+
+            </label>
+
+            <span asp-validation-for="TermAndConditions" class="text-danger"></span>
+
+
+        </div>
+
+        @* <div class="col-md-12 text-right">
+        <button class="btn cstm-green-btn" style="background-color:#ADD136" id="btn_submit">Next</button>
+        </div>*@
+        <div class="col-md-12 text-right">
+            <button class="btn cstm-green-btn" disabled id="btn_submit">@Localizer["Next"]</button>
+        </div>
+    </div>
+</form>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script>
+    var urlprefix = '';
+    if (window.location.href.indexOf("KopkeHome-FMRS-QA") > -1) {
+        urlprefix = '/KopkeHome-FMRS-QA';
+    }
+
+
+    function GetLegalFiles() {
+        $.ajax({
+            type: "Get",
+            url: urlprefix + "/home/ProhzLegalFiles",
+
+            success: function (res) {
+                console.log(res)
+                for (var i = 0; i < res.length; i++) {
+                    //console.log(window.location.href+'uploads/'+res[i].filePath);
+                    //if(res[i].fileType==2)
+                    //{
+                    //     $(".FIlePrivacyPolicy").attr("href",'../uploads/'+res[i].filePath);
+
+                    //}else if(res[i].fileType==3)
+                    //{
+                    //     $(".FIleMemAGREMENT").attr("href",'../uploads/'+res[i].filePath);
+
+                    //}
+                    //else
+                    if (res[i].fileType == 1) {
+                        $(".termsOfUseLink").attr("href", '../uploads/' + res[i].filePath);
+                    }
+
+                }
+            }
+
+        });
+    }
+    $(document).ready(function () {
+        GetLegalFiles();
+    });
+
+
+
+
+    $('#phone-number-field').keyup(function () {
+        $(this).val($(this).val().replace(/(\d{3})\-?(\d{3})\-?(\d{4})/, '$1-$2-$3'))
+    });
+
+    $(function () {
+
+        $('#PhoneNumber').keydown(function (e) {
+            var key = e.charCode || e.keyCode || 0;
+            $text = $(this);
+            if (key !== 8 && key !== 9) {
+                if ($text.val().length === 3) {
+                    $text.val($text.val() + '-');
+                }
+                if ($text.val().length === 7) {
+                    $text.val($text.val() + '-');
+                }
+
+            }
+
+            return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));
+        })
+    });
+
+
+    $(function () {
+
+        $('#PhoneNumberOffice').keydown(function (e) {
+            var key = e.charCode || e.keyCode || 0;
+            $text = $(this);
+            if (key !== 8 && key !== 9) {
+                if ($text.val().length === 3) {
+                    $text.val($text.val() + '-');
+                }
+                if ($text.val().length === 7) {
+                    $text.val($text.val() + '-');
+                }
+
+            }
+
+            return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));
+        })
+    });
+
+</script>
+<style>
+    .fa-eye:before {
+    content: "\f06e";
+    color: #ADD136;
+}
+</style>

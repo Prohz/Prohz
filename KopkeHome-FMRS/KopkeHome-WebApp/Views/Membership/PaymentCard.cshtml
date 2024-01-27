@@ -1,0 +1,78 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.PaymentModels.BillingModel
+
+@*@{
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+*@
+
+
+<div class="payment-container-page ">
+    <div class="registration-container-form">
+
+    <div class="main-payment-page">
+        <div class="kopkehome-login-logo-heading text-center">
+            <img src="../images/Kopke-brand-logo.png" width="110" />
+        </div>
+          <div class="main-payment-page-content">
+                <form asp-action="Payment" method="post"  asp-controller="Membership">
+                    <input type="hidden" asp-for="BillingAddress" value="@Model.BillingAddress" class="form-control input-sm" />
+                    <input type="hidden" asp-for="BillingEmail" value="@Model.BillingEmail" class="form-control input-sm" />
+                    <input type="hidden" asp-for="BillingName" value="@Model.BillingName" class="form-control input-sm" />
+                  <div class="login-main-headin">
+                   <h3 class="green-clr">Payment Details</h3>
+                    </div>
+                     <div class="row">
+                         
+                           <div class="form-group col-md-12">
+                            <div class=" rgstr-input-form-box mb-1">
+                            <label  for="Email">Card Number</label>
+                            <input type="number" asp-for="CardNumber" placeholder="1234-5673-4752-1253" class="form-control pl-5" />
+                            <span class="payment-input-card-icon">
+                                <span class="fa fa-credit-card"></span>
+                            </span>
+                              <span asp-validation-for="CardNumber" class="text-danger"></span>
+                        </div>
+                          </div>
+                          <div class="form-group col-md-12">
+                            <div class=" rgstr-input-form-box mb-1">
+                            <label  for="Email">Name on Card</label>
+                            <input type="text" asp-for="BillingName" value="" placeholder="Name on Card" class="form-control input-sm" />
+                             <span asp-validation-for="BillingName" class="text-danger"></span>
+                        </div>
+                          </div>
+                            <div class="form-group col-md-6">
+                            <div class=" rgstr-input-form-box mb-1">
+                            <label  for="Email">Expiry Date</label>
+                            <input type="text" asp-for="ExpiryMonth" placeholder="MM" class="form-control input-sm" />
+                                <span asp-validation-for="ExpiryMonth" class="text-danger"></span>
+                                <input type="text" asp-for="ExpiryYear" placeholder="YY" class="form-control input-sm" />
+                                <span asp-validation-for="ExpiryYear" class="text-danger"></span>
+                        </div>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <div class=" rgstr-input-form-box mb-1">
+                            <label  for="Email">CVV</label>
+                            <input type="text" asp-for="CVV" placeholder="Enter CVV" maxlength="3" class="form-control input-sm" />
+                              <span asp-validation-for="CVV" class="text-danger"></span> 
+                        </div>
+                          </div>
+                         
+                          
+                          
+                               
+                         <div class="col-md-12 text-center login-cstm-button">
+                            <button type="submit" class="btn payment-btn cstm-green-btn w-100"> <i class="fa fa-lock" aria-hidden="true"></i>
+                               <span >Pay $@Model.PriceInDollar</span></button>
+                        </div>
+                
+                        <div class=" col-md-12 member-login-link text-center ">
+                            <p class="text-white m-0">Changed your mindset? Choose</p> <p><a href="#" class="green-clr green-clr-link">Membership Benefits</a></p>
+                        </div>
+                     </div>    
+             </form>
+             </div>
+         </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,132 @@
+﻿@model List<KopkeHome_ModelLayer.DataModel.FAQ>
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="topCard-sec">
+ <h3 class="dashHeading">FAQ</h3>
+   </div>
+
+<div class="tableWrapper faqSection"> <button type="button" class="btn btn-success AddFAQAdmin float-end p-2">Add FAQ</button>
+                    <div class="table-responsive">
+                        <table id="example" class="table table-striped" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Sl No.</th>
+                                    <th>Question</th>
+                                    <th>Answer</th>
+                                   <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int autoincrement = 0;
+                                }
+                                @foreach (var item in Model)
+                                {
+                                     <tr>
+                                    <td>@Interlocked.Increment(ref autoincrement) </td>
+                                    <td>@item.Question</td>
+                                    <td>@item.Answer</td>
+                                  
+                                <td class="">
+                                    <div class="actionBtn d-flex">
+                                        
+                                    <button type="button" data-id="@item.Id" class="btn  btn-primary EditFAQAdmin me-3" >Edit</button>
+                                    <button type="button" data-id="@item.Id" onclick="DeleteFAQ(@item.Id)" class="btn  btn-danger DeleteFAQAdmin">Delete</button>
+                                    </div>
+                                      
+                                </td>
+                               
+                                </tr>
+                                    
+                                }
+                               
+
+                            </tbody>
+                           @* <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </tfoot>*@
+                        </table>
+                    </div>
+                </div>
+
+
+  
+  <div class="modal fade" id="FAQViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Update FAQ</h5>
+        <button type="button" class="close btn btn-secondary ModalCloseFAQ" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+       <form name="UpdateFAQForm" method="post" onsubmit="return UpdateFAQ(this);">
+      <div class="modal-body">
+        
+   
+          <input type="hidden" name="Id" id="FAQId" />
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Question</label>
+    <input maxlength="250" type="text" name="Question" id="FAQQuestion" class="form-control">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Answer</label>
+    <textarea maxlength="2000" class="form-control" type="text" name="Answer" id="FAQAnswer"  rows="3"></textarea>
+  </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary main-login-page ModalCloseFAQ" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="AddFAQAdminViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Add FAQ</h5>
+        <button type="button" class="close btn btn-secondary ModalCloseFAQ" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+       <form name="AddFAQForm" method="post" onsubmit="return AddFAQ(this);">
+      <div class="modal-body">
+        
+   
+          <input type="hidden" name="Id" id="FAQId" />
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Question</label>
+    <input maxlength="250" type="text" name="Question" id="FAQQuestion" class="form-control">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Answer</label>
+    <textarea maxlength="2000" class="form-control" type="text" name="Answer" id="FAQAnswer"  rows="3"></textarea>
+  </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary main-login-page ModalCloseFAQ" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

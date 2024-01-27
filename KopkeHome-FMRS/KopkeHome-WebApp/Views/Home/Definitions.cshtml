@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+@inject IViewLocalizer Localizer
+<div class="container mainbodysec">
+   <div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">@Localizer["Definitions"]</h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+   @* <p class="card-text">Prohz is a very easy to use 3 step process for selecting your Contractor, Subcontractor or Independent Contractor.</p>*@
+
+
+    <div> 
+ <u>@Localizer["Contractor"] :</u>
+ <div class="HomeContentsRead"> 
+@Localizer["A Contractor usually bids on larger multi-trade projects such as Kitchens, Baths, Additions, etc. They usually have some employees, but also assign specialty work to Subcontractors and Independent Contractors who bring their skills in on a temporary basis for the project at hand. Contractors usually deal directly with Homeowners and commercial building managers. Contractors usually have a commercial office address and/or a showroom."]
+
+</div>
+</div>
+
+ <div> 
+ <u>@Localizer["Subcontractor"] :</u>
+ <div class="HomeContentsRead"> 
+@Localizer["A Subcontractor usually offers services in 1, 2, or more particular trades. They obtain work from Contractors who need their specialized license and skills to complete larger more complex building or remodeling projects. Some Subcontractors obtain work directly from Homeowners and commercial building managers. For example: A Heating and Cooling company might work directly for a Homeowner to install a new replacement furnace, and also work as a Subcontractor installing furnaces for a builder of new homes. Subcontractors may have a commercial office address or work from home (depending on their company size)."]
+
+</div>
+</div>
+
+
+<div> 
+ <u>@Localizer["Independent Contractor"]  :</u>
+ <div class="HomeContentsRead"> 
+    @Localizer["An Independent Contractor usually works alone or with 1 helper. They usually work on smaller jobs, one at a time, for Homeowners and Contractors. Independent Contractors usually work from home. They do assembly projects, (i.e. assemble furniture or a grill), and other small jobs around a home or business. Most Handyman work is done by Independent Contractors. Many Independent Contractors work as an employee for a larger company, and do the small jobs as a side gig in the evenings and on weekends."]
+
+</div>
+</div>
+
+<div> 
+ <u>@Localizer["Homeowner"] :</u>
+ <div class="HomeContentsRead"> 
+     @Localizer["A Homeowner is a residential home owner or commercial building manager that hires Contractors for multi-trade projects, or Subcontractors for specialized skills (i.e. an electrician), and/or Independent Contractors for general Handyman tasks that do not require a separate skilled trade license."] 
+</div>
+</div>
+    <a href="@Url.Action("HowDoesItWork","Home")" class="card-link">@Localizer["Learn More"]</a>
+    <a href="@Url.Action("SignUp","User")" class="card-link">@Localizer["Join Prohz"]</a>
+  </div>
+</div>
+</div>

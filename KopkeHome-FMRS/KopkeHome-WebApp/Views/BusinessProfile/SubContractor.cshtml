@@ -1,0 +1,1038 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@if(ViewBag.data != null)
+{
+    
+} 
+
+<div class="registration-container black-bg">
+
+ 
+
+    <div class="registration-container-branding d-flex justify-content-between align-items-center">
+        <div class="kopkehome-logo">
+            <img src="~/images/Kopke-brand-logo.png" width="140" />
+        </div>
+
+        <div class="rgstr-box-heading text-center">
+            <h2 class="orange-clr">Registration</h2>
+            <p class="text-white m-0">Please fill the form below to create an account.</p>
+        </div>
+
+        <div class="member-login-link">
+            <p class="text-white m-0">Already a member? <a href="User/SignIn" class="green-clr-top-login-link">Login</a></p>
+        </div>
+    </div>
+
+
+
+    <div class="registration-container-form">
+     <div class="tab-content">
+        
+         
+         <div id="Sub-Cont-business-prof" class="contractor-business-prof-form">
+             <div class="rgstr-main-heading">
+                <h3 class="green-clr">Sub Contractor Business Profile</h3>
+             </div>
+             <form asp-action="SignUp" method="post" asp-controller="User">
+                 
+                         <div class="row">
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="FirstName">Business Description in terms of services and specialization</label>                         
+                               <textarea rows="2"  class="form-control" placeholder="Describe yourself here..."></textarea>
+                               <span  class="text-danger"></span>
+                                  </div>
+                            </div>
+                           <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for=""> How many years have you been in business?</label>
+                                <input type="number" name="LastName" placeholder="Enter business years..." class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have a company website?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group1" id="credit1" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit1">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group1" id="credit2" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit2">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for=""> Business URL</label>
+                                <input type="text" name="LastName" placeholder="Enter business URL" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have Facebook page?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group2" id="credit3" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit3">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group2" id="credit4" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit4">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+                                  <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for=""> Facebook page name?</label>
+                                <input type="text" name="LastName" placeholder="Enter page name" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have a commercial location where Contractors can meet with you?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group3" id="credit5" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit5">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group3" id="credit6" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit6">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">How many employees do you have?</label>
+                                <input type="number" name="LastName" placeholder="Enter number of employees you have" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+
+                                <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">How many job site crews do you have?</label>
+                                <input type="number" name="LastName" placeholder="Enter number of job site crews you have" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have someone to answer the phone during normal business hours?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group4" id="credit7" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit7">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group4" id="credit8" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit8">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">What are your normal business hours?</label>
+                                <input type="number" name="LastName" placeholder="Enter your normal business hours" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have 24 hour phone answering? </label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group5" id="credit9" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit9">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group5" id="credit10" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit10">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you offer emergency services?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group6" id="credit11" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit11">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group6" id="credit12" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit12">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have a business or trade license(s)?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group7" id="credit13" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit13">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group7" id="credit14" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit14">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+                                <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">Upload business or trade license (4 files)</label>
+                                <input type="file" name="LastName" placeholder="" multiple class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have Liability Insurance?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group8" id="credit15" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit15">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group8" id="credit16" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit16">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">Upload Liability Insurance file</label>
+                                <input type="file" name="LastName" placeholder="" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have Workman’s Compensation Insurance?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group9" id="credit17" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit17">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group9" id="credit18" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit18">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">Upload Workman’s Compensation Insurance file</label>
+                                <input type="file" name="LastName" placeholder="" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+
+                                 <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you give “Free Estimates”?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group10" id="credit19" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit19">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group10" id="credit20" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit20">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                        
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">If No, what do you charge for an estimate?</label>
+                                <input type="number" name="LastName" placeholder="What do you charge for an estimate?" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you offer design services?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group11" id="credit21" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit21">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group11" id="credit22" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit22">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                        
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">If Yes, what do you charge for design services?</label>
+                                <input type="number" name="LastName" placeholder="What do you charge for design service?" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+
+
+                                   <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you want to be contacted directly by Homeowners? </label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group12" id="credit23" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit23">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group12" id="credit24" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit24">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                                 <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you want to be contacted directly by General Contractors, Builders, and Remodelers?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group13" id="credit25" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit25">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group13" id="credit26" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit26">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">What do you charge for a “Service Call”?</label>
+                                <input type="number" name="LastName" placeholder="What do you charge for a “Service Call”?" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+                     </div>    
+
+
+                     <div class="payments-type-section">
+
+                         <h3 class="payment-type-section-heading">What type of payments do you accept?</h3>
+                         <div class="row">
+
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Cash</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group14" id="credit27" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit27">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group14" id="credit28" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit28">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Credit Cards</label>
+                                  <div class="d-flex justify-content-between  question-text-radio-btn">
+                                              
+                                                <div class="custom-radio  mb-3">
+                                                    <input   id="credit" name="SourceofIncome" class="custom-control-input" type="radio" value="MC" />
+                                                    <label  class="custom-control-label" for="credit">MC </label>
+                                                    <span class="text-danger field-validation-error"></span>
+                                                </div>
+                                                <div class="custom-radio  mb-3">
+                                                    <input id="Visa1" name="SourceofIncome" class="custom-control-input SourceofIncomevalidation" type="radio" value="Visa" />
+                                                    <label  class="custom-control-label" for="Visa1">Visa</label>
+                                                    <span class="text-danger field-validation-error"></span>
+                                                </div>
+                                                <div class=" custom-radio  mb-3">
+                                                    <input  id="AMEX1" name="SourceofIncome" class="custom-control-input SourceofIncomevalidation" type="radio" value="Am Ex" />
+                                                    <label  class="custom-control-label" for="AMEX1">Am Ex</label>
+                                                    <span  class="text-danger field-validation-error"></span>
+                                                </div>
+                                                <div class=" custom-radio  mb-3">
+                                                    <input  id="other1" name="SourceofIncome" class="custom-control-input SourceofIncomevalidation" type="radio" value="Other" />
+                                                    <label  class="custom-control-label" for="other1">Other</label>
+                                                    <span class="text-danger field-validation-error"></span>
+                                               </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Personal Checks?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group16" id="credit31" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit31">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group16" id="credit32" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit32">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Payment Apps?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group17" id="credit33" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit33">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group17" id="credit34" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit34">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">Which Apps?</label>
+                                <input type="text" name="LastName" placeholder="Enter App. name" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+                          
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for=""> Please upload a profile picture of your choice</label>
+                                <input type="file" name="LastName" placeholder="" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+
+                              <div class="col-md-12 text-right">
+                                <button type="button" class="btn cstm-green-btn">Next</button>
+                            </div>   
+                         </div>
+                     </div>      
+             </form>
+         </div>
+
+         @*<div id="Ind-Cont-business-prof" class="contractor-business-prof-form">
+             <div class="rgstr-main-heading">
+                <h3 class="green-clr">Independent Contractor Business Profile</h3>
+             </div>
+             <form asp-action="SignUp" method="post" asp-controller="User">
+                 
+                         <div class="row">
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="FirstName">Business Description in terms of services and specialization</label>                         
+                               <textarea rows="2"  class="form-control" placeholder="Describe yourself here..."></textarea>
+                               <span  class="text-danger"></span>
+                                  </div>
+                            </div>
+                           <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for=""> How many years have you been in business?</label>
+                                <input type="number" name="LastName" placeholder="Enter business years..." class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have a company website?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group1" id="credit1" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit1">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group1" id="credit2" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit2">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for=""> Business URL</label>
+                                <input type="text" name="LastName" placeholder="Enter business URL" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have Facebook page?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group2" id="credit3" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit3">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group2" id="credit4" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit4">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+                                  <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for=""> Facebook page name?</label>
+                                <input type="text" name="LastName" placeholder="Enter page name" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have a commercial location where Contractors can meet with you?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group3" id="credit5" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit5">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group3" id="credit6" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit6">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">How many employees do you have?</label>
+                                <input type="number" name="LastName" placeholder="Enter number of employees you have" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+
+                                <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">How many job site crews do you have?</label>
+                                <input type="number" name="LastName" placeholder="Enter number of job site crews you have" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have someone to answer the phone during normal business hours?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group4" id="credit7" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit7">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group4" id="credit8" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit8">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">What are your normal business hours?</label>
+                                <input type="number" name="LastName" placeholder="Enter your normal business hours" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have 24 hour phone answering? </label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group5" id="credit9" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit9">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group5" id="credit10" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit10">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you offer emergency services?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group6" id="credit11" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit11">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group6" id="credit12" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit12">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have a business or trade license(s)?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group7" id="credit13" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit13">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group7" id="credit14" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit14">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+                                <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">Upload business or trade license (4 files)</label>
+                                <input type="file" name="LastName" placeholder="" multiple class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have Liability Insurance?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group8" id="credit15" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit15">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group8" id="credit16" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit16">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">Upload Liability Insurance file</label>
+                                <input type="file" name="LastName" placeholder="" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you have Workman’s Compensation Insurance?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group9" id="credit17" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit17">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group9" id="credit18" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit18">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">Upload Workman’s Compensation Insurance file</label>
+                                <input type="file" name="LastName" placeholder="" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+
+                                 <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you give “Free Estimates”?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group10" id="credit19" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit19">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group10" id="credit20" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit20">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                        
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">If No, what do you charge for an estimate?</label>
+                                <input type="number" name="LastName" placeholder="What do you charge for an estimate?" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you offer design services?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group11" id="credit21" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit21">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group11" id="credit22" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit22">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                        
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">If Yes, what do you charge for design services?</label>
+                                <input type="number" name="LastName" placeholder="What do you charge for design service?" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+
+
+                                   <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you want to be contacted directly by Homeowners? </label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group12" id="credit23" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit23">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group12" id="credit24" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit24">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                                 <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Do you want to be contacted directly by General Contractors, Builders, and Remodelers?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group13" id="credit25" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit25">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group13" id="credit26" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit26">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">What do you charge for a “Service Call”?</label>
+                                <input type="number" name="LastName" placeholder="What do you charge for a “Service Call”?" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+                     </div>    
+
+
+                     <div class="payments-type-section">
+
+                         <h3 class="payment-type-section-heading">What type of payments do you accept?</h3>
+                         <div class="row">
+
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Cash</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group14" id="credit27" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit27">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group14" id="credit28" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit28">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Credit Cards</label>
+                                  <div class="d-flex justify-content-between  question-text-radio-btn">
+                                              
+                                                <div class="custom-radio  mb-3">
+                                                    <input   id="credit" name="SourceofIncome" class="custom-control-input" type="radio" value="MC" />
+                                                    <label  class="custom-control-label" for="credit">MC </label>
+                                                    <span class="text-danger field-validation-error"></span>
+                                                </div>
+                                                <div class="custom-radio  mb-3">
+                                                    <input id="Visa1" name="SourceofIncome" class="custom-control-input SourceofIncomevalidation" type="radio" value="Visa" />
+                                                    <label  class="custom-control-label" for="Visa1">Visa</label>
+                                                    <span class="text-danger field-validation-error"></span>
+                                                </div>
+                                                <div class=" custom-radio  mb-3">
+                                                    <input  id="AMEX1" name="SourceofIncome" class="custom-control-input SourceofIncomevalidation" type="radio" value="Am Ex" />
+                                                    <label  class="custom-control-label" for="AMEX1">Am Ex</label>
+                                                    <span  class="text-danger field-validation-error"></span>
+                                                </div>
+                                                <div class=" custom-radio  mb-3">
+                                                    <input  id="other1" name="SourceofIncome" class="custom-control-input SourceofIncomevalidation" type="radio" value="Other" />
+                                                    <label  class="custom-control-label" for="other1">Other</label>
+                                                    <span class="text-danger field-validation-error"></span>
+                                               </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+
+
+
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Personal Checks?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group16" id="credit31" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit31">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group16" id="credit32" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit32">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="BusinessName">Payment Apps?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="group17" id="credit33" class="custom-control-input" type="radio" value="Yes" />
+                                                        <label  class="custom-control-label" for="credit33">Yes </label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="group17" id="credit34" class="custom-control-input" type="radio" value="No" />
+                                                        <label  class="custom-control-label" for="credit34">No</label>
+                                                        <span asp-for="ProjectTypeName" class="text-danger"></span>
+                                                    </div>
+                                   </div>                      
+                               </div>
+                            </div>
+
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="">Which Apps?</label>
+                                <input type="text" name="LastName" placeholder="Enter App. name" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+                          
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for=""> Please upload a profile picture of your choice</label>
+                                <input type="file" name="LastName" placeholder="" class="form-control" />
+                                  <span  class="text-danger"></span>  
+                            </div>
+                              </div>
+
+
+
+                              <div class="col-md-12 text-right">
+                                <button type="button" class="btn cstm-green-btn">Next</button>
+                            </div>   
+                         </div>
+                     </div>      
+             </form>
+         </div>*@    
+    </div>
+  </div>
+</div>
+
+

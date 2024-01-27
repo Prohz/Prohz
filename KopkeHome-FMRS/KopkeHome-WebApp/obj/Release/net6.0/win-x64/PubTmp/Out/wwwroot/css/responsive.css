@@ -1,0 +1,1673 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+
+
+@media (min-width: 320px) and (max-width: 1199px) {
+
+    
+    .mobile-user {
+        display: block !important;
+    }
+    #searchbutton{
+        display:none !important;
+    }
+
+}
+    @media (min-width: 320px) and (max-width: 480px) {
+        
+        .top-nav-header-zipcode label.error {
+            TOP: 46PX;
+            position: inherit;
+            FONT-SIZE: 13PX;
+            COLOR: RED;
+            font-weight: 600;
+            padding: 3px;
+        }
+        .mobile-user-none {
+            display: none!important;
+        }
+        .mobile-user li{
+            margin-left:0!important;
+        }
+
+        .mobile-user li .dropdown-toggle{
+            padding:0 10px;
+        }
+
+        #top-nav-header a.navbar-brand img {
+            width: 65px;
+        }
+        .registration-container {
+            padding: 8px 15px 35px;
+        }
+
+        #top-nav-header {
+            /*padding: 5px 15px;*/
+            padding: 20px 15px;
+        }
+
+        .dashboard-main-container {
+            padding: 130px 15px 30px;
+        }
+
+        .dashboard-main-inner-content, .User-Profile-BI-inner-content {
+            padding: 25px 15px 20px;
+            /*below new added*/
+            margin: 4px;
+            min-height: 200px !important;
+        }
+
+
+        .dashboard-top-heading h3 {
+            font-size: 18px;
+        }
+
+
+
+        .green-clr-top-login-link {
+            padding: 6px 14px;
+            font-size: 14px;
+        }
+
+        .cstm-green-btn {
+            font-size: 18px !important;
+            padding: 7px 24px !important;
+        }
+
+
+
+
+
+
+
+
+        .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-image .profile-image .upload-button {
+            font-size: 16px;
+        }
+
+        .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-image .profile-image {
+            position: absolute;
+            bottom: 11px;
+            right: 0px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .payment-container-page {
+            padding: 0 10px;
+        }
+
+
+        .main-payment-page .kopkehome-login-logo-heading img {
+            width: 100px;
+        }
+
+        main-reset-pwd-page {
+            padding: 0 10px;
+        }
+
+        .member-login-link {
+            font-size: 12px;
+        }
+
+        .forgot-pwd-page-content {
+            padding: 22px 15px 25px 15px;
+        }
+
+        .registration-container-login {
+            padding: 0 10px;
+        }
+
+        .registration-container-reset-pwd {
+            padding: 0 10px;
+        }
+
+
+
+
+        .main-payment-page-content {
+            height: calc(100vh - 30vh);
+            overflow-y: auto;
+            padding: 22px 15px 10px 15px;
+        }
+
+        .reset-pwd-page-content {
+            padding: 22px 15px 25px 15px;
+            height: calc(100vh - 30vh);
+            overflow-y: auto;
+        }
+
+        .main-login-page-content {
+            height: calc(100vh - 42.5vh);
+            overflow-y: auto;
+            padding: 22px 15px 25px 15px;
+        }
+
+
+
+
+
+
+        .login-main-headin h3 {
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+
+        .main-login-page .login-cstm-button {
+            margin: 20px 0 20px 0;
+        }
+
+
+
+
+        .signin-remeber-me div span {
+            font-size: 12px;
+            padding-right: 6px !important;
+            margin-right: 0px !important;
+        }
+
+        .signin-remeber-me a {
+            font-size: 12px;
+        }
+
+
+
+        /*-------pdf-viewer page-------*/
+        #pdf-render {
+            width: 100%;
+        }
+
+        .pdf-viewer-top-bar {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+        /*-------pdf-viewer page css end-------*/
+
+
+
+        /*---------contractor & home owner basic information page ------------------*/
+
+        .registration-container-form .cstm-radio-box, .registration-container-form .cstm-radio-box:nth-child(2), .registration-container-form .cstm-radio-box:nth-child(3), .registration-container-form .cstm-radio-box:nth-child(4) {
+            margin-left: 0;
+        }
+
+            .registration-container-form .cstm-radio-box label {
+                font-size: 14px;
+                padding-left: 10px;
+            }
+
+        .registration-container-form .nav-tabs {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .rgstr-input-form-box {
+            margin-bottom: 5px;
+        }
+
+        .rgstr-main-heading h3 {
+            font-size: 18px;
+        }
+
+        .payments-type-section .payment-type-section-heading {
+            font-size: 18px;
+        }
+        /*---------contractor & home owner basic information page css end ------------------*/
+        /*---------contractor & home owner basic information page top header  ------------------*/
+        .registration-container-branding .kopkehome-logo img {
+            width: 80px;
+        }
+
+        .registration-container-branding > div {
+            margin-bottom: 10px;
+        }
+
+        .registration-container-branding {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #323644;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        .rgstr-box-heading {
+            width: 100%;
+            padding: 0;
+            -webkit-box-ordinal-group: 4;
+            -ms-flex-order: 3;
+            order: 3;
+            padding-bottom: 20px;
+        }
+
+            .rgstr-box-heading p {
+                font-weight: 300;
+                font-size: 12px;
+            }
+
+            .rgstr-box-heading h2 {
+                font-size: 22px;
+            }
+
+        .member-login-link p {
+            font-size: 12px;
+        }
+
+        .registration-container-branding .member-login-link {
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: start;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+            .registration-container-branding .member-login-link a {
+                margin-left: 0px;
+            }
+        /*---------contractor & home owner basic information page top header css end ------------------*/
+
+
+
+
+
+
+
+        /* -----email verifical OTP modal ----------*/
+
+        .contactorModal-email-varification .modal-content .modal-body {
+            padding: 30px 15px 30px;
+        }
+
+        .email-sent-success-modal .modal-dialog .modal-content .modal-body {
+            padding: 30px 15px 30px;
+        }
+
+        .contactorModal-email-varification .modal-content .modal-body .email-varification-main-heading h3 {
+            font-size: 22px;
+        }
+
+
+
+
+        .contactorModal-email-varification .modal-content .modal-body .email-varification-main-heading p {
+            font-size: 12px;
+        }
+
+        .userInput input {
+            height: 40px;
+            width: 37px;
+            margin: 2px;
+            font-size: 14px;
+        }
+
+        .contactorModal-email-varification .modal-dialog .modal-content .modal-header {
+            padding: 10px;
+        }
+
+            .contactorModal-email-varification .modal-dialog .modal-content .modal-header .close {
+                top: 28px;
+            }
+        /*------- email verifical OTP modal css end------------*/
+
+
+        /*------------Membership benefits page----------*/
+        .benefit-table table thead tr th h2:first-child {
+            font-size: 16px;
+            width: 190px;
+        }
+
+        .benefit-table table thead tr th h2 {
+            font-size: 16px;
+            width: 100px;
+        }
+
+        .benefit-table table thead tr th span.membership-title {
+            font-size: 16px;
+        }
+
+        .benefit-table table tbody tr th {
+            font-size: 14px;
+        }
+
+        .benefit-table table tfoot a {
+            font-size: 16px;
+        }
+
+        .benefit-table table tbody td {
+            font-size: 14px;
+        }
+
+            .benefit-table table tbody td i.fa-check {
+                font-size: 14px;
+            }
+
+            .benefit-table table tbody td i.fa-times {
+                font-size: 14px;
+            }
+
+        /*------------Membership benefits page css end----------*/
+
+
+
+        /*--------------header-section---------------*/
+
+        #collapsibleNavbar ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: self-start;
+            -ms-flex-align: self-start;
+            align-items: self-start;
+        }
+
+            #collapsibleNavbar ul li.user-profile-imge {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-item-align: end;
+                align-self: flex-end;
+            }
+
+            #collapsibleNavbar ul li.header-searchbar .top-nav-header-searchbar {
+                margin-left: 0px;
+            }
+
+                #collapsibleNavbar ul li.header-searchbar .top-nav-header-searchbar .input-group-append {
+                    position: absolute;
+                    right: 0;
+                    height: 42px;
+                }
+
+            #collapsibleNavbar ul li.header-searchbar {
+                margin: initial;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                width: 100%;
+            }
+
+                #collapsibleNavbar ul li.header-searchbar .top-nav-header-zipcode input.inputzip {
+                    width: 100%;
+                    font-size: 12px;
+                    overflow: hidden;
+                    -o-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
+                    display: inline-block;
+                    margin-bottom: 8px;
+                }
+
+                #collapsibleNavbar ul li.header-searchbar .top-nav-header-searchbar input.input-search {
+                    width: 100%;
+                    font-size: 12px;
+                    overflow: hidden;
+                    padding-right: 45px;
+                    -o-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
+                    display: inline-block;
+                    margin-bottom: 8px;
+                }
+
+            #collapsibleNavbar ul li.user-profile-imge {
+                margin-bottom: 12px;
+            }
+
+        .header-navbar-user-email {
+            width: 73px;
+            font-size: 12px;
+            padding-right: 10px;
+        }
+        /*--------------header-section css end---------------*/
+
+
+
+        .green-modal-btn {
+            padding: 6px 14px;
+            font-size: 14px;
+            margin-left: 10px !important;
+        }
+
+        .edit-button-section .cancel-button {
+            padding: 6px 14px;
+            font-size: 14px;
+            margin-left: 0px !important;
+        }
+
+        .zipcode-reset-btn > div button.cancel-button {
+            padding: 6px 14px;
+            font-size: 14px;
+            margin-left: 0px !important;
+        }
+
+
+        .dashboard-top-heading-cstm > div {
+            margin-bottom: 25px;
+        }
+
+            .dashboard-top-heading-cstm > div button.edit-button {
+                margin-left: 5px !important;
+            }
+
+        .cont-detail-inner-heading h3 {
+            font-size: 16px;
+        }
+
+        .contractor-payment-outer-box {
+            margin-top: 10px;
+        }
+
+        .contractor-detail-outerbox .contractor-business-info-outer-box .contractor-business-info-box {
+            margin-top: 10px;
+        }
+
+        .contractor-detail-outerbox .contractor-service-outer-box, .contractor-detail-outerbox .contractor-document-outer-box {
+            margin-top: 10px;
+        }
+
+        .contractor-detail-outerbox .contractor-gallery-outer-box {
+            margin-top: 10px;
+        }
+
+        .contractor-business-info-outer-box {
+            margin-top: 10px;
+        }
+
+        .pdf-view-section {
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        .table-design .contractor-availability {
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+            .table-design .contractor-availability div span {
+                font-size: 14px;
+            }
+
+            .table-design .contractor-availability div img {
+                width: 20px;
+                margin-right: 8px;
+            }
+
+            .table-design .contractor-availability div {
+                margin-right: 0px;
+                margin-bottom: 8px;
+            }
+
+        #contractor-list_wrapper table tbody tr td {
+            font-size: 14px;
+        }
+
+        .email-sent-success-modal .modal-dialog .modal-content .modal-body .email-sent-success-main-heading img {
+            width: 115px;
+        }
+
+        .email-sent-success-modal .modal-dialog .modal-content .modal-body .email-sent-success-main-heading h3 {
+            font-size: 22px;
+        }
+
+        .email-sent-success-modal .modal-dialog .modal-content .modal-body .email-sent-success-main-heading p {
+            font-size: 12px;
+        }
+
+
+
+
+
+
+        .select-zipcodes-main-box .select-zipcodes-checkbox {
+            min-height: 370px;
+            padding: 7px;
+            border-radius: 5px;
+            max-height: 370px;
+            margin-bottom: 10px;
+        }
+
+        .select-zipcodes-main-box .selected-zipcodes {
+            min-height: 370px;
+            padding: 7px;
+            border-radius: 5px;
+            max-height: 370px;
+            margin-bottom: 10px;
+        }
+
+        .select-zipcode-outerbox .form-select-zipcode .form-group label {
+            font-size: 12px;
+        }
+
+
+
+
+
+
+
+
+        .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-image .profile-circle {
+            width: 130px;
+            height: 130px;
+        }
+
+
+            .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-image .profile-circle .profile-pic {
+                width: 130px;
+                height: 130px;
+            }
+
+
+        .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-name-heading {
+            padding-top: 170px;
+        }
+
+            .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-name-heading h3 {
+                font-size: 20px;
+            }
+
+            .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-name-heading p {
+                font-size: 16px;
+                word-break: break-word;
+            }
+
+        .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box {
+            background-color: #454A57;
+            text-align: center;
+            padding: 10px;
+        }
+
+
+
+
+        .contractor-detail-outerbox .contractor-info-outer-box .contractor-info-box, .contractor-detail-outerbox .contractor-payment-outer-box .contractor-payment-info {
+            padding: 25px 15px;
+            margin-bottom: 15px;
+            min-height: inherit;
+        }
+
+        .contractor-detail-outerbox .contractor-business-info-outer-box .contractor-business-info-box {
+            padding: 25px 15px;
+            margin-bottom: 15px;
+            margin-top: 0px;
+        }
+
+        .contractor-detail-outerbox .contractor-service-outer-box .contractor-service-box, .contractor-detail-outerbox .contractor-document-outer-box .contractor-document-box {
+            padding: 25px 15px;
+            margin-bottom: 15px;
+        }
+
+        .contractor-detail-outerbox .contractor-gallery-outer-box .contractor-gallery-box {
+            padding: 25px 15px;
+            margin-bottom: 15px;
+        }
+
+        .dashboard-top-heading h3 {
+            margin-bottom: 20px !important;
+        }
+
+        .dashboard-top-heading-cstm h3 {
+            margin-bottom: 5px !important;
+        }
+
+        .dashboard-top-heading-cstm {
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+        
+
+        .contractor-gallery-box .cont-detail-inner-heading {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            -webkit-box-align: self-start;
+            -ms-flex-align: self-start;
+            align-items: self-start;
+        }
+
+
+
+        .rgstr-input-form-box span.text-danger {
+            bottom: -13px;
+            font-size: 12px;
+        }
+
+        .rgstr-input-form-box span.passwordvalidation {
+            font-size: 12px;
+            bottom: -14px !important;
+        }
+
+        .rgstr-input-form-box label#ConfirmPasswordHo-error, .rgstr-input-form-box label#PasswordHo-error, .rgstr-input-form-box label#EmailHo-error, .rgstr-input-form-box label#FirstNameHo-error, .rgstr-input-form-box label#LastNameHo-error, .rgstr-input-form-box label#PhoneNumberHo-error {
+            bottom: -37px;
+            font-size: 12px;
+        }
+
+
+        .rgstr-input-form-box label#BusinessDescription-error, .rgstr-input-form-box label#YearsInBusiness-error, .rgstr-input-form-box label#CompanyWebsiteURL-error, .rgstr-input-form-box label#FacebookPageURL-error, .rgstr-input-form-box label#NumberOfEmployees-error, .rgstr-input-form-box label#JobSiteCrews-error, .rgstr-input-form-box label#NormalBusinessHours-error, .rgstr-input-form-box label#BusinessOrTradeLicenseFiles-error, .rgstr-input-form-box label#LiabilityInsuranceFile-error, .rgstr-input-form-box label#WorkmanCompensationInsuranceFile-error, .rgstr-input-form-box label#EstimateCharge-error, .rgstr-input-form-box label#DesignServices-error, .rgstr-input-form-box label#WhichPaymentApps-error, .rgstr-input-form-box label#ProfilePicture-error {
+            bottom: -37px;
+            font-size: 12px;
+        }
+
+        .rgstr-input-form-box label#IsCompanyWebsite-error, .rgstr-input-form-box label#IsFacebookPage-error, .rgstr-input-form-box label#CommercialLocation-error, .rgstr-input-form-box label#IsPhoneCallSupport-error, .rgstr-input-form-box label#Is24HoursPhoneAnswering-error, .rgstr-input-form-box label#IsOfferEmergencyServices-error, .rgstr-input-form-box label#IsBusinessOrTradeLicense-error, .rgstr-input-form-box label#IsLiabilityInsurance-error, .rgstr-input-form-box label#IsWorkmanCompensationInsurance-error, .rgstr-input-form-box label#IsEstimateCharge-error, .rgstr-input-form-box label#IsDesignServices-error, .rgstr-input-form-box label#IsContactedByHomeowners-error, .rgstr-input-form-box label#IsContactedBySubcontractors-error, .rgstr-input-form-box label#IsCash-error, .rgstr-input-form-box label#PersonalChecks-error, .rgstr-input-form-box label#IsContactedByContractors-error, .rgstr-input-form-box label#IsPaymentApps-error {
+            bottom: -14px;
+            font-size: 12px;
+        }
+
+        .zipcode-select-main-outerbox {
+            padding: 20px 15px 20px;
+        }
+
+        .select-zipcode-outerbox {
+            padding: 50px 15px 20px;
+            margin-bottom: 20px;
+        }
+
+
+
+
+
+        .select-zipcode-outerboxmt-0 {
+            padding: 10px 15px 20px !important;
+            margin-bottom: 20px;
+        }
+
+
+
+
+
+        .select-zipcode-outerbox .clr-orange-absolute {
+            top: 3px;
+            font-size: 13px;
+            line-height: 16px;
+            left: 15px;
+        }
+
+        .select-categories-main-box .select-categories-checkboxes ul {
+            padding-left: 0px;
+        }
+    }
+
+
+
+
+
+
+
+
+    @media (min-width: 481px) and (max-width: 767px) {
+
+        .top-nav-header-zipcode label.error {
+            position: inherit;
+            TOP: 46PX;
+            FONT-SIZE: 13PX;
+            COLOR: RED;
+            font-weight: 600;
+            padding: 3px;
+        }
+        .mobile-user-none {
+            display: none !important;
+        }
+        .dashboard-main-inner-content, .User-Profile-BI-inner-content {
+            padding: 40px 20px 40px;
+            /*new added*/
+            margin: 4px;
+            min-height: 200px !important;
+        }
+
+
+
+        .registration-container {
+            padding: 15px 20px 35px;
+        }
+
+        #top-nav-header {
+            /* padding: 5px 20px;*/
+            padding: 20px 20px;
+        }
+
+        .dashboard-main-container {
+            padding: 130px 20px 30px;
+        }
+
+        .dashboard-top-heading h3 {
+            font-size: 22px;
+        }
+
+
+        .registration-container-branding {
+            margin-bottom: 30px;
+        }
+
+
+        .contractor-gallery-box .cont-detail-inner-heading {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            -webkit-box-align: self-start;
+            -ms-flex-align: self-start;
+            align-items: self-start;
+        }
+
+
+
+
+
+
+
+        /*-------pdf-viewer page-------*/
+        #pdf-render {
+            width: 100%;
+        }
+
+        .pdf-viewer-top-bar {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+        /*-------pdf-viewer page css end-------*/
+
+
+
+        /*---------contractor & home owner basic information page ------------------*/
+
+        .registration-container-form .cstm-radio-box, .registration-container-form .cstm-radio-box:nth-child(2), .registration-container-form .cstm-radio-box:nth-child(3), .registration-container-form .cstm-radio-box:nth-child(4) {
+            margin-left: 0;
+            width: 50%
+        }
+
+            .registration-container-form .cstm-radio-box label {
+                font-size: 14px;
+                padding-left: 8px;
+            }
+
+        .registration-container-form .nav-tabs {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        .rgstr-input-form-box {
+            margin-bottom: 5px;
+        }
+
+        .rgstr-main-heading h3 {
+            font-size: 22px;
+        }
+
+        .payments-type-section .payment-type-section-heading {
+            font-size: 22px;
+        }
+        /*---------contractor & home owner basic information page css end ------------------*/
+
+
+
+        /*---------contractor & home owner basic information page top header  ------------------*/
+        .registration-container-branding .kopkehome-logo img {
+            width: 80px;
+        }
+
+        .rgstr-box-heading {
+            width: 53%;
+        }
+
+            .rgstr-box-heading p {
+                font-weight: 300;
+                font-size: 12px;
+            }
+
+            .rgstr-box-heading h2 {
+                font-size: 24px;
+            }
+
+        .member-login-link p {
+            font-size: 12px;
+        }
+
+        .registration-container-branding .member-login-link {
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: start;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+            .registration-container-branding .member-login-link a {
+                margin-left: 0px;
+            }
+        /*---------contractor & home owner basic information page top header css end ------------------*/
+
+
+        /*------- email verifical OTP modal ------------*/
+
+        .contactorModal-email-varification .modal-content .modal-body .email-varification-main-heading h3 {
+            font-size: 22px;
+        }
+
+        .userInput input {
+            margin: 6px;
+            height: 45px;
+            width: 47px;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            background: #333845;
+        }
+
+        /*------- email verifical OTP modal css end------------*/
+
+
+        /*------------Membership benefits page----------*/
+        .benefit-table table thead tr th h2:first-child {
+            font-size: 16px;
+            width: 200px;
+        }
+
+        .benefit-table table thead tr th h2 {
+            font-size: 16px;
+            width: 110px;
+        }
+
+        .benefit-table table thead tr th span.membership-title {
+            font-size: 16px;
+        }
+
+        .benefit-table table tbody tr th {
+            font-size: 14px;
+        }
+
+        .benefit-table table tfoot a {
+            font-size: 16px;
+        }
+
+        .benefit-table table tbody td {
+            font-size: 14px;
+        }
+
+            .benefit-table table tbody td i.fa-check {
+                font-size: 14px;
+            }
+
+            .benefit-table table tbody td i.fa-times {
+                font-size: 14px;
+            }
+
+        /*------------Membership benefits page css end----------*/
+
+        /*--------------header-section---------------*/
+
+        #collapsibleNavbar ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: self-start;
+            -ms-flex-align: self-start;
+            align-items: self-start;
+        }
+
+            #collapsibleNavbar ul li.user-profile-imge {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-item-align: end;
+                align-self: flex-end;
+            }
+
+            #collapsibleNavbar ul li.header-searchbar .top-nav-header-searchbar {
+                margin-left: 0px;
+            }
+
+                #collapsibleNavbar ul li.header-searchbar .top-nav-header-searchbar .input-group-append {
+                    position: absolute;
+                    right: 0;
+                    height: 42px;
+                }
+
+            #collapsibleNavbar ul li.header-searchbar {
+                margin: initial;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                width: 100%;
+            }
+
+                #collapsibleNavbar ul li.header-searchbar .top-nav-header-zipcode input.inputzip {
+                    width: 100%;
+                    font-size: 14px;
+                    margin-bottom: 8px;
+                }
+
+                #collapsibleNavbar ul li.header-searchbar .top-nav-header-searchbar input.input-search {
+                    width: 100%;
+                    font-size: 14px;
+                    margin-bottom: 8px;
+                }
+
+            #collapsibleNavbar ul li.user-profile-imge {
+                margin-bottom: 12px;
+            }
+
+        .header-navbar-user-email {
+            /*width: 130px;*/
+            font-size: 14px;
+            padding-right: 10px;
+        }
+        /*--------------header-section css end---------------*/
+
+        .contractor-payment-outer-box {
+            margin-top: 30px;
+        }
+
+        .contractor-business-info-outer-box {
+            margin-top: 30px;
+        }
+
+        .dashboard-top-heading-cstm h3 {
+            margin-bottom: 10px !important;
+        }
+
+        .dashboard-top-heading-cstm {
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+            .dashboard-top-heading-cstm > div {
+                margin-bottom: 30px;
+            }
+
+
+
+                .dashboard-top-heading-cstm > div button.edit-button {
+                    margin-left: 5px !important;
+                }
+
+        .cont-detail-inner-heading h3 {
+            font-size: 20px;
+        }
+
+        .table-design .contractor-availability {
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+            .table-design .contractor-availability div span {
+                font-size: 16px;
+            }
+
+            .table-design .contractor-availability div {
+                margin-right: 15px;
+                margin-bottom: 8px;
+            }
+
+
+
+
+
+        .email-sent-success-modal .modal-dialog .modal-content .modal-body .email-sent-success-main-heading img {
+            width: 115px;
+        }
+
+        .email-sent-success-modal .modal-dialog .modal-content .modal-body .email-sent-success-main-heading h3 {
+            font-size: 22px;
+        }
+
+        .email-sent-success-modal .modal-dialog .modal-content .modal-body .email-sent-success-main-heading p {
+            font-size: 12px;
+        }
+
+        .email-sent-success-modal .modal-dialog .modal-content .modal-body {
+            padding: 10px 15px 20px;
+        }
+
+
+
+        .zipcode-select-main-outerbox {
+            padding: 20px 15px 20px;
+        }
+
+        .select-zipcode-outerbox {
+            padding: 20px 15px 20px;
+            margin-bottom: 20px;
+        }
+
+
+
+
+        .select-zipcodes-main-box .select-zipcodes-checkbox {
+            min-height: 370px;
+            padding: 7px;
+            max-height: 370px;
+            margin-bottom: 20px;
+        }
+
+        .select-zipcodes-main-box .selected-zipcodes {
+            min-height: 370px;
+            padding: 7px;
+            max-height: 370px;
+            margin-bottom: 10px;
+        }
+
+        .select-zipcode-outerbox .form-select-zipcode .form-group label {
+            font-size: 14px;
+        }
+
+
+
+        .contractor-detail-outerbox .contractor-info-outer-box .contractor-info-box, .contractor-detail-outerbox .contractor-payment-outer-box .contractor-payment-info {
+            padding: 25px 15px;
+            margin-bottom: 0px;
+            min-height: inherit;
+        }
+
+        .contractor-detail-outerbox .contractor-business-info-outer-box .contractor-business-info-box {
+            padding: 25px 15px;
+            margin-bottom: 0px;
+            margin-top: 0;
+        }
+
+        .contractor-detail-outerbox .contractor-service-outer-box .contractor-service-box, .contractor-detail-outerbox .contractor-document-outer-box .contractor-document-box {
+            padding: 25px 15px;
+            margin-bottom: 0px;
+            margin-top: 0;
+        }
+
+        .contractor-detail-outerbox .contractor-gallery-outer-box .contractor-gallery-box {
+            padding: 25px 15px;
+            margin-bottom: 0px;
+            margin-top: 0;
+        }
+
+
+
+
+
+
+        .rgstr-input-form-box span.text-danger {
+            bottom: -13px;
+            font-size: 12px;
+        }
+
+
+        .rgstr-input-form-box span.passwordvalidation {
+            font-size: 12px;
+            bottom: -14px !important;
+        }
+
+        .rgstr-input-form-box label#ConfirmPasswordHo-error, .rgstr-input-form-box label#PasswordHo-error, .rgstr-input-form-box label#EmailHo-error, .rgstr-input-form-box label#FirstNameHo-error, .rgstr-input-form-box label#LastNameHo-error, .rgstr-input-form-box label#PhoneNumberHo-error {
+            bottom: -37px;
+            font-size: 12px;
+        }
+
+        .rgstr-input-form-box label#BusinessDescription-error, .rgstr-input-form-box label#YearsInBusiness-error, .rgstr-input-form-box label#CompanyWebsiteURL-error, .rgstr-input-form-box label#FacebookPageURL-error, .rgstr-input-form-box label#NumberOfEmployees-error, .rgstr-input-form-box label#JobSiteCrews-error, .rgstr-input-form-box label#NormalBusinessHours-error, .rgstr-input-form-box label#BusinessOrTradeLicenseFiles-error, .rgstr-input-form-box label#LiabilityInsuranceFile-error, .rgstr-input-form-box label#WorkmanCompensationInsuranceFile-error, .rgstr-input-form-box label#EstimateCharge-error, .rgstr-input-form-box label#DesignServices-error, .rgstr-input-form-box label#WhichPaymentApps-error, .rgstr-input-form-box label#ProfilePicture-error {
+            bottom: -37px;
+            font-size: 12px;
+        }
+
+        .rgstr-input-form-box label#IsCompanyWebsite-error, .rgstr-input-form-box label#IsFacebookPage-error, .rgstr-input-form-box label#CommercialLocation-error, .rgstr-input-form-box label#IsPhoneCallSupport-error, .rgstr-input-form-box label#Is24HoursPhoneAnswering-error, .rgstr-input-form-box label#IsOfferEmergencyServices-error, .rgstr-input-form-box label#IsBusinessOrTradeLicense-error, .rgstr-input-form-box label#IsLiabilityInsurance-error, .rgstr-input-form-box label#IsWorkmanCompensationInsurance-error, .rgstr-input-form-box label#IsEstimateCharge-error, .rgstr-input-form-box label#IsDesignServices-error, .rgstr-input-form-box label#IsContactedByHomeowners-error, .rgstr-input-form-box label#IsContactedBySubcontractors-error, .rgstr-input-form-box label#IsCash-error, .rgstr-input-form-box label#PersonalChecks-error, .rgstr-input-form-box label#IsContactedByContractors-error, .rgstr-input-form-box label#IsPaymentApps-error {
+            bottom: -14px;
+            font-size: 12px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+
+        .registration-container {
+            padding: 15px 25px 35px;
+        }
+        .mobile-user-none {
+            display: none !important;
+        }
+        .dashboard-top-heading h3 {
+            font-size: 22px;
+        }
+
+        .dashboard-main-container {
+            padding: 130px 25px 30px;
+        }
+
+        #top-nav-header {
+            /*padding: 5px 25px;*/
+
+            padding:30px 25px;
+        }
+
+        .registration-container-branding .kopkehome-logo img {
+            width: 80px;
+        }
+
+
+
+
+
+        .rgstr-box-heading {
+            width: 42%;
+        }
+
+            .rgstr-box-heading p {
+                font-weight: 300;
+                font-size: 12px;
+            }
+
+            .rgstr-box-heading h2 {
+                font-size: 24px;
+            }
+
+        .member-login-link p {
+            font-size: 12px;
+        }
+
+        .cstm-radio-box label {
+            padding-left: 10px;
+            font-size: 14px;
+        }
+
+
+
+
+
+        /*------- email verifical OTP modal------------*/
+
+
+        .contactorModal-email-varification .modal-content .modal-body .email-varification-main-heading h3 {
+            font-size: 22px;
+        }
+
+        .userInput input {
+            margin: 6px;
+            height: 45px;
+            width: 54px;
+        }
+
+        /*------- email verifical OTP modal css end------------*/
+
+        /*------------Membership benefits page----------*/
+        .benefit-table table thead tr th h2:first-child {
+            font-size: 18px;
+            width: 210px;
+        }
+
+        .benefit-table table thead tr th h2 {
+            font-size: 18px;
+            width: 113px;
+        }
+        /*------------Membership benefits page css end----------*/
+
+
+        /*--------------header-section---------------*/
+
+        #collapsibleNavbar ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: self-start;
+            -ms-flex-align: self-start;
+            align-items: self-start;
+        }
+
+            #collapsibleNavbar ul li.user-profile-imge {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-item-align: end;
+                align-self: flex-end;
+            }
+
+            #collapsibleNavbar ul li.header-searchbar .top-nav-header-searchbar {
+                margin-left: 20px;
+            }
+
+            #collapsibleNavbar ul li.header-searchbar {
+                margin: initial;
+            }
+
+                #collapsibleNavbar ul li.header-searchbar .top-nav-header-zipcode input.inputzip {
+                    width: 350px;
+                    font-size: 13px;
+                }
+
+                #collapsibleNavbar ul li.header-searchbar .top-nav-header-searchbar input.input-search {
+                    width: 300px;
+                    font-size: 13px;
+                }
+
+        .header-navbar-user-email {
+            width: 130px;
+            font-size: 14px;
+            padding-right: 10px;
+        }
+
+        #collapsibleNavbar ul li.user-profile-imge {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        /*--------------header-section css end---------------*/
+
+
+
+        .cont-detail-inner-heading h3 {
+            font-size: 20px;
+        }
+
+
+        .payments-type-section .payment-type-section-heading {
+            font-size: 22px;
+        }
+
+        .table-design .contractor-availability {
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+            .table-design .contractor-availability div span {
+                font-size: 16px;
+            }
+
+            .table-design .contractor-availability div {
+                margin-right: 15px;
+                margin-bottom: 8px;
+            }
+
+
+
+        .zipcode-select-main-outerbox {
+            padding: 20px 20px 20px;
+        }
+
+        .select-zipcode-outerbox {
+            padding: 20px 15px 20px;
+            margin-bottom: 20px;
+        }
+
+            .select-zipcode-outerbox .form-select-zipcode .form-group label {
+                font-size: 14px;
+            }
+
+
+
+
+
+
+        .contractor-detail-outerbox .contractor-info-outer-box .contractor-info-box, .contractor-detail-outerbox .contractor-payment-outer-box .contractor-payment-info {
+            padding: 25px 15px;
+            margin-bottom: 0px;
+        }
+
+        .contractor-detail-outerbox .contractor-business-info-outer-box .contractor-business-info-box {
+            padding: 25px 15px;
+            margin-bottom: 0px;
+            margin-top: 30px;
+        }
+
+
+        .contractor-business-info-outer-box {
+            margin-top: 0px;
+        }
+
+
+        .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box {
+            top: 244px;
+        }
+    }
+
+
+
+
+
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+        .contractor-payment-outer-box {
+            margin-top: 30px;
+        }
+        .mobile-user-none {
+            display: none !important;
+        }
+        .dashboard-top-heading-cstm > div button.edit-button {
+            margin-left: 5px !important;
+        }
+
+        .cont-detail-inner-heading h3 {
+            font-size: 22px;
+        }
+
+
+
+        .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-image .profile-circle {
+            width: 150px;
+            height: 150px;
+        }
+
+
+
+            .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-image .profile-circle .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+
+        .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-image .profile-image {
+            bottom: 20px;
+            right: 0px;
+        }
+
+        .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-name-heading {
+            padding-top: 190px;
+        }
+
+            .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-name-heading h3 {
+                font-size: 18px;
+            }
+
+            .User-Profile-BI-inner-content .profile-card-outer .profile-card-inner-box .view-user-profile-outer-card .view-user-profile-name-heading p {
+                font-size: 14px;
+                word-break: break-word;
+            }
+
+
+
+
+
+
+        .zipcode-select-main-outerbox {
+            padding: 20px 20px 20px;
+        }
+
+        .select-zipcode-outerbox {
+            padding: 20px 15px 20px;
+            margin-bottom: 15px;
+        }
+
+
+        .contractor-detail-outerbox .contractor-info-outer-box .contractor-info-box, .contractor-detail-outerbox .contractor-payment-outer-box .contractor-payment-info {
+            padding: 25px 15px;
+            margin-bottom: 0px;
+            min-height: inherit;
+        }
+
+        .contractor-detail-outerbox .contractor-business-info-outer-box .contractor-business-info-box {
+            padding: 25px 15px;
+            margin-bottom: 0px;
+            min-height: inherit;
+            margin-top: 0;
+        }
+
+
+        .contractor-detail-outerbox .contractor-payment-outer-box .contractor-payment-info {
+            padding: 25px 15px;
+            margin-bottom: 0px;
+            min-height: inherit;
+        }
+
+
+        .contractor-business-info-outer-box {
+            margin-top: 30px;
+        }
+
+
+        .contractor-detail-outerbox .contractor-service-outer-box .contractor-service-box, .contractor-detail-outerbox .contractor-document-outer-box .contractor-document-box {
+            padding: 25px 15px;
+            min-height: inherit;
+        }
+
+        .contractor-detail-outerbox .contractor-gallery-outer-box .contractor-gallery-box {
+            padding: 25px 15px;
+            min-height: inherit
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 1023px) and (orientation:landscape) {
+
+
+        .kopkehome-login-logo-heading img {
+            width: 90px;
+        }
+        .mobile-user-none {
+            display: none !important;
+        }
+        .forgot-pwd-page, .main-payment-page, .main-reset-pwd-page, .main-login-page {
+            padding: 0;
+        }
+
+        .forgot-pwd-page-content {
+            height: calc(100vh - 35vh);
+            overflow-y: auto;
+        }
+
+        .main-payment-page-content {
+            height: calc(100vh - 35vh);
+            overflow-y: auto;
+        }
+
+        .main-login-page-content {
+            height: calc(100vh - 35vh);
+            overflow-y: auto;
+        }
+
+        .reset-pwd-page-content {
+            height: calc(100vh - 35vh);
+            overflow-y: auto;
+        }
+
+
+        /*------- email verifical OTP modal------------*/
+
+        .contactorModal-email-varification .modal-content .modal-body {
+            height: calc(100vh - 29vh);
+            overflow-y: auto;
+        }
+
+        .contactorModal-email-varification .modal-dialog .modal-content .modal-header {
+            padding: 10px;
+        }
+
+            .contactorModal-email-varification .modal-dialog .modal-content .modal-header .close {
+                top: 26px;
+            }
+
+        /*------- email verifical OTP modal css end------------*/
+
+
+
+
+
+
+
+
+    }
+
+
+
+    @media (min-width: 1024px) and (max-width: 1280px) {
+        .main-payment-page-content {
+            padding: 25px 30px 10px 30px;
+        }
+        .mobile-user-none {
+            display: none !important;
+        }
+        .dashboard-main-container {
+            padding: 130px 30px 30px;
+        }
+
+        #top-nav-header {
+            /* padding: 5px 30px;*/
+            padding: 30px 30px;
+        }
+
+        .reset-pwd-page-content {
+            padding: 25px 30px 10px 30px;
+        }
+
+        .registration-container {
+            padding: 15px 30px 35px;
+        }
+
+
+
+        /*------------Membership benefits page----------*/
+        .benefit-table table thead tr th h2:first-child {
+            font-size: 18px;
+            width: 280px;
+        }
+
+        .benefit-table table thead tr th h2 {
+            font-size: 18px;
+            width: 113px;
+        }
+
+
+
+        /*--------------header-section---------------*/
+
+        #collapsibleNavbar ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+
+            #collapsibleNavbar ul li.header-searchbar {
+                margin: initial;
+            }
+
+        /*--------------header-section css end---------------*/
+
+
+        .cont-detail-inner-heading h3 {
+            font-size: 24px;
+        }
+
+
+        .table-design .contractor-availability div span {
+            font-size: 16px;
+        }
+
+        .table-design .contractor-availability div {
+            margin-right: 20px;
+        }
+
+
+
+
+
+
+
+
+        .zipcode-select-main-outerbox {
+            padding: 20px 20px 20px;
+        }
+
+        .select-zipcode-outerbox {
+            padding: 20px 15px 20px;
+            margin-bottom: 15px;
+        }
+
+            .select-zipcode-outerbox .form-select-zipcode .form-group label {
+                font-size: 14px;
+            }
+
+
+
+
+        .contractor-detail-outerbox .contractor-info-outer-box .contractor-info-box, .contractor-detail-outerbox .contractor-payment-outer-box .contractor-payment-info {
+            padding: 25px 15px;
+            margin-bottom: 0px;
+        }
+
+        .contractor-detail-outerbox .contractor-business-info-outer-box .contractor-business-info-box {
+            padding: 25px 15px;
+            margin-bottom: 0px;
+        }
+
+
+
+
+        .contractor-detail-outerbox .contractor-service-outer-box .contractor-service-box, .contractor-detail-outerbox .contractor-document-outer-box .contractor-document-box {
+            padding: 25px 15px;
+            margin-bottom: 0px;
+        }
+    }

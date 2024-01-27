@@ -1,0 +1,219 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="registration-container black-bg">
+
+
+
+        <div class="registration-container-branding d-flex justify-content-between align-items-center">
+            <div class="kopkehome-logo">
+                <img src="~/images/Kopke-brand-logo.png" width="140" />
+            </div>
+
+            <div class="rgstr-box-heading text-center">
+                <h2 class="orange-clr">Contractor Membership Benefits</h2>
+                <p class="text-white m-0">Please choose the best membership benefits for you.</p>
+            </div>
+
+             <div class="member-login-link">
+                <p class="text-white m-0">Already a member? </p><a href="@Url.Action("signin", "user")" class=" green-clr-top-login-link ">Login</a>
+            </div>
+
+            @*<div class="member-login-link">
+                <p class="text-white m-0">Already a member? <a href="http://localhost:7047/user/signinn" class=" green-clr-top-login-link ">Login</a></p>
+            </div>*@
+
+        </div>
+
+
+
+        <div class="registration-container-form">
+            <div class="tab-content">
+
+
+                <div id="Contractor" class="contractor-business-prof-form">
+                    <div class="Membership-benefits-outer-box">
+                        <div class="table-responsive benefit-table">
+                            <table class="table">
+                                <colgroup></colgroup>
+					            <colgroup></colgroup>
+					            <colgroup></colgroup>
+					            <colgroup></colgroup>
+					            <colgroup></colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="d-flex justify-content-center align-items-center">
+                                            <h2>Membership Benefits</h2>
+                                        </th>
+                                        <th>
+                                            <span class="membership-title membership-title-1">Free</span>
+                                            <h2>$0.0</h2>
+                                        </th>
+                                        <th>
+                                            <span class="membership-title membership-title-2">Basic</span>
+                                            <h2>$29/Year</h2>
+                                        </th>
+                                        <th>
+                                            <span class="membership-title membership-title-3">Enhanced</span>
+                                            <h2>$59.99/Year</h2>
+                                        </th>
+                                        <th>
+                                            <span class="membership-title membership-title-4">Unlimited</span>
+                                            <h2>$89.99/Year</h2>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+
+
+                                <tbody>
+                                    <tr>
+                                        <th class="membership-fst-title">Zip Codes</th>
+                                        <td><p class="m-0">5</p></td>
+                                        <td><p class="m-0">5</p></td>
+                                        <td><p class="m-0">10</p></td>
+                                        <td><p class="m-0">Unlimited</p></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Main Categories</th>
+                                        <td><p class="m-0">1</p></td>
+                                        <td><p class="m-0">1</p></td>
+                                        <td><p class="m-0">4</p></td>
+                                        <td><p class="m-0">Unlimited</p></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Use of Full Web Site</th>
+                                        <td><i class="fa fa-check"></i></td>
+                                        <td><i class="fa fa-check"></i></td>
+                                        <td><i class="fa fa-check "></i></td>
+                                        <td><i class="fa fa-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th>3 Light Status</th>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th>No Ads or Pop Ups</th>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Prohz Apparel</th>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <!-- another 6 -->
+                                    <tr>
+                                        <th>Mobile App</th>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Face Touch Access</th>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vendor Discount Offers</th>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Trade Education</th>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Feedback</th>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Direct Connect</th>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <!-- another 6 -->
+                                    <tr>
+                                        <th>Employment Portal</th>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Inspector Connect</th>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Prohz Connect</th>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Post Pictures</th>
+                                        <td><p class="m-0">1</p></td>
+                                        <td><p class="m-0">5</p></td>
+                                        <td><p class="m-0">10</p></td>
+                                        <td><p class="m-0">30</p></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>&nbsp;</th>
+                                   
+                                          <td><a href="@Url.Action("signin", "user")" class=" text-decoration-none membership-title-1">BUY NOW</a></td>
+                                        <td><a href="#" class=" text-decoration-none membership-title-2">BUY NOW</a></td>
+                                        <td><a href="#" class="text-decoration-none membership-title-3">BUY NOW</a></td>
+                                        <td><a href="#" class="text-decoration-none membership-title-4">BUY NOW</a></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+
+             
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+

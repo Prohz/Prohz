@@ -1,0 +1,158 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>KopkeHome_WebApp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Resources\KopkeHome_WebApp\**" />
+    <Compile Remove="Resources\Shared\**" />
+    <Content Remove="Resources\KopkeHome_WebApp\**" />
+    <Content Remove="Resources\Shared\**" />
+    <EmbeddedResource Remove="Resources\KopkeHome_WebApp\**" />
+    <EmbeddedResource Remove="Resources\Shared\**" />
+    <None Remove="Resources\KopkeHome_WebApp\**" />
+    <None Remove="Resources\Shared\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Resources\LocService.cs" />
+    <Compile Remove="Resources\SharedResource.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\BusinessProfile\BusinessProfile.cshtml" />
+    <Content Remove="Views\BusinessProfile\Contractor.cshtml" />
+    <Content Remove="Views\BusinessProfile\HomeOwner.cshtml" />
+    <Content Remove="Views\BusinessProfile\HomeOwnersPlan.cshtml" />
+    <Content Remove="Views\BusinessProfile\IndiContractorProfile.cshtml" />
+    <Content Remove="Views\BusinessProfile\MembershipPlan.cshtml" />
+    <Content Remove="Views\BusinessProfile\SubContractor.cshtml" />
+    <Content Remove="Views\BusinessProfile\SubContractorProfile - Copy.cshtml" />
+    <Content Remove="Views\Dashboard\ContractorList.cshtml" />
+    <Content Remove="Views\Shared\_SelectLanguagePartial.cshtml" />
+    <Content Remove="Views\User\_HomeOwnerSignup.cshtml" />
+    <Content Remove="wwwroot\favicon.png" />
+    <Content Remove="wwwroot\js\pdf-viewer.js" />
+    <Content Remove="wwwroot\js\pdf.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources\SharedResource.de-CH.resx" />
+    <EmbeddedResource Remove="Resources\SharedResource.en-US.resx" />
+    <EmbeddedResource Remove="Resources\SharedResource.fr-CH.resx" />
+    <EmbeddedResource Remove="Resources\SharedResource.hi-IN.resx" />
+    <EmbeddedResource Remove="Resources\SharedResource.it-CH.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Admin\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\Admin\js\bootstrap.min.js" />
+    <None Include="wwwroot\BusinessProfile\assets\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\BusinessProfile\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\docs\pdf.pdf" />
+    <None Include="wwwroot\HomePageAssets\assets\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\HomePageAssets\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\jquery\jquery.unobtrusive-ajax.js" />
+    <None Include="wwwroot\lib\jquery\jquery.unobtrusive-ajax.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AsyncFixer" Version="1.6.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Localization.AspNetCore.TagHelpers" Version="0.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Localization" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Roslynator.Analyzers" Version="4.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
+    <PackageReference Include="Stripe.net" Version="39.121.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+    <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\KopkeHome-BusinessLayer\KopkeHome-BusinessLayer.csproj" />
+    <ProjectReference Include="..\..\KopkeHome-DataAccessLayer\KopkeHome-DataAccessLayer.csproj" />
+    <ProjectReference Include="..\..\KopkeHome-LogManager\KopkeHome-LogManager.csproj" />
+    <ProjectReference Include="..\..\KopkeHome-ModelLayer\KopkeHome-ModelLayer.csproj" />
+    <ProjectReference Include="..\..\KopkeHome-UtilityLayer\KopkeHome-UtilityLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Controllers\HomeController\HomeController.en.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\HomeController\HomeController.fr.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\HomeController\HomeController.Index.en-US.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\HomeController\HomeController.Index.en.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\HomeController\Index.en.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Index.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Home\Index.en.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Home\Index.fr.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\lib\bootstrap\" />
+    <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
+    <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
+    <Folder Include="wwwroot\lib\jquery-validation\" />
+    <Folder Include="wwwroot\lib\jquery-validation\dist\" />
+    <Folder Include="wwwroot\lib\jquery\" />
+    <Folder Include="wwwroot\lib\jquery\dist\" />
+  </ItemGroup>
+
+</Project>

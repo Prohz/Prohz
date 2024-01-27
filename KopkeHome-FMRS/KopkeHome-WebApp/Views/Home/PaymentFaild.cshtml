@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Payment Faild";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="~/KopkeHome_Web.styles.css" asp-append-version="true" />
+
+    @*
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/master.css" asp-append-version="true" />
+</head>
+<body>
+<div class="registration-container black-bg">
+
+
+
+        <div class="registration-container-branding d-flex justify-content-between align-items-center">
+            <div class="kopkehome-logo">
+                <img src="~/images/Kopke-brand-logo.png" width="140" />
+            </div>
+
+            <div class="rgstr-box-heading text-center">
+                
+            </div>
+
+            <div class="member-login-link">
+                <p class="text-white m-0"><a class=" "></a></p>
+            </div>
+        </div>
+
+<div class="container ">
+  <div class="mt-5">
+   
+   
+      <div class="col-12 col-md-12 col-sm-12">
+                
+          <div class="align-content-center bg-black" style="color:#fff !important">
+            <i class="fa fa-times fa-5x"></i>
+            <div class="content">
+              <h2 class="text-black">
+                Oops! Something went wrong.
+              </h2>
+              <p>While trying to reserve money from your account</p>
+            </div>
+            
+         </div>
+      
+          <span ><a class="btn btn-danger" href="@Url.Action("signin","User")">Try again</a></span>
+      
+      </div>
+    
+  </div>
+</div>
+ </div>
+</body>
+</html>

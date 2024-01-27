@@ -1,0 +1,382 @@
+﻿@model KopkeHome_ModelLayer.DataModel.Dashboard
+@{
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+@inject IViewLocalizer Localizer
+  
+    <style>
+  
+.btn:focus {
+  outline: none;
+}
+
+.radio-sec {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  /*margin-bottom: 12px;*/
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-sec input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-sec:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-sec input:checked ~ .checkmark 
+{
+  background-color: #f8e40b;
+  box-shadow:0 0 10px #f8e40b;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-sec input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-sec .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+#chknow:checked ~ .checkmark {
+  background-color: #ADD136;
+  box-shadow:0 0 10px #ADD136;
+}
+#chklater:checked ~ .checkmark {
+  background-color: #e80000; /*f8e40b*/
+  box-shadow:0 0 10px #e80000;
+}
+#chksoon:checked ~ .checkmark {
+  background-color: #f8e40b;
+  box-shadow:0 0 10px #f8e40b;
+}
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+@{
+     string BkNow = string.Empty;
+                                string BkSoon = string.Empty;
+                                string BkLater = string.Empty;
+}
+    </style>
+
+   <div class="dashboard-main-container">
+       <div class="row p-2">
+      
+    @if(Model.LoggedInUser.IsDocumentsVerified)
+    {<h6 class="text-white" style="padding: 5px;margin-bottom:0px!important;">@Localizer["Account Status :"]</h6>
+     <p style="margin-top:3px; color:#ADD136;">@Localizer["Verified Account"]</p> <img height="30" width="30" src="~/images/AccountVerified.png" />   
+     <h6 class="text-white" style="padding: 5px;margin-bottom:0px!important;">@Localizer["ID :"]</h6>
+     <p style="margin-top:3px; color:#ADD136;">@Model.LoggedInUser.UniqueMemberId &nbsp;</p>
+     @* <h6 class="text-white" style="padding: 5px;margin-bottom:0px!important;">@Localizer["Company :"]</h6>
+     <p style="margin-top:3px; color:#ADD136;">(@Model.LoggedInUser.BusinessName)</p>*@
+
+
+    
+                              @*  <div>
+                                    @{
+                                        
+                                        if(Model.LoggedInUser.RoleId==1)
+                                            {
+                                              <p class="green-clr" style="margin-top:3px">@Localizer["(Contractor)"] </p>
+                                           
+                                        }
+                                        else if(Model.LoggedInUser.RoleId==2)
+                                        {
+                                             <p class="green-clr" style="margin-top:3px">@Localizer["(Sub-Contractor)"] </p>
+                                        }
+                                         else if(Model.LoggedInUser.RoleId==3)
+                                        {
+                                             <p class="green-clr" style="margin-top:3px"> @Localizer["(Independent Contractor)"] </p>
+                                        }
+                                         else if(Model.LoggedInUser.RoleId==4)
+                                        {
+                                             <p class="green-clr" style="margin-top:3px">@Localizer["(Home Owner)"]</p>
+                                        }
+                                    }
+                                </div>*@
+                         
+                         
+     
+    }
+   @* else
+    {
+        <h6 style="margin-top:7px" class="text-danger">Your account is under verification.Please make sure you have submited all the required documents of your business.</h6>
+    }*@
+     </div>
+       <br />
+        <br />
+        <div class="dashboard-top-heading dashboard-top-heading-cstm ">
+            <h3 class="green-clr mb-5">@Localizer["Contractors List"]</h3>
+             @{ 
+                if (Model.LoggedInUser.RoleId!=4)
+                {
+                    <h4 class="company"> <i class="fa fa-regular fa-briefcase"></i> <span>@Model.LoggedInUser.BusinessName</span> </h4>
+                    
+            <div class="d-flex align-items-center">
+                   <p class="text-white m-0">@Localizer["Current Work Status"] : &nbsp;</p>
+                   @{
+                                
+                                if (Model.LoggedInUser.WorkStatus==1)
+                                {
+                                    BkNow = "checked";
+                                     <img class="mr-1" src="../images/available.png" width="45" height="45" />
+                                }
+                                else if (Model.LoggedInUser.WorkStatus==2)
+                                {
+                                    BkSoon= "checked";
+                                     <img class="mr-1" src="../images/appoint.png" width="45" height="45" />
+                                }
+                                else if (Model.LoggedInUser.WorkStatus==3)
+                                {
+                                    BkLater= "checked";
+                                     <img class="mr-1" src="../images/booked.png" width="45" height="45" />
+                                }
+                            }
+                   
+            <button class="btn btn-success" data-toggle="modal" data-target="#WorkStatusModal"><i class="fa fa-regular fa-briefcase"></i>@Localizer["Change Work Status"]</button>
+                
+
+            </div>
+                }}
+
+        </div>
+       
+       
+     <div class="dashboard-main-inner-content">
+     <div class="table-design">
+         <div class="contractor-availability">
+             <div class="green-available"><img src="../images/available.png" width="30px" /><span>@Localizer["Booking for Now (0-4 weeks)"]</span></div>
+             <div class="yellow-appoint"><img src="../images/appoint.png" width="30px" /><span>@Localizer["Booking for Soon (5-16 weeks)"]</span></div>
+             <div class="red-booked"><img src="../images/booked.png" width="30px" /><span>@Localizer["Booking for Later (17-52 weeks)"]</span></div>
+         </div>
+                <table id="example" class="table text-white dt-responsive nowrap" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                           @*  <th> Sl. No</th>*@
+                           <th>
+                               @Localizer["Your Experience History"]
+                            </th>
+                            <th>
+                               @Localizer["Contractor Type"]
+                            </th>
+                            <th>
+                               @Localizer["Contractor Name"]
+                            </th>
+                          
+                            <th>
+                               @Localizer["Email Address"]
+                            </th>
+                            <th>
+                                @Localizer["Company Name"]
+                            </th>
+                            <th>
+                              @Localizer["Phone (Mobile)"]
+                            </th>
+                            <th>
+                                @Localizer["Category"]
+                            </th>
+                            <th>
+                                @Localizer["Status"]
+                            </th>
+                            <th>
+                                @Localizer["Last updated"]
+                            </th>
+                            <th>
+                                @Localizer["Activity"]
+                            </th>
+
+                            
+                        </tr>
+                    </thead>
+                      <tbody>
+                          @if(Model.ContractorList!=null)
+                          {
+                        int autoincrement =0;
+                       
+                        foreach(var cont in Model.ContractorList)
+                            {
+
+                          
+                            string Liked = string.Empty;
+                            string Disliked = string.Empty;
+                            if (cont.IsLiked)
+                            {
+                                Liked = "greenClr";
+                            }
+                            else if(cont.IsDisLiked)
+                            {
+                                Disliked = "redClr";
+                            }
+                            <tr>
+
+                           @* <td>@Interlocked.Increment(ref autoincrement) </td>*@
+                     
+<td>
+                   <button class="btn green1 @Liked" data-type="1" id="@cont.Id" data-userId="@Model.LoggedInUser.Id"><i  class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+ || <button id="@cont.Id" data-type="0" data-userId="@Model.LoggedInUser.Id" class="btn red1 @Disliked" ><i  class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+
+                            </td>
+
+
+
+                             
+                            <td class="cont-user-type"><span>@cont.ContractorType</span></td>                   
+                            <td class="cont-name"><span><img src="../Uploads/@cont.ProfilePic" onerror="this.src='../images/DefaultProfile.png'">@cont.Name</span></td>
+                            <td class="cont-email"><span>@cont.Email</span></td>  
+                            <td class="cont-company"><span>@cont.CompanyName</span></td>
+                            <td class="cont-mobile"><span>@cont.Mobile</span></td> 
+                            <td class="cont-category"><span>@cont.Category</span></td>  
+                            <td class="cont-status">
+                                    @if (cont.WorkStatus==1)
+                                    {
+                                        <span><img src="../images/available.png" width="20px"></span>
+                                    }
+                                    else if (cont.WorkStatus==2)
+                                    {
+                                         <span><img src="../images/appoint.png" width="20px"></span>
+                                    }
+                                    else if (cont.WorkStatus==3)
+                                    {
+                                         <span><img src="../images/booked.png" width="20px"></span>
+                                    }
+
+                                </td> 
+                                <td style="font-size: 13px;" class="cont-status">
+                                    <span class="green-clr">@cont.WorkStatusUpdated</span>
+                                </td>
+                            <td class="cont-view-detail">
+                              @*  <input type="hidden" id="ContractorID" value="@cont.Id" />
+                               <button id="button123" value="@cont.Id">Send</button>
+                           <a target="_blank" asp-controller="dashboard" asp-action="ContractorDetails" asp-route-edit="@cont.Id" class=" green-clr-top-login-link ">View Detail</a></td> 
+
+                              *@
+                            @*  <button   class="btnnew green-clr-top-login-link " value="@cont.Id">Send</button>*@
+                                <a  id="@cont.Id" style="cursor: pointer;" class="btnnew pointer green-clr-top-login-link ">@Localizer["View Details"]</a></td> 
+                            </tr>
+                            }
+                          }
+                     
+                      
+                    </tbody>
+                </table>
+     </div>
+
+   
+
+
+</div>
+
+   </div>
+
+  
+        <div class="modal p-0 fade contactorModal-email-varification" data-keyboard="false" data-backdrop="static" id="WorkStatusModal">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">@Localizer["Work status"]</h4>
+                        <button type="button" class="close modal-cstm-close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" onsubmit="return ChangeWorkStatus(this);" > 
+                            <input type="hidden" value="@Model.LoggedInUser.Id" name="UserId" />
+                        <div class="text-center email-varification-main-heading">
+                            <h3 class="text-white">@Localizer["Change your work status"]</h3>
+                            <p>  </p>
+                               <div class="table-design">
+                            <div class="contractor-availability" style="flex:nowrap">
+             <div class="green-available"><img src="../images/available.png" width="30px" /><span class="WorkStatusText">@Localizer["Booking for Now (0-4 weeks)"]</span></div>
+             <div class="yellow-appoint"><img src="../images/appoint.png" width="30px" /><span class="WorkStatusText">@Localizer["Booking for Soon (5-16 weeks)"]</span></div>
+             <div class="red-booked"><img src="../images/booked.png" width="30px" /><span class="WorkStatusText">@Localizer["Booking for Later (17-52 weeks)"]</span></div>
+         </div> </div>
+                        </div>
+         
+                        <div class="p-2">
+                          <div class="form-inline">
+  <div class="form-group mb-2">
+    <label class="sr-only" for="inputGroupSelect01">@Localizer["Work status"] :</label>
+  </div>
+                            
+
+     <div class="form-inline mb-2">
+         <label class="text-white" >@Localizer["Work status"] :</label>
+         <div class="form-group"> 
+<div class="radio-sec ml-2">
+<label class="radio-text ">@Localizer["Booking for Now"]
+  <input id="chknow" @BkNow type="radio" value="1" name="radioWorkStatus">
+  <span class="checkmark"></span>
+</label>
+</div>
+<div class="radio-sec ml-2">
+<label class="">@Localizer["Booking for Soon"]
+  <input id="chksoon" @BkSoon type="radio" value="2" name="radioWorkStatus">
+  <span class="checkmark"></span>
+</label>
+</div>
+<div class="radio-sec ml-2">
+<label class="">@Localizer["Booking for Later"]
+  <input id="chklater" @BkLater type="radio" value="3" name="radioWorkStatus">
+  <span class="checkmark"></span>
+</label>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+                           
+
+                            <div class="mt-5 verify-email text-center ">
+                                <button type="submit"  class="btn btn-sm green-email-verify-btn"><i class="fa fa-save" aria-hidden="true"></i>  @Localizer["Save"]</button>
+                            </div>
+                      </form>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  
+<script>
+    
+</script>
+   
+    

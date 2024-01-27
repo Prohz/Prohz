@@ -1,0 +1,151 @@
+﻿@model List<KopkeHome_ModelLayer.DataModel.ProhzLegalFiles>
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+    int autoincrement = 0;
+}
+
+
+<div class="topCard-sec">
+ <h3 class="dashHeading">Legal Files</h3>
+   </div>
+
+<div class="tableWrapper promoTable">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-striped" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Sl No.</th>
+                                    <th>File Type</th>
+                                    <th>File Name</th>
+                                     <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                     <tr>
+                                    <td>@Interlocked.Increment(ref autoincrement)</td>
+                                    @if (item.FileType==1)
+                                    {
+                            <td>Terms of Use</td>
+                        }
+                        else if(item.FileType==2)
+                        {
+                            <td>Privacy Policy</td>
+                        }
+                        else
+                        {
+                            <td>Membership Agreement</td>
+                        }
+
+                                    <td>@item.Name</td>
+                                   
+                                   
+                                <td class="">
+                                    <div style="flex-direction: inherit !important" class="btn-group-vertical">
+                                        
+                                   <a target="_blank" href="~/Uploads/@item.FilePath"><button type="button"  class="btn  btn-primary" >View</button></a> 
+                                    <button type="button" data-FileType="@item.FileType" data-id="@item.Id" data-PrevFile="@item.FilePath" class="btn  btn-danger  AddAdminFiles">Edit</button>
+                                    </div>
+                                      
+                                </td>
+                               
+                                </tr>
+                                    
+                                }
+                               
+
+                            </tbody>
+                           @* <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </tfoot>*@
+                        </table>
+                    </div>
+                </div>
+
+
+  
+ 
+
+
+
+@*
+<div class="modal fade" id="AddAdminFilesViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Add Files</h5>
+        <button type="button" class="close btn btn-secondary ModalCloseFAQ" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+
+       <form name="AddFilesForm" asp-action="AddProhzLegalFiles" enctype="multipart/form-data" asp-controller="Admin" method="POST">
+      <div class="modal-body">
+        
+   
+          <input type="hidden" name="Id"   />
+  <div class="form-group">
+    <label class="mb-2" for="exampleFormControlInput1">File  (.pdf)</label>
+    <input type="file" name="LegalDocFiles" class="form-control">
+    <span class="text-danger" id="fileUploadAdminSpan"></span> 
+  </div>
+  
+ 
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary main-login-page ModalCloseFAQ" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+*@
+@*
+edit*@
+
+<div class="modal fade" id="EditAdminFilesViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Update File</h5>
+        <button type="button" class="close btn btn-secondary ModalCloseFAQ" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+
+       <form name="AddFilesForm" asp-action="AddProhzLegalFiles" onsubmit="return CheckValLegalFile();" enctype="multipart/form-data" asp-controller="Admin" method="POST">
+      <div class="modal-body">
+        
+   
+          <input type="hidden" name="Id" id="LegalId"  />
+          <input type="hidden" name="Type" id="TypeId"  />
+          <input type="hidden" name="PrevFile"  />
+  <div class="form-group">
+    <label class="mb-2" for="exampleFormControlInput1">File  (.pdf)</label>
+    <input type="file" id="LegalUploadFile" name="LegalDocFiles" class="form-control">
+    <span class="text-danger" id="fileUploadAdminSpan"></span> 
+  </div>
+  
+ 
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary main-login-page ModalCloseFAQ" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

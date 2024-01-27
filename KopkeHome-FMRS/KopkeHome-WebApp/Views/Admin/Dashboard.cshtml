@@ -1,0 +1,116 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.AdminViewModels.AdminDashboardViewModel
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+@inject IViewLocalizer Localizer
+
+<div class="topCard-sec">
+    <h2 class="dashHeading">Dashboard</h2>
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="topCard">
+                <p>Total Users</p>
+                <h3>@Model.NumberOfActiveUsers</h3>
+                <div class="topCrd-in">
+                    @* <a href="#" target="">View All</a>*@
+                    <div class="iconBox">
+                        <span><i class='bx bx-user'></i></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="topCard">
+                <p>Subscriptions</p>
+                <h3>@Model.SubscriptionPurchased</h3>
+                <div class="topCrd-in">
+                    @* <a href="#" target="">View All</a>*@
+                    <div class="iconBox iconBx2">
+                        <span><i class='bx bx-wallet-alt'></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="topCard topCrd-mt">
+                <p>Home Owners</p>
+                <h3>@Model.NumberOfHomeOwners</h3>
+                <div class="topCrd-in">
+                    @* <a href="#" target="">View All</a>*@
+                    <div class="iconBox iconBx3">
+                        <span><i class='bx bx-store-alt'></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="topCard topCrd-mt">
+                <p>Contractors</p>
+                <h3>@Model.NumberOfContractors</h3>
+                <div class="topCrd-in">
+                    @* <a href="#" target="">View All</a>*@
+                    <div class="iconBox iconBx4">
+                        <span><i class='bx bx-bar-chart-alt-2'></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    ::-webkit-scrollbar-thumb:horizontal{
+        background: #57575794;
+        border-radius: 10px;
+        
+    }
+
+</style>
+
+<h2 class="dashHeading text-success">Users List :</h2>
+<div class="tableWrapper">
+    <div class="table-responsive">
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Member Id</th>
+                    <th>Home Phone</th>
+                    <th>Office Phone</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>User Type</th>
+                    <th>Action</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+               
+                    @foreach (var item in Model.RoleName)
+                    {
+                        <tr>
+                            <td>@item.FirstName @item.LastName</td>
+                            <td>@item.UniqueMemberId</td>
+                            <td>@item.PhoneNumber</td>
+                            <td>@item.PhoneNumberOffice</td>
+                            <td>@item.BusinessAddress</td>
+                            <td>@item.Email</td>
+                            <td>@item.UserType</td>
+                            <td class="cont-view-detail">
+                            <a class="btn btn-success" style="background-color:#ADD136;" asp-action="BusinessProfileDetailOnAdmin" asp-controller="dashboard" asp-route-id="@item.Id">@Localizer["View Details"]</a>
+                        
+                        </tr>
+                    
+                }
+
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
+

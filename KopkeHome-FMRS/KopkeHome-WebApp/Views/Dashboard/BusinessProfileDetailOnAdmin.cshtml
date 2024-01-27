@@ -1,0 +1,1383 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.DashboardViewModels.ContractorProfileDetailsViewModel;
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+@inject IViewLocalizer Localizer
+
+@if (@Model.User.RoleId != 4)
+{
+    <div class="topCard-sec">
+        <h3 style="color:#ADD136;">@Localizer["Business Information"] <span style="color:#FF8800; margin-left: 768px;"> @Model.User.FirstName @Model.User.LastName</span></h3>
+        <div class="dashboard-main-container tableWrapper">
+            <div class="dashboard-top-heading dashboard-top-heading-cstm ">
+
+                <div class="d-flex align-items-center">
+
+                    @* @if(Model.LoggedInUser.RoleId==5)
+                        {
+                        <a href="@Url.Action("contractorbusinessprofile", "dashboard")" class="button btn green-modal-btn ml-4 edit-button">@Localizer["Edit"]</a>
+                        }
+                        else
+                        {
+                        <a href="@Url.Action("othercontractorbusinessprofile", "dashboard")" class="button btn green-modal-btn ml-4 edit-button">@Localizer["Edit"]</a>
+                        }*@
+
+
+                </div>
+            </div>
+
+            @if (Model != null && @Model.User.RoleId == 1 || @Model.User.RoleId == 2 || @Model.User.RoleId == 3)
+            {
+
+
+
+
+                <div class="contractor-detail-outerbox">
+                    <div class="row">
+
+
+                        <div class="col-lg-12 col-md-12 contractor-business-info-outer-box">
+                            <div class="contractor-business-info-box">
+
+                                @if (Model.BusinessProfileContractor != null)
+                                {
+
+                                    <div class="form-contractor-business-info">
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">1. @Localizer["Business Name"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.User.BusinessName</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">2. @Localizer["Business Address"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.User.BusinessAddress</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">3. @Localizer["Business URL"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>
+                                                    <a href="@Model.BusinessProfileContractor.CompanyWebsiteURL" target="_blank">@Model.BusinessProfileContractor.CompanyWebsiteURL</a>
+
+                                                </span>
+                                            </div>
+                                        </div>
+                                        @if (Model.User.PhoneNumberOffice != null)
+                                        {
+                                            <div class="form-group row BizBorder">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label">4. @Localizer["Office Number"]:</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <span>@Model.User.PhoneNumberOffice</span>
+                                                </div>
+                                            </div>
+
+                                        }
+                                        else
+                                        {
+                                            <div class="form-group row BizBorder">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label">5. @Localizer["Phone Number"]:</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <span>@Model.User.PhoneNumber</span>
+                                                </div>
+                                            </div>
+                                        }
+
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">6. @Localizer["Facebook Page Name"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>
+                                                    <a href="@Model.BusinessProfileContractor.FacebookPageURL" target="_blank">@Model.BusinessProfileContractor.FacebookPageURL</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">7. @Localizer["Years in Business"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.BusinessProfileContractor.YearsInBusiness</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">8. @Localizer["Number of Employees"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.BusinessProfileContractor.NumberOfEmployees</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">9. @Localizer["Business Description"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.BusinessProfileContractor.BusinessDescription</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">10. @Localizer["Do you have a commercial location where Other Contractors can meet with you?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.BusinessProfileContractor.CommercialLocation == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">11. @Localizer["How many job site crews do you have?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.BusinessProfileContractor.JobSiteCrews</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">12. @Localizer["Do you have someone to answer the phone during normal business hours?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.BusinessProfileContractor.IsPhoneCallSupport == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">13. @Localizer["What are your normal business hours?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.BusinessProfileContractor.NormalBusinessHours</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">14. @Localizer["Do you have 24 hour phone answering?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.BusinessProfileContractor.Is24HoursPhoneAnswering == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">15. @Localizer["Do you offer emergency services?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.BusinessProfileContractor.IsOfferEmergencyServices == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">16. @Localizer["Do you have a business or trade license(s)?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.BusinessProfileContractor.IsBusinessOrTradeLicense == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">17. @Localizer["Do you have Liability Insurance?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.BusinessProfileContractor.IsLiabilityInsurance == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">18. @Localizer["Do you have Workman’s Compensation Insurance?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.BusinessProfileContractor.IsWorkmanCompensationInsurance == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">19. @Localizer["Do you give “Free Estimates”?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.BusinessProfileContractor.IsEstimateCharge == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        @if (Model.BusinessProfileContractor.IsEstimateCharge == false)
+                                        {
+                                            <div class="form-group row BizBorder">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label ">20. @Localizer["What do you charge for an estimate?"]</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @if (!string.IsNullOrEmpty(Model.BusinessProfileContractor.EstimateCharge))
+                                                    {
+                                                        <span>$@Model.BusinessProfileContractor.EstimateCharge</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@Localizer["Gives Free Estimates."]</span>
+                                                    }
+                                                </div>
+                                            </div>
+                                        }
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">21. @Localizer["Do you offer design services?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.BusinessProfileContractor.IsDesignServices == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        @if (Model.BusinessProfileContractor.IsDesignServices == true)
+                                        {
+                                            <div class="form-group row BizBorder">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label ">22. @Localizer["What do you charge for design services?"]</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @if (!string.IsNullOrEmpty(Model.BusinessProfileContractor.DesignServices))
+                                                    {
+                                                        <span>$@Model.BusinessProfileContractor.DesignServices</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@Localizer["Doesn't offer design services."]</span>
+                                                    }
+
+                                                </div>
+                                            </div>
+                                        }
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">23. @Localizer["Do you want to be contacted directly by Homeowners?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.BusinessProfileContractor.IsContactedByHomeowners == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">24. @Localizer["Do you want to be contacted directly by Other Contractors?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.BusinessProfileContractor.IsContactedBySubcontractors == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                }
+                                else if (Model.SubContractorBusinessProfile != null)
+                                {
+
+
+                                    <div class="form-contractor-business-info">
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">1. @Localizer["Business Name"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.User.BusinessName</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">2. @Localizer["Business Address"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.User.BusinessAddress</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">3. @Localizer["Business URL"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>
+                                                    <a href="@Model.SubContractorBusinessProfile.CompanyWebsiteURL" target="_blank">@Model.SubContractorBusinessProfile.CompanyWebsiteURL</a>
+
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">4. @Localizer["Office Number"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.User.PhoneNumberOffice</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">5. @Localizer["Facebook Page Name"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>
+                                                    <a href="@Model.SubContractorBusinessProfile.FacebookPageURL" target="_blank">@Model.SubContractorBusinessProfile.FacebookPageURL</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">6. @Localizer["Years in Business"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.SubContractorBusinessProfile.YearsInBusiness</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label">7. @Localizer["Number of Employees"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.SubContractorBusinessProfile.NumberOfEmployees</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">8. @Localizer["Business Description"]:</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.SubContractorBusinessProfile.BusinessDescription</span>
+                                            </div>
+                                        </div>
+                                        @* <div class="form-group row">
+                                            <div class="col-sm-5">
+                                            <label class="control-label ">Do you have a commercial location where Contractors can meet with you ?</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                            @if (Model.SubContractorBusinessProfile.CommercialLocationContractor == true)
+                                            {
+                                            <span>Yes</span>
+                                            }
+                                            else
+                                            {
+                                            <span>No</span>
+
+                                            }
+
+                                            </div>
+                                            </div>*@
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">9. @Localizer["How many job site crews do you have?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.SubContractorBusinessProfile.JobSiteCrews</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">10. @Localizer["Do you have someone to answer the phone during normal business hours?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.SubContractorBusinessProfile.IsPhoneCallSupport == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">11. @Localizer["What are your normal business hours?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <span>@Model.SubContractorBusinessProfile.NormalBusinessHours</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">12. @Localizer["Do you have 24 hour phone answering?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.SubContractorBusinessProfile.Is24HoursPhoneAnswering == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">13. @Localizer["Do you offer emergency services?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.SubContractorBusinessProfile.IsOfferEmergencyServices == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">14. @Localizer["Do you have a business or trade license(s)?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.SubContractorBusinessProfile.IsBusinessOrTradeLicense == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">15. @Localizer["Do you have Liability Insurance?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.SubContractorBusinessProfile.IsLiabilityInsurance == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">16. @Localizer["Do you have Workman’s Compensation Insurance?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.SubContractorBusinessProfile.IsWorkmanCompensationInsurance == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">17. @Localizer["Do you give “Free Estimates”?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.SubContractorBusinessProfile.IsEstimateCharge == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+
+                                        @if (Model.SubContractorBusinessProfile.IsEstimateCharge == false)
+                                        {
+                                            <div class="form-group row BizBorder">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label ">18. @Localizer["What do you charge for an estimate?"]</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @if (Model.SubContractorBusinessProfile.IsEstimateCharge)
+                                                    {
+                                                        <span>@Localizer["Gives Free Estimates."]</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>$ @Model.SubContractorBusinessProfile.EstimateCharge</span>
+                                                    }
+
+                                                </div>
+                                            </div>
+                                        }
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">19. @Localizer["Do you offer design services?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.SubContractorBusinessProfile.IsDesignServices == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        @if (Model.SubContractorBusinessProfile.IsDesignServices == true)
+                                        {
+                                            <div class="form-group row BizBorder">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label ">20. @Localizer["What do you charge for design services?"]</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @if (!string.IsNullOrEmpty(Model.SubContractorBusinessProfile.DesignServices))
+                                                    {
+                                                        <span>$ @Model.SubContractorBusinessProfile.DesignServices</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@Localizer["Doesn't offer design services."]</span>
+                                                    }
+                                                </div>
+                                            </div>
+                                        }
+
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">21. @Localizer["What do you charge for service call?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (!string.IsNullOrEmpty(Model.SubContractorBusinessProfile.ServiceCallCharge))
+                                                {
+                                                    <span>$ @Model.SubContractorBusinessProfile.ServiceCallCharge</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>$0</span>
+                                                }
+
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">22. @Localizer["Do you want to be contacted directly by Homeowners?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.SubContractorBusinessProfile.IsContactedByHomeowners == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group row BizBorder">
+                                            <div class="col-sm-5">
+                                                <label class="control-label ">23. @Localizer["Do you want to be contacted directly by Other Contractors?"]</label>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                @if (Model.SubContractorBusinessProfile.IsContactedByContractors == true)
+                                                {
+                                                    <span>@Localizer["Yes"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@Localizer["No"]</span>
+
+                                                }
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                }
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+
+
+                        <div class="col-lg-6 col-md-12 contractor-service-outer-box">
+                            <div class="contractor-service-box">
+                                <div class="cont-detail-inner-heading">
+                                    <h3 style="color:#ADD136; margin-top:50px;">@Localizer["Service Information"]</h3>
+                                </div>
+                                <div class="form-contractor-service">
+                                    <div class="form-group row">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">@Localizer["Service Zip Codes"]</label>
+                                        </div>
+                                        <div class="col-sm-12 contractor-service-zipcodes">
+                                            @if (Model.Zipcodes != null)
+                                            {
+                                                foreach (var zips in Model.Zipcodes)
+                                                {
+                                                    <span>@zips.Zipcode</span>
+
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <span>@Localizer["No Zip codes found."]</span>
+                                            }
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-12">
+                                            <label class="control-label service-categories-label">@Localizer["Service Categories"]</label>
+                                        </div>
+                                        <div class="col-sm-12 contractor-service-categories-tab">
+                                            @if (Model.Categories != null)
+                                            {
+                                                foreach (var cats in Model.Categories)
+                                                {
+                                                    <span>@cats.Name</span>
+
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <span>@Localizer["No categories found."]</span>
+                                            }
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 contractor-service-outer-box">
+                            <div class="contractor-service-box">
+                                <div class="cont-detail-inner-heading">
+                                    <h3 style="color:#ADD136; margin-top:50px;">@Localizer["Payment Information"]</h3>
+                                </div>
+                                @if (Model.BusinessProfileContractor != null || Model.SubContractorBusinessProfile != null)
+                                {
+                                    if (Model.BusinessProfileContractor != null)
+                                    {
+                                        <div class="form-contractor-service">
+                                            <div class="form-group row">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label">@Localizer["Cash"]:</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @{
+                                                        if (Model.BusinessProfileContractor.IsCash == true)
+                                                        {
+                                                            <span>@Localizer["Yes"]</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span>@Localizer["No"]</span>
+                                                        }
+
+                                                    }
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label">@Localizer["Credit Cards"]:</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @if (Model.BusinessProfileContractor.Visa == 1)
+                                                    {
+                                                        <span class="mr-2">@Localizer["Visa"]</span>
+                                                    }
+                                                    @if (Model.BusinessProfileContractor.AmEx == 1)
+                                                    {
+                                                        <span class="mr-2">@Localizer["AmEx"]</span>
+                                                    }
+                                                    @if (Model.BusinessProfileContractor.MC == 1)
+                                                    {
+                                                        <span class="mr-2">@Localizer["MC"]</span>
+                                                    }
+
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label">@Localizer["Personal Checks?"]</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @if (Model.BusinessProfileContractor.PersonalChecks == true)
+                                                    {
+                                                        <span>@Localizer["Yes"]</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@Localizer["No"]</span>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label">@Localizer["Payment Apps?"]</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @if (Model.BusinessProfileContractor.IsPaymentApps == true)
+                                                    {
+                                                        <span>@Localizer["Yes"]</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@Localizer["No"]</span>
+                                                    }
+                                                </div>
+                                            </div>
+                                            @if (Model.BusinessProfileContractor.IsPaymentApps == true)
+                                            {
+
+
+                                                <div class="form-group row">
+                                                    <div class="col-sm-5">
+                                                        <label class="control-label">@Localizer["Which Payment App?"]</label>
+                                                    </div>
+                                                    <div class="col-sm-7">
+                                                        @if (Model.BusinessProfileContractor.WhichPaymentApps != null)
+                                                        {
+                                                            <span>@Model.BusinessProfileContractor.WhichPaymentApps</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span></span>
+                                                        }
+
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    }
+                                    else
+                                    {
+
+
+
+
+                                        <div class="form-contractor-service">
+                                            <div class="form-group row">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label">@Localizer["Cash"]:</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @{
+                                                        if (Model.SubContractorBusinessProfile.IsCash == true)
+                                                        {
+                                                            <span>@Localizer["Yes"]</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span>@Localizer["No"]</span>
+                                                        }
+
+                                                    }
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label">@Localizer["Credit Cards"]:</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @if (Model.SubContractorBusinessProfile.Visa == 1)
+                                                    {
+                                                        <span class="mr-2">Visa</span>
+                                                    }
+                                                    @if (Model.SubContractorBusinessProfile.AmEx == 1)
+                                                    {
+                                                        <span class="mr-2">AmEx</span>
+                                                    }
+                                                    @if (Model.SubContractorBusinessProfile.MC == 1)
+                                                    {
+                                                        <span class="mr-2">MC</span>
+                                                    }
+
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label">@Localizer["Personal Checks?"]</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @if (Model.SubContractorBusinessProfile.PersonalChecks == true)
+                                                    {
+                                                        <span>@Localizer["Yes"]</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@Localizer["No"]</span>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label">@Localizer["Payment Apps?"]</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @if (Model.SubContractorBusinessProfile.IsPaymentApps == true)
+                                                    {
+                                                        <span>@Localizer["Yes"]</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@Localizer["No"]</span>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-5">
+                                                    <label class="control-label">@Localizer["Which Payment App?"]</label>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    @if (Model.SubContractorBusinessProfile.WhichPaymentApps != null)
+                                                    {
+                                                        <span>@Model.SubContractorBusinessProfile.WhichPaymentApps</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span></span>
+                                                    }
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    }
+                                }
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-12 contractor-service-outer-box">
+                        <div class="contractor-service-box">
+                            <div class="cont-detail-inner-heading">
+                                <h3 style="color:#ADD136;">@Localizer["Subscription Information"]</h3>
+
+                                <div class="form-contractor-service">
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <label class="control-label">@Localizer["Subscription Type"]:</label>
+                                        </div>
+                                        <div class="col-sm-7">
+
+                                            <span>@Model.SubscriptinDetails.Title</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <label class="control-label">@Localizer["Subscription Days"]:</label>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <span>@Model.SubscriptinDetails.Days (Days)</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <label class="control-label">@Localizer["Subscription Price"]:</label>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <span>$@Model.SubscriptinDetails.Price</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <label class="control-label">@Localizer["Subscription Date"]:</label>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <span>@Model.SubscriptinDetails.PeriodStartDate</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <label class="control-label">@Localizer["Expire Date"]:</label>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <span>@Model.SubscriptinDetails.PeriodEndDate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-12 contractor-document-outer-box">
+                            <div class="contractor-document-box">
+                                <div class="cont-detail-inner-heading">
+                                    <h3 style="color:#ADD136; margin-top:50px;">@Localizer["Documents"]</h3>
+                                </div>
+                                @if (Model.BusinessProfileContractor != null)
+                                {
+
+
+
+                                    <div class="form-contractor-document">
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">@Localizer["Business or Trade License"]</label>
+                                            </div>
+                                            <div class="col-sm-12 pdf-view-section">
+                                                @{
+                                                    if (!string.IsNullOrEmpty(Model.BusinessProfileContractor.BusinessOrTradeLicenseFiles))
+                                                    {
+                                                        int i = -1;
+                                                        int num = 0;
+                                                        List<string> docs = Model.BusinessProfileContractor.BusinessOrTradeLicenseFiles.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                                        foreach (var dox in docs)
+                                                        {
+                                                            num = i + 1;
+                                                            i = num;
+                                                            if (!string.IsNullOrEmpty(dox))
+                                                            {
+                                                                FileInfo fi = new FileInfo(dox);
+                                                                string extn = fi.Extension;
+                                                                if (extn == ".png" || extn == ".jpg" || extn == "jpeg")
+                                                                {
+                                                                    <span><a href="~/Uploads/@dox" target="_blank"><img src="~/images/IconImage.png" width="90" height="90" /><p>@Localizer["File"]</p></a></span>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span><a href="~/Uploads/@dox" target="_blank"><img src="~/images/FileIcon.png" /><p>@Localizer["File"]</p></a></span>
+
+                                                                }
+
+                                                            }
+
+                                                        }
+
+                                                    }
+                                                    else
+                                                    {
+
+                                                        <span><a><p>@Localizer["No Documents Found."]</p></a></span>
+
+                                                    }
+
+
+                                                }
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                <label class="control-label liability-insurence-label">@Localizer["Liability Insurance File"]</label>
+                                            </div>
+                                            <div class="col-sm-12 liab-pdf-view-section pdf-view-section">
+                                                @{
+                                                    if (!string.IsNullOrEmpty(Model.BusinessProfileContractor.LiabilityInsuranceFile))
+                                                    {
+                                                        List<string> docs = Model.BusinessProfileContractor.LiabilityInsuranceFile.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                                        foreach (var dox in docs)
+                                                        {
+                                                            if (!string.IsNullOrEmpty(dox))
+                                                            {
+                                                                FileInfo fi = new FileInfo(dox);
+                                                                string extn = fi.Extension;
+                                                                if (extn == ".png" || extn == ".jpg" || extn == "jpeg")
+                                                                {
+                                                                    <span><a href="~/Uploads/@dox" target="_blank"><img src="~/images/IconImage.png" width="90" height="90" /><p>@Localizer["File"]</p></a></span>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span><a href="~/Uploads/@dox" target="_blank"><img src="~/images/FileIcon.png" /><p>@Localizer["File"]</p></a></span>
+
+                                                                }
+
+                                                            }
+
+                                                        }
+
+                                                    }
+                                                    else
+                                                    {
+                                                        <span><a><p>@Localizer["No Documents Found."]</p></a></span>
+
+                                                    }
+
+
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                <label class="control-label compensation-insurence-label">@Localizer["Workman’s Compensation Insurance File"]</label>
+                                            </div>
+                                            <div class="col-sm-12 comp-pdf-view-section pdf-view-section">
+                                                @{
+                                                    if (!string.IsNullOrEmpty(Model.BusinessProfileContractor.WorkmanCompensationInsuranceFile))
+                                                    {
+                                                        List<string> docs = Model.BusinessProfileContractor.WorkmanCompensationInsuranceFile.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                                        foreach (var dox in docs)
+                                                        {
+                                                            if (!string.IsNullOrEmpty(dox))
+                                                            {
+                                                                FileInfo fi = new FileInfo(dox);
+                                                                string extn = fi.Extension;
+                                                                if (extn == ".png" || extn == ".jpg" || extn == "jpeg")
+                                                                {
+                                                                    <span><a href="~/Uploads/@dox" target="_blank"><img src="~/images/IconImage.png" width="90" height="90" /><p>@Localizer["File"]</p></a></span>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span><a href="~/Uploads/@dox" target="_blank"><img src="~/images/FileIcon.png" /><p>@Localizer["File"]</p></a></span>
+
+                                                                }
+
+                                                            }
+
+                                                        }
+
+                                                    }
+                                                    else
+                                                    {
+                                                        <span><a><p>@Localizer["No Documents Found."]</p></a></span>
+
+                                                    }
+
+
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                }
+                                else if (Model.SubContractorBusinessProfile != null)
+                                {
+
+
+
+                                    <div class="form-contractor-document">
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                <label class="control-label">@Localizer["Business or Trade License"]</label>
+                                            </div>
+                                            <div class="col-sm-12 pdf-view-section">
+                                                @{
+                                                    if (!string.IsNullOrEmpty(Model.SubContractorBusinessProfile.BusinessOrTradeLicenseFiles))
+                                                    {
+                                                        List<string> docs = Model.SubContractorBusinessProfile.BusinessOrTradeLicenseFiles.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                                        foreach (var dox in docs)
+                                                        {
+                                                            if (!string.IsNullOrEmpty(dox))
+                                                            {
+                                                                FileInfo fi = new FileInfo(dox);
+                                                                string extn = fi.Extension;
+                                                                if (extn == ".png" || extn == ".jpg" || extn == "jpeg")
+                                                                {
+                                                                    <span><a href="~/Uploads/@dox" target="_blank"><img src="~/images/IconImage.png" width="90" height="90" /><p>@Localizer["File"]</p></a></span>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span><a href="~/Uploads/@dox" target="_blank"><img src="~/images/FileIcon.png" /><p>@Localizer["File"]</p></a></span>
+
+                                                                }
+
+                                                            }
+                                                        }
+
+                                                    }
+                                                    else
+                                                    {
+                                                        <span><a><p>@Localizer["No Documents Found."]</p></a></span>
+
+                                                    }
+
+
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                <label class="control-label liability-insurence-label">@Localizer["Liability Insurance File"]</label>
+                                            </div>
+                                            <div class="col-sm-12 liab-pdf-view-section pdf-view-section">
+                                                @{
+                                                    if (!string.IsNullOrEmpty(Model.SubContractorBusinessProfile.LiabilityInsuranceFile))
+                                                    {
+                                                        List<string> docs = Model.SubContractorBusinessProfile.LiabilityInsuranceFile.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                                        foreach (var dox in docs)
+                                                        {
+                                                            if (!string.IsNullOrEmpty(dox))
+                                                            {
+                                                                FileInfo fi = new FileInfo(dox);
+                                                                string extn = fi.Extension;
+                                                                if (extn == ".png" || extn == ".jpg" || extn == "jpeg")
+                                                                {
+                                                                    <span><a href="~/Uploads/@dox" target="_blank"><img src="~/images/IconImage.png" width="90" height="90" /><p>@Localizer["File"]</p></a></span>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span><a href="~/Uploads/@dox" target="_blank"><img src="~/images/FileIcon.png" /><p>@Localizer["File"]</p></a></span>
+
+                                                                }
+
+                                                            }
+
+                                                        }
+
+                                                    }
+                                                    else
+                                                    {
+                                                        <span><a><p>@Localizer["No Documents Found."]</p></a></span>
+
+                                                    }
+
+
+                                                }
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                <label class="control-label compensation-insurence-label">@Localizer["Workman’s Compensation Insurance File"]</label>
+                                            </div>
+                                            <div class="col-sm-12 comp-pdf-view-section pdf-view-section">
+                                                @{
+                                                    if (!string.IsNullOrEmpty(Model.SubContractorBusinessProfile.WorkmanCompensationInsuranceFile))
+                                                    {
+                                                        List<string> docs = Model.SubContractorBusinessProfile.WorkmanCompensationInsuranceFile.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                                        foreach (var dox in docs)
+                                                        {
+                                                            if (!string.IsNullOrEmpty(dox))
+                                                            {
+                                                                FileInfo fi = new FileInfo(dox);
+                                                                string extn = fi.Extension;
+                                                                if (extn == ".png" || extn == ".jpg" || extn == "jpeg")
+                                                                {
+                                                                    <span><a href="~/Uploads/@dox" target="_blank"><img src="~/images/IconImage.png" width="90" height="90" /><p>@Localizer["File"]</p></a></span>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span><a href="~/Uploads/@dox" target="_blank"><img src="~/images/FileIcon.png" /><p>@Localizer["File"]</p></a></span>
+
+                                                                }
+
+                                                            }
+
+
+                                                        }
+
+                                                    }
+                                                    else
+                                                    {
+                                                        <span><a><p>@Localizer["No Documents Found."]</p></a></span>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="topCard-sec">
+          <h3 style="color:#ADD136;">@Localizer["Homeowner does not contain any business profile"]</h3>
+          <h3 style="color:#FF8800;margin-left: 1056px;position: absolute;top: 63px;"> @Model.User.FirstName @Model.User.LastName</h3>
+        <div class="dashboard-main-container tableWrapper">
+            
+
+                  
+                           
+                                <h3 id="top" style="color:#ADD136;">@Localizer["Subscription Information"]</h3>
+
+                                <div class="form-contractor-service">
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <label class="control-label">@Localizer["Subscription Type"]:</label>
+                                        </div>
+                                        <div class="col-sm-7">
+
+                                            <span>@Model.SubscriptinDetails.Title</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <label class="control-label">@Localizer["Subscription Days"]:</label>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <span>@Model.SubscriptinDetails.Days (Days)</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <label class="control-label">@Localizer["Subscription Price"]:</label>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <span>$@Model.SubscriptinDetails.Price</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <label class="control-label">@Localizer["Subscription Date"]:</label>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <span>@Model.SubscriptinDetails.PeriodStartDate</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-5">
+                                            <label class="control-label">@Localizer["Expire Date"]:</label>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <span>@Model.SubscriptinDetails.PeriodEndDate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+}
+
+<style>
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        margin-top: 40px;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+     #top{
+    color: #ADD136;
+    margin-top: 1px;
+}
+</style>
+
+

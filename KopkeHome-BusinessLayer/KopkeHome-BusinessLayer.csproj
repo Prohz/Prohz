@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>KopkeHome_BusinessLayer</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Authorization\**" />
+    <Compile Remove="CustomMiddleware\**" />
+    <EmbeddedResource Remove="Authorization\**" />
+    <EmbeddedResource Remove="CustomMiddleware\**" />
+    <None Remove="Authorization\**" />
+    <None Remove="CustomMiddleware\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AsyncFixer" Version="1.6.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Stripe.net" Version="39.121.0" />
+    <PackageReference Include="Twilio" Version="5.80.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KopkeHome-DataAccessLayer\KopkeHome-DataAccessLayer.csproj" />
+    <ProjectReference Include="..\KopkeHome-ModelLayer\KopkeHome-ModelLayer.csproj" />
+    <ProjectReference Include="..\KopkeHome-UtilityLayer\KopkeHome-UtilityLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ResourceBusinessLayer.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourceBusinessLayer.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ResourceBusinessLayer.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceBusinessLayer.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

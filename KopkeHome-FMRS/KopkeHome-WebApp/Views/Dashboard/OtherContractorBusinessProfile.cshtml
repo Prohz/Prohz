@@ -1,0 +1,568 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.DashboardViewModels.BusinessProfileModels.EditBusinessProfileOfOtherContractors;
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = @Localizer["Edit Business Profile"];
+     Layout = "~/Views/Shared/_DashboardInternal.cshtml";
+}
+
+
+
+<div class="registration-container black-bg mt-5">
+
+
+
+
+
+    <div class="registration-container-form">
+     <div class="tab-content">
+         <div id="Contractor" class="contractor-business-prof-form">
+             <div class="rgstr-main-heading">
+                <h3 class="green-clr">@Localizer["Edit Business Profile"]</h3>
+                <div>
+             <p class="text-white m-0"><a href="@Url.Action("businessprofiledetail", "dashboard")" class="text-white"><i class="fa fa-long-arrow-left forgot-back-arrow" aria-hidden="true"></i>@Localizer["Go back"]</a></p>
+             </div>
+             </div>
+
+             <form name="UpdateOtherContractorBusinessProfile" asp-action="UpdateOtherContractorBusinessProfile" asp-controller="Dashboard" method="post" enctype="multipart/form-data">
+                 <input type="hidden" name="Id" value="@Model.Id" />
+                 <input type="hidden" name="UserId" value="@Model.UserId" />
+                 <input type="hidden" name="ExistingProfilePicture" value="@Model.ExistingProfilePicture" />
+                 <input type="hidden" name="ExistingLiabilityInsuranceFile" value="@Model.ExistingLiabilityInsuranceFile" />
+                 <input type="hidden" name="ExistingWorkmanCompensationInsuranceFile" value="@Model.ExistingWorkmanCompensationInsuranceFile" />
+                 <input type="hidden" name="ExistingBusinessOrTradeLicenseFiles" value="@Model.ExistingBusinessOrTradeLicenseFiles" />
+                         <div class="row">
+                            <div class="form-group col-md-6 col-lg-4  ">
+                            <div class="form-group rgstr-input-form-box">
+                                <label for="BusinessDescription">@Localizer["Business Specialization"]</label>
+                                <select id="contractorSelect" asp-for="BusinessDescription" style="max-height: 150px; overflow-y: auto;" class="form-select form-control w-100">
+                                    <option value="">-- Select Specialization --</option>
+                                    <option value="Architects">@Localizer["Architects"]</option>
+                                    <option value="Asbestos Testing/Removal Companies">@Localizer["Asbestos Testing/Removal Companies"]</option>
+                                    <option value="Asphalt Driveways">@Localizer["Asphalt Driveways"]</option>
+                                    <option value="Basement Egress Windows">@Localizer["Basement Egress Windows"]</option>
+                                    <option value="Basement Remodeling">@Localizer["Basement Remodeling"]</option>
+                                    <option value="Basement Waterproofing">@Localizer["Basement Waterproofing"]</option>
+                                    <option value="Brick and Block - Masonry Companies">@Localizer["Brick and Block - Masonry Companies"]</option>
+                                    <option value="Cabinet - Installer">@Localizer["Cabinet - Installer"]</option>
+                                    <option value="Cabinet Refacing Company">@Localizer["Cabinet Refacing Company"]</option>
+                                    <option value="Carpenters - Rough">@Localizer["Carpenters - Rough"]</option>
+                                    <option value="Ceramic/Porcelain Tile - Installer">@Localizer["Ceramic/Porcelain Tile - Installer"]</option>
+                                    <option value="Chimney - New/Repairs/Caps">@Localizer["Chimney - New/Repairs/Caps"]</option>
+                                    <option value="Closet Organization Companies">@Localizer["Closet Organization Companies"]</option>
+                                    <option value="Concrete - Driveway/Sidewalk">@Localizer["Concrete - Driveway/Sidewalk"]</option>
+                                    <option value="Concrete - Stamped/Stained/Sealed">@Localizer["Concrete - Stamped/Stained/Sealed"]</option>
+                                    <option value="Countertops - Corian/Solid Surface">@Localizer["Countertops - Corian/Solid Surface"]</option>
+                                    <option value="Countertops - Granite/Quartz">@Localizer["Countertops - Granite/Quartz"]</option>
+                                    <option value="Doors - Interior/Exterior">@Localizer["Doors - Interior/Exterior"]</option>
+                                    <option value="Drywall Companies">@Localizer["Drywall Companies"]</option>
+                                    <option value="Dumpster Rental Companies">@Localizer["Dumpster Rental Companies"]</option>
+                                    <option value="Electricians">@Localizer["Electricians"]</option>
+                                    <option value="Environmental Companies">@Localizer["Environmental Companies"]</option>
+                                    <option value="Excavation Companies">@Localizer["Excavation Companies"]</option>
+                                    <option value="Fence Companies">@Localizer["Fence Companies"]</option>
+                                    <option value="Finish Carpenter">@Localizer["Finish Carpenter"]</option>
+                                    <option value="Fireplace Companies">@Localizer["Fireplace Companies"]</option>
+                                    <option value="Fireplace Installer">@Localizer["Fireplace Installer"]</option>
+                                    <option value="Flooring Companies">@Localizer["Flooring Companies"]</option>
+                                    <option value="Flooring Installer - Vinyl">@Localizer["Flooring Installer - Vinyl"]</option>
+                                    <option value="Flooring Installer – Carpet">@Localizer["Flooring Installer – Carpet"]</option>
+                                    <option value="Flooring Installer and refinisher – Hard Wood">@Localizer["Flooring Installer and refinisher – Hard Wood"]</option>
+                                    <option value="Foundation Companies">@Localizer["Foundation Companies"]</option>
+                                    <option value="Furnace and Air Conditioning Companies">@Localizer["Furnace and Air Conditioning Companies"]</option>
+                                    <option value="Garage Door Companies">@Localizer["Garage Door Companies"]</option>
+                                    <option value="Garage Door Installers">@Localizer["Garage Door Installers"]</option>
+                                    <option value="General Contractors">@Localizer["General Contractors"]</option>
+                                    <option value="General Labor Services">@Localizer["General Labor Services"]</option>
+                                    <option value="Gravel Driveway Companies">@Localizer["Gravel Driveway Companies"]</option>
+                                    <option value="Gutter Companies">@Localizer["Gutter Companies"]</option>
+                                    <option value="Handyman Services">@Localizer["Handyman Services"]</option>
+                                    <option value="HVAC Companies">@Localizer["HVAC Companies"]</option>
+                                    <option value="Insulation Companies">@Localizer["Insulation Companies"]</option>
+                                    <option value="Insulation installer – Blown-in">@Localizer["Insulation installer – Blown-in"]</option>
+                                    <option value="Insulation Installer - Rolled">@Localizer["Insulation Installer - Rolled"]</option>
+                                    <option value="Insulation Installer - Spray Foam">@Localizer["Insulation Installer - Spray Foam"]</option>
+                                    <option value="Interior Design">@Localizer["Interior Design"]</option>
+                                    <option value="Kitchen Remodeling Companies">@Localizer["Kitchen Remodeling Companies"]</option>
+                                    <option value="Kitchen/Bath Designers">@Localizer["Kitchen/Bath Designers"]</option>
+                                    <option value="Mold Testing/Remediation Companies">@Localizer["Mold Testing/Remediation Companies"]</option>
+                                    <option value="Painting - Exterior">@Localizer["Painting - Exterior"]</option>
+                                    <option value="Painting - Interior">@Localizer["Painting - Interior"]</option>
+                                    <option value="Patio Doors">@Localizer["Patio Doors"]</option>
+                                    <option value="Plumbing Companies">@Localizer["Plumbing Companies"]</option>
+                                    <option value="Roofing Companies">@Localizer["Roofing Companies"]</option>
+                                    <option value="Roofing Installer – Clay Tile">@Localizer["Roofing Installer – Clay Tile"]</option>
+                                    <option value="Roofing Installer – Concrete Tile">@Localizer["Roofing Installer – Concrete Tile"]</option>
+                                    <option value="Roofing Installer – Metal">@Localizer["Roofing Installer – Metal"]</option>
+                                    <option value="Roofing Installer – Rolled Roof">@Localizer["Roofing Installer – Rolled Roof"]</option>
+                                    <option value="Roofing Installers – Asphalt">@Localizer["Roofing Installers – Asphalt"]</option>
+                                    <option value="Septic Tank Companies">@Localizer["Septic Tank Companies"]</option>
+                                    <option value="Shower Door Companies">@Localizer["Shower Door Companies"]</option>
+                                    <option value="Shower Door Installers">@Localizer["Shower Door Installers"]</option>
+                                    <option value="Siding Company">@Localizer["Siding Company"]</option>
+                                    <option value="Siding Installers">@Localizer["Siding Installers"]</option>
+                                    <option value="Structural Engineering Companies">@Localizer["Structural Engineering Companies"]</option>
+                                    <option value="Swimming Pool Companies">@Localizer["Swimming Pool Companies"]</option>
+                                    <option value="Tankless Water Heaters">@Localizer["Tankless Water Heaters"]</option>
+                                    <option value="Wallpaper Companies">@Localizer["Wallpaper Companies"]</option>
+                                    <option value="Window Blinds/Shades">@Localizer["Window Blinds/Shades"]</option>
+                                    <option value="Window Companies">@Localizer["Window Companies"]</option>
+                                    <option value="Window Installers">@Localizer["Window Installers"]</option>
+                                </select>
+
+                            </div>
+
+                            </div>
+                           <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="YearsInBusiness"> @Localizer["How many years have you been in business?"]</label>
+                                <input type="number" asp-for="YearsInBusiness"  placeholder="@Localizer["Enter business years..."]" class="form-control" />
+                                  <span asp-validation-for="YearsInBusiness" class="text-danger"></span> 
+                            </div>
+                              </div>
+
+                               @{
+                            string IsExiestUrlCompany = string.Empty;
+                            string YesUrlCompanyChecked = string.Empty;
+                            string NoUrlCompanyChecked = string.Empty;
+                            if(!string.IsNullOrEmpty(Model.CompanyWebsiteURL))
+                            {
+                                IsExiestUrlCompany = "";
+                                YesUrlCompanyChecked = "checked";
+                            }
+                            else
+                            {
+                                IsExiestUrlCompany = "display:none";
+                                NoUrlCompanyChecked = "checked";
+                            }
+
+                               }
+                            <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsCompanyWebsite">@Localizer["Do you have a company website?"]</label>
+                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio">
+                                                        <input  name="IsCompanyWebsite" id="YesCompanyWebsiteURL" class="custom-control-input" type="radio" value="true" @YesUrlCompanyChecked  />
+                                                        <label  class="custom-control-label" for="YesCompanyWebsiteURL">@Localizer["Yes"] </label>
+                                                        <span asp-for="IsCompanyWebsite" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  name="IsCompanyWebsite" id="NoCompanyWebsiteURL" class="custom-control-input" type="radio" value="false" @NoUrlCompanyChecked />
+                                                        <label  class="custom-control-label" for="NoCompanyWebsiteURL">@Localizer["No"]</label>
+                                                        <span asp-for="IsCompanyWebsite" class="text-danger"></span>
+                                                    </div>
+                                   </div>  
+                                   
+                                   <span name="IsCompanyWebsite1" class="text-danger field-validation-valid" data-valmsg-for="IsCompanyWebsite"></span>
+                               </div>
+                            </div>
+                           
+                            <div class="form-group col-md-6 col-lg-4  " id="web4" style="@IsExiestUrlCompany">
+                                <div class=" rgstr-input-form-box">
+                                <label for="CompanyWebsiteURL"> @Localizer["Business URL"]</label>
+                                <div class="input-group mb-3">
+                                    @{
+                                        string UrlCompany = string.Empty;
+                                        if(!string.IsNullOrEmpty(Model.CompanyWebsiteURL))
+                                        {
+                                            UrlCompany = Model.CompanyWebsiteURL.Substring(8);
+                                        }
+                                        
+                                    }
+
+                                <input type="text" value="@UrlCompany" asp-for="CompanyWebsiteURL" aria-describedby="basic-addon3" placeholder="example.com" class="form-control" />
+                                </div>
+                                <span asp-validation-for="CompanyWebsiteURL" class="text-danger"></span>
+                            </div>
+                            </div>
+                        @{
+                            string IsExiestUrlFacebook = string.Empty;
+                            string YesUrlFacebookChecked = string.Empty;
+                            string NoUrlFacebookChecked = string.Empty;
+                            if(!string.IsNullOrEmpty(Model.FacebookPageURL))
+                            {
+                                IsExiestUrlFacebook = "";
+                                YesUrlFacebookChecked = "checked";
+                            }
+                            else
+                            {
+                                IsExiestUrlFacebook = "display:none";
+                                NoUrlFacebookChecked = "checked";
+                            }
+
+                               }
+                                     <div class="form-group col-md-6 col-lg-4  ">
+                                        <div class=" rgstr-input-form-box">
+                                        <label for="IsFacebookPage">@Localizer["Do you have Facebook page?"]</label>
+                                                 <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  name="IsFacebookPage" id="credit3" class="custom-control-input" type="radio" value="true" @YesUrlFacebookChecked />
+                                                        <label  class="custom-control-label" for="credit3">@Localizer["Yes"] </label>
+                                                        <span asp-for="IsFacebookPage" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input   name="IsFacebookPage" id="credit4" class="custom-control-input" type="radio" value="false"  @NoUrlFacebookChecked />
+                                                        <label  class="custom-control-label" for="credit4">@Localizer["No"]</label>
+                                                        <span asp-for="IsFacebookPage" class="text-danger"></span>
+                                                    </div>
+                                                 </div> 
+                                   
+                                         <span name="IsFacebookPage1" class="text-danger field-validation-valid" data-valmsg-for="IsFacebookPage"></span>
+                                         </div>
+                                    </div>
+
+
+                                  <div id="webfacebook" class="form-group col-md-6 col-lg-4"  style="@IsExiestUrlFacebook"  >
+                                 <div class=" rgstr-input-form-box">
+                                 <label for="FacebookPageURL"> @Localizer["Facebook URL"]</label>
+                                 <div class="input-group mb-3">
+                                  @{
+                                        string UrlFacebook = string.Empty;
+                                        if(!string.IsNullOrEmpty(Model.FacebookPageURL))
+                                        {
+                                            UrlFacebook = Model.FacebookPageURL.Substring(8);
+                                        }
+                                        
+                                    }
+                                 <input type="text" value="@UrlFacebook" asp-for="FacebookPageURL" aria-describedby="basic-addon3" placeholder="facebook.com/pagename" class="form-control" />
+                                  </div>   <span asp-validation-for="FacebookPageURL" class="text-danger"></span>
+                                 </div>
+                            </div>
+                        
+                        
+
+                        
+
+
+
+                               @*<div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="CommercialLocation">Do you have a commercial location where Other contractors can meet with you?</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  asp-for="CommercialLocation" id="credit5" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit5">Yes </label>
+                                                        <span asp-for="CommercialLocation" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  asp-for="CommercialLocation" id="credit6" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit6">No</label>
+                                                        <span asp-for="CommercialLocation" class="text-danger"></span>
+                                                    </div>
+                                   </div>   
+                                   
+                                   <span name="CommercialLocation1" class="text-danger field-validation-valid" data-valmsg-for="CommercialLocation"></span>
+                               </div>
+                            </div>*@
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="NumberOfEmployees">@Localizer["How many employees do you have?"]</label>
+                                <input type="number" asp-for="NumberOfEmployees" value="@Model.NumberOfEmployees" placeholder="@Localizer["Enter number of employees"]" class="form-control" />
+                                   <span asp-validation-for="NumberOfEmployees" class="text-danger"></span>
+                            </div>
+                              </div>
+
+
+
+
+
+                              
+
+
+
+
+                             
+
+                               
+
+
+                               
+
+                               <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsBusinessOrTradeLicense">@Localizer["Do you have a business or trade license(s)?"]</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  asp-for="IsBusinessOrTradeLicense" id="credit13" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit13">@Localizer["Yes"] </label>
+                                                        <span asp-for="IsBusinessOrTradeLicense" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  asp-for="IsBusinessOrTradeLicense" id="credit14" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit14">@Localizer["No"]</label>
+                                                        <span asp-for="IsBusinessOrTradeLicense" class="text-danger"></span>
+                                                    </div>
+                                   </div>  
+                                   
+                                    <span  name="IsBusinessOrTradeLicense1" class="text-danger field-validation-valid" data-valmsg-for="IsBusinessOrTradeLicense"></span>
+                               </div>
+                            </div>
+
+                        @{
+                            var businessLicense = Model.IsBusinessOrTradeLicense;
+                            if (businessLicense)
+                            {
+                                
+                                <div class="form-group col-md-6 col-lg-4  "  id="webBusinessOrTradeLicenseFiles" @*style="display:none"*@ >
+                                <div class=" rgstr-input-form-box  rgstr-input-form-box-file-cstm">
+                                <label for="BusinessOrTradeLicenseFiles">@Localizer["Upload business or trade license (png , jpeg, pdf, xlsx, docx)"]</label>
+                                <div class="row" style="margin-left: 0px;">
+                                    <div id="drop-zone">
+                                           <div id="clickHere">@Localizer["Upload"] 1
+                                            <input type="file" asp-for="BusinessOrTradeLicenseFiles" id="filenameInput" />
+                                           </div>
+                                           <div id='filename'></div>
+                                    </div>
+                                     <div id="drop-zone1">
+                                           <div id="clickHere">@Localizer["Upload"] 2
+                                            <input type="file" asp-for="BusinessOrTradeLicenseFiles" id="filename1Input"/>
+                                           </div>
+                                           <div id='filename1'></div>
+                                    </div>
+                                     <div id="drop-zone2">
+                                           <div id="clickHere">@Localizer["Upload"] 3
+                                            <input type="file" asp-for="BusinessOrTradeLicenseFiles" id="filename2Input"/>
+                                           </div>
+                                           <div id='filename2'></div>
+                                    </div>
+                                     <div id="drop-zone3">
+                                           <div id="clickHere">@Localizer["Upload"] 4
+                                            <input type="file" asp-for="BusinessOrTradeLicenseFiles" id="filename3Input"/>
+                                           </div>
+                                           <div id='filename3'></div>
+                                    </div>
+                                     </div>
+                                    <div class="row"style="margin-left: 0px;">
+                                    @{
+                                        if (!string.IsNullOrEmpty(Model.ExistingBusinessOrTradeLicenseFiles))
+                                            {
+                                                
+                                                List<string> docs = Model.ExistingBusinessOrTradeLicenseFiles.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                                foreach (var dox in docs)
+                                                { 
+                                                    
+                                                    if (!string.IsNullOrEmpty(dox))
+                                                    {
+  <a class="cstm-anchor select_doc" href="../uploads/@dox" target="_blank"><div class="mlt-file-list"><span  class="multiple-file-elips">@dox</span><span id="filename" class="fa fa-eye ml-1 mr-2 fa-lg closeBtn" title="@Localizer["Click here to view Document"]"></span></div></a>
+
+                                                  
+                                            
+                                  
+                                                    }
+
+                                                }
+
+                                            }
+                                            }
+                                  </div>
+                              
+                               @* <input type="file" name="BusinessOrTradeLicenseFiles" placeholder="" multiple class="form-control" />*@
+
+
+                                 <span asp-validation-for="BusinessOrTradeLicenseFiles" class="text-danger"></span>
+                            </div>
+                              </div>
+                            }
+                            else
+                            {
+                                
+                                <div class="form-group col-md-6 col-lg-4  "  id="webBusinessOrTradeLicenseFiles" style="display:none" >
+                                <div class=" rgstr-input-form-box  rgstr-input-form-box-file-cstm">
+                                <label for="BusinessOrTradeLicenseFiles">@Localizer["Upload business or trade license (png , jpeg, pdf, xlsx, docx)"]</label>
+                                <div class="row" style="margin-left: 0px;">
+                                    <div id="drop-zone">
+                                           <div id="clickHere">@Localizer["Upload"] 1
+                                            <input type="file" asp-for="BusinessOrTradeLicenseFiles" id="filenameInput" />
+                                           </div>
+                                           <div id='filename'></div>
+                                    </div>
+                                     <div id="drop-zone1">
+                                           <div id="clickHere">@Localizer["Upload"] 2
+                                            <input type="file" asp-for="BusinessOrTradeLicenseFiles" id="filename1Input"/>
+                                           </div>
+                                           <div id='filename1'></div>
+                                    </div>
+                                     <div id="drop-zone2">
+                                           <div id="clickHere">@Localizer["Upload"] 3
+                                            <input type="file" asp-for="BusinessOrTradeLicenseFiles" id="filename2Input"/>
+                                           </div>
+                                           <div id='filename2'></div>
+                                    </div>
+                                     <div id="drop-zone3">
+                                           <div id="clickHere">@Localizer["Upload"] 4
+                                            <input type="file" asp-for="BusinessOrTradeLicenseFiles" id="filename3Input"/>
+                                           </div>
+                                           <div id='filename3'></div>
+                                    </div>
+                                     </div>
+                                    <div class="row"style="margin-left: 0px;">
+                                    @{
+                                        if (!string.IsNullOrEmpty(Model.ExistingBusinessOrTradeLicenseFiles))
+                                            {
+                                                
+                                                List<string> docs = Model.ExistingBusinessOrTradeLicenseFiles.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                                foreach (var dox in docs)
+                                                { 
+                                                    
+                                                    if (!string.IsNullOrEmpty(dox))
+                                                    {
+  <a class="cstm-anchor select_doc" href="../uploads/@dox" target="_blank"><div class="mlt-file-list"><span  class="multiple-file-elips">@dox</span><span id="filename" class="fa fa-eye ml-1 mr-2 fa-lg closeBtn" title="@Localizer["Click here to view Document"]"></span></div></a>
+
+                                                  
+                                            
+                                  
+                                                    }
+
+                                                }
+
+                                            }
+                                            }
+                                  </div>
+                              
+                               @* <input type="file" name="BusinessOrTradeLicenseFiles" placeholder="" multiple class="form-control" />*@
+
+
+                                 <span asp-validation-for="BusinessOrTradeLicenseFiles" class="text-danger"></span>
+                            </div>
+                              </div>
+                            }
+                        }
+
+
+
+                               
+
+
+                              <div class="form-group col-md-6 col-lg-4  ">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsLiabilityInsurance">@Localizer["Do you have Liability Insurance?"]</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  asp-for="IsLiabilityInsurance" id="credit15" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit15">@Localizer["Yes"] </label>
+                                                        <span asp-for="IsLiabilityInsurance" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  asp-for="IsLiabilityInsurance" id="credit16" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit16">@Localizer["No"]</label>
+                                                        <span asp-for="IsLiabilityInsurance" class="text-danger"></span>
+                                                    </div>
+                                   </div>     
+                                   
+                                     <span name="IsLiabilityInsurance1" class="text-danger field-validation-valid" data-valmsg-for="IsLiabilityInsurance"></span>
+                               </div>
+                            </div>
+
+                        @{
+                            var liabilityInsurance = Model.IsLiabilityInsurance;
+                            if (liabilityInsurance)
+                            {
+                                   <div class="form-group col-md-6 col-lg-4  " id="webLiabilityInsuranceFile" @*style="display:none"*@ >
+                                <div class=" rgstr-input-form-box">
+                                <label for="LiabilityInsuranceFile">@Localizer["Upload Liability Insurance file (png , jpeg, pdf, xlsx, docx)"]</label>
+                                <input type="file" asp-for="LiabilityInsuranceFile" placeholder="" class="form-control" />          
+                           <a class="cstm-anchor select_doc" href="../uploads/@Model.ExistingLiabilityInsuranceFile" target="_blank"><div class="mlt-file-list"><span  class="multiple-file-elips" style="width:100px" >@Model.ExistingLiabilityInsuranceFile</span><span id="filename" class="fa fa-eye ml-1 mr-2 fa-lg closeBtn" title="@Localizer["Click here to view Document"]"></span></div></a>
+                                 <span asp-validation-for="LiabilityInsuranceFile" class="text-danger"></span>
+                            </div>
+                              </div>
+                            }
+                            else
+                            {
+                                   <div class="form-group col-md-6 col-lg-4  " id="webLiabilityInsuranceFile" style="display:none" >
+                                <div class=" rgstr-input-form-box">
+                                <label for="LiabilityInsuranceFile">@Localizer["Upload Liability Insurance file (png , jpeg, pdf, xlsx, docx)"]</label>
+                                <input type="file" asp-for="LiabilityInsuranceFile" placeholder="" class="form-control" />          
+                           <a class="cstm-anchor select_doc" href="../uploads/@Model.ExistingLiabilityInsuranceFile" target="_blank"><div class="mlt-file-list"><span  class="multiple-file-elips" style="width:100px" >@Model.ExistingLiabilityInsuranceFile</span><span id="filename" class="fa fa-eye ml-1 mr-2 fa-lg closeBtn" title="@Localizer["Click here to view Document"]"></span></div></a>
+                                 <span asp-validation-for="LiabilityInsuranceFile" class="text-danger"></span>
+                            </div>
+                              </div>
+                            }
+                        }
+
+                             
+
+
+                              <div class="form-group col-md-6 col-lg-4">
+                                <div class=" rgstr-input-form-box">
+                                <label for="IsWorkmanCompensationInsurance">@Localizer["Do you have Workman’s Compensation Insurance?"]</label>
+                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                                    <div class="custom-radio ">
+                                                        <input  asp-for="IsWorkmanCompensationInsurance" id="credit17" class="custom-control-input" type="radio" value="true" />
+                                                        <label  class="custom-control-label" for="credit17">@Localizer["Yes"] </label>
+                                                        <span asp-for="IsWorkmanCompensationInsurance" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="custom-radio">
+                                                        <input  asp-for="IsWorkmanCompensationInsurance" id="credit18" class="custom-control-input" type="radio" value="false" />
+                                                        <label  class="custom-control-label" for="credit18">@Localizer["No"]</label>
+                                                        <span asp-for="IsWorkmanCompensationInsurance" class="text-danger"></span>
+                                                    </div>
+                                   </div>  
+                                   
+                                   <span name="IsWorkmanCompensationInsurance1" class="text-danger field-validation-valid" data-valmsg-for="IsWorkmanCompensationInsurance"></span>
+                               </div>
+                            </div>
+
+                          
+                        @{
+                            var compensation = Model.IsWorkmanCompensationInsurance;
+                            if (compensation)
+                                {
+                                      <div class="form-group col-md-6 col-lg-4  " id="webWorkmanCompensationInsuranceFile" @*style="display:none"*@ >
+                                <div class=" rgstr-input-form-box">
+                                <label for="WorkmanCompensationInsuranceFile">@Localizer["Upload Workman’s Compensation Insurance file (png , jpeg, pdf, xlsx, docx)"]</label>
+                                <input type="file" asp-for="WorkmanCompensationInsuranceFile" placeholder="" class="form-control" />
+                            <a class="cstm-anchor select_doc" href="../uploads/@Model.ExistingWorkmanCompensationInsuranceFile" target="_blank"><div class="mlt-file-list" ><span  class="multiple-file-elips " style="width:100px" >@Model.ExistingWorkmanCompensationInsuranceFile</span><span id="filename" class="fa fa-eye ml-1 mr-2 fa-lg closeBtn" title="@Localizer["Click here to view Document"]"></span></div></a>
+
+                                  <span asp-validation-for="WorkmanCompensationInsuranceFile" class="text-danger"></span>
+                            </div>
+                                </div>
+                            }
+                            else
+                            {
+                                  <div class="form-group col-md-6 col-lg-4  " id="webWorkmanCompensationInsuranceFile" style="display:none" >
+                                <div class=" rgstr-input-form-box">
+                                <label for="WorkmanCompensationInsuranceFile">@Localizer["Upload Workman’s Compensation Insurance file (png , jpeg, pdf, xlsx, docx)"]</label>
+                                <input type="file" asp-for="WorkmanCompensationInsuranceFile" placeholder="" class="form-control" />
+                            <a class="cstm-anchor select_doc" href="../uploads/@Model.ExistingWorkmanCompensationInsuranceFile" target="_blank"><div class="mlt-file-list" ><span  class="multiple-file-elips " style="width:100px" >@Model.ExistingWorkmanCompensationInsuranceFile</span><span id="filename" class="fa fa-eye ml-1 mr-2 fa-lg closeBtn" title="@Localizer["Click here to view Document"]"></span></div></a>
+
+                                  <span asp-validation-for="WorkmanCompensationInsuranceFile" class="text-danger"></span>
+                            </div>
+                              </div>
+                            }
+
+                              }
+
+
+
+                                 
+                            
+                        
+                            
+
+
+                               
+                       
+
+                              
+
+                      
+
+
+
+
+                                   
+
+                                 
+
+
+                     </div>
+                    <button type="submit" class="btn green-modal-btn">Update</button>
+             </form>
+            
+         </div>   
+    </div>
+  </div>
+</div>
+
+

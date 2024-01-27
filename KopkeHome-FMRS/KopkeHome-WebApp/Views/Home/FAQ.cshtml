@@ -1,0 +1,54 @@
+﻿@model List<KopkeHome_ModelLayer.DataModel.FAQ>
+@{
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+
+<div class="container mainbodysec">
+   <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">FAQ's</h5>
+  @*  <h6 class="card-subtitle mb-2 text-muted">How Prohz started</h6>*@
+    <div class="accordion" id="accordionExample">
+        @if (Model.Any())
+        {
+            int autoincrement = 0;
+            string Show = string.Empty;
+            foreach (var Faq in Model)
+            {
+                Interlocked.Increment(ref autoincrement);
+                if (autoincrement == 1)
+                {
+                    Show = "show";
+                }
+                else
+                {
+                    Show = "";
+                }
+                <div class="card">
+                    <div class="card-header" id="heading_@autoincrement">
+                        <h2 class="mb-0">
+                            <button style="font-weight: bold;" class="btn btn-link btn-block text-left HomeContentsRead" type="button" data-toggle="collapse" data-target="#collapse_@autoincrement" aria-expanded="true" aria-controls="collapse_@autoincrement">
+                               @autoincrement. @Faq.Question
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapse_@autoincrement" class="collapse @Show" aria-labelledby="heading_@autoincrement" data-parent="#accordionExample">
+                        <div class="card-body HomeContentsRead">
+                            @Faq.Answer
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <h1>No FAQ found.</h1>
+        }
+    </div>
+    @*<a href="@Url.Action("HowDoesItWork","Home")" class="card-link">Learn more</a>*@
+    <a href="@Url.Action("SignUp","User")" class="card-link float-right mt-1"><button class="btn btn-sm btn-success">Join Prohz</button></a>
+  </div>
+</div>
+</div>
+

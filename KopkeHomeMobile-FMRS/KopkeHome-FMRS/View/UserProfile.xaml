@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KopkeHome_FMRS.View.UserProfile"
+             BackgroundColor="Black"
+             xmlns:View="clr-namespace:KopkeHome_FMRS.View.PartialView"
+             xmlns:local="clr-namespace:KopkeHome_FMRS.View"
+              xmlns:Local="clr-namespace:KopkeHome_FMRS.Control"
+             xmlns:viewmodel="clr-namespace:KopkeHome_FMRS.ViewModel"
+             Title="{Local:TranslationExtention txtUserProfile}">
+    <ContentPage.BindingContext>
+        <viewmodel:UserProfileViewModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <ScrollView Grid.Row="0">
+            <Grid  RowDefinitions="0.5*,2*,6.5*,1*" Margin="0,0,0,0" Padding="20"  HorizontalOptions="FillAndExpand" >
+                <Grid RowDefinitions="3*,7*" Grid.Row="1"  BackgroundColor="Transparent">
+                    <Frame Grid.Row="0" Padding="0" CornerRadius="60" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" HasShadow="False"  BorderColor="#add136" BackgroundColor="Black">
+                        <Image  Source="{Binding ProfileImage}" HeightRequest="80" WidthRequest="80" Aspect="AspectFill"/>
+                    </Frame>
+                    <Frame Grid.Row="0" Margin="70,0,0,0" Padding="5" BackgroundColor="#add136" HasShadow="False" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" CornerRadius="60">
+                        <Image Source="editicon" HeightRequest="20" WidthRequest="20" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding EditClickCommand}"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+                    <StackLayout Grid.Row="1" Margin="0,0,0,0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Label   Text="{Binding Firstname}" FontAttributes="Bold" Margin="0,0,5,0" TextColor="White"/>
+                            <Label   Text="{Binding LastName}" FontAttributes="Bold" TextColor="White"/>
+                        </StackLayout>
+                        <Label  Text="{Binding UserEmail}" HorizontalOptions="CenterAndExpand" FontSize="14" TextColor="LightGray"></Label>
+                    </StackLayout>
+                </Grid>
+                <Frame  Grid.Row="2" Margin="0,0,0,0" Padding="0" VerticalOptions="StartAndExpand" BackgroundColor="#1D1714" >
+                    <StackLayout Orientation="Vertical" VerticalOptions="Start" Opacity="0.7" Padding="0"  BackgroundColor="#1D1714">
+                        <Label Text="{Local:TranslationExtention txtBasicInformation}" FontAttributes="Bold" VerticalOptions="Center"  HorizontalOptions="CenterAndExpand" TextColor="#add136" FontSize="20" Margin="10,10,0,10" />
+                        <BoxView  HeightRequest="0.5" HorizontalOptions="StartAndExpand" Color="White" Margin="0,0,0,0"></BoxView>
+                        <Grid  Margin="10,0,10,10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5.1*"/>
+                                <ColumnDefinition Width="4.9*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Text="{Local:TranslationExtention txtFirstName}" Style="{StaticResource UserProfileHeadinglabel}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding Firstname}"  Style="{StaticResource UserProfileDatalabel}" />
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Local:TranslationExtention txtLastName}"  Style="{StaticResource UserProfileHeadinglabel}"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding LastName}" Style="{StaticResource UserProfileDatalabel}" />
+                            <Label Grid.Row="2" Grid.Column="0" Text="{Local:TranslationExtention txtUniqueMemberID}"   Style="{StaticResource UserProfileHeadinglabel}"/>
+                            <Label Grid.Row="3" Grid.Column="0" Text="{Binding UniqueMeberId}" Style="{StaticResource UserProfileDatalabel}" />
+                            <Label Grid.Row="2" Grid.Column="1" Text="{Local:TranslationExtention txtEmailAddress}"  Style="{StaticResource UserProfileHeadinglabel}" />
+                            <Label Grid.Row="3" Grid.Column="1" Text="{Binding UserEmail}"  Style="{StaticResource UserProfileDatalabel}" />
+                            <Label Grid.Row="4" Grid.Column="0" Text="{Local:TranslationExtention txtPhoneNumber(Mobile)}" Style="{StaticResource UserProfileHeadinglabel}"/>
+                            <Label Grid.Row="5" Grid.Column="0" Text="{Binding MobileNumber}"  Style="{StaticResource UserProfileDatalabel}" />
+                            <Label Grid.Row="4" Grid.Column="1" Text="{Local:TranslationExtention  txtPhoneNumber(Office)}"  Style="{StaticResource UserProfileHeadinglabel}"/>
+                            <Label Grid.Row="5" Grid.Column="1" Text="{Binding OfficeNumber}" Style="{StaticResource UserProfileDatalabel}" />
+                            <Label Grid.Row="6" Grid.Column="0" Text="{Local:TranslationExtention txtBusinessName}" Style="{StaticResource UserProfileHeadinglabel}" />
+                            <Label Grid.Row="7" Grid.Column="0" Text="{Binding BusinessName }"   Style="{StaticResource UserProfileDatalabel}" />
+                            <Label Grid.Row="6" Grid.Column="1" Text="{Local:TranslationExtention txtBusinessAddress}" Style="{StaticResource UserProfileHeadinglabel}"/>
+                            <Label Grid.Row="7" Grid.Column="1" Text="{Binding BusinessAdress }"  Style="{StaticResource UserProfileDatalabel}"  />
+                            <Label Grid.Row="8" Grid.Column="0" Text="{Local:TranslationExtention  txtCityName}" Style="{StaticResource UserProfileHeadinglabel}"/>
+                            <Label Grid.Row="9" Grid.Column="0" Text="{Binding CityName}" Style="{StaticResource UserProfileDatalabel}" />
+                            <Label Grid.Row="8" Grid.Column="1" Text="{Local:TranslationExtention txtStateName}" Style="{StaticResource UserProfileHeadinglabel}" />
+                            <Label Grid.Row="9" Grid.Column="1" Text="{Binding StateName }" Style="{StaticResource UserProfileDatalabel}" />
+                            <Label Grid.Row="10" Grid.Column="0" Text="{Local:TranslationExtention txtZipCode}" Style="{StaticResource UserProfileHeadinglabel}"/>
+                            <Label Grid.Row="11" Grid.Column="0" Text="{Binding ZipCode }" Margin="0,0,0,15"   Style="{StaticResource UserProfileDatalabel}" />
+                            <Label Grid.Row="10" Grid.Column="1" Text="{Local:TranslationExtention txtAccountType}" Style="{StaticResource UserProfileHeadinglabel}"/>
+                            <Label Grid.Row="11" Grid.Column="1" Text="{Binding AccountType}" Margin="0,0,0,15" Style="{StaticResource UserProfileDatalabel}"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Button Grid.Row="3" Text="{Local:TranslationExtention  txtDeleteAccount}" Command="{Binding DeleteAccountCommand}" BackgroundColor="#add136" HorizontalOptions="CenterAndExpand"  HeightRequest="50" WidthRequest="200" TextColor="Black"></Button>
+            </Grid>
+        </ScrollView>
+        <View:Loader IsVisible="{Binding IsLoading}" VerticalOptions="Center"/>
+    </Grid>
+</ContentPage>

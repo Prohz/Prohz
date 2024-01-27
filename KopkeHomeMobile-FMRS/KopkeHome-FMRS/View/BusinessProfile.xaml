@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:View="clr-namespace:KopkeHome_FMRS.View.PartialView"
+             BackgroundColor="Black"    
+             xmlns:viewmodel="clr-namespace:KopkeHome_FMRS.ViewModel"
+             xmlns:Local="clr-namespace:KopkeHome_FMRS.Control"
+             x:Class="KopkeHome_FMRS.View.BusinessProfile"
+             Title="Business Profile">
+    <ContentPage.BindingContext>
+        <viewmodel:BusinessProfileViewModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    <Grid VerticalOptions="FillAndExpand" RowDefinitions="auto,*"  HorizontalOptions="FillAndExpand"   >
+        <Grid Grid.Row="0" Margin="0,20,20,20" Padding="0" BackgroundColor="Transparent">
+            <Frame Grid.Row="0" Padding="0" CornerRadius="60" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" HasShadow="False"  BorderColor="#add136" BackgroundColor="Black">
+                <Image  Source="{Binding ProfileImage}" HeightRequest="80" WidthRequest="80" Aspect="AspectFill"/>
+            </Frame>
+            <!--<Frame Grid.Row="0" Margin="70,0,0,0" Padding="5" BackgroundColor="#add136" HasShadow="False" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" CornerRadius="60">
+                <Image Source="editicon" HeightRequest="20" WidthRequest="20" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding EditClickCommand}"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>-->
+        </Grid>
+        <ScrollView Grid.Row="1" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand">
+            <Grid  RowSpacing="10" RowDefinitions="Auto,Auto,Auto,Auto,Auto" Padding="10" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                <Frame Grid.Row="0" Margin="0,0,0,0" Padding="0"  VerticalOptions="StartAndExpand" BackgroundColor="Transparent">
+                    <StackLayout Orientation="Vertical"  VerticalOptions="Start" Opacity="0.7"  BackgroundColor="#1D1714">
+                        <StackLayout Orientation="Horizontal" Margin="0,20,0,0"  HorizontalOptions="Center" >
+                            <Label Text="{Local:TranslationExtention txtBusinessInformation}" FontAttributes="Bold"  HorizontalOptions="Center" TextColor="Orange" FontSize="20" VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                        <BoxView  Color="Gray"  HeightRequest="1" Margin="0,20,0,20" HorizontalOptions="FillAndExpand"/>
+                        <Grid  Margin="10,0,10,10" ColumnSpacing="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".5*"/>
+                                <ColumnDefinition Width=".5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label  Text="{Local:TranslationExtention txtBusinessName} "  Grid.Row="0" Grid.Column="0"  HorizontalOptions="Start" FontAttributes="Bold" FontSize="14" TextColor="White"/>
+                            <Frame Grid.Row="1" Grid.Column="0" Margin="0,10,0,10" CornerRadius="0"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label  Text="{Binding BusinessName}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label  Text="{Local:TranslationExtention txtBusinessAddress}" Grid.Row="0" Grid.Column="1"  HorizontalOptions="Start" FontAttributes="Bold" FontSize="14" TextColor="White"/>
+                            <Frame Grid.Row="1" Grid.Column="1" Margin="0,10,0,10" HeightRequest="40" Padding="10" BackgroundColor="Transparent" CornerRadius="0" >
+                                <Label  HorizontalOptions="StartAndExpand" TextColor="White">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Address}" TextColor="LightGray"/>
+                                            <Span Text=" "/>
+                                            <Span Text="{Binding City}" TextColor="LightGray" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtBusinessURL}" Grid.Row="2" Grid.Column="0" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="3" Grid.Column="0" Margin="0,10,0,10" CornerRadius="0"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label  Text="{Binding Website}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtPhoneNumber(Office)}" Grid.Row="2" Grid.Column="1" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="3" Grid.Column="1" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label  Text="{Binding OfficePhone}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtYearInBusiness}" Grid.Row="4" Grid.Column="0" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="5" Grid.Column="0" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label  Text="{Binding YearsBusiness}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtNumberofEmployee}" Grid.Row="4" Grid.Column="1" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="5" Grid.Column="1" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label   Text="{Binding NumberofEmployees}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtBusinessDescription}" Grid.Row="6" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="7" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label   Text="{Binding BusinessDescription}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtLoctionDescriptionForContact}" Grid.Row="8" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="9" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label  Text="{Binding Showroom}" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtJobSiteCrew}" Grid.Row="10" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="11" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label  Text="{Binding NumberofCrews}" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtAnswerCallBusinesshour}" Grid.Row="12" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="13" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label   Text="{Binding IsPhoneCallSupport}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtNormalBusinessHour}" Grid.Row="14" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="15" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label  Text="{Binding Time}" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txt24HourPhoneCall}" Grid.Row="16" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="17" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label   Text="{Binding TwentyfourHoursPhoneAnswering}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention  txtEmergencyService}" Grid.Row="18" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="19" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label    Text="{Binding EmergencyServices}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtBusinessTradeLicense}" Grid.Row="20" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="21" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label   Text="{Binding Tradelicense}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtLiabilityIsurance}" Grid.Row="22" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="23" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label  Text="{Binding Insurance}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention  txtCompensationInsurance}" Grid.Row="24" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="25" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label  Text="{Binding CompensationInsurance}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention  txtFreeEstimate}" Grid.Row="26" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="27" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label   Text="{Binding Estimates}"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtOfferDesignService}" Grid.Row="28" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="29" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label  Text="{Binding OfferDesignServices}" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtContactectDirectlyHomrOwner}" Grid.Row="30" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="31" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label   Text="{Binding DirectlybyHomeowners}" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                            <Label Text="{Local:TranslationExtention txtContactectDirectlyContractor}" Grid.Row="32" Grid.ColumnSpan="2" Margin="0,5,0,0" TextColor="White" FontAttributes="Bold"  />
+                            <Frame Grid.Row="33" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,10"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                                <Label Text="{Binding BySubContractors}" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"  FontSize="12" TextColor="LightGray" />
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Row="1" Padding="0" BorderColor="Black" Opacity="0.7" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" >
+                    <StackLayout Orientation="Vertical" Margin="0" BackgroundColor="#1D1714">
+                        <Grid  Margin="10">
+                            <Label Text="{Local:TranslationExtention txtServiceCategories}" TextColor="Orange"  HorizontalOptions="CenterAndExpand"  FontSize="18" VerticalOptions="CenterAndExpand"/>
+                            <Image Source="downgreen.png" Aspect="AspectFit"  WidthRequest="15" HeightRequest="40" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapOnServiceOffer}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <StackLayout IsVisible="{Binding IsVisivleServiceOffer}" Orientation="Vertical" Margin="10,0,10,10">
+                            <ListView ItemsSource="{Binding ServiceOffered}" VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Never" SelectionMode="None" RowHeight="40" Footer=""  HorizontalOptions="FillAndExpand">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Label Text="{Binding ServiceName}" TextColor="White"  FontSize="Small" />
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Row="2" Padding="0" BorderColor="Black" Opacity="0.7" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" >
+                    <StackLayout Orientation="Vertical" Margin="0"  BackgroundColor="#1D1714">
+                        <Grid  Margin="10">
+                            <Label Text="{Local:TranslationExtention txtServiceZipCodes}" TextColor="Orange"  HorizontalOptions="Center" FontSize="18" VerticalOptions="CenterAndExpand"/>
+                            <Image Source="downgreen.png" Aspect="AspectFit"  WidthRequest="15" HeightRequest="40" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapOnServiceZip}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <StackLayout IsVisible="{Binding IsVisivleServiceZip}" Orientation="Vertical" Margin="10,0,10,10" Spacing="2">
+                            <FlexLayout BindableLayout.ItemsSource="{Binding ZipCodeList}" Margin="0,10,0,0" Wrap="Wrap" Direction="Row"  JustifyContent="Start" AlignItems="Start" AlignContent="Start">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame Padding="0" Margin="1" CornerRadius="2" HasShadow="False" BackgroundColor="White" FlexLayout.Basis="{OnIdiom Phone='25%', Tablet='25%'}" FlexLayout.AlignSelf="Start">
+                                            <StackLayout Margin="0" Spacing="0" Padding="5" >
+                                                <Label Text="{Binding ZipCode}" FontSize="Small" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                            </StackLayout>
+                                        </Frame>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </FlexLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Row="3" Padding="0" BorderColor="Black" Opacity="0.7" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" >
+                    <StackLayout Orientation="Vertical" Margin="0"   BackgroundColor="#1D1714">
+                        <Grid  Margin="10">
+                            <Label Text="{Local:TranslationExtention txtPaymentInformtion}" TextColor="Orange"  HorizontalOptions="Center" FontSize="18" VerticalOptions="CenterAndExpand"/>
+                            <Image Source="downgreen.png" Aspect="AspectFit"  WidthRequest="15" HeightRequest="40" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapOnServiceBusiness}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <Grid IsVisible="{Binding IsVisivleServiceBusiness}" Margin="10,0,10,10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="5" Grid.Column="0" Text="{Local:TranslationExtention txtCash}" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="12" TextColor="White"/>
+                            <Label Grid.Row="5" Grid.Column="1" Text="{Binding Cash}" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="12" TextColor="LightGray"/>
+                            <Label Grid.Row="6" Grid.Column="0" Text="{Local:TranslationExtention  txtCreditCards}" FontAttributes="Bold" HorizontalOptions="StartAndExpand" FontSize="12" TextColor="White"/>
+                            <Label Grid.Row="6" Grid.Column="1" Text="{Binding Creditscards}" FontAttributes="Bold" FontSize="12" HorizontalOptions="EndAndExpand" TextColor="LightGray"/>
+                            <Label Grid.Row="7" Grid.Column="0" Text="{Local:TranslationExtention txtPersonalChecks}" FontSize="12" FontAttributes="Bold" HorizontalOptions="StartAndExpand" TextColor="White"/>
+                            <Label Grid.Row="7" Grid.Column="1" Text="{Binding PersonalCheck}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand" TextColor="LightGray"/>
+                            <Label Grid.Row="8" Grid.Column="0" Text="{Local:TranslationExtention txtPaymentAppName :}" FontSize="12" FontAttributes="Bold" HorizontalOptions="StartAndExpand" TextColor="White"/>
+                            <Label Grid.Row="8" Grid.Column="1" Text="{Binding IsPaymentApps}" FontAttributes="Bold" FontSize="12" HorizontalOptions="EndAndExpand" TextColor="LightGray"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Row="4" Padding="0" BorderColor="Black" Opacity="0.7" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" >
+                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="0"   BackgroundColor="#1D1714">
+                        <Grid  Margin="10">
+                            <Label Text="{Local:TranslationExtention txtYourDocuments}" TextColor="Orange"  HorizontalOptions="Center" FontSize="18" VerticalOptions="CenterAndExpand"/>
+                            <Image Source="downgreen.png" Aspect="AspectFit"  WidthRequest="15" HeightRequest="40" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapOnServiceCredentails}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <Grid RowDefinitions="auto,auto,auto,auto,auto,auto" IsVisible="{Binding IsVisivleServiceCredentials}" Margin="10,0,10,10">
+                            <Label Grid.Row="0" Text="{Local:TranslationExtention  txtBusinessOrTradeLicense :}"  HorizontalOptions="StartAndExpand" TextColor="White"/>
+                            <Label Grid.Row="1" Text="{Local:TranslationExtention txtNotAvailable}" IsVisible="{Binding IsBusinessLicence}"  HorizontalOptions="StartAndExpand" Margin="0,10,0,10" TextColor="Gray"></Label>
+                            <Image  Grid.Row="1" Source="{Binding TradelicenseImage}" HorizontalOptions="StartAndExpand" Margin="10,10,0,10">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OpenTradLicenseCommand}" CommandParameter="{Binding TradelicenseDocs}"></TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Grid.Row="2" Text="{Local:TranslationExtention txtLiabilityDoc}" HorizontalOptions="Start" TextColor="White"/>
+                            <Label Grid.Row="3" Text="{Local:TranslationExtention txtNotAvailable}" IsVisible="{Binding IsInsuranceFile}"  HorizontalOptions="StartAndExpand" Margin="0,10,0,10" TextColor="Gray"></Label>
+                            <Image Grid.Row="3" Source="{Binding LiabilityInsuranceImage}" HorizontalOptions="StartAndExpand" Margin="10,10,0,10">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OpenLibilityCommand}" CommandParameter="{Binding LiabilityInsuranceDocs}"></TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Grid.Row="4" Text="{Local:TranslationExtention txtWorkmanDoc}" HorizontalOptions="StartAndExpand" TextColor="White"/>
+                            <Label Grid.Row="5" Text="{Local:TranslationExtention txtNotAvailable}" IsVisible="{Binding IsCompensationInsuranceFile}"  HorizontalOptions="StartAndExpand" Margin="0,10,0,10" TextColor="Gray"></Label>
+                            <Image Grid.Row="5" Source="{Binding CompensationInsuranceImage}" HorizontalOptions="StartAndExpand" Margin="10,10,0,10">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OpenCompensationCommand}" CommandParameter="{Binding CompensationInsuranceDocs}"></TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </ScrollView>
+        <View:Loader Grid.Row="1" IsVisible="{Binding IsLoading}" VerticalOptions="Center"/>
+    </Grid>
+</ContentPage>

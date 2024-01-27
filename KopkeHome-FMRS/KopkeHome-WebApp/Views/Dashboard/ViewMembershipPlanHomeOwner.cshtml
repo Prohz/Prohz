@@ -1,0 +1,305 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.DashboardViewModels.MembershipBenifitsAndSubcriptionPlan.MembershipAndSubscriptionPlanViewModel
+@{
+    Layout = "~/Views/Shared/_DashboardInternal.cshtml";
+}
+@inject IViewLocalizer Localizer
+@{
+
+
+    //Silver
+    string BuyNowSilver = string.Empty;
+    double percentsl = 0;
+    var silver = Model.Plans.Where(x => x.Title.Contains("Silver") && x.RoleId == 4).FirstOrDefault();
+    string IsActiveSilver = string.Empty;
+    if (Model.SubscriptionsStripeData.PlanId == silver.Id)
+    {
+        IsActiveSilver = "active";
+        BuyNowSilver = Localizer["Current Plan"].Value;
+    }
+    else
+    {
+        BuyNowSilver = Localizer["Downgrade Now"].Value;
+        IsActiveSilver = string.Empty;
+    }
+
+    string IsCheckedSilverMonthly = string.Empty;
+    string IsCheckedSilverAnnually = string.Empty;
+    if (Model.SubscriptionsStripeData.StripePriceId == silver.AnnuallyStripePriceId)
+    {
+        IsCheckedSilverAnnually = "checked";
+
+    }
+    else if (Model.SubscriptionsStripeData.StripePriceId == silver.MonthlyStripePriceId)
+    {
+        IsCheckedSilverMonthly = "checked";
+    }
+
+    int PlanIdSilver = silver.Id;
+    double silver_PricePerMonth = silver.PricePerMonth;
+    string silver_Categories = silver.Categories;
+    string silver_ZipCodes = silver.ZipCodes;
+    double silver_PricePerYear = silver.PricePerYear;
+    string silver_IsWeb = string.Empty;
+    string silver_IsPhoneApp = string.Empty;
+    var discountsl = ((silver_PricePerMonth * 12) - silver_PricePerYear);
+    percentsl = (discountsl / (silver_PricePerMonth * 12)) * 100;
+    if (silver.Website)
+    {
+        silver_IsWeb = "fa-check";
+    }
+    else
+    {
+        silver_IsWeb = "fa-times";
+    }
+    if (silver.PhoneApp)
+    {
+        silver_IsPhoneApp = "fa-check";
+    }
+    else
+    {
+        silver_IsPhoneApp = "fa-times";
+    }
+    //Gold
+    string BuyNowGold = string.Empty;
+    double percentgl = 0;
+    var Gold = Model.Plans.Where(x => x.Title.Contains("Gold") && x.RoleId == 4).FirstOrDefault();
+    string IsActiveGold = string.Empty;
+    if (Model.SubscriptionsStripeData.PlanId == Gold.Id)
+    {
+        IsActiveGold = "active";
+        BuyNowGold = Localizer["Current Plan"].Value;
+    }
+    else
+    {
+        BuyNowGold = Localizer["Upgrade Now"].Value;
+        IsActiveGold = string.Empty;
+    }
+    string IsCheckedGoldMonthly = string.Empty;
+    string IsCheckedGoldAnnually = string.Empty;
+    if (Model.SubscriptionsStripeData.StripePriceId == Gold.AnnuallyStripePriceId)
+    {
+        IsCheckedGoldAnnually = "checked";
+
+    }
+    else if (Model.SubscriptionsStripeData.StripePriceId == Gold.MonthlyStripePriceId)
+    {
+        IsCheckedGoldMonthly = "checked";
+    }
+    int PlanIdGold = Gold.Id;
+    double Gold_PricePerMonth = Gold.PricePerMonth;
+    string Gold_Categories = Gold.Categories;
+    string Gold_ZipCodes = Gold.ZipCodes;
+    double Gold_PricePerYear = Gold.PricePerYear;
+    string Gold_IsWeb = string.Empty;
+    string Gold_IsPhoneApp = string.Empty;
+    var discountgl = ((Gold_PricePerMonth * 12) - Gold_PricePerYear);
+    percentgl = (discountgl / (Gold_PricePerMonth * 12)) * 100;
+    if (Gold.Website)
+    {
+        Gold_IsWeb = "fa-check";
+    }
+    else
+    {
+        Gold_IsWeb = "fa-times";
+    }
+    if (Gold.PhoneApp)
+    {
+        Gold_IsPhoneApp = "fa-check";
+    }
+    else
+    {
+        Gold_IsPhoneApp = "fa-times";
+    }
+
+
+
+
+}
+
+
+<div class="logo-loader " ID="CSTMLOADER" style="display:none">
+    <div class="logo-loader-pulse pulse" id="Idloader"><img src="~/images/Kopke-brand-logo.png" /></div>
+</div>
+
+
+<div class="dashboard-main-container">
+
+    <div class="dashboard-top-heading dashboard-top-heading-cstm ">
+        <h3 class="green-clr mb-5">@Localizer["Membership Benefits Plan For"] @Localizer["Homeowner"]</h3>
+        <div class="d-flex align-items-center">
+            <p class="text-white m-0"><a href="@Url.Action("index", "dashboard")" class="text-white"><i class="fa fa-long-arrow-left forgot-back-arrow" aria-hidden="true"></i> @Localizer["Go back"]</a></p>
+
+
+        </div>
+    </div>
+    <div class="text-right">
+        @{
+
+            if (Model.SubscriptionsStripeData.StripeStatus.Contains("Cancelled"))
+            {
+                <p class="text-warning">@Localizer["Your current plan is cancelled but you can use the application until"] @Model.SubscriptionsStripeData.PeriodEndDate </p>
+            }
+            else
+            {
+                <p class="text-success">@Localizer["Subscription expires on"] @Model.SubscriptionsStripeData.PeriodEndDate</p>
+                <button id="@Model.SubscriptionsStripeData.StripeSubscriptionId" data-EndDate="@Model.SubscriptionsStripeData.PeriodEndDate" onclick="CancelSubscription(this);" type="button" class="button btn red-modal-btn">@Localizer["Cancel Subscription"]  <i class="fa-light fa-xmark"></i></button>
+
+            }
+        }
+    </div>
+    <div class="registration-container-form">
+        <div class="tab-content">
+
+
+
+            <div id="Home-owner" class="contractor-business-prof-form">
+                <div class="Membership-benefits-outer-box">
+                    <div class="table-responsive benefit-table current-table">
+                        <table class="table">
+                            <colgroup></colgroup>
+
+                            <colgroup class="@IsActiveSilver l-green-border"></colgroup>
+                            <colgroup class="@IsActiveGold l-green-border"></colgroup>
+
+                            <thead>
+                                <tr>
+                                    <th class="d-flex justify-content-center align-items-center">
+                                        <h2>@Localizer["Membership Benefits"]</h2>
+                                    </th>
+
+                                    <th>
+                                        <span class="membership-title membership-title-2">Silver</span>
+                                       @* <h2>$@silver_PricePerYear/365 @Localizer["days"]</h2>*@
+                                        <h2 id="showsilver365VH">$@silver_PricePerYear/365 @Localizer["days"]</h2>
+                                        <h2 id="showsilver90VH" hidden="hidden" visibility="true">$@silver_PricePerMonth/90 @Localizer["days"]</h2>
+                                    </th>
+                                    <th>
+                                        <span class="membership-title membership-title-3">Gold</span>
+                                        @*<h2>$@Gold_PricePerYear/365 @Localizer["days"]</h2>*@
+                                        <h2 id="showgold365VH">$@Gold_PricePerYear/365 @Localizer["days"]</h2>
+                                        <h2 id="showgold90VH" hidden="hidden" visibility="true">$@Gold_PricePerMonth/90 @Localizer["days"]</h2>
+                                    </th>
+
+                                </tr>
+                            </thead>
+
+
+
+                            <tbody>
+
+
+                                <tr>
+                                    <th>@Localizer["Website"]</th>
+                                    <td><i class="fa @silver_IsWeb fa-2x"></i></td>
+                                    <td><i class="fa @Gold_IsWeb fa-2x"></i></td>
+
+                                </tr>
+                                <tr>
+                                    <th>@Localizer["Mobile App"]</th>
+                                    <td><i class="fa @silver_IsPhoneApp fa-2x"></i></td>
+                                    <td><i class="fa @Gold_IsPhoneApp fa-2x"></i></td>
+
+
+                                </tr>
+
+                                <tr>
+                                    <th>@Localizer["Price"] (90 @Localizer["days"])</th>
+
+                                    <td><p onclick="hideDatasilverVH()" class="m-0 radioBox">$@silver_PricePerMonth/90 @Localizer["days"] <input class="Paymentradio silver25" type="radio" Id="@PlanIdSilver" name="SilverPrice" data-PrevPlanId="@Model.SubscriptionsStripeData.PlanId" data-CusId="@Model.SubscriptionsStripeData.StripeCustomerID" data-LastDate="@Model.SubscriptionsStripeData.PeriodEndDate" data-subId="@Model.SubscriptionsStripeData.StripeSubscriptionId" Id="@PlanIdSilver" data-CurrentsubId="@Model.SubscriptionsStripeData.StripePriceId" data-PriceId="@Model.PriceMonthlySilverID" value="@Model.PriceMonthlySilverID" @IsCheckedSilverMonthly></p></td>
+                                    <td><p onclick="hideDatagoldVH()" class="m-0 radioBox">$@Gold_PricePerMonth/90 @Localizer["days"] <input class="Paymentradio gold50" type="radio" Id="@PlanIdGold" name="GoldPrice" data-PrevPlanId="@Model.SubscriptionsStripeData.PlanId" data-CusId="@Model.SubscriptionsStripeData.StripeCustomerID" data-LastDate="@Model.SubscriptionsStripeData.PeriodEndDate" data-subId="@Model.SubscriptionsStripeData.StripeSubscriptionId" Id="@PlanIdGold" data-CurrentsubId="@Model.SubscriptionsStripeData.StripePriceId" data-PriceId="@Model.PriceMonthlyGoldID" value="@Model.PriceMonthlyGoldID" @IsCheckedGoldMonthly></p></td>
+
+
+                                </tr>
+                                <tr>
+                                    <th>@Localizer["Price"] (365 @Localizer["days"]) </th>
+
+
+                                    <td><p onclick="showDatasilverVH()" class="m-0 radioBox"><span>$@silver_PricePerYear/(365 @Localizer["days"]) <i class="percentage">Save @String.Format("{0:0.00}", percentsl) % </i> </span><input class="Paymentradio silver50" Id="@PlanIdSilver" style="right: -2px;" type="radio" id="SilverPrice" name="SilverPrice" data-LastDate="@Model.SubscriptionsStripeData.PeriodEndDate" data-PrevPlanId="@Model.SubscriptionsStripeData.PlanId" data-CusId="@Model.SubscriptionsStripeData.StripeCustomerID" data-CurrentsubId="@Model.SubscriptionsStripeData.StripePriceId" data-subId="@Model.SubscriptionsStripeData.StripeSubscriptionId" data-PriceId="@Model.PriceYearlySilverID" value="@Model.PriceYearlySilverID" @IsCheckedSilverAnnually></p></td>
+                                    <td><p onclick="showDatagoldVH()" class="m-0 radioBox"><span>$@Gold_PricePerYear/(365 @Localizer["days"]) <i class="percentage">Save @String.Format("{0:0.00}", percentgl) % </i></span> <input class="Paymentradio gold100" Id="@PlanIdGold" style="right: -2px;" type="radio" id="GoldPrice" name="GoldPrice" data-LastDate="@Model.SubscriptionsStripeData.PeriodEndDate" data-PrevPlanId="@Model.SubscriptionsStripeData.PlanId" data-CusId="@Model.SubscriptionsStripeData.StripeCustomerID" data-CurrentsubId="@Model.SubscriptionsStripeData.StripePriceId" data-subId="@Model.SubscriptionsStripeData.StripeSubscriptionId" Id="@PlanIdSilver" data-PriceId="@Model.PriceYearlyGoldID" value="@Model.PriceYearlyGoldID" @IsCheckedGoldAnnually></p></td>
+
+                                </tr>
+
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <td><a onclick="UpgradeToSilverSubscription()" href="#" class="text-decoration-none membership-title-2">@BuyNowSilver</a></td>
+                                    <td><a onclick="UpgradeToGoldSubscription()" href="#" class=" text-decoration-none membership-title-3">@BuyNowGold</a></td>
+
+
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    $(window).on('load',function() {
+        
+       var silver25sub= $('.silver25').prop('checked');
+        var silver50sub=$('.silver50').prop('checked');
+       var gold50sub= $('.gold50').prop('checked');
+       var gold100sub= $('.gold100').prop('checked');
+       if(silver25sub==true){
+           hideDatasilverVH();
+       }
+       else if(silver50sub==true)
+       {
+           showDatasilverVH();
+       }
+       else if(gold50sub==true){
+           hideDatagoldVH();
+       }
+       else if(gold100sub==true){
+           showDatagoldVH()
+       }
+    });
+
+
+    
+        function showDatasilverVH() {
+            var dataDiv = document.getElementById("showsilver90VH");
+            dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("showsilver365VH");
+            dataDiv2.style.display = "block";
+
+        }
+
+        function hideDatasilverVH() {
+            var dataDiv = document.getElementById("showsilver365VH");
+            dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("showsilver90VH");
+            dataDiv2.style.display = "block";
+            dataDiv2.style.visibility = 'visible'
+            $('#showsilver90VH').removeAttr('hidden');
+        }
+
+
+        function showDatagoldVH() {
+            var dataDiv = document.getElementById("showgold90VH");
+            dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("showgold365VH");
+            dataDiv2.style.display = "block";
+
+        }
+
+        function hideDatagoldVH() {
+            var dataDiv = document.getElementById("showgold365VH");
+            dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("showgold90VH");
+            dataDiv2.style.display = "block";
+            dataDiv2.style.visibility = 'visible'
+            $('#showgold90VH').removeAttr('hidden');
+        }
+</script>

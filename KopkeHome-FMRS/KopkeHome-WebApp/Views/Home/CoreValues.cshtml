@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+ @inject IViewLocalizer Localizer
+<div class="container mainbodysec">
+   <div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">@Localizer["Core Values"]</h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+  
+    <div> 
+ @*<u>Contractor :</u>*@
+ <div class="HomeContentsRead"> 
+
+     <ol class="list-group list-group-numbered">
+         <li class="list-group-item HomeContentsRead" >
+            
+          @Localizer["Every Contractor, Subcontractor, and Independent Contractor, regardless of how large or small their company is, should have an equal opportunity to either stabalize or expand their company by using our services."]
+
+         </li>
+          <li class="list-group-item HomeContentsRead" > 
+     @Localizer["Every Contractor, Subcontractor, and Independent Contractor should be able to get their name in front of other Contractors, Subcontractors, and Independent Contractors and/or Homeowners or Commercial Building Managers on the internet for a low cost."]         
+
+          </li>
+           <li class="list-group-item HomeContentsRead" > 
+
+          @Localizer["Every Homeowner or Commercial Building Manager should be able to see information on all Contractors, Subcontractors, and Independent Contractors who have indicated that they want to do work in their zip code."]   
+
+           </li>
+            <li class="list-group-item HomeContentsRead" >
+       @Localizer["Every Homeowner or Commercial Building Manager should be allowed to choose their own Contractor, Subcontractor or Independent Contractor, without a middle man taking a fee for the Homeowner or Commecial Building Managers contact information."]    
+    
+            </li>
+             <li class="list-group-item HomeContentsRead" > 
+       @Localizer["All members of the service should pay a small fee to Prohz for allowing them limited access to the databases that are very expensive to compile for them to use."]     
+
+             </li>
+              <li class="list-group-item HomeContentsRead" >
+        @Localizer["The Prohz subscription service to be used only by it's members, has NO ADS, NO POP-UPS, and NO SOLICITATIONS."]     
+              </li>
+
+              <li class="list-group-item HomeContentsRead" > 
+             @Localizer["Prohz believes in providing direct contact between members, and does not allow search engines to be set up as Contractors."]
+
+              </li>
+            <li class="list-group-item HomeContentsRead" >
+          @Localizer["Prohz does not believe in gathering and selling information about it's members. The only information available to member viewers is the information the members themselves put on the site."]
+    
+            </li>
+      
+     </ol>
+
+
+</div>
+</div>
+
+
+
+
+    <a href="@Url.Action("HowDoesItWork","Home")" class="card-link">@Localizer["Learn More"]</a>
+    <a href="@Url.Action("SignUp","User")" class="card-link">@Localizer["Join Prohz"]</a>
+  </div>
+</div>
+</div>

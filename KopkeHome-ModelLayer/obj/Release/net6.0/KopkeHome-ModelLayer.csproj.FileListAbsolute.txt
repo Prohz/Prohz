@@ -1,0 +1,24 @@
+D:\KopkeHome-FMRS\KopkeHome-ModelLayer\bin\Release\net6.0\KopkeHome-ModelLayer.deps.json
+D:\KopkeHome-FMRS\KopkeHome-ModelLayer\bin\Release\net6.0\KopkeHome-ModelLayer.dll
+D:\KopkeHome-FMRS\KopkeHome-ModelLayer\bin\Release\net6.0\ref\KopkeHome-ModelLayer.dll
+D:\KopkeHome-FMRS\KopkeHome-ModelLayer\bin\Release\net6.0\KopkeHome-ModelLayer.pdb
+D:\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.csproj.AssemblyReference.cache
+D:\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.AssemblyInfoInputs.cache
+D:\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.AssemblyInfo.cs
+D:\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.csproj.CoreCompileInputs.cache
+D:\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.dll
+D:\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\ref\KopkeHome-ModelLayer.dll
+D:\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.pdb
+D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-ModelLayer\bin\Release\net6.0\KopkeHome-ModelLayer.deps.json
+D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-ModelLayer\bin\Release\net6.0\KopkeHome-ModelLayer.dll
+D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-ModelLayer\bin\Release\net6.0\ref\KopkeHome-ModelLayer.dll
+D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-ModelLayer\bin\Release\net6.0\KopkeHome-ModelLayer.pdb
+D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.csproj.AssemblyReference.cache
+D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.AssemblyInfoInputs.cache
+D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.AssemblyInfo.cs
+D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.csproj.CoreCompileInputs.cache
+D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.dll
+D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\ref\KopkeHome-ModelLayer.dll
+D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-ModelLayer\obj\Release\net6.0\KopkeHome-ModelLayer.pdb

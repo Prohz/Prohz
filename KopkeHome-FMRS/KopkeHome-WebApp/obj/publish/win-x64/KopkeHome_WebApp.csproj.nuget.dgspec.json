@@ -1,0 +1,675 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj": {}
+  },
+  "projects": {
+    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj",
+        "projectName": "KopkeHome-BusinessLayer",
+        "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\arshadm\\.nuget\\packages\\",
+        "outputPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-BusinessLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\arshadm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj": {
+                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj"
+              },
+              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
+              },
+              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
+                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AsyncFixer": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.8, )"
+            },
+            "Microsoft.AspNetCore.Authorization": {
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[39.121.0, )"
+            },
+            "Twilio": {
+              "target": "Package",
+              "version": "[5.80.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj",
+        "projectName": "KopkeHome-DataAccessLayer",
+        "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\arshadm\\.nuget\\packages\\",
+        "outputPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\arshadm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AsyncFixer": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj",
+        "projectName": "KopkeHome_WebApp",
+        "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj",
+        "packagesPath": "C:\\Users\\arshadm\\.nuget\\packages\\",
+        "outputPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-FMRS\\KopkeHome-WebApp\\obj\\publish\\win-x64\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\arshadm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj": {
+                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj"
+              },
+              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj": {
+                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj"
+              },
+              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj": {
+                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj"
+              },
+              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
+              },
+              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
+                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AsyncFixer": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Localization.AspNetCore.TagHelpers": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Localization": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Localization": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.Extensions.Localization": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.13, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Roslynator.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[39.121.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
+            "System.Resources.ResourceManager": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[6.0.1, 6.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[6.0.1, 6.0.1]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[6.0.1, 6.0.1]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
+        "projectName": "KopkeHome-LogManager",
+        "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
+        "packagesPath": "C:\\Users\\arshadm\\.nuget\\packages\\",
+        "outputPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-LogManager\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\arshadm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AsyncFixer": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
+        "projectName": "KopkeHome-ModelLayer",
+        "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
+        "packagesPath": "C:\\Users\\arshadm\\.nuget\\packages\\",
+        "outputPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\arshadm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AsyncFixer": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.14, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj",
+        "projectName": "KopkeHome-UtilityLayer",
+        "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj",
+        "packagesPath": "C:\\Users\\arshadm\\.nuget\\packages\\",
+        "outputPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\arshadm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AsyncFixer": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "GSF.Core": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Extensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.17.0, )"
+            },
+            "XAct.Core.PCL": {
+              "target": "Package",
+              "version": "[0.0.5014, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
