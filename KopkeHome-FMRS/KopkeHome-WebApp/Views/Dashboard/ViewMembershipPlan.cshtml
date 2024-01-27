@@ -1,0 +1,977 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.DashboardViewModels.MembershipBenifitsAndSubcriptionPlan.MembershipAndSubscriptionPlanViewModel
+@{
+    Layout = "~/Views/Shared/_DashboardInternal.cshtml";
+}
+@inject IViewLocalizer Localizer
+@{
+    #pragma warning disable
+
+    string BuyNowGold = string.Empty;
+    string BuyNowBronze = string.Empty;
+    string BuyNowSilver = string.Empty;
+    double percentbr = 0;
+    var bronze = Model.Plans.Where(x => x.Title.Contains("Bronze")).FirstOrDefault();
+    string IsActiveBronze = string.Empty;
+
+
+    string IsCheckedBronzeMonthly = string.Empty;
+    string IsCheckedBronzeAnnually = string.Empty;
+    if (Model.SubscriptionsStripeData.StripePriceId == bronze.AnnuallyStripePriceId)
+    {
+        IsCheckedBronzeAnnually = "checked";
+
+    }
+    else if (Model.SubscriptionsStripeData.StripePriceId == bronze.MonthlyStripePriceId)
+    {
+        IsCheckedBronzeMonthly = "checked";
+    }
+    int PlanIdBronze = bronze.Id;
+    double bronzeprice_PricePerMonth = bronze.PricePerMonth;
+    string bronze_Categories = bronze.Categories;
+    string bronze_ZipCodes = bronze.ZipCodes;
+    double bronze_PricePerYear = bronze.PricePerYear;
+    string bronze_IsWeb = string.Empty;
+    string bronze_IsPhoneApp = string.Empty;
+    string IsChecked = string.Empty;
+    string IsActive = string.Empty;
+    var discount = ((bronzeprice_PricePerMonth * 4) - bronze_PricePerYear);
+    percentbr = (discount / (bronzeprice_PricePerMonth * 4)) * 100;
+    if (bronze.Website)
+    {
+        bronze_IsWeb = "fa-check";
+    }
+    else
+    {
+        bronze_IsWeb = "fa-times";
+    }
+    if (bronze.PhoneApp)
+    {
+        bronze_IsPhoneApp = "fa-check";
+    }
+    else
+    {
+        bronze_IsPhoneApp = "fa-times";
+    }
+
+    //Silver
+
+    double percentsl = 0;
+    var silver = Model.Plans.Where(x => x.Title.Contains("Silver")).FirstOrDefault();
+    string IsActiveSilver = string.Empty;
+
+
+    string IsCheckedSilverMonthly = string.Empty;
+    string IsCheckedSilverAnnually = string.Empty;
+    if (Model.SubscriptionsStripeData.StripePriceId == silver.AnnuallyStripePriceId)
+    {
+        IsCheckedSilverAnnually = "checked";
+
+    }
+    else if (Model.SubscriptionsStripeData.StripePriceId == silver.MonthlyStripePriceId)
+    {
+        IsCheckedSilverMonthly = "checked";
+    }
+
+    int PlanIdSilver = silver.Id;
+    double silver_PricePerMonth = silver.PricePerMonth;
+    string silver_Categories = silver.Categories;
+    string silver_ZipCodes = silver.ZipCodes;
+    double silver_PricePerYear = silver.PricePerYear;
+    string silver_IsWeb = string.Empty;
+    string silver_IsPhoneApp = string.Empty;
+    var discountsl = ((silver_PricePerMonth * 4) - silver_PricePerYear);
+    percentsl = (discountsl / (silver_PricePerMonth * 4)) * 100;
+    if (silver.Website)
+    {
+        silver_IsWeb = "fa-check";
+    }
+    else
+    {
+        silver_IsWeb = "fa-times";
+    }
+    if (silver.PhoneApp)
+    {
+        silver_IsPhoneApp = "fa-check";
+    }
+    else
+    {
+        silver_IsPhoneApp = "fa-times";
+    }
+    //Gold
+
+    double percentgl = 0;
+    var Gold = Model.Plans.Where(x => x.Title.Contains("Gold")).FirstOrDefault();
+    string IsActiveGold = string.Empty;
+
+    string IsCheckedGoldMonthly = string.Empty;
+    string IsCheckedGoldAnnually = string.Empty;
+    if (Model.SubscriptionsStripeData.StripePriceId == Gold.AnnuallyStripePriceId)
+    {
+        IsCheckedGoldAnnually = "checked";
+
+    }
+    else if (Model.SubscriptionsStripeData.StripePriceId == Gold.MonthlyStripePriceId)
+    {
+        IsCheckedGoldMonthly = "checked";
+    }
+    int PlanIdGold = Gold.Id;
+    double Gold_PricePerMonth = Gold.PricePerMonth;
+    string Gold_Categories = Gold.Categories;
+    string Gold_ZipCodes = Gold.ZipCodes;
+    double Gold_PricePerYear = Gold.PricePerYear;
+    string Gold_IsWeb = string.Empty;
+    string Gold_IsPhoneApp = string.Empty;
+    var discountgl = ((Gold_PricePerMonth * 4) - Gold_PricePerYear);
+    percentgl = (discountgl / (Gold_PricePerMonth * 4)) * 100;
+    string ActiveCstm = string.Empty;
+    if (Gold.Website)
+    {
+        Gold_IsWeb = "fa-check";
+    }
+    else
+    {
+        Gold_IsWeb = "fa-times";
+    }
+    if (Gold.PhoneApp)
+    {
+        Gold_IsPhoneApp = "fa-check";
+    }
+    else
+    {
+        Gold_IsPhoneApp = "fa-times";
+    }
+    string membertype = string.Empty;
+
+    if (Model.LoggedInUser.RoleId == 2)
+    {
+        membertype = Localizer["Sub Contractor"].Value;
+    }
+    else if (Model.LoggedInUser.RoleId == 3)
+    {
+        membertype = Localizer["Independent Contractor"].Value;
+    }
+    else
+    {
+        membertype = Localizer["Contractor"].Value;
+    }
+
+
+    if (Model.SubscriptionsStripeData.PlanId == Gold.Id)
+    {
+        IsActiveGold = "active";
+        BuyNowGold = Localizer["Current Plan"].Value;
+        BuyNowSilver = Localizer["Downgrade Now"].Value;
+        BuyNowBronze = Localizer["Downgrade Now"].Value;
+    }
+    else if (Model.SubscriptionsStripeData.PlanId == silver.Id)
+    {
+        IsActiveSilver = "active";
+        BuyNowSilver = Localizer["Current Plan"].Value;
+        BuyNowBronze = Localizer["Downgrade Now"].Value;
+        BuyNowGold = Localizer["Upgrade Now"].Value;
+    }
+    else if (Model.SubscriptionsStripeData.PlanId == bronze.Id)
+    {
+        IsActiveBronze = "active";
+        BuyNowBronze = Localizer["Current Plan"].Value;
+        BuyNowSilver = Localizer["Upgrade Now"].Value;
+        BuyNowGold = Localizer["Upgrade Now"].Value;
+    }
+    else if (Model.SubscriptionsStripeData.PlanId == 13)
+    {
+        ActiveCstm = "active";
+        BuyNowBronze = Localizer["Buy Now"].Value;
+        BuyNowSilver = Localizer["Buy Now"].Value;
+        BuyNowGold = Localizer["Buy Now"].Value;
+
+    }
+
+}
+<head>
+    <!-- Font CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /
+
+    <!-- Custom CSS -->
+    <link href="~/HomePageAssets/assets/css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/master.css" asp-append-version="true" />
+</head>
+<script>
+    var urlprefix = '';
+    if (window.location.href.indexOf("KopkeHome-FMRS-QA") > -1) {
+        urlprefix = '/KopkeHome-FMRS-QA';
+    }
+
+    function AfterCancelSubscription(s) {
+        Swal.fire({
+            icon: 'error',
+            title: localizer('Current Plan is Cancelled.', 'El plan actual está cancelado', $('#ProhzLangDDL option:selected').val()),
+            text: localizer('You have cancelled current plan.You can still use the application as long as your last plan is valid.', 'Ha cancelado el plan actual. Todavía puede usar la aplicación siempre que su último plan sea válido.', $('#ProhzLangDDL option:selected').val()),
+            /* footer: '<a href="">Why do I have this issue?</a>'*/
+        })
+    }
+    var ProhzGreyLogo = '<img style="height: 90px;" src="' + urlprefix + '/images/ProhzGreyLogo.new.png">';
+
+    function CancelSubscription(d) {
+        var id = d.getAttribute("id");
+        var EndDate = "";
+        EndDate = d.getAttribute("data-EndDate");
+        Swal.fire({
+            title: localizer('Are You Sure?', 'Estas seguro?', $('#ProhzLangDDL option:selected').val()),
+            iconHtml: ProhzGreyLogo,
+            text: localizer('Current Plan will be cancelled but you can still use the benefits and services till the end of the current billing cycle i.e ' + EndDate + ', Do you want to cancel it ?', 'El plan actual se cancelará, pero aún puede usar los beneficios y servicios hasta el final del ciclo de facturación actual, es decir,' + EndDate + ', ¿Quieres cancelarla?', $('#ProhzLangDDL option:selected').val()),
+            showDenyButton: true,
+
+            showCancelButton: false,
+            confirmButtonText: localizer('Do not cancel', 'No cancelar', $('#ProhzLangDDL option:selected').val()),
+            denyButtonText: localizer(`Yes, cancel it.`, `Sí, cancelarlo.`, $('#ProhzLangDDL option:selected').val()),
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+
+            } else if (result.isDenied) {
+
+                $.ajax({
+                    type: 'Get',
+                    url: urlprefix + '/Payment/CancelSubscription?subId=' + id,
+                    success: function (res) {
+                        if (res == "1") {
+                            Swal.fire(localizer('Subscription Cancelled!', `¡Suscripción cancelada!`, $('#ProhzLangDDL option:selected').val()), '', 'success')
+                            location.reload();
+                        }
+                        else {
+                            Swal.fire(localizer('Network Issue!', `¡Problema de red!`, $('#ProhzLangDDL option:selected').val()), '', 'info')
+                        }
+
+
+                    }
+                });
+            }
+        })
+    }
+
+    function UpgradeToGoldSubscription() {
+        var PlanId = "@PlanIdBronze";
+        var subId = "@Model.SubscriptionsStripeData.StripeSubscriptionId";
+        var CusId = "@Model.SubscriptionsStripeData.StripeCustomerID";
+        var PriceId = "@Model.PriceYearlyBronzeID";
+        var currentSubs = "@Model.SubscriptionsStripeData.StripePriceId";
+        var PrevPlanId = "@Model.SubscriptionsStripeData.PlanId";
+        var Msg = "";
+        var MsgFor = "";
+        var LastDate = "@Model.SubscriptionsStripeData.PeriodEndDate";
+
+        if (currentSubs == PriceId) {
+            Swal.fire(localizer('Already subscribed to this plan. please change different plan or billing cycle.', 'Ya está suscrito a este plan. cambie el plan o el ciclo de facturación por otro diferente.', $('#ProhzLangDDL option:selected').val()))
+        }
+        else {
+            if (PrevPlanId < PlanId || PrevPlanId == PlanId) {
+                Msg = localizer("Upgrade", "Potenciar", $('#ProhzLangDDL option:selected').val());
+                MsgFor = localizer("Subscription Plan will be Upgraded", "El plan de suscripción se actualizará", $('#ProhzLangDDL option:selected').val());
+
+            } else {
+                Msg = localizer("Downgrade", "Degradar", $('#ProhzLangDDL option:selected').val());
+                MsgFor = localizer(
+                    "Subscription plan will end " + LastDate + ". Once you downgrade to a lower plan you won't be able to use the services of your current plan. Current plan will be downgraded with immediate effect",
+                    "El plan de suscripción terminará" + LastDate + ". Una vez que baje de categoría a un plan inferior, no podrá utilizar los servicios de su plan actual. El plan actual se degradará con efecto inmediato",
+                    $('#ProhzLangDDL option:selected').val()
+                )
+            }
+            Swal.fire({
+                title: localizer('Are You Sure?', "Estas seguro?", $('#ProhzLangDDL option:selected').val()),
+                iconHtml: ProhzGreyLogo,
+                text: localizer('Current ' + MsgFor + ', Do you wish to continue ?', "Actual " + MsgFor + " Desea continuar ?", $('#ProhzLangDDL option:selected').val()),
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: localizer('Do not ' + Msg, 'No ' + Msg, $('#ProhzLangDDL option:selected').val()),
+                denyButtonText: localizer(`Yes, ` + Msg + ' it.', `Sí, ` + Msg + ' eso.', $('#ProhzLangDDL option:selected').val()),
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+
+                    $("input[type='radio'][name='GoldPrice']").prop("checked", false);
+                }
+                else if (result.isDenied) {
+
+                    if (PrevPlanId < PlanId || PrevPlanId == PlanId) {
+                        $("#CSTMLOADER").show();
+                        $.ajax({
+                            type: 'Get',
+                            url: urlprefix + '/Payment/UpgradeSubscription?subId=' + subId + '&CusId=' + CusId + '&PriceId=' + PriceId + '&PlanId=' + PlanId,
+                            success: function (res) {
+
+                                window.location = res;
+                                if (res == "1") {
+                                    Swal.fire(localizer('Subscription Upgraded!', '¡Suscripción actualizada!', $('#ProhzLangDDL option:selected').val()), '', 'success')
+                                    setTimeout(function () {
+
+                                        location.reload(true);
+                                    }, 2000);
+                                }
+
+
+
+                            }
+                        });
+                    }
+                    else {
+                        $("#CSTMLOADER").show();
+                        $.ajax({
+                            type: 'Get',
+                            url: urlprefix + '/Payment/DowngradeSubscription?subId=' + subId + '&CusId=' + CusId + '&PriceId=' + PriceId + '&PlanId=' + PlanId,
+                            success: function (res) {
+
+                                window.location = res;
+                                if (res == "1") {
+                                    Swal.fire(localizer('Subscription Downgraded!', '¡Suscripción degradada!', $('#ProhzLangDDL option:selected').val()), '', 'success')
+                                    setTimeout(function () {
+
+                                        location.reload(true);
+                                    }, 2000);
+                                }
+
+
+
+                            }
+                        });
+                    }
+
+                }
+            })
+        }
+    }
+
+
+
+    function UpgradeToSilverSubscription() {
+        var PlanId = "@PlanIdSilver";
+        var subId = "@Model.SubscriptionsStripeData.StripeSubscriptionId";
+        var CusId = "@Model.SubscriptionsStripeData.StripeCustomerID";
+        var PriceId = "@Model.PriceYearlySilverID";
+        var currentSubs = "@Model.SubscriptionsStripeData.StripePriceId";
+        var PrevPlanId = "@Model.SubscriptionsStripeData.PlanId";
+        var Msg = "";
+        var MsgFor = "";
+        var LastDate = "@Model.SubscriptionsStripeData.PeriodEndDate";
+        console.log(currentSubs)
+        console.log(PriceId)
+
+
+
+        if (currentSubs == PriceId) {
+            Swal.fire({
+                title: localizer('Already Subscribed to this plan. please chose different plan or billing cycle.', 'Ya está suscrito a este plan. elija otro plan o ciclo de facturación.', $('#ProhzLangDDL option:selected').val()),
+                iconHtml: ProhzGreyLogo,
+                text: '',
+
+            })
+        }
+        else {
+            if (PrevPlanId < PlanId || PrevPlanId == PlanId) {
+                Msg = localizer("Upgrade", "Potenciar", $('#ProhzLangDDL option:selected').val());
+                MsgFor = localizer("Subscription Plan will be Upgraded", "El plan de suscripción se actualizará", $('#ProhzLangDDL option:selected').val());
+
+            } else {
+                Msg = localizer("Downgrade", "Degradar", $('#ProhzLangDDL option:selected').val());
+                MsgFor = localizer("Subscription plan will end " + LastDate + ". Once you downgrade to a lower plan you won't be able to use the services of your current plan. Current plan will be downgraded with immediate effect", "El plan de suscripción finalizará" + LastDate + ". Una vez que cambie a un plan inferior, no podrá utilizar los servicios de su plan actual. El plan actual se degradará con efecto inmediato", $('#ProhzLangDDL option:selected').val());
+            }
+            Swal.fire({
+                title: localizer('Are You Sure?', 'Estas segura?', $('#ProhzLangDDL option:selected').val()),
+                iconHtml: ProhzGreyLogo,
+                text: localizer('Current ' + MsgFor + ', Do you wish to continue ?', 'Current' + MsgFor + ', ¿Desea continuar?', $('#ProhzLangDDL option:selected').val()),
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: localizer('Do not ' + Msg, 'No ' + Msg, $('#ProhzLangDDL option:selected').val()),
+                denyButtonText: `Yes, ` + Msg + ' it.',
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+                    $("input[type='radio'][name='SilverPrice']").prop("checked", false);
+                }
+                else if (result.isDenied) {
+
+                    if (PrevPlanId < PlanId || PrevPlanId == PlanId) {
+                        $("#CSTMLOADER").show();
+                        $.ajax({
+                            type: 'Get',
+                            url: urlprefix + '/Payment/UpgradeSubscription?subId=' + subId + '&CusId=' + CusId + '&PriceId=' + PriceId + '&PlanId=' + PlanId,
+                            success: function (res) {
+
+                                window.location = res;
+                                if (res == "1") {
+                                    Swal.fire(localizer('Subscription Upgraded!', '¡Suscripción actualizada!', $('#ProhzLangDDL option:selected').val()), '', 'success')
+                                    setTimeout(function () {
+
+                                        location.reload(true);
+                                    }, 2000);
+                                }
+
+
+
+                            }
+                        });
+                    }
+                    else {
+                        $("#CSTMLOADER").show();
+                        $.ajax({
+                            type: 'Get',
+                            url: urlprefix + '/Payment/DowngradeSubscription?subId=' + subId + '&CusId=' + CusId + '&PriceId=' + PriceId + '&PlanId=' + PlanId,
+                            success: function (res) {
+
+                                window.location = res;
+                                if (res == "1") {
+                                    Swal.fire(localizer('Subscription Downgraded!', '¡Suscripción degradada!', $('#ProhzLangDDL option:selected').val()), '', 'success')
+                                    setTimeout(function () {
+
+                                        location.reload(true);
+                                    }, 2000);
+                                }
+
+
+
+                            }
+                        });
+                    }
+                }
+            })
+        }
+    }
+
+
+
+
+    function UpgradeToBronzeSubscription() {
+
+        var PlanId = "@PlanIdBronze";
+        var subId = "@Model.SubscriptionsStripeData.StripeSubscriptionId";
+        var CusId = "@Model.SubscriptionsStripeData.StripeCustomerID";
+        var PriceId = "@Model.PriceYearlyBronzeID";
+        var currentSubs = "@Model.SubscriptionsStripeData.StripePriceId";
+        var PrevPlanId = "@Model.SubscriptionsStripeData.PlanId";
+        var Msg = "";
+        var MsgFor = "";
+        var LastDate = "@Model.SubscriptionsStripeData.PeriodEndDate";
+
+        if (currentSubs == PriceId) {
+
+            Swal.fire({
+                title: localizer('Already Subscribed to this plan. please chose different plan or billing cycle.', 'Ya está suscrito a este plan. elija otro plan o ciclo de facturación.', $('#ProhzLangDDL option:selected').val()),
+                iconHtml: ProhzGreyLogo,
+                text: '',
+
+            })
+        }
+        else {
+            debugger
+            if (PrevPlanId < PlanId || PrevPlanId == PlanId) {
+                Msg = localizer("Upgrade", "Potenciar", $('#ProhzLangDDL option:selected').val());
+                MsgFor = localizer("Subscription Plan will be Upgraded", "El plan de suscripción se actualizará", $('#ProhzLangDDL option:selected').val());
+
+            } else {
+                Msg = localizer("Downgrade", "Degradar", $('#ProhzLangDDL option:selected').val());
+                MsgFor = localizer("Subscription plan will end " + LastDate + ". Once you downgrade to a lower plan you won't be able to use the services of your current plan. Current plan will be downgraded with immediate effect", "El plan de suscripción finalizará" + LastDate + ". Una vez que cambie a un plan inferior, no podrá utilizar los servicios de su plan actual. El plan actual se degradará con efecto inmediato", $('#ProhzLangDDL option:selected').val());
+            }
+            Swal.fire({
+                title: localizer('Are You Sure?', 'Estas segura?', $('#ProhzLangDDL option:selected').val()),
+                iconHtml: ProhzGreyLogo,
+                text: localizer('Current ' + MsgFor + ', Do you wish to continue ?', 'Current' + MsgFor + ', ¿Desea continuar?', $('#ProhzLangDDL option:selected').val()),
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: localizer('Do not ' + Msg, 'No ' + Msg, $('#ProhzLangDDL option:selected').val()),
+                denyButtonText: localizer(`Yes, ` + Msg + ' it.', `Si, ` + Msg + ' it.', $('#ProhzLangDDL option:selected').val()),
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+                    $("input[type='radio'][name='BronzePrice']").prop("checked", false);
+                }
+                else if (result.isDenied) {
+
+                    if (PrevPlanId < PlanId || PrevPlanId == PlanId) {
+                        $("#CSTMLOADER").show();
+                        $.ajax({
+                            type: 'Get',
+                            url: urlprefix + '/Payment/UpgradeSubscription?subId=' + subId + '&CusId=' + CusId + '&PriceId=' + PriceId + '&PlanId=' + PlanId,
+                            success: function (res) {
+
+                                window.location = res;
+                                if (res == "1") {
+                                    Swal.fire(localizer('Subscription Upgraded!', '¡Suscripción actualizada!', $('#ProhzLangDDL option:selected').val()), '', 'success')
+                                    setTimeout(function () {
+
+                                        location.reload(true);
+                                    }, 2000);
+                                }
+
+
+
+                            }
+                        });
+                    }
+                    else {
+                        $("#CSTMLOADER").show();
+                        $.ajax({
+                            type: 'Get',
+                            url: urlprefix + '/Payment/DowngradeSubscription?subId=' + subId + '&CusId=' + CusId + '&PriceId=' + PriceId + '&PlanId=' + PlanId,
+                            success: function (res) {
+
+                                window.location = res;
+                                if (res == "1") {
+                                    Swal.fire(localizer('Subscription Downgraded!', '¡Suscripción degradada!', $('#ProhzLangDDL option:selected').val()), '', 'success')
+                                    setTimeout(function () {
+
+                                        location.reload(true);
+                                    }, 2000);
+                                }
+
+
+
+                            }
+                        });
+                    }
+                }
+            })
+        }
+    }
+
+    </script>
+<div class="logo-loader " ID="CSTMLOADER" style="display:none">
+    <div class="logo-loader-pulse pulse" id="Idloader"><img src="~/images/Kopke-brand-logo.png" /></div>
+</div>
+
+
+
+
+
+<div class="dashboard-main-container">
+
+    <div class="dashboard-top-heading dashboard-top-heading-cstm ">
+        <h3 class="green-clr mb-5">@Localizer["Membership Benefits Plan For"] @membertype</h3>
+        <div class="d-flex align-items-center">
+            <p class="text-white m-0"><a href="@Url.Action("index", "dashboard")" class="text-white"><i class="fa fa-long-arrow-left forgot-back-arrow" aria-hidden="true"></i> @Localizer["Go back"]</a></p>
+
+
+        </div>
+    </div>
+
+    <div class="text-right">
+        @{
+
+            if (Model.SubscriptionsStripeData.StripeStatus.Contains("Cancelled"))
+            {
+                <p class="text-warning">@Localizer["Your current plan is cancelled but you can use the application until"] @Model.SubscriptionsStripeData.PeriodEndDate </p>
+                @if (Model.CustomPlan == null)
+                {
+                    <span class="" style="color:#fff">@Localizer["Want Customized Plan ?"] </span> <button type="button" class="button btn btn-cstm-membership" data-toggle="modal" data-target="#exampleModal">@Localizer["Click here"]</button>
+                }
+            }
+            else
+            {
+                <p class="text-success">@Localizer["Subscription expires on"] @Model.SubscriptionsStripeData.PeriodEndDate @Localizer["(AutoRenewable)"]</p>
+                @if (Model.CustomPlan == null)
+                {
+                }  <button id="@Model.SubscriptionsStripeData.StripeSubscriptionId" data-EndDate="@Model.SubscriptionsStripeData.PeriodEndDate" onclick="CancelSubscription(this);" type="button" class="button btn red-modal-btn">@Localizer["Cancel Subscription"]  <i class="fa-light fa-xmark"></i></button>
+
+            }
+            //if (Model.SubscriptionsStripeData.StripeStatus.Contains("complete"))
+            //{
+            //     <p class="text-warning">@Localizer["Plan is AutoRenewable"]</p>
+            //}
+        }
+    </div>
+    <section id="pricing" style="background: linear-gradient(180deg, #2f2f2f 50%, transparent 50%);">
+        <div class="container">
+            <div class="row" style="text-align: center; color: #ffffff;">
+                <div class="col">
+                    <div class="title-wrapper">
+                        <h2>Contractor Membership Plans</h2>
+                        <p>Please choose the best membership plan for you.</p>
+                        <p class="disclaimer">All plans are based on one year memberships.</p>
+                        <p class="disclaimer">There is a 1 time fee of $99 to verify your compan is a DBA, LLC, or INC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card-wrapper">
+                        <div class="title-wrapper">
+                            <h3>Basic Plan</h3>
+                            <p>Best plan for those companies that want to stay small and local.</p>
+                            <s><p>$324<span class="disclaimer"> per year</p></s>
+                            <p class="promo-price">$96<span class="disclaimer"> per year</span></p>
+                            <p class="disclaimer">That's less than $0.27 per day!</p>
+                            <button onclick="UpgradeToBronzeSubscription()">@BuyNowBronze</button>
+                            <div class="card-meta">
+                                <ul>
+                                    <li>Company is Listed in 1 Contractor Category</li>
+                                    <li>Company is Listed in 10 Zip Codes</li>
+                                    <li>Unlimited category searches</li>
+                                    <li>Unlimited zip code searches</li>
+                                    <li>Listed in Prohz directory</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-wrapper best-value">
+                        <div class="title-wrapper">
+                            <span class="best">Best Value</span><h3 style="display: inline-block;">Prohz Plan</h3>
+                            <p>Best plan to stabalize or grow your company.</p>
+                            <s><p>$972<span class="disclaimer"> per year</p></s>
+                            <p class="promo-price">$192<span class="disclaimer"> per year</span></p>
+                            <p class="disclaimer">That's less than $0.53 per day!</p>
+                            <button onclick="UpgradeToSilverSubscription()">@BuyNowSilver</button>
+                            <div class="card-meta">
+                                <ul>
+                                    <li>Company is Listed in 3 Contractor Categories</li>
+                                    <li>Company is Listed in 30 Zip Codes</li>
+                                    <li>Unlimited category searches</li>
+                                    <li>Unlimited zip code searches</li>
+                                    <li>Listed in Prohz directory</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-wrapper">
+                        <div class="title-wrapper">
+                            <h3>Prohz+ Plan</h3>
+                            <p>Best plan for a company with multiple locations.</p>
+                            <s><p>$5,370<span class="disclaimer"> per year</p></s>
+                            <p class="promo-price">$1,872<span class="disclaimer"> per year</span></p>
+                            <p class="disclaimer">That's less than $5.13 per day!</p>
+                            <button onclick="UpgradeToGoldSubscription()">@BuyNowGold</button>
+                            <div class="card-meta">
+                                <ul>
+                                    <li>Company is Listed in 5 Contractor Categories</li>
+                                    <li>Company is Listed in 100 Zip Codes</li>
+                                    <li>Unlimited category searches</li>
+                                    <li>Unlimited zip code searches</li>
+                                    <li>Listed in Prohz directory</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @* <div class="registration-container-form">
+        <div class="tab-content">
+
+
+            <div id="Contractor" class="contractor-business-prof-form">
+                <div class="Membership-benefits-outer-box">
+                    <div class="table-responsive benefit-table current-table">
+                        <table class="table">
+                            <colgroup></colgroup>
+                            <colgroup class="@IsActiveBronze d-green-border"></colgroup>
+                            <colgroup class="@IsActiveSilver silver-border "></colgroup>
+                            <colgroup class="@IsActiveGold gold-border"></colgroup>
+
+                            <thead>
+                                <tr>
+                                    <th class="d-flex justify-content-center align-items-center">
+                                        <h2>@Localizer["Membership Plans"]</h2>
+                                    </th>
+                                    <th>
+                                        <span class="membership-title membership-title-2">Bronze</span>
+                                         <h2 id="show365V">$@bronze_PricePerYear a year @Localizer["days"]</h2>
+
+                                    </th>
+                                    <th>
+                                        <span class="membership-title membership-title-3">Silver</span>
+                                         <h2 id="showsilver365V">$@silver_PricePerYear a year @Localizer["days"]</h2>
+                                         
+                                    </th>
+                                    <th>
+                                        <span class="membership-title membership-title-1">Gold</span>
+                                        <h2 id="showgold365V">$@Gold_PricePerYear a year @Localizer["days"]</h2>
+
+                                    </th>
+                                   
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <th class="membership-fst-title">@Localizer["Zip Codes"]</th>
+                                    <td><p class="m-0">@bronze_ZipCodes</p></td>
+                                    <td><p class="m-0">@silver_ZipCodes</p></td>
+                                    <td><p class="m-0">@Gold_ZipCodes</p></td>
+  
+                                </tr>
+
+                                <tr>
+                                    <th>@Localizer["Categories"]</th>
+                                    <td>@bronze_Categories</td>
+                                    <td><p class="m-0">@silver_Categories</p></td>
+                                    <td><p class="m-0">@Gold_Categories</p></td>
+
+                                </tr>
+ 
+                                
+
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <td><a onclick="UpgradeToBronzeSubscription()" class="text-decoration-none membership-title-2">@BuyNowBronze</a></td>
+                                    <td><a onclick="UpgradeToSilverSubscription()" class="text-decoration-none membership-title-3">@BuyNowSilver</a></td>
+                                    <td><a onclick="UpgradeToGoldSubscription()" class="text-decoration-none membership-title-1">@BuyNowGold</a></td>
+                                   
+
+                                </tr>
+
+                            </tfoot>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div> *@
+</div>
+
+
+
+<script src="~/js/jquery.min.js"></script>
+<script>
+
+              var urlprefix = "";
+              if (window.location.href.indexOf("KopkeHome-FMRS") > -1) {
+                  urlprefix = '/KopkeHome-FMRS';
+              }
+              $( document ).ready(function() {
+               $('#exampleModal').on('hidden.bs.modal', function () {
+
+          })
+          });
+    var ProhzGreyLogo = '<img style="height: 90px;" src="' + urlprefix + '
+
+
+
+">';
+
+</script>
+<script>
+                function AsubmitCustomPlanRequest(form) {
+
+                if ($(form).valid()) {
+                    $.ajax({
+                        type: 'POST',
+                        url: urlprefix + '/Membership/SaveCustomZipcodesRequest',
+                        data: $(form).serialize(),
+
+                        success: function (res) {
+
+                            if(res=="1")
+                            {
+                                $('#exampleModal').modal('hide');
+                            $('#exampleModal2').modal('show');}
+                            else{
+                                Swal.fire({
+                title: 'You have already requested for custom memebrship plan',
+                iconHtml: ProhzGreyLogo,
+                text: 'Once your custom membership plan is created it will be visible to you in this page with other plans.',
+
+            })
+                            }
+
+                        }
+                    });
+                }
+
+                return false;
+            }
+        function CustomRadio()
+                    {
+                       $("#CSTMLOADER").show();
+                        //var ele = document.getElementsByName('BronzePrice');
+
+                        var selectedVal = "";
+                   var selected = $("input[type='radio'][name='CustomPrice']:checked");
+                    if (selected.length > 0)
+                    {
+
+                        selectedVal = selected.val();
+                        var dataId=selected.attr("data-id");
+                        var userid=selected.attr("data-userid");
+                        $.ajax({
+                        type: 'Get',
+                        url: urlprefix+'/Membership/PaymentForCustomPlan?priceId='+selectedVal+'&planId='+dataId+'&userid='+userid,
+
+                        success: function (res)
+                        {
+
+                           if(res==1)
+                           {
+
+                               window.location = urlprefix+"/Membership/CustomPlanGateway/";
+                           }
+                           else
+                           {
+                                $("#CSTMLOADER").hide();
+                               alert("Something went wrong.");
+                           }
+
+
+                        }
+
+
+                            });
+                    }
+                    else{
+                        $("#CSTMLOADER").hide();
+                        Swal.fire('Please select type of plan.(Quarterly/Annually)')
+
+                    }
+
+
+
+
+                    }
+
+
+
+
+
+
+
+
+                    $( document ).ready(function() {
+         $(function () {
+
+                    $("form[name='submitCustomPlanRequest2']").validate({
+
+                        rules: {
+                            NumberOfZipcodes: {
+                                required: true,
+
+                            },
+                            Descrption: "required",
+                           // WebApp:"required",
+                            NumberOfcategories: {
+                                required: true,
+
+                            },
+
+
+                        },
+                        // Specify validation error messages
+                        messages: {
+                            NumberOfZipcodes: "Please Enter Number Of Zip Codes.",
+                            NumberOfcategories:"Please Enter Number Of categories.",
+                           // WebApp:"Please choose one.",
+                            Descrption: "Please enter Descrption."
+                        },
+
+                        //submitHandler: function (form) {
+                        //    form.submit();
+                        //}
+                    });
+                        });
+    });
+
+
+
+
+       $(window).on('load',function() {
+        
+       var bronze50sub= $('.bronze50').prop('checked');    
+       var bronze100sub=$('.bronze100').prop('checked');      
+       var silver150sub= $('.silver150').prop('checked');          
+       var silver300sub= $('.silver300').prop('checked');        
+       var gold500sub= $('.gold500').prop('checked');               
+       var gold1000sub= $('.gold1000').prop('checked');         
+
+       if(bronze50sub==true){
+           hideDataV();
+       }
+       else if(bronze100sub==true)
+       {
+           showDataV();
+       }
+       else if(silver150sub==true){
+           hideDatasilverV();
+       }
+       else if(silver300sub==true){
+           showDatasilverV();
+       }
+        else if(gold500sub==true){
+           hideDatagoldV();
+       }
+       else if(gold1000sub==true){
+           showDatagoldV()
+       }
+      
+    });
+
+
+        function showDataV() {
+            var dataDiv = document.getElementById("show90V");
+            dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("show365V");
+            dataDiv2.style.display = "block";
+
+
+        }
+
+        function hideDataV() {
+            var dataDiv = document.getElementById("show365V");
+            dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("show90V");
+            dataDiv2.style.display = "block";
+            dataDiv2.style.visibility = 'visible'
+            $('#show90V').removeAttr('hidden');
+        }
+
+        function showDatasilverV() {
+            var dataDiv = document.getElementById("showsilver90V");
+            dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("showsilver365V");
+            dataDiv2.style.display = "block";
+
+        }
+
+        function hideDatasilverV() {
+            var dataDiv = document.getElementById("showsilver365V");
+            dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("showsilver90V");
+            dataDiv2.style.display = "block";
+            dataDiv2.style.visibility = 'visible'
+            $('#showsilver90V').removeAttr('hidden');
+        }
+
+
+        function showDatagoldV() {
+            var dataDiv = document.getElementById("showgold90V");
+            dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("showgold365V");
+            dataDiv2.style.display = "block";
+
+        }
+
+        function hideDatagoldV() {
+            var dataDiv = document.getElementById("showgold365V");
+            dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("showgold90V");
+            dataDiv2.style.display = "block";
+            dataDiv2.style.visibility = 'visible'
+            $('#showgold90V').removeAttr('hidden');
+        }
+
+
+</script>
+
+

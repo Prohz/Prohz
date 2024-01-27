@@ -1,0 +1,407 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Http.Features
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> locOptions
+
+@{
+    var currentRequestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = locOptions.Value.SupportedUICultures.Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName }).ToList();
+    var responseUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" :
+        $"~{Context.Request.Path.Value}";
+}
+
+
+<section id="top-banner" style="padding: 0px;">
+    <div class="desktop-only">
+        <img src="/images/prohz-billboard.jpg" style="width: 100%;"/>
+    </div>
+    <div class="mobile-only">
+        <img src="/images/prohz-billboard-mobile.jpg" style="width: 100%;" />
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <div class="row" style="align-items: center;">
+            <div class="col">
+                <div class="img-wrapper">
+                    <img src="/images/prohz-logo.jpg" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="title-wrapper">
+                    <h2 style="margin: 0px;">Developed By Contractors For Contractors</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="networking" style="background-image: url(/images/networking-background.jpg); background-size: cover; background-repeat: no-repeat;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div style="text-align: center;" class="title-wrapper">
+                    <h2 style="color: #ffffff;">Networking For Contractors and Subcontractors Only!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="icons" style="background-color: #2c342c; color: #ffffff;">
+    <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+<div style="display: flex; justify-content: space-between;">
+
+    <div style="flex: 0 0 48%; margin-right: 10px;">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div style="flex: 0 0 48%; margin-left: 10px;">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+</div>
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <div class="blurb">
+                    <div class="icon">
+                        <i class="fa-solid fa-address-card"></i>
+                    </div>
+                    <h3>Profile Page</h3>
+                    <p>All member profile pages have the same layout, regardless of the size of the company. The company profile pages contain categories, zip codes they work in, direct contact person, company Facebook, website, phone number, email, number of employees, years in business, and any required licensing.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="blurb">
+                    <div class="icon">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </div>
+                    <h3>Categories</h3>
+                    <p>Our platform at Prohz makes it simple for you to search and browse through a wide variety of categories to find precisely what you need. As our member base expands, your access to professional services will also increase, ensuring that you always find what you’re looking for.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="blurb">
+                    <div class="icon">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3>As Our Network Grows So Does Your Connections</h3>
+                    <p>Prohz is the ultimate solution for contractors and subcontractors to connect and get work done. As we are contractors ourselves, we understand the challenges of finding reliable subcontractors. The good news is – we have simplified the process like never before! We firmly believe subcontractors who concentrate on delivering quality services and getting their pay, rather than dealing with homeowners. Our contractor friends prioritize finalizing trades and receiving payments, not spending precious time on the search for subcontractors. Don’t let your busy schedule hold you back. Join Prohz today and become a part of a community where everyone shares the same goals and interests as you. Trust us, it’s the right time to join the movement!</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="blurb">
+                    <div class="icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>View Multiple Member Profile Pages and Availability At a Glance</h3>
+                    <p>Our Lead Time System instantly indicates each member’s availability to take on new work. Member searches are color-coded with green at the top, yellow in the middle, and red at the bottom of the list, with time stamps to show when their availability was last updated.</p>
+                    <ul class="icon-list no-list-style">
+                        <li>
+                            <div class="sm-icon grn">
+                                <i class="fa-solid"></i>
+                                <span>1 - 2 Weeks Out</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sm-icon ylw">
+                                <i class="fa-solid"></i>
+                                <span>4 - 7 Weeks Out</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sm-icon red">
+                                <i class="fa-solid"></i>
+                                <span>Currently Fully Booked</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="qualifications" style="background-color: #eeeeee;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="img-wrapper">
+                    <img src="/images/prohz-logo.png" style="max-width: 170px;"/>
+                </div>
+                <div class="title-wrapper">
+                    <h2>Company Membership Qualifications</h2>
+                </div>
+                <ul>
+                    <li>The company must be a home service provider</li>
+                    <li>The company must be DBA, LLC, or Incorporated</li>
+                    <li>The company must be verified</li>
+                    <li>Registration must be completed</li>
+                </ul>
+            </div>
+            <div class="col">
+                <div class="title-wrapper">
+                    <h2>Find Us in The App Store</h2>
+                    <p>The power to connect in the palm of your hand.</p>
+                    <p><a href="" target="_blank"><img src="/images/apple-app-store.png" /></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="cards">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="blurb">
+                    <i class="fa-solid fa-house-user"></i>
+                    <h3>Sorry - No Homeowners</h3>
+                    <p>Prohz is for home service providers only.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="blurb">
+                    <i class="fa-solid fa-hammer"></i>
+                    <h3>Sorry - No Suppliers</h3>
+                    <p>Only sponsored suppliers or vendors can join.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="blurb">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <h3>We <strong>Do Not</strong> Sell Leads</h3>
+                    <p>We prioritize genuine connections over transactions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blue-list" style="background-image: url(/images/service-provider-list-section-background.jpg); background-size: cover; background-repeat: no-repeat;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="img-wrapper" style="display: flex; height: 100%; align-content: center;">
+                    <img src="/images/join-the-prohz-network.png"/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="blue-list" style="background-image: url(/images/service-provider-list-pattern.jpg); background-size: cover; background-repeat: no-repeat;">
+                    <ul>
+                        <li>Architect</li>
+                        <li>Bathroom Remodeler</li>
+                        <li>Basement Remodeler</li>
+                        <li>Basement - Waterproofing</li>
+                        <li>Brick and Stone</li>
+                        <li>Cabinet Installer</li>
+                        <li>Cabinet Refacing</li>
+                        <li>Ceramic & Porcelain Tile</li>
+                        <li>Concrete</li>
+                        <li>Deck</li>
+                        <li>Designer</li>
+                        <li>Drywall</li>
+                        <li>Electrician</li>
+                        <li>Environmental</li>
+                        <li>Fence Company</li>
+                        <li>Finish Carpenters</li>
+                        <li>Flooring</li>
+                        <li>Foundation Drainage</li>
+                        <li>Footing Foundation</li>
+                        <li>Garage Doors</li>
+                        <li>General Contractor</li>
+                        <li>Gutters</li>
+                        <li>Handyman - Small Projects</li>
+                        <li>HVAC</li>
+                        <li>Insulation</li>
+                        <li>Kitchen Remodeler</li>
+                        <li>Painter - Int and Ext</li>
+                        <li>Plumbing</li>
+                        <li>Pool Installer</li>
+                        <li>Roofs</li>
+                        <li>Rough Carpenters</li>
+                        <li>Siding</li>
+                        <li>Structural Engineer</li>
+                        <li>Windows</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="differences" style="background-color: #eeeeee;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="title-wrapper">
+                    <h2>Contractors</h2>
+                    <p>In the construction industry, a general contractor is the person or company responsible for overseeing a construction project. Property owners will typically hire general contractors to ensure a construction job is completed safely, on time, and according to specifications.</p>
+                    
+                </div>
+            </div>
+            <div class="col">
+                <div class="title-wrapper">
+                    <h2>Subcontractors</h2>
+                    <p>Subcontractors, on the other hand, are companies or people hired by the contractor to do specific tasks or services in their area of expertise. A general contractor may hire an electrician, plumber, and carpenter for a construction project.</p>
+                    <!-- <h3>The Answer</h3>
+                    <p>Do what you are good at and hire people to do what you are not good at - network and succeed!</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="facts" style="background-image: url(/images/networking-background.jpg); background-size: cover; background-repeat: no-repeat; color: #ffffff;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="title-wrapper">
+                    <h2>Did You Know?</h2>
+                    <p>From maintaining yards and air-ducts, to fixing roofs, and eliminating pesky rodents, the home services industry is valued at roughly $657 billion. The US online on-demand home services sector is growing rapidly.</p>
+                    <p>The global home services market is expected to reach $1.2 trillion by 2026, growing at a CAGR of 9.3% between 2021 and 2026. In the US, the home services industry generated approximately $600 billion in revenue in 2022.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="title-wrapper">
+                    <h2>What Happened?</h2>
+                    <p>There are over 64 million independent contractors in the United States.</p>
+                    <p>The (SBA) identifies a huge failure rate among all start-up companies. Did you know around 20% of companies fail in the first year and around 55% fail within five years, but after doing all that work for 10 years around 95% will still fail.</p>
+                    <!-- <h3>The Answer</h3>
+                    <p>Do what you are good at and hire people to do what you are not good at - network and succeed!</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="past">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="img-wrapper">
+                    <img src="/images/contractor-retiring.jpg" style="width: 100%;"/>
+                </div>
+            </div>
+            <div class="col">
+                <h2 style="margin-top: 0px;">The Way Construction Networking Once Was</h2>
+                <p>Remember the good old days in the construction industry when networking and making meaningful connections were crucial for success? It’s a shame that things are changing and contractors and subcontractors are hanging up their belts, leaving the old ways behind. It used to be that relying on other companies and proudly referring them was a great way to keep everyone strong and receive more referrals. Nowadays, companies come and go without much notice because they lack connection with other contractors. Finding reliable subcontractors or contractors to work with takes a lot of effort investing hours and money to make phone calls, ask questions, and compare prices. In the end, you hope they show up and do a good job, so that you can call on them again if necessary. But now, it’s not as easy as picking up the phone and calling a supply house anymore. We miss those good old days when making valuable connections was everything.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pricing" style="background: linear-gradient(180deg, #2f2f2f 50%, transparent 50%);">
+    <div class="container">
+        <div class="row" style="text-align: center; color: #ffffff;">
+            <div class="col">
+                <div class="title-wrapper">
+                    <h2>How Does It Work?</h2>
+                    <p>Choose a plan that best fits your company.</p>
+                    <p>As our network grows, so will your connections.</p>
+                    <p class="disclaimer">All plans are based on one year memberships.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card-wrapper">
+                    <div class="title-wrapper">
+                        <h3>Basic Plan</h3>
+                        <p>Best plan for those companies that want to stay small and local.</p>
+                        <p><s>$324<span class="disclaimer"> per year</s></p>
+                        <p class="promo-price">$96<span class="disclaimer"> per year</span></p>
+                        <p class="disclaimer">That's less than $0.27 per day!</p>
+                        <button onclick="location.href='/user/signup'">Become a Member</button>
+                        <div class="card-meta">
+                            <ul>
+                                <li>Company is Listed in 1 Contractor Category</li>
+                                <li>Company is Listed in 10 Zip Codes</li>
+                                <li>Unlimited category searches</li>
+                                <li>Unlimited zip code searches</li>
+                                <li>Listed in Prohz directory</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-wrapper best-value">
+                    <div class="title-wrapper">
+                        <span class="best">Best Value</span><h3 style="display: inline-block;">Prohz Plan</h3>
+                        <p>Best plan to stabalize or grow your company.</p>
+                        <p><s>$972<span class="disclaimer"> per year</s></p>
+                        <p class="promo-price">$192<span class="disclaimer"> per year</span></p>
+                        <p class="disclaimer">That's less than $0.53 per day!</p>
+                        <button onclick="location.href='/user/signup'">Become a Prohz Member</button>
+                        <div class="card-meta">
+                            <ul>
+                                <li>Company is Listed in 3 Contractor Categories</li>
+                                <li>Company is Listed in 30 Zip Codes</li>
+                                <li>Unlimited category searches</li>
+                                <li>Unlimited zip code searches</li>
+                                <li>Listed in Prohz directory</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-wrapper">
+                    <div class="title-wrapper">
+                        <h3>Prohz+ Plan</h3>
+                        <p>Best plan for a company with multiple locations.</p>
+                        <p><s>$5,370<span class="disclaimer"> per year</s></p>
+                        <p class="promo-price">$1,872<span class="disclaimer"> per year</span></p>
+                        <p class="disclaimer">That's less than $5.13 per day!</p>
+                        <button onclick="location.href='/user/signup'">Become a Prohz+ Member</button>
+                        <div class="card-meta">
+                            <ul>
+                                <li>Company is Listed in 5 Contractor Categories</li>
+                                <li>Company is Listed in 100 Zip Codes</li>
+                                <li>Unlimited category searches</li>
+                                <li>Unlimited zip code searches</li>
+                                <li>Listed in Prohz directory</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

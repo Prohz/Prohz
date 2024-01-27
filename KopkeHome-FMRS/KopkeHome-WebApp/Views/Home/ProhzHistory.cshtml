@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+@inject IViewLocalizer Localizer
+<section class="mainbodysec">
+<div class="container ">
+   <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">@Localizer["Prohz History"]</h5>
+    <h6 class="card-subtitle mb-2 text-muted">@Localizer["How Prohz Started"]</h6>
+    <p class="HomeContentsRead">@Localizer["Prohz was started in 2014 by two guys that have been doing remodeling for 25+ years. Over that time, after watching and listening to thousands of Contractors and Homeowners about their frustrations with having a hard time getting remodeling projects done in an efficient and timely manner, we developed Prohz. Prohz is a simple app service to be used on a phone or desktop to help people make connections and get more work done faster, better, smarter and easier. In 2023 we opened on the Apple and Android app stores for easy download."]
+</p>
+    <a href="@Url.Action("HowDoesItWork","Home")" class="card-link">@Localizer["Learn More"]</a>
+    <a href="@Url.Action("SignUp","User")" class="card-link">@Localizer["Join Prohz"]</a>
+  </div>
+</div>
+</div>
+</section>

@@ -1,0 +1,591 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.ZipcodesAndCategoriesViewModel
+@inject IViewLocalizer Localizer
+@{
+    //Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="~/KopkeHome_Web.styles.css" asp-append-version="true" />
+
+    @*
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/master.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="registration-container black-bg">
+        <div class="registration-container-branding d-flex justify-content-between align-items-center">
+            <div class="kopkehome-logo">
+               <a href="@Url.Action("SignIn","user")"> 
+            <img src="~/images/Kopke-brand-logo.png" width="140" />
+            </a>
+            </div>
+
+            <div class="rgstr-box-heading text-center">
+                <h2 class="orange-clr">@Localizer["Select Zip Codes and Categories"]</h2>
+                <p class="text-white m-0"></p>
+            </div>
+
+            <div class="">
+                @{
+                    if (Model.LoggedInUser != null)
+                    {
+                        <a class="nav-link text-dark dropdown-toggle d-flex align-items-center" href="#" id="navbardrop" data-toggle="dropdown">
+                            @if (!string.IsNullOrEmpty(Model.LoggedInUser.ProfilePicture))
+                            {
+                                <img alt="logo" style="margin-right:11px; class="IconBorder" src="~/Uploads/@Model.LoggedInUser.ProfilePicture" width="38" />
+
+
+
+                                <span class="text-white">@Model.LoggedInUser.FirstName  @Model.LoggedInUser.LastName </span>
+
+                            }
+                            else
+                            {
+                                <img alt="logo" style="margin-right:11px;" src="~/images/DefaultProfile.png" class="IconBorder" width="38" />
+
+
+
+                                <span class="text-white">@Model.LoggedInUser.FirstName @Model.LoggedInUser.LastName</span>
+                            }
+
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="nav-link text-dark dropdown-toggle d-flex align-items-center">
+                            <img alt="logo" style="margin-right:5px;" src="~/images/DefaultProfile.png" class="IconBorder" width="38" /><span class="text-white">No user found.</span>
+                        </a>
+                    }
+
+                }
+
+
+
+            </div>
+
+        </div>
+
+        <div class="">
+
+            <div class="row">
+                <div class="col-md-12 col-lg-7 col-xl-7">
+                    <div class="select-zipcode-outerbox">
+                        <p class="clr-orange-absolute">@Localizer["You are allowed to select maximum"] @Model.LimitZipCodes @Localizer["zip codes and"]  @Model.LimitCategories @Localizer["categories"]</p>
+                        <div class="form-select-zipcode">
+                            
+                            <div class="form-group">
+                                <label for=" State">@Localizer["Step- 1.Select state where you want to work"]</label>
+                                <select id="ddlStateList" class="form-control">
+                                    <option value="" selected="selected">@Localizer["Select a State"]</option>
+                                    @{
+                                        foreach (var states in Model.States)
+                                        {
+                                            <option value="@states.StateId">@states.StateName</option>
+                                        }
+                                    }
+
+                                </select>
+                            </div>
+
+                             <div class="form-group">
+                                <label for=" State">@Localizer["Step- 2.Select city where you want to work"]</label>
+                                <select id="ddlCitesList" class="form-control">
+                                    
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="select-zipcodes-main-box">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="text-white">@Localizer["Step- 3.Select zip code where you want to get work."]</label>
+
+                                    <input id="SearchInputZipcode" type="search" class="text-dark form-control" placeholder="@Localizer["Search zip codes"]" />
+                                    <div class="select-zipcodes-checkbox">
+
+                                        <ul>
+                                            @*@{
+
+                                                foreach (var states in Model.States)
+                                                {
+
+                                                    <li class="main-state-heading">
+                                                        @states.StateName
+                                                        <ul id="ListingZip" class="main-state-zipcode">
+                                                            @foreach (var zipcodes in Model.ZipCodes)
+                                                            {
+                                                                if (zipcodes.CityId == states.StateId)
+                                                                {
+                                                                    <li>
+
+                                                                        <label class="checkbox-inline custome-checkbox-main">
+                                                                            <input type="checkbox" name="zipcodes" class="form-check-input product-list" data-zipcode="@zipcodes.Zipcode" id="@zipcodes.Id" value="@zipcodes.Id" />
+                                                                            <span class="geekmark"></span>
+                                                                            <label class="mb-0" for="zipcodes">@zipcodes.Zipcode</label>
+                                                                        </label>
+                                                                    </li>
+                                                                }
+
+                                                            }
+
+                                                        </ul>
+                                                    </li>
+                                                }
+                                            }*@
+
+                                             <li class="main-state-heading">
+                                                       
+                                                        <ul id="ListingZip" class="main-state-zipcode">
+                                                            
+
+                                                        </ul>
+                                                    </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="selected-zipcodes mt-5">
+
+                                        <ul>
+                                            <li class="main-selected-zipcode">
+                                                <div class="">@Localizer["selected zip codes"] :</div>
+                                                <ul id='options_list' class="all-selected-zipcode">
+                                                    @*<li>
+                                                        <label>110062</label>
+                                                        <button type="button"><i class="fa fa-times"></i></button>
+                                                        </li>
+                                                    *@
+
+                                                </ul>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-md-12 col-lg-5 col-xl-5">
+                    <div class="select-zipcode-outerbox select-zipcode-outerboxmt-0">
+
+                        <div class="form-select-zipcode">
+                            <div class="form-group mb-0">
+                                <label for=" State">@Localizer["Step- 4. What type of work you want to do"]</label>
+
+                                <input id="SearchInputCategories" type="search" class="text-dark form-control m-1" placeholder="@Localizer["Search categories"]" />
+
+
+
+                                <div class="select-categories-main-box">
+
+                                    <div class="select-categories-checkboxes ">
+
+
+                                        <ul id="ListingCat">
+                                            @{
+                                                foreach (var category in Model.Categories)
+                                                {
+
+
+                                                    <li>
+                                                        <label class="checkbox-inline custome-checkbox-main">
+                                                            <input type="checkbox" name="category" class="form-check-input product-list" value="@category.Id" />
+                                                            <span class="geekmark"></span>
+                                                            <label class="mb-0" for="category">@category.Name</label>
+                                                        </label>
+                                                    </li>
+
+                                                }
+
+                                            }
+
+
+
+
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-md-12">
+                    <div class="zipcode-reset-btn">
+                        <div class="text-right">
+                            @*  <button type="button" class="button btn red-modal-btn   cancel-button">Reset</button>*@
+                            <button id="button1" type="button" class="button btn green-modal-btn ml-1  save-button">@Localizer["Save"] <i class="fa fa-long-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/custom.js" asp-append-version="true"></script>
+    <script src="~/js/ValidateForms.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
+    <script>
+        var urlprefix = "";
+            if (window.location.href.indexOf("KopkeHome-FMRS") > -1) {
+                urlprefix = '/KopkeHome-FMRS';
+            }
+
+
+
+    </script>
+    <script>
+                                                       var tmpzipcodes  = [];
+                                                       var tmpcategroies= [];
+                                                       var allZipocodes = [];
+                                                       var allCities =[];
+
+                                                        var ZipcodesLimit=@Model.LimitZipCodes;
+                                                       var CategroiesLimit=@Model.LimitCategories;
+                                                      $(document).ready(function () {
+                                                RemoveZipcode();
+    $("#ddlStateList").change(function () {
+       
+        var id = $(this).val();
+        $("#ddlCitesList").empty();
+        $("#ddlCitesList").append('<option class="text-bg-light">--Select city--</option>')
+        $.ajax({
+            url:urlprefix+ '/User/GetCitiesList?id=' + id,
+            type: "GET",
+            success: function (result) {
+                $.each(result, function (i, data) {
+                    $('#ddlCitesList').append('<option value="' + data.cityName + '" class="text-bg-light">' + data.cityName + '</option>');
+                });
+            }
+        });
+    });
+
+
+
+    $("#ddlCitesList").change(function () {
+       
+        var id = $(this).val();
+        $("#ListingZip").empty();
+       // $("#ddlCitesList").append('<option class="text-bg-light">--Select city--</option>')
+        $.ajax({
+            url:urlprefix+ '/User/GetzipCodeListbyCityName?CityName=' + id,
+            type: "GET",
+            success: function (result) {
+                $.each(result, function (i, data) {
+                    debugger
+                    //const ziparray=tmpzipcodes;
+                    //console.log(ziparray.includes(data.zipcode));
+                    console.log(tmpzipcodes.indexOf(data.zipcode.toString()) >= 0); 
+                    //if(tmpzipcodes.indexOf(data.zipcode) > -1)
+                    //{
+                    //    console.log("available");
+                    //}
+                    //else
+                    //{
+                    //    console.log("Not available");
+                    //}
+                     
+
+                     if (tmpzipcodes.indexOf(data.zipcode.toString()) > -1)
+                     {
+
+                    $('#ListingZip').append('<li><label class="checkbox-inline custome-checkbox-main"><input type="checkbox" checked name="zipcodes" class="form-check-input product-list" data-zipcode=' + data.zipcode + ' id=' + data.zipcode + ' value=' + data.zipcode + ' /><span class="geekmark"></span><label class="mb-0" for="zipcodes">' + data.zipcode + '</label></label></li>');
+
+                     }
+                     else{
+    $('#ListingZip').append('<li><label class="checkbox-inline custome-checkbox-main"><input type="checkbox" name="zipcodes" class="form-check-input product-list" data-zipcode=' + data.zipcode + ' id=' + data.zipcode + ' value=' + data.zipcode + ' /><span class="geekmark"></span><label class="mb-0" for="zipcodes">' + data.zipcode + '</label></label></li>');
+
+                     }
+                });
+            }
+        });
+    });
+
+                                        
+
+
+                                     $("#SearchInputCategories").on("keyup", function() {
+                          var value = this.value.toLowerCase().trim();
+                          $("#ListingCat li").show().filter(function() {
+                            return $(this).text().toLowerCase().trim().indexOf(value) == -1;
+                          }).hide();
+                        });
+
+
+                                             $("#SearchInputZipcode").on("keyup", function() {
+                          var value = this.value.toLowerCase().trim();
+                          $("#ListingZip li").show().filter(function() {
+                            return $(this).text().toLowerCase().trim().indexOf(value) == -1;
+                          }).hide();
+                        });
+
+
+                                                   $("input[name='category']").change(function() {
+
+
+
+                                                  var checked = $(this).val();
+                                                    if ($(this).is(':checked')) {
+
+                                                        if(tmpcategroies.length<=CategroiesLimit-1)
+                                                        {
+                                                        tmpcategroies.push(checked);
+
+                                                        }
+                                                        else{
+                                                            this.checked = false;
+                                                           
+                                                Swal.fire({
+                    title: '',
+                    iconHtml: ProhzGreyLogo,
+                    text: 'You can only select upto '+CategroiesLimit+' categories',
+
+                });
+                                                        }
+
+                                                    }else{
+                                                    tmpcategroies.splice($.inArray(checked, tmpcategroies),1);
+                                                    }
+                                                  });
+
+
+
+                                                 $(document).on("change", "input[name='zipcodes']", function(){
+                                                      var options_display = $("#options_list");
+                                                  var checked = $(this).val();
+                                                    if ($(this).is(':checked'))
+                                                    {
+                                                         if(tmpzipcodes.length<=ZipcodesLimit-1)
+                                                        {
+                                                        tmpzipcodes.push(checked);
+
+                                                       var zip= $(this).attr("data-zipcode");
+                                                        options_display.append("<li class='' id='Chk"+checked+"'>"+"<label>"+zip+"</label><button class='RemoveZips' id='"+checked+"' type='button'><i class='fa fa-times'></i></button></li>");
+                                                        //console.log(zip);
+
+                                                        }
+                                                        else{
+                                                            this.checked = false;
+                                                           Swal.fire({
+                    title: '',
+                    iconHtml: ProhzGreyLogo,
+                    text: 'You can only select upto '+ZipcodesLimit+' zip codes',
+
+                });
+                                                        }
+
+                                                    }else{
+                                                    tmpzipcodes.splice($.inArray(checked, tmpzipcodes),1);
+
+
+                                             $('#Chk'+checked).remove();
+
+
+                                                    }
+                                                  });
+                                                  $('#button1').on('click', function ()
+                                                  {
+                                                        ZipcodesAndCategories();
+                                                  });
+
+                                                  });
+
+
+
+                                                      //function ZipcodesAndCategories()
+                                                      //  {
+                                                      //      console.log("HIT 2");
+                                                      //      var ischeed=ValidateCheckbox();
+                                                      //      alert(ischeed);
+                                                      //      if (ischecked){
+                                                      //          $.ajax({
+                                                      //      type: 'Post',
+                                                      //      url: urlprefix+'/Membership/selectzipcodesandcategories',
+                                                      //      data:{ Zipcodes: tmpzipcodes,categories:tmpcategroies },
+                                                      //      success: function (res)
+                                                      //      {
+
+                                                      //         if(res==1)
+                                                      //         {
+                                                      //         {
+
+                                                      //             window.location = urlprefix+"/dashboard/index/";
+                                                      //         }
+                                                      //         else
+                                                      //         {
+
+                                                      //             Swal.fire('Something went wrong.');
+                                                      //             window.location = urlprefix+"/user/signin/";
+                                                      //         }
+
+
+                                                      //      }
+
+
+                                                      //      });
+                                                      //      }
+
+
+
+
+
+                                              ////  }
+
+                                             function ZipcodesAndCategories()
+                                {
+                                    //console.log("HIT 1");
+                                    var ischecked=ValidateCheckbox();
+                                    if (ischecked)
+                                    {
+                                    $.ajax({
+                                    type: 'Post',
+                                    url: urlprefix+'/Membership/selectzipcodesandcategories',
+                                    data:{ Zipcodes: tmpzipcodes,categories:tmpcategroies,PlanId:@Model.PlanId },
+                                    success: function (res)
+                                    {
+                                       
+                                       if(res==1)
+                                       {
+                                           //alert("Entered");
+                                          window.location = urlprefix+"/Membership/GoToDashBoard/";
+                                       }
+                                       //alert("failed");
+
+
+                                    }
+
+
+                                    });
+                                    }
+
+
+
+
+
+                                }
+
+
+                                                        var getChecked= function() {
+                                            var n = $("input[name='zipcodes']");
+                                            $("input[name='zipcodes']").each(function (index, obj) {
+                                        console.log(index,obj);
+                                    });
+                                            var options_display = $("#options_list")
+                                            //console.log(n)
+                                            if (n.length != 0) {
+                                                    $.each(n, function(index, value) {
+                                                    options_display.append("<li>" + value.defaultValue + "</li>")
+                                                });
+                                            }
+                                            else {
+                                                options_display.html("<h3 class'text-center'>No Options</h3>")
+                                            }
+                                        };
+
+                                        function RemoveZipcode(){
+                                            $(document).on('click', '.RemoveZips', function(){
+                                                debugger
+                                             var id= $(this).attr("id");
+                                              $('body #Chk'+id).remove();
+                                               var checkid = $('#' + id);
+                                                checkid.prop("checked", false);
+                                             //$('#'+id).attr('checked', false);
+                                           tmpzipcodes.splice($.inArray(id, tmpzipcodes),1);
+
+                                        });
+                                        }
+
+                                        function ValidateCheckbox()
+                                        {
+                                            var IsPassed=true;
+                                                     if(!$('input:checkbox[name="zipcodes"]').is(':checked'))
+                                                     {
+                                                         Swal.fire({
+                                                           icon: 'info',
+                                                           title: 'Please select zip code.',
+
+                                                         })
+                                                         IsPassed=false;
+                                                     }
+                                                     if(!$('input:checkbox[name="category"]').is(':checked'))
+                                                     {
+                                                         Swal.fire({
+                                                           icon: 'info',
+                                                           title: 'Please select category.',
+
+                                                         })
+                                                         IsPassed=false;
+                                                     }
+
+
+                                            return IsPassed;
+
+
+                                }
+
+
+
+
+    </script>
+</body>
+</html>

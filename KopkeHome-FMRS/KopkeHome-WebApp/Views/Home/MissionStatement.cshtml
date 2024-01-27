@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+@inject IViewLocalizer Loc
+
+<div class="container mainbodysec">
+   <div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">@Loc["Mission Statement"]</h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+   @* <p class="card-text">Prohz is a very easy to use 3 step process for selecting your Contractor, Subcontractor or Independent Contractor.</p>*@
+
+
+    <div> 
+ <u>@Loc["Our Mission :"]</u>
+ <div class="HomeContentsRead">
+     @Loc["Prohz will become the largest Contractor to Contractor and Homeowner to Contractor mobile and web app in the US. We will make it the, fastest, best, smartest, and easiest way to get work done at homes and commercial buildings in an efficient and timely manner, with low cost to our members."]
+
+</div>
+</div>
+
+
+
+
+    <a href="@Url.Action("HowDoesItWork","Home")" class="card-link">@Loc["Learn More"]</a>
+    <a href="@Url.Action("SignUp","User")" class="card-link">@Loc["Join Prohz"]</a>
+  </div>
+</div>
+</div>

@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+@inject IViewLocalizer Localizer
+<div class="container mainbodysec">
+   <div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">@Localizer["How Does It Work"]</h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p class="card-text HomeContentsRead">@Localizer["Prohz is a very easy to use 3 step process for selecting your Contractor, Subcontractor or Independent Contractor."]</p>
+
+<ul class="ml-3"> 
+    <li classs="HomeContentsRead">@Localizer["Select your zip code"]</li>
+    <li classs="HomeContentsRead">@Localizer["Select your subject category"]</li>
+    <li classs="HomeContentsRead">@Localizer["Select your Contractor"]</li>
+    </ul>
+    <div> 
+ <u>@Localizer["Zip Code"] :</u>
+ <div class="HomeContentsRead"> 
+@Localizer["Your zip code determines which Contractors, Subcontractors, and Independent Contractors appear on your list query. Only Contractors, Subcontractors, and Independent Contractors who have selected your zip code will show up on any list you generate. Prohz saves your hours of searching and interviewing time, making it much easier to get more work done faster."]
+</div>
+</div>
+
+ <div> 
+ <u>@Localizer["Subject Categories"] :</u>
+ <div class="HomeContentsRead"> 
+@Localizer["Prohz has 200+ subject categories for you to  use to narrow down the Contractor list to just those Contractors, Subcontractors, and Independent Contractors that have selected that particular subject category as of interest to them, in your zip code. Prohz saves your hours of searching and interviewing time, making it much easier to get more work done faster."]
+</div>
+</div>
+
+
+<div> 
+ <u>@Localizer["Select Your Contractor"] :</u>
+ <div class="HomeContentsRead"> 
+
+@Localizer["Prohz makes it very easy to select your Contractor, Subcontractor, and Independent Contractor. Each type of Contractor has to fill out a questionaire. In the questionaire they must answer all the questions that are important to help you make a selection and give them a call. All types of Contractors on Prohz must have a real business address, declare if they have a business or trade license, and declare their insurance status, with uploads of the documents for proof. All Contractors on Prohz must declare their availability to work, using the Prohz 3 color availablilty status indicators. Prohz will save a lot of time by eliminating wasted calls to unavailable Contractors, and help you develop a plan for getting your work done on time with less frustration."]
+</div>
+</div>
+   @* <a href="@Url.Action("FAQ","Home")" class="card-link">Learn more</a>*@
+    <a href="@Url.Action("SignUp","User")" class="card-link">@Localizer["Join Prohz"]</a>
+  </div>
+</div>
+</div>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KopkeHome_FMRS.View.ChangeZipAndCategory"
+              xmlns:View="clr-namespace:KopkeHome_FMRS.View.PartialView"
+             xmlns:viewModel="clr-namespace:KopkeHome_FMRS.ViewModel"
+             BackgroundColor="Black"    
+             Title="Change Zip And Category">
+    <ContentPage.BindingContext>
+        <viewModel:ChangeZipCategoryViewModel x:Name="VM"/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <Grid Padding="20">
+            <Grid Grid.Row="0" VerticalOptions="FillAndExpand" RowDefinitions="1*,5*,4*"  HorizontalOptions="FillAndExpand"   >
+                <Label Grid.Row="0" Text=" You are allowed to select maximum 10 zip codes and 1 category" Margin="0,10,0,0" TextColor="#add136"  HorizontalOptions="CenterAndExpand"></Label>
+                <Frame Grid.Row="1" Margin="0,0,0,0"  BackgroundColor="#1D1714"  VerticalOptions="StartAndExpand" >
+                    <Grid  Margin="10,0,10,10" ColumnSpacing="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width=".5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Select State where you want to work" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,15,0,0" TextColor="White" FontAttributes="Bold"  />
+                        <Frame Grid.Row="1" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,0"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                            <StackLayout Orientation="Horizontal">
+                                <Label  Text="{Binding StateName }" FontSize="15"   Margin="10,0,10,0" HorizontalOptions="FillAndExpand"  VerticalOptions="Center"   TextColor="White"/>
+                                <Image Source="downgreen" HeightRequest="15" WidthRequest="15" Margin="0,0,5,0"></Image>
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding FindStateListCommand}"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Label Text="Select City where you want to work" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,15,0,0" TextColor="White" FontAttributes="Bold"  />
+                        <Frame Grid.Row="3" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,0"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                            <StackLayout Orientation="Horizontal">
+                                <Label  Text="{Binding CityName }" FontSize="15"   Margin="10,0,10,0" HorizontalOptions="FillAndExpand"  VerticalOptions="Center"   TextColor="White"/>
+                                <Image Source="downgreen" HeightRequest="15" WidthRequest="15" Margin="0,0,5,0"></Image>
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GetCityListCommand}"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Label Text="Select Zip Code where you want to work" Grid.Row="4" Grid.Column="0" Margin="0,15,0,0" TextColor="White" FontAttributes="Bold"  />
+                        <Frame Grid.Row="5" Grid.Column="0" CornerRadius="0" Margin="0,10,0,0"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                            <StackLayout IsVisible="{Binding IsVisivleServiceZip}" Orientation="Vertical" Margin="10,0,10,10" Spacing="2">
+                                <ListView BindableLayout.ItemsSource="{Binding ZipCodeList}" Margin="0,10,0,0"  >
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame Padding="0" Margin="1" CornerRadius="2" HasShadow="False" BackgroundColor="White" FlexLayout.Basis="{OnIdiom Phone='25%', Tablet='25%'}" FlexLayout.AlignSelf="Start">
+                                                <StackLayout Margin="0" Spacing="0" Padding="5" Orientation="Horizontal">
+                                                    <CheckBox  />
+                                                    <Label Text="{Binding ZipCode}" FontSize="Small" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                </StackLayout>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="5" Grid.Column="1" CornerRadius="0" Margin="0,10,0,0"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                            <StackLayout IsVisible="{Binding IsVisivleServiceZip}" Orientation="Vertical" Margin="10,0,10,10" Spacing="2">
+                                <ListView BindableLayout.ItemsSource="{Binding ZipCodeList}" Margin="0,10,0,0"  >
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame Padding="0" Margin="1" CornerRadius="2" HasShadow="False" BackgroundColor="White" FlexLayout.Basis="{OnIdiom Phone='25%', Tablet='25%'}" FlexLayout.AlignSelf="Start">
+                                                <StackLayout Margin="0" Spacing="0" Padding="5" Orientation="Horizontal">
+                                                    <Label Text="{Binding ZipCode}" FontSize="Small" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                    <Image Source="cross"  />
+                                                </StackLayout>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="What type of work you want to do" Grid.Row="6" Grid.ColumnSpan="2" Margin="0,15,0,0" TextColor="White" FontAttributes="Bold"  />
+                        <Frame Grid.Row="7" Grid.ColumnSpan="2" CornerRadius="0" Margin="0,10,0,0"  BackgroundColor="Transparent" HeightRequest="40" Padding="10">
+                            <StackLayout  Orientation="Vertical" Margin="10,0,10,10" Spacing="2">
+                                <ListView BindableLayout.ItemsSource="{Binding ZipCodeList}" Margin="0,10,0,0"  >
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame Padding="0" Margin="1" CornerRadius="2" HasShadow="False" BackgroundColor="White" FlexLayout.Basis="{OnIdiom Phone='25%', Tablet='25%'}" FlexLayout.AlignSelf="Start">
+                                                <StackLayout Margin="0" Spacing="0" Padding="5" Orientation="Horizontal">
+                                                    <Label Text="{Binding ZipCode}" FontSize="Small" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                                    <CheckBox   />
+                                                </StackLayout>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </Frame>
+                <ListView Grid.Row="2" ItemsSource="{Binding StateList}"  VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Never" RowHeight="40"   HorizontalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding StateName}" TextColor="Red"  FontSize="Small">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding StateSelectedCommand}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <!--<Frame  Grid.Row="1" HasShadow="False" Margin="0,0,0,0" IsVisible="{Binding VisibleStateList}" HeightRequest="500" BackgroundColor="Green" WidthRequest="200" BorderColor="#add136"  CornerRadius="1"  HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                    <ListView ItemsSource="{Binding StateList}" VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Never" RowHeight="40"   HorizontalOptions="FillAndExpand">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label Text="{Binding StateName}" TextColor="Red"  FontSize="Small">
+
+                                    </Label>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </Frame>-->
+                <!--<Frame Grid.Row="1" HasShadow="False" Margin="0,0,0,0" IsVisible="{Binding VisibleStateList}" HeightRequest="300" BackgroundColor="#1D1714" BorderColor="#add136"  CornerRadius="1" WidthRequest="200"  HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"  >
+                    <CollectionView ItemsSource="{Binding StateList}" VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Never" SelectionMode="None"   HorizontalOptions="FillAndExpand">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label Text="{Binding StateName}" TextColor="White"  FontSize="Small">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding StateSelectedCommand}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </ViewCell>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Frame>-->
+                <Frame Grid.Row="2" HasShadow="False" Margin="10,0,0,0"  HeightRequest="500" BackgroundColor="#1D1714" BorderColor="#add136" CornerRadius="1" WidthRequest="200"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" >
+                    <ListView ItemsSource="{Binding CityList}" VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Never" SelectionMode="None" RowHeight="40" Footer=""  HorizontalOptions="FillAndExpand">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label Text="{Binding CityName}" TextColor="White"  FontSize="Small">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CitySelectedCommand}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+
+                <!--<View:Loader Grid.Row="0" IsVisible="{Binding IsLoading}" VerticalOptions="Center"/>-->
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

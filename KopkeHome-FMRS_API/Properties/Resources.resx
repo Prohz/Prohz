@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ALREADY_REG" xml:space="preserve">
+    <value>User Already Registered</value>
+  </data>
+  <data name="Cancele" xml:space="preserve">
+    <value>Cancelled</value>
+  </data>
+  <data name="CustomMembershipHtml" xml:space="preserve">
+    <value>&lt;!doctype html&gt;
+&lt;html lang="en-US"&gt;
+
+&lt;head&gt;
+    &lt;meta content="text/html; charset=utf-8" http-equiv="Content-Type" /&gt;
+    &lt;title&gt;Reset Password Email Template&lt;/title&gt;
+    &lt;meta name="description" content="Reset Password Email Template."&gt;
+    &lt;style type="text/css"&gt;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        a:hover {
+            text-decoration: underline !important;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #f2f3f8;" leftmargin="0"&gt;
+    &lt;!--100% body table--&gt;
+    &lt;table cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#f2f3f8"&gt;
+            
+
+        
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;table style="background-color: #f2f3f8; max-width:670px;  margin:0 auto;" width="100%" border="0"
+                       align="center" cellpadding="0" cellspacing="0"&gt;
+                    &lt;tr&gt;
+                        &lt;td style="height:80px;"&gt;&amp;nbsp;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;!--&lt;tr&gt;
+                        &lt;td style="text-align:center;"&gt;
+                            &lt;a href="#" title="logo" target="_blank"&gt;
+                                &lt;img width="190" src="./Prohz-logo.png" title="logo" alt="logo"&gt;
+                            &lt;/a&gt;
+                        &lt;/td&gt; {usernmae}
+                    &lt;/tr&gt;--&gt;
+                    &lt;tr&gt;
+                        &lt;td style="height:20px;"&gt;&amp;nbsp;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
+                                   style="max-width: 670px; background: #191C24; border-radius: 10px; text-align: center; -webkit-box-shadow: 0 6px 18px 0 rgba(0,0,0,.06); -moz-box-shadow: 0 6px 18px 0 rgba(0,0,0,.06); box-shadow: 0 6px 18px 0 rgba(0,0,0,.06);"&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="height:9px;"&gt;&lt;/td&gt;
+                                &lt;/tr&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td style="text-align: center; border-bottom: 1px solid #484D58; padding-bottom:10px;"&gt;
+                                        &lt;a href="#" title="logo" target="_blank"&gt;
+                                           
+                                            &lt;img width="120" src="{ImagePath}" title="logo" alt="logo"&gt;
+                                        &lt;/a&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;!--&lt;tr&gt;
+                                    &lt;td&gt;&lt;img width="130px" src="./success-mail.gif" /&gt;&lt;/td&gt;
+                                &lt;/tr&gt;--&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="height:70px;"&gt;&amp;nbsp;&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="padding:0 35px;"&gt;
+                                        &lt;h1 style="color: #fff; font-weight: 500; margin: 0; font-size: 32px; font-family: 'Poppins', sans-serif;"&gt;
+                                          Your custom plan created successfully!
+                                        &lt;/h1&gt;
+                                        &lt;span style="display:inline-block; vertical-align:middle; margin:15px 0 26px; border-bottom:1px solid #cecece; width:100px;"&gt;&lt;/span&gt;
+                                        &lt;p style="color: #B1B1B1; font-size: 15px; line-height: 24px; margin: 0;"&gt;
+                                            Use the link below to subscribe to new plan for your account. If you did not request for custom plan, ignore this email.
+                                        &lt;/p&gt;
+                                        &lt;a href="{URL}"
+                                           style="background: #ADD136; letter-spacing: 0.5px; text-decoration: none !important; font-weight: 600; margin-top: 35px; color: #000; text-transform: uppercase; font-size: 16px; padding: 12px 24px; display: inline-block; border-radius: 50px;"&gt;
+                                            subscribe to plan
+                                        &lt;/a&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="height:80px;"&gt;&amp;nbsp;&lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;tr&gt;
+                        &lt;td style="height:13px;"&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td style="text-align:center;"&gt;
+                            &lt;p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;"&gt;&amp;copy; Copyright 2023 Prohz. All rights reserved.&lt;/p&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td style="height:80px;"&gt;&amp;nbsp;&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;!--/100% body table--&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</value>
+  </data>
+  <data name="CustomMembershipPlanEmailHeader" xml:space="preserve">
+    <value>Your custom plan created successfully.</value>
+  </data>
+  <data name="DataSaved" xml:space="preserve">
+    <value>Data saved successfully.</value>
+  </data>
+  <data name="DataUpdated" xml:space="preserve">
+    <value>Data updated successfully.</value>
+  </data>
+  <data name="EmailIsNotRegistered" xml:space="preserve">
+    <value>Email is not registered with Prohz.</value>
+  </data>
+  <data name="FailureMsg" xml:space="preserve">
+    <value>Failed.</value>
+  </data>
+  <data name="FollowUrl" xml:space="preserve">
+    <value>Follow URL to make payment.</value>
+  </data>
+  <data name="ForgotPasswordFailureMsg" xml:space="preserve">
+    <value>Unable to change password at the moment, Please try again later</value>
+  </data>
+  <data name="ForgotPasswordLinkFailureMsg" xml:space="preserve">
+    <value>Unable to Send mail at the moment, Please try again later.</value>
+  </data>
+  <data name="ForgotPasswordLinkSuccessMsg" xml:space="preserve">
+    <value>Email sent!, Please check your mail.</value>
+  </data>
+  <data name="ForgotPasswordResetLinkSubject" xml:space="preserve">
+    <value>Your password reset link.</value>
+  </data>
+  <data name="ForgotPasswordSuccessMsg" xml:space="preserve">
+    <value>Password changed successfully!</value>
+  </data>
+  <data name="html" xml:space="preserve">
+    <value>&lt;!doctype html&gt;
+&lt;html lang="en-US"&gt;&lt;head&gt;
+    &lt;meta content="text/html; charset=utf-8" http-equiv="Content-Type" /&gt;
+    &lt;title&gt;Reset Password Email Template&lt;/title&gt;
+    &lt;meta name="description" content="Reset Password Email Template."&gt;
+    &lt;style type="text/css"&gt;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        a:hover {
+            text-decoration: underline !important;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #f2f3f8;" leftmargin="0"&gt;
+    &lt;!--100% body table--&gt;
+    &lt;table cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#f2f3f8"&gt;
+            
+
+        
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;table style="background-color: #f2f3f8; max-width:670px;  margin:0 auto;" width="100%" border="0"
+                       align="center" cellpadding="0" cellspacing="0"&gt;
+                    &lt;tr&gt;
+                        &lt;td style="height:80px;"&gt;&amp;nbsp;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;!--&lt;tr&gt;
+                        &lt;td style="text-align:center;"&gt;
+                            &lt;a href="#" title="logo" target="_blank"&gt;
+                                &lt;img width="190" src="./Prohz-logo.png" title="logo" alt="logo"&gt;
+                            &lt;/a&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;--&gt;
+                    &lt;tr&gt;
+                        &lt;td style="height:20px;"&gt;&amp;nbsp;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
+                                   style="max-width: 670px; background: #191C24; border-radius: 10px; text-align: center; -webkit-box-shadow: 0 6px 18px 0 rgba(0,0,0,.06); -moz-box-shadow: 0 6px 18px 0 rgba(0,0,0,.06); box-shadow: 0 6px 18px 0 rgba(0,0,0,.06);"&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="height:9px;"&gt;&lt;/td&gt;
+                                &lt;/tr&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td style="text-align: center; border-bottom: 1px solid #484D58; padding-bottom:10px;"&gt;
+                                        &lt;a href="#" title="logo" target="_blank"&gt;
+                                            &lt;img width="120" src="./Prohz-logo.png" title="logo" alt="logo"&gt;
+                                        &lt;/a&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;!--&lt;tr&gt;
+                                    &lt;td&gt;&lt;img width="130px" src="./success-mail.gif" /&gt;&lt;/td&gt;
+                                &lt;/tr&gt;--&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="height:70px;"&gt;&amp;nbsp;&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="padding:0 35px;"&gt;
+                                        &lt;h1 style="color: #fff; font-weight: 500; margin: 0; font-size: 32px; font-family: 'Poppins', sans-serif;"&gt;
+                                          You have requested to reset your password!
+                                        &lt;/h1&gt;
+                                        &lt;span style="display:inline-block; vertical-align:middle; margin:15px 0 26px; border-bottom:1px solid #cecece; width:100px;"&gt;&lt;/span&gt;
+                                        &lt;p style="color: #B1B1B1; font-size: 15px; line-height: 24px; margin: 0;"&gt;
+                                            Use the link below to set up a new password for your account. If you did not request to reset your password, ignore this email.
+                                        &lt;/p&gt;
+                                        &lt;a href="{UrlLink}"
+                                           style="background: #ADD136; letter-spacing: 0.5px; text-decoration: none !important; font-weight: 600; margin-top: 35px; color: #000; text-transform: uppercase; font-size: 16px; padding: 12px 24px; display: inline-block; border-radius: 50px;"&gt;
+                                            SET NEW PASSWORD
+                                        &lt;/a&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="height:80px;"&gt;&amp;nbsp;&lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;tr&gt;
+                        &lt;td style="height:13px;"&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td style="text-align:center;"&gt;
+                            &lt;p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;"&gt;&amp;copy; Copyright 2022 ProhzHome-FMRS. All rights reserved.&lt;/p&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td style="height:80px;"&gt;&amp;nbsp;&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;!--/100% body table--&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</value>
+  </data>
+  <data name="HttpStatusCode" xml:space="preserve">
+    <value>Http Status code does not found</value>
+  </data>
+  <data name="InvalidModel" xml:space="preserve">
+    <value>Model is not valid!</value>
+  </data>
+  <data name="InvalidUser" xml:space="preserve">
+    <value>Invalid user!</value>
+  </data>
+  <data name="isSubscribed" xml:space="preserve">
+    <value>Already subscribed.</value>
+  </data>
+  <data name="IsSubscription" xml:space="preserve">
+    <value>User don't have any subscription.</value>
+  </data>
+  <data name="Less10No" xml:space="preserve">
+    <value>Less than 10 Contractors Available on this zipcode.</value>
+  </data>
+  <data name="Messase_LoginR" xml:space="preserve">
+    <value>You selected silver plan so can't use mobile app try on Web</value>
+  </data>
+  <data name="More10No" xml:space="preserve">
+    <value>More than 10 Contractors Available</value>
+  </data>
+  <data name="NOT_FOUND" xml:space="preserve">
+    <value>Data not found</value>
+  </data>
+  <data name="PasswordChangedFaild" xml:space="preserve">
+    <value>Unable to Change Password!</value>
+  </data>
+  <data name="PasswordChangedSuccess" xml:space="preserve">
+    <value>Password Changed Successfully!</value>
+  </data>
+  <data name="RegisterYourself" xml:space="preserve">
+    <value>user not found.Please register yourself.</value>
+  </data>
+  <data name="REGS_SUCCESS" xml:space="preserve">
+    <value>Please enter the verification code sent on you email</value>
+  </data>
+  <data name="SavedMsg" xml:space="preserve">
+    <value>Saved!</value>
+  </data>
+  <data name="SubscriptionMsg" xml:space="preserve">
+    <value>User already have a subscription.</value>
+  </data>
+  <data name="SUCCESS" xml:space="preserve">
+    <value>User registered successfully</value>
+  </data>
+  <data name="SuccessMsg" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="UserDeleted" xml:space="preserve">
+    <value>User deleted successfully</value>
+  </data>
+  <data name="UserIsDelete" xml:space="preserve">
+    <value>User not deleted</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>User not found.</value>
+  </data>
+  <data name="UserOrPasswordIsIncorrect" xml:space="preserve">
+    <value>User id or password is incorrect.</value>
+  </data>
+  <data name="ValidUser" xml:space="preserve">
+    <value>Valid user!</value>
+  </data>
+  <data name="VER_SUCCESS" xml:space="preserve">
+    <value>Verification Successfully Completed</value>
+  </data>
+</root>

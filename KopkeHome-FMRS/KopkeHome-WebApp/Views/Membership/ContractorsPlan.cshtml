@@ -1,0 +1,650 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.MembershipPlanFromStrip
+
+@inject IViewLocalizer Localizer
+
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <!-- Font CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /
+
+    <!-- Custom CSS -->
+    <link href="~/HomePageAssets/assets/css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/master.css" asp-append-version="true" />
+
+    <style>
+        #NumberOfZipcodes-error {
+            color: #ff0101 !important;
+            position: absolute;
+            font-size: 12px;
+            TOP: 242px;
+            margin: 0;
+            padding: 0;
+            /* line-height: 14px; */
+            font-weight: 400;
+            z-index: 9;
+        }
+
+        #NumberOfcategories-error {
+            color: #ff0101 !important;
+            position: absolute;
+            font-size: 12px;
+            top: 377px;
+            margin: 0;
+            padding: 0;
+            /* line-height: 14px; */
+            font-weight: 400;
+            z-index: 9;
+        }
+
+        #Descrption-error {
+            color: #ff0101 !important;
+            position: absolute;
+            font-size: 12px;
+            bottom: 83px;
+            margin: 0;
+            padding: 0;
+            /* line-height: 14px; */
+            font-weight: 400;
+            z-index: 9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-loader " ID="CSTMLOADER" style="display:none">
+        <div class="logo-loader-pulse pulse" id="Idloader"><img src="~/images/Kopke-brand-logo.png" /></div>
+    </div>
+    <div class="registration-container black-bg">
+
+
+
+        <div class="registration-container-branding d-flex justify-content-between align-items-center position-relative">
+            <div class="kopkehome-logo">
+                <a href="@Url.Action("SignIn","user")">
+                    <img src="~/images/Kopke-brand-logo.png" width="140" />
+                </a>
+            </div>
+            @await Html.PartialAsync("SelectCulture")
+
+            <div class="">
+                @{
+                    if (Model.LoggedInUser != null)
+                    {
+                    <a class="nav-link text-dark dropdown-toggle d-flex align-items-center" href="#" id="navbardrop" data-toggle="dropdown">
+                        @if (!string.IsNullOrEmpty(Model.LoggedInUser.ProfilePicture))
+                            {
+                        <img alt="logo" style="margin-right:11px; class="IconBorder" src="~/Uploads/@Model.LoggedInUser.ProfilePicture" width="38" />
+
+                        <span class="text-white">@Model.LoggedInUser.FirstName  @Model.LoggedInUser.LastName </span>
+                            }
+                            else
+                            {
+                        <img alt="logo" style="margin-right:11px;" src="~/images/DefaultProfile.png" class="IconBorder" width="38" />
+
+                        <span class="text-white">@Model.LoggedInUser.FirstName @Model.LoggedInUser.LastName</span>
+                            }
+
+                    </a>
+                    }
+
+
+                }
+
+            </div>
+
+
+
+
+        </div>
+
+        @{
+            double percentbr = 0;
+            var bronze = Model.Plans.Where(x => x.Title.Contains("Bronze")).FirstOrDefault();
+            int PlanIdBronze = bronze.Id;
+            double bronzeprice_PricePerMonth = bronze.PricePerMonth;
+            string bronze_Categories = bronze.Categories;
+            string bronze_ZipCodes = bronze.ZipCodes;
+            double bronze_PricePerYear = bronze.PricePerYear;
+            string bronze_IsWeb = string.Empty;
+            string bronze_IsPhoneApp = string.Empty;
+
+
+            var discount = ((bronzeprice_PricePerMonth * 4) - bronze_PricePerYear);
+            percentbr = (discount / (bronzeprice_PricePerMonth * 4)) * 100;
+
+
+            if (bronze.Website)
+            {
+                bronze_IsWeb = "fa-check";
+            }
+            else
+            {
+                bronze_IsWeb = "fa-times";
+            }
+            if (bronze.PhoneApp)
+            {
+                bronze_IsPhoneApp = "fa-check";
+            }
+            else
+            {
+                bronze_IsPhoneApp = "fa-times";
+            }
+
+
+            double percentsl = 0;
+            var silver = Model.Plans.Where(x => x.Title.Contains("Silver")).FirstOrDefault();
+            int PlanIdSilver = silver.Id;
+            double silver_PricePerMonth = silver.PricePerMonth;
+            string silver_Categories = silver.Categories;
+            string silver_ZipCodes = silver.ZipCodes;
+            double silver_PricePerYear = silver.PricePerYear;
+            string silver_IsWeb = string.Empty;
+            string silver_IsPhoneApp = string.Empty;
+            var discountsl = ((silver_PricePerMonth * 4) - silver_PricePerYear);
+            percentsl = (discountsl / (silver_PricePerMonth * 4)) * 100;
+            if (silver.Website)
+            {
+                silver_IsWeb = "fa-check";
+            }
+            else
+            {
+                silver_IsWeb = "fa-times";
+            }
+            if (silver.PhoneApp)
+            {
+                silver_IsPhoneApp = "fa-check";
+            }
+            else
+            {
+                silver_IsPhoneApp = "fa-times";
+            }
+
+            double percentgl = 0;
+            var Gold = Model.Plans.Where(x => x.Title.Contains("Gold")).FirstOrDefault();
+            int PlanIdGold = Gold.Id;
+            double Gold_PricePerMonth = Gold.PricePerMonth;
+            string Gold_Categories = Gold.Categories;
+            string Gold_ZipCodes = Gold.ZipCodes;
+            double Gold_PricePerYear = Gold.PricePerYear;
+            string Gold_IsWeb = string.Empty;
+            string Gold_IsPhoneApp = string.Empty;
+            var discountgl = ((Gold_PricePerMonth * 4) - Gold_PricePerYear);
+            percentgl = (discountgl / (Gold_PricePerMonth * 4)) * 100;
+            if (Gold.Website)
+            {
+                Gold_IsWeb = "fa-check";
+            }
+            else
+            {
+                Gold_IsWeb = "fa-times";
+            }
+            if (Gold.PhoneApp)
+            {
+                Gold_IsPhoneApp = "fa-check";
+            }
+            else
+            {
+                Gold_IsPhoneApp = "fa-times";
+            }
+
+            // bool Gold_IsWeb = Gold.Website;
+            //  bool Gold_IsPhoneApp = Gold.PhoneApp;
+            string membertype = string.Empty;
+
+            if (Model.LoggedInUser.RoleId == 2)
+            {
+                membertype = Localizer["Sub Contractor"].Value;
+            }
+            else if (Model.LoggedInUser.RoleId == 3)
+            {
+                membertype = Localizer["Independent Contractor"].Value;
+            }
+            else
+            {
+                membertype = Localizer["Contractor"].Value;
+            }
+
+        }
+
+
+        
+
+    <!--  custom plan Modal -->
+    <div class="modal p-0 fade contactorModal-email-varification" data-keyboard="false" data-backdrop="static" id="exampleModal">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">@Localizer["Custom Plan"]</h4>
+                    <button type="button" class="close modal-cstm-close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center email-varification-main-heading">
+                        <h3 class="text-white">@Localizer["Enter Plan details"]</h3>
+                        <p>@Localizer["Please describe your requirements in detail."]</p>
+                    </div>
+                    <form enctype="multipart/form-data" name="submitCustomPlanRequest" method="post" onsubmit="return AsubmitCustomPlanRequest(this);">
+
+                        <input name="UserId" type="hidden" value="@Model.LoggedInUser.Id" />
+
+
+                        <div class=" rgstr-input-form-box">
+                            <label for="Descrption">@Localizer["Requirement Details"] :</label>
+<textarea name="Descrption" class="form-control input-sm TextUpperLower" placeholder="" rows="3"></textarea>
+                            <span for="Descrption" id="Descrption-error" class="text-danger error"></span>
+                        </div>
+                        <div class="verify-email text-center mb-2">
+                            <button type="submit" class="btn green-email-verify-btn">@Localizer["Send"]</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal p-0 fade email-sent-success-modal" data-keyboard="false" data-backdrop="static" id="exampleModal2">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+
+
+                <div class="modal-body">
+                    <div class="text-center email-sent-success-main-heading">
+                        <img width="175px" src="~/images/success-gif1.gif" />
+                        <h3 class="text-white">@Localizer["Request has been sent."]</h3>
+                        <p>@Localizer["We have received your custom membership plan request. Our team will reach out to you with plan details."]</p>
+                    </div>
+
+                    <div class="verify-email text-center mb-2">
+                        <button data-dismiss="modal" class="btn green-email-verify-btn">
+                            @Localizer["Ok"]
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="pricing" style="background: linear-gradient(180deg, #2f2f2f 50%, transparent 50%);">
+        <div class="container">
+            <div class="row" style="text-align: center; color: #ffffff;">
+                <div class="col">
+                    <div class="title-wrapper">
+                        <h2>Contractor Membership Plans</h2>
+                        <p>Please choose the best membership plan for you.</p>
+                        <p class="disclaimer">All plans are based on one year memberships.</p>
+                            <p class="disclaimer">There is a 1 time fee of $99 to verify your compan is a DBA, LLC, or INC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card-wrapper">
+                        <div class="title-wrapper">
+                            <h3>Basic Plan</h3>
+                            <p>Best plan for those companies that want to stay small and local.</p>
+                            <s><p>$324<span class="disclaimer"> per year</p></s>
+                            <p class="promo-price">$96<span class="disclaimer"> per year</span></p>
+                            <p class="disclaimer">That's less than $0.27 per day!</p>
+                            <button onclick="BronzeRadio()">Become a Member</button>
+                            <div class="card-meta">
+                                <ul>
+                                    <li>Company is Listed in 1 Contractor Category</li>
+                                    <li>Company is Listed in 10 Zip Codes</li>
+                                    <li>Unlimited category searches</li>
+                                    <li>Unlimited zip code searches</li>
+                                    <li>Listed in Prohz directory</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-wrapper best-value">
+                        <div class="title-wrapper">
+                            <span class="best">Best Value</span><h3 style="display: inline-block;">Prohz Plan</h3>
+                            <p>Best plan to stabalize or grow your company.</p>
+                            <s><p>$972<span class="disclaimer"> per year</p></s>
+                            <p class="promo-price">$192<span class="disclaimer"> per year</span></p>
+                            <p class="disclaimer">That's less than $0.53 per day!</p>
+                            <button onclick="SilverRadio()">Become a Prohz Member</button>
+                            <div class="card-meta">
+                                <ul>
+                                    <li>Company is Listed in 3 Contractor Categories</li>
+                                    <li>Company is Listed in 30 Zip Codes</li>
+                                    <li>Unlimited category searches</li>
+                                    <li>Unlimited zip code searches</li>
+                                    <li>Listed in Prohz directory</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-wrapper">
+                        <div class="title-wrapper">
+                            <h3>Prohz+ Plan</h3>
+                            <p>Best plan for a company with multiple locations.</p>
+                            <s><p>$5,370<span class="disclaimer"> per year</p></s>
+                            <p class="promo-price">$1,872<span class="disclaimer"> per year</span></p>
+                            <p class="disclaimer">That's less than $5.13 per day!</p>
+                            <button onclick="GoldRadio()">Become a Prohz+ Member</button>
+                            <div class="card-meta">
+                                <ul>
+                                    <li>Company is Listed in 5 Contractor Categories</li>
+                                    <li>Company is Listed in 100 Zip Codes</li>
+                                    <li>Unlimited category searches</li>
+                                    <li>Unlimited zip code searches</li>
+                                    <li>Listed in Prohz directory</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/custom.js" asp-append-version="true"></script>
+    <script src="~/js/ValidateForms.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
+
+
+    <script>
+        var urlprefix = "";
+        if (window.location.href.indexOf("KopkeHome-FMRS") > -1) {
+            urlprefix = '/KopkeHome-FMRS';
+        }
+        $(document).ready(function () {
+            $('#exampleModal').on('hidden.bs.modal', function () {
+                // Load up a new modal...
+                //$('#exampleModal2').modal('show')
+            })
+        });
+        var ProhzGreyLogo = '<img style="height: 90px;" src="' + urlprefix + "'"
+
+    </script>
+    <script>
+
+        function AsubmitCustomPlanRequest(form) {
+
+            if ($(form).valid()) {
+                $.ajax({
+                    type: 'POST',
+                    url: urlprefix + '/Membership/SaveCustomZipcodesRequest',
+                    data: $(form).serialize(),
+
+                    success: function (res) {
+
+                        if (res == "1") {
+                            $('#exampleModal').modal('hide');
+                            $('#exampleModal2').modal('show');
+                        } else {
+                            Swal.fire({
+                                title: localizer('You have already requested for custom memebrship plan', 'Ya ha solicitado un plan de membresía personalizado', $('#ProhzLangDDL option:selected').val()),
+                                iconHtml: ProhzGreyLogo,
+                                text: localizer('Once your custom membership plan is created it will be visible to you in this page with other plans.', 'Una vez que se haya creado su plan de membresía personalizado, podrá verlo en esta página con otros planes.', $('#ProhzLangDDL option:selected').val()),
+
+                            })
+                        }
+
+                    }
+                });
+            }
+
+            return false;
+        }
+        function CustomRadio() {
+            $("#CSTMLOADER").show();
+            //var ele = document.getElementsByName('BronzePrice');
+
+            var selectedVal = "";
+            var selected = $("input[type='radio'][name='CustomPrice']:checked");
+            if (selected.length > 0) {
+
+                selectedVal = selected.val();
+                var dataId = selected.attr("data-id");
+                var userid = selected.attr("data-userid");
+                $.ajax({
+                    type: 'Get',
+                    url: urlprefix + '/Membership/PaymentForCustomPlan?priceId=' + selectedVal + '&planId=' + dataId + '&userid=' + userid,
+
+                    success: function (res) {
+
+                        if (res == 1) {
+
+                            window.location = urlprefix + "/Membership/CustomPlanGateway/";
+                        }
+                        else {
+                            $("#CSTMLOADER").hide();
+                            alert("Something went wrong.");
+                        }
+
+
+                    }
+
+
+                });
+            }
+            else {
+                $("#CSTMLOADER").hide();
+
+                Swal.fire(localizer('Please select type of plan.(Quarterly/Annually)', 'Seleccione el tipo de plan. (Trimestral/Anual)', $('#ProhzLangDDL option:selected').val()))
+
+            }
+
+
+
+
+        }
+
+
+        function BronzeRadio() {
+            $("#CSTMLOADER").show();
+            //var ele = document.getElementsByName('BronzePrice');
+
+
+            // Swapped out the dynamic value for static value.  Original value was `selected.val();`
+            priceId = "@Model.PriceYearlyBronzeID";
+            var dataId = @PlanIdBronze;
+            console.log(priceId)
+            $.ajax({
+                type: 'Get',
+                url: urlprefix + '/Membership/PaymentCard?priceId=' + priceId + '&planId=' + dataId,
+
+                success: function (res) {
+
+                    if (res == 1) {
+
+                        window.location = urlprefix + "/Membership/Payment/";
+                    }
+                    else {
+                        $("#CSTMLOADER").hide();
+                        alert("Something went wrong.");
+                    }
+
+
+                }
+
+
+            });
+
+
+
+
+        }
+
+        function SilverRadio() {
+            $("#CSTMLOADER").show();
+
+
+            priceId = "@Model.PriceYearlySilverID";
+            var dataId = @PlanIdSilver;
+            $.ajax({
+                type: 'Get',
+                url: urlprefix + '/Membership/PaymentCard?priceId=' + priceId + '&planId=' + dataId,
+                success: function (res) {
+
+                    if (res == 1) {
+                        window.location = urlprefix + "/Membership/Payment/";
+                    }
+                    else {
+                        $("#CSTMLOADER").hide();
+                        alert("Something went wrong.");
+                    }
+
+
+                }
+
+
+            });
+
+
+
+
+        }
+
+
+        function GoldRadio() {
+            $("#CSTMLOADER").show();
+
+
+            priceId = "@Model.PriceYearlyGoldID";
+            var dataId = @PlanIdGold;
+            $.ajax({
+                type: 'Get',
+                url: urlprefix + '/Membership/PaymentCard?priceId=' + priceId + '&planId=' + dataId,
+
+
+                success: function (res) {
+
+                    if (res == 1) {
+
+                        window.location = urlprefix + "/Membership/Payment/";
+                    }
+                    else {
+                        $("#CSTMLOADER").hide();
+                        alert("Something went wrong.");
+                    }
+
+
+                }
+
+
+            });
+
+
+        }
+
+        $(function () {
+
+            $("form[name='submitCustomPlanRequest']").validate({
+
+                rules: {
+                    NumberOfZipcodes: {
+                        required: true,
+
+                    },
+                    Descrption: "required",
+                    // WebApp:"required",
+                    NumberOfcategories: {
+                        required: true,
+
+                    },
+
+
+                },
+                // Specify validation error messages
+                messages: {
+                    NumberOfZipcodes: localizer('Please Enter Number Of Zip Codes.', 'Ingrese el número de códigos postales.', $('#ProhzLangDDL option:selected').val()),
+                    NumberOfcategories: localizer('Please Enter Number Of categories.', 'Ingrese el número de categorías.', $('#ProhzLangDDL option:selected').val()),
+                    // WebApp:"Please choose one.",
+                    Descrption: localizer('Please enter Descrption.', 'Ingrese la descripción.', $('#ProhzLangDDL option:selected').val())
+                },
+
+                //submitHandler: function (form) {
+                //    form.submit();
+                //}
+            });
+
+
+
+        });
+
+
+        function showData() {
+            // var dataDiv = document.getElementById("show90");
+            // dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("show365");
+            dataDiv2.style.display = "block";
+
+
+        }
+
+        // function hideData() {
+        //     var dataDiv = document.getElementById("show365");
+        //     dataDiv.style.display = "none";
+        //     var dataDiv2 = document.getElementById("show90");
+        //     dataDiv2.style.display = "block";
+        //     dataDiv2.style.visibility = 'visible'
+        //     $('#show90').removeAttr('hidden');
+        // }
+
+        function showDatasilver() {
+            // var dataDiv = document.getElementById("showsilver90");
+            // dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("showsilver365");
+            dataDiv2.style.display = "block";
+
+        }
+
+        // function hideDatasilver() {
+        //     var dataDiv = document.getElementById("showsilver365");
+        //     dataDiv.style.display = "none";
+        //     var dataDiv2 = document.getElementById("showsilver90");
+        //     dataDiv2.style.display = "block";
+        //     dataDiv2.style.visibility = 'visible'
+        //     $('#showsilver90').removeAttr('hidden');
+        // }
+
+
+        function showDatagold() {
+            // var dataDiv = document.getElementById("showgold90");
+            // dataDiv.style.display = "none";
+            var dataDiv2 = document.getElementById("showgold365");
+            dataDiv2.style.display = "block";
+
+        }
+
+        // function hideDatagold() {
+        //     var dataDiv = document.getElementById("showgold365");
+        //     dataDiv.style.display = "none";
+        //     var dataDiv2 = document.getElementById("showgold90");
+        //     dataDiv2.style.display = "block";
+        //     dataDiv2.style.visibility = 'visible'
+        //     $('#showgold90').removeAttr('hidden');
+        // }
+
+
+
+    </script>
+
+</body>
+</html>

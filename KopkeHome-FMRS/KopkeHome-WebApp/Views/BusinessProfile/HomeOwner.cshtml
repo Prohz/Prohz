@@ -1,0 +1,132 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="registration-container black-bg">
+
+
+
+        <div class="registration-container-branding d-flex justify-content-between align-items-center">
+            <div class="kopkehome-logo">
+                <img src="~/images/Kopke-brand-logo.png" width="140" />
+            </div>
+
+            <div class="rgstr-box-heading text-center">
+                <h2 class="orange-clr">Homeowner Membership Benefits</h2>
+                <p class="text-white m-0">Please choose the best membership benefits for you.</p>
+            </div>
+
+            <div class="member-login-link">
+                <p class="text-white m-0">Already a member? </p><a href="@Url.Action("signin", "user")" class=" green-clr-top-login-link ">Login</a>
+            </div>
+        </div>
+
+
+
+        <div class="registration-container-form">
+            <div class="tab-content">
+
+
+
+
+
+                <div id="Home-owner" class="contractor-business-prof-form">
+                    <div class="Membership-benefits-outer-box">
+                        <div class="table-responsive benefit-table">
+                            <table class="table">
+                                 <colgroup></colgroup>
+					<colgroup></colgroup>
+					<colgroup></colgroup>
+					<colgroup></colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="d-flex justify-content-center align-items-center">
+                                            <h2>Membership Benefits</h2>
+                                        </th>
+                                        <th>
+                                            <span class="membership-title membership-title-1">Free</span>
+                                            <h2>$0.0</h2>
+                                        </th>
+                                        <th>
+                                            <span class="membership-title membership-title-2">Silver</span>
+                                            <h2>$29.99/Year</h2>
+                                        </th>
+                                        <th>
+                                            <span class="membership-title membership-title-3">Gold</span>
+                                            <h2>$59.99/Year</h2>
+                                        </th>
+                                        @*
+                                        <th>
+                                            <span class="membership-title membership-title-4">Unlimited</span>
+                                            <h2>$89.99/Year</h2>
+                                        </th>*@
+                                    </tr>
+                                </thead>
+
+
+
+                                <tbody>
+
+
+                                    <tr>
+                                        <th>Website</th>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Mobile App</th>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+
+                                    </tr>
+                                    <!-- another 6 -->
+                                    <tr>
+                                        <th>Other Benefits 1</th>
+
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>Other Benefits 2</th>
+
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>Other Benefits 3</th>
+
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+                                        <td><i class="fa fa-times fa-2x"></i></td>
+                                        <td><i class="fa fa-check fa-2x"></i></td>
+
+                                    </tr>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>&nbsp;</th>
+                                        <td><a href="@Url.Action("signin", "user")" class="text-decoration-none membership-title-1">BUY NOW</a></td>
+                                        <td><a href="#" class=" text-decoration-none membership-title-2">BUY NOW</a></td>
+                                        <td><a href="#" class="text-decoration-none membership-title-3">BUY NOW</a></td>
+
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KopkeHome_FMRS.View.Dashboard"
+             Title="Dashboard" NavigationPage.HasNavigationBar="False"
+             xmlns:Local="clr-namespace:KopkeHome_FMRS.Control"
+             xmlns:View="clr-namespace:KopkeHome_FMRS.View.PartialView"
+             BackgroundImageSource="background.png"
+             xmlns:viewmodel="clr-namespace:KopkeHome_FMRS.ViewModel">
+    <Shell.TitleView>
+        <StackLayout HeightRequest="50" BackgroundColor="#191c24" Opacity="0.7" Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+            <Label Text="{Local:TranslationExtention  txtContractorList}" HorizontalOptions="CenterAndExpand" FontSize="20" TextColor="White" VerticalOptions="CenterAndExpand"/>
+            <StackLayout Margin="16,0" Orientation="Horizontal" Spacing="24" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+            </StackLayout>
+        </StackLayout>
+    </Shell.TitleView>
+    <ContentPage.BindingContext >
+        <viewmodel:DashboardViewModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" Padding="10" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout  Grid.Row="0" Margin="5" Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid >
+                    <Frame Grid.Row="0" Padding="20" BackgroundColor="Black" BorderColor="Transparent">
+                        <Grid  RowSpacing="8" RowDefinitions="Auto, Auto, Auto" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <StackLayout Margin="0,10,0,0" Grid.Row="0" Spacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                                <Grid>
+                                    <Frame Padding="0"  BorderColor="Gray" BackgroundColor="#1D1714" Margin="0,0,5,0">
+                                        <Entry Text="{Binding Zipcode}" Margin="10,0,10,0" TextColor="White"  Placeholder="The zip code where you want to get work done?" PlaceholderColor="White" TextChanged="ZipcodeEntry_TextChanged" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Keyboard="Numeric"/>
+                                    </Frame>
+                                </Grid>
+                                <Label Text="{Binding ZipErrorText}" IsVisible="{Binding IsZipErrorVisible,Mode=TwoWay}" TextColor="White"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="1" Margin="0,0,0,0" Spacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Grid>
+                                    <Frame Padding="0"  BorderColor="Gray" BackgroundColor="#1D1714" Margin="0,10,5,0">
+                                        <Entry Text="{Binding Category}" Placeholder="{Local:TranslationExtention txtTypeofWorkWant}" TextColor="White" x:Name="CategoryEntry" PlaceholderColor="White" TextChanged="CategoryEntry_TextChanged" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10,0,10,0" Keyboard="Default"/>
+                                    </Frame>
+                                </Grid>
+                                <Label x:Name="categoryError" Text="{Local:TranslationExtention txtPleaseEnterCategory}" IsVisible="{Binding IsCategoryErrorVisible,Mode=TwoWay}" TextColor="Red"/>
+                            </StackLayout>
+                            <Frame Grid.Row="2" Margin="5,10,5,0" Padding="10" HasShadow="true" BorderColor="Transparent" BackgroundColor="#add136" CornerRadius="46">
+                                <HorizontalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label Text="{Local:TranslationExtention txtSearchNow}" HorizontalOptions="CenterAndExpand" Margin="0,0,10,0" FontSize="16" TextColor="White" VerticalOptions="Center"/>
+                                    <Image Source="search.png" HeightRequest="25" WidthRequest="15" HorizontalOptions="CenterAndExpand" Aspect="AspectFit" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SearchCommand}"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="0" Padding="20" Margin="18,80,22,20" IsVisible="{Binding ZipCodeFrameVisible}" Opacity="0.99" BackgroundColor="#1D1714" BorderColor="Transparent">
+                        <ListView x:Name="zipcodeList" HeightRequest="200" SeparatorVisibility="None" VerticalScrollBarVisibility="Never" SelectionMode="None" RowHeight="40" Footer="" ItemsSource="{Binding ZipCodeList}" VerticalOptions="StartAndExpand" HorizontalOptions="Center">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Label VerticalTextAlignment="Center" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding Zipcode}">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.ZipCodeSelectedCommand, Source={x:Reference Name=zipcodeList}}" CommandParameter="{Binding .}"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Frame>
+                    <Frame Grid.Row="0" Margin="20,140,20,20"  IsVisible="{Binding CategoryeFrameVisible}" Opacity="0.99" BackgroundColor="#1D1714" BorderColor="Transparent">
+                        <ListView x:Name="categoryList" HeightRequest="200"  SeparatorVisibility="None" VerticalScrollBarVisibility="Never" SelectionMode="None" RowHeight="40" Footer="" ItemsSource="{Binding CategoriesList}" VerticalOptions="EndAndExpand" HorizontalOptions="Center">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Name}" TextColor="White">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.CategorySelectedCommand, Source={x:Reference Name=categoryList}}" CommandParameter="{Binding .}"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Frame>
+                </Grid>
+                
+                <Frame  Margin="0,5,0,0" Padding="0" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <CollectionView   ItemsSource="{Binding ContractorList}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Margin="0,4" BackgroundColor="Black" HasShadow="False" Opacity="0.6" Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                    <Grid Margin="16" RowSpacing="4" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                                        <StackLayout Grid.Row="0" Spacing="0" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Binding Name}" TextColor="#add136" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                            <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand">
+                                                <Frame Padding="5" HorizontalOptions="EndAndExpand" BackgroundColor="#add136" CornerRadius="5">
+                                                    <Label Text="{Local:TranslationExtention txtViewDetails}" TextColor="White"  VerticalOptions="CenterAndExpand"/>
+                                                    <Frame.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding ViewDetailsCommand}" CommandParameter="{Binding .}"/>
+                                                    </Frame.GestureRecognizers>
+                                                </Frame>
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                        <StackLayout Spacing="5" Grid.Row="1" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Local:TranslationExtention txtYourExperienceHistory}" TextColor="White" VerticalTextAlignment="Center"/>
+                                            <Image  BackgroundColor="Transparent" HeightRequest="22" WidthRequest="22" Source="{Binding LikeImage,Mode=TwoWay}">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding LikeCommand}" CommandParameter="{Binding .}"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                            <BoxView HeightRequest="15" Margin="5,0,0,0"  Color="White" WidthRequest="1" ></BoxView>
+                                            <BoxView HeightRequest="15" Margin="0,0,0,0"  Color="White"  WidthRequest="1"></BoxView>
+                                            <Image Source="{Binding DislikeImage}" Margin="5,8,0,0" HeightRequest="22" WidthRequest="22"  VerticalOptions="Center" BackgroundColor="Transparent" >
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding DislikeCommand}" CommandParameter="{Binding .}"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="2" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Local:TranslationExtention txtContractorType}" TextColor="White" VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding ContractorType}" TextColor="LightGray" FontSize="14" VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="3" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Local:TranslationExtention txtCategoryName}" TextColor="White" VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding Category}" TextColor="LightGray" FontSize="14" VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="4" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Local:TranslationExtention txtCompanyName :}" TextColor="White" VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding CompanyName}" TextColor="LightGray" FontSize="14" VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="5" Spacing="8" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Local:TranslationExtention txtStatus}" TextColor="White" VerticalTextAlignment="Center"/>
+                                            <Image HeightRequest="22" WidthRequest="22" Source="{Binding WorkStatusImage,Mode=TwoWay}"/>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="6" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Local:TranslationExtention txtEmailAddress:}" TextColor="White" VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding Email}"  TextColor="LightGray" FontSize="14" VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="7" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Local:TranslationExtention txtPhoneNumber:}" TextColor="White" VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding Mobile}" TextColor="LightGray" FontSize="14" VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="8" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Local:TranslationExtention txtPhoneOffice:}" TextColor="White" VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding OfficeNumber}" TextColor="LightGray" FontSize="14" VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="9" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Local:TranslationExtention  txtLastUpdated:}" TextColor="White" VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding WorkStatusUpdated}" TextColor="LightGray" FontSize="14" VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+                                        <!--<StackLayout Grid.Row="10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <Label Text="MemberId : " TextColor="White" VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding Id}" TextColor="White" VerticalTextAlignment="Center"/>
+                                        </StackLayout>-->
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Frame>
+            </StackLayout>
+
+
+            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" IsVisible="{Binding IsVisibleFilterPopup}" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" HorizontalOptions="Fill" BackgroundColor="Gray" VerticalOptions="FillAndExpand" Opacity="0.9"/>
+
+                <Frame Margin="16" Grid.Row="0"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="450" Padding="0" HasShadow="False">
+                    <StackLayout Spacing="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
+                        <StackLayout Margin="16" Orientation="Horizontal"  VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                            <Label Padding="0" TextColor="White"  Text="Work status" FontAttributes="Bold" FontSize="15"  VerticalTextAlignment="Center"/>
+                            <Image Source="wrong" VerticalOptions="Center" HeightRequest="20" HorizontalOptions="EndAndExpand">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CommandWrong}" CommandParameter="{Binding .}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                        <BoxView Color="White" HeightRequest="2" HorizontalOptions="FillAndExpand"/>
+                        <Label Margin="0,16" TextColor="White" Text="Change your work status" FontAttributes="Bold" FontSize="15" VerticalOptions="Start" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" ></Label>
+                        <StackLayout Margin="16,0" Spacing="0" Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" Spacing="16" VerticalOptions="FillAndExpand">
+                                <Image VerticalOptions="Center" Source="available" Aspect="AspectFit" HeightRequest="25" WidthRequest="25"/>
+                                <Label VerticalTextAlignment="Center" TextColor="White" Text="Booking for Now(0-4 weeks)"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Spacing="16" VerticalOptions="FillAndExpand">
+                                <Image VerticalOptions="Center" Source="appoint" HeightRequest="25" WidthRequest="25"/>
+                                <Label VerticalTextAlignment="Center" TextColor="White" Text="Booking for Soon(5-16 weeks)"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Spacing="16" VerticalOptions="FillAndExpand">
+                                <Image VerticalOptions="Center" Source="booked" HeightRequest="25" WidthRequest="25"/>
+                                <Label VerticalTextAlignment="Center" TextColor="White" Text="Booking for Later(17-52 weeks)"/>
+                            </StackLayout>
+                            <Frame Margin="0,16" Padding="0" HorizontalOptions="CenterAndExpand" BackgroundColor="#add136" WidthRequest="100" HeightRequest="40" CornerRadius="5">
+                                <Label Text="save" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"  VerticalOptions="CenterAndExpand"/>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SaveStatusCommand}" CommandParameter="{Binding .}"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </StackLayout>
+                        <!--<Label Text="Work status:"></Label>
+                    <RadioButton></RadioButton>-->
+                        <StackLayout Spacing="10"  HeightRequest="150" BackgroundColor="Black">
+                            <Label Margin="0,16" Text="Work status: " TextColor="White" FontAttributes="Bold" FontSize="15" VerticalOptions="Start" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" ></Label>
+                            <StackLayout Margin="16,0" Spacing="10" Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal" Spacing="16" VerticalOptions="FillAndExpand">
+                                    <Frame CornerRadius="40" HeightRequest="10" WidthRequest="20" Padding="0">
+                                        <Image VerticalOptions="Center" Source="{Binding Now}" Aspect="AspectFit" HeightRequest="25" WidthRequest="25"/>
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandNow}" CommandParameter="{Binding .}"/>
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                    <!--<RadioButton GroupName="A" BorderColor="Green"  BackgroundColor="Green"></RadioButton>-->
+                                    <Label VerticalTextAlignment="Center" TextColor="White" Text="Booking for Now"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="16" VerticalOptions="FillAndExpand">
+                                    <Frame CornerRadius="40" HeightRequest="10" WidthRequest="20" Padding="0">
+                                        <Image VerticalOptions="Center" Source="{Binding Soon}" HeightRequest="25" WidthRequest="25"/>
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandSoon}" CommandParameter="{Binding .}"/>
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                    <!--<RadioButton GroupName="A" BackgroundColor="Yellow"></RadioButton>-->
+                                    <Label VerticalTextAlignment="Center" TextColor="White" Text="Booking for Soon"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="16" VerticalOptions="FillAndExpand">
+                                    <!--<RadioButton GroupName="A" BackgroundColor="Red"></RadioButton>-->
+                                    <Frame CornerRadius="40" HeightRequest="10" WidthRequest="20" Padding="0">
+                                        <Image VerticalOptions="Center" Source="{Binding Later}" HeightRequest="25" WidthRequest="25"/>
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CommandLater}" CommandParameter="{Binding .}"/>
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                    <Label VerticalTextAlignment="Center" TextColor="White" Text="Booking for Later"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </StackLayout>
+
+
+                    </StackLayout>
+
+                </Frame>
+            </Grid>
+            <View:Loader IsVisible="{Binding IsLoading}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

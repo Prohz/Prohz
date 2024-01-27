@@ -1,0 +1,1138 @@
+[2023-05-30 19:22:16.847 +05:30  INF]  User profile is available. Using 'C:\Users\arshadm\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-05-30 19:22:17.781 +05:30  INF]  Now listening on: https://localhost:7215
+[2023-05-30 19:22:17.781 +05:30  INF]  Now listening on: http://localhost:5215
+[2023-05-30 19:22:17.783 +05:30  INF]  Application started. Press Ctrl+C to shut down.
+[2023-05-30 19:22:17.784 +05:30  INF]  Hosting environment: Development
+[2023-05-30 19:22:17.784 +05:30  INF]  Content root path: D:\KopkeHome-FMRS\KopkeHome-FMRS_API\
+[2023-05-30 19:22:22.706 +05:30  INF]  Request starting HTTP/2 GET https://localhost:7215/swagger/index.html - -
+[2023-05-30 19:22:23.424 +05:30  INF]  Request finished HTTP/2 GET https://localhost:7215/swagger/index.html - - - 200 - text/html;charset=utf-8 720.3624ms
+[2023-05-30 19:22:23.586 +05:30  INF]  Request starting HTTP/2 GET https://localhost:7215/_framework/aspnetcore-browser-refresh.js - -
+[2023-05-30 19:22:23.602 +05:30  INF]  Request finished HTTP/2 GET https://localhost:7215/_framework/aspnetcore-browser-refresh.js - - - 200 11952 application/javascript;+charset=utf-8 15.6060ms
+[2023-05-30 19:22:24.656 +05:30  INF]  Request starting HTTP/2 GET https://localhost:7215/swagger/v1/swagger.json - -
+[2023-05-30 19:22:25.010 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - -
+[2023-05-30 19:22:25.010 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - -
+[2023-05-30 19:22:25.267 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 19:22:25.267 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 19:22:25.278 +05:30  INF]  Route matched with {action = "GetAllPromoVideos", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.PromoVideos]] GetAllPromoVideos() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 19:22:25.293 +05:30  INF]  Route matched with {action = "GetAllProhzLegalFiles", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles]] GetAllProhzLegalFiles() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 19:22:25.428 +05:30  INF]  Request finished HTTP/2 GET https://localhost:7215/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 771.8315ms
+[2023-05-30 19:22:30.895 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:22:30.895 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:22:38.097 +05:30  INF]  Executed DbCommand (295ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FilePath], [p].[FileType], [p].[Name]
+FROM [ProhzLegalFiles] AS [p]
+[2023-05-30 19:22:38.122 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:22:38.204 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API) in 12903.5124ms
+[2023-05-30 19:22:38.204 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 19:22:38.208 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - - - 200 - application/json;+charset=utf-8 13197.6293ms
+[2023-05-30 19:22:38.911 +05:30  INF]  Executed DbCommand (224ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FileName], [p].[FilePath], [p].[IsActive], [p].[OriginalName]
+FROM [PromoVideos] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+[2023-05-30 19:22:38.912 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.PromoVideos, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:22:38.912 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API) in 13633.5278ms
+[2023-05-30 19:22:38.912 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 19:22:38.912 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - - - 200 - application/json;+charset=utf-8 13902.2788ms
+[2023-05-30 19:22:43.072 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:22:43.094 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:22:43.096 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:22:43.152 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:22:43.381 +05:30  INF]  Executed DbCommand (224ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:22:43.381 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:22:43.383 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 286.8549ms
+[2023-05-30 19:22:43.383 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:22:43.383 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 311.3911ms
+[2023-05-30 19:22:45.584 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/SignIn application/json;+charset=utf-8 -
+[2023-05-30 19:22:45.590 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.SignIn (KopkeHome-FMRS_API)'
+[2023-05-30 19:22:45.603 +05:30  INF]  Route matched with {action = "SignIn", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.Response] SignIn(KopkeHome_ModelLayer.SignIn) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:22:46.563 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:22:47.194 +05:30  INF]  Executed DbCommand (601ms) [Parameters=[@__ISignIn_Email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE (([a].[Email] = @__ISignIn_Email_0) AND ([a].[IsEmailVerified] = CAST(1 AS bit))) AND ([a].[IsDeleted] = CAST(0 AS bit))
+[2023-05-30 19:22:47.434 +05:30  INF]  Executed DbCommand (223ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[2023-05-30 19:22:48.134 +05:30  INF]  Executed DbCommand (224ms) [Parameters=[@__userModel_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AmEx], [b].[BusinessDescription], [b].[BusinessOrTradeLicenseFiles], [b].[CommercialLocation], [b].[CompanyWebsiteURL], [b].[CreatedOn], [b].[DesignServices], [b].[EstimateCharge], [b].[FacebookPageURL], [b].[Is24HoursPhoneAnswering], [b].[IsBusinessOrTradeLicense], [b].[IsCash], [b].[IsCompanyWebsite], [b].[IsContactedByHomeowners], [b].[IsContactedBySubcontractors], [b].[IsDesignServices], [b].[IsEstimateCharge], [b].[IsFacebookPage], [b].[IsLiabilityInsurance], [b].[IsOfferEmergencyServices], [b].[IsPaymentApps], [b].[IsPhoneCallSupport], [b].[IsWorkmanCompensationInsurance], [b].[JobSiteCrews], [b].[LiabilityInsuranceFile], [b].[MC], [b].[ModifiedOn], [b].[NormalBusinessHours], [b].[NumberOfEmployees], [b].[OtherCreditCard], [b].[PersonalChecks], [b].[ProfilePicture], [b].[UserId], [b].[VerificationStatus], [b].[Visa], [b].[WhichPaymentApps], [b].[WorkmanCompensationInsuranceFile], [b].[YearsInBusiness]
+FROM [BusinessProfile] AS [b]
+WHERE [b].[UserId] = @__userModel_Id_0
+[2023-05-30 19:22:48.365 +05:30  INF]  Executed DbCommand (223ms) [Parameters=[@__userModel_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CancelledOn], [u].[CreatedOn], [u].[DowngradedOn], [u].[Email], [u].[Extensions], [u].[InvoiceNumber], [u].[InvoiceUrl], [u].[IsActive], [u].[PaymentStatus], [u].[PeriodEndDate], [u].[PeriodStartDate], [u].[PlanId], [u].[StripeCustomerID], [u].[StripePriceId], [u].[StripeStatus], [u].[StripeSubscriptionId], [u].[UpgradedOn], [u].[UserId]
+FROM [UserMembershipSubscriptions] AS [u]
+WHERE ([u].[UserId] = @__userModel_Id_0) AND ([u].[IsActive] = CAST(1 AS bit))
+[2023-05-30 19:22:49.927 +05:30  INF]  Executed DbCommand (223ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CategoriesId], [u].[PlanId], [u].[UserId]
+FROM [UserMembershipCategories] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+[2023-05-30 19:22:50.154 +05:30  INF]  Executed DbCommand (223ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[PlanId], [u].[UserId], [u].[ZipCodeId]
+FROM [UserMembershipZipcodes] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+[2023-05-30 19:22:50.380 +05:30  INF]  Executed DbCommand (223ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CategoriesId], [u].[PlanId], [u].[UserId]
+FROM [UserMembershipCategories] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+[2023-05-30 19:22:50.608 +05:30  INF]  Executed DbCommand (226ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CancelledOn], [u].[CreatedOn], [u].[DowngradedOn], [u].[Email], [u].[Extensions], [u].[InvoiceNumber], [u].[InvoiceUrl], [u].[IsActive], [u].[PaymentStatus], [u].[PeriodEndDate], [u].[PeriodStartDate], [u].[PlanId], [u].[StripeCustomerID], [u].[StripePriceId], [u].[StripeStatus], [u].[StripeSubscriptionId], [u].[UpgradedOn], [u].[UserId]
+FROM [UserMembershipSubscriptions] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+[2023-05-30 19:22:50.819 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.Response'.
+[2023-05-30 19:22:50.824 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.SignIn (KopkeHome-FMRS_API) in 5221.2563ms
+[2023-05-30 19:22:50.824 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.SignIn (KopkeHome-FMRS_API)'
+[2023-05-30 19:22:50.825 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/SignIn application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 5240.1397ms
+[2023-05-30 19:22:50.839 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/GetUserByEmail application/x-www-form-urlencoded 30
+[2023-05-30 19:22:50.839 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetUserByEmail (KopkeHome-FMRS_API)'
+[2023-05-30 19:22:50.854 +05:30  INF]  Route matched with {action = "GetUserByEmail", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetUserByEmail(System.String) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:22:50.872 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:22:51.100 +05:30  INF]  Executed DbCommand (223ms) [Parameters=[@__Email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE (([a].[Email] = @__Email_0) AND ([a].[IsEmailVerified] = CAST(1 AS bit))) AND ([a].[IsDeleted] = CAST(0 AS bit))
+[2023-05-30 19:22:51.100 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.DataModel.User'.
+[2023-05-30 19:22:51.129 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetUserByEmail (KopkeHome-FMRS_API) in 275.2869ms
+[2023-05-30 19:22:51.129 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetUserByEmail (KopkeHome-FMRS_API)'
+[2023-05-30 19:22:51.130 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/GetUserByEmail application/x-www-form-urlencoded 30 - 200 - application/json;+charset=utf-8 291.0054ms
+[2023-05-30 19:22:51.341 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:22:51.435 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:22:51.437 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:22:51.438 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:22:51.438 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.7432ms
+[2023-05-30 19:22:51.438 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:22:51.438 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 96.3894ms
+[2023-05-30 19:41:36.135 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:41:36.140 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:36.140 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:41:36.140 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:41:36.141 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.35ms
+[2023-05-30 19:41:36.141 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:36.141 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 5.2960ms
+[2023-05-30 19:41:36.398 +05:30  INF]  Request starting HTTP/2 GET https://localhost:7215/swagger/index.html - -
+[2023-05-30 19:41:36.423 +05:30  INF]  Request finished HTTP/2 GET https://localhost:7215/swagger/index.html - - - 200 - text/html;charset=utf-8 25.2337ms
+[2023-05-30 19:41:36.426 +05:30  INF]  Request starting HTTP/2 GET https://localhost:7215/_framework/aspnetcore-browser-refresh.js - -
+[2023-05-30 19:41:36.426 +05:30  INF]  Request finished HTTP/2 GET https://localhost:7215/_framework/aspnetcore-browser-refresh.js - - - 200 11952 application/javascript;+charset=utf-8 0.3090ms
+[2023-05-30 19:41:36.565 +05:30  INF]  Request starting HTTP/2 GET https://localhost:7215/swagger/v1/swagger.json - -
+[2023-05-30 19:41:36.594 +05:30  INF]  Request finished HTTP/2 GET https://localhost:7215/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 29.2937ms
+[2023-05-30 19:41:41.493 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:41:41.495 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:41.496 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:41:41.497 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:41:41.497 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.8547ms
+[2023-05-30 19:41:41.497 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:41.497 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 4.2091ms
+[2023-05-30 19:41:41.689 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:41:41.690 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:41.691 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:41:41.691 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:41:41.691 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.1947ms
+[2023-05-30 19:41:41.691 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:41.691 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 1.7967ms
+[2023-05-30 19:41:41.881 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:41:41.881 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:41.881 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:41:41.881 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:41:41.881 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.2079ms
+[2023-05-30 19:41:41.881 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:41.881 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 0.7455ms
+[2023-05-30 19:41:47.628 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:41:47.629 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:47.630 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:41:47.632 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:41:48.811 +05:30  INF]  Executed DbCommand (230ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:41:48.812 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:41:48.813 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 1182.8343ms
+[2023-05-30 19:41:48.813 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:48.814 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 1185.1709ms
+[2023-05-30 19:41:49.191 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:41:49.194 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:49.194 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:41:49.194 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:41:49.422 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:41:49.423 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:41:49.423 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.5657ms
+[2023-05-30 19:41:49.423 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:49.423 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 232.1220ms
+[2023-05-30 19:41:49.552 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:41:49.552 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:49.552 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:41:49.553 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:41:49.781 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:41:49.781 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:41:49.781 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.6116ms
+[2023-05-30 19:41:49.781 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:49.781 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 229.0436ms
+[2023-05-30 19:41:55.318 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 -
+[2023-05-30 19:41:55.318 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:55.320 +05:30  INF]  Route matched with {action = "UpdateBasicInfo", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.Response] UpdateBasicInfo(KopkeHome_ModelLayer.ViewModels.DashboardViewModels.UpdateBasicInfo) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:41:55.328 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:41:55.567 +05:30  INF]  Executed DbCommand (229ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+[2023-05-30 19:41:55.808 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2023-05-30 19:41:56.438 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@p33='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p34='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (DbType = DateTimeOffset), @p16='?' (DbType = DateTime2), @p17='?' (Size = 256), @p18='?' (Size = 256), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Boolean), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Int32), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Boolean), @p28='?' (DbType = Int64), @p29='?' (Size = 256), @p30='?' (DbType = Int32), @p31='?' (DbType = DateTime2), @p32='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [BusinessAddress] = @p1, [BusinessName] = @p2, [City] = @p3, [ConcurrencyStamp] = @p4, [CreatedOn] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FirstName] = @p8, [HeardAboutProhzFrom] = @p9, [IsDeleted] = @p10, [IsDocumentsVerified] = @p11, [IsEmailVerified] = @p12, [LastName] = @p13, [LockoutEnabled] = @p14, [LockoutEnd] = @p15, [ModifiedOn] = @p16, [NormalizedEmail] = @p17, [NormalizedUserName] = @p18, [PasswordHash] = @p19, [PhoneNumber] = @p20, [PhoneNumberConfirmed] = @p21, [PhoneNumberOffice] = @p22, [ProfilePicture] = @p23, [RoleId] = @p24, [SecurityStamp] = @p25, [State] = @p26, [TwoFactorEnabled] = @p27, [UniqueMemberId] = @p28, [UserName] = @p29, [WorkStatus] = @p30, [WorkStatusModifiedOn] = @p31, [ZipCode] = @p32
+WHERE [Id] = @p33 AND [ConcurrencyStamp] = @p34;
+SELECT @@ROWCOUNT;
+[2023-05-30 19:41:56.681 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.Response'.
+[2023-05-30 19:41:56.685 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API) in 1364.9512ms
+[2023-05-30 19:41:56.685 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:56.685 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 1367.0376ms
+[2023-05-30 19:41:56.771 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:41:56.771 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:56.771 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:41:56.771 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:41:56.999 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:41:56.999 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:41:56.999 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.4671ms
+[2023-05-30 19:41:56.999 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:56.999 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 228.8184ms
+[2023-05-30 19:41:58.297 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:41:58.297 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:58.297 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:41:58.298 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:41:58.298 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.1995ms
+[2023-05-30 19:41:58.298 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:41:58.298 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 1.0501ms
+[2023-05-30 19:42:11.240 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:42:11.241 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:42:11.241 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:42:11.241 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:42:11.470 +05:30  INF]  Executed DbCommand (229ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:42:11.471 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:42:11.471 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 230.4852ms
+[2023-05-30 19:42:11.471 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:42:11.472 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 231.1831ms
+[2023-05-30 19:42:12.342 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:42:12.342 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:42:12.342 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:42:12.342 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:42:12.570 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:42:12.570 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:42:12.571 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.7375ms
+[2023-05-30 19:42:12.571 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:42:12.571 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 229.1293ms
+[2023-05-30 19:42:12.626 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:42:12.626 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:42:12.626 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:42:12.627 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:42:12.854 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:42:12.855 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:42:12.855 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.423ms
+[2023-05-30 19:42:12.855 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:42:12.855 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 228.7934ms
+[2023-05-30 19:42:15.563 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 -
+[2023-05-30 19:42:15.563 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:42:15.563 +05:30  INF]  Route matched with {action = "UpdateBasicInfo", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.Response] UpdateBasicInfo(KopkeHome_ModelLayer.ViewModels.DashboardViewModels.UpdateBasicInfo) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:42:15.564 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:42:15.794 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+[2023-05-30 19:42:16.022 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2023-05-30 19:42:16.481 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@p33='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p34='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (DbType = DateTimeOffset), @p16='?' (DbType = DateTime2), @p17='?' (Size = 256), @p18='?' (Size = 256), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Boolean), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Int32), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Boolean), @p28='?' (DbType = Int64), @p29='?' (Size = 256), @p30='?' (DbType = Int32), @p31='?' (DbType = DateTime2), @p32='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [BusinessAddress] = @p1, [BusinessName] = @p2, [City] = @p3, [ConcurrencyStamp] = @p4, [CreatedOn] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FirstName] = @p8, [HeardAboutProhzFrom] = @p9, [IsDeleted] = @p10, [IsDocumentsVerified] = @p11, [IsEmailVerified] = @p12, [LastName] = @p13, [LockoutEnabled] = @p14, [LockoutEnd] = @p15, [ModifiedOn] = @p16, [NormalizedEmail] = @p17, [NormalizedUserName] = @p18, [PasswordHash] = @p19, [PhoneNumber] = @p20, [PhoneNumberConfirmed] = @p21, [PhoneNumberOffice] = @p22, [ProfilePicture] = @p23, [RoleId] = @p24, [SecurityStamp] = @p25, [State] = @p26, [TwoFactorEnabled] = @p27, [UniqueMemberId] = @p28, [UserName] = @p29, [WorkStatus] = @p30, [WorkStatusModifiedOn] = @p31, [ZipCode] = @p32
+WHERE [Id] = @p33 AND [ConcurrencyStamp] = @p34;
+SELECT @@ROWCOUNT;
+[2023-05-30 19:42:16.710 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.Response'.
+[2023-05-30 19:42:16.710 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API) in 1147.3861ms
+[2023-05-30 19:42:16.711 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:42:16.711 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 1147.7200ms
+[2023-05-30 19:42:16.770 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:42:16.770 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:42:16.770 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:42:16.771 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:42:16.999 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:42:16.999 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:42:16.999 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.5298ms
+[2023-05-30 19:42:16.999 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:42:16.999 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 228.8546ms
+[2023-05-30 19:42:18.082 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:42:18.082 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:42:18.082 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:42:18.082 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:42:18.082 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.1939ms
+[2023-05-30 19:42:18.082 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:42:18.082 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 0.6634ms
+[2023-05-30 19:45:13.978 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:45:13.978 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:45:13.979 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:45:13.979 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:45:14.208 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:45:14.238 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:45:14.239 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 260.43ms
+[2023-05-30 19:45:14.239 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:45:14.239 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 260.9912ms
+[2023-05-30 19:45:14.799 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:45:14.799 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:45:14.799 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:45:14.800 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:45:15.028 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:45:15.028 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:45:15.028 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 229.0273ms
+[2023-05-30 19:45:15.028 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:45:15.028 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 229.3479ms
+[2023-05-30 19:45:15.178 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:45:15.178 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:45:15.178 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:45:15.179 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:45:15.407 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:45:15.407 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:45:15.407 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.8681ms
+[2023-05-30 19:45:15.407 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:45:15.407 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 229.2173ms
+[2023-05-30 19:45:40.237 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 -
+[2023-05-30 19:45:40.237 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:45:40.237 +05:30  INF]  Route matched with {action = "UpdateBasicInfo", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.Response] UpdateBasicInfo(KopkeHome_ModelLayer.ViewModels.DashboardViewModels.UpdateBasicInfo) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:45:40.238 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:45:40.467 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+[2023-05-30 19:45:40.696 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2023-05-30 19:45:41.152 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@p33='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p34='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (DbType = DateTimeOffset), @p16='?' (DbType = DateTime2), @p17='?' (Size = 256), @p18='?' (Size = 256), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Boolean), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Int32), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Boolean), @p28='?' (DbType = Int64), @p29='?' (Size = 256), @p30='?' (DbType = Int32), @p31='?' (DbType = DateTime2), @p32='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [BusinessAddress] = @p1, [BusinessName] = @p2, [City] = @p3, [ConcurrencyStamp] = @p4, [CreatedOn] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FirstName] = @p8, [HeardAboutProhzFrom] = @p9, [IsDeleted] = @p10, [IsDocumentsVerified] = @p11, [IsEmailVerified] = @p12, [LastName] = @p13, [LockoutEnabled] = @p14, [LockoutEnd] = @p15, [ModifiedOn] = @p16, [NormalizedEmail] = @p17, [NormalizedUserName] = @p18, [PasswordHash] = @p19, [PhoneNumber] = @p20, [PhoneNumberConfirmed] = @p21, [PhoneNumberOffice] = @p22, [ProfilePicture] = @p23, [RoleId] = @p24, [SecurityStamp] = @p25, [State] = @p26, [TwoFactorEnabled] = @p27, [UniqueMemberId] = @p28, [UserName] = @p29, [WorkStatus] = @p30, [WorkStatusModifiedOn] = @p31, [ZipCode] = @p32
+WHERE [Id] = @p33 AND [ConcurrencyStamp] = @p34;
+SELECT @@ROWCOUNT;
+[2023-05-30 19:45:41.381 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.Response'.
+[2023-05-30 19:45:41.381 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API) in 1143.3355ms
+[2023-05-30 19:45:41.381 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:45:41.381 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 1143.7771ms
+[2023-05-30 19:45:41.525 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:45:41.525 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:45:41.525 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:45:41.526 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:45:41.754 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:45:41.754 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:45:41.754 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.6345ms
+[2023-05-30 19:45:41.754 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:45:41.754 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 228.9983ms
+[2023-05-30 19:45:43.588 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:45:43.589 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:45:43.589 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:45:43.589 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:45:43.589 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.2265ms
+[2023-05-30 19:45:43.589 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:45:43.589 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 0.8468ms
+[2023-05-30 19:46:18.981 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:46:18.982 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:46:18.982 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:46:18.982 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:46:19.210 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:46:19.210 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:46:19.210 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.4904ms
+[2023-05-30 19:46:19.210 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:46:19.210 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 228.8888ms
+[2023-05-30 19:46:24.592 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:46:24.592 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:46:24.592 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:46:24.592 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:46:24.820 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:46:24.820 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:46:24.820 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.5367ms
+[2023-05-30 19:46:24.820 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:46:24.821 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 228.8916ms
+[2023-05-30 19:46:24.901 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:46:24.901 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:46:24.901 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:46:24.901 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:46:25.129 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:46:25.130 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:46:25.130 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 229.6305ms
+[2023-05-30 19:46:25.131 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:46:25.131 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 230.2430ms
+[2023-05-30 19:46:36.551 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 -
+[2023-05-30 19:46:36.551 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:46:36.552 +05:30  INF]  Route matched with {action = "UpdateBasicInfo", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.Response] UpdateBasicInfo(KopkeHome_ModelLayer.ViewModels.DashboardViewModels.UpdateBasicInfo) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:46:36.552 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:46:36.783 +05:30  INF]  Executed DbCommand (230ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+[2023-05-30 19:46:37.012 +05:30  INF]  Executed DbCommand (229ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2023-05-30 19:46:37.468 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@p33='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p34='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (DbType = DateTimeOffset), @p16='?' (DbType = DateTime2), @p17='?' (Size = 256), @p18='?' (Size = 256), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Boolean), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Int32), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Boolean), @p28='?' (DbType = Int64), @p29='?' (Size = 256), @p30='?' (DbType = Int32), @p31='?' (DbType = DateTime2), @p32='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [BusinessAddress] = @p1, [BusinessName] = @p2, [City] = @p3, [ConcurrencyStamp] = @p4, [CreatedOn] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FirstName] = @p8, [HeardAboutProhzFrom] = @p9, [IsDeleted] = @p10, [IsDocumentsVerified] = @p11, [IsEmailVerified] = @p12, [LastName] = @p13, [LockoutEnabled] = @p14, [LockoutEnd] = @p15, [ModifiedOn] = @p16, [NormalizedEmail] = @p17, [NormalizedUserName] = @p18, [PasswordHash] = @p19, [PhoneNumber] = @p20, [PhoneNumberConfirmed] = @p21, [PhoneNumberOffice] = @p22, [ProfilePicture] = @p23, [RoleId] = @p24, [SecurityStamp] = @p25, [State] = @p26, [TwoFactorEnabled] = @p27, [UniqueMemberId] = @p28, [UserName] = @p29, [WorkStatus] = @p30, [WorkStatusModifiedOn] = @p31, [ZipCode] = @p32
+WHERE [Id] = @p33 AND [ConcurrencyStamp] = @p34;
+SELECT @@ROWCOUNT;
+[2023-05-30 19:46:37.698 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.Response'.
+[2023-05-30 19:46:37.699 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API) in 1147.0724ms
+[2023-05-30 19:46:37.699 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:46:37.699 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 1147.4559ms
+[2023-05-30 19:46:37.769 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:46:37.769 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:46:37.769 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:46:37.770 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:46:37.999 +05:30  INF]  Executed DbCommand (229ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:46:38.000 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:46:38.000 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 231.2411ms
+[2023-05-30 19:46:38.001 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:46:38.001 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 232.0015ms
+[2023-05-30 19:46:42.558 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:46:42.558 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:46:42.558 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:46:42.558 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:46:42.558 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.1748ms
+[2023-05-30 19:46:42.558 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:46:42.558 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 0.7207ms
+[2023-05-30 19:49:49.439 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:49:49.440 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:49:49.440 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:49:49.440 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:49:49.440 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.287ms
+[2023-05-30 19:49:49.440 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:49:49.440 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 1.0538ms
+[2023-05-30 19:49:50.035 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:49:50.035 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:49:50.035 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:49:50.035 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:49:50.035 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.2273ms
+[2023-05-30 19:49:50.035 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:49:50.035 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 0.7465ms
+[2023-05-30 19:49:51.273 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:49:51.273 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:49:51.273 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:49:51.273 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:49:51.273 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.1789ms
+[2023-05-30 19:49:51.273 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:49:51.273 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 0.5958ms
+[2023-05-30 19:49:51.749 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:49:51.749 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:49:51.749 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:49:51.749 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:49:51.749 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.2639ms
+[2023-05-30 19:49:51.749 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:49:51.750 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 0.7307ms
+[2023-05-30 19:49:57.046 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:49:57.046 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:49:57.046 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:49:57.047 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:49:57.047 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.1631ms
+[2023-05-30 19:49:57.047 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:49:57.047 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 0.7157ms
+[2023-05-30 19:49:59.671 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:49:59.671 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:49:59.671 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:49:59.672 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:49:59.900 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:49:59.901 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:49:59.903 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 232.4141ms
+[2023-05-30 19:49:59.904 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:49:59.904 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 233.1381ms
+[2023-05-30 19:50:02.000 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:50:02.000 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:02.000 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:02.001 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:02.231 +05:30  INF]  Executed DbCommand (230ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:50:02.232 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:50:02.232 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 232.0298ms
+[2023-05-30 19:50:02.232 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:02.233 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 232.5845ms
+[2023-05-30 19:50:02.293 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:50:02.293 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:02.293 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:02.293 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:02.537 +05:30  INF]  Executed DbCommand (243ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:50:02.537 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:50:02.538 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 244.9277ms
+[2023-05-30 19:50:02.538 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:02.538 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 245.5424ms
+[2023-05-30 19:50:07.139 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 -
+[2023-05-30 19:50:07.139 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:07.139 +05:30  INF]  Route matched with {action = "UpdateBasicInfo", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.Response] UpdateBasicInfo(KopkeHome_ModelLayer.ViewModels.DashboardViewModels.UpdateBasicInfo) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:07.140 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:07.368 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+[2023-05-30 19:50:07.598 +05:30  INF]  Executed DbCommand (229ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2023-05-30 19:50:08.055 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@p33='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p34='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (DbType = DateTimeOffset), @p16='?' (DbType = DateTime2), @p17='?' (Size = 256), @p18='?' (Size = 256), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Boolean), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Int32), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Boolean), @p28='?' (DbType = Int64), @p29='?' (Size = 256), @p30='?' (DbType = Int32), @p31='?' (DbType = DateTime2), @p32='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [BusinessAddress] = @p1, [BusinessName] = @p2, [City] = @p3, [ConcurrencyStamp] = @p4, [CreatedOn] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FirstName] = @p8, [HeardAboutProhzFrom] = @p9, [IsDeleted] = @p10, [IsDocumentsVerified] = @p11, [IsEmailVerified] = @p12, [LastName] = @p13, [LockoutEnabled] = @p14, [LockoutEnd] = @p15, [ModifiedOn] = @p16, [NormalizedEmail] = @p17, [NormalizedUserName] = @p18, [PasswordHash] = @p19, [PhoneNumber] = @p20, [PhoneNumberConfirmed] = @p21, [PhoneNumberOffice] = @p22, [ProfilePicture] = @p23, [RoleId] = @p24, [SecurityStamp] = @p25, [State] = @p26, [TwoFactorEnabled] = @p27, [UniqueMemberId] = @p28, [UserName] = @p29, [WorkStatus] = @p30, [WorkStatusModifiedOn] = @p31, [ZipCode] = @p32
+WHERE [Id] = @p33 AND [ConcurrencyStamp] = @p34;
+SELECT @@ROWCOUNT;
+[2023-05-30 19:50:08.285 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.Response'.
+[2023-05-30 19:50:08.286 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API) in 1146.3487ms
+[2023-05-30 19:50:08.286 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:08.286 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 1146.9199ms
+[2023-05-30 19:50:08.350 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:50:08.350 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:08.350 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:08.350 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:08.579 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:50:08.580 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:50:08.580 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 230.0912ms
+[2023-05-30 19:50:08.580 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:08.581 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 230.7999ms
+[2023-05-30 19:50:09.147 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:50:09.147 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:09.147 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:09.147 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:50:09.147 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.1586ms
+[2023-05-30 19:50:09.147 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:09.147 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 0.5912ms
+[2023-05-30 19:50:11.429 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:50:11.429 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:11.429 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:11.430 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:11.657 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:50:11.657 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:50:11.658 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.6985ms
+[2023-05-30 19:50:11.658 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:11.658 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 229.1195ms
+[2023-05-30 19:50:12.426 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:50:12.426 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:12.426 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:12.426 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:12.654 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:50:12.654 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:50:12.654 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.4115ms
+[2023-05-30 19:50:12.654 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:12.654 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 228.6732ms
+[2023-05-30 19:50:12.725 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:50:12.725 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:12.725 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:12.726 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:12.954 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:50:12.954 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:50:12.954 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.8246ms
+[2023-05-30 19:50:12.954 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:12.954 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 229.1351ms
+[2023-05-30 19:50:18.143 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 -
+[2023-05-30 19:50:18.143 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:18.143 +05:30  INF]  Route matched with {action = "UpdateBasicInfo", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.Response] UpdateBasicInfo(KopkeHome_ModelLayer.ViewModels.DashboardViewModels.UpdateBasicInfo) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:18.144 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:18.372 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+[2023-05-30 19:50:18.601 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2023-05-30 19:50:19.058 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@p33='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p34='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (DbType = DateTimeOffset), @p16='?' (DbType = DateTime2), @p17='?' (Size = 256), @p18='?' (Size = 256), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Boolean), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Int32), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Boolean), @p28='?' (DbType = Int64), @p29='?' (Size = 256), @p30='?' (DbType = Int32), @p31='?' (DbType = DateTime2), @p32='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [BusinessAddress] = @p1, [BusinessName] = @p2, [City] = @p3, [ConcurrencyStamp] = @p4, [CreatedOn] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FirstName] = @p8, [HeardAboutProhzFrom] = @p9, [IsDeleted] = @p10, [IsDocumentsVerified] = @p11, [IsEmailVerified] = @p12, [LastName] = @p13, [LockoutEnabled] = @p14, [LockoutEnd] = @p15, [ModifiedOn] = @p16, [NormalizedEmail] = @p17, [NormalizedUserName] = @p18, [PasswordHash] = @p19, [PhoneNumber] = @p20, [PhoneNumberConfirmed] = @p21, [PhoneNumberOffice] = @p22, [ProfilePicture] = @p23, [RoleId] = @p24, [SecurityStamp] = @p25, [State] = @p26, [TwoFactorEnabled] = @p27, [UniqueMemberId] = @p28, [UserName] = @p29, [WorkStatus] = @p30, [WorkStatusModifiedOn] = @p31, [ZipCode] = @p32
+WHERE [Id] = @p33 AND [ConcurrencyStamp] = @p34;
+SELECT @@ROWCOUNT;
+[2023-05-30 19:50:19.287 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.Response'.
+[2023-05-30 19:50:19.287 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API) in 1144.062ms
+[2023-05-30 19:50:19.287 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:19.288 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 1144.6485ms
+[2023-05-30 19:50:19.349 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:50:19.350 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:19.350 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:19.350 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:19.579 +05:30  INF]  Executed DbCommand (229ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:50:19.579 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:50:19.579 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 229.7368ms
+[2023-05-30 19:50:19.579 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:19.580 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 230.0374ms
+[2023-05-30 19:50:20.098 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:50:20.098 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:20.098 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:20.098 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:50:20.098 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.1745ms
+[2023-05-30 19:50:20.098 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:20.098 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 0.5742ms
+[2023-05-30 19:50:22.463 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:50:22.463 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:22.463 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:22.464 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:22.692 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:50:22.692 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:50:22.692 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.6939ms
+[2023-05-30 19:50:22.692 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:22.692 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 228.9943ms
+[2023-05-30 19:50:23.643 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:50:23.643 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:23.643 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:23.643 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:23.871 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:50:23.872 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:50:23.873 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 229.5459ms
+[2023-05-30 19:50:23.873 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:23.873 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 229.8594ms
+[2023-05-30 19:50:23.926 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:50:23.926 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:23.926 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:23.926 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:24.154 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:50:24.154 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:50:24.154 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 228.2688ms
+[2023-05-30 19:50:24.154 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:24.154 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 228.5459ms
+[2023-05-30 19:50:32.522 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 -
+[2023-05-30 19:50:32.522 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:32.522 +05:30  INF]  Route matched with {action = "UpdateBasicInfo", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.Response] UpdateBasicInfo(KopkeHome_ModelLayer.ViewModels.DashboardViewModels.UpdateBasicInfo) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:32.522 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:32.751 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+[2023-05-30 19:50:32.981 +05:30  INF]  Executed DbCommand (229ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2023-05-30 19:50:33.439 +05:30  INF]  Executed DbCommand (228ms) [Parameters=[@p33='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p34='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (DbType = DateTimeOffset), @p16='?' (DbType = DateTime2), @p17='?' (Size = 256), @p18='?' (Size = 256), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Boolean), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (DbType = Int32), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (DbType = Boolean), @p28='?' (DbType = Int64), @p29='?' (Size = 256), @p30='?' (DbType = Int32), @p31='?' (DbType = DateTime2), @p32='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [BusinessAddress] = @p1, [BusinessName] = @p2, [City] = @p3, [ConcurrencyStamp] = @p4, [CreatedOn] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FirstName] = @p8, [HeardAboutProhzFrom] = @p9, [IsDeleted] = @p10, [IsDocumentsVerified] = @p11, [IsEmailVerified] = @p12, [LastName] = @p13, [LockoutEnabled] = @p14, [LockoutEnd] = @p15, [ModifiedOn] = @p16, [NormalizedEmail] = @p17, [NormalizedUserName] = @p18, [PasswordHash] = @p19, [PhoneNumber] = @p20, [PhoneNumberConfirmed] = @p21, [PhoneNumberOffice] = @p22, [ProfilePicture] = @p23, [RoleId] = @p24, [SecurityStamp] = @p25, [State] = @p26, [TwoFactorEnabled] = @p27, [UniqueMemberId] = @p28, [UserName] = @p29, [WorkStatus] = @p30, [WorkStatusModifiedOn] = @p31, [ZipCode] = @p32
+WHERE [Id] = @p33 AND [ConcurrencyStamp] = @p34;
+SELECT @@ROWCOUNT;
+[2023-05-30 19:50:33.668 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.Response'.
+[2023-05-30 19:50:33.668 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API) in 1146.2136ms
+[2023-05-30 19:50:33.668 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.UpdateBasicInfo (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:33.669 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/UpdateBasicInfo application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 1146.8229ms
+[2023-05-30 19:50:33.723 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 19:50:33.723 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:33.723 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:33.723 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 19:50:33.952 +05:30  INF]  Executed DbCommand (229ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 19:50:33.952 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 19:50:33.953 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 229.8266ms
+[2023-05-30 19:50:33.953 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:33.953 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 230.1032ms
+[2023-05-30 19:50:34.874 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 19:50:34.874 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:34.874 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 19:50:34.874 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 19:50:34.874 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.1695ms
+[2023-05-30 19:50:34.874 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 19:50:34.874 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 0.6244ms
+[2023-05-30 22:14:31.985 +05:30  INF]  User profile is available. Using 'C:\Users\arshadm\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-05-30 22:14:32.227 +05:30  INF]  Now listening on: https://localhost:7215
+[2023-05-30 22:14:32.227 +05:30  INF]  Now listening on: http://localhost:5215
+[2023-05-30 22:14:32.230 +05:30  INF]  Application started. Press Ctrl+C to shut down.
+[2023-05-30 22:14:32.230 +05:30  INF]  Hosting environment: Development
+[2023-05-30 22:14:32.230 +05:30  INF]  Content root path: D:\KopkeHome-FMRS\KopkeHome-FMRS_API\
+[2023-05-30 22:14:39.404 +05:30  INF]  Request starting HTTP/2 GET https://localhost:7215/swagger/index.html - -
+[2023-05-30 22:14:39.679 +05:30  INF]  Request finished HTTP/2 GET https://localhost:7215/swagger/index.html - - - 200 - text/html;charset=utf-8 276.9958ms
+[2023-05-30 22:14:39.789 +05:30  INF]  Request starting HTTP/2 GET https://localhost:7215/_framework/aspnetcore-browser-refresh.js - -
+[2023-05-30 22:14:39.792 +05:30  INF]  Request finished HTTP/2 GET https://localhost:7215/_framework/aspnetcore-browser-refresh.js - - - 200 11952 application/javascript;+charset=utf-8 2.3151ms
+[2023-05-30 22:14:39.943 +05:30  INF]  Request starting HTTP/2 GET https://localhost:7215/swagger/v1/swagger.json - -
+[2023-05-30 22:14:40.076 +05:30  INF]  Request finished HTTP/2 GET https://localhost:7215/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 132.7015ms
+[2023-05-30 22:14:40.461 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - -
+[2023-05-30 22:14:40.461 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - -
+[2023-05-30 22:14:40.471 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 22:14:40.471 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 22:14:40.484 +05:30  INF]  Route matched with {action = "GetAllPromoVideos", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.PromoVideos]] GetAllPromoVideos() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 22:14:40.659 +05:30  INF]  Route matched with {action = "GetAllProhzLegalFiles", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles]] GetAllProhzLegalFiles() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 22:14:41.533 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 22:14:41.533 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 22:14:43.265 +05:30  INF]  Executed DbCommand (242ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FileName], [p].[FilePath], [p].[IsActive], [p].[OriginalName]
+FROM [PromoVideos] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+[2023-05-30 22:14:43.289 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.PromoVideos, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 22:14:43.297 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API) in 2807.4431ms
+[2023-05-30 22:14:43.299 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 22:14:43.303 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - - - 200 - application/json;+charset=utf-8 2842.4069ms
+[2023-05-30 22:14:43.325 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 22:14:43.327 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 22:14:43.329 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 22:14:43.379 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 22:14:43.600 +05:30  INF]  Executed DbCommand (217ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 22:14:43.604 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 22:14:43.605 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 275.8215ms
+[2023-05-30 22:14:43.605 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 22:14:43.605 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 280.4913ms
+[2023-05-30 22:14:44.111 +05:30  INF]  Executed DbCommand (220ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FilePath], [p].[FileType], [p].[Name]
+FROM [ProhzLegalFiles] AS [p]
+[2023-05-30 22:14:44.113 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 22:14:44.114 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API) in 3454.1116ms
+[2023-05-30 22:14:44.114 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 22:14:44.114 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - - - 200 - application/json;+charset=utf-8 3652.7801ms
+[2023-05-30 22:14:47.785 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/SignIn application/json;+charset=utf-8 -
+[2023-05-30 22:14:47.788 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.SignIn (KopkeHome-FMRS_API)'
+[2023-05-30 22:14:47.796 +05:30  INF]  Route matched with {action = "SignIn", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.Response] SignIn(KopkeHome_ModelLayer.SignIn) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 22:14:47.826 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 22:14:48.085 +05:30  INF]  Executed DbCommand (233ms) [Parameters=[@__ISignIn_Email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE (([a].[Email] = @__ISignIn_Email_0) AND ([a].[IsEmailVerified] = CAST(1 AS bit))) AND ([a].[IsDeleted] = CAST(0 AS bit))
+[2023-05-30 22:14:48.316 +05:30  INF]  Executed DbCommand (220ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[2023-05-30 22:14:48.559 +05:30  INF]  Executed DbCommand (220ms) [Parameters=[@__userModel_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AmEx], [b].[BusinessDescription], [b].[BusinessOrTradeLicenseFiles], [b].[CommercialLocationContractor], [b].[CompanyWebsiteURL], [b].[CreatedOn], [b].[DesignServices], [b].[EstimateCharge], [b].[FacebookPageURL], [b].[Is24HoursPhoneAnswering], [b].[IsBusinessOrTradeLicense], [b].[IsCash], [b].[IsCompanyWebsite], [b].[IsContactedByContractors], [b].[IsContactedByHomeowners], [b].[IsDesignServices], [b].[IsEstimateCharge], [b].[IsFacebookPage], [b].[IsLiabilityInsurance], [b].[IsOfferEmergencyServices], [b].[IsPaymentApps], [b].[IsPhoneCallSupport], [b].[IsWorkmanCompensationInsurance], [b].[JobSiteCrews], [b].[LiabilityInsuranceFile], [b].[MC], [b].[ModifiedOn], [b].[NormalBusinessHours], [b].[NumberOfEmployees], [b].[OtherCreditCard], [b].[PersonalChecks], [b].[ProfilePicture], [b].[ServiceCallCharge], [b].[UserId], [b].[VerificationStatus], [b].[Visa], [b].[WhichPaymentApps], [b].[WorkmanCompensationInsuranceFile], [b].[YearsInBusiness]
+FROM [BusinessProfileOtherContractors] AS [b]
+WHERE [b].[UserId] = @__userModel_Id_0
+[2023-05-30 22:14:48.783 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[@__userModel_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CancelledOn], [u].[CreatedOn], [u].[DowngradedOn], [u].[Email], [u].[Extensions], [u].[InvoiceNumber], [u].[InvoiceUrl], [u].[IsActive], [u].[PaymentStatus], [u].[PeriodEndDate], [u].[PeriodStartDate], [u].[PlanId], [u].[StripeCustomerID], [u].[StripePriceId], [u].[StripeStatus], [u].[StripeSubscriptionId], [u].[UpgradedOn], [u].[UserId]
+FROM [UserMembershipSubscriptions] AS [u]
+WHERE ([u].[UserId] = @__userModel_Id_0) AND ([u].[IsActive] = CAST(1 AS bit))
+[2023-05-30 22:14:50.122 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CategoriesId], [u].[PlanId], [u].[UserId]
+FROM [UserMembershipCategories] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+[2023-05-30 22:14:50.345 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[PlanId], [u].[UserId], [u].[ZipCodeId]
+FROM [UserMembershipZipcodes] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+[2023-05-30 22:14:50.567 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CategoriesId], [u].[PlanId], [u].[UserId]
+FROM [UserMembershipCategories] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+[2023-05-30 22:14:50.790 +05:30  INF]  Executed DbCommand (220ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CancelledOn], [u].[CreatedOn], [u].[DowngradedOn], [u].[Email], [u].[Extensions], [u].[InvoiceNumber], [u].[InvoiceUrl], [u].[IsActive], [u].[PaymentStatus], [u].[PeriodEndDate], [u].[PeriodStartDate], [u].[PlanId], [u].[StripeCustomerID], [u].[StripePriceId], [u].[StripeStatus], [u].[StripeSubscriptionId], [u].[UpgradedOn], [u].[UserId]
+FROM [UserMembershipSubscriptions] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+[2023-05-30 22:14:50.871 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.Response'.
+[2023-05-30 22:14:50.873 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.SignIn (KopkeHome-FMRS_API) in 3076.7708ms
+[2023-05-30 22:14:50.873 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.SignIn (KopkeHome-FMRS_API)'
+[2023-05-30 22:14:50.873 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/SignIn application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 3088.1985ms
+[2023-05-30 22:14:50.880 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/GetUserByEmail application/x-www-form-urlencoded 33
+[2023-05-30 22:14:50.881 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetUserByEmail (KopkeHome-FMRS_API)'
+[2023-05-30 22:14:50.883 +05:30  INF]  Route matched with {action = "GetUserByEmail", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetUserByEmail(System.String) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 22:14:50.889 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 22:14:51.112 +05:30  INF]  Executed DbCommand (220ms) [Parameters=[@__Email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE (([a].[Email] = @__Email_0) AND ([a].[IsEmailVerified] = CAST(1 AS bit))) AND ([a].[IsDeleted] = CAST(0 AS bit))
+[2023-05-30 22:14:51.112 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.DataModel.User'.
+[2023-05-30 22:14:51.120 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetUserByEmail (KopkeHome-FMRS_API) in 236.9724ms
+[2023-05-30 22:14:51.120 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetUserByEmail (KopkeHome-FMRS_API)'
+[2023-05-30 22:14:51.120 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/GetUserByEmail application/x-www-form-urlencoded 33 - 200 - application/json;+charset=utf-8 239.4868ms
+[2023-05-30 22:14:51.207 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 22:14:51.266 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 22:14:51.267 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 22:14:51.268 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 22:14:51.268 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.7123ms
+[2023-05-30 22:14:51.268 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 22:14:51.268 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 60.4407ms
+[2023-05-30 22:15:09.068 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 22:15:09.068 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 22:15:09.068 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 22:15:09.068 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 22:15:09.288 +05:30  INF]  Executed DbCommand (220ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 22:15:09.289 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 22:15:09.290 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 222.0625ms
+[2023-05-30 22:15:09.290 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 22:15:09.291 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 222.9084ms
+[2023-05-30 22:15:14.123 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 22:15:14.124 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 22:15:14.124 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 22:15:14.124 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 22:15:14.344 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 22:15:14.344 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 22:15:14.344 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 220.3521ms
+[2023-05-30 22:15:14.344 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 22:15:14.344 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 220.7440ms
+[2023-05-30 22:15:15.903 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - -
+[2023-05-30 22:15:15.903 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - -
+[2023-05-30 22:15:15.907 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 22:15:15.907 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 22:15:15.907 +05:30  INF]  Route matched with {action = "GetAllProhzLegalFiles", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles]] GetAllProhzLegalFiles() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 22:15:15.907 +05:30  INF]  Route matched with {action = "GetAllPromoVideos", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.PromoVideos]] GetAllPromoVideos() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 22:15:15.909 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 22:15:15.909 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 22:15:16.128 +05:30  INF]  Executed DbCommand (216ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FileName], [p].[FilePath], [p].[IsActive], [p].[OriginalName]
+FROM [PromoVideos] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+[2023-05-30 22:15:16.128 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.PromoVideos, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 22:15:16.128 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FilePath], [p].[FileType], [p].[Name]
+FROM [ProhzLegalFiles] AS [p]
+[2023-05-30 22:15:16.128 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API) in 220.5555ms
+[2023-05-30 22:15:16.128 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 22:15:16.128 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 22:15:16.128 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API) in 220.6803ms
+[2023-05-30 22:15:16.128 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 22:15:16.128 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - - - 200 - application/json;+charset=utf-8 225.0627ms
+[2023-05-30 22:15:16.128 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - - - 200 - application/json;+charset=utf-8 224.9734ms
+[2023-05-30 23:18:27.636 +05:30  INF]  User profile is available. Using 'C:\Users\arshadm\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-05-30 23:18:28.450 +05:30  INF]  Now listening on: https://localhost:7215
+[2023-05-30 23:18:28.450 +05:30  INF]  Now listening on: http://localhost:5215
+[2023-05-30 23:18:28.453 +05:30  INF]  Application started. Press Ctrl+C to shut down.
+[2023-05-30 23:18:28.453 +05:30  INF]  Hosting environment: Development
+[2023-05-30 23:18:28.454 +05:30  INF]  Content root path: D:\KopkeHome-FMRS\KopkeHome-FMRS_API\
+[2023-05-30 23:18:37.943 +05:30  INF]  Request starting HTTP/2 GET https://localhost:7215/swagger/index.html - -
+[2023-05-30 23:18:39.164 +05:30  INF]  Request finished HTTP/2 GET https://localhost:7215/swagger/index.html - - - 200 - text/html;charset=utf-8 1220.1450ms
+[2023-05-30 23:18:39.485 +05:30  INF]  Request starting HTTP/2 GET https://localhost:7215/_framework/aspnetcore-browser-refresh.js - -
+[2023-05-30 23:18:39.487 +05:30  INF]  Request finished HTTP/2 GET https://localhost:7215/_framework/aspnetcore-browser-refresh.js - - - 200 11952 application/javascript;+charset=utf-8 1.9305ms
+[2023-05-30 23:18:40.595 +05:30  INF]  Request starting HTTP/2 GET https://localhost:7215/swagger/v1/swagger.json - -
+[2023-05-30 23:18:40.704 +05:30  INF]  Request finished HTTP/2 GET https://localhost:7215/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 109.2415ms
+[2023-05-30 23:18:41.607 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - -
+[2023-05-30 23:18:41.607 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - -
+[2023-05-30 23:18:41.617 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:41.617 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:41.629 +05:30  INF]  Route matched with {action = "GetAllProhzLegalFiles", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles]] GetAllProhzLegalFiles() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:18:41.629 +05:30  INF]  Route matched with {action = "GetAllPromoVideos", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.PromoVideos]] GetAllPromoVideos() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:18:42.791 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:18:42.791 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:18:45.150 +05:30  INF]  Executed DbCommand (235ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FilePath], [p].[FileType], [p].[Name]
+FROM [ProhzLegalFiles] AS [p]
+[2023-05-30 23:18:45.180 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:18:45.203 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API) in 3562.3199ms
+[2023-05-30 23:18:45.203 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:45.208 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - - - 200 - application/json;+charset=utf-8 3592.3573ms
+[2023-05-30 23:18:46.007 +05:30  INF]  Executed DbCommand (221ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FileName], [p].[FilePath], [p].[IsActive], [p].[OriginalName]
+FROM [PromoVideos] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+[2023-05-30 23:18:46.008 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.PromoVideos, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:18:46.008 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API) in 4369.3909ms
+[2023-05-30 23:18:46.008 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:46.008 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - - - 200 - application/json;+charset=utf-8 4391.1872ms
+[2023-05-30 23:18:51.053 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - -
+[2023-05-30 23:18:51.053 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - -
+[2023-05-30 23:18:51.061 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.061 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.061 +05:30  INF]  Route matched with {action = "GetAllProhzLegalFiles", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles]] GetAllProhzLegalFiles() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:18:51.061 +05:30  INF]  Route matched with {action = "GetAllPromoVideos", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.PromoVideos]] GetAllPromoVideos() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:18:51.106 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:18:51.106 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:18:51.187 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - -
+[2023-05-30 23:18:51.187 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.187 +05:30  INF]  Route matched with {action = "GetAllProhzLegalFiles", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles]] GetAllProhzLegalFiles() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:18:51.187 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:18:51.322 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - -
+[2023-05-30 23:18:51.323 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.323 +05:30  INF]  Route matched with {action = "GetAllPromoVideos", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.PromoVideos]] GetAllPromoVideos() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:18:51.323 +05:30  INF]  Executed DbCommand (213ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FileName], [p].[FilePath], [p].[IsActive], [p].[OriginalName]
+FROM [PromoVideos] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+[2023-05-30 23:18:51.323 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.PromoVideos, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:18:51.323 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API) in 261.175ms
+[2023-05-30 23:18:51.323 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.323 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - - - 200 - application/json;+charset=utf-8 269.2988ms
+[2023-05-30 23:18:51.324 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:18:51.329 +05:30  INF]  Executed DbCommand (221ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FilePath], [p].[FileType], [p].[Name]
+FROM [ProhzLegalFiles] AS [p]
+[2023-05-30 23:18:51.329 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:18:51.330 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API) in 267.8507ms
+[2023-05-30 23:18:51.330 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.330 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - - - 200 - application/json;+charset=utf-8 275.6666ms
+[2023-05-30 23:18:51.484 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - -
+[2023-05-30 23:18:51.484 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - -
+[2023-05-30 23:18:51.484 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.484 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.485 +05:30  INF]  Route matched with {action = "GetAllPromoVideos", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.PromoVideos]] GetAllPromoVideos() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:18:51.485 +05:30  INF]  Route matched with {action = "GetAllProhzLegalFiles", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles]] GetAllProhzLegalFiles() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:18:51.485 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:18:51.486 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:18:51.537 +05:30  INF]  Executed DbCommand (213ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FileName], [p].[FilePath], [p].[IsActive], [p].[OriginalName]
+FROM [PromoVideos] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+[2023-05-30 23:18:51.537 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.PromoVideos, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:18:51.538 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API) in 214.4677ms
+[2023-05-30 23:18:51.538 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.538 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - - - 200 - application/json;+charset=utf-8 215.0343ms
+[2023-05-30 23:18:51.706 +05:30  INF]  Executed DbCommand (220ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FilePath], [p].[FileType], [p].[Name]
+FROM [ProhzLegalFiles] AS [p]
+[2023-05-30 23:18:51.706 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:18:51.706 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API) in 221.1082ms
+[2023-05-30 23:18:51.706 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.706 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - - - 200 - application/json;+charset=utf-8 221.5345ms
+[2023-05-30 23:18:51.750 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - -
+[2023-05-30 23:18:51.752 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.752 +05:30  INF]  Route matched with {action = "GetAllProhzLegalFiles", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles]] GetAllProhzLegalFiles() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:18:51.753 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - -
+[2023-05-30 23:18:51.753 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.753 +05:30  INF]  Route matched with {action = "GetAllPromoVideos", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.PromoVideos]] GetAllPromoVideos() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:18:51.753 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:18:51.754 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:18:51.966 +05:30  INF]  Executed DbCommand (212ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FileName], [p].[FilePath], [p].[IsActive], [p].[OriginalName]
+FROM [PromoVideos] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+[2023-05-30 23:18:51.966 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.PromoVideos, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:18:51.966 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API) in 212.9877ms
+[2023-05-30 23:18:51.966 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.967 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - - - 200 - application/json;+charset=utf-8 213.3594ms
+[2023-05-30 23:18:51.973 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FilePath], [p].[FileType], [p].[Name]
+FROM [ProhzLegalFiles] AS [p]
+[2023-05-30 23:18:51.973 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:18:51.974 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API) in 220.4959ms
+[2023-05-30 23:18:51.974 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:51.974 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - - - 200 - application/json;+charset=utf-8 225.2415ms
+[2023-05-30 23:18:52.483 +05:30  INF]  Executed DbCommand (211ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FilePath], [p].[FileType], [p].[Name]
+FROM [ProhzLegalFiles] AS [p]
+[2023-05-30 23:18:52.483 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:18:52.483 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API) in 1293.295ms
+[2023-05-30 23:18:52.483 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:52.483 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - - - 200 - application/json;+charset=utf-8 1293.7897ms
+[2023-05-30 23:18:52.492 +05:30  INF]  Executed DbCommand (220ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FileName], [p].[FilePath], [p].[IsActive], [p].[OriginalName]
+FROM [PromoVideos] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+[2023-05-30 23:18:52.492 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.PromoVideos, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:18:52.492 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API) in 1005.3354ms
+[2023-05-30 23:18:52.492 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:52.492 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - - - 200 - application/json;+charset=utf-8 1006.4249ms
+[2023-05-30 23:18:54.791 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 23:18:54.791 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:54.793 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 23:18:54.795 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:18:55.017 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 23:18:55.017 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:18:55.018 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 224.9499ms
+[2023-05-30 23:18:55.018 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 23:18:55.019 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 227.3818ms
+[2023-05-30 23:19:00.513 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/SignIn application/json;+charset=utf-8 -
+[2023-05-30 23:19:00.517 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.SignIn (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:00.524 +05:30  INF]  Route matched with {action = "SignIn", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.Response] SignIn(KopkeHome_ModelLayer.SignIn) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:00.614 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:19:00.881 +05:30  INF]  Executed DbCommand (234ms) [Parameters=[@__ISignIn_Email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE (([a].[Email] = @__ISignIn_Email_0) AND ([a].[IsEmailVerified] = CAST(1 AS bit))) AND ([a].[IsDeleted] = CAST(0 AS bit))
+[2023-05-30 23:19:01.128 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[2023-05-30 23:19:01.443 +05:30  INF]  Executed DbCommand (221ms) [Parameters=[@__userModel_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AmEx], [b].[BusinessDescription], [b].[BusinessOrTradeLicenseFiles], [b].[CommercialLocationContractor], [b].[CompanyWebsiteURL], [b].[CreatedOn], [b].[DesignServices], [b].[EstimateCharge], [b].[FacebookPageURL], [b].[Is24HoursPhoneAnswering], [b].[IsBusinessOrTradeLicense], [b].[IsCash], [b].[IsCompanyWebsite], [b].[IsContactedByContractors], [b].[IsContactedByHomeowners], [b].[IsDesignServices], [b].[IsEstimateCharge], [b].[IsFacebookPage], [b].[IsLiabilityInsurance], [b].[IsOfferEmergencyServices], [b].[IsPaymentApps], [b].[IsPhoneCallSupport], [b].[IsWorkmanCompensationInsurance], [b].[JobSiteCrews], [b].[LiabilityInsuranceFile], [b].[MC], [b].[ModifiedOn], [b].[NormalBusinessHours], [b].[NumberOfEmployees], [b].[OtherCreditCard], [b].[PersonalChecks], [b].[ProfilePicture], [b].[ServiceCallCharge], [b].[UserId], [b].[VerificationStatus], [b].[Visa], [b].[WhichPaymentApps], [b].[WorkmanCompensationInsuranceFile], [b].[YearsInBusiness]
+FROM [BusinessProfileOtherContractors] AS [b]
+WHERE [b].[UserId] = @__userModel_Id_0
+[2023-05-30 23:19:01.668 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[@__userModel_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CancelledOn], [u].[CreatedOn], [u].[DowngradedOn], [u].[Email], [u].[Extensions], [u].[InvoiceNumber], [u].[InvoiceUrl], [u].[IsActive], [u].[PaymentStatus], [u].[PeriodEndDate], [u].[PeriodStartDate], [u].[PlanId], [u].[StripeCustomerID], [u].[StripePriceId], [u].[StripeStatus], [u].[StripeSubscriptionId], [u].[UpgradedOn], [u].[UserId]
+FROM [UserMembershipSubscriptions] AS [u]
+WHERE ([u].[UserId] = @__userModel_Id_0) AND ([u].[IsActive] = CAST(1 AS bit))
+[2023-05-30 23:19:03.094 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CategoriesId], [u].[PlanId], [u].[UserId]
+FROM [UserMembershipCategories] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+[2023-05-30 23:19:03.318 +05:30  INF]  Executed DbCommand (220ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[PlanId], [u].[UserId], [u].[ZipCodeId]
+FROM [UserMembershipZipcodes] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+[2023-05-30 23:19:03.541 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CategoriesId], [u].[PlanId], [u].[UserId]
+FROM [UserMembershipCategories] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+[2023-05-30 23:19:03.764 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CancelledOn], [u].[CreatedOn], [u].[DowngradedOn], [u].[Email], [u].[Extensions], [u].[InvoiceNumber], [u].[InvoiceUrl], [u].[IsActive], [u].[PaymentStatus], [u].[PeriodEndDate], [u].[PeriodStartDate], [u].[PlanId], [u].[StripeCustomerID], [u].[StripePriceId], [u].[StripeStatus], [u].[StripeSubscriptionId], [u].[UpgradedOn], [u].[UserId]
+FROM [UserMembershipSubscriptions] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+[2023-05-30 23:19:03.901 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.Response'.
+[2023-05-30 23:19:03.903 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.SignIn (KopkeHome-FMRS_API) in 3371.2729ms
+[2023-05-30 23:19:03.904 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.SignIn (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:03.904 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/SignIn application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 3382.9859ms
+[2023-05-30 23:19:03.922 +05:30  INF]  Request starting HTTP/1.1 POST https://localhost:7215/Account/GetUserByEmail application/x-www-form-urlencoded 28
+[2023-05-30 23:19:03.922 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetUserByEmail (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:03.924 +05:30  INF]  Route matched with {action = "GetUserByEmail", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetUserByEmail(System.String) on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:03.931 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:19:04.154 +05:30  INF]  Executed DbCommand (220ms) [Parameters=[@__Email_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[BusinessAddress], [a].[BusinessName], [a].[City], [a].[ConcurrencyStamp], [a].[CreatedOn], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[HeardAboutProhzFrom], [a].[IsDeleted], [a].[IsDocumentsVerified], [a].[IsEmailVerified], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ModifiedOn], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[PhoneNumberOffice], [a].[ProfilePicture], [a].[RoleId], [a].[SecurityStamp], [a].[State], [a].[TwoFactorEnabled], [a].[UniqueMemberId], [a].[UserName], [a].[WorkStatus], [a].[WorkStatusModifiedOn], [a].[ZipCode]
+FROM [AspNetUsers] AS [a]
+WHERE (([a].[Email] = @__Email_0) AND ([a].[IsEmailVerified] = CAST(1 AS bit))) AND ([a].[IsDeleted] = CAST(0 AS bit))
+[2023-05-30 23:19:04.154 +05:30  INF]  Executing ObjectResult, writing value of type 'KopkeHome_ModelLayer.DataModel.User'.
+[2023-05-30 23:19:04.161 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetUserByEmail (KopkeHome-FMRS_API) in 236.6666ms
+[2023-05-30 23:19:04.161 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetUserByEmail (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:04.161 +05:30  INF]  Request finished HTTP/1.1 POST https://localhost:7215/Account/GetUserByEmail application/x-www-form-urlencoded 28 - 200 - application/json;+charset=utf-8 239.2651ms
+[2023-05-30 23:19:04.512 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - -
+[2023-05-30 23:19:04.602 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:04.604 +05:30  INF]  Route matched with {action = "GetContractors", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[KopkeHome_ModelLayer.DataModel.User] GetContractors() on controller KopkeHome_FMRS_API.Controllers.DashboardController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:04.604 +05:30  INF]  Executing ObjectResult, writing value of type 'null'.
+[2023-05-30 23:19:04.604 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API) in 0.7099ms
+[2023-05-30 23:19:04.604 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.DashboardController.GetContractors (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:04.604 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Dashboard/GetContractors - - - 204 0 - 92.4866ms
+[2023-05-30 23:19:17.534 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 23:19:17.534 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:17.534 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:17.535 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:19:17.754 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 23:19:17.755 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:19:17.755 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 220.3525ms
+[2023-05-30 23:19:17.755 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:17.755 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 220.7293ms
+[2023-05-30 23:19:18.603 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - -
+[2023-05-30 23:19:18.603 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:18.603 +05:30  INF]  Route matched with {action = "GetAllProhzLegalFiles", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles]] GetAllProhzLegalFiles() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:18.604 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:19:18.605 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - -
+[2023-05-30 23:19:18.606 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:18.606 +05:30  INF]  Route matched with {action = "GetAllPromoVideos", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.PromoVideos]] GetAllPromoVideos() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:18.606 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:19:18.816 +05:30  INF]  Executed DbCommand (209ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FileName], [p].[FilePath], [p].[IsActive], [p].[OriginalName]
+FROM [PromoVideos] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+[2023-05-30 23:19:18.816 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.PromoVideos, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:19:18.816 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API) in 210.3482ms
+[2023-05-30 23:19:18.817 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:18.817 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - - - 200 - application/json;+charset=utf-8 211.0354ms
+[2023-05-30 23:19:18.823 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FilePath], [p].[FileType], [p].[Name]
+FROM [ProhzLegalFiles] AS [p]
+[2023-05-30 23:19:18.824 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:19:18.824 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API) in 219.6917ms
+[2023-05-30 23:19:18.824 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:18.824 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - - - 200 - application/json;+charset=utf-8 220.1062ms
+[2023-05-30 23:19:19.688 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 23:19:19.688 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:19.688 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:19.689 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:19:19.908 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 23:19:19.908 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:19:19.908 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 219.8176ms
+[2023-05-30 23:19:19.908 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:19.909 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 220.1641ms
+[2023-05-30 23:19:20.305 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - -
+[2023-05-30 23:19:20.305 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:20.305 +05:30  INF]  Route matched with {action = "GetAllProhzLegalFiles", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles]] GetAllProhzLegalFiles() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:20.305 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:19:20.311 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Account/GetStates - -
+[2023-05-30 23:19:20.311 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:20.311 +05:30  INF]  Route matched with {action = "GetStates", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.State]] GetStates() on controller KopkeHome_FMRS_API.Controllers.AccountController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:20.312 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:19:20.521 +05:30  INF]  Executed DbCommand (209ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[StateId], [s].[CountryId], [s].[StateName], [s].[USAStateCode]
+FROM [State] AS [s]
+[2023-05-30 23:19:20.522 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.State, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:19:20.523 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API) in 210.911ms
+[2023-05-30 23:19:20.523 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AccountController.GetStates (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:20.523 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Account/GetStates - - - 200 - application/json;+charset=utf-8 211.5551ms
+[2023-05-30 23:19:20.525 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FilePath], [p].[FileType], [p].[Name]
+FROM [ProhzLegalFiles] AS [p]
+[2023-05-30 23:19:20.525 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:19:20.525 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API) in 219.8249ms
+[2023-05-30 23:19:20.525 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:20.525 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - - - 200 - application/json;+charset=utf-8 220.1278ms
+[2023-05-30 23:19:22.992 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - -
+[2023-05-30 23:19:22.992 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - -
+[2023-05-30 23:19:22.992 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:22.992 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:22.992 +05:30  INF]  Route matched with {action = "GetAllPromoVideos", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.PromoVideos]] GetAllPromoVideos() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:22.992 +05:30  INF]  Route matched with {action = "GetAllProhzLegalFiles", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles]] GetAllProhzLegalFiles() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:22.992 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:19:22.992 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:19:23.202 +05:30  INF]  Executed DbCommand (209ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FileName], [p].[FilePath], [p].[IsActive], [p].[OriginalName]
+FROM [PromoVideos] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+[2023-05-30 23:19:23.203 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.PromoVideos, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:19:23.203 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API) in 210.4949ms
+[2023-05-30 23:19:23.203 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:23.203 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - - - 200 - application/json;+charset=utf-8 211.1118ms
+[2023-05-30 23:19:23.212 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FilePath], [p].[FileType], [p].[Name]
+FROM [ProhzLegalFiles] AS [p]
+[2023-05-30 23:19:23.212 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:19:23.213 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API) in 220.1312ms
+[2023-05-30 23:19:23.213 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:23.213 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - - - 200 - application/json;+charset=utf-8 220.5282ms
+[2023-05-30 23:19:23.904 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - -
+[2023-05-30 23:19:23.904 +05:30  INF]  Request starting HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - -
+[2023-05-30 23:19:23.904 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:23.904 +05:30  INF]  Executing endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:23.904 +05:30  INF]  Route matched with {action = "GetAllProhzLegalFiles", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles]] GetAllProhzLegalFiles() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:23.904 +05:30  INF]  Route matched with {action = "GetAllPromoVideos", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[KopkeHome_ModelLayer.DataModel.PromoVideos]] GetAllPromoVideos() on controller KopkeHome_FMRS_API.Controllers.AdminController (KopkeHome-FMRS_API).
+[2023-05-30 23:19:23.905 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:19:23.905 +05:30  INF]  Entity Framework Core 6.0.4 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.2' with options: NoTracking 
+[2023-05-30 23:19:24.115 +05:30  INF]  Executed DbCommand (209ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FileName], [p].[FilePath], [p].[IsActive], [p].[OriginalName]
+FROM [PromoVideos] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+[2023-05-30 23:19:24.115 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.PromoVideos, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:19:24.115 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API) in 210.5643ms
+[2023-05-30 23:19:24.116 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllPromoVideos (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:24.116 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllPromoVideos - - - 200 - application/json;+charset=utf-8 211.0759ms
+[2023-05-30 23:19:24.125 +05:30  INF]  Executed DbCommand (219ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[FilePath], [p].[FileType], [p].[Name]
+FROM [ProhzLegalFiles] AS [p]
+[2023-05-30 23:19:24.125 +05:30  INF]  Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[KopkeHome_ModelLayer.DataModel.ProhzLegalFiles, KopkeHome-ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-05-30 23:19:24.125 +05:30  INF]  Executed action KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API) in 220.3483ms
+[2023-05-30 23:19:24.125 +05:30  INF]  Executed endpoint 'KopkeHome_FMRS_API.Controllers.AdminController.GetAllProhzLegalFiles (KopkeHome-FMRS_API)'
+[2023-05-30 23:19:24.125 +05:30  INF]  Request finished HTTP/1.1 GET https://localhost:7215/Admin/GetAllProhzLegalFiles - - - 200 - application/json;+charset=utf-8 220.9148ms

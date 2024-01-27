@@ -1,0 +1,440 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.PaymentModels.CustomPlanWebViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+
+
+
+    @*
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/master.css" asp-append-version="true" />
+    <style>
+        #NumberOfZipcodes-error{
+    color: #ff0101 !important;
+    position: absolute;
+    font-size: 12px;
+     TOP: 242px; 
+    margin: 0;
+    padding: 0;
+    /* line-height: 14px; */
+    font-weight: 400;
+    z-index: 9;
+}
+#Descrption-error {
+    color: #ff0101 !important;
+    position: absolute;
+    font-size: 12px;
+    bottom: 83px;
+    margin: 0;
+    padding: 0;
+    /* line-height: 14px; */
+    font-weight: 400;
+    z-index: 9;
+}
+    </style>
+</head>
+<body>
+    
+      <div class="logo-loader " ID="CSTMLOADER" style="display:none">
+        <div class="logo-loader-pulse pulse" id="Idloader"><img src="~/images/Kopke-brand-logo.png" /></div>
+    </div>
+    <div class="registration-container black-bg">
+
+
+
+        <div class="registration-container-branding d-flex justify-content-between align-items-center position-relative">
+            <div class="kopkehome-logo">
+               <a href="@Url.Action("SignIn","user")"> 
+            <img src="~/images/Kopke-brand-logo.png" width="140" />
+            </a>
+            </div>
+
+            @*<div class="rgstr-box-heading text-center mobileHeading">
+                <h2 class="orange-clr">Contractors Membership Benefits</h2>
+                <p class="text-white m-0">Please choose the best membership benefits for you.</p>
+            </div>*@
+
+            <div class="">
+            @{
+                if (Model.LoggedInUser != null)
+                {
+                     <a class="nav-link text-dark dropdown-toggle d-flex align-items-center" href="#" id="navbardrop" data-toggle="dropdown">
+                        @if(!string.IsNullOrEmpty(Model.LoggedInUser.ProfilePicture))
+                        {
+                             <img alt="logo" style="margin-right:11px; class="IconBorder" src="~/Uploads/@Model.LoggedInUser.ProfilePicture" width="38" /><span class="text-white">@Model.LoggedInUser.FirstName  @Model.LoggedInUser.LastName </span>  
+                        }
+                        else
+                        {
+                             <img alt="logo" style="margin-right:11px;" src="~/images/DefaultProfile.png" class="IconBorder" width="38" /><span class="text-white">@Model.LoggedInUser.FirstName @Model.LoggedInUser.LastName</span>
+                        }
+
+                    </a>
+                }
+
+             
+                    }
+     
+                </div>
+       
+
+           
+
+        </div>
+
+        @{
+            double percentbr = 0;
+
+            int PlanIdBronze = 13;
+            double bronzeprice_PricePerMonth = Model.Price;
+            int bronze_Categories = Model.NumberOfCategories;
+            int bronze_ZipCodes = Model.NumberOfZipcodes;
+            double bronze_PricePerYear = Model.Price;
+            string bronze_IsWeb = string.Empty;
+            string bronze_IsPhoneApp = string.Empty;
+
+            var discount=((bronzeprice_PricePerMonth*12) - bronze_PricePerYear);
+            percentbr = (discount / (bronzeprice_PricePerMonth * 12)) * 100;
+            if (Model.WebApp)
+            {
+                bronze_IsWeb = "fa-check";
+            }
+            else
+            {
+                bronze_IsWeb = "fa-times";
+            }
+            if (Model.MobileApp)
+            {
+                bronze_IsPhoneApp = "fa-check";
+            }
+            else
+            {
+                bronze_IsPhoneApp = "fa-times";
+            }
+
+            string IsYearly = "Month";
+            if(Model.IsYearly)
+            {
+                IsYearly = "Year";
+            }
+
+       // bool Gold_IsWeb = Gold.Website;
+      //  bool Gold_IsPhoneApp = Gold.PhoneApp;
+     
+
+    }
+
+
+        <div class="registration-container-form">
+            <div class="tab-content">
+                <div class="rgstr-box-heading text-center membershipHead">
+                <h2 class="orange-clr">Membership Benefits</h2>
+                <p class="text-white m-0">Please choose the best membership benefits for you.</p>
+            </div>
+
+                <div id="Contractor" class="contractor-business-prof-form memberForm">
+                    <div class="Membership-benefits-outer-box">
+                        <div class="table-responsive benefit-table">
+                            <table class="table">
+                                <colgroup></colgroup>
+					            <colgroup></colgroup>
+					            <colgroup></colgroup>
+					            <colgroup></colgroup>
+					            <colgroup></colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="d-flex justify-content-center align-items-center">
+                                            <h2>Membership Benefits</h2>
+                                        </th>
+                                        <th>
+                                            <span class="membership-title membership-title-2">Custom Plan</span>
+                                            <h2>$@bronze_PricePerYear/@IsYearly</h2>
+                                        </th>
+                                        
+                                       
+                                    </tr>
+                                </thead>
+
+
+
+                                <tbody>
+
+                                    <tr>
+                                        <th class="membership-fst-title">Zip Codes</th>
+                                        <td><p class="m-0">@bronze_ZipCodes</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th>Categories</th>
+                                        <td>@bronze_Categories</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <th>Mobile App</th>
+                                        <td><i class="fa @bronze_IsPhoneApp fa-2x"></i></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th>Website</th>
+                                        <td><i class="fa @bronze_IsWeb fa-2x"></i></td>
+                                    </tr>
+                                    @if (Model.IsYearly)
+                                    {
+                                        <tr>
+                                        <th>Price (Annually) </th>
+                                        <td><p class="m-0 radioBox"> <span>$@bronze_PricePerYear/Year</span> <input checked class="Paymentradio" data-id="@PlanIdBronze" style="right: -2px;" id="BronzePriceMonthly" type="radio"  name="BronzePrice" value="@Model.StripePriceMonthly"></p></td>
+                                       
+                                      
+                                        </tr>
+                                    }
+                                    else
+                                    {
+                                         <tr>
+                                        <th>Price (Monthly)</th>
+                                        <td><p class="m-0 radioBox">$@bronzeprice_PricePerMonth/Month <input class="Paymentradio " checked  type="radio" id="BronzePriceMonthly" data-id="@PlanIdBronze" name="BronzePrice" value="@Model.StripePriceMonthly"> </p></td>
+                                       
+                                  
+                                    </tr>
+                                    }
+                                   
+                                                             
+                                       
+                               
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>&nbsp;</th>
+                                   
+                                          <td><a disabled onclick="BronzeRadio()"  class="Bronze_Pack text-decoration-none membership-title-2">BUY NOW</a></td>
+                                        
+                                       
+                                    </tr>
+                                    
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+
+             
+                <div id="result"></div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/custom.js" asp-append-version="true"></script>
+    <script src="~/js/ValidateForms.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
+
+
+  <script>
+    var urlprefix = "";
+    if (window.location.href.indexOf("KopkeHome-FMRS") > -1) {
+        urlprefix = '/KopkeHome-FMRS';
+    }
+    $( document ).ready(function() {
+     $('#exampleModal').on('hidden.bs.modal', function () {
+  // Load up a new modal...
+  $('#exampleModal2').modal('show')
+})
+});
+  
+
+    </script>
+<script>
+    function AsubmitCustomPlanRequest(form) {
+    
+    if ($(form).valid()) {
+        $.ajax({
+            type: 'POST',
+            url: urlprefix + '/Membership/SaveCustomZipcodesRequest',
+            data: $(form).serialize(),
+
+            success: function (res) {
+
+
+                $('#exampleModal').modal('hide');
+                $('#exampleModal2').modal('show');
+            }
+        });
+    }
+    
+    return false;
+}
+        function BronzeRadio() 
+        {
+           $("#CSTMLOADER").show();
+            //var ele = document.getElementsByName('BronzePrice');
+              
+            var selectedVal = "";
+       var selected = $("input[type='radio'][name='BronzePrice']:checked");
+        if (selected.length > 0) 
+        {
+            
+            selectedVal = selected.val();
+            var dataId=selected.attr("data-id");
+            var UserId=@Model.UserId;
+            $.ajax({
+            type: 'Get',
+            url: urlprefix+'/Membership/PaymentForCustomPlan?priceId='+selectedVal+'&planId='+dataId+'&user='+UserId,
+           
+            success: function (res) 
+            {
+                
+               if(res=="1")
+               {
+                  
+                   window.location = urlprefix+"/Membership/CustomPlanGateway/";
+               }
+               else
+               {
+                    $("#CSTMLOADER").hide();
+                   alert("Something went wrong.");
+               }
+                  
+                    
+            }
+                
+            
+                });
+        }
+        else{
+            $("#CSTMLOADER").hide();
+            Swal.fire('Please select plan.')
+            
+        }
+
+            
+
+       
+        }
+
+           function SilverRadio() 
+        {$("#CSTMLOADER").show();
+            var selectedVal = "";
+       var selected = $("input[type='radio'][name='SilverPrice']:checked");
+        if (selected.length > 0) 
+        {
+            
+            selectedVal = selected.val();
+           var dataId=selected.attr("data-id")
+            $.ajax({
+            type: 'Get',
+            url: urlprefix+'/Membership/PaymentCard?priceId='+selectedVal+'&planId='+dataId,
+            success: function (res) 
+            {
+                
+               if(res==1)
+               {
+                   window.location = urlprefix+"/Membership/Payment/";
+               }
+               else
+               {
+                    $("#CSTMLOADER").hide();
+                   alert("Something went wrong.");
+               }
+                  
+                    
+            }
+                
+            
+                });
+        }
+        else{
+             $("#CSTMLOADER").hide();
+           Swal.fire('Please select type of plan.(Monthly/Annually)')
+        }
+
+            
+        }
+
+
+           function GoldRadio() 
+        {$("#CSTMLOADER").show();
+          var selectedVal = "";
+       var selected = $("input[type='radio'][name='GoldPrice']:checked");
+        if (selected.length > 0) 
+        {
+            
+            selectedVal = selected.val();
+            var dataId=selected.attr("data-id")
+            $.ajax({
+            type: 'Get',
+            url: urlprefix+'/Membership/PaymentCard?priceId='+selectedVal+'&planId='+dataId,
+           
+           
+            success: function (res) 
+            {
+                
+               if(res==1)
+               {
+                   
+                   window.location = urlprefix+"/Membership/Payment/";
+               }
+               else
+               {
+                    $("#CSTMLOADER").hide();
+                   alert("Something went wrong.");
+               }
+                  
+                    
+            }
+                
+            
+                });
+        }
+        else{
+             $("#CSTMLOADER").hide();
+            Swal.fire('Please select type of plan.(Monthly/Annually)')
+        }
+
+        }
+
+       $(function () {
+
+        $("form[name='submitCustomPlanRequest']").validate({
+
+            rules: {
+                NumberOfZipcodes: {
+                    required: true,
+                    
+                },
+                Descrption: "required"
+
+
+
+            },
+            // Specify validation error messages
+            messages: {
+                NumberOfZipcodes: "Please Enter Number Of Zip Codes.",
+
+
+                Descrption: "Please enter Descrption."
+            },
+
+            //submitHandler: function (form) {
+            //    form.submit();
+            //}
+        });
+    });
+    </script>
+
+    </body>
+</html>

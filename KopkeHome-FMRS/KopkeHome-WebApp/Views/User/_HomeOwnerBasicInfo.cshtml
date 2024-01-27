@@ -1,0 +1,221 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.HomeOwnerViewModel;
+@inject IViewLocalizer Localizer
+
+<form id="homeownerform" name="homeownerform" class="sign-from-section " onsubmit="return RegstrHomeOwner(this);">
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <input type="hidden" asp-for="RoleId" value="4" />
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="ZipCodeHo">@Localizer["Zip Code"]</label>
+                <input id="ZipCodeHo" maxLength="5" type="number" name="ZipCodeHo" placeholder="@Localizer["Enter Zip Code"]" class="form-control input-sm" />
+                <span  asp-validation-for="ZipCodeHo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="FirstNameHo">@Localizer["First Name"]</label>
+                <input maxLength="50" type="text" name="FirstNameHo" placeholder="@Localizer["First Name"]" class="form-control" />
+                <span asp-validation-for="FirstNameHo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="LastNameHo">@Localizer["Last Name"]</label>
+                <input maxLength="50" type="text" name="LastNameHo" placeholder="@Localizer["Last Name"]" class="form-control" />
+                <span asp-validation-for="LastNameHo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="EmailHo">@Localizer["Email Address"]</label>
+                <input type="text" name="EmailHo" placeholder="Email Address" class="form-control input-sm" />
+                <span id="idEmailmessageHO" asp-validation-for="EmailHo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="PasswordHo">@Localizer["Password"]</label>
+                <input maxLength="20" type="password" name="PasswordHo" placeholder="@Localizer["Enter Password"]" class="form-control input-sm" />
+                <i class="toggle-password fa fa-fw fa-eye-slash"></i>
+                <span asp-validation-for="PasswordHo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="ConfirmPasswordHo">@Localizer["Confirm Password"]</label>
+                <input maxLength="15" type="password" name="ConfirmPasswordHo" placeholder="@Localizer["Enter Confirm Password"]" class="form-control input-sm" />
+                <i class="toggle-password fa fa-fw fa-eye-slash"></i>
+                <span asp-validation-for="ConfirmPasswordHo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label for="BusinessAddressHo"> @Localizer["Address"]</label>
+                <input maxLength="100" type="text" asp-for="BusinessAddressHo" name="BusinessAddress" placeholder="@Localizer["Address"]" class="form-control input-sm" />
+                <span asp-validation-for="BusinessAddressHo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label for="CityHo">@Localizer["City"]</label>
+                <input maxLength="50" type="text" name="CityHo" placeholder="@Localizer["City"]" class="form-control" />
+                <span asp-validation-for="CityHo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="StateHo">@Localizer["State"]</label>
+                <select id="ddlStates2" name="StateHo" class="form-select form-control w-100">
+                </select>
+                @*<input type="text" asp-for="StateHo" placeholder="State" name="State" class="form-control input-sm" />*@
+                <span asp-validation-for="StateHo" class="text-danger"></span>
+            </div>
+        </div>
+
+        
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label for="PhoneNumberOfficeHo">@Localizer["Phone number (Office)"]</label>
+                <input maxLength="12" type="text" name="PhoneNumberOfficeHo" placeholder="@Localizer["Phone number (Office)"]" class="form-control input-sm formasking"/>
+                <span asp-validation-for="PhoneNumberOfficeHo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="PhoneNumberHo">@Localizer["Phone Number (Mobile)"]</label>
+                <input  maxLength="12" type="text" name="PhoneNumberHo" placeholder="@Localizer["Phone Number (Mobile)"]" class="form-control input-sm formasking" for="PhoneNumberM" />
+                <span asp-validation-for="PhoneNumberHo" class="text-danger"></span>    
+            </div>
+        </div>
+         <div class="form-group col-md-6 col-lg-4">
+                                <div class=" rgstr-input-form-box">
+                                    <label class="required-labl" asp-for="HeardAboutProhzFromHo">@Localizer["How did you hear about us?"]</label>
+                                    <div class="">
+                                            <select id="HeardAboutUsHO" name="HeardAboutUs" class="form-select form-control w-100">
+                                                 <option value="">@Localizer["---Select---"]</option>
+                                                <option value="1">@Localizer["Friend/Relative/Neighbor (Word of Mouth)"]</option>
+                                                <option value="2">@Localizer["Member Id"]</option>
+                                                <option value="3">@Localizer["Newspaper"]</option>
+                                                <option value="4">@Localizer["Next Door"]</option>
+                                                <option value="5">@Localizer["Facebook"]</option>
+                                                <option value="6">@Localizer["Instagram"]</option>
+
+                                                <option value="7">@Localizer["Internet Search Engine"]</option>
+                                                <option value="8">@Localizer["Internet Ad"]</option>
+                                               
+                                                <option value="10">@Localizer["SCORE"]</option>
+                                                <option value="11">@Localizer["Billboard"]</option>
+                                                 <option value="12">@Localizer["Magazine"]</option>
+                                                <option value="13">@Localizer["Trade Show"]</option>
+                                                <option value="14">@Localizer["Prohz Sales Associate"] </option>
+                                                <option value="15">@Localizer["Other"]</option>
+                                                
+                                            </select>
+                                            <span asp-validation-for="HeardAboutProhzFromHo" class="text-danger"></span>
+                                        </div>
+
+                                </div>
+                            </div>
+         <div style="display:none" class="form-group col-md-6 col-lg-4 accept-policy ClosedMemberRefHo">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="MemberReferralIdHo">@Localizer["Member Id"] #</label>
+                <input maxLength="10" type="number" name="MemberReferralIdHo" placeholder="@Localizer["Member Id"]" class="form-control input-sm" />
+                <span for="MemberReferralIdHo" class="text-danger"></span>
+            </div>
+        </div> 
+        <div style="display:none" class="form-group col-md-6 col-lg-4 ClosedSalesAsstHo">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="SalesAssociateHo">@Localizer["Sales Associate Name"]</label>
+                <input maxLength="300" type="text" name="SalesAssociateHo" placeholder="@Localizer["Sales Associate Name"]" class="form-control input-sm" />
+                <span for="SalesAssociateHo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class=" custom-radio p-3">
+
+                <label style="top: 30px;" class="checkbox-inline custome-checkbox-main">
+                    <input type="checkbox" id="TermsAndConditionschk" name="TermAndConditions" class="chkTermAndConHw form-check-input product-list" value="1">
+                    <span class="geekmark"></span>
+                    <label style="margin-left: 30px !IMPORTANT;" class="mb-0 ml-2 text-white" for="TermAndConditions">@Localizer["I agree to the"]  <a target="_blank" href="@Url.Action("TermsAndConditions","home")">@Localizer["Terms of Use"]</a>  @Localizer["&"] <a target="_blank" href="@Url.Action("TermsAndConditions","home")">@Localizer["Privacy Policy"].</a> </label>
+
+                </label>
+
+               <span asp-validation-for="TermAndConditions" class="text-danger"></span>
+
+
+            </div>
+        @*<div class="col-md-12 text-right">
+            <button type="submit" style="background-color:#ADD136" class="btn cstm-green-btn">Next</button>
+            </div>*@
+        <div class="col-md-12 text-right">
+            <button type="submit" disabled id="btn_submitHw" class="btn cstm-green-btn">@Localizer["Next"]</button>
+        </div>
+    </div>
+</form>
+ 
+
+
+
+
+
+
+
+
+
+<script>
+    var urlprefix = '';
+      if (window.location.href.indexOf("KopkeHome-FMRS-QA") > -1) {
+          urlprefix = '/KopkeHome-FMRS-QA';
+      }
+
+
+
+
+      $('#phone-number-field').keyup(function () {
+        $(this).val($(this).val().replace(/(\d{3})\-?(\d{3})\-?(\d{4})/, '$1-$2-$3'))
+    });
+
+    $(function () {
+
+        $('.formasking').keydown(function (e) {
+            var key = e.charCode || e.keyCode || 0;
+            $text = $(this);
+            if (key !== 8 && key !== 9) {
+                if ($text.val().length === 3) {
+                    $text.val($text.val() + '-');
+                }
+                if ($text.val().length === 7) {
+                    $text.val($text.val() + '-');
+                }
+
+            }
+
+            return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));
+        })
+    });
+
+
+    //$(function () {
+
+    //    $('#PhoneNumberOfficeO').keydown(function (e) {
+    //        var key = e.charCode || e.keyCode || 0;
+    //        $text = $(this);
+    //        if (key !== 8 && key !== 9) {
+    //            if ($text.val().length === 3) {
+    //                $text.val($text.val() + '-');
+    //            }
+    //            if ($text.val().length === 7) {
+    //                $text.val($text.val() + '-');
+    //            }
+
+    //        }
+
+    //        return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));
+    //    })
+    //});
+
+
+    
+
+</script>
+

@@ -1,0 +1,97 @@
+﻿@model List<KopkeHome_ModelLayer.DataModel.PromoVideos>
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+    int autoincrement = 0;
+}
+
+<div class="topCard-sec">
+ <h3 class="dashHeading">Promo Videos</h3>
+   </div>
+
+<div class="tableWrapper promoTable"> <button type="button" class="btn btn-success AddVideoAdmin float-end p-2">Add PromoVideo</button>
+                    <div class="table-responsive">
+                        <table id="example" class="table table-striped" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Sl No.</th>
+                                    <th>Name</th>
+                                     <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                     <tr>
+                                    <td>@Interlocked.Increment(ref autoincrement)</td>
+                                    <td>@item.OriginalName</td>
+                                   
+                                   
+                                <td class="">
+                                    <div class="btn-group-vertical">
+                                        
+                                    @*<button type="button" data-id="@item.Id" class="btn  btn-primary EditVideoAdmin" >Edit</button>*@
+                                    <button type="button" data-id="@item.Id" onclick="DeleteVideoAdmin(@item.Id)" class="btn  btn-danger DeleteVideoAdmin">Delete</button>
+                                    </div>
+                                      
+                                </td>
+                               
+                                </tr>
+                                    
+                                }
+                               
+
+                            </tbody>
+                           @* <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </tfoot>*@
+                        </table>
+                    </div>
+                </div>
+
+
+  
+ 
+
+
+
+
+<div class="modal fade" id="AddVideoAdminViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Add Video</h5>
+        <button type="button" class="close btn btn-secondary ModalCloseFAQ" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+
+       <form name="AddVideoForm" id="uploadVideos"  enctype="multipart/form-data" action="@Url.Action("AddVideo", "Admin")" method="POST">
+      <div class="modal-body">
+        
+   
+          <input type="hidden" name="Id" id="FAQId" />
+  <div class="form-group">
+    <label class="mb-2" for="exampleFormControlInput1">Video  ( Supported Format .mp4 Only)</label>
+    <input type="file" name="fileUpload" id="fileUploadAdmin" size="23" class="form-control">
+    <span class="text-danger" id="fileUploadAdminSpan"></span> 
+  </div>
+  
+ 
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary main-login-page ModalCloseFAQ" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

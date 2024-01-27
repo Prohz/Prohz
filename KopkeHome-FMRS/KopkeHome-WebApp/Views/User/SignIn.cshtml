@@ -1,0 +1,145 @@
+﻿@model KopkeHome_ModelLayer.SignIn
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Login"].Value;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="mm">
+     <div class="modal1">
+
+        <div class="logo-loader-pulse pulse" id="Idloader"><img src="~/images/Kopke-brand-logo.png" /></div>
+    </div>
+   </div>
+      
+   <div class=" registration-container-login black-bg">
+    <div class="registration-container-form">
+
+    <div class="main-login-page">
+        <a href="@Url.Action("index","Home")"> 
+        <div class="kopkehome-login-logo-heading text-center">
+           <img src="~/images/Kopke-brand-logo.png" width="106" alt="logo" class="ml-1 LoginScreenLogo">
+        </div>
+        </a>
+           <div class="main-login-page-content">
+                <form asp-action="SignIn" method="post" asp-controller="User" >
+                  <div class="login-main-headin">
+                        <h3 class="green-clr">@Localizer["Login"]</h3>
+                         @*<p class="text-white">Please login with your data that you entered during registration.</p>*@
+                    </div>
+                     <div class="row">
+                         <div class="form-group col-md-12">
+                            <div class=" rgstr-input-form-box mb-1">
+                            <label  for="Email">Email</label>
+                            <input asp-for="Email" value="@ViewBag.Email" name="Email" placeholder="Email" class="form-control input-sm" />
+                             <span asp-validation-for="Email" class="text-danger"></span>  
+                        </div>
+                          </div>
+                      <div class="col-md-12">
+                            <div class=" rgstr-input-form-box">
+                            <label  for="Password">@Localizer["Password"]</label>
+                            <input type="Password" value="@ViewBag.Password" asp-for="Password" id="newpassword" name="Password" placeholder="@Localizer["Enter Password"]"class="form-control" />
+                               @*<i class="toggle-password fa fa-fw fa-eye-slash"></i>*@
+                                <i id="open" class="fa fa-eye float-end" style="margin-top:-1px; margin-right:20px; cursor:pointer; display:none"></i>
+                                <i id="closed" class="fa fa-eye-slash float-end " style="margin-top:-1px; margin-right:20px; cursor:pointer;"></i>
+                           
+                            <span asp-validation-for="Password" class="text-danger"></span> 
+           
+                        </div>
+                          </div>      
+                          
+                           
+                                <div class="col-12 d-flex signin-remeber-me align-items-center justify-content-between mb-2">
+                                    <div class="d-flex  align-items-center  position-relative ">
+                                       <span class="mr-3 clr-lowwhite">@Localizer["Remember me"]</span>
+                                       @{
+                                           if (ViewBag.Password !=null)
+                                           {
+                                                <label class="switch m-0">
+                                                <input asp-for="IsRememberme" checked type="checkbox">
+                                                <span class="slider"></span>
+                                                </label>
+                                           }
+                                           else
+                                           {
+                                                <label class="switch m-0">
+                                                <input asp-for="IsRememberme" type="checkbox">
+                                                <span class="slider"></span>
+                                                </label>
+                                           }
+                                        }
+                                      
+                                       @* <label class="switch m-0">
+                                            <input class="form-check-input" Asp-for="IsRememberme" type="checkbox"> Remember me
+                                             <span class="slider"></span>
+                                        </label>*@
+
+                                    </div>
+                                    <a href="@Url.Action("forgotpassword", "user")" class=" forget-link">@Localizer["Forgot Password?"]</a>
+                                </div>
+                          
+                         <div class="col-md-12 text-center login-cstm-button">
+                            <input type="submit" value="@Localizer["Login"]" class="btn cstm-green-btn w-100"/>
+                        </div>
+                
+                        <div class=" col-md-12 member-login-link text-center ">
+                            <p class="text-white m-0">@Localizer["Don't have an account?"] <a href="@Url.Action("SignUp", "user")" class="green-clr green-clr-link">@Localizer["Register Now!"]</a></p>
+                        </div>
+                     </div>    
+             </form>
+
+
+             </div>
+
+         </div>
+    </div>
+</div>
+
+<style>
+.fa-eye:before {
+    content: "\f06e";
+    color: #ADD136;
+}
+
+
+#closed {
+    /* margin-top: -1px; */
+    position: absolute;
+    /* margin-right: 20px; */
+    cursor: pointer;
+    right: 10px;
+    bottom: 23px;
+   
+}
+
+#open {
+    /* margin-top: -1px; */
+    position: absolute;
+    /* margin-right: 20px; */
+    cursor: pointer;
+    right: 10px;
+    bottom: 23px;
+  
+}
+
+</style>
+
+
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#closed").click(function () {
+            $("#closed").hide();
+            $("#open").show();
+            $("#newpassword").attr("type", "text");
+
+        });
+        $("#open").click(function () {
+            $("#open").hide();
+            $("#closed").show();
+            $("#newpassword").attr("type", "password");
+
+        });
+    });
+</script>

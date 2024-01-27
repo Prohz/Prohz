@@ -1,0 +1,634 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Http.Features
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> locOptions
+@{
+    var currentRequestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = locOptions.Value.SupportedUICultures.Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName }).ToList();
+    var responseUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" :
+        $"~{Context.Request.Path.Value}";
+
+}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-- Font CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /
+
+    <!-- Custom CSS -->
+    <link href="~/HomePageAssets/assets/css/style.css" rel="stylesheet">
+    <link href="~/HomePageAssets/assets/css/responsive.css" rel="stylesheet">
+
+    <style>
+        .modal-content.subsCArd {
+            background: #040C19;
+        }
+        .subscriberTable_section table.table {
+            color: #fff;
+            text-align: center;
+            background: #454a57;
+        }
+        td.conent-dx {
+            background: #040c19;
+        }
+        .subscriberTable_section table.table thead th:nth-child(2) {
+            background: #CD7F32;
+        }
+
+        .subscriberTable_section table.table thead th:nth-child(3) {
+            background: #aba7a7;
+        }
+
+        .subscriberTable_section table.table thead th:nth-child(4) {
+            background: #c8a900;
+        }
+
+        .MembershipTittle h3 {
+            color: #FF8800;
+            margin-bottom: 0;
+        }
+
+        .th_conent h3 {
+            font-size: 20px;
+        }
+
+        .MembershipTittle p {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .subscriberTable_section table.table thead th {
+            border-bottom: 0;
+            border: 1px solid #040c19;
+        }
+
+        button.close.newclose {
+            color: #fff;
+            opacity: 1;
+        }
+
+        .th_conent {
+            padding: 0rem 3rem;
+            text-align: center;
+        }
+
+        .defult {
+            padding: 0;
+        }
+
+        .subscriberTable_section table.table thead th {
+            text-align: center;
+        }
+
+        .subscriberTable_section table.table tbody td {
+            border: 1px solid #040c19;
+        }
+
+        td.conent, td.row-color {
+            background: #333845;
+        }
+
+        .subscriberTable_section table.table tbody td p {
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+
+        span.offer {
+            font-size: 13px;
+            color: #ADD136;
+        }
+
+        thead.top_haed th.conent-dx {
+            background: #040c19;
+        }
+
+        thead.secondHead th a {
+            color: #fff;
+        }
+
+        thead.secondHead th:nth-child(1) {
+            background: #040c19;
+        }
+
+        thead.secondHead th {
+            height: 60px;
+            vertical-align: inherit !important;
+        }
+
+        .modal-content.subsCArd .modal-footer button {
+            background: #ADD136;
+            border: 1px solid #ADD136;
+            color: #000;
+        }
+
+        .modal-content.subsCArd .modal-header {
+            border-bottom: 1px solid #454a57;
+        }
+
+        .modal-content.subsCArd .modal-footer {
+            border-top: 1px solid #454a57;
+        }
+
+        .choosePlan {
+            text-align: end;
+            padding: 1rem 0rem;
+        }
+
+            .choosePlan a {
+                color: #fff;
+            }
+
+        .MembershipTittle {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Page -->
+    <div class="main-page" id="landingPage">
+        <!--Header -->
+        <header class="header">
+            <nav class="navbar navbar-expand-xl navbarcstm">
+                <div class="container makeFluid">
+                    <a class="navbar-brand logo" href="@Url.Action("index","Home")">
+                        <img src="~/images/Kopke-brand-logo.png" alt="">
+                    </a>
+                    @await Html.PartialAsync("SelectCulture")
+                    <div class="navcstm">
+                        <h2>@Localizer["Welcome To Prohz - Where Work Gets Done !"]</h2>
+                        <div class="navigation">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar">
+                                <span class="navbar-toggler-icon">
+                                    <i class="fa fa-bars"></i>
+                                </span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
+                                <ul class="navbar-nav ms-auto align-items-center">
+                                   
+                                     <li class="nav-item dropdown">
+                                        <a style="font-size:1.5rem;" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Localizer["Pricing Details"]</a>
+                                        <div class="dropdown-menu" aria-labelledby="#">
+                                        <a class="dropdown-item" data-toggle="modal" href="#myModal">@Localizer["Contractors"]</a>
+                                            <!-- <a class="dropdown-item" data-toggle="modal" href="#myModalHomeowner">@Localizer["Homeowner"]</a> -->
+                                        </div>
+                                    </li>
+
+
+                                    <li class="nav-item">
+                                        <a style="font-size:1.5rem;" class="nav-link " href="@Url.Action("ContactUs","Home")">@Localizer["Contact Us"]</a>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a style="font-size:1.5rem;" class="nav-link dropdown-toggle" id="aboutdrpdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Localizer["About Us"]</a>
+                                        <div class="dropdown-menu" aria-labelledby="aboutdrpdown">
+                                            <a class="dropdown-item" href="@Url.Action("ProhzHistory","Home")">@Localizer["Prohz History"]</a>
+                                            <a class="dropdown-item" href="@Url.Action("ValueProposition","Home")">@Localizer["Value Proposition"]</a>
+                                            <a class="dropdown-item" href="@Url.Action("MissionStatement","Home")">@Localizer["Mission Statement"]</a>
+                                            <a class="dropdown-item" href="@Url.Action("CoreValues","Home")">@Localizer["Core Values"]</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a style="font-size:1.5rem;" class="nav-link dropdown-toggle" id="learndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Localizer["Learn More"]</a>
+                                        <div class="dropdown-menu" aria-labelledby="learndropdown">
+                                            <a class="dropdown-item" href="@Url.Action("Definitions","Home")">@Localizer["Definitions"]</a>
+                                            <a class="dropdown-item" href="@Url.Action("HowDoesItWork","Home")">@Localizer["How Does It Work"]</a>
+                                            <a class="dropdown-item" href="@Url.Action("FAQ","Home")">@Localizer["FAQ's"]</a>
+                                        </div>
+                                    </li>
+
+                                    @*<li class="nav-item">
+                                    <a class="nav-link" href="#pricing">Pricing Page</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="#faq">FAQ Page</a>
+                                    </li>*@
+                                    <li class="row">
+                                        @*                                         <a class="nav-link" href="@Url.Action("SignIn","User")"><div class="btn btn-success">@Localizer["Subscription details"]</div>  </a>
+                                        *@                                         <a class="nav-link" href="@Url.Action("SignIn","User")"><div class="btn btn-success">@Localizer["Log in"]</div>  </a>
+                                        <a class="nav-link" href="@Url.Action("signup","user")"><div class="btn btn-success">@Localizer["Click to join"]</div>  </a>
+
+
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        @RenderBody()
+
+        <!-- Footer sec -->
+        <div id="landingPage" class="footer-sec">
+            @*<div class="footer-header">
+            <div class="container p-0">
+            <ul class="footer-ul">
+            <li><a href="#">Retirement homes</a></li>
+            <li><a href="#">Multi-residential</a></li>
+            <li><a href="#"> Commercial</a> </li>
+            <li><a href="#"> Investment</a></li>
+            <li><a href="#">Construction</a></li>
+            </ul>
+            </div>
+            </div>*@
+            <div class="footer-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12 col-12">
+                            <div class="footer-logo">
+                                <a href="#">
+                                    <img src="~/images/Kopke-brand-logo.png" class="" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-12 col-12">
+                            <div class="foot-col1 text-left">
+                                <h4>Prohz</h4>
+                                <ul class="foot-list">
+                                    <li>866-250-5316</li>
+                                    <li><a href="mailto:info@prohz.net">info@prohz.net</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 col-12">
+                            <div class="foot-col2">
+                                <ul class="useful-links">
+                                    <li>
+                                        <a href="@Url.Action("Sponsors","Home")">@Localizer["Sponsors"]</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("ContactUs","Home")">@Localizer["Contact Us"]</a>
+                                    </li>
+                                    <li>
+
+                                    </li>
+                                    @*<li>
+                                    <a href="#">Retirement homes</a>
+                                    </li>
+                                    <li>
+                                    <a href="#">Condos</a>
+                                    </li>
+                                    <li>
+                                    <a href="#">Commercial</a>
+                                    </li>
+                                    <li>
+                                    <a href="#">Hotels</a>
+                                    </li>
+                                    <li>
+                                    <a href="#">Restaurants</a>
+                                    </li>*@
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 col-12">
+                            <div class="foot-col2">
+                                <ul class="useful-links">
+                                    <li>
+                                        @* @await Html.PartialAsync("SelectCulture")*@
+                                    </li>
+                                    @*<li>
+                                    <a href="#">Expertise</a>
+                                    </li>*@
+
+                                    <li>
+                                        @*<a href="#">French</a>*@
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 col-12">
+                            <div class="socialLink foot-col1">
+                                <h4>@Localizer["Follow Us"]</h4>
+                                <div class="d-flex align-items-center justify-content-center mt-3">
+                                    <a href="http://www.facebook.com/prohz00"><i class="fa-brands fa-facebook-f"></i></a>
+                                    @*<a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>*@
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center !important;background-color:#000">
+                <p class="cp-text" style="color:white !important;margin:0">
+                    @Localizer["© Copyright 2023 Prohz. All rights reserved."]
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="logo-loader">
+        <div class="logo-loader-pulse pulse" id="Idloader"><img src="~/images/Kopke-brand-logo.png" /></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        var urlprefix = '';
+        if (window.location.href.indexOf("KopkeHome-FMRS-QA") > -1) {
+            urlprefix = '/KopkeHome-FMRS-QA';
+        }
+        $(document).ready(function () {
+            $(".header a.nav-link").click(function () {
+                $(".header a.nav-link").removeClass("active")
+                $(this).addClass("active")
+            });
+
+        });
+        $(document).ready(function () {
+            GetVideo();
+            GetLegalFiles();
+            //$(document).on("click", ".PlayVideo", function (e) {
+            //    //alert("Clicked");
+            //   GetVideo();
+            //  });
+        });
+        $('body').css('overflow', 'auto')
+        $body = $("body");
+        $(document).on({
+            ajaxStart: function () {
+                $body.addClass("loading");
+            },
+            ajaxStop: function () { $body.removeClass("loading"); }
+        });
+
+
+
+        document.onreadystatechange = function () {
+            if (document.readyState !== "complete") {
+
+                document.querySelector(".logo-loader").style.visibility = "visible";
+            } else {
+
+                document.querySelector("body").style.visibility = "visible";
+                document.querySelector(".logo-loader").style.display = "none";
+            }
+        };
+
+        function GetLegalFiles() {
+            $.ajax({
+                type: "Get",
+                url: urlprefix + "/home/ProhzLegalFiles",
+
+                success: function (res) {
+
+                    for (var i = 0; i < res.length; i++) {
+                        //console.log(window.location.href+'uploads/'+res[i].filePath);
+                        if (res[i].fileType == 2) {
+                            $(".FIlePrivacyPolicy").attr("href", '../uploads/' + res[i].filePath);
+
+                        } else if (res[i].fileType == 3) {
+                            $(".FIleMemAGREMENT").attr("href", '../uploads/' + res[i].filePath);
+
+                        }
+                        else if (res[i].fileType == 1) {
+                            $(".FileTermsAndConditions").attr("href", '../uploads/' + res[i].filePath);
+                        }
+
+                    }
+
+
+
+                }
+
+            });
+        }
+        function GetVideo() {
+            $.ajax({
+                type: "Get",
+                url: urlprefix + "/home/PromoVideos",
+
+                success: function (res) {
+
+                    $(".VideoSrcHomePage").attr("src", window.location.href + 'uploads/' + res.filePath);
+
+                }
+
+            });
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Modal -->
+        <div class="modal" id="myModal" role="dialog">
+            <div id="pricing-modal" style="display: grid; place-items: center; height: 100%; width: 100%; background-color: rgba(0,0,0,.5); overflow: auto; padding: 5% 0px;">
+                <div class="container" style="width: 90%; max-width: 980px; background-color: #111111; border-radius: 9px; padding: 35px;">
+                    <button type="button" class="close newclose" data-dismiss="modal" style="color: #ffffff;"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="row" style="text-align: center; color: #ffffff; margin-bottom: 1em;">
+                        <div class="col">
+                            <div class="title-wrapper">
+                                <h2 style="margin-top: 0px;">Contractor Membership Plans</h2>
+                                <p>Please choose the best membership plan for you.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="row-gap: 25px;">
+                        <div class="col">
+                            <div class="card-wrapper">
+                                <div class="title-wrapper">
+                                    <h3>Basic Plan</h3>
+                                    <p style="font-size: 14px;">Best plan for those companies that want to stay small and local.</p>
+                                    <s><p>$324<span class="disclaimer"> per year</p></s>
+                                    <p class="promo-price">$96<span class="disclaimer"> per year</span></p>
+                                    <p class="disclaimer">That's less than $0.27 per day!</p>
+                                    <button class="small" onclick="location.href='/user/signup'">Become a Member</button>
+                                    <div class="card-meta">
+                                        <ul>
+                                            <li>Company is Listed in 1 Contractor Category</li>
+                                            <li>Company is Listed in 10 Zip Codes</li>
+                                            <li>Unlimited category searches</li>
+                                            <li>Unlimited zip code searches</li>
+                                            <li>Listed in Prohz directory</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-wrapper best-value">
+                                <div class="title-wrapper">
+                                    <span class="best">Best Value</span><h3 style="display: inline-block;">Prohz Plan</h3>
+                                    <p style="font-size: 14px;">Best plan to stabalize or grow your company.</p>
+                                    <s><p>$972<span class="disclaimer"> per year</p></s>
+                                    <p class="promo-price">$192<span class="disclaimer"> per year</span></p>
+                                    <p class="disclaimer">That's less than $0.53 per day!</p>
+                                    <button class="small" onclick="location.href='/user/signup'">Become a Prohz Member</button>
+                                    <div class="card-meta">
+                                        <ul>
+                                            <li>Company is Listed in 3 Contractor Categories</li>
+                                            <li>Company is Listed in 30 Zip Codes</li>
+                                            <li>Unlimited category searches</li>
+                                            <li>Unlimited zip code searches</li>
+                                            <li>Listed in Prohz directory</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-wrapper">
+                                <div class="title-wrapper">
+                                    <h3>Prohz+ Plan</h3>
+                                    <p style="font-size: 14px;">Best plan for a company with multiple locations.</p>
+                                    <s><p>$5,370<span class="disclaimer"> per year</p></s>
+                                    <p class="promo-price">$1,872<span class="disclaimer"> per year</span></p>
+                                    <p class="disclaimer">That's less than $5.13 per day!</p>
+                                    <button class="small" onclick="location.href='/user/signup'">Become a Prohz+ Member</button>
+                                    <div class="card-meta">
+                                        <ul>
+                                            <li>Company is Listed in 5 Contractor Categories</li>
+                                            <li>Company is Listed in 100 Zip Codes</li>
+                                            <li>Unlimited category searches</li>
+                                            <li>Unlimited zip code searches</li>
+                                            <li>Listed in Prohz directory</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+        </div>
+    </div>
+
+</body>
+
+
+
+<body>
+
+    <div class="container">
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModalHomeowner" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content subsCArd">
+                    <div class="modal-header">
+                        <div class="MembershipTittle">
+                            <h3 class="modal-title">Homeowner Membership Benefits</h3>
+                            <p>Please choose the best membership benefits for you.</p>
+                        </div>
+                        <button type="button" class="close newclose" data-dismiss="modal"><i class="fa-regular fa-circle-xmark" style="color:white"></i></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="Membership_Benefits">
+
+                            <div class="subscriberTable_section">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead class="top_haed">
+                                            <tr>
+                                                <th class="conent-dx"></th>
+                                                <th scope="col" style="background-color:gray"><span>Silver</span></th>
+                                                <th scope="col" style="background-color: #C8A900"><span>Gold</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="conent-dx"><div class="defult"><h3>Membership Benefits</h3></div></td>
+                                                <td class="conent"><div class="th_conent"><h3>$50/365<br /> days</h3></div></td>
+                                                <td class="conent"><div class="th_conent"><h3>$100/365 <br />days</h3></div></td>
+                                            </tr>
+                                          
+                                            <tr>
+                                                <td class="row-color"><div>Website</div></td>
+                                                <td><i class="fa-solid fa-check"></i></td>
+                                                <td><i class="fa-solid fa-check"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="row-color"><div>Mobile App</div></td>
+                                                <td><i class="fa fa-close"></i></td>
+                                                <td><i class="fa-solid fa-check"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="row-color"><div>Price (90 days)</div></td>
+                                                <td><p>$25/90 days</p></td>
+                                                <td><p>$50/90 days</p></td>
+                                            </tr>
+                                            <tr class="bordeth">
+                                                <td class="row-color"><div>Price (365 days)</div></td>
+                                                <td><p>$50/365 days</p> <span class="offer">Save 83.33 %</span></td>
+                                                <td><p>$100/365 days</p> <span class="offer">Save 83.33 %</span></td>
+                                            </tr>
+
+                                        </tbody>
+                                        <thead class="secondHead">
+                                            <tr>
+                                                <th scope="col"></th>
+@*                                                <th scope="col" style="background-color:gray"><a onclick="HitmeFunction()" href="@Url.Action("SignUp","User","Homewoner")">Click here to join</a></th>
+*@                                                <th scope="col" style="background-color:gray"><a asp-action="SignUp" asp-controller="User" asp-route-data="Homewoner">Click here to join</a></th>
+                                                <th scope="col" style="background-color:#C8A900"><a asp-action="SignUp" asp-controller="User" asp-route-data="Homewoner">Click here to join</a></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                          @*  <div class="choosePlan">
+                                <a href="@Url.Action("SignUp","User")">You can choose custom plan after signup</a>
+                            </div>*@
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+@inject IViewLocalizer loc
+<section class="mainbodysec">
+<div class="container">
+   <div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">@loc["Value Proposition"]</h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+   @* <p class="card-text">Prohz is a very easy to use 3 step process for selecting your Contractor, Subcontractor or Independent Contractor.</p>*@
+
+
+    <div> 
+ 
+ <div class="HomeContentsRead"> 
+
+@loc["Time is money, and the Prohz app. will save Contractors, Suncontractors, Independent Contractors and Homeowners more time and money, by far, than they pay to be members. Prohz makes residential and light commercial contracting faster, better, smarter, and easier for all parties involved."] 
+</div>
+</div>
+
+
+   <a href="@Url.Action("HowDoesItWork","Home")" class="card-link">@loc["Learn More"]</a>
+    <a href="@Url.Action("SignUp","User")" class="card-link">@loc["Join Prohz"]</a>
+
+
+  </div>
+</div>
+</div>
+</section>

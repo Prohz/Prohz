@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KopkeHome_FMRS.View.LanguageSelectPage"
+             xmlns:viewModel="clr-namespace:KopkeHome_FMRS.ViewModel"
+              xmlns:res="clr-namespace:KopkeHome_FMRS.Resources"
+              xmlns:Local="clr-namespace:KopkeHome_FMRS.Control"
+              BackgroundColor="Black"
+             Title="{Local:TranslationExtention txtSelectLanguage}">
+    <Frame BackgroundColor="#add136" VerticalOptions="Center" WidthRequest="300" HorizontalOptions="Center"  >
+        <Grid  Padding="10"  ColumnDefinitions="5*,5*" ColumnSpacing="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+            <StackLayout Grid.Row="0" Grid.Column="0" WidthRequest="120" VerticalOptions="CenterAndExpand" >
+                <Image  Source="usflag"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" WidthRequest="40" HeightRequest="40"></Image>
+                <Label  Text="{Local:TranslationExtention English}" VerticalOptions="Center" FontSize="25"  HorizontalOptions="Center" />
+                <CheckBox x:Name="englickCheckbox" CheckedChanged="englickCheckbox_CheckedChanged" IsChecked="{Binding IsEnglishChecked}" VerticalOptions="CenterAndExpand" ></CheckBox>
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="1" WidthRequest="120" VerticalOptions="CenterAndExpand" >
+                <Image  Source="spainflag" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="40" HeightRequest="40"></Image>
+                <Label Text="{Local:TranslationExtention Spanish}"  FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" />
+                <CheckBox x:Name="SpanishChecbox" CheckedChanged="SpanishChecbox_CheckedChanged" IsChecked="{Binding IsSpanisChecked}"  VerticalOptions="CenterAndExpand"></CheckBox>
+            </StackLayout>
+        </Grid>
+    </Frame>
+</ContentPage>

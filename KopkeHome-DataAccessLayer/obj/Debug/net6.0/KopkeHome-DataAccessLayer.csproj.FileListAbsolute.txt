@@ -1,0 +1,153 @@
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.deps.json
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.runtimeconfig.json
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/ref/KopkeHome-DataAccessLayer.dll
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.dll
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.pdb
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.AssemblyReference.cache
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfoInputs.cache
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfo.cs
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CoreCompileInputs.cache
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CopyComplete
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/ref/KopkeHome-DataAccessLayer.dll
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+D:/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.genruntimeconfig.cache
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.deps.json
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.runtimeconfig.json
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/ref/KopkeHome-DataAccessLayer.dll
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.dll
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.pdb
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.AssemblyReference.cache
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfoInputs.cache
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfo.cs
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CoreCompileInputs.cache
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CopyComplete
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/ref/KopkeHome-DataAccessLayer.dll
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.genruntimeconfig.cache
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.deps.json
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.runtimeconfig.json
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.dll
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.pdb
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.AssemblyReference.cache
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfoInputs.cache
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfo.cs
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CoreCompileInputs.cache
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CopyComplete
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/obj/Debug/net6.0/refint/KopkeHome-DataAccessLayer.dll
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.genruntimeconfig.cache
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-DataAccessLayer/obj/Debug/net6.0/ref/KopkeHome-DataAccessLayer.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.deps.json
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.runtimeconfig.json
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.pdb
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.AssemblyReference.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfoInputs.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfo.cs
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CoreCompileInputs.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CopyComplete
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/refint/KopkeHome-DataAccessLayer.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.genruntimeconfig.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/ref/KopkeHome-DataAccessLayer.dll
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.deps.json
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.runtimeconfig.json
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.dll
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.pdb
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.AssemblyReference.cache
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfoInputs.cache
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfo.cs
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CoreCompileInputs.cache
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CopyComplete
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/refint/KopkeHome-DataAccessLayer.dll
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.genruntimeconfig.cache
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/ref/KopkeHome-DataAccessLayer.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.deps.json
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.runtimeconfig.json
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.pdb
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.AssemblyReference.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfoInputs.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfo.cs
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CoreCompileInputs.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CopyComplete
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/refint/KopkeHome-DataAccessLayer.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.genruntimeconfig.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/ref/KopkeHome-DataAccessLayer.dll
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.deps.json
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.runtimeconfig.json
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.dll
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.pdb
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.AssemblyReference.cache
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfoInputs.cache
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfo.cs
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CoreCompileInputs.cache
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CopyComplete
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/refint/KopkeHome-DataAccessLayer.dll
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.genruntimeconfig.cache
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-DataAccessLayer/obj/Debug/net6.0/ref/KopkeHome-DataAccessLayer.dll
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.deps.json
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.runtimeconfig.json
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.dll
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/bin/Debug/net6.0/KopkeHome-ModelLayer.pdb
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.AssemblyReference.cache
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfoInputs.cache
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.AssemblyInfo.cs
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CoreCompileInputs.cache
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.csproj.CopyComplete
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.dll
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/obj/Debug/net6.0/refint/KopkeHome-DataAccessLayer.dll
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.pdb
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/obj/Debug/net6.0/KopkeHome-DataAccessLayer.genruntimeconfig.cache
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-DataAccessLayer/obj/Debug/net6.0/ref/KopkeHome-DataAccessLayer.dll
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\bin\Debug\net6.0\KopkeHome-DataAccessLayer.deps.json
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\bin\Debug\net6.0\KopkeHome-DataAccessLayer.runtimeconfig.json
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\bin\Debug\net6.0\KopkeHome-DataAccessLayer.dll
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\bin\Debug\net6.0\KopkeHome-DataAccessLayer.pdb
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\bin\Debug\net6.0\KopkeHome-ModelLayer.dll
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\bin\Debug\net6.0\KopkeHome-ModelLayer.pdb
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\obj\Debug\net6.0\KopkeHome-DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\obj\Debug\net6.0\KopkeHome-DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\obj\Debug\net6.0\KopkeHome-DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\obj\Debug\net6.0\KopkeHome-DataAccessLayer.AssemblyInfo.cs
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\obj\Debug\net6.0\KopkeHome-DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\obj\Debug\net6.0\KopkeHome-DataAccessLayer.csproj.CopyComplete
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\obj\Debug\net6.0\KopkeHome-DataAccessLayer.dll
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\obj\Debug\net6.0\refint\KopkeHome-DataAccessLayer.dll
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\obj\Debug\net6.0\KopkeHome-DataAccessLayer.pdb
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\obj\Debug\net6.0\KopkeHome-DataAccessLayer.genruntimeconfig.cache
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-DataAccessLayer\obj\Debug\net6.0\ref\KopkeHome-DataAccessLayer.dll

@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+p {
+    font-size: 18px;
+}
+
+.businessPanel {
+    color: #fff;
+    background: #000000;
+}
+
+h1.title {
+    font-size: 52px;
+    padding-top: 5rem;
+}
+
+
+.businessProfile {
+    height: 280px;
+    width: 307px;
+    margin-left: auto;
+}
+
+.businessProfile img {
+    height: 100%;
+    width: 100%;
+    border-radius: 34px;
+}
+p.loaction {
+    margin: 1rem 0 .7rem 0;
+}
+p.loaction svg {
+    min-width: 30px;
+    margin-right: 10px;
+}
+ul.profileDetails li {
+    margin-bottom: .7rem;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+}
+ul.profileDetails li svg  {
+    min-width: 30px;
+    margin-right: 10px;
+}
+
+.businessCardPanel {
+    margin: 10rem 0;
+}
+.businessCard {
+    padding: 1.8rem;
+    background: #454A57;
+    border: 1px solid #707070;
+    border-radius: 30px;
+}
+h4.card-head {
+    color: #F88309;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #8D8D8D;
+}
+.businessCard ul li {
+    margin-bottom: 1.5rem;
+    font-size: 18px;
+}
+.businessCard table tr td {
+    border-color: #2A2D33;
+    color: #fff;
+}
+.businessCard table tr:first-child td {
+    border-top: 0;
+} 
+
+.businessDescription h2 {
+    font-size: 52px;
+    margin-bottom: 2rem;
+    color: #ABD032;
+}
+.businessDescription p { 
+    color: #E1E1E1;
+}
+.descriptionCard {
+    padding: 6rem 0;
+}
+.descriptionCard h4.card-head {
+    margin-bottom: 5rem;
+}
+.descriptionCard .businessCard ul li {
+    display: flex;
+}
+.descriptionCard .businessCard ul li span {
+    width: 50%;
+}
+.licenceSection .row {
+    position: relative;
+    top: -39px;
+}
+.licenceSection .col-md-6 {
+    margin-bottom: 3.5rem;
+}
+.licenceSection h5 {
+    margin-bottom: 1rem;
+}
+.licenceSection img {
+    max-width: 160px;
+}
+.descriptionCard .col-lg-7 {
+    padding-right: 3rem;
+}
+.descriptionCard .col-lg-5 {
+    padding-left: 3rem;
+}
+
+.loader {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00000091;
+    z-index: 999999;
+}
+
+.spinner {
+    position: relative;
+    width: 20.2px;
+    height: 20.2px;
+}
+
+.spinner div {
+    animation: spinner-4t3wzl 1.5s infinite backwards;
+    background-color: #add136;
+    border-radius: 50%;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.spinner div:nth-child(1) {
+    animation-delay: 0.12s;
+    background-color: rgba(173, 209, 54, 0.9);
+}
+
+.spinner div:nth-child(2) {
+    animation-delay: 0.24s;
+    background-color: rgba(173, 209, 54, 0.8);
+}
+
+.spinner div:nth-child(3) {
+    animation-delay: 0.36000000000000004s;
+    background-color: rgba(173, 209, 54, 0.7);
+}
+
+.spinner div:nth-child(4) {
+    animation-delay: 0.48s;
+    background-color: rgba(173, 209, 54, 0.6);
+}
+
+.spinner div:nth-child(5) {
+    animation-delay: 0.6000000000000001s;
+    background-color: rgba(173, 209, 54, 0.5);
+}
+
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
+@keyframes spinner-4t3wzl {
+    0% {
+        transform: rotate(0deg) translateY(-200%);
+    }
+
+    60%,
+    100% {
+        transform: rotate(360deg) translateY(-200%);
+    }
+}
+
+ 

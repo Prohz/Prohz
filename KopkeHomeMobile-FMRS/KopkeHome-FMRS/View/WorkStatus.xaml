@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:View="clr-namespace:KopkeHome_FMRS.View.PartialView"
+             xmlns:Local="clr-namespace:KopkeHome_FMRS.Control"
+             x:Class="KopkeHome_FMRS.View.WorkStatus"
+             Title="{Local:TranslationExtention txtWorkStatus}" BackgroundImageSource="background.png"
+             xmlns:viewmodel="clr-namespace:KopkeHome_FMRS.ViewModel" NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext >
+        <viewmodel:WorkStatusViewModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Margin="0,15,0,10" TextColor="White" Text="{Local:TranslationExtention txtChangeYourWorkStatus}" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" ></Label>
+                    <Frame Grid.Row="1" HasShadow="False" Padding="0" Margin="10" HorizontalOptions="FillAndExpand" BackgroundColor="Black" BorderColor="Black" Opacity="0.6">
+                        <VerticalStackLayout HorizontalOptions="FillAndExpand" Margin="10" Spacing="10">
+                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                <Image VerticalOptions="Center" Source="available" Aspect="AspectFit" HeightRequest="30" WidthRequest="30"/>
+                                <Label Margin="10,0,0,0" VerticalTextAlignment="Center" TextColor="White" FontSize="15" Text="{Local:TranslationExtention txtBookingForNow}"/>
+                                <Image HeightRequest="25" WidthRequest="25" Source="{Binding Now}" HorizontalOptions="EndAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandNow}" CommandParameter="{Binding .}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                <Image VerticalOptions="Center" Source="appoint" HeightRequest="30" WidthRequest="30"/>
+                                <Label Margin="10,0,0,0" VerticalTextAlignment="Center" TextColor="White" FontSize="15" Text="{Local:TranslationExtention txtBookingForSoon}"/>
+                                <Image HeightRequest="25" WidthRequest="25" Source="{Binding Soon}" HorizontalOptions="EndAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandSoon}" CommandParameter="{Binding .}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                <Image VerticalOptions="Center" Source="booked" HeightRequest="30" WidthRequest="30"/>
+                                <Label Margin="10,0,0,0" VerticalTextAlignment="Center" TextColor="White" FontSize="15" Text="{Local:TranslationExtention  txtBookingForLater}"/>
+                                <Image HeightRequest="25" WidthRequest="25" Source="{Binding Later}" HorizontalOptions="EndAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CommandLater}" CommandParameter="{Binding .}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </StackLayout>
+                            <Frame Margin="20,44,20,0"  Padding="20,10,20,10" HorizontalOptions="FillAndExpand" BorderColor="#add136" BackgroundColor="#add136" CornerRadius="15">
+                                <Label Text="{Local:TranslationExtention txtSave}" FontSize="Medium" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="Center" />
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SaveStatusCommand}" CommandParameter="{Binding .}"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </VerticalStackLayout>
+                    </Frame>
+                </Grid>
+            </ScrollView>
+            <View:Loader IsVisible="{Binding IsLoading}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "0LaeJLaSpAR0b8TNvKxwcTyQMbylCScJmHxGlLnngK6mL1oR4Cn/zqElmfzixN90CggbLHYS/gk7vFkdXfjJbQ==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\conno\\Downloads\\thegoodsv3\\thegoodsv2\\thegoods\\KopkeHomeMobile-FMRS\\KopkeHome-FMRS\\KopkeHome-FMRS.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1012",
+      "level": "Error",
+      "message": "Platform version is not present for one or more target frameworks, even though they have specified a platform: net6.0-ios, net6.0-maccatalyst"
+    }
+  ]
+}

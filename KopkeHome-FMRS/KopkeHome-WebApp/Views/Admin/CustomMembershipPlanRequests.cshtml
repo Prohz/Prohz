@@ -1,0 +1,128 @@
+﻿@model List< KopkeHome_ModelLayer.ViewModels.CustomMembershipPlanRequestViewModel>
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="topCard-sec">
+ <h3 class="dashHeading">Custom Membership Plan Requests</h3>
+   </div>
+ <div class="logo-loader" ID="CSTMLOADER" style="display:none">
+        <div class="logo-loader-pulse pulse" id="Idloader"><img src="~/images/Kopke-brand-logo.png" /></div>
+    </div>
+ <div class="tableWrapper">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-striped" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Office Phone</th>
+                                    <th>No. Of Zipcodes</th>
+                                    <th>Descrption</th>
+                                    <th>Email</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                     <tr>
+                                    <td>@item.UserName</td>
+                                    <td>@item.HomePhone</td>
+                                    <td>@item.OfficePhone</td>
+                                    <td>@item.CustomZipcodesRequest.NumberOfZipcodes</td>
+                                    <td>@item.CustomZipcodesRequest.Descrption</td>
+                                    <td>@item.Email</td>
+                               
+                                    @if (item.CustomZipcodesRequest.IsPlanCreated)
+                                    {
+                                       <td>
+                                     <button type="button" class="btn btn-success" >Plan Created</button>
+                                     </td>  
+                                    }
+                                    else
+                                    {
+                                         <td>
+                                     <button type="button" data-requestId="@item.CustomZipcodesRequest.Id" class="btn btn-primary CreateCustomPlanAdmin" >Create Plan</button>
+                                     </td>
+                                    }
+                               
+                                </tr>
+                                    
+                                }
+                               
+
+                            </tbody>
+                           @* <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </tfoot>*@
+                        </table>
+                    </div>
+                </div>
+
+
+  <div class="modal fade" id="CustomPlanCreateViewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Create Plan</h5>
+        <button type="button" class="close btn btn-secondary ModalCloseFAQ" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+       <form name="CreateCustomPlan" method="post" onsubmit="return CreateCustomPlanFromAdmin(this);">
+      <div class="modal-body">
+        
+    <input type="hidden" name="MobileApp" value="false" id="HdnMobileApp" />
+     <input type="hidden" name="WebApp"  value="false" id="HdnWebApp" />
+      <input type="hidden" name="IsYearly"  value="false" id="HdnIsYearly" />
+
+          <input type="hidden" name="UserId" id="ReUserId" />
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Number of zip codes</label>
+    <input readonly type="text" name="NumberOfZipcodes" id="NumberOfZipcodesVM" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Number of categories</label>
+    <input readonly type="text" name="NumberOfCategories" id="NumberOfCategories" class="form-control">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description</label>
+    <textarea maxlength="2000" class="form-control" type="text" name="Descrption" id="DescrptionVM"  rows="3"></textarea>
+  </div>
+   <div class="form-group">
+    <label for="exampleFormControlInput1">Mobile App ?</label>
+   
+    <input readonly type="text" name="" id="MobileAppVM" value="No" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Web App ?</label>
+    <input readonly type="text" name="" id="WebAppVM" value="No" class="form-control">
+  </div>
+   <div class="form-group">
+    <label for="exampleFormControlInput1">Is Yearly ?</label>
+    <input readonly type="text" name="" id="IsYearlyVM" value="No" class="form-control">
+  </div>
+
+   <div class="form-group">
+    <label for="exampleFormControlInput1">Price</label>
+    <input  type="number" name="Price" id="PriceVM" placeholder="Price" value="" class="form-control currency" />
+
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary main-login-page ModalCloseFAQ" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

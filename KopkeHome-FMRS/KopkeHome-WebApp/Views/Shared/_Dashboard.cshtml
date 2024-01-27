@@ -1,0 +1,339 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.DashboardViewModels.BaseViewModel
+@Html.AntiForgeryToken()
+
+@inject IViewLocalizer Localizer
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Prohz</title>
+
+     <link rel="icon" href="~/favicon.ico" type="image/x-icon">
+    
+
+     <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/datatables.min.css" />
+    <link  rel="stylesheet" href="~/css/responsive.bootstrap.min.css" /> 
+    <link rel="stylesheet" href="~/css/jquery.dataTables.min.css"  />
+    
+      <link rel="stylesheet" href="~/css/master.css" asp-append-version="true" />
+      <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true" />
+       <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css" asp-append-version="true">
+
+
+      </head>
+<body>
+    <nav class="navbar navbar-expand-xl  fixed-top shadow" id="top-nav-header">
+        
+        <a class="navbar-brand " href="@Url.Action("index", "dashboard")">
+            <img  id="Logoimgurl" src="~/images/Kopke-brand-logo.png"  alt="logo" class="ml-1 Logoimgurl">
+        </a>
+
+        <div class="d-flex align-items-center" >
+             @* <select class="LangDropDown" name="Lang">
+  <option value="Eng">English</option>
+  <option value="Spanish">Spanish</option>
+  
+</select>*@
+ @await Html.PartialAsync("SelectCulture")
+            <button class="navbar-toggler  dashboard-navbar-toggler-btn" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            @*<i class="fa fa-ellipsis-v fa-1x" aria-hidden="true"></i>*@
+             <i class="fa fa-search fa-1x" aria-hidden="true"></i>
+           
+            
+        </button>
+
+
+
+        <div class="collapsibleNavbarMobile">
+
+
+
+
+        <ul class="mb-0 pl-0 mobile-user" style="list-style: none;">
+        <li class="nav-item dropdown user-profile-imge mb-0">
+                    <a class="nav-link text-dark dropdown-toggle d-flex align-items-center" href="#" id="navbardrop" data-toggle="dropdown">
+                        @if(!string.IsNullOrEmpty(Model.LoggedInUser.ProfilePicture))
+                        {
+                             <img alt="logo" style="margin-right:11px; class="IconBorder" src="../Uploads/@Model.LoggedInUser.ProfilePicture" width="38" /><span class="text-white">@Model.LoggedInUser.FirstName  @Model.LoggedInUser.LastName </span>  
+                        }
+                        else
+                        {
+                             <img alt="logo" style="margin-right:11px;" src="../images/DefaultProfile.png" class="IconBorder" width="38" /><span class="text-white">@Model.LoggedInUser.FirstName @Model.LoggedInUser.LastName</span>
+                        }
+
+                    </a>
+                     <div class="dropdown-menu ">
+                        <a class="dropdown-item" href="@Url.Action("UserProfileDetails", "dashboard")"  > <i class="fa fa-user" aria-hidden="true"></i>@Model.LoggedInUser.FirstName  @Model.LoggedInUser.LastName</a>
+                        
+                        @if (Model.LoggedInUser.RoleId!=null)
+                        {
+                            if(Model.LoggedInUser.RoleId!=4)
+                            {
+                             <a class="dropdown-item" href="@Url.Action("businessprofiledetail", "dashboard")"><i class="fa fa-pencil" aria-hidden="true"></i>@Localizer["View Business Profile"]</a>
+         <a class="dropdown-item" href="@Url.Action("UpdateZipcodeAndCategories", "dashboard")"><i class="fa fa-gear" aria-hidden="true"></i>@Localizer["Change Zipcodes/Categories"]</a>
+
+                            }
+                        }
+                        @if (Model.LoggedInUser.RoleId!=null)
+                        {
+                            if(Model.LoggedInUser.RoleId!=4)
+                            {
+                                <a class="dropdown-item" href="@Url.Action("ViewMembershipPlan", "dashboard")"   ><i class="fa fa-file" aria-hidden="true"></i>@Localizer["View Membership Plan"]</a>
+                            }
+                            else
+                            {
+                                <a class="dropdown-item" href="@Url.Action("ViewMembershipPlanHomeOwner", "dashboard")"   ><i class="fa fa-file" aria-hidden="true"></i>@Localizer["View Membership Plan"]</a>
+                            }
+                        }
+<a class="dropdown-item" href="@Url.Action("Resetpassword","dashboard")"><i class="fa fa-key" aria-hidden="true"></i>@Localizer["Change Password"]</a>
+                      
+                     @*   <a class="dropdown-item" href="#"><i class="fa fa-key" aria-hidden="true"></i> Change Password</a>*@  
+
+<a class="dropdown-item" href="@Url.Action("Logout", "dashboard")"> <i class="fa fa-power-off" aria-hidden="true"></i>@Localizer["Logout"]</a>
+                    </div>
+                </li>
+                </ul>
+                </div>
+
+
+
+        
+
+        </div>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <hr class="mb-1 border-top-0" />
+            <ul class="navbar-nav  ml-auto">
+                <li id="divmessage"></li>
+                <li class="nav-item header-searchbar position-relative">
+
+                    <form id="searchboxform" name="searchboxform" enctype="multipart/form-data" class="d-flex align-items-center m-0" method="Get" asp-controller="Dashboard" asp-action="SearchContractors">
+                     <input type="hidden" id="CurrentLoggedInUserId" name="UserId" value="@Model.LoggedInUser.Id" />
+                        <div class="top-nav-header-zipcode">
+                            @{
+                                string DisableZipcodeField = "search";
+                                dynamic zipcd;
+                                dynamic catgory;
+                               
+                                
+                                if (ViewBag.ZipCode==null)
+                                {
+                                    zipcd = "";
+                                }
+                                else
+                                {
+                                     zipcd = ViewBag.ZipCode;
+                                }
+                                if (ViewBag.Categories==null)
+                                {
+                                    catgory = "";
+                                }
+                                else{
+                                    catgory = ViewBag.Categories;
+                                }
+                                if (Model.LoggedInUser.RoleId==4)
+                                {
+                                    DisableZipcodeField = "hidden";
+                                    <input id="autocomplete-zipcode" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"type = "search"
+    maxlength = "5"  value="@zipcd" disabled class="nav-link text-dark inputzip "  placeholder="@Localizer["The zip code where you want to get work done?"]"
+                               aria-label="Search">
+                                }
+                                 <input id="autocomplete-zipcode" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+    type = "@DisableZipcodeField"
+    maxlength = "5" name="ZipCode" value="@zipcd" class="nav-link text-dark inputzip "  placeholder="@Localizer["The zip code where you want to get work done?"]"
+                               aria-label="Search">
+                            }
+                       
+                       <label id="LBLautocomplete-zipcode" for="autocomplete-zipcode" class="error" style=""></label>
+                    </div>
+               
+                  <div class="input-group top-nav-header-searchbar ">
+                            <select name="Categories" id="autocomplete-address" style="max-height: 200px;overflow-y: auto;background-color: #292E3A;color: #fff !important;max-width: 250px;" class="form-select form-control w-100 input-search">
+                                    <option value="">Contractor Specialization</option>
+                                <option value="Architects">@Localizer["Architects"]</option>
+                                <option value="Asbestos Testing/Removal Companies">@Localizer["Asbestos Testing/Removal Companies"]</option>
+                                <option value="Asphalt Driveways">@Localizer["Asphalt Driveways"]</option>
+                                <option value="Basement Egress Windows">@Localizer["Basement Egress Windows"]</option>
+                                <option value="Basement Remodeling">@Localizer["Basement Remodeling"]</option>
+                                <option value="Basement Waterproofing">@Localizer["Basement Waterproofing"]</option>
+                                <option value="Brick and Block - Masonry Companies">@Localizer["Brick and Block - Masonry Companies"]</option>
+                                <option value="Cabinet - Installer">@Localizer["Cabinet - Installer"]</option>
+                                <option value="Cabinet Refacing Company">@Localizer["Cabinet Refacing Company"]</option>
+                                <option value="Carpenters - Rough">@Localizer["Carpenters - Rough"]</option>
+                                <option value="Ceramic/Porcelain Tile - Installer">@Localizer["Ceramic/Porcelain Tile - Installer"]</option>
+                                <option value="Chimney - New/Repairs/Caps">@Localizer["Chimney - New/Repairs/Caps"]</option>
+                                <option value="Closet Organization Companies">@Localizer["Closet Organization Companies"]</option>
+                                <option value="Concrete - Driveway/Sidewalk">@Localizer["Concrete - Driveway/Sidewalk"]</option>
+                                <option value="Concrete - Stamped/Stained/Sealed">@Localizer["Concrete - Stamped/Stained/Sealed"]</option>
+                                <option value="Countertops - Corian/Solid Surface">@Localizer["Countertops - Corian/Solid Surface"]</option>
+                                <option value="Countertops - Granite/Quartz">@Localizer["Countertops - Granite/Quartz"]</option>
+                                <option value="Doors - Interior/Exterior">@Localizer["Doors - Interior/Exterior"]</option>
+                                <option value="Drywall Companies">@Localizer["Drywall Companies"]</option>
+                                <option value="Dumpster Rental Companies">@Localizer["Dumpster Rental Companies"]</option>
+                                <option value="Electricians">@Localizer["Electricians"]</option>
+                                <option value="Environmental Companies">@Localizer["Environmental Companies"]</option>
+                                <option value="Excavation Companies">@Localizer["Excavation Companies"]</option>
+                                <option value="Fence Companies">@Localizer["Fence Companies"]</option>
+                                <option value="Finish Carpenter">@Localizer["Finish Carpenter"]</option>
+                                <option value="Fireplace Companies">@Localizer["Fireplace Companies"]</option>
+                                <option value="Fireplace Installer">@Localizer["Fireplace Installer"]</option>
+                                <option value="Flooring Companies">@Localizer["Flooring Companies"]</option>
+                                <option value="Flooring Installer - Vinyl">@Localizer["Flooring Installer - Vinyl"]</option>
+                                <option value="Flooring Installer – Carpet">@Localizer["Flooring Installer – Carpet"]</option>
+                                <option value="Flooring Installer and refinisher – Hard Wood">@Localizer["Flooring Installer and refinisher – Hard Wood"]</option>
+                                <option value="Foundation Companies">@Localizer["Foundation Companies"]</option>
+                                <option value="Furnace and Air Conditioning Companies">@Localizer["Furnace and Air Conditioning Companies"]</option>
+                                <option value="Garage Door Companies">@Localizer["Garage Door Companies"]</option>
+                                <option value="Garage Door Installers">@Localizer["Garage Door Installers"]</option>
+                                <option value="General Contractors">@Localizer["General Contractors"]</option>
+                                <option value="General Labor Services">@Localizer["General Labor Services"]</option>
+                                <option value="Gravel Driveway Companies">@Localizer["Gravel Driveway Companies"]</option>
+                                <option value="Gutter Companies">@Localizer["Gutter Companies"]</option>
+                                <option value="Handyman Services">@Localizer["Handyman Services"]</option>
+                                <option value="HVAC Companies">@Localizer["HVAC Companies"]</option>
+                                <option value="Insulation Companies">@Localizer["Insulation Companies"]</option>
+                                <option value="Insulation installer – Blown-in">@Localizer["Insulation installer – Blown-in"]</option>
+                                <option value="Insulation Installer - Rolled">@Localizer["Insulation Installer - Rolled"]</option>
+                                <option value="Insulation Installer - Spray Foam">@Localizer["Insulation Installer - Spray Foam"]</option>
+                                <option value="Interior Design">@Localizer["Interior Design"]</option>
+                                <option value="Kitchen Remodeling Companies">@Localizer["Kitchen Remodeling Companies"]</option>
+                                <option value="Kitchen/Bath Designers">@Localizer["Kitchen/Bath Designers"]</option>
+                                <option value="Mold Testing/Remediation Companies">@Localizer["Mold Testing/Remediation Companies"]</option>
+                                <option value="Painting - Exterior">@Localizer["Painting - Exterior"]</option>
+                                <option value="Painting - Interior">@Localizer["Painting - Interior"]</option>
+                                <option value="Patio Doors">@Localizer["Patio Doors"]</option>
+                                <option value="Plumbing Companies">@Localizer["Plumbing Companies"]</option>
+                                <option value="Roofing Companies">@Localizer["Roofing Companies"]</option>
+                                <option value="Roofing Installer – Clay Tile">@Localizer["Roofing Installer – Clay Tile"]</option>
+                                <option value="Roofing Installer – Concrete Tile">@Localizer["Roofing Installer – Concrete Tile"]</option>
+                                <option value="Roofing Installer – Metal">@Localizer["Roofing Installer – Metal"]</option>
+                                <option value="Roofing Installer – Rolled Roof">@Localizer["Roofing Installer – Rolled Roof"]</option>
+                                <option value="Roofing Installers – Asphalt">@Localizer["Roofing Installers – Asphalt"]</option>
+                                <option value="Septic Tank Companies">@Localizer["Septic Tank Companies"]</option>
+                                <option value="Shower Door Companies">@Localizer["Shower Door Companies"]</option>
+                                <option value="Shower Door Installers">@Localizer["Shower Door Installers"]</option>
+                                <option value="Siding Company">@Localizer["Siding Company"]</option>
+                                <option value="Siding Installers">@Localizer["Siding Installers"]</option>
+                                <option value="Structural Engineering Companies">@Localizer["Structural Engineering Companies"]</option>
+                                <option value="Swimming Pool Companies">@Localizer["Swimming Pool Companies"]</option>
+                                <option value="Tankless Water Heaters">@Localizer["Tankless Water Heaters"]</option>
+                                <option value="Wallpaper Companies">@Localizer["Wallpaper Companies"]</option>
+                                <option value="Window Blinds/Shades">@Localizer["Window Blinds/Shades"]</option>
+                                <option value="Window Companies">@Localizer["Window Companies"]</option>
+                                <option value="Window Installers">@Localizer["Window Installers"]</option>
+                            </select>
+                            <div class="input-group-append" style="margin-left: 30px;">
+                          <button class="btn btn-secondary m-0" id="chksubmit" type="submit">
+                          @Localizer["Search Now"]  <i class="fa fa-search"></i>
+                          </button>
+                        </div>
+                </div>
+                 </form>
+                </li>
+              
+               
+                <li class="nav-item dropdown user-profile-imge mobile-user-none">
+                    <a class="nav-link text-dark dropdown-toggle d-flex align-items-center" href="#" id="navbardrop" data-toggle="dropdown">
+                        @if(!string.IsNullOrEmpty(Model.LoggedInUser.ProfilePicture))
+                        {
+                             <img alt="logo"  class="IconBorder" src="../Uploads/@Model.LoggedInUser.ProfilePicture" width="38" /><span class="text-white">@Model.LoggedInUser.FirstName  @Model.LoggedInUser.LastName </span>  
+                        }
+                        else
+                        {
+                             <img alt="logo" style="margin-right:5px;" src="../images/DefaultProfile.png" class="IconBorder" width="38" /><span class="text-white">@Model.LoggedInUser.FirstName @Model.LoggedInUser.LastName</span>
+                        }
+
+                    </a>
+                     <div class="dropdown-menu ">
+                        <a class="dropdown-item" href="@Url.Action("UserProfileDetails", "dashboard")"  > <i class="fa fa-user" aria-hidden="true"></i>@Model.LoggedInUser.FirstName  @Model.LoggedInUser.LastName</a>
+                        
+                        @if (Model.LoggedInUser.RoleId!=null)
+                        {
+                            if(Model.LoggedInUser.RoleId!=4)
+                            {
+                             <a class="dropdown-item" href="@Url.Action("businessprofiledetail", "dashboard")"><i class="fa fa-pencil" aria-hidden="true"></i>@Localizer["View Business Profile"]</a>
+                   <a class="dropdown-item" href="@Url.Action("UpdateZipcodeAndCategories", "dashboard")"><i class="fa fa-gear" aria-hidden="true"></i>@Localizer["Change Zipcodes/Categories"]</a>
+
+                            }
+                        }
+
+                        @if (Model.LoggedInUser.RoleId!=null)
+                        {
+                            if(Model.LoggedInUser.RoleId!=4)
+                            {
+                                <a class="dropdown-item" href="@Url.Action("ViewMembershipPlan", "dashboard")"   ><i class="fa fa-file" aria-hidden="true"></i>@Localizer["View Membership Plan"]</a>
+                            }
+                            else
+                            {
+                                <a class="dropdown-item" href="@Url.Action("ViewMembershipPlanHomeOwner", "dashboard")"   ><i class="fa fa-file" aria-hidden="true"></i>@Localizer["View Membership Plan"]</a>
+                            }
+                        }
+                     
+
+
+<a class="dropdown-item" href="@Url.Action("Resetpassword","dashboard")"><i class="fa fa-key" aria-hidden="true"></i>@Localizer["Change Password"]</a>
+                      
+                     @*   <a class="dropdown-item" href="#"><i class="fa fa-key" aria-hidden="true"></i> Change Password</a>*@  
+
+<a class="dropdown-item" href="@Url.Action("Logout", "dashboard")"> <i class="fa fa-power-off" aria-hidden="true"></i>@Localizer["Logout"]</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="logo-loader">
+        <div class="logo-loader-pulse pulse" id="Idloader"><img src="~/images/Kopke-brand-logo.png" /></div>
+    </div>
+   
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+ <div class="footer">
+       <p class="footer-line m-0">@Localizer["&#169; Copyright 2023 Prohz. All rights reserved."]</p>
+   </div>
+
+   <script src="~/js/jquery.min.js"></script>
+   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+   <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+   <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+
+    @**@
+    <script src="~/js/Dashboard.js"></script>
+     <script src="~/js/Subscription.js"></script>
+    <script type="text/javascript" src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/jquery.dataTables.min1.js"></script>
+    <script src="~/js/jquery.dataTables.min2.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
+     @* <script src="~/js/Localization.js"></script>*@
+         
+   @* <script src="js/dataTables.bootstrap4.min.js"></script>*@
+
+    
+
+
+
+    <script>
+var urlprefix = "";
+    if (window.location.href.indexOf("KopkeHome-FMRS-QA") > -1) {
+        urlprefix = '/KopkeHome-FMRS-QA';
+    }
+
+   
+
+    </script>
+   
+</body>
+
+</html>
+
+<style>
+    .user-profile-imge a.dropdown-toggle img {
+   
+    margin-right: 5px;
+}
+</style>

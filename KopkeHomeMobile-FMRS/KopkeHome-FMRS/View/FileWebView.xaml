@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KopkeHome_FMRS.View.FileWebView"             
+              xmlns:View="clr-namespace:KopkeHome_FMRS.View.PartialView"
+              xmlns:viewmodel="clr-namespace:KopkeHome_FMRS.ViewModel" 
+             Title="{Binding FileName}" >
+
+    <ContentPage.BindingContext >
+        <viewmodel:WebFileViewModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    <Grid VerticalOptions="FillAndExpand" BackgroundColor="#1D1714" Padding="10" >
+        <Frame Padding="10" HeightRequest="600" WidthRequest="420" BorderColor="#add136" BackgroundColor="#1D1714"  >
+            <WebView  x:Name="Webview"   VerticalOptions="CenterAndExpand"
+                  BackgroundColor="#1D1714" HorizontalOptions="CenterAndExpand" />
+        </Frame>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,108 @@
+D:/KopkeHome-FMRS/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.deps.json
+D:/KopkeHome-FMRS/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.dll
+D:/KopkeHome-FMRS/KopkeHome-LogManager/bin/Debug/net6.0/ref/KopkeHome-LogManager.dll
+D:/KopkeHome-FMRS/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.pdb
+D:/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.AssemblyReference.cache
+D:/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.GeneratedMSBuildEditorConfig.editorconfig
+D:/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfoInputs.cache
+D:/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfo.cs
+D:/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.CoreCompileInputs.cache
+D:/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.dll
+D:/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/ref/KopkeHome-LogManager.dll
+D:/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.pdb
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.deps.json
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.dll
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-LogManager/bin/Debug/net6.0/ref/KopkeHome-LogManager.dll
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.pdb
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.AssemblyReference.cache
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.GeneratedMSBuildEditorConfig.editorconfig
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfoInputs.cache
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfo.cs
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.CoreCompileInputs.cache
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.dll
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/ref/KopkeHome-LogManager.dll
+D:/Arshad Backup/Backup/KopkeHome-FMRS/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.pdb
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.deps.json
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.dll
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.pdb
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.AssemblyReference.cache
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.GeneratedMSBuildEditorConfig.editorconfig
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfoInputs.cache
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfo.cs
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.CoreCompileInputs.cache
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.dll
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-LogManager/obj/Debug/net6.0/refint/KopkeHome-LogManager.dll
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.pdb
+E:/AWS Stuff/huevosec/clients/kopke/KopkeHome-FMRS(ltst)/KopkeHome-LogManager/obj/Debug/net6.0/ref/KopkeHome-LogManager.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.deps.json
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.pdb
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.AssemblyReference.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfoInputs.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfo.cs
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.CoreCompileInputs.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/refint/KopkeHome-LogManager.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.pdb
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/ref/KopkeHome-LogManager.dll
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.deps.json
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.dll
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.pdb
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.AssemblyReference.cache
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfoInputs.cache
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfo.cs
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.CoreCompileInputs.cache
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.dll
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/refint/KopkeHome-LogManager.dll
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.pdb
+C:/Users/conno/Downloads/thegoods-1/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/ref/KopkeHome-LogManager.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.deps.json
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.pdb
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.AssemblyReference.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfoInputs.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfo.cs
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.CoreCompileInputs.cache
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/refint/KopkeHome-LogManager.dll
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.pdb
+C:/Users/Giuseppe/Desktop/Personal Projects/Prohz/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/ref/KopkeHome-LogManager.dll
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.deps.json
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.dll
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.pdb
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.AssemblyReference.cache
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfoInputs.cache
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfo.cs
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.CoreCompileInputs.cache
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.dll
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/refint/KopkeHome-LogManager.dll
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.pdb
+C:/Users/conno/Downloads/thegoodsv3/thegoodsv2/thegoods/KopkeHome-LogManager/obj/Debug/net6.0/ref/KopkeHome-LogManager.dll
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.deps.json
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.dll
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-LogManager/bin/Debug/net6.0/KopkeHome-LogManager.pdb
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.AssemblyReference.cache
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.GeneratedMSBuildEditorConfig.editorconfig
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfoInputs.cache
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.AssemblyInfo.cs
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.csproj.CoreCompileInputs.cache
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.dll
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-LogManager/obj/Debug/net6.0/refint/KopkeHome-LogManager.dll
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-LogManager/obj/Debug/net6.0/KopkeHome-LogManager.pdb
+/Users/perryneal/Desktop/prohz_final_updates/KopkeHome-LogManager/obj/Debug/net6.0/ref/KopkeHome-LogManager.dll
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-LogManager\bin\Debug\net6.0\KopkeHome-LogManager.deps.json
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-LogManager\bin\Debug\net6.0\KopkeHome-LogManager.dll
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-LogManager\bin\Debug\net6.0\KopkeHome-LogManager.pdb
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-LogManager\obj\Debug\net6.0\KopkeHome-LogManager.csproj.AssemblyReference.cache
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-LogManager\obj\Debug\net6.0\KopkeHome-LogManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-LogManager\obj\Debug\net6.0\KopkeHome-LogManager.AssemblyInfoInputs.cache
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-LogManager\obj\Debug\net6.0\KopkeHome-LogManager.AssemblyInfo.cs
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-LogManager\obj\Debug\net6.0\KopkeHome-LogManager.csproj.CoreCompileInputs.cache
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-LogManager\obj\Debug\net6.0\KopkeHome-LogManager.dll
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-LogManager\obj\Debug\net6.0\refint\KopkeHome-LogManager.dll
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-LogManager\obj\Debug\net6.0\KopkeHome-LogManager.pdb
+C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-LogManager\obj\Debug\net6.0\ref\KopkeHome-LogManager.dll

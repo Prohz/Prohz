@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KopkeHome_FMRS.View.ViewMemberShipPage"
+             xmlns:Local="clr-namespace:KopkeHome_FMRS.Control"
+             BackgroundColor="Black"
+             xmlns:viewModel="clr-namespace:KopkeHome_FMRS.ViewModel"
+             Title="{Local:TranslationExtention txtViewMembershipPlan}">
+    <ContentPage.BindingContext>
+        <viewModel:ViewMemberShipViewModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    <Grid Padding="10" >
+        <Frame Grid.Row="0" BackgroundColor="Transparent"  BorderColor="Transparent">
+            <Image  HeightRequest="20" WidthRequest="30" HorizontalOptions="Start" ></Image>
+        </Frame>
+        <Frame Grid.Row="1" Margin="10" CornerRadius="0" BorderColor="Green"  Padding="1" BackgroundColor="LightGrey">
+            <Grid  RowDefinitions="0.75*,1.5*,6.75*,1*" RowSpacing="0">
+                <Frame Grid.Row="0" Padding="0" HorizontalOptions="FillAndExpand" BackgroundColor="Orange" CornerRadius="0">
+                    <Label Text="Bronze" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold" TextColor="White" ></Label>
+                </Frame>
+                <Frame Grid.Row="1" BackgroundColor="Gray" CornerRadius="0">
+                    <StackLayout>
+                        <Label Text="{Binding MonthalyOrAnual}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="20" TextColor="White"></Label>
+                        <Label Text="days" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="White"/>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Row="2" Padding="10" BackgroundColor="Black" CornerRadius="0">
+                    <Grid  Grid.Row="2" RowDefinitions="1.5*,8.5*" RowSpacing="0" ColumnDefinitions="3*,2*" BackgroundColor="Transparent" >
+                        <Frame Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="Gray" BorderColor="Transparent">
+                            <Label Text="{Local:TranslationExtention txtMembershipBenefit}" HorizontalOptions="CenterAndExpand" FontSize="15" FontAttributes="Bold" TextColor="White"></Label>
+                        </Frame>
+                        <Grid Grid.Column="0" Padding="20" Grid.Row="1" RowDefinitions="2*,2*,2*,2*,2*" >
+                            <Label Grid.Row="0"  Text="{Local:TranslationExtention txtZipCode}" TextColor="White" VerticalOptions="Center" ></Label>
+                            <Label Grid.Row="1"  Text="{Local:TranslationExtention txtCategories}" TextColor="White" VerticalOptions="Center" ></Label>
+                            <Label  Grid.Row="2" Text="{Local:TranslationExtention  txtMobileApp}" TextColor="White" VerticalOptions="Center" ></Label>
+                            <Label Grid.Row="3" Text="{Local:TranslationExtention  txtWebsite}" TextColor="White" VerticalOptions="Center" ></Label>
+                            <Label Grid.Row="4" Text="{Binding PlanDuration}" TextColor="White" VerticalOptions="Center" ></Label>
+                        </Grid>
+                        <Grid Grid.Column="1" Padding="20" Grid.Row="1" RowDefinitions="2*,2*,2*,2*,2*" >
+                            <Label Grid.Row="0"  Text="{Binding NumberOfZipCode}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="White"></Label>
+                            <Label Grid.Row="1" Text="{Binding NumberOfCategories}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"  TextColor="White"></Label>
+                            <CheckBox Grid.Row="2" IsChecked="{Binding MobileApp}" IsEnabled="False" VerticalOptions="Center"  HorizontalOptions="CenterAndExpand" Color="White" ></CheckBox>
+                            <CheckBox Grid.Row="3" IsChecked="{Binding WebApp}" IsEnabled="False" VerticalOptions="Center"  HorizontalOptions="CenterAndExpand" Color="White"></CheckBox>
+                            <Label  Grid.Row="4" Text="{Binding PriceMonthly}"  VerticalOptions="Center"  HorizontalOptions="CenterAndExpand" TextColor="White"></Label>
+                            <Label  Grid.Row="4" Text="{Binding PriceYearly}"  VerticalOptions="Center"  HorizontalOptions="CenterAndExpand" TextColor="White"></Label>
+                        </Grid>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="3"  BackgroundColor="Orange" CornerRadius="0">
+                    <Label Text="{Local:TranslationExtention  txtCURRENTPLAN}" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"></Label>
+                </Frame>
+            </Grid>
+        </Frame>
+           
+      
+    </Grid>
+</ContentPage>

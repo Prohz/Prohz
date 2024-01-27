@@ -1,0 +1,60 @@
+﻿@model List< KopkeHome_ModelLayer.DataModel.ProhzSalesAssciates>
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<div class="topCard-sec">
+ <h3 class="dashHeading">Prohz Sales Associates</h3>
+   </div>
+ <div class="logo-loader" ID="CSTMLOADER" style="display:none">
+        <div class="logo-loader-pulse pulse" id="Idloader"><img src="~/images/Kopke-brand-logo.png" /></div>
+    </div>
+ <div class="tableWrapper">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-striped" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Sales Person Name</th>
+                                    <th>Joined Member Name</th>
+                                    <th>Joined Member Email</th>
+                                    <th>Joined Member Id</th>
+                                    <th>Joined On</th>
+                                    <th>Registration Status</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                     <tr>
+                                    <td>@item.SalesPersonName</td>
+                                    <td>@item.JoinedMemberName</td>
+                                    <td>@item.JoinedMemberEmail</td>
+                                    <td>@item.JoinedMemberMemberId</td>
+                                    
+                                    <td>@item.JoinedOn</td>
+                                  
+                               
+                                    @if (item.IsRegistred)
+                                    {
+                                       <td>
+                                     <button type="button" style="background-color: #ADD136 !important;color: black !important;border-color:#ADD136 !important " class="btn btn-success" >Registration Completed.</button>
+                                     </td>  
+                                    }
+                                    else
+                                    {
+                                         <td>
+                                     <button type="button" class="btn btn-danger" >Registration Not Complete</button>
+                                     </td>
+                                    }
+                               
+                                </tr>
+                                    
+                                }
+                               
+
+                            </tbody>
+                          
+                        </table>
+                    </div>
+                </div>
+

@@ -1,0 +1,1242 @@
+﻿@model KopkeHome_ModelLayer.ViewModels.DashboardViewModels.ContractorProfileDetailsViewModel
+@{
+    Layout = "~/Views/Shared/_DashboardInternal.cshtml";
+}
+
+
+<div class="dashboard-main-container">
+    @*dashboard-main-container*@
+
+
+    <div class="dashboard-top-heading dashboard-top-heading-cstm ">
+        <h3 class="green-clr mb-5">Contractor Details</h3>
+        <div>
+            <p style="cursor:pointer" class="text-white m-0"><a style="cursor:pointer" onclick="window.history.go(-1); return false;" class="text-white"><i class="fa fa-long-arrow-left forgot-back-arrow" aria-hidden="true"></i> Go back</a></p>
+        </div>
+    </div>
+
+@if (Model != null)
+{
+
+
+
+
+        @if (Model.BusinessProfileContractor != null)
+        {
+            <div class="businessPanel">
+                <div class="container">
+                    <h1 class="title">@Model.User.BusinessName</h1>
+                    <div class="row orderChange">
+                        <div class="col-lg-8 col-md-12">
+                            <p class="loaction">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20.393" height="25.954"
+                             viewBox="0 0 20.393 25.954">
+                                    <g id="location-filled" transform="translate(-7.5 -3)">
+                                        <path id="Path_7" data-name="Path 7"
+                                      d="M17.7,3A10.208,10.208,0,0,0,7.5,13.2a10.093,10.093,0,0,0,2.054,6.118s.278.366.323.419L17.7,28.954l7.822-9.226c.041-.049.32-.414.32-.414v0A10.09,10.09,0,0,0,27.893,13.2,10.208,10.208,0,0,0,17.7,3Zm0,13.9A3.708,3.708,0,1,1,21.4,13.2,3.708,3.708,0,0,1,17.7,16.9Z"
+                                      fill="#fff" />
+                                        <circle id="IconifyId-17e9079768a-d1151c-107" cx="3.708" cy="3.708" r="3.708"
+                                        transform="translate(13.989 9.489)" fill="none" />
+                                    </g>
+                                </svg>
+                                Address : @Model.User.BusinessAddress, @Model.User.City, @Model.User.State, @Model.User.ZipCode
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="profileDetails">
+
+                                        <li>
+                                            <svg id="mobile" xmlns="http://www.w3.org/2000/svg" width="17.338" height="30.823"
+                                         viewBox="0 0 17.338 30.823">
+                                                <path id="Path_4" data-name="Path 4"
+                                              d="M15.411,30.823H1.926a1.876,1.876,0,0,1-1.355-.557A1.837,1.837,0,0,1,0,28.9V7.706A1.851,1.851,0,0,1,.572,6.351a1.851,1.851,0,0,1,1.355-.572V1.926A1.851,1.851,0,0,1,2.5.572,1.868,1.868,0,0,1,3.868,0,1.819,1.819,0,0,1,5.222.572a1.876,1.876,0,0,1,.557,1.355V5.779h9.632a1.837,1.837,0,0,1,1.37.572,1.876,1.876,0,0,1,.557,1.355V28.9a1.9,1.9,0,0,1-1.926,1.926ZM7.706,26.488a.464.464,0,0,0,.482.482H9.15a.464.464,0,0,0,.482-.482v-.963a.464.464,0,0,0-.482-.482H8.187a.464.464,0,0,0-.482.482Zm0-3.853a.464.464,0,0,0,.482.482H9.15a.464.464,0,0,0,.482-.482v-.963a.464.464,0,0,0-.482-.482H8.187a.464.464,0,0,0-.482.482Zm0-3.853a.464.464,0,0,0,.482.482H9.15a.464.464,0,0,0,.482-.482v-.963a.464.464,0,0,0-.482-.482H8.187a.464.464,0,0,0-.482.482ZM3.853,26.488a.464.464,0,0,0,.482.482H5.3a.464.464,0,0,0,.482-.482v-.963a.464.464,0,0,0-.482-.482H4.334a.464.464,0,0,0-.482.482Zm0-3.853a.464.464,0,0,0,.482.482H5.3a.464.464,0,0,0,.482-.482v-.963a.464.464,0,0,0-.482-.482H4.334a.464.464,0,0,0-.482.482Zm0-3.853a.464.464,0,0,0,.482.482H5.3a.464.464,0,0,0,.482-.482v-.963a.464.464,0,0,0-.482-.482H4.334a.464.464,0,0,0-.482.482ZM13.485,10.6a.977.977,0,0,0-.963-.963H4.816a.977.977,0,0,0-.963.963v3.853a.977.977,0,0,0,.963.963h7.706a.977.977,0,0,0,.963-.963Zm0,7.224A.464.464,0,0,0,13,17.338H12.04a.464.464,0,0,0-.482.482v.963a.464.464,0,0,0,.482.482H13a.464.464,0,0,0,.482-.482Zm0,3.853A.464.464,0,0,0,13,21.191H12.04a.464.464,0,0,0-.482.482v.963a.464.464,0,0,0,.482.482H13a.464.464,0,0,0,.482-.482Zm0,3.853A.464.464,0,0,0,13,25.043H12.04a.464.464,0,0,0-.482.482v.963a.464.464,0,0,0,.482.482H13a.464.464,0,0,0,.482-.482Z"
+                                              fill="#fff" />
+                                            </svg>
+                                            Mobile Phone: @Model.User.PhoneNumber
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26.629" height="21.328"
+                                         viewBox="0 0 26.629 21.328">
+                                                <g id="email" transform="translate(0 -2.333)">
+                                                    <path id="Path_6" data-name="Path 6"
+                                                  d="M23.947,2.333a2.662,2.662,0,0,1,2.682,2.682V20.98a2.662,2.662,0,0,1-2.682,2.682H2.682a2.588,2.588,0,0,1-1.9-.78A2.588,2.588,0,0,1,0,20.98V5.015a2.588,2.588,0,0,1,.78-1.9,2.588,2.588,0,0,1,1.9-.78Zm0,5.363V5.015L13.283,11.688,2.682,5.015V7.7l10.6,6.61Z"
+                                                  fill="#fff" />
+                                                </g>
+                                            </svg>
+                                            Email: @Model.User.Email
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28.445" height="28.445"
+                                         viewBox="0 0 28.445 28.445">
+                                                <g id="facebook" transform="translate(0.006 0.003)">
+                                                    <g id="Group_11" data-name="Group 11" transform="translate(-0.006 -0.003)">
+                                                        <path id="Path_8" data-name="Path 8"
+                                                      d="M28.439,14.307A14.223,14.223,0,1,0,11.993,28.442v-10H8.384V14.308H12V11.153c0-3.585,2.124-5.566,5.372-5.566a21.752,21.752,0,0,1,3.184.279v3.52H18.758a2.062,2.062,0,0,0-2.316,2.236v2.684h3.943l-.629,4.135H16.44v10A14.286,14.286,0,0,0,28.439,14.307Z"
+                                                      transform="translate(0.006 0.003)" fill="#fff" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            Facebook: @if (!string.IsNullOrEmpty(Model.BusinessProfileContractor.FacebookPageURL))
+                                            {
+                                                <a style="height:5px; width:06px; font-size:small; margin:5px;" href="@Model.BusinessProfileContractor.FacebookPageURL">@Model.BusinessProfileContractor.FacebookPageURL</a>
+                                            }
+                                            else
+                                            {
+                                                <span> Not available</span>
+                                            }
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="profileDetails">
+
+                                        @* <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+                                            <g id="time" transform="translate(-4.5 -4.5)">
+                                            <path id="Path_3" data-name="Path 3"
+                                            d="M18.5,4.5a14,14,0,1,0,14,14A14,14,0,0,0,18.5,4.5Zm6.462,16.154H18.5a1.077,1.077,0,0,1-1.077-1.077V9.885a1.077,1.077,0,0,1,2.154,0V18.5h5.385a1.077,1.077,0,1,1,0,2.154Z"
+                                            fill="#fff" />
+                                            </g>
+                                            </svg>
+                                            24Hr Answering Service 800-456-6789
+                                            </li>*@
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="27.934"
+                                         viewBox="0 0 28 27.934">
+                                                <g id="globe-alt" transform="translate(0 -0.333)">
+                                                    <path id="Path_5" data-name="Path 5"
+                                                  d="M14,.333a13.491,13.491,0,0,1,9.9,4.1A13.452,13.452,0,0,1,28,14.3a13.453,13.453,0,0,1-4.1,9.869,13.491,13.491,0,0,1-9.9,4.1,13.491,13.491,0,0,1-9.9-4.1A13.453,13.453,0,0,1,0,14.3,13.452,13.452,0,0,1,4.1,4.432,13.491,13.491,0,0,1,14,.333Zm9.672,8.393a10.615,10.615,0,0,0-6.033-4.984,20.651,20.651,0,0,1,1.9,4.984Zm-9.7-5.574a18.619,18.619,0,0,0-2.623,5.574h5.311A19.917,19.917,0,0,0,13.967,3.153ZM3.148,17.12H7.869a24.165,24.165,0,0,1-.2-2.82,24.165,24.165,0,0,1,.2-2.82H3.148A13.315,13.315,0,0,0,2.82,14.3,13.315,13.315,0,0,0,3.148,17.12Zm1.18,2.754a10.615,10.615,0,0,0,6.033,4.984,20.651,20.651,0,0,1-1.9-4.984ZM8.459,8.727a20.651,20.651,0,0,1,1.9-4.984A10.615,10.615,0,0,0,4.328,8.727Zm5.508,16.721a19.917,19.917,0,0,0,2.689-5.574H11.344A18.619,18.619,0,0,0,13.967,25.448Zm3.279-8.328a18.233,18.233,0,0,0,.262-2.82,18.233,18.233,0,0,0-.262-2.82H10.689a24.165,24.165,0,0,0-.2,2.82,24.165,24.165,0,0,0,.2,2.82Zm.393,7.738a10.615,10.615,0,0,0,6.033-4.984H19.541A20.651,20.651,0,0,1,17.639,24.858Zm2.426-7.738h4.721a11.2,11.2,0,0,0,.393-2.82,11.2,11.2,0,0,0-.393-2.82H20.066a24.165,24.165,0,0,1,.2,2.82A24.165,24.165,0,0,1,20.066,17.12Z"
+                                                  transform="translate(0 0)" fill="#fff" />
+                                                </g>
+                                            </svg>
+                                            Website: @if (!string.IsNullOrEmpty(@Model.BusinessProfileContractor.CompanyWebsiteURL))
+                                            {
+                                                <a style="height:5px; width:06px; font-size:small; margin:5px;" href="@Model.BusinessProfileContractor.CompanyWebsiteURL">@Model.BusinessProfileContractor.CompanyWebsiteURL</a>
+                                            }
+                                            else
+                                            {
+                                                <span> Not available</span>
+                                            }
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="businessProfile">
+                                <img onerror="this.src='../images/DefaultProfile.png'" src="~/Uploads/@Model.BusinessProfileContractor.ProfilePicture" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="businessCardPanel">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="businessCard bsCard1">
+                                    <h4 class="card-head mb-3">
+                                        Services Offered
+                                    </h4>
+                                    <ul class="mt-4">
+                                        @{
+                                            if (Model.Categories.Any())
+                                            {
+                                            foreach (var item in Model.Categories)
+                                            {
+                                                <li>@item.Name</li>
+                                            }
+                                            }
+                                            else
+                                            {
+                                        <li>No Categories found.</li>
+                                            }
+                                            
+                                        }
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="businessCard bsCard2">
+                                    <h4 class="card-head">
+                                        Zip code served
+                                    </h4>
+                                    <div class="zipcodeSection mt-4 ">
+                                       <div class="contractor-service-zipcodes">
+                                            @{
+                                                if(Model.Zipcodes.Any())
+                                                {
+                                                    foreach (var item in Model.Zipcodes)
+                                                    {
+                                                        <span>@item.Zipcode </span>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                <span>No Zip codes found.</span>
+                                                }
+
+                                        }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="businessDescription text-center mb-5">
+                        <h2>Business Description</h2>
+                        <p>@Model.BusinessProfileContractor.BusinessDescription</p>
+                    </div>
+
+                    <div class="descriptionCard">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <h4 class="card-head">
+                                    Doing Business
+                                </h4>
+                                <div class="businessCard">
+                                    <ul>
+                                        <li>
+                                            <span>Years In Business :</span>
+                                            <span class="text-center">@Model.BusinessProfileContractor.YearsInBusiness</span>
+                                        </li>
+                                        <li>
+                                            <span>Number of Employees :</span>
+                                            <span class="text-center">@Model.BusinessProfileContractor.NumberOfEmployees</span>
+                                        </li>
+
+
+                                       
+
+                                        <li>
+                                            <span>Business or trade license(s) :</span>
+                                            @if (Model.BusinessProfileContractor.IsBusinessOrTradeLicense == true)
+                                            {
+                                                <span class="text-center">Yes</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-center">No</span>
+
+                                            }
+                                        </li>
+
+
+
+                                        <li>
+                                            <span>Liability Insurance :</span>
+                                            @if (Model.BusinessProfileContractor.IsLiabilityInsurance == true)
+                                            {
+                                                <span class="text-center">Yes</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-center">No</span>
+
+                                            }
+                                        </li>
+
+
+
+                                        <li>
+                                            <span>Workman’s Compensation Insurance :</span>
+                                            @if (Model.BusinessProfileContractor.IsWorkmanCompensationInsurance == true)
+                                            {
+                                                <span class="text-center">Yes</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-center">No</span>
+
+                                            }
+                                        </li>
+
+                                       
+
+
+                                        <li class="mb-0">
+                                            <span>Account Type :</span>
+                                            @{
+
+                                                if (Model.User.RoleId == 1)
+                                                {
+                                                    <span class="text-center">Contractor </span>
+
+                                                }
+                                                else if (Model.User.RoleId == 2)
+                                                {
+                                                    <span class="text-center">Sub-Contractor </span>
+                                                }
+                                                else if (Model.User.RoleId == 3)
+                                                {
+                                                    <span class="text-center"> Independent Contractor </span>
+                                                }
+                                                else if (Model.User.RoleId == 4)
+                                                {
+                                                    <span class="text-center">Home Owner</span>
+                                                }
+
+
+
+                                            }
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <h4 class="card-head">
+                                    Credentials
+                                </h4>
+                                <div class="businessCard">
+                                    <div class="credSection">
+                                        <div class="folderPanel mb-3">
+                                        <h4>
+                                            Business or Trade License :
+                                        </h4>
+                                        <div class="folderView mt-3">
+                                            @{
+                                            if (!string.IsNullOrEmpty(Model.BusinessProfileContractor.BusinessOrTradeLicenseFiles))
+                                            {
+                                                List<string> docs = Model.BusinessProfileContractor.BusinessOrTradeLicenseFiles.Replace("\r\n","").Split(',').Reverse().ToList();
+                                                foreach (var dox in docs)
+                                                {
+                                                   if (!string.IsNullOrEmpty(dox))
+                                                    {
+                                                        FileInfo fi = new FileInfo(dox);
+                                                        string extn = fi.Extension;  
+                                                         if(extn==".png"||extn==".jpg"||extn=="jpeg")
+                                                        { 
+                                                           
+
+                                                            <a href="../uploads/@dox" target="_blank">
+                                                 <img src="~/images/IconImage.png" alt="">
+                                                 <span></span>
+                                            </a>
+
+                                                        }
+                                                       else
+                                                        {
+                                                            <a href="../uploads/@dox" target="_blank">
+                                                 <img src="~/images/licensing.png" alt="">
+                                                 <span></span>
+                                            </a>
+                                                            
+
+                                                        }
+                                                        
+                                                    }
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                               
+                                                 
+                                                <span style="font-size:12px;color: #ffffffa6;">No Documents Found.</span>
+                                           
+                                            
+
+                                            }
+
+                                            
+                                        }
+                                            @*<a href="#">
+                                                 <img src="~/images/licensing.png" alt="">
+                                                 <span>List</span>
+                                            </a>
+                                             <a href="#">
+                                                 <img src="~/images/licensing.png" alt="">
+                                                 <span>List</span>
+                                            </a>
+                                             <a href="#">
+                                                 <img src="~/images/licensing.png" alt="">
+                                                 <span>List</span>
+                                            </a>
+                                             <a href="#">
+                                                 <img src="~/images/licensing.png" alt="">
+                                                 <span>List</span>
+                                            </a>
+                                             <a href="#">
+                                                 <img src="~/images/licensing.png" alt="">
+                                                 <span>List</span>
+                                            </a>
+                                             <a href="#">
+                                                 <img src="~/images/licensing.png" alt="">
+                                                 <span>List</span>
+                                            </a>*@
+                                        </div>
+                                    </div> 
+                                    <div class="folderPanel mb-3">
+                                        <h4>
+                                            Liability Insurance File :
+                                        </h4>
+                                        <div class="folderView mt-3">
+                                          @{
+                                            if (!string.IsNullOrEmpty(Model.BusinessProfileContractor.LiabilityInsuranceFile))
+                                            {
+                                                List<string> docs = Model.BusinessProfileContractor.LiabilityInsuranceFile.Replace("\r\n","").Split(',').Reverse().ToList();
+                                                foreach (var dox in docs)
+                                                {
+                                                   if (!string.IsNullOrEmpty(dox))
+                                                    {
+                                                        FileInfo fi = new FileInfo(dox);
+                                                        string extn = fi.Extension;  
+                                                         if(extn==".png"||extn==".jpg"||extn=="jpeg")
+                                                        { 
+                                                           
+
+                                                            <a href="../uploads/@dox" target="_blank">
+                                                 <img src="~/images/IconImage.png" alt="">
+                                                 <span></span>
+                                            </a>
+
+                                                        }
+                                                       else
+                                                        {
+                                                            <a href="../uploads/@dox" target="_blank">
+                                                 <img src="~/images/licensing.png" alt="">
+                                                 <span></span>
+                                            </a>
+                                                            
+
+                                                        }
+                                                        
+                                                    }
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                               <span style="font-size:12px;color: #ffffffa6;">No Documents Found.</span>
+
+                                            }
+
+                                            
+                                        }
+                                        </div>
+                                    </div> 
+                                    <div class="folderPanel mb-3">
+                                        <h4>
+                                            Workman’s Compensation Insurance File :
+                                        </h4>
+                                        <div class="folderView mt-3">
+                                           @{
+                                            if (!string.IsNullOrEmpty(Model.BusinessProfileContractor.WorkmanCompensationInsuranceFile))
+                                            {
+                                                List<string> docs = Model.BusinessProfileContractor.WorkmanCompensationInsuranceFile.Replace("\r\n","").Split(',').Reverse().ToList();
+                                                foreach (var dox in docs)
+                                                {
+                                                   if (!string.IsNullOrEmpty(dox))
+                                                    {
+                                                        FileInfo fi = new FileInfo(dox);
+                                                        string extn = fi.Extension;  
+                                                         if(extn==".png"||extn==".jpg"||extn=="jpeg")
+                                                        { 
+                                                           
+
+                                                            <a href="../uploads/@dox" target="_blank">
+                                                 <img src="~/images/IconImage.png" alt="">
+                                                 <span></span>
+                                            </a>
+
+                                                        }
+                                                       else
+                                                        {
+                                                            <a href="../uploads/@dox" target="_blank">
+                                                 <img src="~/images/licensing.png" alt="">
+                                                 <span></span>
+                                            </a>
+                                                            
+
+                                                        }
+                                                        
+                                                    }
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                               <span style="font-size:12px;color: #ffffffa6;">No Documents Found.</span>
+                                            
+
+                                            }
+
+                                            
+                                        }
+                                        </div>
+                                    </div> 
+                                    </div>
+                                </div>
+                                
+                                          @*  <div class="col-md-6">
+                                                <h5>License</h5>
+                                                <div class="businessCard">
+                                                    <img src="~/images/licensing.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5>License</h5>
+                                                <div class="businessCard">
+                                                     <img src="~/images/licensing.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-0">
+                                                <h5>Insurance</h5>
+                                                <div class="businessCard">
+                                                    <img src="~/images/insurance (2).png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-0">
+                                                <h5>Insurance</h5>
+                                                <div class="businessCard">
+                                                     <img src="~/images/insurance (2).png" alt="">
+                                                </div>
+                                            </div>*@
+
+                                     @* <div class="col-md-12">
+                                        <h5>Business or Trade License</h5>
+                                        @{
+                                        if (!string.IsNullOrEmpty(Model.BusinessProfileContractor.BusinessOrTradeLicenseFiles))
+                                        {
+                                        List<string> docs = Model.BusinessProfileContractor.BusinessOrTradeLicenseFiles.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                        foreach (var dox in docs)
+                                        {
+                                        if (!string.IsNullOrEmpty(dox))
+                                        {
+                                        FileInfo fi = new FileInfo(dox);
+                                        string extn = fi.Extension;
+                                        if (extn == ".png" || extn == ".jpg" || extn == "jpeg")
+                                        {
+                                        <span><a class="" href="../uploads/@dox" target="_blank"><img src="../images/IconImage.png" /><p>File</p></a></span>
+
+                                        }
+                                        else
+                                        {
+                                        <span><a class="" href="../uploads/@dox" target="_blank"><img src="../images/FileIcon.png" /><p>File</p></a></span>
+
+                                        }
+
+                                        }
+                                        }
+
+                                        }
+                                        else
+                                        {
+
+                                        <span><a><p>No Documents Found.</p></a></span>
+
+                                        }
+
+
+                                        }
+
+                                        <div class="businessCard">
+                                        <img src="~/BusinessProfile/assets/image/licensing.png" alt="">
+                                        </div>
+                                            </div>*@
+                                     @* <div class="col-md-12">
+                                        <h5>Liability Insurance File</h5>
+
+
+                                        @{
+                                        if (!string.IsNullOrEmpty(Model.BusinessProfileContractor.LiabilityInsuranceFile))
+                                        {
+                                        List<string> docs = Model.BusinessProfileContractor.LiabilityInsuranceFile.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                        foreach (var dox in docs)
+                                        {
+                                        if (!string.IsNullOrEmpty(dox))
+                                        {
+                                        FileInfo fi = new FileInfo(dox);
+                                        string extn = fi.Extension;
+                                        if (extn == ".png" || extn == ".jpg" || extn == "jpeg")
+                                        {
+                                        <span><a class="" href="../uploads/@dox" target="_blank"><img src="../images/IconImage.png" /><p>File</p></a></span>
+
+                                        }
+                                        else
+                                        {
+                                        <span><a class="" href="../uploads/@dox" target="_blank"><img src="../images/FileIcon.png" /><p>File</p></a></span>
+
+                                        }
+
+                                        }
+
+                                        }
+
+                                        }
+                                        else
+                                        {
+                                        <span><a><p>No Documents Found.</p></a></span>
+
+                                        }
+
+
+                                        }
+
+                                            </div>*@
+                                      @*  <div class="col-md-12 mb-0">
+                                        <h5>Workman’s Compensation Insurance File</h5>
+
+
+                                        @{
+                                        if (!string.IsNullOrEmpty(Model.BusinessProfileContractor.WorkmanCompensationInsuranceFile))
+                                        {
+                                        List<string> docs = Model.BusinessProfileContractor.WorkmanCompensationInsuranceFile.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                        foreach (var dox in docs)
+                                        {
+                                        if (!string.IsNullOrEmpty(dox))
+                                        {
+                                        FileInfo fi = new FileInfo(dox);
+                                        string extn = fi.Extension;
+                                        if (extn == ".png" || extn == ".jpg" || extn == "jpeg")
+                                        {
+                                        <span><a class="" href="../uploads/@dox" target="_blank"><img src="../images/IconImage.png" /><p>File</p></a></span>
+
+                                        }
+                                        else
+                                        {
+                                        <span><a class="" href="../uploads/@dox" target="_blank"><img src="../images/FileIcon.png" /><p>File</p></a></span>
+
+                                        }
+
+                                        }
+
+                                        }
+
+
+                                        }
+                                        else
+                                        {
+                                        <span><a><p>No Documents Found.</p></a></span>
+
+                                        }
+
+
+                                        }*@
+
+
+ 
+
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div> 
+        }
+        else if (Model.SubContractorBusinessProfile != null)
+        {
+            <div class="businessPanel">
+                <div class="container">
+                    <h1 class="title">@Model.User.BusinessName</h1>
+                    <div class="row orderChange">
+                        <div class="col-lg-8 col-md-12">
+                            <p class="loaction">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20.393" height="25.954"
+                             viewBox="0 0 20.393 25.954">
+                                    <g id="location-filled" transform="translate(-7.5 -3)">
+                                        <path id="Path_7" data-name="Path 7"
+                                      d="M17.7,3A10.208,10.208,0,0,0,7.5,13.2a10.093,10.093,0,0,0,2.054,6.118s.278.366.323.419L17.7,28.954l7.822-9.226c.041-.049.32-.414.32-.414v0A10.09,10.09,0,0,0,27.893,13.2,10.208,10.208,0,0,0,17.7,3Zm0,13.9A3.708,3.708,0,1,1,21.4,13.2,3.708,3.708,0,0,1,17.7,16.9Z"
+                                      fill="#fff" />
+                                        <circle id="IconifyId-17e9079768a-d1151c-107" cx="3.708" cy="3.708" r="3.708"
+                                        transform="translate(13.989 9.489)" fill="none" />
+                                    </g>
+                                </svg>
+                                Address : @Model.User.BusinessAddress, @Model.User.City, @Model.User.State, @Model.User.ZipCode
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="profileDetails">
+
+                                        <li>
+                                            <svg id="mobile" xmlns="http://www.w3.org/2000/svg" width="17.338" height="30.823"
+                                         viewBox="0 0 17.338 30.823">
+                                                <path id="Path_4" data-name="Path 4"
+                                              d="M15.411,30.823H1.926a1.876,1.876,0,0,1-1.355-.557A1.837,1.837,0,0,1,0,28.9V7.706A1.851,1.851,0,0,1,.572,6.351a1.851,1.851,0,0,1,1.355-.572V1.926A1.851,1.851,0,0,1,2.5.572,1.868,1.868,0,0,1,3.868,0,1.819,1.819,0,0,1,5.222.572a1.876,1.876,0,0,1,.557,1.355V5.779h9.632a1.837,1.837,0,0,1,1.37.572,1.876,1.876,0,0,1,.557,1.355V28.9a1.9,1.9,0,0,1-1.926,1.926ZM7.706,26.488a.464.464,0,0,0,.482.482H9.15a.464.464,0,0,0,.482-.482v-.963a.464.464,0,0,0-.482-.482H8.187a.464.464,0,0,0-.482.482Zm0-3.853a.464.464,0,0,0,.482.482H9.15a.464.464,0,0,0,.482-.482v-.963a.464.464,0,0,0-.482-.482H8.187a.464.464,0,0,0-.482.482Zm0-3.853a.464.464,0,0,0,.482.482H9.15a.464.464,0,0,0,.482-.482v-.963a.464.464,0,0,0-.482-.482H8.187a.464.464,0,0,0-.482.482ZM3.853,26.488a.464.464,0,0,0,.482.482H5.3a.464.464,0,0,0,.482-.482v-.963a.464.464,0,0,0-.482-.482H4.334a.464.464,0,0,0-.482.482Zm0-3.853a.464.464,0,0,0,.482.482H5.3a.464.464,0,0,0,.482-.482v-.963a.464.464,0,0,0-.482-.482H4.334a.464.464,0,0,0-.482.482Zm0-3.853a.464.464,0,0,0,.482.482H5.3a.464.464,0,0,0,.482-.482v-.963a.464.464,0,0,0-.482-.482H4.334a.464.464,0,0,0-.482.482ZM13.485,10.6a.977.977,0,0,0-.963-.963H4.816a.977.977,0,0,0-.963.963v3.853a.977.977,0,0,0,.963.963h7.706a.977.977,0,0,0,.963-.963Zm0,7.224A.464.464,0,0,0,13,17.338H12.04a.464.464,0,0,0-.482.482v.963a.464.464,0,0,0,.482.482H13a.464.464,0,0,0,.482-.482Zm0,3.853A.464.464,0,0,0,13,21.191H12.04a.464.464,0,0,0-.482.482v.963a.464.464,0,0,0,.482.482H13a.464.464,0,0,0,.482-.482Zm0,3.853A.464.464,0,0,0,13,25.043H12.04a.464.464,0,0,0-.482.482v.963a.464.464,0,0,0,.482.482H13a.464.464,0,0,0,.482-.482Z"
+                                              fill="#fff" />
+                                            </svg>
+                                            Mobile Phone: @Model.User.PhoneNumber
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26.629" height="21.328"
+                                         viewBox="0 0 26.629 21.328">
+                                                <g id="email" transform="translate(0 -2.333)">
+                                                    <path id="Path_6" data-name="Path 6"
+                                                  d="M23.947,2.333a2.662,2.662,0,0,1,2.682,2.682V20.98a2.662,2.662,0,0,1-2.682,2.682H2.682a2.588,2.588,0,0,1-1.9-.78A2.588,2.588,0,0,1,0,20.98V5.015a2.588,2.588,0,0,1,.78-1.9,2.588,2.588,0,0,1,1.9-.78Zm0,5.363V5.015L13.283,11.688,2.682,5.015V7.7l10.6,6.61Z"
+                                                  fill="#fff" />
+                                                </g>
+                                            </svg>
+                                            Email: @Model.User.Email
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28.445" height="28.445"
+                                         viewBox="0 0 28.445 28.445">
+                                                <g id="facebook" transform="translate(0.006 0.003)">
+                                                    <g id="Group_11" data-name="Group 11" transform="translate(-0.006 -0.003)">
+                                                        <path id="Path_8" data-name="Path 8"
+                                                      d="M28.439,14.307A14.223,14.223,0,1,0,11.993,28.442v-10H8.384V14.308H12V11.153c0-3.585,2.124-5.566,5.372-5.566a21.752,21.752,0,0,1,3.184.279v3.52H18.758a2.062,2.062,0,0,0-2.316,2.236v2.684h3.943l-.629,4.135H16.44v10A14.286,14.286,0,0,0,28.439,14.307Z"
+                                                      transform="translate(0.006 0.003)" fill="#fff" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            Facebook: @if (!string.IsNullOrEmpty(Model.SubContractorBusinessProfile.FacebookPageURL))
+                                            {
+                                                <a style="height:5px; width:06px; font-size:small; margin:5px;" href="@Model.SubContractorBusinessProfile.FacebookPageURL">@Model.SubContractorBusinessProfile.FacebookPageURL</a>
+                                            }
+                                            else
+                                            {
+                                                <span> Not available</span>
+                                            }
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="profileDetails">
+
+                                        @* <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+                                            <g id="time" transform="translate(-4.5 -4.5)">
+                                            <path id="Path_3" data-name="Path 3"
+                                            d="M18.5,4.5a14,14,0,1,0,14,14A14,14,0,0,0,18.5,4.5Zm6.462,16.154H18.5a1.077,1.077,0,0,1-1.077-1.077V9.885a1.077,1.077,0,0,1,2.154,0V18.5h5.385a1.077,1.077,0,1,1,0,2.154Z"
+                                            fill="#fff" />
+                                            </g>
+                                            </svg>
+                                            24Hr Answering Service 800-456-6789
+                                            </li>*@
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="27.934"
+                                         viewBox="0 0 28 27.934">
+                                                <g id="globe-alt" transform="translate(0 -0.333)">
+                                                    <path id="Path_5" data-name="Path 5"
+                                                  d="M14,.333a13.491,13.491,0,0,1,9.9,4.1A13.452,13.452,0,0,1,28,14.3a13.453,13.453,0,0,1-4.1,9.869,13.491,13.491,0,0,1-9.9,4.1,13.491,13.491,0,0,1-9.9-4.1A13.453,13.453,0,0,1,0,14.3,13.452,13.452,0,0,1,4.1,4.432,13.491,13.491,0,0,1,14,.333Zm9.672,8.393a10.615,10.615,0,0,0-6.033-4.984,20.651,20.651,0,0,1,1.9,4.984Zm-9.7-5.574a18.619,18.619,0,0,0-2.623,5.574h5.311A19.917,19.917,0,0,0,13.967,3.153ZM3.148,17.12H7.869a24.165,24.165,0,0,1-.2-2.82,24.165,24.165,0,0,1,.2-2.82H3.148A13.315,13.315,0,0,0,2.82,14.3,13.315,13.315,0,0,0,3.148,17.12Zm1.18,2.754a10.615,10.615,0,0,0,6.033,4.984,20.651,20.651,0,0,1-1.9-4.984ZM8.459,8.727a20.651,20.651,0,0,1,1.9-4.984A10.615,10.615,0,0,0,4.328,8.727Zm5.508,16.721a19.917,19.917,0,0,0,2.689-5.574H11.344A18.619,18.619,0,0,0,13.967,25.448Zm3.279-8.328a18.233,18.233,0,0,0,.262-2.82,18.233,18.233,0,0,0-.262-2.82H10.689a24.165,24.165,0,0,0-.2,2.82,24.165,24.165,0,0,0,.2,2.82Zm.393,7.738a10.615,10.615,0,0,0,6.033-4.984H19.541A20.651,20.651,0,0,1,17.639,24.858Zm2.426-7.738h4.721a11.2,11.2,0,0,0,.393-2.82,11.2,11.2,0,0,0-.393-2.82H20.066a24.165,24.165,0,0,1,.2,2.82A24.165,24.165,0,0,1,20.066,17.12Z"
+                                                  transform="translate(0 0)" fill="#fff" />
+                                                </g>
+                                            </svg>
+                                            Website: @if (!string.IsNullOrEmpty(@Model.SubContractorBusinessProfile.CompanyWebsiteURL))
+                                            {
+                                                <a style="height:5px; width:06px; font-size:small; margin:5px;" href="@Model.SubContractorBusinessProfile.CompanyWebsiteURL">@Model.SubContractorBusinessProfile.CompanyWebsiteURL</a>
+                                            }
+                                            else
+                                            {
+                                                <span> Not available</span>
+                                            }
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="businessProfile">
+                                <img onerror="this.src='../images/DefaultProfile.png'" src="~/Uploads/@Model.SubContractorBusinessProfile.ProfilePicture" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="businessCardPanel">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="businessCard bsCard1">
+                                    <h4 class="card-head">
+                                        Services Offered
+                                    </h4>
+                                    <ul class="mt-4">
+                                        @{
+                                            foreach (var item in Model.Categories)
+                                            {
+                                                <li>@item.Name</li>
+                                            }
+                                        }
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="businessCard">
+                                    <h4 class="card-head">
+                                         Zip code served
+                                    </h4>
+                                      <div class="zipcodeSection mt-4">
+                                    @{
+                                        foreach (var item in Model.Zipcodes)
+                                        {
+                                            <span class="spn-services">@item.Zipcode </span>
+                                        }
+                                    }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="businessDescription text-center mb-5">
+                        <h2>Business Description</h2>
+                        <p>@Model.SubContractorBusinessProfile.BusinessDescription</p>
+                    </div>
+
+                    <div class="descriptionCard">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <h4 class="card-head">
+                                    Doing Business
+                                </h4>
+                                <div class="businessCard">
+                                    <ul>
+                                        <li>
+                                            <span>Years In Business :</span>
+                                            <span class="text-center">@Model.SubContractorBusinessProfile.YearsInBusiness</span>
+                                        </li>
+                                        <li>
+                                            <span>Number of Employees :</span>
+                                            <span class="text-center">@Model.SubContractorBusinessProfile.NumberOfEmployees</span>
+                                        </li>
+                                       
+                                        
+
+                                        <li>
+                                            <span>Business or trade license(s) :</span>
+                                            @if (Model.SubContractorBusinessProfile.IsBusinessOrTradeLicense == true)
+                                            {
+                                                <span class="text-center">Yes</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-center">No</span>
+
+                                            }
+                                        </li>
+
+
+
+                                        <li>
+                                            <span>Liability Insurance :</span>
+                                            @if (Model.SubContractorBusinessProfile.IsLiabilityInsurance == true)
+                                            {
+                                                <span class="text-center">Yes</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-center">No</span>
+
+                                            }
+                                        </li>
+
+
+
+                                        <li>
+                                            <span>Workman’s Compensation Insurance :</span>
+                                            @if (Model.SubContractorBusinessProfile.IsWorkmanCompensationInsurance == true)
+                                            {
+                                                <span class="text-center">Yes</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-center">No</span>
+
+                                            }
+                                        </li>
+
+                                        
+
+
+                                        <li class="mb-0">
+                                            <span>Account Type :</span>
+                                            @{
+
+                                                if (Model.User.RoleId == 1)
+                                                {
+                                                    <span class="text-center">Contractor </span>
+
+                                                }
+                                                else if (Model.User.RoleId == 2)
+                                                {
+                                                    <span class="text-center">Sub-Contractor </span>
+                                                }
+                                                else if (Model.User.RoleId == 3)
+                                                {
+                                                    <span class="text-center"> Independent Contractor </span>
+                                                }
+                                                else if (Model.User.RoleId == 4)
+                                                { 
+                                                    <span class="text-center">Home Owner</span>
+                                                }
+
+
+
+                                            }
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-lg-6 col-md-12">
+                                <h4 class="card-head">
+                                    Credentials
+                                </h4>
+                                <div class="businessCard">
+                                    <div class="credSection">
+                                        <div class="folderPanel mb-3">
+                                        <h4>
+                                            Business or Trade License :
+                                        </h4>
+                                        <div class="folderView mt-3">
+                                            @{
+                                            if (!string.IsNullOrEmpty(Model.SubContractorBusinessProfile.BusinessOrTradeLicenseFiles))
+                                            {
+                                                List<string> docs = Model.SubContractorBusinessProfile.BusinessOrTradeLicenseFiles.Replace("\r\n","").Split(',').Reverse().ToList();
+                                                foreach (var dox in docs)
+                                                {
+                                                   if (!string.IsNullOrEmpty(dox))
+                                                    {
+                                                        FileInfo fi = new FileInfo(dox);
+                                                        string extn = fi.Extension;  
+                                                         if(extn==".png"||extn==".jpg"||extn=="jpeg")
+                                                        { 
+                                                           
+
+                                                            <a href="../uploads/@dox" target="_blank">
+                                                 <img src="~/images/IconImage.png" alt="">
+                                                 <span></span>
+                                            </a>
+
+                                                        }
+                                                       else
+                                                        {
+                                                            <a href="../uploads/@dox" target="_blank">
+                                                 <img src="~/images/licensing.png" alt="">
+                                                 <span></span>
+                                            </a>
+                                                            
+
+                                                        }
+                                                        
+                                                    }
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                               <span style="font-size:12px;color: #ffffffa6;">No Documents Found.</span>
+                                            
+
+                                            }
+
+                                            
+                                        }
+                                            
+                                        </div>
+                                    </div> 
+                                    <div class="folderPanel mb-3">
+                                        <h4>
+                                            Liability Insurance File :
+                                        </h4>
+                                        <div class="folderView mt-3">
+                                          @{
+                                            if (!string.IsNullOrEmpty(Model.SubContractorBusinessProfile.LiabilityInsuranceFile))
+                                            {
+                                                List<string> docs = Model.SubContractorBusinessProfile.LiabilityInsuranceFile.Replace("\r\n","").Split(',').Reverse().ToList();
+                                                foreach (var dox in docs)
+                                                {
+                                                   if (!string.IsNullOrEmpty(dox))
+                                                    {
+                                                        FileInfo fi = new FileInfo(dox);
+                                                        string extn = fi.Extension;  
+                                                         if(extn==".png"||extn==".jpg"||extn=="jpeg")
+                                                        { 
+                                                          
+
+                                                            <a href="../uploads/@dox" target="_blank">
+                                                 <img src="~/images/IconImage.png" alt="">
+                                                 <span></span>
+                                            </a>
+
+                                                        }
+                                                       else
+                                                        {
+                                                            <a href="../uploads/@dox" target="_blank">
+                                                 <img src="~/images/licensing.png" alt="">
+                                                 <span></span>
+                                            </a>
+                                                            
+
+                                                        }
+                                                        
+                                                    }
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                               <span style="font-size:12px;color: #ffffffa6;">No Documents Found.</span>
+                                            
+
+                                            }
+
+                                            
+                                        }
+                                        </div>
+                                    </div> 
+                                    <div class="folderPanel mb-3">
+                                        <h4>
+                                            Workman’s Compensation Insurance File :
+                                        </h4>
+                                        <div class="folderView mt-3">
+                                           @{
+                                            if (!string.IsNullOrEmpty(Model.SubContractorBusinessProfile.WorkmanCompensationInsuranceFile))
+                                            {
+                                                List<string> docs = Model.SubContractorBusinessProfile.WorkmanCompensationInsuranceFile.Replace("\r\n","").Split(',').Reverse().ToList();
+                                                foreach (var dox in docs)
+                                                {
+                                                   if (!string.IsNullOrEmpty(dox))
+                                                    {
+                                                        FileInfo fi = new FileInfo(dox);
+                                                        string extn = fi.Extension;  
+                                                         if(extn==".png"||extn==".jpg"||extn=="jpeg")
+                                                        { 
+                                                           
+
+                                                            <a href="../uploads/@dox" target="_blank">
+                                                 <img src="~/images/IconImage.png" alt="">
+                                                 <span></span>
+                                            </a>
+
+                                                        }
+                                                       else
+                                                        {
+                                                            <a href="../uploads/@dox" target="_blank">
+                                                 <img src="~/images/licensing.png" alt="">
+                                                 <span></span>
+                                            </a>
+                                                            
+
+                                                        }
+                                                        
+                                                    }
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                               <span style="font-size:12px;color: #ffffffa6;">No Documents Found.</span>
+
+                                            }
+
+                                            
+                                        }
+                                        </div>
+                                    </div> 
+                                    </div>
+                                </div>
+                                
+                                        
+
+
+ 
+
+                                
+                            </div>
+
+
+
+
+
+
+                        @*    <div class="col-lg-5 col-md-12 licenceSection">
+                                <h4 class="card-head">
+                                    Credentials
+                                </h4>
+                                <div class="row text-center">
+                                    <div class="col-md-6">
+                                                <h5>License</h5>
+                                                <div class="businessCard">
+                                                    <img src="~/images/licensing.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5>License</h5>
+                                                <div class="businessCard">
+                                                     <img src="~/images/licensing.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-0">
+                                                <h5>Insurance</h5>
+                                                <div class="businessCard">
+                                                    <img src="~/images/insurance (2).png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-0">
+                                                <h5>Insurance</h5>
+                                                <div class="businessCard">
+                                                     <img src="~/images/insurance (2).png" alt="">
+                                                </div>
+                                            </div>
+
+
+
+                                    <div class="col-md-12">
+                                        <h5>Business or Trade License</h5>
+                                        @{
+                                            if (!string.IsNullOrEmpty(Model.SubContractorBusinessProfile.BusinessOrTradeLicenseFiles))
+                                            {
+                                                List<string> docs = Model.SubContractorBusinessProfile.BusinessOrTradeLicenseFiles.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                                foreach (var dox in docs)
+                                                {
+                                                    if (!string.IsNullOrEmpty(dox))
+                                                    {
+                                                        FileInfo fi = new FileInfo(dox);
+                                                        string extn = fi.Extension;
+                                                        if (extn == ".png" || extn == ".jpg" || extn == "jpeg")
+                                                        {
+                                                            <span><a href="../uploads/@dox" target="_blank"><img src="../images/IconImage.png" /><p>File</p></a></span>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <span><a href="../uploads/@dox" target="_blank"><img src="../images/FileIcon.png" /><p>File</p></a></span>
+
+                                                        }
+
+                                                    }
+                                                }
+
+                                            }
+                                            else
+                                            {
+
+                                                <span><a><p>No Documents Found.</p></a></span>
+
+                                            }
+
+
+                                        }
+
+
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h5>Liability Insurance File</h5>
+
+
+                                        @{
+                                            if (!string.IsNullOrEmpty(Model.SubContractorBusinessProfile.LiabilityInsuranceFile))
+                                            {
+                                                List<string> docs = Model.SubContractorBusinessProfile.LiabilityInsuranceFile.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                                foreach (var dox in docs)
+                                                {
+                                                    if (!string.IsNullOrEmpty(dox))
+                                                    {
+                                                        FileInfo fi = new FileInfo(dox);
+                                                        string extn = fi.Extension;
+                                                        if (extn == ".png" || extn == ".jpg" || extn == "jpeg")
+                                                        {
+                                                            <span><a href="../uploads/@dox" target="_blank"><img src="../images/IconImage.png" /><p>File</p></a></span>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <span><a href="../uploads/@dox" target="_blank"><img src="../images/FileIcon.png" /><p>File</p></a></span>
+
+                                                        }
+
+                                                    }
+
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                <span><a><p>No Documents Found.</p></a></span>
+
+                                            }
+
+
+                                        }
+
+                                    </div>
+                                    <div class="col-md-12 mb-0">
+                                        <h5>Workman’s Compensation Insurance File</h5>
+
+
+                                        @{
+                                            if (!string.IsNullOrEmpty(Model.SubContractorBusinessProfile.WorkmanCompensationInsuranceFile))
+                                            {
+                                                List<string> docs = Model.SubContractorBusinessProfile.WorkmanCompensationInsuranceFile.Replace("\r\n", "").Split(',').Reverse().ToList();
+                                                foreach (var dox in docs)
+                                                {
+                                                    if (!string.IsNullOrEmpty(dox))
+                                                    {
+                                                        FileInfo fi = new FileInfo(dox);
+                                                        string extn = fi.Extension;
+                                                        if (extn == ".png" || extn == ".jpg" || extn == "jpeg")
+                                                        {
+                                                            <span><a href="../uploads/@dox" target="_blank"><img src="../images/IconImage.png" /><p>File</p></a></span>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <span><a href="../uploads/@dox" target="_blank"><img src="../images/FileIcon.png" /><p>File</p></a></span>
+
+                                                        }
+
+                                                    }
+
+                                                }
+
+
+                                            }
+                                            else
+                                            {
+                                                <span><a><p>No Documents Found.</p></a></span>
+
+                                            }
+
+
+                                        }
+
+
+                                    </div>
+                                     
+                                    </div>
+                                     
+                            </div>*@
+
+
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        }
+        <!-- Main Page -->
+        <!-- Main End -->
+@*
+   
+        <script>
+
+            //$(document).ready(function(){
+            // setTimeout(function () {
+            //             $('.loader').hide();
+            //             $('body').css('overflow','auto' )
+            // }, 1800);
+            //});
+        </script>*@
+ 
+
+
+
+
+}
+</div>

@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c893a165-d72d-42a1-9001-252479f583e7": {
+      "ProjectGuid": "c893a165-d72d-42a1-9001-252479f583e7",
+      "DisplayName": "KopkeHome-FMRS_API",
+      "ColorIndex": 0
+    },
+    "54c01d20-242d-46a1-a065-eb4e349ed09f": {
+      "ProjectGuid": "54c01d20-242d-46a1-a065-eb4e349ed09f",
+      "DisplayName": "KopkeHome_WebApp",
+      "ColorIndex": 1
+    },
+    "044c6fe7-214d-45dd-bac5-dc863b5d6c83": {
+      "ProjectGuid": "044c6fe7-214d-45dd-bac5-dc863b5d6c83",
+      "DisplayName": "KopkeHome-ModelLayer",
+      "ColorIndex": 2
+    },
+    "66aac885-6b73-42eb-9e20-16e5914f08ed": {
+      "ProjectGuid": "66aac885-6b73-42eb-9e20-16e5914f08ed",
+      "DisplayName": "KopkeHome-BusinessLayer",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "bb3e98fd-3f85-454c-9e58-e6824bf9a373": {
+      "ProjectGuid": "bb3e98fd-3f85-454c-9e58-e6824bf9a373",
+      "DisplayName": "KopkeHome-DataAccessLayer",
+      "ColorIndex": 4
+    },
+    "a788bb0f-63b0-48e0-be09-110e2b3c5207": {
+      "ProjectGuid": "a788bb0f-63b0-48e0-be09-110e2b3c5207",
+      "DisplayName": "KopkeHome-UtilityLayer",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}

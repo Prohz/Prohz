@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.kopkehome_fmrs" android:installLocation="auto" android:versionName="1.2">
+	<application android:allowBackup="true" android:icon="@mipmap/appicon"  
+                android:usesCleartextTraffic="true" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true" >
+      <provider android:name="androidx.core.content.FileProvider" 
+                android:authorities="com.companyname.kopkehome_fmrs.fileprovider" 
+                android:exported="false" 
+                android:grantUriPermissions="true">           
+	      <meta-data 
+                     android:name="android.support.FILE_PROVIDER_PATHS" 
+                     android:resource="@xml/file_paths"/>                    
+      </provider>
+
+    
+
+    </application>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+  <uses-permission android:name="android.permission.INTERNET" ></uses-permission>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> 
+  <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />  
+  <uses-permission android:name="android.permission.CAMERA" />
+  <queries>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:scheme="https"/>
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:scheme="https"/>
+    </intent>
+  </queries>
+</manifest>
