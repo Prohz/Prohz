@@ -162,4 +162,35 @@
   <data name="Verify" xml:space="preserve">
     <value>Verificar</value>
   </data>
+
+
+    <data name="Your networking starts here" xml:space="preserve">
+    <value>Tu red comienza aquí</value>
+  </data>
+
+
+
+    <data name="Sign up is quick and easy" xml:space="preserve">
+    <value>y Registrarse es rápido y fácil</value>
+  </data>
+
+
+
+       Are you a Contractor, or Sub Contractor
+ 
+
+    <data name="Sign up is quick and easy" xml:space="preserve">
+    <value>Sign up is quick and easyl</value>
+  </data>
+
+
+
+    <data name="Select only One" xml:space="preserve">
+    <value>Select only One</value>
+  </data>
+
+
+
+
+
 </root>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rCPsWZKNEHBczaQuEMJhu7uV+2FvP6JYErMj7FxQQG66iEXRMN7+JKZZ+3EtNmp0WWmTx8o2eIZ61y1er68wkQ==",
+  "dgSpecHash": "+J4CeyF+FKwLIT7sguWjl6f6ut7JWqkOAvbuXkFafOHeJpLWDaiG4MyM4XZj0S93kpyXeNK1ojWLPJcxqbIh8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj",
+  "projectFilePath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Percival\\.nuget\\packages\\antlr\\3.5.0.2\\antlr.3.5.0.2.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\asyncfixer\\1.6.0\\asyncfixer.1.6.0.nupkg.sha512",
@@ -277,8 +277,8 @@
     "C:\\Users\\Percival\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\twilio\\5.80.1\\twilio.5.80.1.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\xact.core.pcl\\0.0.5014\\xact.core.pcl.0.0.5014.nupkg.sha512",
-    "C:\\Users\\Percival\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\Percival\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
   ],

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KopkeHome_WebApp")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute(" ")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf0aa03310731921874d2e1201f9551702eeac2e")]
 [assembly: System.Reflection.AssemblyProductAttribute("KopkeHome_WebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KopkeHome_WebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
