@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KpBHFSM23011JUfRv8m2fkMYhGGWtbW8Pavq2qMvMr9HSuaA3yhKniud+12Zf1CFtRFzKOR1DZyLGkBW03qZTQ==",
+  "dgSpecHash": "rQSlkcJ2yHM39lr2Rde7ZE/Nh+EwPIs6+1GL7zG/Stb0h4M8QUNb9ybGh1foH4+kWg3CG2ND+KJkVUMqY95nPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj",
+  "projectFilePath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Percival\\.nuget\\packages\\antlr\\3.5.0.2\\antlr.3.5.0.2.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\asyncfixer\\1.6.0\\asyncfixer.1.6.0.nupkg.sha512",
@@ -107,8 +107,8 @@
     "C:\\Users\\Percival\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\system.threading.threadpool\\4.3.0\\system.threading.threadpool.4.3.0.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\xact.core.pcl\\0.0.5014\\xact.core.pcl.0.0.5014.nupkg.sha512",
-    "C:\\Users\\Percival\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\Percival\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512"
   ],
   "logs": [

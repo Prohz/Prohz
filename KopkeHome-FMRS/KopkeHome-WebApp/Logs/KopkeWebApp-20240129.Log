@@ -1,0 +1,6 @@
+[2024-01-29 18:57:52.242 -05:00  INF]  User profile is available. Using 'C:\Users\Percival\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2024-01-29 18:57:52.328 -05:00  INF]  Now listening on: http://localhost:5000
+[2024-01-29 18:57:52.329 -05:00  INF]  Now listening on: https://localhost:5001
+[2024-01-29 18:57:52.331 -05:00  INF]  Application started. Press Ctrl+C to shut down.
+[2024-01-29 18:57:52.331 -05:00  INF]  Hosting environment: Production
+[2024-01-29 18:57:52.331 -05:00  INF]  Content root path: C:\Users\Percival\Development\prohz\KopkeHome-FMRS\KopkeHome-WebApp\
