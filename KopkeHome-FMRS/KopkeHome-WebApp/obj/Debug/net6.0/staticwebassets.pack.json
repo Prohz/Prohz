@@ -233,6 +233,14 @@
       "PackagePath": "staticwebassets\\images\\AccountVerified.png"
     },
     {
+      "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\Contractor-pic1.gif",
+      "PackagePath": "staticwebassets\\images\\Contractor-pic1.gif"
+    },
+    {
+      "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\Contractor-pic2.gif",
+      "PackagePath": "staticwebassets\\images\\Contractor-pic2.gif"
+    },
+    {
       "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\DefaultProfile.png",
       "PackagePath": "staticwebassets\\images\\DefaultProfile.png"
     },
@@ -317,12 +325,20 @@
       "PackagePath": "staticwebassets\\images\\minilogo.png"
     },
     {
+      "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\missing-link-1024x64.gif",
+      "PackagePath": "staticwebassets\\images\\missing-link-1024x64.gif"
+    },
+    {
       "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\mobile-app-cta.jpg",
       "PackagePath": "staticwebassets\\images\\mobile-app-cta.jpg"
     },
     {
       "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\networking-background.jpg",
       "PackagePath": "staticwebassets\\images\\networking-background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\no-homeowners-1024x617.gif",
+      "PackagePath": "staticwebassets\\images\\no-homeowners-1024x617.gif"
     },
     {
       "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\payment-bg-2.jpg",
@@ -369,6 +385,10 @@
       "PackagePath": "staticwebassets\\images\\service-provider-list-section-background.jpg"
     },
     {
+      "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\sorry-suppliers-1024x617.gif",
+      "PackagePath": "staticwebassets\\images\\sorry-suppliers-1024x617.gif"
+    },
+    {
       "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\success-gif.gif",
       "PackagePath": "staticwebassets\\images\\success-gif.gif"
     },
@@ -379,6 +399,10 @@
     {
       "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\success.gif",
       "PackagePath": "staticwebassets\\images\\success.gif"
+    },
+    {
+      "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\we-do-not-sell-leads-1024x617.gif",
+      "PackagePath": "staticwebassets\\images\\we-do-not-sell-leads-1024x617.gif"
     },
     {
       "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\js\\Dashboard.js",
