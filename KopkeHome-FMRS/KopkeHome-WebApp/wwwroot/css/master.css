@@ -2932,6 +2932,9 @@ body.loading .mm {
     z-index: 999999;
     bottom: 0;
 }
+.margin {
+    margin: 5px;
+}
 
 .logo-loader-pulse {
     width: 120px;
@@ -3184,7 +3187,7 @@ span#basic-addon3.input-group-text
 
     @media (max-width: 768px) {
         .registration-container.black-bg {
-            padding: 30px 10px 60px;
+            padding: 30px 10px 30px;
         }
         .ProhzLangDDL { 
             position: absolute;
@@ -3777,5 +3780,20 @@ span#basic-addon3.input-group-text
         padding: 10px 0px;
         display: inline-block;
     }
+
+
+.notice-body {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+   
+}   
+
+.notice {
+    background-color: #ffc107;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
 
 
