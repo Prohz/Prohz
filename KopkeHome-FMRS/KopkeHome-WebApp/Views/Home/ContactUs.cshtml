@@ -14,14 +14,30 @@
   <div class="card-body">
     <h5 class="card-title">@Localizer["Contact Us"]</h5>
     <h6 class="card-subtitle mb-2 text-muted"></h6>
-    <p class="card-text ">@Localizer["You can contact us using below details"]</p>
-                      
-    <ul class="ml-3">   
-         @*<a class="nav-link" asp-controller="Home" asp-action="Index">Email</a>
-         <a class="nav-link" asp-controller="Home" asp-action="Index">Phone</a>*@
-    <li>@Localizer["Phone"]: 866-250-5316</li>
-    <li>@Localizer["Email"]: info@prohz.net</li>
-    </ul>
+    <p class="card-text ">@Localizer["You can contact us using below form"]</p>
+
+            <form method="post" asp-controller="Home" asp-action="CallSendEmailToProhz">
+                <label for="fromEmail">Your Email:</label>
+                <input type="email" name="FromEmail" required>
+
+                <br>
+
+                <label for="subject">Subject:</label>
+                <input type="text" name="Subject" required>
+
+                <br>
+
+                <label for="message">Message:</label>
+                <textarea name="Message" rows="4" required></textarea>
+
+                <br>
+
+                <button type="submit">Send Email</button>
+            </form>
+
+
+
+
     <a href="@Url.Action("HowDoesItWork","Home")" class="card-link">@Localizer["Learn More"]</a>
     <a href="@Url.Action("SignUp","User")" class="card-link">@Localizer["Join Prohz"]</a>
   </div>

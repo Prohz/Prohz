@@ -3996,7 +3996,3 @@ C:\Users\Percival\Development\prohz\KopkeHome-FMRS\KopkeHome-WebApp\obj\Debug\ne
 C:\Users\Percival\Development\prohz\KopkeHome-FMRS\KopkeHome-WebApp\obj\Debug\net6.0\KopkeHome_WebApp.pdb
 C:\Users\Percival\Development\prohz\KopkeHome-FMRS\KopkeHome-WebApp\obj\Debug\net6.0\KopkeHome_WebApp.genruntimeconfig.cache
 C:\Users\Percival\Development\prohz\KopkeHome-FMRS\KopkeHome-WebApp\obj\Debug\net6.0\ref\KopkeHome_WebApp.dll
-C:\Users\Percival\Development\prohz\KopkeHome-FMRS\KopkeHome-WebApp\obj\Debug\net6.0\en\KopkeHome_WebApp.resources.cs
-C:\Users\Percival\Development\prohz\KopkeHome-FMRS\KopkeHome-WebApp\obj\Debug\net6.0\fr\KopkeHome_WebApp.resources.cs
-C:\Users\Percival\Development\prohz\KopkeHome-FMRS\KopkeHome-WebApp\obj\Debug\net6.0\en-US\KopkeHome_WebApp.resources.cs
-C:\Users\Percival\Development\prohz\KopkeHome-FMRS\KopkeHome-WebApp\obj\Debug\net6.0\es\KopkeHome_WebApp.resources.cs

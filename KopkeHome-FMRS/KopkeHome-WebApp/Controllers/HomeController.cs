@@ -121,6 +121,36 @@ namespace KopkeHome_WebApp.Controllers
         {//done
             return View();
         }
+
+
+
+
+        public async Task<IActionResult> CallSendEmailToProhz([FromForm] EmailFormModel formData)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(_configuration.GetValue<string>("WebApi:API_URL") + "/Contact/SendEmailToProhz");
+
+                    var httpResponse = await client.PostAsJsonAsync("SendEmailToProhz", formData);
+
+                    if (httpResponse.IsSuccessStatusCode)
+                    {
+                        return View("Success");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Error");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal Server Error: " + ex.Message);
+            }
+        }
+
         public IActionResult ContactUs()
         {//done
             return View();

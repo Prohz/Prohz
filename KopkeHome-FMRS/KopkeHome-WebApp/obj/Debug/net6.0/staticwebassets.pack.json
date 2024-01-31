@@ -269,6 +269,10 @@
       "PackagePath": "staticwebassets\\images\\ProhzGreyLogo.png"
     },
     {
+      "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\app-store-and-google-play-coming-soon.png",
+      "PackagePath": "staticwebassets\\images\\app-store-and-google-play-coming-soon.png"
+    },
+    {
       "Id": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\wwwroot\\images\\apple-app-store.png",
       "PackagePath": "staticwebassets\\images\\apple-app-store.png"
     },
