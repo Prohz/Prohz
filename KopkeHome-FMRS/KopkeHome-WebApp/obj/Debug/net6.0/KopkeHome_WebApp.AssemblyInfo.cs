@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KopkeHome_WebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ce1906ba921785e87f6ab6eca20c5cae69b1785")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb80eba57a9b56fbc30495f51ba53e56aa0ce122")]
 [assembly: System.Reflection.AssemblyProductAttribute("KopkeHome_WebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KopkeHome_WebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

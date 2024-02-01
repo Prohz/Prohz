@@ -16,25 +16,52 @@
     <h6 class="card-subtitle mb-2 text-muted"></h6>
     <p class="card-text ">@Localizer["You can contact us using below form"]</p>
 
+            <style>
+                /* Apply some basic styling to the form container */
+                form {
+                    max-width: 900px; /* Set a maximum width to prevent the form from becoming too wide */
+                    margin: 0 auto; /* Center the form on the page */
+                }
+
+                /* Apply styles to the form elements */
+                label {
+                    display: block; /* Make labels block-level for better spacing */
+                    margin-bottom: 5px; /* Add some space below the labels */
+                }
+
+                input,
+                textarea {
+                    width: 100%; /* Make input and textarea elements fill the container */
+                    box-sizing: border-box; /* Include padding and border in the element's total width */
+                    margin-bottom: 10px; /* Add some space below each input and textarea */
+                    padding: 8px; /* Add padding for better appearance */
+                }
+
+                button {
+                    padding: 10px; /* Add padding to the button for better appearance */
+                }
+            </style>
+
             <form method="post" asp-controller="Home" asp-action="CallSendEmailToProhz">
-                <label for="fromEmail">Your Email:</label>
-                <input type="email" name="FromEmail" required>
+                <div>
+                    <label for="fromEmail">Your Email:</label>
+                    <input type="email" name="FromEmail" required>
+                </div>
 
-                <br>
+                <div>
+                    <label for="subject">Subject:</label>
+                    <input type="text" name="Subject" required>
+                </div>
 
-                <label for="subject">Subject:</label>
-                <input type="text" name="Subject" required>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea name="Message" rows="4" required></textarea>
+                </div>
 
-                <br>
-
-                <label for="message">Message:</label>
-                <textarea name="Message" rows="4" required></textarea>
-
-                <br>
-
-                <button type="submit">Send Email</button>
+                <div>
+                    <button type="submit">Send Email</button>
+                </div>
             </form>
-
 
 
 
