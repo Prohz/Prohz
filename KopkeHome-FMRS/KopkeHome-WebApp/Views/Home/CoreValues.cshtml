@@ -2,92 +2,83 @@
     Layout = "~/Views/Shared/_HomePageLayout.cshtml";
 }
  @inject IViewLocalizer Localizer
+
 <div class="container mainbodysec">
-   <div class="card" >
-  <div class="card-body">
-    <h5 class="card-title">@Localizer["Core Values"]</h5>
-    <h6 class="card-subtitle mb-2 text-muted"></h6>
-  
-    <div> 
- @*<u>Contractor :</u>*@
- <div class="HomeContentsRead"> 
-
-
-</div>
-</div>
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-12">
-
-                        <main role="main">
-
-                            <article class="page">
-
-                                <header>
-                                    <h1 class="screen-reader-text">Contacts</h1>
-                                </header>
-
-                                <div class="entry-content">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                       
-                                            <p>Contractor</p>
-                                            <p>In the construction industry, a general contractor is the person or company responsible for overseeing a construction project.</p>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                          
-                                            <p>Subcontractor</p>
-                                            <p>Subcontractors are companies or people hired by the contractor to do specific tasks or services in their area of expertise.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <h2>CONTRACTORS</h2>
-                                            <img src="/images/Contractor-pic1.gif" class="img-fluid" alt="Generic Image">
-                                            <p>Prohz is an exclusive networking platform designed specifically for Contractors and Subcontractors. We understand your unique needs and priorities, and that’s why we focus solely on providing you with the resources and connections you need to succeed. Our founders are Contractors themselves, so we truly understand the challenges you face and are here to support you every step of the way. By joining Prohz, you’ll not only expand your reach and connect with other top home service providers in your area, but you’ll also have the opportunity to build strong, lasting relationships that will help stabilize or grow your business. So, let’s take your company to the next level – sign up for Prohz today!</p>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <h2>SUBCONTRACTORS</h2>
-                                            <img src="/images/Contractor-pic2.gif" class="img-fluid" alt="Generic Image">
-                                            <p>We know you are tired of searching high and low for the perfect subcontractor. Look no further! Prohz is the solution to all of your problems. With our state-of-the-art platform, you can directly connect with top-notch contractors and subcontractors to ensure that your project is completed efficiently and effectively. Say goodbye to the headache of searching for hours on end. Prohz has got you covered every step of the way. Start using our networking platform today and take your lead time installs to the next level!  Let’s get started!</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <img src="~/images/no-homeowners-1024x617.gif" class="img-fluid" alt="Generic Image">
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <img src="/images/sorry-suppliers-1024x617.gif" class="img-fluid" alt="Generic Image">
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <img src="/images/we-do-not-sell-leads-1024x617.gif" class="img-fluid" alt="Generic Image">
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </article>
-
-                        </main>
-
-                    </div>
-
+    
+            <div>
+                @*<u>Contractor :</u>*@
+                <div class="HomeContentsRead">
                 </div>
-
             </div>
 
+    <style>
+        .custom-image {
+            width: 100%; /* Make images fill the entire width of their container */
+            margin-bottom: 10px; /* Adjust as needed */
+        }
+
+        .entry-content p {
+            margin-bottom: 15px; /* Adjust as needed */
+        }
+    </style>
 
 
 
-    <a href="@Url.Action("HowDoesItWork","Home")" class="card-link">@Localizer["Learn More"]</a>
-    <a href="@Url.Action("SignUp","User")" class="card-link">@Localizer["Join Prohz"]</a>
-  </div>
-</div>
-</div>
+    <div class="row">
+        <div class="col-12">
+            <main role="main">
+                <article class="page">
+                    <header>
+                        <h1 class="screen-reader-text">Core Values</h1>
+                    </header>
+
+                    <div class="entry-content">
+                        <div class="row">
+
+                            <img src="/images/missing-link-1024x64.gif" class="img-fluid custom-image" alt="Generic Image">
+                            <div class="col-md-6">
+                                <p>Contractor</p>
+                                <p>In the construction industry, a general contractor is the person or company responsible for overseeing a construction project.</p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <p>Subcontractor</p>
+                                <p>Subcontractors are companies or people hired by the contractor to do specific tasks or services in their area of expertise.</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>CONTRACTORS</h2>
+                                <img src="/images/Contractor-pic1.gif" class="img-fluid custom-image" alt="Generic Image" style="max-height: 316.922px">
+                                <p>Prohz is an exclusive networking platform designed specifically for Contractors and Subcontractors. We understand your unique needs and priorities, and that’s why we focus solely on providing you with the resources and connections you need to succeed. Our founders are Contractors themselves, so we truly understand the challenges you face and are here to support you every step of the way. By joining Prohz, you’ll not only expand your reach and connect with other top home service providers in your area, but you’ll also have the opportunity to build strong, lasting relationships that will help stabilize or grow your business. So, let’s take your company to the next level – sign up for Prohz today!</p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <h2>SUBCONTRACTORS</h2>
+                                <img src="/images/Contractor-pic2.gif" class="img-fluid custom-image" alt="Generic Image">
+                                <p>We know you are tired of searching high and low for the perfect subcontractor. Look no further! Prohz is the solution to all of your problems. With our state-of-the-art platform, you can directly connect with top-notch contractors and subcontractors to ensure that your project is completed efficiently and effectively. Say goodbye to the headache of searching for hours on end. Prohz has got you covered every step of the way. Start using our networking platform today and take your lead time installs to the next level! Let’s get started!</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="/images/no-homeowners-1024x617.gif" class="img-fluid custom-image" alt="Generic Image">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/images/sorry-suppliers-1024x617.gif" class="img-fluid custom-image" alt="Generic Image">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="/images/we-do-not-sell-leads-1024x617.gif" class="img-fluid custom-image" alt="Generic Image">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+
+
+            <a href="@Url.Action("HowDoesItWork","Home")" class="card-link">@Localizer["Learn More"]</a>
+            <a href="@Url.Action("SignUp","User")" class="card-link">@Localizer["Join Prohz"]</a>
+    
