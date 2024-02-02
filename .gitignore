@@ -14,6 +14,9 @@
 # User-specific files (Mono)
 *.userprefs
 
+# dll for visual studios?
+*.dll
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

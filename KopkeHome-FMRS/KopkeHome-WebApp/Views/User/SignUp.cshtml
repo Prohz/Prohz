@@ -33,8 +33,10 @@
     <div class="mm">
         <div class="modal1">
 
-            <div class="logo-loader-pulse pulse" id="Idloader"> <a href="@Url.Action("index","home")"><img
-                        id="Logoimgurl" src="~/images/Kopke-brand-logo.png" /></a>
+            <div class="logo-loader-pulse pulse" id="Idloader">
+                <a href="@Url.Action("index","home")">
+                    <img id="Logoimgurl" src="~/images/Kopke-brand-logo.png" />
+                </a>
             </div>
         </div>
     </div>
@@ -42,7 +44,7 @@
     <div class="registration-container black-bg">
         <!--  Email verfication Modal -->
         <div class="modal p-0 fade contactorModal-email-varification" data-keyboard="false" data-backdrop="static"
-            id="contactorModal">
+             id="contactorModal">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -52,23 +54,25 @@
                     <div class="modal-body">
                         <div class="text-center email-varification-main-heading">
                             <h3 class="text-white">@Localizer["Enter verification code"]</h3>
-                            <p>@Localizer["Please check your email"] (<span id="VerificationEmail1"></span>)
-                                @Localizer["and enter the verification code below to verify your email address."]</p>
+                            <p>
+                                @Localizer["Please check your email"] (<span id="VerificationEmail1"></span>)
+                                @Localizer["and enter the verification code below to verify your email address."]
+                            </p>
                         </div>
                         <form id="form" asp-action="VerifyOTP" onsubmit="return submitVerifyOtp(this);">
                             <div class="userInput">
                                 <input type="number" maxLength="1" id="first" size="1" min="0" max="9"
-                                    pattern="[0-9]{1}" onKeyPress="if(this.value.length==1) return false;" />
+                                       pattern="[0-9]{1}" onKeyPress="if(this.value.length==1) return false;" />
                                 <input class="not-first" type="number" id="second" maxLength="1" size="1" min="0"
-                                    max="9" pattern="[0-9]{1}" onKeyPress="if(this.value.length==1) return false;" />
+                                       max="9" pattern="[0-9]{1}" onKeyPress="if(this.value.length==1) return false;" />
                                 <input class="not-first" type="number" id="third" maxLength="1" size="1" min="0" max="9"
-                                    pattern="[0-9]{1}" onKeyPress="if(this.value.length==1) return false;" />
+                                       pattern="[0-9]{1}" onKeyPress="if(this.value.length==1) return false;" />
                                 <input class="not-first" type="number" id="fourth" maxLength="1" size="1" min="0"
-                                    max="9" pattern="[0-9]{1}" onKeyPress="if(this.value.length==1) return false;" />
+                                       max="9" pattern="[0-9]{1}" onKeyPress="if(this.value.length==1) return false;" />
                                 <input class="not-first" type="number" id="fifth" maxLength="1" size="1" min="0" max="9"
-                                    pattern="[0-9]{1}" onKeyPress="if(this.value.length==1) return false;" />
+                                       pattern="[0-9]{1}" onKeyPress="if(this.value.length==1) return false;" />
                                 <input class="not-first" type="number" id="sixth" maxLength="1" size="1" min="0" max="9"
-                                    pattern="[0-9]{1}" onKeyPress="if(this.value.length==1) return false;" />
+                                       pattern="[0-9]{1}" onKeyPress="if(this.value.length==1) return false;" />
                                 <input type="hidden" value="" id="Email1" />
 
                                 <div class="cstm-span-error-msg">
@@ -104,7 +108,7 @@
             </div>
             <div class="member-login-link">
                 <p class="text-white m-0">@Localizer["Already A Member?"]</p> <a href="@Url.Action("signin", "user")"
-                    class=" green-clr-top-login-link ">@Localizer["Login"]</a>
+                                                                                 class=" green-clr-top-login-link ">@Localizer["Login"]</a>
             </div>
             @* <div class="member-login-link">
             <p class="text-white m-0">Already a member? <a href="http://dbprod/KopkeHome-FMRS-QA/User/SignIn" class="
@@ -112,11 +116,16 @@
             </div>*@
         </div>
 
-        <div class="notice-body">
+        <div class="container">
+            <div class="notice-body">
                 <div class="notice">
                     <h3 class="orange-cl">Important Notice</h3>
                     <p>A one-time fee of $99 will be charged for business verification to ensure the authenticity and security of your business on our platform.</p>
                 </div>
+            </div>
+
+
+
         </div>
 
 
@@ -130,24 +139,24 @@
 
         <div class="registration-container-form">
             <div class="nav nav-tabs border-0" role="tablist">
-            <div class="cstm-radio-box" style="margin: 5px, background-color: #f8f9fa; padding: 10px; border: 1px solid #007bff; border-radius: 5px;">
-                <input class="cstm-radio-btn" id="general_Contractor" name="intervaltype" type="radio" />
-                <label for="general_Contractor" class="text-white" style="font-size: 16px;">@Localizer["Contractor"]</label>
-            </div>
-
-            <div class="cstm-radio-box" style="margin: 5px, background-color: #f8f9fa; padding: 10px; border: 1px solid #007bff; border-radius: 5px;">
-                <input class="cstm-radio-btn" id="Sub_Contractor" name="intervaltype" type="radio" />
-                <label for="Sub_Contractor" class="text-white" style="font-size: 16px;">@Localizer["Sub Contractor"]</label>
-            </div>
-        </div>
-
-
-
-
-
-                            <div class="rgstr-main-heading mb-3">
-                    <h3 class="green-clr">@Localizer["Basic Information"]</h3>
+                <div class="cstm-radio-box" style="margin: 5px, background-color: #f8f9fa; padding: 10px; border: 1px solid #007bff; border-radius: 5px;">
+                    <input class="cstm-radio-btn" id="general_Contractor" name="intervaltype" type="radio" />
+                    <label for="general_Contractor" class="text-white" style="font-size: 16px;">@Localizer["Contractor"]</label>
                 </div>
+
+                <div class="cstm-radio-box" style="margin: 5px, background-color: #f8f9fa; padding: 10px; border: 1px solid #007bff; border-radius: 5px;">
+                    <input class="cstm-radio-btn" id="Sub_Contractor" name="intervaltype" type="radio" />
+                    <label for="Sub_Contractor" class="text-white" style="font-size: 16px;">@Localizer["Sub Contractor"]</label>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="rgstr-main-heading mb-3">
+                <h3 class="green-clr">@Localizer["Basic Information"]</h3>
+            </div>
             <!-- The contractor Modal end -->
             <div class="tab-content" id="tabs">
 
