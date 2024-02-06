@@ -234,3 +234,16 @@ D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-FMRS_API\obj\Release\net6.0\Kop
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-FMRS_API\obj\Release\net6.0\ref\KopkeHome-FMRS_API.dll
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.pdb
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.genruntimeconfig.cache
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.csproj.AssemblyReference.cache
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome_FMRS_API.Properties.Resources.resources
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.csproj.GenerateResource.cache
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.AssemblyInfoInputs.cache
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.AssemblyInfo.cs
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.csproj.CoreCompileInputs.cache
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.sourcelink.json
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.dll
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\refint\KopkeHome-FMRS_API.dll
+C:\Users\Percival\Development\prohz\KopkeHome-FMRS_API\obj\Release\net6.0\KopkeHome-FMRS_API.pdb

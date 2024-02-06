@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj": {}
+    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj": {}
   },
   "projects": {
-    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj": {
+    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj",
         "projectName": "KopkeHome-BusinessLayer",
-        "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\arshadm\\.nuget\\packages\\",
-        "outputPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-BusinessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\arshadm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,14 +28,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj": {
-                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj"
+              "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj"
               },
-              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
-                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
+              "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+                "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
               },
-              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
-                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj"
+              "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
+                "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj"
               }
             }
           }
@@ -99,16 +99,31 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -117,17 +132,17 @@
         }
       }
     },
-    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj": {
+    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj",
         "projectName": "KopkeHome-DataAccessLayer",
-        "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\arshadm\\.nuget\\packages\\",
-        "outputPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\arshadm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -141,8 +156,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
-                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
+              "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+                "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
               }
             }
           }
@@ -204,16 +219,31 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -222,17 +252,17 @@
         }
       }
     },
-    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj": {
+    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj",
         "projectName": "KopkeHome_WebApp",
-        "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj",
-        "packagesPath": "C:\\Users\\arshadm\\.nuget\\packages\\",
-        "outputPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-FMRS\\KopkeHome-WebApp\\obj\\publish\\win-x64\\",
+        "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj",
+        "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\obj\\publish\\win-x64\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\arshadm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -246,20 +276,20 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj": {
-                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj"
+              "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj"
               },
-              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj": {
-                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj"
+              "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj"
               },
-              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj": {
-                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj"
+              "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj": {
+                "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj"
               },
-              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
-                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
+              "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+                "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
               },
-              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
-                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj"
+              "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
+                "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj"
               }
             }
           }
@@ -355,22 +385,39 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
           "downloadDependencies": [
             {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[6.0.1, 6.0.1]"
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[6.0.1, 6.0.1]"
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[6.0.1, 6.0.1]"
+              "version": "[6.0.26, 6.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -381,7 +428,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -390,17 +437,17 @@
         }
       }
     },
-    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj": {
+    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
+        "projectUniqueName": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
         "projectName": "KopkeHome-LogManager",
-        "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
-        "packagesPath": "C:\\Users\\arshadm\\.nuget\\packages\\",
-        "outputPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-LogManager\\obj\\",
+        "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
+        "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\arshadm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -451,16 +498,31 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -469,17 +531,17 @@
         }
       }
     },
-    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
         "projectName": "KopkeHome-ModelLayer",
-        "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
-        "packagesPath": "C:\\Users\\arshadm\\.nuget\\packages\\",
-        "outputPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\obj\\",
+        "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
+        "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\arshadm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -538,16 +600,31 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -556,17 +633,17 @@
         }
       }
     },
-    "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
+    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj",
         "projectName": "KopkeHome-UtilityLayer",
-        "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj",
-        "packagesPath": "C:\\Users\\arshadm\\.nuget\\packages\\",
-        "outputPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-UtilityLayer\\obj\\",
+        "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj",
+        "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\arshadm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -580,8 +657,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
-                "projectPath": "D:\\Arshad Backup\\Backup\\KopkeHome-FMRS\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
+              "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+                "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
               }
             }
           }
@@ -653,16 +730,31 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
