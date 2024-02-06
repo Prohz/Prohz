@@ -32,3 +32,21 @@ D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-UtilityLayer\obj\Release\net6.0
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome-UtilityLayer.dll
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-UtilityLayer\obj\Release\net6.0\ref\KopkeHome-UtilityLayer.dll
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome-UtilityLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\bin\Release\net6.0\KopkeHome-UtilityLayer.deps.json
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\bin\Release\net6.0\KopkeHome-UtilityLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\bin\Release\net6.0\KopkeHome-UtilityLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\bin\Release\net6.0\KopkeHome-ModelLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\bin\Release\net6.0\KopkeHome-ModelLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome-UtilityLayer.csproj.AssemblyReference.cache
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome_UtilityLayer.Message.resources
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome-UtilityLayer.csproj.GenerateResource.cache
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome-UtilityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome-UtilityLayer.AssemblyInfoInputs.cache
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome-UtilityLayer.AssemblyInfo.cs
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome-UtilityLayer.csproj.CoreCompileInputs.cache
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome-UtilityLayer.sourcelink.json
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome-UtilityLayer.csproj.CopyComplete
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome-UtilityLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\refint\KopkeHome-UtilityLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\KopkeHome-UtilityLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\obj\Release\net6.0\ref\KopkeHome-UtilityLayer.dll

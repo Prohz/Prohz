@@ -22,3 +22,16 @@ D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-LogManager\obj\Release\net6.0\K
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-LogManager\obj\Release\net6.0\KopkeHome-LogManager.dll
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-LogManager\obj\Release\net6.0\ref\KopkeHome-LogManager.dll
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-LogManager\obj\Release\net6.0\KopkeHome-LogManager.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\bin\Release\net6.0\KopkeHome-LogManager.deps.json
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\bin\Release\net6.0\KopkeHome-LogManager.dll
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\bin\Release\net6.0\KopkeHome-LogManager.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\obj\Release\net6.0\KopkeHome-LogManager.csproj.AssemblyReference.cache
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\obj\Release\net6.0\KopkeHome-LogManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\obj\Release\net6.0\KopkeHome-LogManager.AssemblyInfoInputs.cache
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\obj\Release\net6.0\KopkeHome-LogManager.AssemblyInfo.cs
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\obj\Release\net6.0\KopkeHome-LogManager.csproj.CoreCompileInputs.cache
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\obj\Release\net6.0\KopkeHome-LogManager.sourcelink.json
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\obj\Release\net6.0\KopkeHome-LogManager.dll
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\obj\Release\net6.0\refint\KopkeHome-LogManager.dll
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\obj\Release\net6.0\KopkeHome-LogManager.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-LogManager\obj\Release\net6.0\ref\KopkeHome-LogManager.dll
