@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {}
+    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
         "projectName": "KopkeHome-ModelLayer",
-        "projectPath": "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
+        "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
         "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-ModelLayer\\obj\\",
+        "outputPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

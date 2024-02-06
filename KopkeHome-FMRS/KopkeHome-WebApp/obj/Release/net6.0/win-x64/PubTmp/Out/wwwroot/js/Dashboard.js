@@ -503,6 +503,7 @@ $(document).ready(function () {
         source: function (request, response) {
             
             var zipIsNULL = $("#autocomplete-zipcode").val();
+            var contractor_type = $("#autocomplete-address").val();
             if (jQuery.trim(zipIsNULL).length == 0) {
                 $("#autocomplete-address").val("");
                 var InfoIcon = '<img style="height: 22px;padding:2px;margin-bottom:2px;margin-right:2px" src="' + urlprefix + '/images/circle-info-solid.svg">';
@@ -510,49 +511,49 @@ $(document).ready(function () {
                 Swal.fire({
                     title: 'Please select zip code first.',
                     iconHtml: ProhzGreyLogo,
-                    html: InfoIcon + localizer('We have to have the zip code first because every zip code has a different list of contractors.', 'Tenemos que tener el código postal primero porque cada código postal tiene una lista diferente de contratistas', $('#ProhzLangDDL option:selected').val())
+                    html: InfoIcon + localizer('The zip code is required first', 'El código postal es requerido primero', $('#ProhzLangDDL option:selected').val())
 
                 })
                 return false;
             }
            
             $.ajax({
-                url: urlprefix+ "/Dashboard/CategoriesList",
+                url: urlprefix + "/Dashboard/CategoriesList",
                 type: "POST",
                 dataType: "json",
                 data: {
                     __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val(),
-                    Prefix: request.term,
+                    Prefix: contractor_type,
                     zipcode: zipIsNULL
                 },
+ 
                 success: function (data) {
+                    console.log("Response received:", response);
 
-                    
                     //var result = JSON.parse(data);
                     if (data[0] == undefined) {
                         var InfoIcon = '<img style="height: 22px;padding:2px;margin-bottom:2px;margin-right:2px" src="' + urlprefix + '/images/circle-info-solid.svg">';
-                            
                         Swal.fire({
-                            title: 'Sorry.',
+                            title: 'Unavailable Service in This Area',
                             iconHtml: ProhzGreyLogo,
-                            html: InfoIcon + localizer(' Right now this service is not available on the zip code ', 'En este momento este servicio no está disponible en el código postal', $('#ProhzLangDDL option:selected').val()) + zipIsNULL,
+                            html: InfoIcon + localizer(' Prohz is currently searching for members in ', 'Prohz actualmente está buscando miembros en', $('#ProhzLangDDL option:selected').val()) + zipIsNULL + " for " + contractor_type,
 
                         })
                            
                         
                      
                     }
-                    else {
-                        response($.map(data, function (item) {
-                            // console.log(data[i].Name);
-
-                            //console.log(item.id + item.name);
-                            return { label: item.name, value: item.name };
-                        }))
-                    }
+                    //else {
+                    //    response($.map(data, function (item) {
+                    //        // console.log(data[i].Name);
+                    //        console.log(data);
+                    //        //console.log(item.id + item.name);
+                    //        return { label: item.name, value: item.name };
+                    //    }))
+                    //}
                    
 
-                }
+                },
             })
         },
        
