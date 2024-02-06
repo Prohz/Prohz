@@ -5,7 +5,8 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>D:\Publish_Web</_PublishTargetUrl>
-    <History>True|2023-06-15T13:27:09.1345602Z;</History>
+    <_PublishTargetUrl>C:\Users\Percival\Development\prohz builds</_PublishTargetUrl>
+    <History>True|2024-02-05T21:26:08.9827682Z;True|2024-02-05T16:18:42.3078050-05:00;False|2024-02-05T16:15:37.6848638-05:00;True|2023-06-15T09:27:09.1345602-04:00;</History>
+    <LastFailureDetails />
   </PropertyGroup>
 </Project>

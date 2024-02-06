@@ -40,3 +40,25 @@ D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-BusinessLayer\obj\Release\net6.
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome-BusinessLayer.dll
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-BusinessLayer\obj\Release\net6.0\ref\KopkeHome-BusinessLayer.dll
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome-BusinessLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\bin\Release\net6.0\KopkeHome-BusinessLayer.deps.json
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\bin\Release\net6.0\KopkeHome-BusinessLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\bin\Release\net6.0\KopkeHome-BusinessLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\bin\Release\net6.0\KopkeHome-DataAccessLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\bin\Release\net6.0\KopkeHome-ModelLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\bin\Release\net6.0\KopkeHome-UtilityLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\bin\Release\net6.0\KopkeHome-DataAccessLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\bin\Release\net6.0\KopkeHome-ModelLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\bin\Release\net6.0\KopkeHome-UtilityLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome-BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome_BusinessLayer.ResourceBusinessLayer.resources
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome-BusinessLayer.csproj.GenerateResource.cache
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome-BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome-BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome-BusinessLayer.AssemblyInfo.cs
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome-BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome-BusinessLayer.sourcelink.json
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome-BusinessLayer.csproj.CopyComplete
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome-BusinessLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\refint\KopkeHome-BusinessLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\KopkeHome-BusinessLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-BusinessLayer\obj\Release\net6.0\ref\KopkeHome-BusinessLayer.dll

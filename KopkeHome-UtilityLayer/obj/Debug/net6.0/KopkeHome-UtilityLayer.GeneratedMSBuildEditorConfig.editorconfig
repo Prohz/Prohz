@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = KopkeHome_UtilityLayer
-build_property.ProjectDir = C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-UtilityLayer\
+build_property.ProjectDir = C:\Users\Percival\Development\prohz\KopkeHome-UtilityLayer\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

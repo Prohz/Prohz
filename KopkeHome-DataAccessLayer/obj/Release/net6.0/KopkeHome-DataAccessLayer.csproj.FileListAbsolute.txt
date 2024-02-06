@@ -32,3 +32,21 @@ D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-DataAccessLayer\obj\Release\net
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-DataAccessLayer\obj\Release\net6.0\ref\KopkeHome-DataAccessLayer.dll
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-DataAccessLayer\obj\Release\net6.0\KopkeHome-DataAccessLayer.pdb
 D:\Arshad Backup\Backup\KopkeHome-FMRS\KopkeHome-DataAccessLayer\obj\Release\net6.0\KopkeHome-DataAccessLayer.genruntimeconfig.cache
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\bin\Release\net6.0\KopkeHome-DataAccessLayer.deps.json
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\bin\Release\net6.0\KopkeHome-DataAccessLayer.runtimeconfig.json
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\bin\Release\net6.0\KopkeHome-DataAccessLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\bin\Release\net6.0\KopkeHome-DataAccessLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\bin\Release\net6.0\KopkeHome-ModelLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\bin\Release\net6.0\KopkeHome-ModelLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\obj\Release\net6.0\KopkeHome-DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\obj\Release\net6.0\KopkeHome-DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\obj\Release\net6.0\KopkeHome-DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\obj\Release\net6.0\KopkeHome-DataAccessLayer.AssemblyInfo.cs
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\obj\Release\net6.0\KopkeHome-DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\obj\Release\net6.0\KopkeHome-DataAccessLayer.sourcelink.json
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\obj\Release\net6.0\KopkeHome-DataAccessLayer.csproj.CopyComplete
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\obj\Release\net6.0\KopkeHome-DataAccessLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\obj\Release\net6.0\refint\KopkeHome-DataAccessLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\obj\Release\net6.0\KopkeHome-DataAccessLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\obj\Release\net6.0\KopkeHome-DataAccessLayer.genruntimeconfig.cache
+C:\Users\Percival\Development\prohz\KopkeHome-DataAccessLayer\obj\Release\net6.0\ref\KopkeHome-DataAccessLayer.dll

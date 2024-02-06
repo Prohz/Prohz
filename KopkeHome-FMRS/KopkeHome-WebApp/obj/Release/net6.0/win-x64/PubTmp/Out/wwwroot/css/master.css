@@ -777,22 +777,20 @@ input:checked + .slider {
 
 
 
-
-
-
 .benefit-table table .membership-title-1 {
     /*  background-color: #FF8800;*/
-    background-color: #c8a900
+    background-color: #c9b037;
 }
 
 .benefit-table table .membership-title-2 {
-  background-color:  #CD7F32
+    background-color: #ad8a56;
+  
     /* background-color: #00C671;*/
 }
 
 .benefit-table table .membership-title-3 {
-    background-color: #aba7a7;
-/*    background-color: #009ADC;*/
+    background-color: #b4b4b4;
+    /*    background-color: #009ADC;*/
 }
 
 .benefit-table table .membership-title-4 {
@@ -800,17 +798,17 @@ input:checked + .slider {
 }
 
 #Home-owner .benefit-table table .membership-title-1 {
-    background-color: #ACD036;
+    background-color: #c9b037;
     color: #000;
 }
 
 #Home-owner .benefit-table table .membership-title-2 {
-    background-color: #C0C0C0;
+    background-color: #ad8a56;
     color: #000;
 }
 
 #Home-owner .benefit-table table .membership-title-3 {
-    background-color: #D4AF37;
+    background-color: #b4b4b4;
     color: #000;
 }
 
@@ -2934,6 +2932,9 @@ body.loading .mm {
     z-index: 999999;
     bottom: 0;
 }
+.margin {
+    margin: 5px;
+}
 
 .logo-loader-pulse {
     width: 120px;
@@ -3186,7 +3187,7 @@ span#basic-addon3.input-group-text
 
     @media (max-width: 768px) {
         .registration-container.black-bg {
-            padding: 30px 10px 60px;
+            padding: 30px 10px 30px;
         }
         .ProhzLangDDL { 
             position: absolute;
@@ -3779,5 +3780,20 @@ span#basic-addon3.input-group-text
         padding: 10px 0px;
         display: inline-block;
     }
+
+
+.notice-body {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+   
+}   
+
+.notice {
+    background-color: #ffc107;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
 
 

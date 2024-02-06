@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj": {}
+    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj": {
+    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
+        "projectUniqueName": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
         "projectName": "KopkeHome-LogManager",
-        "projectPath": "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
+        "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
         "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-LogManager\\obj\\",
+        "outputPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

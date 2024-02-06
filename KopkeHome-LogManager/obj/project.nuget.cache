@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I6B1lj1qYOhUm9Z/toxz2le8lGXo4IBonIqCq18fEQcRTrvwcqZOMgbVNEJjPooj4JGfDz24Vj2bC+88I49QVg==",
+  "dgSpecHash": "PL/sWXIR1Ggr86h9UzGkaRd6hx90K5SebLHLllgfC70fI6xcTUfs6kDNPywxB6a9Ajjo/ubVU8pW4ETal/EnPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Percival\\Desktop\\prohz_final_updates\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
+  "projectFilePath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Percival\\.nuget\\packages\\asyncfixer\\1.6.0\\asyncfixer.1.6.0.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
@@ -20,8 +20,8 @@
     "C:\\Users\\Percival\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
-    "C:\\Users\\Percival\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\Percival\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
     "C:\\Users\\Percival\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512"
   ],
   "logs": []

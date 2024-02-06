@@ -106,3 +106,16 @@ C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-ModelLayer\obj\Debug\net
 C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-ModelLayer\obj\Debug\net6.0\refint\KopkeHome-ModelLayer.dll
 C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-ModelLayer\obj\Debug\net6.0\KopkeHome-ModelLayer.pdb
 C:\Users\Percival\Desktop\prohz_final_updates\KopkeHome-ModelLayer\obj\Debug\net6.0\ref\KopkeHome-ModelLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\bin\Debug\net6.0\KopkeHome-ModelLayer.deps.json
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\bin\Debug\net6.0\KopkeHome-ModelLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\bin\Debug\net6.0\KopkeHome-ModelLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\obj\Debug\net6.0\KopkeHome-ModelLayer.csproj.AssemblyReference.cache
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\obj\Debug\net6.0\KopkeHome-ModelLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\obj\Debug\net6.0\KopkeHome-ModelLayer.AssemblyInfoInputs.cache
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\obj\Debug\net6.0\KopkeHome-ModelLayer.AssemblyInfo.cs
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\obj\Debug\net6.0\KopkeHome-ModelLayer.csproj.CoreCompileInputs.cache
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\obj\Debug\net6.0\KopkeHome-ModelLayer.sourcelink.json
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\obj\Debug\net6.0\KopkeHome-ModelLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\obj\Debug\net6.0\refint\KopkeHome-ModelLayer.dll
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\obj\Debug\net6.0\KopkeHome-ModelLayer.pdb
+C:\Users\Percival\Development\prohz\KopkeHome-ModelLayer\obj\Debug\net6.0\ref\KopkeHome-ModelLayer.dll

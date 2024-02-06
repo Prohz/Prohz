@@ -54,30 +54,17 @@ function CancelSubscription(d) {
 }
 
 function UpgradeToGoldSubscription() {
-    debugger
-    var PlanId = "";
-    var subId = "";
-    var CusId = "";
-    var PriceId = "";
-    var selectedVal = "";
-    var currentSubs = "";
-    var PrevPlanId = "";
+    var PlanId = "@PlanIdBronze";
+    var subId = "@Model.SubscriptionsStripeData.StripeSubscriptionId";
+    var CusId = "@Model.SubscriptionsStripeData.StripeCustomerID";
+    var PriceId = "@Model.PriceYearlyBronzeID";
+    var currentSubs = "@Model.SubscriptionsStripeData.StripePriceId";
+    var PrevPlanId = "@Model.SubscriptionsStripeData.PlanId";
     var Msg = "";
     var MsgFor = "";
-    var LastDate = "";
-    
-    var selected = $("input[type='radio'][name='GoldPrice']:checked");
-    var upgradeMsg
-    if (selected.length > 0) {
-        PrevPlanId = selected.attr("data-PrevPlanId");
-        currentSubs = selected.attr("data-CurrentsubId");
-        selectedVal = selected.val();
-        subId = selected.attr("data-subId");
-        PlanId = selected.attr("Id");
-        PriceId = selected.attr("data-PriceId");
-        CusId = selected.attr("data-CusId");
-        LastDate = selected.attr("data-LastDate");
-        if (currentSubs == selected.attr("data-PriceId")) {
+    var LastDate = "@Model.SubscriptionsStripeData.PeriodEndDate";
+
+        if (currentSubs == PriceId) {
             Swal.fire(localizer('Already subscribed to this plan. please change different plan or billing cycle.', 'Ya está suscrito a este plan. cambie el plan o el ciclo de facturación por otro diferente.', $('#ProhzLangDDL option:selected').val()))
         }
         else {
@@ -157,43 +144,22 @@ function UpgradeToGoldSubscription() {
         }
     }
    
-    else
-    {
-/*        Swal.fire('Please select Subscription Plan type Monthly/Yearly', '', 'info')*/
-        Swal.fire({
-            title: localizer('Please select Subscription Plan type Quarterly/Yearly', 'Seleccione el tipo de plan de suscripción Trimestral/Anual', $('#ProhzLangDDL option:selected').val()),
-            iconHtml: ProhzGreyLogo,
-            text: '',
-           
-        })
-    }
-   
-}
 
 
 function UpgradeToSilverSubscription() {
-    debugger
-    var PlanId = "";
-    var subId = "";
-    var CusId = "";
-    var PriceId = "";
-    var selectedVal = "";
-    var currentSubs = "";
-    var PrevPlanId = "";
+    var PlanId = "@PlanIdSilver";
+    var subId = "@Model.SubscriptionsStripeData.StripeSubscriptionId";
+    var CusId = "@Model.SubscriptionsStripeData.StripeCustomerID";
+    var PriceId = "@Model.PriceYearlySilverID";
+    var currentSubs = "@Model.SubscriptionsStripeData.StripePriceId";
+    var PrevPlanId = "@Model.SubscriptionsStripeData.PlanId";
     var Msg = "";
     var MsgFor = "";
-    var LastDate = "";
-    var selected = $("input[type='radio'][name='SilverPrice']:checked");
-    
-    if (selected.length > 0) {
-        PrevPlanId = selected.attr("data-PrevPlanId");
-        currentSubs = selected.attr("data-CurrentsubId");
-        selectedVal = selected.val();
-        subId = selected.attr("data-subId");
-        PlanId = selected.attr("Id");
-        PriceId = selected.attr("data-PriceId");
-        CusId = selected.attr("data-CusId");
-        LastDate = selected.attr("data-LastDate");
+    var LastDate = "@Model.SubscriptionsStripeData.PeriodEndDate";
+    console.log(currentSubs)
+    console.log(PriceId)
+
+
 
         if (currentSubs == PriceId) {
             Swal.fire({
@@ -273,46 +239,21 @@ function UpgradeToSilverSubscription() {
             })
         }
     }
-    
-    else {
-       // Swal.fire('Please select Subscription Plan type Monthly/Yearly', '', 'info')
-        Swal.fire({
-            title: localizer('Please select Subscription Plan type Quarterly/Yearly', 'Seleccione el tipo de plan de suscripción Trimestral/Anual', $('#ProhzLangDDL option:selected').val()),
-            iconHtml: ProhzGreyLogo,
-            text: '',
-
-        })
-    }
-
-}
 
 
 
 
 function UpgradeToBronzeSubscription() {
     
-    var PlanId = "";
-    var subId = "";
-    var CusId = "";
-    var PriceId = "";
-    var selectedVal = "";
-    var currentSubs = "";
-    var PrevPlanId = "";
+    var PlanId = "@PlanIdBronze";
+    var subId = "@Model.SubscriptionsStripeData.StripeSubscriptionId";
+    var CusId = "@Model.SubscriptionsStripeData.StripeCustomerID";
+    var PriceId = "@Model.PriceYearlyBronzeID";
+    var currentSubs = "@Model.SubscriptionsStripeData.StripePriceId";
+    var PrevPlanId = "@Model.SubscriptionsStripeData.PlanId";
     var Msg = "";
     var MsgFor = "";
-    var LastDate = "";
-
-    var selected = $("input[type='radio'][name='BronzePrice']:checked");
-
-    if (selected.length > 0) {
-        PrevPlanId = selected.attr("data-PrevPlanId");
-        currentSubs = selected.attr("data-CurrentsubId");
-        selectedVal = selected.val();
-        subId = selected.attr("data-subId");
-        PlanId = selected.attr("Id");
-        PriceId = selected.attr("data-PriceId");
-        CusId = selected.attr("data-CusId");
-        LastDate = selected.attr("data-LastDate");
+    var LastDate = "@Model.SubscriptionsStripeData.PeriodEndDate";
 
         if (currentSubs == PriceId) {
            
@@ -395,17 +336,6 @@ function UpgradeToBronzeSubscription() {
         }
     }
 
-    else {
-        //Swal.fire('Please select Subscription Plan type Monthly/Yearly', '', 'info')
-        Swal.fire({
-            title: localizer('Please select Subscription Plan type Quarterly/Yearly', 'Seleccione el tipo de plan de suscripción Trimestral/Anual', $('#ProhzLangDDL option:selected').val()),
-            iconHtml: ProhzGreyLogo,
-            text: '',
-
-        })
-    }
-
-}
 
 
 
