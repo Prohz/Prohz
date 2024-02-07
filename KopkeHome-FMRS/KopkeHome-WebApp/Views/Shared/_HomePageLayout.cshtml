@@ -164,13 +164,75 @@
             width: 100%;
             text-align: center;
         }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 9999; /* Make sure it's above other elements */
+        }
+
+            /* Your existing styles go here */
+
+        .image-container {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .image-container {
+            max-width: 100%; /* Set maximum width to 100% */
+            max-height: 100vh;
+
+            overflow-x: hidden;
+        }
+
+        .bottom-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .bottom-images img {
+                width: 100%;
+                display: block;
+                margin-bottom: 10px; /* Adjust as needed for spacing */
+            }
+
+
     </style>
+
+</style>
+
+    
+    }
+
 </head>
 
 <body>
+    <div class="overlay">
 
+
+        <!-- Container for the images -->
+        <div class="image-container">
+            <!-- Display the image on larger screens -->
+            <div class="d-none d-md-block largeImage">
+                <img class="img-fluid" src="~/images/comingsoon.jpg" />
+            </div>
+
+            <!-- Display the same images on smaller screens -->
+            <div class="d-md-none bottom-images">
+                <img class="img-fluid" src="~/images/soontop.jpg" />
+                <img class="img-fluid" src="~/images/soon2.jpg" />
+                <img class="img-fluid" src="~/images/soon3.jpg" />
+            </div>
+        </div>
+
+    </div>
     <!-- Main Page -->
-    <div class="main-page" id="landingPage">
+    <div class="main-page" id="landingPage" style="display: none">
         <!--Header -->
         <header class="header">
             <nav class="navbar navbar-expand-xl navbarcstm">
