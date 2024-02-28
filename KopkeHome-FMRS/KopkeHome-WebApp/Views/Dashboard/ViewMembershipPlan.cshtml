@@ -254,7 +254,7 @@
     }
 
     function UpgradeToGoldSubscription() {
-        var PlanId = "@PlanIdBronze";
+        var PlanId = "@PlanIdGold";
         var subId = "@Model.SubscriptionsStripeData.StripeSubscriptionId";
         var CusId = "@Model.SubscriptionsStripeData.StripeCustomerID";
         var PriceId = "@Model.PriceYearlyBronzeID";
@@ -263,7 +263,8 @@
         var Msg = "";
         var MsgFor = "";
         var LastDate = "@Model.SubscriptionsStripeData.PeriodEndDate";
-
+        console.log('Plan ID' + PlanId)
+        console.log('Prev Plan ID' + PrevPlanId)
         if (currentSubs == PriceId) {
             Swal.fire(localizer('Already subscribed to this plan. please change different plan or billing cycle.', 'Ya está suscrito a este plan. cambie el plan o el ciclo de facturación por otro diferente.', $('#ProhzLangDDL option:selected').val()))
         }
@@ -381,6 +382,7 @@
             Swal.fire({
                 title: localizer('Are You Sure?', 'Estas segura?', $('#ProhzLangDDL option:selected').val()),
                 iconHtml: ProhzGreyLogo,
+
                 text: localizer('Current ' + MsgFor + ', Do you wish to continue ?', 'Current' + MsgFor + ', ¿Desea continuar?', $('#ProhzLangDDL option:selected').val()),
                 showDenyButton: true,
                 showCancelButton: false,
