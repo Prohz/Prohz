@@ -323,6 +323,11 @@ namespace KopkeHome_FMRS_API.Controllers
                             Quantity = 1,
 
                         },
+                        new SessionLineItemOptions
+                        {
+                            Price = "price_1OoaNqILheuScUW2dxLO3CsB", // Replace with the actual Price ID of your service fee in Stripe
+                            Quantity = 1,
+                        },
                     },
                     Customer = stripeCustomer.Id,
                     AllowPromotionCodes = false,
