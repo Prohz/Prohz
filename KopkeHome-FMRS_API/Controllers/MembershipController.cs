@@ -101,12 +101,12 @@ namespace KopkeHome_FMRS_API.Controllers
         /// <param name="CityName"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<List<GetZipCodesByCityNameViewModel>> GetZipCodesByCityName([FromForm] string CityName)
+        public async Task<List<GetZipCodesByCityNameViewModel>> GetZipCodesByCityName([FromForm] string CityName, [FromForm] string StateName)
         {
             try
             {
 
-                var ZipCodesList = await _membershipService.GetZipCodesByCityName(CityName);
+                var ZipCodesList = await _membershipService.GetZipCodesByCityName(CityName, StateName);
                 return ZipCodesList;
 
             }

@@ -135,15 +135,17 @@ namespace KopkeHome_BusinessLayer.Services
 
         }
 
-        public async Task<List<GetZipCodesByCityNameViewModel>> GetZipCodesByCityName(string CityName)
+        public async Task<List<GetZipCodesByCityNameViewModel>> GetZipCodesByCityName(string CityName, string StateName)
         {
             try
             {
                 List<GetZipCodesByCityNameViewModel> model = new List<GetZipCodesByCityNameViewModel>();
 
                 string CitySaitized = CityName.ToLower();
+                string StateSaitized = StateName.ToLower();
                 DynamicParameters ObjParm = new DynamicParameters();
                 ObjParm.Add("@CityName", CitySaitized);
+                ObjParm.Add("@StateName", StateSaitized);
 
                 var result = _GenericRepository.GetEntities<GetZipCodesByCityNameViewModel>("Udp_GetZipcodesListByCityName", ObjParm);
                 model = result.ToList();
