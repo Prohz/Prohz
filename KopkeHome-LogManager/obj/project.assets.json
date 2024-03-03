@@ -588,11 +588,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
+      "projectUniqueName": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
       "projectName": "KopkeHome-LogManager",
-      "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
+      "projectPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj",
       "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\obj\\",
+      "outputPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-LogManager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",

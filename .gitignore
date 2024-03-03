@@ -68,3 +68,4 @@ $RECYCLE.BIN/
 /KopkeHome-LogManager/obj/project.nuget.cache
 /KopkeHome-ModelLayer/obj/project.nuget.cache
 /KopkeHome-UtilityLayer/obj/project.nuget.cache
+/KopkeHome-FMRS_API/obj/Debug/net6.0/KopkeHome-FMRS_API.AssemblyInfoInputs.cache
