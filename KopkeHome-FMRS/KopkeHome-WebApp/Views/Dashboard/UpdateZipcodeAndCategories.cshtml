@@ -53,7 +53,7 @@
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label class="text-white">@Localizer["Step- 3. Select zip code where you want to get work."]</label>
+                                        <label class="text-white">@Localizer["Step- 3. Select zip codes where you want to get work."]</label>
 
                                         <input id="SearchInputZipcode" type="search" class="text-dark form-control" placeholder="@Localizer["Search zip codes"]" />
                                         <div class="select-zipcodes-checkbox">
@@ -98,11 +98,20 @@
                                     </div>
 
                                     <div class="col-md-6">
+
+                                        <div id="selectedZipCount">
+                                            <p style="display: inline; margin: 0;" class="text-white">Selected Zip Count:</p>
+                                            <p id="zipCount" style="display: inline; margin: 0;" class="text-white">0</p>
+                                            <p style="display: inline; margin: 0;" class="text-white"> out of @Model.LimitZipCodes</p>
+                                        </div>
+
+
                                         <div class="selected-zipcodes mt-5">
 
                                             <ul>
                                                 <li class="main-selected-zipcode">
-                                                    <div class="">@Localizer["selected zip codes"] :</div>
+
+
                                                     <ul id='options_list' class="all-selected-zipcode">
                                                         @*<li>
                                                         <label>110062</label>
@@ -126,20 +135,6 @@
 
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -182,11 +177,6 @@
 
                                                 }
 
-
-
-
-
-
                                             </ul>
                                         </div>
                                     </div>
@@ -198,19 +188,6 @@
 
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                     <div class="col-md-12">
                         <div class="zipcode-reset-btn">
@@ -234,6 +211,8 @@
     }
 
     <script src="~/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
     <script type="text/javascript">
         var tmpzipcodes = [];
         var tmpcategroies = [];
@@ -243,8 +222,16 @@
         tmpzipcodes = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(LLZIP, Newtonsoft.Json.Formatting.Indented))
             tmpcategroies=@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(LLCAT, Newtonsoft.Json.Formatting.Indented))
 
-                                                                       var ZipcodesLimit = @Model.LimitZipCodes;
-        var CategroiesLimit = @Model.LimitCategories;
+        var ZipcodesLimit = @Model.LimitZipCodes;
+        var CategroiesLimit = @Model.LimitCategories
+
+
+            document.addEventListener('DOMContentLoaded', function () {
+                // Run the function when the DOM is ready
+                updateSelectedZipCount();
+            });
+
+
         $(document).ready(function () {
             RemoveZipcode();
             $("#ddlStateList").change(function () {
@@ -259,11 +246,10 @@
                         $.each(result, function (i, data) {
                             $('#ddlCitesList').append('<option value="' + data.cityName + '" class="text-bg-light">' + data.cityName + '</option>');
                         });
-                        
+
                     }
                 });
             });
-
 
 
             $("#ddlCitesList").change(function () {
@@ -339,39 +325,31 @@
 
             $(document).on("change", "input[name='zipcodes']", function () {
 
-
+                console.log('hi')
+                
                 var options_display = $("#options_list");
                 var checked = $(this).val();
                 if ($(this).is(':checked')) {
                     if (tmpzipcodes.length <= ZipcodesLimit - 1) {
                         tmpzipcodes.push(checked);
-
                         var zip = $(this).attr("data-zipcode");
                         options_display.append("<li class='' id='Chk_" + checked + "'>" + "<label>" + zip + "</label><button class='RemoveZips' id='" + checked + "' type='button'><i class='fa fa-times'></i></button></li>");
-                        //console.log(zip);
-
                     }
                     else {
                         this.checked = false;
-
                         Swal.fire({
                             title: '',
                             iconHtml: ProhzGreyLogo,
                             text: 'You can only select upto ' + ZipcodesLimit + ' Zip codes.',
-
                         });
                     }
 
                 }
                 else {
-
                     tmpzipcodes.splice($.inArray(checked, tmpzipcodes), 1);
-
-
                     $('#Chk_' + checked).remove();
-
-
                 }
+                updateSelectedZipCount()
             });
 
             $('#button1').on('click', function () {
@@ -379,7 +357,6 @@
             });
 
         });
-
 
 
         //function ZipcodesAndCategories()
@@ -421,6 +398,11 @@
 
         ////  }
 
+        function updateSelectedZipCount() {
+            var zipCount = $("#options_list li").length;
+            $("#zipCount").text(zipCount);
+        }
+
         function ZipcodesAndCategories() {
             //console.log("HIT 1");
             var ischecked = ValidateCheckbox();
@@ -437,19 +419,12 @@
                         }
                         //alert("failed");
 
-
                     }
-
 
                 });
             }
 
-
-
-
-
         }
-
 
         var getChecked = function () {
             var n = $("input[name='zipcodes']");
@@ -466,6 +441,7 @@
             else {
                 options_display.html("<h3 class'text-center'>No Options</h3>")
             }
+            updateSelectedZipCount();
         };
 
         function RemoveZipcode() {
@@ -477,7 +453,7 @@
                 checkid.prop("checked", false);
                 //$('#'+id).attr('checked', false);
                 tmpzipcodes.splice($.inArray(id, tmpzipcodes), 1);
-
+                updateSelectedZipCount();
             });
         }
 
@@ -499,9 +475,6 @@
                     IsPassed = false;
                 }
 
-
-
-
             }
             if (!$('input:checkbox[name="category"]').is(':checked')) {
                 if (typeof tmpcategroies[0] === 'undefined') {
@@ -516,14 +489,8 @@
                 }
             }
 
-
             return IsPassed;
-
-
         }
-
-
-
 
     </script>
 </body>
