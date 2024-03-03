@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {}
+    "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+    "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
         "projectName": "KopkeHome-ModelLayer",
-        "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
+        "projectPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj",
         "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\obj\\",
+        "outputPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-ModelLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -101,14 +101,14 @@
         }
       }
     },
-    "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
+    "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj",
         "projectName": "KopkeHome-UtilityLayer",
-        "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj",
+        "projectPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj",
         "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\obj\\",
+        "outputPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-UtilityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -125,8 +125,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
-                "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
+              "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+                "projectPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
               }
             }
           }
