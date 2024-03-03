@@ -38,3 +38,10 @@ $RECYCLE.BIN/
 
 /bin/
 /obj/
+/KopkeHome-BusinessLayer/bin
+/KopkeHome-BusinessLayer/obj/Debug/net6.0
+/KopkeHome-BusinessLayer/obj/Release/net6.0
+/KopkeHome-DataAccessLayer/bin/Release/net6.0
+/KopkeHome-DataAccessLayer/obj/Debug/net6.0
+/KopkeHome-DataAccessLayer/obj/Release/net6.0
+*.json
