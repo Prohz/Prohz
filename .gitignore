@@ -45,3 +45,17 @@ $RECYCLE.BIN/
 /KopkeHome-DataAccessLayer/obj/Debug/net6.0
 /KopkeHome-DataAccessLayer/obj/Release/net6.0
 *.json
+/KopkeHome-FMRS_API/logs
+/KopkeHome-FMRS_API/obj/Debug/net6.0/3e7be55c-4a1b-45e0-a985-0dc04c052424_KopkeHome-FMRS_API.pdb
+/KopkeHome-FMRS_API/obj/Debug/net6.0/KopkeHome-FMRS_API.assets.cache
+*.dll
+*.props
+*.cache
+*.bin
+*.vsidx
+*.pubxml
+*.testlog
+/KopkeHome-FMRS/.vs/KopkeHome-FMRS/v17/TestStore/0/testlog.manifest
+/KopkeHome-FMRS/.vs/KopkeHome-FMRS/v17/HierarchyCache.v1.txt
+*.v2
+/KopkeHome-FMRS_API/obj/Release/net6.0/PublishOutputs.bede6ab3f4.txt
