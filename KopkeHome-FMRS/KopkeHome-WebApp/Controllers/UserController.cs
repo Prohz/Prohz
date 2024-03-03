@@ -97,7 +97,7 @@ namespace KopkeHome_WebApp.Controllers
         }
 
         [HttpGet]
-        public async Task<List<GetZipCodesByCityNameViewModel>> GetzipCodeListbyCityName(string CityName)
+        public async Task<List<GetZipCodesByCityNameViewModel>> GetzipCodeListbyCityName(string CityName, string StateName)
         {
             List<GetZipCodesByCityNameViewModel> cities = new List<GetZipCodesByCityNameViewModel>();
 
@@ -109,7 +109,8 @@ namespace KopkeHome_WebApp.Controllers
                     client.BaseAddress = new Uri(_configuration.GetValue<string>("WebApi:API_URL") + "/membership/");
                     var ContentsToSend = new FormUrlEncodedContent(new[]
                 {
-                        new KeyValuePair<string, string>("CityName", CityName)
+                        new KeyValuePair<string, string>("CityName", CityName),
+                        new KeyValuePair<string, string>("StateName", StateName)
                 });
                     var httpResponse = await client.PostAsync("GetZipCodesByCityName", ContentsToSend);
                     //var httpResponse = await client.GetAsync("GetCitiesList");
