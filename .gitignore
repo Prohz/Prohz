@@ -63,3 +63,8 @@ $RECYCLE.BIN/
 /KopkeHome-FMRS/KopkeHome-WebApp/Logs
 /KopkeHome-FMRS/KopkeHome-WebApp/obj/Debug/net6.0
 /KopkeHome-FMRS/KopkeHome-WebApp/obj/Release/net6.0
+/KopkeHome-FMRS/KopkeHome-WebApp/obj/project.nuget.cache
+/KopkeHome-FMRS_API/obj/project.nuget.cache
+/KopkeHome-LogManager/obj/project.nuget.cache
+/KopkeHome-ModelLayer/obj/project.nuget.cache
+/KopkeHome-UtilityLayer/obj/project.nuget.cache
