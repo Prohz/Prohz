@@ -14,7 +14,7 @@
   <div class="card-body">
     <h5 class="card-title">@Localizer["Contact Us"]</h5>
     <h6 class="card-subtitle mb-2 text-muted"></h6>
-    <p class="card-text ">@Localizer["You can contact us using below form"]</p>
+    <p class="card-text ">@Localizer["As we grow we appreciate your feedback"]</p>
 
             <style>
                 /* Apply some basic styling to the form container */
@@ -30,10 +30,10 @@
                 }
 
                 input,
-                textarea {
+                textarea, select {
                     width: 100%; /* Make input and textarea elements fill the container */
                     box-sizing: border-box; /* Include padding and border in the element's total width */
-                    margin-bottom: 10px; /* Add some space below each input and textarea */
+                    margin: 20px; /* Add some space below each input and textarea */
                     padding: 8px; /* Add padding for better appearance */
                 }
 
@@ -47,11 +47,13 @@
                     <label for="fromEmail">Your Email:</label>
                     <input type="email" name="FromEmail" required>
                 </div>
-
-                <div>
-                    <label for="subject">Subject:</label>
-                    <input type="text" name="Subject" required>
-                </div>
+                <label for="Reason">How can we help?</label>
+                <select name="Reason" required>
+                    
+                    <option value="">What can we help with?</option>
+                    <option value="Feedback">I want to provide feedback</option>
+                    <option value="Password Assistance">I need help with my password/login</option>
+                </select>
 
                 <div>
                     <label for="message">Message:</label>

@@ -11,7 +11,7 @@ namespace KopkeHome_BusinessLayer.Interface
         Task<List<MembershipBenifitsPlan>> GetMembershipPlans();
         Task<MembershipBenifitsPlan> GetMembershipPlansById(int Id);
         Task<CustomZipcodesRequest> SaveCustomZipcodeRequest(CustomZipcodesRequest model);
-        Task<List<GetZipCodesByCityNameViewModel>> GetZipCodesByCityName(string CityName);
+        Task<List<GetZipCodesByCityNameViewModel>> GetZipCodesByCityName(string CityName, string StateName);
         Task<Response> AddZipcodeAndCategories(MembershipZipcodesAndCategoriesRequestModel model);
         Task<CustomZipcodesRequest> UpdateCustomZipcodeRequest(CustomZipcodesRequest model);
         Task<CustomZipcodesRequest> GetCustomPlanDetailsByUserId(int UserId);

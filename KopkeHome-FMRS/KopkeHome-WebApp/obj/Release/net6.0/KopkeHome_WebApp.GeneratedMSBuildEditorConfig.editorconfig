@@ -9,303 +9,303 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = KopkeHome_WebApp
 build_property.RootNamespace = KopkeHome_WebApp
-build_property.ProjectDir = C:\Users\Percival\Development\prohz\KopkeHome-FMRS\KopkeHome-WebApp\
+build_property.ProjectDir = C:\Users\Percival\source\repos\Prohz\KopkeHome-FMRS\KopkeHome-WebApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Percival\Development\prohz\KopkeHome-FMRS\KopkeHome-WebApp
+build_property.MSBuildProjectDirectory = C:\Users\Percival\source\repos\Prohz\KopkeHome-FMRS\KopkeHome-WebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Pages/Error.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Pages/_Layout.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Pages/_ViewImports.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Pages/_ViewStart.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/Categories.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/Categories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcmllcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/CustomMembershipPlanRequests.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/CustomMembershipPlanRequests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3VzdG9tTWVtYmVyc2hpcFBsYW5SZXF1ZXN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/Dashboard.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/DocumentsVerification.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/DocumentsVerification.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRG9jdW1lbnRzVmVyaWZpY2F0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/FAQ.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/FAQ.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRkFRLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/ProhzLegalFiles.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/ProhzLegalFiles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvaHpMZWdhbEZpbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/PromoVideos.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/PromoVideos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvbW9WaWRlb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/SalesAssociate.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Admin/SalesAssociate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2FsZXNBc3NvY2lhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/BusinessProfile/ContractorProfile.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/BusinessProfile/ContractorProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzaW5lc3NQcm9maWxlXENvbnRyYWN0b3JQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/BusinessProfile/OtherContractorsProfile.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/BusinessProfile/OtherContractorsProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzaW5lc3NQcm9maWxlXE90aGVyQ29udHJhY3RvcnNQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/BusinessProfileDetail.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/BusinessProfileDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEJ1c2luZXNzUHJvZmlsZURldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/BusinessProfileDetailOnAdmin.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/BusinessProfileDetailOnAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEJ1c2luZXNzUHJvZmlsZURldGFpbE9uQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/ContractorBusinessProfile.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/ContractorBusinessProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXENvbnRyYWN0b3JCdXNpbmVzc1Byb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/ContractorDetails.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/ContractorDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXENvbnRyYWN0b3JEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/contractorsdetails.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/contractorsdetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXGNvbnRyYWN0b3JzZGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/Index.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/OtherContractorBusinessProfile.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/OtherContractorBusinessProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXE90aGVyQ29udHJhY3RvckJ1c2luZXNzUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/PartialViews/_ContractorDetails.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/PartialViews/_ContractorDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFBhcnRpYWxWaWV3c1xfQ29udHJhY3RvckRldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/Payment.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/Payment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFBheW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/PdfViewer.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/PdfViewer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFBkZlZpZXdlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/Resetpassword.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/Resetpassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFJlc2V0cGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/SelectZipcode.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/SelectZipcode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFNlbGVjdFppcGNvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/UpdateZipcodeAndCategories.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/UpdateZipcodeAndCategories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVwZGF0ZVppcGNvZGVBbmRDYXRlZ29yaWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/UserProfileBasicEdit.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/UserProfileBasicEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVzZXJQcm9maWxlQmFzaWNFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/UserProfileDetails.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/UserProfileDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVzZXJQcm9maWxlRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/UsersServices.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/UsersServices.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVzZXJzU2VydmljZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/ViewMembershipPlan.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/ViewMembershipPlan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFZpZXdNZW1iZXJzaGlwUGxhbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/ViewMembershipPlanHomeOwner.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Dashboard/ViewMembershipPlanHomeOwner.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFZpZXdNZW1iZXJzaGlwUGxhbkhvbWVPd25lci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/ContactUs.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/ContactUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0VXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/CoreValues.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/CoreValues.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb3JlVmFsdWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/Definitions.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/Definitions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWZpbml0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/DocumentsNotVerified.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/DocumentsNotVerified.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEb2N1bWVudHNOb3RWZXJpZmllZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/FAQ.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/FAQ.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGQVEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/HowDoesItWork.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/HowDoesItWork.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb3dEb2VzSXRXb3JrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/Index.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/MissionStatement.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/MissionStatement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNaXNzaW9uU3RhdGVtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/PaymentFaild.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/PaymentFaild.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXltZW50RmFpbGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/Privacy.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/ProhzHistory.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/ProhzHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9oekhpc3RvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/Sponsors.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/Sponsors.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTcG9uc29ycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/Success.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/Success.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/TermsAndConditions.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/TermsAndConditions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXJtc0FuZENvbmRpdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/ValueProposition.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Home/ValueProposition.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWYWx1ZVByb3Bvc2l0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Membership/ContractorsPlan.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Membership/ContractorsPlan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc2hpcFxDb250cmFjdG9yc1BsYW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Membership/CustomMembershipPlan.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Membership/CustomMembershipPlan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc2hpcFxDdXN0b21NZW1iZXJzaGlwUGxhbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Membership/HomeOwnerPlan.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Membership/HomeOwnerPlan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc2hpcFxIb21lT3duZXJQbGFuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Membership/PaymentCard.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Membership/PaymentCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc2hpcFxQYXltZW50Q2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Membership/PaymentSuccess.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Membership/PaymentSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc2hpcFxQYXltZW50U3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Membership/selectzipcodesandcategories.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Membership/selectzipcodesandcategories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc2hpcFxzZWxlY3R6aXBjb2Rlc2FuZGNhdGVnb3JpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/Error.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/SelectCulture.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/SelectCulture.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNlbGVjdEN1bHR1cmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/_Admin.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/_Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/_Dashboard.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/_Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/_DashboardInternal.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/_DashboardInternal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EYXNoYm9hcmRJbnRlcm5hbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/_HomePageLayout.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/_HomePageLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ib21lUGFnZUxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/Changeforgotpassword.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/Changeforgotpassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDaGFuZ2Vmb3Jnb3RwYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/forgotpassword.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/forgotpassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxmb3Jnb3RwYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/HomeOwner.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/HomeOwner.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxIb21lT3duZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/OTPVerification.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/OTPVerification.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxPVFBWZXJpZmljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/SignIn.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/SignIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTaWduSW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/SignUp.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/VerifyOTP.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/VerifyOTP.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxWZXJpZnlPVFAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/_ContractorBasicInfo.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/_ContractorBasicInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfQ29udHJhY3RvckJhc2ljSW5mby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/_HomeOwnerBasicInfo.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/_HomeOwnerBasicInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfSG9tZU93bmVyQmFzaWNJbmZvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/_OTPCheck.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/User/_OTPCheck.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfT1RQQ2hlY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/_ViewImports.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/_ViewStart.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Percival/Development/prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/_Layout.cshtml]
+[C:/Users/Percival/source/repos/Prohz/KopkeHome-FMRS/KopkeHome-WebApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-nmm0zy576b
