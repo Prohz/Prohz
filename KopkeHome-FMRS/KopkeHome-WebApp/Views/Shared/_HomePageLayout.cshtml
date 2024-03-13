@@ -231,35 +231,32 @@
                             <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
                                 <ul class="navbar-nav ms-auto align-items-center">
 
-                                    <li class="nav-item dropdown">
-                                        <a style="font-size:1.5rem;" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Localizer["Pricing Details"]</a>
-                                        <div class="dropdown-menu" aria-labelledby="#">
-                                            <a class="dropdown-item" data-toggle="modal" href="#myModal">@Localizer["Contractors"]</a>
-                                            <!-- <a class="dropdown-item" data-toggle="modal" href="#myModalHomeowner">@Localizer["Homeowner"]</a> -->
-                                        </div>
+                                    <li class="nav-item">
+                                        <a style="font-size:1.5rem;" class="nav-link " data-toggle="modal" href="#myModal">@Localizer["Pricing Details"]</a>
                                     </li>
 
 
                                     <li class="nav-item">
-                                        <a style="font-size:1.5rem;" class="nav-link " href="@Url.Action("ContactUs","Home")">@Localizer["Contact Us"]</a>
+                                        <a style="font-size:1.5rem;" class="nav-link" href="@Url.Action("ContactUs","Home")">@Localizer["Contact Us"]</a>
                                     </li>
 
-                                    <li class="nav-item dropdown">
-                                        <a style="font-size:1.5rem;" class="nav-link dropdown-toggle" id="aboutdrpdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Localizer["About Us"]</a>
-                                        <div class="dropdown-menu" aria-labelledby="aboutdrpdown">
-                                            <a class="dropdown-item" href="@Url.Action("ProhzHistory","Home")">@Localizer["Prohz History"]</a>
-                                @*<a class="dropdown-item" href="@Url.Action("MissionStatement","Home")">@Localizer["Mission Statement"]</a>*@
-                                            <a class="dropdown-item" href="@Url.Action("CoreValues","Home")">@Localizer["Core Values"]</a>
-                                        </div>
+                                    <li class="nav-item">
+                                        <a style="font-size:1.5rem;" class="nav-link" href="@Url.Action("CoreValues","Home")">@Localizer["Learn More"]</a>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                        <a style="font-size:1.5rem;" class="nav-link dropdown-toggle" id="learndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Localizer["Learn More"]</a>
-                                        <div class="dropdown-menu" aria-labelledby="learndropdown">
-                                @*<a class="dropdown-item" href="@Url.Action("Definitions","Home")">@Localizer["Definitions"]</a> *@
-                                @*<a class="dropdown-item" href="@Url.Action("HowDoesItWork","Home")">@Localizer["How Does It Work"]</a>*@
-                                            <a class="dropdown-item" href="@Url.Action("FAQ","Home")">@Localizer["FAQ's"]</a>
-                                        </div>
+
+                                    <li class="nav-item">
+                                        <a style="font-size:1.5rem;" class="nav-link" href="@Url.Action("ProhzHistory","Home")">@Localizer["Prohz History"]</a>
                                     </li>
+
+                                    <li class="nav-item">
+                                        <a style="font-size:1.5rem;" class="nav-link" href="@Url.Action("FAQ","Home")">@Localizer["FAQ's"]</a>
+                                    </li>
+
+
+                                   
+
+
+  
 
                         @*<li class="nav-item">
                                     <a class="nav-link" href="#pricing">Pricing Page</a>
