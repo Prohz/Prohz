@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KopkeHome-LogManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87ea0774f27be60e0ec20eff73aacca445501d12")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bee5034aaec289c086f88fdf9b99c7646841789")]
 [assembly: System.Reflection.AssemblyProductAttribute("KopkeHome-LogManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KopkeHome-LogManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -6,6 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\Publish_API</_PublishTargetUrl>
-    <History>True|2023-05-25T13:09:29.5653865Z;False|2023-05-25T18:37:26.8308141+05:30;</History>
+    <History>False|2024-03-06T19:50:50.0301725Z;False|2024-03-06T14:50:42.7494448-05:00;True|2023-05-25T09:09:29.5653865-04:00;False|2023-05-25T09:07:26.8308141-04:00;</History>
+    <LastFailureDetails />
   </PropertyGroup>
 </Project>
