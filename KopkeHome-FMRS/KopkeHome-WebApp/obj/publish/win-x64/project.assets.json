@@ -19938,11 +19938,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj",
+      "projectUniqueName": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj",
       "projectName": "KopkeHome_WebApp",
-      "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj",
+      "projectPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\KopkeHome_WebApp.csproj",
       "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\obj\\publish\\win-x64\\",
+      "outputPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-FMRS\\KopkeHome-WebApp\\obj\\publish\\win-x64\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -19959,20 +19959,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj"
+            "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-BusinessLayer\\KopkeHome-BusinessLayer.csproj"
             },
-            "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj"
+            "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-DataAccessLayer\\KopkeHome-DataAccessLayer.csproj"
             },
-            "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj": {
-              "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj"
+            "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj": {
+              "projectPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-LogManager\\KopkeHome-LogManager.csproj"
             },
-            "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
-              "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
+            "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj": {
+              "projectPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-ModelLayer\\KopkeHome-ModelLayer.csproj"
             },
-            "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
-              "projectPath": "C:\\Users\\Percival\\Development\\prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj"
+            "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj": {
+              "projectPath": "C:\\Users\\Percival\\source\\repos\\Prohz\\KopkeHome-UtilityLayer\\KopkeHome-UtilityLayer.csproj"
             }
           }
         }

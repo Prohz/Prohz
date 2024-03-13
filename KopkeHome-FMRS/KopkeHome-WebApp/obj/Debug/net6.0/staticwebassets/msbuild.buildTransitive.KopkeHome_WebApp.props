@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\KopkeHome_WebApp.props" />
-</Project>

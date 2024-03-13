@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\KopkeHome_WebApp.props" />
-</Project>

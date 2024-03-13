@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&quot;Booking for Soon (4-7 weeks)&quot;" xml:space="preserve">
+    <value>"Reserva para pronto (4-7 semanas)"</value>
+  </data>
   <data name="Account Status :" xml:space="preserve">
     <value>Estado de la cuenta :</value>
   </data>
@@ -126,20 +129,17 @@
   <data name="Booking for Later" xml:space="preserve">
     <value>Reserva para más tarde</value>
   </data>
-  <data name="Booking for Later (17-52 weeks)" xml:space="preserve">
-    <value>Reserva para más tarde (17-52 semanas)</value>
-  </data>
   <data name="Booking for Now" xml:space="preserve">
     <value>Reserva ahora</value>
   </data>
   <data name="Booking for Now (0-4 weeks)" xml:space="preserve">
     <value>Reserva ahora (0-4 semanas)</value>
   </data>
+  <data name="Booking for Now (1-2 weeks)&quot;" xml:space="preserve">
+    <value>"Reserva para ahora (1-2 semanas)"</value>
+  </data>
   <data name="Booking for Soon" xml:space="preserve">
     <value>Reserva para Pronto</value>
-  </data>
-  <data name="Booking for Soon (5-16 weeks)" xml:space="preserve">
-    <value>Reserva para Pronto (5-16 semanas)</value>
   </data>
   <data name="Category" xml:space="preserve">
     <value>Categoría</value>
@@ -164,6 +164,9 @@
   </data>
   <data name="Current work status" xml:space="preserve">
     <value>Estado laboral actual</value>
+  </data>
+  <data name="Currently Fully Booked" xml:space="preserve">
+    <value>"Actualmente completamente reservado"</value>
   </data>
   <data name="Email Address" xml:space="preserve">
     <value>Email</value>
