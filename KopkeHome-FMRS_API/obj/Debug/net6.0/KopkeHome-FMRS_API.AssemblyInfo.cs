@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KopkeHome-FMRS_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be53844a4492d214bba66d174775ec5020bd4e3e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64f3f4fd579186dfd6d126d0c1b1151ee7fadd39")]
 [assembly: System.Reflection.AssemblyProductAttribute("KopkeHome-FMRS_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KopkeHome-FMRS_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
