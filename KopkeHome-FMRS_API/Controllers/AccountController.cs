@@ -797,6 +797,23 @@ namespace KopkeHome_FMRS_API.Controllers
 
         }
 
+        [HttpPost]
+        public async Task<ProhzReferral> GetReferralsById([FromForm] string Id)
+        {
+            try
+            {
+                return await service.GetReferralsById(Convert.ToInt32(Id));
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+
+            }
+
+        }
+
         /// <summary>
         /// Updates basic info of contractor
         /// </summary>

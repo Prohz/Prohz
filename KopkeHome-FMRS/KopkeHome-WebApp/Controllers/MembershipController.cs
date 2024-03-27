@@ -10,6 +10,7 @@ using KopkeHome_UtilityLayer.Session;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Stripe;
+using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -40,18 +41,18 @@ namespace KopkeHome_WebApp.Controllers
         /// </summary>
         /// <returns></returns>
         public async Task<IActionResult> ContractorsPlan()
-
         {
             MembershipPlanFromStrip model = new MembershipPlanFromStrip();
             try
             {
+                // Fetching the logged-in user
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(_configuration.GetValue<string>("WebApi:API_URL") + "/Account/");
                     var content = new FormUrlEncodedContent(new[]
                     {
-                        new KeyValuePair<string, string>("email", HttpContext.Request.Cookies["Email"])
-                    });
+                new KeyValuePair<string, string>("email", HttpContext.Request.Cookies["Email"])
+            });
                     var httpResponse = await client.PostAsync("GetUserByEmail", content);
                     string resultContent = await httpResponse.Content.ReadAsStringAsync();
                     if (httpResponse.IsSuccessStatusCode)
@@ -63,26 +64,22 @@ namespace KopkeHome_WebApp.Controllers
                     {
                         model.LoggedInUser = HttpContext.Session.Get<User>("CurrentUser");
                     }
-
                 }
-                // model.LoggedInUser = HttpContext.Session.Get<User>("CurrentUser");
-                //checking if current user already have subscription plan or not
+
+                // Checking if the current user already has a subscription plan
                 using (var client = new HttpClient())
                 {
-
                     client.BaseAddress = new Uri(_configuration.GetValue<string>("WebApi:API_URL") + "/Payment/");
-                    var ContentsToSend = new FormUrlEncodedContent(new[]
-                        {
-                        new KeyValuePair<string, string>("email",  HttpContext.Request.Cookies["Email"])
-                        });
+                    var contentToSend = new FormUrlEncodedContent(new[]
+                    {
+                new KeyValuePair<string, string>("email", HttpContext.Request.Cookies["Email"])
+            });
 
+                    var httpResponse = await client.PostAsync("CheckUserHaveSubscriptionOrNotByEmail", contentToSend);
 
-                    var httpResponse = await client.PostAsync("CheckUserHaveSubscriptionOrNotByEmail", ContentsToSend);
-
-                    var content = await httpResponse.Content.ReadAsStringAsync();
                     if (httpResponse.IsSuccessStatusCode)
                     {
-
+                        var content = await httpResponse.Content.ReadAsStringAsync();
                         var response = JsonConvert.DeserializeObject<Response>(content);
 
                         if (response.Statuscode == System.Net.HttpStatusCode.BadRequest)
@@ -91,21 +88,37 @@ namespace KopkeHome_WebApp.Controllers
                         }
                     }
                 }
-
-
-
-                //Fetching  MembershipPlans
+                ProhzReferral referral = null;
+                // Fetching Referrals
+                List<ProhzReferral> referrals = new List<ProhzReferral>();
                 using (var client = new HttpClient())
                 {
+                    client.BaseAddress = new Uri(_configuration.GetValue<string>("WebApi:API_URL") + "/Account/");
 
+                    // Assuming you have the memberId stored in a variable named memberId
+                    int memberId = model.LoggedInUser.Id; // Or wherever you get the memberId from
+
+                    var content = new FormUrlEncodedContent(new[] {
+                    new KeyValuePair<string, string>("Id", memberId.ToString())
+                });
+                    var response = await client.PostAsync("GetReferralsById", content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string resultContent = await response.Content.ReadAsStringAsync();
+                        referral = JsonConvert.DeserializeObject<ProhzReferral>(resultContent);
+                    }
+                }
+
+                // Fetching MembershipPlans
+                using (var client = new HttpClient())
+                {
                     client.BaseAddress = new Uri(_configuration.GetValue<string>("WebApi:API_URL") + "/Membership/");
-
-                    //HTTP POST
                     var httpResponse = await client.GetAsync("GetMembershipPlans");
 
-                    var content = await httpResponse.Content.ReadAsStringAsync();
                     if (httpResponse.IsSuccessStatusCode)
                     {
+                        var content = await httpResponse.Content.ReadAsStringAsync();
 
                         model.Plans = JsonConvert.DeserializeObject<List<MembershipPlanViewmodel>>(content);
                         foreach (var item in model.Plans)
@@ -117,8 +130,28 @@ namespace KopkeHome_WebApp.Controllers
                             }
                             else if (item.Title == "Silver" && item.RoleId == Constant.Contractor)
                             {
-                                model.PriceMonthlySilverID = item.MonthlyStripePriceId;
-                                model.PriceYearlySilverID = item.AnnuallyStripePriceId;
+                                // Adjusting Silver plan if referrals are not empty
+                                if (referral != null)
+                                {
+                                    // Set Silver plan price to 0 or adjust it accordingly
+                                    // Assuming here you have properties named MonthlyStripePriceId and AnnuallyStripePriceId to adjust
+                                    model.PriceMonthlySilverID = _configuration.GetValue<string>("Stripe:FreeID"); // Adjust this according to your logic
+                                    model.PriceMonthlySilver = 0;
+                                    model.PriceYearlySilverID = _configuration.GetValue<string>("Stripe:FreeID"); // Adjust this according to your logic
+                                    model.priceYearlySilver = 0;
+                                } else
+                                {
+                                    model.PriceMonthlySilverID = item.MonthlyStripePriceId;
+                                    model.PriceYearlySilverID = item.AnnuallyStripePriceId;
+                                    model.PriceMonthlySilver = Convert.ToInt32(item.PricePerMonth);
+                                    model.priceYearlySilver = Convert.ToInt32(item.PricePerYear);
+
+
+
+
+
+                                }
+
                             }
                             else if (item.Title == "Gold" && item.RoleId == Constant.Contractor)
                             {
@@ -130,38 +163,28 @@ namespace KopkeHome_WebApp.Controllers
                         }
 
 
-
-
                     }
-
                 }
 
+                // Fetching Custom Plan details by UserId
                 using (var client = new HttpClient())
                 {
-
                     client.BaseAddress = new Uri(_configuration.GetValue<string>("WebApi:API_URL") + "/Membership/");
-                    var ContentsToSend = new FormUrlEncodedContent(new[]
+                    var contentToSend = new FormUrlEncodedContent(new[]
                     {
-                        new KeyValuePair<string, string>("UserId", model.LoggedInUser.Id.ToString())
-                    });
+                new KeyValuePair<string, string>("UserId", model.LoggedInUser.Id.ToString())
+            });
 
-                    var customMemberResponse = await client.PostAsync("GetCustomPlanDetailsByUserId", ContentsToSend);
-                    var customMemberResponsecontent = await customMemberResponse.Content.ReadAsStringAsync();
+                    var customMemberResponse = await client.PostAsync("GetCustomPlanDetailsByUserId", contentToSend);
                     if (customMemberResponse.IsSuccessStatusCode)
                     {
+                        var customMemberResponsecontent = await customMemberResponse.Content.ReadAsStringAsync();
                         var CstmPlan = JsonConvert.DeserializeObject<CustomZipcodesRequest>(customMemberResponsecontent);
-                        if (CstmPlan != null)
+                        if (CstmPlan != null && CstmPlan.IsPlanCreated)
                         {
-                            if (CstmPlan.IsPlanCreated)
-                            {
-                                model.CustomPlan = CstmPlan;
-                            }
+                            model.CustomPlan = CstmPlan;
                         }
-
-
                     }
-
-
                 }
 
                 return View(model);
@@ -171,8 +194,8 @@ namespace KopkeHome_WebApp.Controllers
                 _logger.LogError(ex.Message);
                 throw;
             }
-            return View();
         }
+
 
         public IActionResult PaymentCard(string priceId, string planId)
         {

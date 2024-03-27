@@ -1155,6 +1155,19 @@ namespace KopkeHome_BusinessLayer.Services
                 throw;
             }
         }
+        public async Task<ProhzReferral> GetReferralsById(int id)
+        {
+            try
+            {
+                return await _dbContext.ProhzReferral.FirstOrDefaultAsync(r => r.UserId == id);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
+        }
+
 
         public async Task<List<User>> GetUserList()
         {
