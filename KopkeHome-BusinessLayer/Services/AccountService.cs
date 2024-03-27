@@ -1209,33 +1209,38 @@ namespace KopkeHome_BusinessLayer.Services
                 throw;
             }
         }
-
         public async Task<bool> CheckReferralId(string referralId)
         {
-            try
+            if (referralId != null)
             {
-                bool valid = false;
-                var result = await _iRefferal.FindAllByCondition(a => a.MemberId.Equals(referralId));
-                if (result.Count > 0)
+                try
                 {
-                    valid = true;
+                    bool valid = false;
+                    var result = await _iRefferal.FindAllByCondition(a => a.MemberId.Equals(referralId));
+                    if (result.Count > 0)
+                    {
+                        valid = true;
+                    }
+                    else
+                    {
+                        valid = false;
+                    }
+                    return valid;
                 }
-                else
+                catch (Exception ex)
                 {
-                    valid = false;
+                    _logger.LogError(ex.Message);
+                    throw ex;
                 }
-                return valid;
             }
-
-            catch (Exception ex)
+            else
             {
-                _logger.LogError(ex.Message);
-                throw ex;
+                return true; // or return true, depending on your logic when referralId is null
             }
         }
     }
 
-}
+    }
 
 
 
