@@ -370,6 +370,9 @@
   <data name="InvalidUser" xml:space="preserve">
     <value>Invalid user!</value>
   </data>
+  <data name="INVALID_REFERRAL" xml:space="preserve">
+    <value>Invalid Referral Code</value>
+  </data>
   <data name="isSubscribed" xml:space="preserve">
     <value>Already subscribed.</value>
   </data>
