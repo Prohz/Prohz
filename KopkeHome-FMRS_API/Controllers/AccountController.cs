@@ -252,6 +252,19 @@ namespace KopkeHome_FMRS_API.Controllers
 
                     return response;
                 }
+
+                // Check if the provided referral ID matches the one in the database
+                bool isReferralValid = await service.CheckReferralId(userDataModel.MemberReferralId);
+                if (!isReferralValid)
+                {
+                    response.Error = true;
+                    response.Status = Resources.INVALID_REFERRAL;
+                    response.Statuscode = HttpStatusCode.BadRequest;
+                    response.Message = Resources.INVALID_REFERRAL;
+                    return response;
+                }
+
+
                 bool isEmailExist = await service.CheckEmailExist(userDataModel.Email);
                 if (!isEmailExist)
                 {

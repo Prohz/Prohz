@@ -229,6 +229,15 @@ namespace KopkeHome_FMRS_API.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid Referral Code.
+        /// </summary>
+        public static string INVALID_REFERRAL {
+            get {
+                return ResourceManager.GetString("INVALID_REFERRAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Model is not valid!.
         /// </summary>
         public static string InvalidModel {

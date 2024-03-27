@@ -24,6 +24,7 @@ namespace KopkeHome_BusinessLayer.Services
     {
         private readonly UserManager<User> _userManager;
         private readonly IRepository<User> _iRepository;
+        private readonly IRepository<ProhzReferral> _iRefferal;
         private readonly IEmailService _email;
         private readonly ApplicationDbContext _dbContext;
         private readonly IRepository<VerifyOTP> _OtpRepository;
@@ -1209,6 +1210,29 @@ namespace KopkeHome_BusinessLayer.Services
             }
         }
 
+        public async Task<bool> CheckReferralId(string referralId)
+        {
+            try
+            {
+                bool valid = false;
+                var result = await _iRefferal.FindAllByCondition(a => a.MemberId.Equals(referralId));
+                if (result.Count > 0)
+                {
+                    valid = true;
+                }
+                else
+                {
+                    valid = false;
+                }
+                return valid;
+            }
+
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw ex;
+            }
+        }
     }
 
 }

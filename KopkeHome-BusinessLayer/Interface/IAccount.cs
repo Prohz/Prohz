@@ -41,5 +41,6 @@ namespace KopkeHome_BusinessLayer.Interface
         Task<User> GetUserByID(int Id);
         Task<bool> DeleteUser(int Id);
         Task<ProhzReferral> GetReferralsById(int v);
+        Task<bool> CheckReferralId(string referralId);
     }
 }
