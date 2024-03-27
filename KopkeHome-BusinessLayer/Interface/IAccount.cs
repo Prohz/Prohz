@@ -40,11 +40,6 @@ namespace KopkeHome_BusinessLayer.Interface
         Task<bool> CheckZipsAndCatsOnUpgradeOrDowngrade(User user);
         Task<User> GetUserByID(int Id);
         Task<bool> DeleteUser(int Id);
-
-
-
-
-
-
+        Task<ProhzReferral> GetReferralsById(int v);
     }
 }

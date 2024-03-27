@@ -48,6 +48,7 @@ namespace KopkeHome_ModelLayer.ViewModels
         public string PriceYearlyBronzeID { get; set; }
 
         public CustomZipcodesRequest CustomPlan { get; set; }
+        public int priceYearlySilver { get; set; }
     }
     public class MembershipPlanViewmodelApp
     {

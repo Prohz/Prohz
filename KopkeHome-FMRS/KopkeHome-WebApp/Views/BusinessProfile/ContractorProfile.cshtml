@@ -7,17 +7,17 @@
 @*
 @if(ViewBag.data != null)
 {
-    
+
 } *@
 
 <div class="registration-container black-bg">
 
- 
+
 
     <div class="registration-container-branding d-flex justify-content-between align-items-center">
         <div class="kopkehome-logo">
-            <a href="@Url.Action("SignIn","user")"> 
-            <img src="~/images/Kopke-brand-logo.png" width="140" />
+            <a href="@Url.Action("SignIn","user")">
+                <img src="~/images/Kopke-brand-logo.png" width="140" />
             </a>
         </div>
         @await Html.PartialAsync("SelectCulture")
@@ -25,45 +25,49 @@
             <h2 class="orange-clr">@Localizer["Business Profile Registration"]</h2>
             <p class="text-white m-0">@Localizer["Please fill the form below to create Business profile."]</p>
         </div>
-         <div class="">
+        <div class="">
             @{
                 if (Model.LoggedInUser != null)
                 {
-                     <a class="nav-link text-dark dropdown-toggle d-flex align-items-center" href="#" id="navbardrop" data-toggle="dropdown">
-                        @if(!string.IsNullOrEmpty(Model.LoggedInUser.ProfilePicture))
+                    <a class="nav-link text-dark dropdown-toggle d-flex align-items-center" href="#" id="navbardrop" data-toggle="dropdown">
+                        @if (!string.IsNullOrEmpty(Model.LoggedInUser.ProfilePicture))
                         {
-                             <img alt="logo" style="margin-right:11px; class="IconBorder" src="~/Uploads/@Model.LoggedInUser.ProfilePicture" width="38" /><span class="text-white">@Model.LoggedInUser.FirstName  @Model.LoggedInUser.LastName </span>  
+                            <img alt="logo" style="margin-right:11px; class="IconBorder" src="~/Uploads/@Model.LoggedInUser.ProfilePicture" width="38" />
+
+                            <span class="text-white">@Model.LoggedInUser.FirstName  @Model.LoggedInUser.LastName </span>
                         }
                         else
                         {
-                             <img alt="logo" style="margin-right:11px;" src="~/images/DefaultProfile.png" class="IconBorder" width="38" /><span class="text-white">@Model.LoggedInUser.FirstName @Model.LoggedInUser.LastName</span>
+                            <img alt="logo" style="margin-right:11px;" src="~/images/DefaultProfile.png" class="IconBorder" width="38" />
+
+                            <span class="text-white">@Model.LoggedInUser.FirstName @Model.LoggedInUser.LastName</span>
                         }
 
                     </a>
                 }
 
-             
-                    }
-     
-                </div>
-       
+
+            }
+
+        </div>
+
     </div>
 
 
 
     <div class="registration-container-form">
-     <div class="tab-content">
-         <div id="Contractor" class="contractor-business-prof-form">
-             <div class="rgstr-main-heading">
-                <h3 class="green-clr">@Localizer["Business Profile Registration"]</h3>
-             </div>
+        <div class="tab-content">
+            <div id="Contractor" class="contractor-business-prof-form">
+                <div class="rgstr-main-heading">
+                    <h3 class="green-clr">@Localizer["Business Profile Registration"]</h3>
+                </div>
 
-             <form name="ContractorBusinessProfile" asp-action="BusinessProfileSave" enctype="multipart/form-data" method="post" onsubmit="return ContractorBusinessProfileValidate(this);" asp-controller="BusinessProfile">
-                @* <input asp-for="LoggedInUser" type="hidden"/>*@
-                 
-                 @Html.AntiForgeryToken()
-                         <div class="row">
-                            <div class="form-group col-md-6 col-lg-4  ">
+                <form name="ContractorBusinessProfile" asp-action="BusinessProfileSave" enctype="multipart/form-data" method="post" onsubmit="return ContractorBusinessProfileValidate(this);" asp-controller="BusinessProfile">
+                    @* <input asp-for="LoggedInUser" type="hidden"/>*@
+
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="form-group col-md-6 col-lg-4  ">
                             <div class="form-group rgstr-input-form-box">
                                 <label for="BusinessDescription">@Localizer["Business Specialization"]</label>
                                 <select id="contractorSelect" asp-for="BusinessDescription" style="max-height: 200px; overflow-y: auto;" class="form-select form-control w-100">
@@ -142,165 +146,165 @@
                                 </select>
 
                             </div>
-                            </div>
-                           <div class="form-group col-md-6 col-lg-4  ">
-                                <div class=" rgstr-input-form-box">
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4  ">
+                            <div class=" rgstr-input-form-box">
                                 <label for="YearsInBusiness"> @Localizer["How many years have you been in business?"]</label>
                                 <input type="number" name="YearsInBusiness" placeholder="@Localizer["Enter business years..."]" class="form-control" />
-                                  <span asp-validation-for="YearsInBusiness" class="text-danger"></span> 
+                                <span asp-validation-for="YearsInBusiness" class="text-danger"></span>
                             </div>
-                              </div>
-                            <div class="form-group col-md-6 col-lg-4  ">
-                                <div class=" rgstr-input-form-box">
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4  ">
+                            <div class=" rgstr-input-form-box">
                                 <label for="IsCompanyWebsite">@Localizer["Do you have a company website?"]</label>
-                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
-                                                    <div class="custom-radio ">
-                                                        <input  name="IsCompanyWebsite" id="credit1" class="custom-control-input" type="radio" value="true" />
-                                                        <label  class="custom-control-label" for="credit1">@Localizer["Yes"] </label>
-                                                        <span asp-for="IsCompanyWebsite" class="text-danger"></span>
-                                                    </div>
-                                                    <div class="custom-radio">
-                                                        <input  name="IsCompanyWebsite" id="credit2" class="custom-control-input" type="radio" value="false" />
-                                                        <label  class="custom-control-label" for="credit2">@Localizer["No"]</label>
-                                                        <span asp-for="IsCompanyWebsite" class="text-danger"></span>
-                                                    </div>
-                                   </div>  
-                                   
-                                   <span name="IsCompanyWebsite1" class="text-danger " data-valmsg-for="IsCompanyWebsite"></span>
-                               </div>
+                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                    <div class="custom-radio ">
+                                        <input name="IsCompanyWebsite" id="credit1" class="custom-control-input" type="radio" value="true" />
+                                        <label class="custom-control-label" for="credit1">@Localizer["Yes"] </label>
+                                        <span asp-for="IsCompanyWebsite" class="text-danger"></span>
+                                    </div>
+                                    <div class="custom-radio">
+                                        <input name="IsCompanyWebsite" id="credit2" class="custom-control-input" type="radio" value="false" />
+                                        <label class="custom-control-label" for="credit2">@Localizer["No"]</label>
+                                        <span asp-for="IsCompanyWebsite" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <span name="IsCompanyWebsite1" class="text-danger " data-valmsg-for="IsCompanyWebsite"></span>
                             </div>
-                            <div class="form-group col-md-6 col-lg-4  " id="web3" style="display:none">
-                                <div class=" rgstr-input-form-box">
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4  " id="web3" style="display:none">
+                            <div class=" rgstr-input-form-box">
                                 <label for="CompanyWebsiteURL">@Localizer["Website"]</label>
                                 <div class="input-group mb-3">
 
 
-                                <input type="text"  name="CompanyWebsiteURL" aria-describedby="basic-addon3" placeholder="example.com" class="form-control" />
+                                    <input type="text" name="CompanyWebsiteURL" aria-describedby="basic-addon3" placeholder="example.com" class="form-control" />
                                 </div>
                                 <span asp-validation-for="CompanyWebsiteURL" class="text-danger"></span>
                             </div>
-                              </div>
+                        </div>
 
 
-                               <div class="form-group col-md-6 col-lg-4  ">
-                                <div class=" rgstr-input-form-box">
+                        <div class="form-group col-md-6 col-lg-4  ">
+                            <div class=" rgstr-input-form-box">
                                 <label for="IsFacebookPage">@Localizer["Do you have Facebook page?"]</label>
-                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
-                                                    <div class="custom-radio ">
-                                                        <input  name="IsFacebookPage" id="credit3" class="custom-control-input" type="radio" value="true" />
-                                                        <label  class="custom-control-label" for="credit3">@Localizer["Yes"] </label>
-                                                        <span asp-for="IsFacebookPage" class="text-danger"></span>
-                                                    </div>
-                                                    <div class="custom-radio">
-                                                        <input  name="IsFacebookPage" id="credit4" class="custom-control-input" type="radio" value="false" />
-                                                        <label  class="custom-control-label" for="credit4">@Localizer["No"]</label>
-                                                        <span asp-for="IsFacebookPage" class="text-danger"></span>
-                                                    </div>
-                                   </div> 
-                                   
-                                    <span name="IsFacebookPage1" class="text-danger field-validation-valid" data-valmsg-for="IsFacebookPage"></span>
-                               </div>
+                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                    <div class="custom-radio ">
+                                        <input name="IsFacebookPage" id="credit3" class="custom-control-input" type="radio" value="true" />
+                                        <label class="custom-control-label" for="credit3">@Localizer["Yes"] </label>
+                                        <span asp-for="IsFacebookPage" class="text-danger"></span>
+                                    </div>
+                                    <div class="custom-radio">
+                                        <input name="IsFacebookPage" id="credit4" class="custom-control-input" type="radio" value="false" />
+                                        <label class="custom-control-label" for="credit4">@Localizer["No"]</label>
+                                        <span asp-for="IsFacebookPage" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <span name="IsFacebookPage1" class="text-danger field-validation-valid" data-valmsg-for="IsFacebookPage"></span>
                             </div>
+                        </div>
 
 
 
 
-                              
 
 
-                              <div class="form-group col-md-6 col-lg-4  ">
-                                <div class=" rgstr-input-form-box">
+
+                        <div class="form-group col-md-6 col-lg-4  ">
+                            <div class=" rgstr-input-form-box">
                                 <label for="NumberOfEmployees">@Localizer["How many employees do you have?"]</label>
                                 <input type="number" name="NumberOfEmployees" placeholder="Enter number of employees" class="form-control" />
-                                   <span asp-validation-for="NumberOfEmployees" class="text-danger"></span>
+                                <span asp-validation-for="NumberOfEmployees" class="text-danger"></span>
                             </div>
-                              </div>
-
-
-
-                               
-
-                               
+                        </div>
 
 
 
 
-                             
-
-                               
 
 
-                               
 
-                               <div class="form-group col-md-6 col-lg-4  ">
-                                <div class=" rgstr-input-form-box">
+
+
+
+
+
+
+
+
+
+
+                        <div class="form-group col-md-6 col-lg-4  ">
+                            <div class=" rgstr-input-form-box">
                                 <label for="IsBusinessOrTradeLicense">@Localizer["Do you have a business or trade license(s)?"]</label>
-                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
-                                                    <div class="custom-radio ">
-                                                        <input  name="IsBusinessOrTradeLicense" id="credit13" class="custom-control-input" type="radio" value="true" />
-                                                        <label  class="custom-control-label" for="credit13">@Localizer["Yes"] </label>
-                                                        <span asp-for="IsBusinessOrTradeLicense" class="text-danger"></span>
-                                                    </div>
-                                                    <div class="custom-radio">
-                                                        <input  name="IsBusinessOrTradeLicense" id="credit14" class="custom-control-input" type="radio" value="false" />
-                                                        <label  class="custom-control-label" for="credit14">No</label>
-                                                        <span asp-for="IsBusinessOrTradeLicense" class="text-danger"></span>
-                                                    </div>
-                                   </div>  
-                                   
-                                    <span  name="IsBusinessOrTradeLicense1" class="text-danger field-validation-valid" data-valmsg-for="IsBusinessOrTradeLicense"></span>
-                               </div>
+                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                    <div class="custom-radio ">
+                                        <input name="IsBusinessOrTradeLicense" id="credit13" class="custom-control-input" type="radio" value="true" />
+                                        <label class="custom-control-label" for="credit13">@Localizer["Yes"] </label>
+                                        <span asp-for="IsBusinessOrTradeLicense" class="text-danger"></span>
+                                    </div>
+                                    <div class="custom-radio">
+                                        <input name="IsBusinessOrTradeLicense" id="credit14" class="custom-control-input" type="radio" value="false" />
+                                        <label class="custom-control-label" for="credit14">No</label>
+                                        <span asp-for="IsBusinessOrTradeLicense" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <span name="IsBusinessOrTradeLicense1" class="text-danger field-validation-valid" data-valmsg-for="IsBusinessOrTradeLicense"></span>
                             </div>
+                        </div>
 
 
 
-                                
 
 
-                              <div class="form-group col-md-6 col-lg-4  ">
-                                <div class=" rgstr-input-form-box">
+
+                        <div class="form-group col-md-6 col-lg-4  ">
+                            <div class=" rgstr-input-form-box">
                                 <label for="IsLiabilityInsurance">@Localizer["Do you have Liability Insurance?"]</label>
-                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
-                                                    <div class="custom-radio ">
-                                                        <input  name="IsLiabilityInsurance" id="credit15" class="custom-control-input" type="radio" value="true" />
-                                                        <label  class="custom-control-label" for="credit15">@Localizer["Yes"] </label>
-                                                        <span asp-for="IsLiabilityInsurance" class="text-danger"></span>
-                                                    </div>
-                                                    <div class="custom-radio">
-                                                        <input  name="IsLiabilityInsurance" id="credit16" class="custom-control-input" type="radio" value="false" />
-                                                        <label  class="custom-control-label" for="credit16">No</label>
-                                                        <span asp-for="IsLiabilityInsurance" class="text-danger"></span>
-                                                    </div>
-                                   </div>     
-                                   
-                                     <span name="IsLiabilityInsurance1" class="text-danger field-validation-valid" data-valmsg-for="IsLiabilityInsurance"></span>
-                               </div>
+                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                    <div class="custom-radio ">
+                                        <input name="IsLiabilityInsurance" id="credit15" class="custom-control-input" type="radio" value="true" />
+                                        <label class="custom-control-label" for="credit15">@Localizer["Yes"] </label>
+                                        <span asp-for="IsLiabilityInsurance" class="text-danger"></span>
+                                    </div>
+                                    <div class="custom-radio">
+                                        <input name="IsLiabilityInsurance" id="credit16" class="custom-control-input" type="radio" value="false" />
+                                        <label class="custom-control-label" for="credit16">No</label>
+                                        <span asp-for="IsLiabilityInsurance" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <span name="IsLiabilityInsurance1" class="text-danger field-validation-valid" data-valmsg-for="IsLiabilityInsurance"></span>
                             </div>
+                        </div>
 
 
 
-                             
 
 
-                              <div class="form-group col-md-6 col-lg-4  ">
-                                <div class=" rgstr-input-form-box">
+
+                        <div class="form-group col-md-6 col-lg-4  ">
+                            <div class=" rgstr-input-form-box">
                                 <label for="IsWorkmanCompensationInsurance">@Localizer["Do you have Workman’s Compensation Insurance?"]</label>
-                                  <div class="d-flex justify-content-between w-50 question-text-radio-btn">
-                                                    <div class="custom-radio ">
-                                                        <input  name="IsWorkmanCompensationInsurance" id="credit17" class="custom-control-input" type="radio" value="true" />
-                                                        <label  class="custom-control-label" for="credit17">@Localizer["Yes"] </label>
-                                                        <span asp-for="IsWorkmanCompensationInsurance" class="text-danger"></span>
-                                                    </div>
-                                                    <div class="custom-radio">
-                                                        <input  name="IsWorkmanCompensationInsurance" id="credit18" class="custom-control-input" type="radio" value="false" />
-                                                        <label  class="custom-control-label" for="credit18">No</label>
-                                                        <span asp-for="IsWorkmanCompensationInsurance" class="text-danger"></span>
-                                                    </div>
-                                   </div>  
-                                   
-                                   <span name="IsWorkmanCompensationInsurance1" class="text-danger field-validation-valid" data-valmsg-for="IsWorkmanCompensationInsurance"></span>
-                               </div>
+                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
+                                    <div class="custom-radio ">
+                                        <input name="IsWorkmanCompensationInsurance" id="credit17" class="custom-control-input" type="radio" value="true" />
+                                        <label class="custom-control-label" for="credit17">@Localizer["Yes"] </label>
+                                        <span asp-for="IsWorkmanCompensationInsurance" class="text-danger"></span>
+                                    </div>
+                                    <div class="custom-radio">
+                                        <input name="IsWorkmanCompensationInsurance" id="credit18" class="custom-control-input" type="radio" value="false" />
+                                        <label class="custom-control-label" for="credit18">No</label>
+                                        <span asp-for="IsWorkmanCompensationInsurance" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <span name="IsWorkmanCompensationInsurance1" class="text-danger field-validation-valid" data-valmsg-for="IsWorkmanCompensationInsurance"></span>
                             </div>
+                        </div>
 
 
 
@@ -329,14 +333,14 @@
 
 
 
-                    </div>    
+                    </div>
 
 
-                        
-             </form>
-         </div>   
+
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 
