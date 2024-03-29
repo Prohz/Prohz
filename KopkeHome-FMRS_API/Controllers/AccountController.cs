@@ -8,6 +8,7 @@ using KopkeHome_UtilityLayer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
+using Stripe;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Security.Claims;
@@ -251,6 +252,19 @@ namespace KopkeHome_FMRS_API.Controllers
 
                     return response;
                 }
+
+                // Check if the provided referral ID matches the one in the database
+                bool isReferralValid = await service.CheckReferralId(userDataModel.MemberReferralId);
+                if (!isReferralValid)
+                {
+                    response.Error = true;
+                    response.Status = Resources.INVALID_REFERRAL;
+                    response.Statuscode = HttpStatusCode.BadRequest;
+                    response.Message = Resources.INVALID_REFERRAL;
+                    return response;
+                }
+
+
                 bool isEmailExist = await service.CheckEmailExist(userDataModel.Email);
                 if (!isEmailExist)
                 {
@@ -785,6 +799,23 @@ namespace KopkeHome_FMRS_API.Controllers
             try
             {
                 return await service.GetUserByID(Convert.ToInt32(Id));
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+
+            }
+
+        }
+
+        [HttpPost]
+        public async Task<ProhzReferral> GetReferralsById([FromForm] string Id)
+        {
+            try
+            {
+                return await service.GetReferralsById(Convert.ToInt32(Id));
 
             }
             catch (Exception ex)

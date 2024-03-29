@@ -32,7 +32,7 @@ namespace KopkeHome_ModelLayer.ViewModels
         public string SalesAssociateHo { get; set; }
         [StringLength(10, ErrorMessage = "Enter a valid member id", MinimumLength = 10)]
         public string MemberReferralIdHo { get; set; }
-
+        [StringLength(10, ErrorMessage = "Enter a valid member id", MinimumLength = 10)]
         public string CityHo { get; set; }
 
 
@@ -104,8 +104,12 @@ namespace KopkeHome_ModelLayer.ViewModels
 
         [StringLength(50, ErrorMessage = "Maximum {2} characters exceeded")]
         public string SalesAssociate { get; set; }
+
+
+      
         [StringLength(10, ErrorMessage = "Enter a valid member id", MinimumLength = 10)]
         public string MemberReferralId { get; set; }
+
 
         [Required(ErrorMessage = "City is required")]
         [StringLength(40, ErrorMessage = "City is required")]

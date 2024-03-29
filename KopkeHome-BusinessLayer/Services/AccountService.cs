@@ -24,6 +24,7 @@ namespace KopkeHome_BusinessLayer.Services
     {
         private readonly UserManager<User> _userManager;
         private readonly IRepository<User> _iRepository;
+        private readonly IRepository<ProhzReferral> _iRefferal;
         private readonly IEmailService _email;
         private readonly ApplicationDbContext _dbContext;
         private readonly IRepository<VerifyOTP> _OtpRepository;
@@ -111,7 +112,7 @@ namespace KopkeHome_BusinessLayer.Services
                 {
                     _user = await _userManager.FindByEmailAsync(ISignIn.Email);
                     var isAuthenticated = await _userManager.CheckPasswordAsync(_user, ISignIn.Password);
-                    response.WorkStatus=_user.WorkStatus;
+                    response.WorkStatus = _user.WorkStatus;
 
                     if (isAuthenticated)
                     {
@@ -200,10 +201,10 @@ namespace KopkeHome_BusinessLayer.Services
                 if (userModel != null)
                 {
 
-                    var UserSubs = await _dbContext.MembershipBenefitsPlan.Where(x=>x.PricePerMonth== 25 && x.PricePerYear== 50).FirstOrDefaultAsync();
+                    var UserSubs = await _dbContext.MembershipBenefitsPlan.Where(x => x.PricePerMonth == 25 && x.PricePerYear == 50).FirstOrDefaultAsync();
                     if (UserSubs != null)
                     {
-                       model = UserSubs;
+                        model = UserSubs;
                     }
                     else
                     {
@@ -534,35 +535,92 @@ namespace KopkeHome_BusinessLayer.Services
         {
             try
             {
+
                 bool status = false;
-                var userList = await _OtpRepository.FindAllByCondition(a => a.VerificationCode == (Otp) && a.Status == false && a.Email == Email);
-                if (userList.Count() != 0)
+                string skip = _configuration.GetSection("Settings")["skipOTP"];
+
+
+                if (skip == "true")
                 {
 
-                    var expirytime = (userList[0].ExpiryDate - DateTime.Now).Minutes;
-                    if (expirytime > 0)
+                    var userList = await _OtpRepository.FindAllByCondition(a => a.Status == false && a.Email == Email);
+
+
+
+                    if (userList.Count() != 0)
                     {
 
-                        userList[0].Status = true;
-                        await _OtpRepository.Update(userList[0]);
-                        var emp = _dbContext.User.Where(x => x.Email.Equals(Email)).FirstOrDefault();
-                        if (emp != null)
+                        var expirytime = (userList[0].ExpiryDate - DateTime.Now).Minutes;
+                        if (expirytime > 0)
                         {
-                            emp.IsEmailVerified = true;
 
-                            await _userManager.UpdateAsync(emp);
-                            StringBuilder Body = new();
-                            Body.Append("Congratulations " + emp.FirstName + "," + "</br></br>");
-                            Body.Append("Thank you for registering with Prohz.</br></br>");
-                            Body.Append("Thanks</br>Prohz Team");
+                            userList[0].Status = true;
+                            await _OtpRepository.Update(userList[0]);
+                            var emp = _dbContext.User.Where(x => x.Email.Equals(Email)).FirstOrDefault();
+                            if (emp != null)
+                            {
+                                emp.IsEmailVerified = true;
 
-                            _email.SendEmail(Email, "Welcome from Prohz", Body.ToString());
+                                await _userManager.UpdateAsync(emp);
+                                StringBuilder Body = new();
+                                Body.Append("Congratulations " + emp.FirstName + "," + "</br></br>");
+                                Body.Append("Thank you for registering with Prohz.</br></br>");
+                                Body.Append("Thanks</br>Prohz Team");
+
+                                _email.SendEmail(Email, "Welcome from Prohz", Body.ToString());
+                            }
+
                         }
-
+                        status = true;
                     }
-                    status = true;
+
+                    return status;
+
+
                 }
-                return status;
+                else
+                {
+
+
+
+
+
+
+
+
+                    var userList = await _OtpRepository.FindAllByCondition(a => a.VerificationCode == (Otp) && a.Status == false && a.Email == Email);
+
+
+
+                    if (userList.Count() != 0)
+                    {
+
+                        var expirytime = (userList[0].ExpiryDate - DateTime.Now).Minutes;
+                        if (expirytime > 0)
+                        {
+
+                            userList[0].Status = true;
+                            await _OtpRepository.Update(userList[0]);
+                            var emp = _dbContext.User.Where(x => x.Email.Equals(Email)).FirstOrDefault();
+                            if (emp != null)
+                            {
+                                emp.IsEmailVerified = true;
+
+                                await _userManager.UpdateAsync(emp);
+                                StringBuilder Body = new();
+                                Body.Append("Congratulations " + emp.FirstName + "," + "</br></br>");
+                                Body.Append("Thank you for registering with Prohz.</br></br>");
+                                Body.Append("Thanks</br>Prohz Team");
+
+                                _email.SendEmail(Email, "Welcome from Prohz", Body.ToString());
+                            }
+
+                        }
+                        status = true;
+                    }
+
+                    return status;
+                }
             }
             catch (Exception EX)
             {
@@ -866,7 +924,7 @@ namespace KopkeHome_BusinessLayer.Services
             try
             {
 
-                var user = await _dbContext.User.Where(a => a.Email.Equals(Email) && a.IsEmailVerified == true && a.IsDeleted==false).FirstOrDefaultAsync();
+                var user = await _dbContext.User.Where(a => a.Email.Equals(Email) && a.IsEmailVerified == true && a.IsDeleted == false).FirstOrDefaultAsync();
                 return user;
             }
             catch (Exception ex)
@@ -1098,6 +1156,19 @@ namespace KopkeHome_BusinessLayer.Services
                 throw;
             }
         }
+        public async Task<ProhzReferral> GetReferralsById(int id)
+        {
+            try
+            {
+                return await _dbContext.ProhzReferral.FirstOrDefaultAsync(r => r.UserId == id);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
+        }
+
 
         public async Task<List<User>> GetUserList()
         {
@@ -1138,10 +1209,38 @@ namespace KopkeHome_BusinessLayer.Services
                 throw;
             }
         }
-
+        public async Task<bool> CheckReferralId(string referralId)
+        {
+            if (referralId != null)
+            {
+                try
+                {
+                    bool valid = false;
+                    var result = await _iRefferal.FindAllByCondition(a => a.MemberId.Equals(referralId));
+                    if (result.Count > 0)
+                    {
+                        valid = true;
+                    }
+                    else
+                    {
+                        valid = false;
+                    }
+                    return valid;
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex.Message);
+                    throw ex;
+                }
+            }
+            else
+            {
+                return true; // or return true, depending on your logic when referralId is null
+            }
+        }
     }
 
-}
+    }
 
 
 

@@ -82,21 +82,21 @@
                 @{
                     if (Model.LoggedInUser != null)
                     {
-                    <a class="nav-link text-dark dropdown-toggle d-flex align-items-center" href="#" id="navbardrop" data-toggle="dropdown">
-                        @if (!string.IsNullOrEmpty(Model.LoggedInUser.ProfilePicture))
+                        <a class="nav-link text-dark dropdown-toggle d-flex align-items-center" href="#" id="navbardrop" data-toggle="dropdown">
+                            @if (!string.IsNullOrEmpty(Model.LoggedInUser.ProfilePicture))
                             {
-                        <img alt="logo" style="margin-right:11px; class="IconBorder" src="~/Uploads/@Model.LoggedInUser.ProfilePicture" width="38" />
+                                <img alt="logo" style="margin-right:11px; class="IconBorder" src="~/Uploads/@Model.LoggedInUser.ProfilePicture" width="38" />
 
-                        <span class="text-white">@Model.LoggedInUser.FirstName  @Model.LoggedInUser.LastName </span>
+                                <span class="text-white">@Model.LoggedInUser.FirstName  @Model.LoggedInUser.LastName </span>
                             }
                             else
                             {
-                        <img alt="logo" style="margin-right:11px;" src="~/images/DefaultProfile.png" class="IconBorder" width="38" />
+                                <img alt="logo" style="margin-right:11px;" src="~/images/DefaultProfile.png" class="IconBorder" width="38" />
 
-                        <span class="text-white">@Model.LoggedInUser.FirstName @Model.LoggedInUser.LastName</span>
+                                <span class="text-white">@Model.LoggedInUser.FirstName @Model.LoggedInUser.LastName</span>
                             }
 
-                    </a>
+                        </a>
                     }
 
 
@@ -146,10 +146,10 @@
             double percentsl = 0;
             var silver = Model.Plans.Where(x => x.Title.Contains("Silver")).FirstOrDefault();
             int PlanIdSilver = silver.Id;
-            double silver_PricePerMonth = silver.PricePerMonth;
+            double silver_PricePerMonth = Model.priceYearlySilver;
             string silver_Categories = silver.Categories;
             string silver_ZipCodes = silver.ZipCodes;
-            double silver_PricePerYear = silver.PricePerYear;
+            double silver_PricePerYear = Model.priceYearlySilver;
             string silver_IsWeb = string.Empty;
             string silver_IsPhoneApp = string.Empty;
             var discountsl = ((silver_PricePerMonth * 4) - silver_PricePerYear);
@@ -219,218 +219,285 @@
         }
 
 
-        
 
-    <!--  custom plan Modal -->
-    <div class="modal p-0 fade contactorModal-email-varification" data-keyboard="false" data-backdrop="static" id="exampleModal">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">@Localizer["Custom Plan"]</h4>
-                    <button type="button" class="close modal-cstm-close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="text-center email-varification-main-heading">
-                        <h3 class="text-white">@Localizer["Enter Plan details"]</h3>
-                        <p>@Localizer["Please describe your requirements in detail."]</p>
+
+        <!--  custom plan Modal -->
+        <div class="modal p-0 fade contactorModal-email-varification" data-keyboard="false" data-backdrop="static" id="exampleModal">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">@Localizer["Custom Plan"]</h4>
+                        <button type="button" class="close modal-cstm-close" data-dismiss="modal">&times;</button>
                     </div>
-                    <form enctype="multipart/form-data" name="submitCustomPlanRequest" method="post" onsubmit="return AsubmitCustomPlanRequest(this);">
+                    <div class="modal-body">
+                        <div class="text-center email-varification-main-heading">
+                            <h3 class="text-white">@Localizer["Enter Plan details"]</h3>
+                            <p>@Localizer["Please describe your requirements in detail."]</p>
+                        </div>
+                        <form enctype="multipart/form-data" name="submitCustomPlanRequest" method="post" onsubmit="return AsubmitCustomPlanRequest(this);">
 
-                        <input name="UserId" type="hidden" value="@Model.LoggedInUser.Id" />
+                            <input name="UserId" type="hidden" value="@Model.LoggedInUser.Id" />
 
 
-                        <div class=" rgstr-input-form-box">
-                            <label for="Descrption">@Localizer["Requirement Details"] :</label>
+                            <div class=" rgstr-input-form-box">
+                                <label for="Descrption">@Localizer["Requirement Details"] :</label>
 <textarea name="Descrption" class="form-control input-sm TextUpperLower" placeholder="" rows="3"></textarea>
-                            <span for="Descrption" id="Descrption-error" class="text-danger error"></span>
+                                <span for="Descrption" id="Descrption-error" class="text-danger error"></span>
+                            </div>
+                            <div class="verify-email text-center mb-2">
+                                <button type="submit" class="btn green-email-verify-btn">@Localizer["Send"]</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal p-0 fade email-sent-success-modal" data-keyboard="false" data-backdrop="static" id="exampleModal2">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+
+
+                    <div class="modal-body">
+                        <div class="text-center email-sent-success-main-heading">
+                            <img width="175px" src="~/images/success-gif1.gif" />
+                            <h3 class="text-white">@Localizer["Request has been sent."]</h3>
+                            <p>@Localizer["We have received your custom membership plan request. Our team will reach out to you with plan details."]</p>
                         </div>
+
                         <div class="verify-email text-center mb-2">
-                            <button type="submit" class="btn green-email-verify-btn">@Localizer["Send"]</button>
+                            <button data-dismiss="modal" class="btn green-email-verify-btn">
+                                @Localizer["Ok"]
+                            </button>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal p-0 fade email-sent-success-modal" data-keyboard="false" data-backdrop="static" id="exampleModal2">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-
-
-                <div class="modal-body">
-                    <div class="text-center email-sent-success-main-heading">
-                        <img width="175px" src="~/images/success-gif1.gif" />
-                        <h3 class="text-white">@Localizer["Request has been sent."]</h3>
-                        <p>@Localizer["We have received your custom membership plan request. Our team will reach out to you with plan details."]</p>
-                    </div>
-
-                    <div class="verify-email text-center mb-2">
-                        <button data-dismiss="modal" class="btn green-email-verify-btn">
-                            @Localizer["Ok"]
-                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <section id="pricing" style="background: linear-gradient(180deg, #2f2f2f 50%, transparent 50%);">
-        <div class="container">
-            <div class="row" style="text-align: center; color: #ffffff;">
-                <div class="col">
-                    <div class="title-wrapper">
-                        <h2>Contractor Membership Plans</h2>
-                        <p>Please choose the best membership plan for you.</p>
-                        <p class="disclaimer">All plans are based on one year memberships.</p>
+        <section id="pricing" style="background: linear-gradient(180deg, #2f2f2f 50%, transparent 50%);">
+            <div class="container">
+                <div class="row" style="text-align: center; color: #ffffff;">
+                    <div class="col">
+                        <div class="title-wrapper">
+                            <h2>Contractor Membership Plans</h2>
+                            <p>Please choose the best membership plan for you.</p>
+                            <p class="disclaimer">All plans are based on one year memberships.</p>
                             <p class="disclaimer">A one-time fee of $99 will be charged for business verification to ensure the authenticity and security of your business on our platform.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card-wrapper">
+                            <div class="title-wrapper">
+                                <h3>Basic Plan</h3>
+                                <p>Best plan for those companies that want to stay small and local.</p>
+                                <s><p>$324<span class="disclaimer"> per year</p></s>
+                                <p class="promo-price">$96<span class="disclaimer"> per year</span></p>
+                                <p class="disclaimer">That's less than $0.27 per day!</p>
+                                <button onclick="BronzeRadio()">Become a Member</button>
+                                <div class="card-meta">
+                                    <ul>
+                                        <li>Company is Listed in 1 Contractor Category</li>
+                                        <li>Company is Listed in 10 Zip Codes</li>
+                                        <li>Unlimited category searches</li>
+                                        <li>Unlimited zip code searches</li>
+                                        <li>Listed in Prohz directory</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card-wrapper best-value">
+                            <div class="title-wrapper">
+                                <span class="best">Best Value</span><h3 style="display: inline-block;">Prohz Plan</h3>
+                                <p>Best plan to stabalize or grow your company.</p>
+                                <s><p>$972<span class="disclaimer"> per year</p></s>
+                                <p class="promo-price">$@silver_PricePerYear<span class="disclaimer"> per year</span></p>
+                                <p class="disclaimer">That's less than $0.53 per day!</p>
+                                <button onclick="SilverRadio()">Become a Prohz Member</button>
+                                <div class="card-meta">
+                                    <ul>
+                                        <li>Company is Listed in 3 Contractor Categories</li>
+                                        <li>Company is Listed in 30 Zip Codes</li>
+                                        <li>Unlimited category searches</li>
+                                        <li>Unlimited zip code searches</li>
+                                        <li>Listed in Prohz directory</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card-wrapper">
+                            <div class="title-wrapper">
+                                <h3>Prohz+ Plan</h3>
+                                <p>Best plan for a company with multiple locations.</p>
+                                <s><p>$5,370<span class="disclaimer"> per year</p></s>
+                                <p class="promo-price">$1,872<span class="disclaimer"> per year</span></p>
+                                <p class="disclaimer">That's less than $5.13 per day!</p>
+                                <button onclick="GoldRadio()">Become a Prohz+ Member</button>
+                                <div class="card-meta">
+                                    <ul>
+                                        <li>Company is Listed in 5 Contractor Categories</li>
+                                        <li>Company is Listed in 100 Zip Codes</li>
+                                        <li>Unlimited category searches</li>
+                                        <li>Unlimited zip code searches</li>
+                                        <li>Listed in Prohz directory</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card-wrapper">
-                        <div class="title-wrapper">
-                            <h3>Basic Plan</h3>
-                            <p>Best plan for those companies that want to stay small and local.</p>
-                            <s><p>$324<span class="disclaimer"> per year</p></s>
-                            <p class="promo-price">$96<span class="disclaimer"> per year</span></p>
-                            <p class="disclaimer">That's less than $0.27 per day!</p>
-                            <button onclick="BronzeRadio()">Become a Member</button>
-                            <div class="card-meta">
-                                <ul>
-                                    <li>Company is Listed in 1 Contractor Category</li>
-                                    <li>Company is Listed in 10 Zip Codes</li>
-                                    <li>Unlimited category searches</li>
-                                    <li>Unlimited zip code searches</li>
-                                    <li>Listed in Prohz directory</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card-wrapper best-value">
-                        <div class="title-wrapper">
-                            <span class="best">Best Value</span><h3 style="display: inline-block;">Prohz Plan</h3>
-                            <p>Best plan to stabalize or grow your company.</p>
-                            <s><p>$972<span class="disclaimer"> per year</p></s>
-                            <p class="promo-price">$192<span class="disclaimer"> per year</span></p>
-                            <p class="disclaimer">That's less than $0.53 per day!</p>
-                            <button onclick="SilverRadio()">Become a Prohz Member</button>
-                            <div class="card-meta">
-                                <ul>
-                                    <li>Company is Listed in 3 Contractor Categories</li>
-                                    <li>Company is Listed in 30 Zip Codes</li>
-                                    <li>Unlimited category searches</li>
-                                    <li>Unlimited zip code searches</li>
-                                    <li>Listed in Prohz directory</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card-wrapper">
-                        <div class="title-wrapper">
-                            <h3>Prohz+ Plan</h3>
-                            <p>Best plan for a company with multiple locations.</p>
-                            <s><p>$5,370<span class="disclaimer"> per year</p></s>
-                            <p class="promo-price">$1,872<span class="disclaimer"> per year</span></p>
-                            <p class="disclaimer">That's less than $5.13 per day!</p>
-                            <button onclick="GoldRadio()">Become a Prohz+ Member</button>
-                            <div class="card-meta">
-                                <ul>
-                                    <li>Company is Listed in 5 Contractor Categories</li>
-                                    <li>Company is Listed in 100 Zip Codes</li>
-                                    <li>Unlimited category searches</li>
-                                    <li>Unlimited zip code searches</li>
-                                    <li>Listed in Prohz directory</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
 
-    <script src="~/js/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/custom.js" asp-append-version="true"></script>
-    <script src="~/js/ValidateForms.js" asp-append-version="true"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
+        <script src="~/js/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/custom.js" asp-append-version="true"></script>
+        <script src="~/js/ValidateForms.js" asp-append-version="true"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
 
 
-    <script>
-        var urlprefix = "";
-        if (window.location.href.indexOf("KopkeHome-FMRS") > -1) {
-            urlprefix = '/KopkeHome-FMRS';
-        }
-        $(document).ready(function () {
-            $('#exampleModal').on('hidden.bs.modal', function () {
-                // Load up a new modal...
-                //$('#exampleModal2').modal('show')
-            })
-        });
-        var ProhzGreyLogo = '<img style="height: 90px;" src="' + urlprefix + "'"
+        <script>
+            var urlprefix = "";
+            if (window.location.href.indexOf("KopkeHome-FMRS") > -1) {
+                urlprefix = '/KopkeHome-FMRS';
+            }
+            $(document).ready(function () {
+                $('#exampleModal').on('hidden.bs.modal', function () {
+                    // Load up a new modal...
+                    //$('#exampleModal2').modal('show')
+                })
+            });
+            var ProhzGreyLogo = '<img style="height: 90px;" src="' + urlprefix + "'"
 
-    </script>
-    <script>
+        </script>
+        <script>
 
-        function AsubmitCustomPlanRequest(form) {
 
-            if ($(form).valid()) {
-                $.ajax({
-                    type: 'POST',
-                    url: urlprefix + '/Membership/SaveCustomZipcodesRequest',
-                    data: $(form).serialize(),
 
-                    success: function (res) {
+            var silver_PricePerYear = @Model.priceYearlySilver;
 
-                        if (res == "1") {
-                            $('#exampleModal').modal('hide');
-                            $('#exampleModal2').modal('show');
-                        } else {
-                            Swal.fire({
-                                title: localizer('You have already requested for custom memebrship plan', 'Ya ha solicitado un plan de membresía personalizado', $('#ProhzLangDDL option:selected').val()),
-                                iconHtml: ProhzGreyLogo,
-                                text: localizer('Once your custom membership plan is created it will be visible to you in this page with other plans.', 'Una vez que se haya creado su plan de membresía personalizado, podrá verlo en esta página con otros planes.', $('#ProhzLangDDL option:selected').val()),
+            // Check if silver_PricePerYear is equal to zero
+            if (silver_PricePerYear === 0) {
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Find and update the "Best Value" to "Referral Added"
+                    var bestValueElement = document.querySelector('.card-wrapper.best-value .best');
+                    if (bestValueElement) {
+                        bestValueElement.textContent = 'Referral Added';
+                    }
 
-                            })
-                        }
-
+                    // Update the disclaimer text to "Free with Referral"
+                    var disclaimerElement = document.querySelector('.card-wrapper.best-value p.disclaimer');
+                    if (disclaimerElement) {
+                        disclaimerElement.textContent = 'Free with Referral';
                     }
                 });
             }
+            
 
-            return false;
-        }
-        function CustomRadio() {
-            $("#CSTMLOADER").show();
-            //var ele = document.getElementsByName('BronzePrice');
 
-            var selectedVal = "";
-            var selected = $("input[type='radio'][name='CustomPrice']:checked");
-            if (selected.length > 0) {
 
-                selectedVal = selected.val();
-                var dataId = selected.attr("data-id");
-                var userid = selected.attr("data-userid");
+            function AsubmitCustomPlanRequest(form) {
+
+                if ($(form).valid()) {
+                    $.ajax({
+                        type: 'POST',
+                        url: urlprefix + '/Membership/SaveCustomZipcodesRequest',
+                        data: $(form).serialize(),
+
+                        success: function (res) {
+
+                            if (res == "1") {
+                                $('#exampleModal').modal('hide');
+                                $('#exampleModal2').modal('show');
+                            } else {
+                                Swal.fire({
+                                    title: localizer('You have already requested for custom memebrship plan', 'Ya ha solicitado un plan de membresía personalizado', $('#ProhzLangDDL option:selected').val()),
+                                    iconHtml: ProhzGreyLogo,
+                                    text: localizer('Once your custom membership plan is created it will be visible to you in this page with other plans.', 'Una vez que se haya creado su plan de membresía personalizado, podrá verlo en esta página con otros planes.', $('#ProhzLangDDL option:selected').val()),
+
+                                })
+                            }
+
+                        }
+                    });
+                }
+
+                return false;
+            }
+            function CustomRadio() {
+                $("#CSTMLOADER").show();
+                //var ele = document.getElementsByName('BronzePrice');
+
+                var selectedVal = "";
+                var selected = $("input[type='radio'][name='CustomPrice']:checked");
+                if (selected.length > 0) {
+
+                    selectedVal = selected.val();
+                    var dataId = selected.attr("data-id");
+                    var userid = selected.attr("data-userid");
+                    $.ajax({
+                        type: 'Get',
+                        url: urlprefix + '/Membership/PaymentForCustomPlan?priceId=' + selectedVal + '&planId=' + dataId + '&userid=' + userid,
+
+                        success: function (res) {
+
+                            if (res == 1) {
+
+                                window.location = urlprefix + "/Membership/CustomPlanGateway/";
+                            }
+                            else {
+                                $("#CSTMLOADER").hide();
+                                alert("Something went wrong.");
+                            }
+
+
+                        }
+
+
+                    });
+                }
+                else {
+                    $("#CSTMLOADER").hide();
+
+                    Swal.fire(localizer('Please select type of plan.(Quarterly/Annually)', 'Seleccione el tipo de plan. (Trimestral/Anual)', $('#ProhzLangDDL option:selected').val()))
+
+                }
+
+
+
+
+            }
+
+
+            function BronzeRadio() {
+                $("#CSTMLOADER").show();
+                //var ele = document.getElementsByName('BronzePrice');
+
+
+                // Swapped out the dynamic value for static value.  Original value was `selected.val();`
+                priceId = "@Model.PriceYearlyBronzeID";
+                var dataId = @PlanIdBronze;
+                console.log(priceId)
                 $.ajax({
                     type: 'Get',
-                    url: urlprefix + '/Membership/PaymentForCustomPlan?priceId=' + selectedVal + '&planId=' + dataId + '&userid=' + userid,
+                    url: urlprefix + '/Membership/PaymentCard?priceId=' + priceId + '&planId=' + dataId,
 
                     success: function (res) {
 
                         if (res == 1) {
 
-                            window.location = urlprefix + "/Membership/CustomPlanGateway/";
+                            window.location = urlprefix + "/Membership/Payment/";
                         }
                         else {
                             $("#CSTMLOADER").hide();
@@ -442,209 +509,166 @@
 
 
                 });
-            }
-            else {
-                $("#CSTMLOADER").hide();
 
-                Swal.fire(localizer('Please select type of plan.(Quarterly/Annually)', 'Seleccione el tipo de plan. (Trimestral/Anual)', $('#ProhzLangDDL option:selected').val()))
+
+
 
             }
 
+            function SilverRadio() {
+                $("#CSTMLOADER").show();
 
 
+                priceId = "@Model.PriceYearlySilverID";
+                var dataId = @PlanIdSilver;
+                $.ajax({
+                    type: 'Get',
+                    url: urlprefix + '/Membership/PaymentCard?priceId=' + priceId + '&planId=' + dataId,
+                    success: function (res) {
 
-        }
+                        if (res == 1) {
+                            window.location = urlprefix + "/Membership/Payment/";
+                        }
+                        else {
+                            $("#CSTMLOADER").hide();
+                            alert("Something went wrong.");
+                        }
 
 
-        function BronzeRadio() {
-            $("#CSTMLOADER").show();
-            //var ele = document.getElementsByName('BronzePrice');
-
-
-            // Swapped out the dynamic value for static value.  Original value was `selected.val();`
-            priceId = "@Model.PriceYearlyBronzeID";
-            var dataId = @PlanIdBronze;
-            console.log(priceId)
-            $.ajax({
-                type: 'Get',
-                url: urlprefix + '/Membership/PaymentCard?priceId=' + priceId + '&planId=' + dataId,
-
-                success: function (res) {
-
-                    if (res == 1) {
-
-                        window.location = urlprefix + "/Membership/Payment/";
-                    }
-                    else {
-                        $("#CSTMLOADER").hide();
-                        alert("Something went wrong.");
                     }
 
 
-                }
-
-
-            });
+                });
 
 
 
 
-        }
-
-        function SilverRadio() {
-            $("#CSTMLOADER").show();
+            }
 
 
-            priceId = "@Model.PriceYearlySilverID";
-            var dataId = @PlanIdSilver;
-            $.ajax({
-                type: 'Get',
-                url: urlprefix + '/Membership/PaymentCard?priceId=' + priceId + '&planId=' + dataId,
-                success: function (res) {
-
-                    if (res == 1) {
-                        window.location = urlprefix + "/Membership/Payment/";
-                    }
-                    else {
-                        $("#CSTMLOADER").hide();
-                        alert("Something went wrong.");
-                    }
+            function GoldRadio() {
+                $("#CSTMLOADER").show();
 
 
-                }
+                priceId = "@Model.PriceYearlyGoldID";
+                var dataId = @PlanIdGold;
+                $.ajax({
+                    type: 'Get',
+                    url: urlprefix + '/Membership/PaymentCard?priceId=' + priceId + '&planId=' + dataId,
 
 
-            });
+                    success: function (res) {
+
+                        if (res == 1) {
+
+                            window.location = urlprefix + "/Membership/Payment/";
+                        }
+                        else {
+                            $("#CSTMLOADER").hide();
+                            alert("Something went wrong.");
+                        }
 
 
-
-
-        }
-
-
-        function GoldRadio() {
-            $("#CSTMLOADER").show();
-
-
-            priceId = "@Model.PriceYearlyGoldID";
-            var dataId = @PlanIdGold;
-            $.ajax({
-                type: 'Get',
-                url: urlprefix + '/Membership/PaymentCard?priceId=' + priceId + '&planId=' + dataId,
-
-
-                success: function (res) {
-
-                    if (res == 1) {
-
-                        window.location = urlprefix + "/Membership/Payment/";
-                    }
-                    else {
-                        $("#CSTMLOADER").hide();
-                        alert("Something went wrong.");
                     }
 
 
-                }
+                });
 
 
-            });
+            }
 
+            $(function () {
 
-        }
+                $("form[name='submitCustomPlanRequest']").validate({
 
-        $(function () {
+                    rules: {
+                        NumberOfZipcodes: {
+                            required: true,
 
-            $("form[name='submitCustomPlanRequest']").validate({
+                        },
+                        Descrption: "required",
+                        // WebApp:"required",
+                        NumberOfcategories: {
+                            required: true,
 
-                rules: {
-                    NumberOfZipcodes: {
-                        required: true,
+                        },
+
 
                     },
-                    Descrption: "required",
-                    // WebApp:"required",
-                    NumberOfcategories: {
-                        required: true,
-
+                    // Specify validation error messages
+                    messages: {
+                        NumberOfZipcodes: localizer('Please Enter Number Of Zip Codes.', 'Ingrese el número de códigos postales.', $('#ProhzLangDDL option:selected').val()),
+                        NumberOfcategories: localizer('Please Enter Number Of categories.', 'Ingrese el número de categorías.', $('#ProhzLangDDL option:selected').val()),
+                        // WebApp:"Please choose one.",
+                        Descrption: localizer('Please enter Descrption.', 'Ingrese la descripción.', $('#ProhzLangDDL option:selected').val())
                     },
 
+                    //submitHandler: function (form) {
+                    //    form.submit();
+                    //}
+                });
 
-                },
-                // Specify validation error messages
-                messages: {
-                    NumberOfZipcodes: localizer('Please Enter Number Of Zip Codes.', 'Ingrese el número de códigos postales.', $('#ProhzLangDDL option:selected').val()),
-                    NumberOfcategories: localizer('Please Enter Number Of categories.', 'Ingrese el número de categorías.', $('#ProhzLangDDL option:selected').val()),
-                    // WebApp:"Please choose one.",
-                    Descrption: localizer('Please enter Descrption.', 'Ingrese la descripción.', $('#ProhzLangDDL option:selected').val())
-                },
 
-                //submitHandler: function (form) {
-                //    form.submit();
-                //}
+
             });
 
 
-
-        });
-
-
-        function showData() {
-            // var dataDiv = document.getElementById("show90");
-            // dataDiv.style.display = "none";
-            var dataDiv2 = document.getElementById("show365");
-            dataDiv2.style.display = "block";
+            function showData() {
+                // var dataDiv = document.getElementById("show90");
+                // dataDiv.style.display = "none";
+                var dataDiv2 = document.getElementById("show365");
+                dataDiv2.style.display = "block";
 
 
-        }
+            }
 
-        // function hideData() {
-        //     var dataDiv = document.getElementById("show365");
-        //     dataDiv.style.display = "none";
-        //     var dataDiv2 = document.getElementById("show90");
-        //     dataDiv2.style.display = "block";
-        //     dataDiv2.style.visibility = 'visible'
-        //     $('#show90').removeAttr('hidden');
-        // }
+            // function hideData() {
+            //     var dataDiv = document.getElementById("show365");
+            //     dataDiv.style.display = "none";
+            //     var dataDiv2 = document.getElementById("show90");
+            //     dataDiv2.style.display = "block";
+            //     dataDiv2.style.visibility = 'visible'
+            //     $('#show90').removeAttr('hidden');
+            // }
 
-        function showDatasilver() {
-            // var dataDiv = document.getElementById("showsilver90");
-            // dataDiv.style.display = "none";
-            var dataDiv2 = document.getElementById("showsilver365");
-            dataDiv2.style.display = "block";
+            function showDatasilver() {
+                // var dataDiv = document.getElementById("showsilver90");
+                // dataDiv.style.display = "none";
+                var dataDiv2 = document.getElementById("showsilver365");
+                dataDiv2.style.display = "block";
 
-        }
+            }
 
-        // function hideDatasilver() {
-        //     var dataDiv = document.getElementById("showsilver365");
-        //     dataDiv.style.display = "none";
-        //     var dataDiv2 = document.getElementById("showsilver90");
-        //     dataDiv2.style.display = "block";
-        //     dataDiv2.style.visibility = 'visible'
-        //     $('#showsilver90').removeAttr('hidden');
-        // }
+            // function hideDatasilver() {
+            //     var dataDiv = document.getElementById("showsilver365");
+            //     dataDiv.style.display = "none";
+            //     var dataDiv2 = document.getElementById("showsilver90");
+            //     dataDiv2.style.display = "block";
+            //     dataDiv2.style.visibility = 'visible'
+            //     $('#showsilver90').removeAttr('hidden');
+            // }
 
 
-        function showDatagold() {
-            // var dataDiv = document.getElementById("showgold90");
-            // dataDiv.style.display = "none";
-            var dataDiv2 = document.getElementById("showgold365");
-            dataDiv2.style.display = "block";
+            function showDatagold() {
+                // var dataDiv = document.getElementById("showgold90");
+                // dataDiv.style.display = "none";
+                var dataDiv2 = document.getElementById("showgold365");
+                dataDiv2.style.display = "block";
 
-        }
+            }
 
-        // function hideDatagold() {
-        //     var dataDiv = document.getElementById("showgold365");
-        //     dataDiv.style.display = "none";
-        //     var dataDiv2 = document.getElementById("showgold90");
-        //     dataDiv2.style.display = "block";
-        //     dataDiv2.style.visibility = 'visible'
-        //     $('#showgold90').removeAttr('hidden');
-        // }
+            // function hideDatagold() {
+            //     var dataDiv = document.getElementById("showgold365");
+            //     dataDiv.style.display = "none";
+            //     var dataDiv2 = document.getElementById("showgold90");
+            //     dataDiv2.style.display = "block";
+            //     dataDiv2.style.visibility = 'visible'
+            //     $('#showgold90').removeAttr('hidden');
+            // }
 
 
 
-    </script>
+        </script>
 
 </body>
 </html>
