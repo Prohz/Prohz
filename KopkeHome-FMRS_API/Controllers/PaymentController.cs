@@ -311,6 +311,7 @@ namespace KopkeHome_FMRS_API.Controllers
                 var stripeCustomer = CreateCustomer(userBilling.User);
                 var priceService = new PriceService();
                 var CurrentDomain = _configuration.GetValue<string>("Stripe:SecretKey");
+                var stripePriceId = _configuration.GetValue<string>("Stripe:PriceId");
                 var options = new Stripe.Checkout.SessionCreateOptions
                 {
 
@@ -325,7 +326,7 @@ namespace KopkeHome_FMRS_API.Controllers
                         },
                         new SessionLineItemOptions
                         {
-                            Price = "price_1OoaNqILheuScUW2dxLO3CsB", // Replace with the actual Price ID of your service fee in Stripe
+                            Price = stripePriceId, // Replace with the actual Price ID of your service fee in Stripe
                             Quantity = 1,
                         },
                     },
