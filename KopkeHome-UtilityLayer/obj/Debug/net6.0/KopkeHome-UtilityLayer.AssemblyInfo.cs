@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KopkeHome-UtilityLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88e0125001b8f49818cdb96b4919002f6ad0b469")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72a6ed06f136676c0839d258999787f3b709ad94")]
 [assembly: System.Reflection.AssemblyProductAttribute("KopkeHome-UtilityLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KopkeHome-UtilityLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
