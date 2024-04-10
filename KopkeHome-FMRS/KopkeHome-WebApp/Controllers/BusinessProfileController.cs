@@ -180,7 +180,7 @@ namespace KopkeHome_WebApp.Controllers
                     IsFacebookPage = VM.IsFacebookPage,
                     IsCash = VM.IsCash,
                     IsCompanyWebsite = VM.IsCompanyWebsite,
-                    IsContactedByContractors = VM.IsContactedByContractors,
+                    IsContactedByContractors = true,
                     IsContactedByHomeowners = VM.IsContactedByHomeowners,
                     IsLiabilityInsurance = VM.IsLiabilityInsurance,
                     IsEstimateCharge = VM.IsEstimateCharge,
