@@ -31,7 +31,7 @@ namespace KopkeHome_BusinessLayer.Services
         private readonly IMapper Mapper;
         private readonly ILogger<AccountService> _logger;
         private readonly IConfiguration _configuration;
-        public AccountService(IConfiguration iConfig, ILogger<AccountService> logger, UserManager<User> userManager, IRepository<User> repository, IEmailService email,
+        public AccountService(IConfiguration iConfig, ILogger<AccountService> logger, IRepository<ProhzReferral> referral, UserManager<User> userManager, IRepository<User> repository, IEmailService email,
              ApplicationDbContext dbContext, IRepository<VerifyOTP> OtpRepository, IMapper mapper)
         {
             _configuration = iConfig;
@@ -42,6 +42,7 @@ namespace KopkeHome_BusinessLayer.Services
             this.Mapper = mapper;
             _OtpRepository = OtpRepository;
             _logger = logger;
+            _iRefferal = referral;
 
             StripeConfiguration.ApiKey = _configuration["Stripe:SecretKey"];
         }
@@ -1216,31 +1217,39 @@ namespace KopkeHome_BusinessLayer.Services
                 try
                 {
                     bool valid = false;
-                    var result = await _iRefferal.FindAllByCondition(a => a.MemberId.Equals(referralId));
-                    if (result.Count > 0)
+
+                    // Ensure that referralId can be converted to a long
+                    if (long.TryParse(referralId, out long parsedReferralId))
                     {
-                        valid = true;
+                        var result = await _iRefferal.FindAllByCondition(a => a.MemberId == parsedReferralId);
+
+                        if (result != null && result.Count() > 0) // Updated to use Count() for IEnumerable
+                        {
+                            valid = true;
+                        }
                     }
                     else
                     {
-                        valid = false;
+                        _logger.LogError("Invalid referral ID format.");
                     }
+
                     return valid;
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex.Message);
-                    throw ex;
+                    _logger.LogError(ex, "Error checking referral ID.");
+                    throw;
                 }
             }
             else
             {
-                return true; // or return true, depending on your logic when referralId is null
+                return true; // Adjust this according to your logic for handling null referralId
             }
         }
-    }
 
     }
+
+}
 
 
 
