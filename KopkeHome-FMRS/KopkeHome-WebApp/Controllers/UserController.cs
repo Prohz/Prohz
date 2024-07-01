@@ -264,6 +264,7 @@ namespace KopkeHome_WebApp.Controllers
             try
             {
                 // ModelState.Remove("MemberReferralId");
+             
                 if (ModelState.IsValid)
                 {
                     HttpContext.Response.Cookies.Append("RoleId", userViewModel.RoleId.ToString());
