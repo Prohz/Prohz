@@ -204,19 +204,18 @@ $(document).ready(function () {
     $("#HeardAboutUsContrcactor").change(function (e) {
         e.stopImmediatePropagation();
         if ($(this).val() == 2) {
-            $('.ClosedMemberRef').css("display", "block");
+            
             $('.ClosedSalesAsst').css("display", "none");
             $('input[name="SalesAssociate"]').val('');
         }
         else if ($(this).val() == 14) {
             $('.ClosedSalesAsst').css("display", "block");
-            $('.ClosedMemberRef').css("display", "none");
-            $('input[name="MemberReferralId"]').val('');
+            
+        
         }
         else {
             $('.ClosedSalesAsst').css("display", "none");
-            $('.ClosedMemberRef').css("display", "none");
-            $('input[name="MemberReferralId"]').val('');
+        
             $('input[name="SalesAssociate"]').val('');
         }
         //console.log($(this).val());
