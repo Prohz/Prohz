@@ -22,8 +22,7 @@
             </div>
         </div>
         <div class="form-group col-md-6 col-lg-4">
-            <div class=" rgstr-input-form-box">';
-                '
+            <div class=" rgstr-input-form-box">
                 <label class="required-labl" for="BusinessName">@Localizer["Business Name"]</label>
                 <input maxLength="50" type="text" asp-for="BusinessName" name="BusinessName" placeholder="@Localizer["Business Name"]" class="form-control input-sm" />
                 <span asp-validation-for="BusinessName" class="text-danger"></span>
@@ -104,7 +103,7 @@
             <div class=" rgstr-input-form-box">
                 <label class="required-labl" for="HeardAboutUs">@Localizer["How did you hear about us?"]</label>
                 <div class="">
-                    <select id="HeardAboutUsContrcactor" asp-for="HeardAboutProhzFrom" class="form-select form-control w-100" onchange="toggleMemberIdField()">
+                    <select id="HeardAboutUsContrcactor" asp-for="HeardAboutProhzFrom" class="form-select form-control w-100" >
                         <option value="">@Localizer["---Select---"]</option>
                         <option value="5">@Localizer["Facebook"]</option>
                         <option value="6">@Localizer["Instagram"]</option>
@@ -124,18 +123,28 @@
 
 
 
-
-
-        <div class="form-group col-md-6 col-lg-4 accept-policy ClosedMemberRef" style="display:none">
-                <div class=" rgstr-input-form-box">
-                    <label class="required-labl" for="MemberReferralId">@Localizer["Member Id"] #</label>
-                    <input  maxLength="10" type="number" asp-for="MemberReferralId" placeholder="@Localizer["Member Id"]" class="form-control input-sm" />
-                    <span asp-validation-for="MemberReferralId" class="text-danger"></span>
+        <div class="form-group col-md-6 col-lg-4">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="SecretCodeNeeded">@Localizer["do you have a secret code?"]</label>
+                <div class="">
+                    <select id="HeardAboutUsContrcactor" asp-for="SecretCodeNeeded" class="form-select form-control w-100">
+                        <option value=true>@Localizer["Yes"]</option>
+                        <option value=false>@Localizer["No"]</option>
+                    </select>
+                    <span asp-validation-for="SecretCodeNeeded" class="text-danger"></span>
                 </div>
+
             </div>
+        </div>
 
 
-
+        <div class="form-group col-md-6 col-lg-4 accept-policy ClosedMemberRef">
+            <div class=" rgstr-input-form-box">
+                <label class="required-labl" for="MemberReferralId">@Localizer["Secret Code"] #</label>
+                <input maxLength="10" type="number" asp-for="MemberReferralId" placeholder="@Localizer["Secret Code"]" class="form-control input-sm" />
+                <span asp-validation-for="MemberReferralId" class="text-danger"></span>
+            </div>
+        </div>
 
 
 
@@ -191,18 +200,6 @@
         urlprefix = '/KopkeHome-FMRS-QA';
     }
 
-    function toggleMemberIdField() {
-        var heardAboutUsSelect = document.getElementById("HeardAboutUsContrcactor");
-        var member = document.getElementById("memberIdField"); // Ensure this ID matches the ID in your HTML
-
-        if (heardAboutUsSelect.value === "10") {
-            console.log('changing ' + memberIdField.style.display)
-            member.style.display = "block";
-            console.log('changed ' + memberIdField.style.display)
-        } else {
-            member.style.display = "none";
-        }
-    }
 
 
     function GetLegalFiles() {

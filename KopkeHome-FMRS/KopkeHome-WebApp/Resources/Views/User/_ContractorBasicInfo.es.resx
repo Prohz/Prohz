@@ -210,6 +210,9 @@
   <data name="SCORE" xml:space="preserve">
     <value>PUNTAJE</value>
   </data>
+  <data name="Secret Code" xml:space="preserve">
+    <value>Código Secreto</value>
+  </data>
   <data name="State" xml:space="preserve">
     <value>Expresar</value>
   </data>

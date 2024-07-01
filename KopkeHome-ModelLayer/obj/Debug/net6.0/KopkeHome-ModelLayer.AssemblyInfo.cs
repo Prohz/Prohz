@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KopkeHome-ModelLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a893f96d058488a19afe45a778cc852f251f3363")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a46721dca5c7c16ed460807852ba8cb05d08799")]
 [assembly: System.Reflection.AssemblyProductAttribute("KopkeHome-ModelLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KopkeHome-ModelLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

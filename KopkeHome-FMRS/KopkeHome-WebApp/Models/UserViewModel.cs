@@ -81,5 +81,10 @@ namespace KopkeHome_WebApp.Models
         public int TermAndConditions { get; set; }
         [Required(ErrorMessage = "Please mention how did you hear about prohz")]
         public int HeardAboutProhzFrom { get; set; }
+
+        [Required(ErrorMessage = "Please mention if you are using a secret code or not")]
+        public bool? SecretCodeNeeded { get; set; }
+
+
     }
 }
