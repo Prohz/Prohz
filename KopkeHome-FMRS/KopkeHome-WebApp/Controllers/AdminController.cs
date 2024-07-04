@@ -41,7 +41,23 @@ namespace KopkeHome_WebApp.Controllers
         {
             _CurrentUser = HttpContext.Session.Get<User>("CurrentUser");
             HttpContext.Response.Cookies.Append("CurrentUserName", _CurrentUser.FirstName + " " + _CurrentUser.LastName);
-            HttpContext.Response.Cookies.Append("CurrentUserProfilePic", _CurrentUser.ProfilePicture);
+
+
+            var profilePicture = _CurrentUser.ProfilePicture;
+            if (!string.IsNullOrEmpty(profilePicture))
+            {
+                HttpContext.Response.Cookies.Append("CurrentUserProfilePic", profilePicture);
+            }
+            else
+            {
+                // Optionally handle the case where ProfilePicture is null or empty
+                // For example, you can log it or set a default value
+                Console.WriteLine("Profile picture is null or empty. No cookie set for ProfilePicture.");
+                // HttpContext.Response.Cookies.Append("CurrentUserProfilePic", "default_profile_picture.jpg"); // if you have a default image
+            }
+
+
+            //HttpContext.Response.Cookies.Append("CurrentUserProfilePic", _CurrentUser.ProfilePicture);
             using (var client = new HttpClient())
             {
 
