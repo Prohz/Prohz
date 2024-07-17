@@ -27,12 +27,12 @@
 <body>
     <nav class="navbar navbar-expand-xl  fixed-top shadow" id="top-nav-header">
         
-        <a class="navbar-brand " href="@Url.Action("index", "dashboard")">
+        <a class="navbar-brand " href="@Url.Action("index", "home")">
             <img  id="Logoimgurl" src="~/images/Kopke-brand-logo.png"  alt="logo" class="ml-1 Logoimgurl">
         </a>
 
-        <a class="navbar-brand " href="@Url.Action("index", "home")">
-            <p class ="mb-0">Back to prohz.net</p>
+        <a class="navbar-brand btn btn-secondary" href="@Url.Action("index", "dashboard")">
+            <p class ="mb-0" >Search for members</p>
         </a>
 
         <div class="d-flex align-items-center" >
@@ -77,7 +77,7 @@
                             if(Model.LoggedInUser.RoleId!=4)
                             {
                              <a class="dropdown-item" href="@Url.Action("businessprofiledetail", "dashboard")"><i class="fa fa-pencil" aria-hidden="true"></i>@Localizer["View Business Profile"]</a>
-         <a class="dropdown-item" href="@Url.Action("UpdateZipcodeAndCategories", "dashboard")"><i class="fa fa-gear" aria-hidden="true"></i>@Localizer["Change Zipcodes/Categories"]</a>
+         <a class="dropdown-item" href="@Url.Action("UpdateZipcodeAndCategories", "dashboard")"><i class="fa fa-gear" aria-hidden="true"></i>@Localizer["`Zipcodes/Categories"]</a>
 
                             }
                         }
