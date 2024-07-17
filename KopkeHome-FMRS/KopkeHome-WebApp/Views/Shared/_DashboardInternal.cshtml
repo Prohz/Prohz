@@ -31,6 +31,10 @@
             <img src="~/images/Kopke-brand-logo.png" alt="logo" class="ml-1 Logoimgurl">
         </a>
 
+        <a class="navbar-brand btn btn-secondary" href="@Url.Action("index", "dashboard")">
+            <p class="mb-0">Search for members</p>
+        </a>
+
         <div class="d-flex align-item-center" >
            
              @await Html.PartialAsync("SelectCulture")
