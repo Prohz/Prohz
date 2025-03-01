@@ -36,36 +36,54 @@ $RECYCLE.BIN/
 # JetBrains Rider
 .idea/
 
-/bin/
-/obj/
-/KopkeHome-BusinessLayer/bin
-/KopkeHome-BusinessLayer/obj/Debug/net6.0
-/KopkeHome-BusinessLayer/obj/Release/net6.0
-/KopkeHome-DataAccessLayer/bin/Release/net6.0
-/KopkeHome-DataAccessLayer/obj/Debug/net6.0
-/KopkeHome-DataAccessLayer/obj/Release/net6.0
-*.json
-/KopkeHome-FMRS_API/logs
-/KopkeHome-FMRS_API/obj/Debug/net6.0/3e7be55c-4a1b-45e0-a985-0dc04c052424_KopkeHome-FMRS_API.pdb
-/KopkeHome-FMRS_API/obj/Debug/net6.0/KopkeHome-FMRS_API.assets.cache
+# Build directories
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Oo]ut/
+
+# Visual Studio directory
+.vs/
+
+# Build artifacts
 *.dll
-*.props
-*.cache
+*.pdb
+*.exe
 *.bin
+*.cache
 *.vsidx
+*.props
 *.pubxml
 *.testlog
-/KopkeHome-FMRS/.vs/KopkeHome-FMRS/v17/TestStore/0/testlog.manifest
-/KopkeHome-FMRS/.vs/KopkeHome-FMRS/v17/HierarchyCache.v1.txt
 *.v2
-/KopkeHome-FMRS_API/obj/Release/net6.0/PublishOutputs.bede6ab3f4.txt
-/KopkeHome-FMRS/KopkeHome-WebApp/bin/Release/net6.0
-/KopkeHome-FMRS/KopkeHome-WebApp/Logs
-/KopkeHome-FMRS/KopkeHome-WebApp/obj/Debug/net6.0
-/KopkeHome-FMRS/KopkeHome-WebApp/obj/Release/net6.0
-/KopkeHome-FMRS/KopkeHome-WebApp/obj/project.nuget.cache
-/KopkeHome-FMRS_API/obj/project.nuget.cache
-/KopkeHome-LogManager/obj/project.nuget.cache
-/KopkeHome-ModelLayer/obj/project.nuget.cache
-/KopkeHome-UtilityLayer/obj/project.nuget.cache
-/KopkeHome-FMRS_API/obj/Debug/net6.0/KopkeHome-FMRS_API.AssemblyInfoInputs.cache
+
+# Logs
+*.log
+/KopkeHome-FMRS_API/logs/
+
+# Project specific ignores
+/KopkeHome-FMRS/.vs/
+**/obj/Debug/
+**/obj/Release/
+**/bin/Debug/
+**/bin/Release/
+
+# JSON files to ignore (be specific)
+**/obj/**/*.json
+**/bin/**/*.json
+**/project.nuget.cache
+
+# Important JSON files to keep
+!launchSettings.json
+!.config/**/*.json
+!global.json
+!appsettings.json
+!appsettings.Development.json
+!package.json
+!package-lock.json
+!omnisharp.json

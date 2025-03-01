@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\KopkeHome-FMRS_API.props" />
-</Project>
