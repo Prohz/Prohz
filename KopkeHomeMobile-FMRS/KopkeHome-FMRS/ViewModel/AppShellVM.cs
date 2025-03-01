@@ -21,16 +21,16 @@ namespace KopkeHome_FMRS.ViewModel
     public partial class AppShellVM : BaseViewModel
     {
         private IServices aPIServices;
-     
+
         public  AppShellVM()
-        {               
+        {
             EditUserProfileViewModel.updateprofilePicEvent -= EditUserProfileViewModel_updateprofilePicEvent;
             EditUserProfileViewModel.updateprofilePicEvent += EditUserProfileViewModel_updateprofilePicEvent;
-            aPIServices = new Services();           
+            aPIServices = new Services();
             MessagingCenter.Subscribe<WorkStatusViewModel>(this, Constants.WorkStatusChanged, (sender) =>
             {
                 try
-                {                   
+                {
                     Status = Preferences.Get(Constants.WorkStatus, "");
                     UserID = Preferences.Get(Constants.UserID, "");
                     if (Status == ResourceFileEnglish.DigitZero)
@@ -44,7 +44,7 @@ namespace KopkeHome_FMRS.ViewModel
                     if (Status == ResourceFileEnglish.DigitTwo)
                     {
                         Current = Constants.Booked;
-                    }                   
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -54,7 +54,7 @@ namespace KopkeHome_FMRS.ViewModel
         }
 
         private void EditUserProfileViewModel_updateprofilePicEvent(string _imagebase64, string _firstname, string _lastname)
-        {          
+        {
             MemoryStream stream = new(Convert.FromBase64String(_imagebase64));
             ImageSource image = ImageSource.FromStream(() => stream);
             ProfileImage = image;
@@ -83,13 +83,13 @@ namespace KopkeHome_FMRS.ViewModel
                         AccountStatus = AppResources.txtNotVerified;
                         AccountStatusIcon = "";
                     }
-                    MemberId = response1.UniqueMemberId.ToString();                   
+                    MemberId = response1.UniqueMemberId.ToString();
                     Preferences.Set(Constants.UserID, response1.Id.ToString());
                     Preferences.Set(Constants.ContractorId, response1.Id.ToString());
-                    Preferences.Set(Constants.Email, response1.Email);                  
+                    Preferences.Set(Constants.Email, response1.Email);
                     Preferences.Set(Constants.WorkStatus, response1.WorkStatus);
                     Status = response1.WorkStatus.ToString();
-                    Preferences.Set(Constants.UserProfilePic, Constants.ImagesBaseUrl + response1.ProfilePicture);                               
+                    Preferences.Set(Constants.UserProfilePic, Constants.ImagesBaseUrl + response1.ProfilePicture);
                     if (response1.ProfilePicture == null)
                     {
                        // ProfileImage = "usericon.png";
@@ -128,7 +128,7 @@ namespace KopkeHome_FMRS.ViewModel
             {
                 Crashes.TrackError(ex);
             }
-            
+
         }
         public async Task SetStatus()
         {
@@ -159,17 +159,17 @@ namespace KopkeHome_FMRS.ViewModel
                 bool Res = await Application.Current.MainPage.DisplayAlert(AppResources.Alert, AppResources.DoYouWantlogOut, AppResources.Yes, AppResources.Cancel);
                 if (Res)
                 {
-                    Constants.token = String.Empty;                                   
+                    Constants.token = String.Empty;
                     Preferences.Set(Constants.UserProfilePic, String.Empty);
                     Preferences.Set(Constants.UserID, String.Empty);
-                    Preferences.Set(Constants.WorkStatus, String.Empty);                 
+                    Preferences.Set(Constants.WorkStatus, String.Empty);
                     App.Current.MainPage = new Login();
                 }
             }
             catch (Exception ex)
             {
                 Crashes.TrackError(ex);
-            }        
+            }
         }
         #region
         private string id;
@@ -253,6 +253,6 @@ namespace KopkeHome_FMRS.ViewModel
         string accountStatus;
         [ObservableProperty]
         ImageSource accountStatusIcon;
-        #endregion 
+        #endregion
     }
 }
