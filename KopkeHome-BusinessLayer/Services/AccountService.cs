@@ -630,7 +630,7 @@ namespace KopkeHome_BusinessLayer.Services
         }
 
         /// <summary>
-        /// Gets list of states 
+        /// Gets list of states
         /// </summary>
         /// <returns></returns>
         public async Task<List<State>> GetStateList()
@@ -650,7 +650,7 @@ namespace KopkeHome_BusinessLayer.Services
         }
 
         /// <summary>
-        /// Gets list of city 
+        /// Gets list of city
         /// </summary>
         /// <returns></returns>
         public async Task<List<City>> GetCitesList(int Id)
@@ -1025,10 +1025,16 @@ namespace KopkeHome_BusinessLayer.Services
                 model.States = await _dbContext.State.ToListAsync();
                 model.ZipCodes = await _dbContext.ZipCode.ToListAsync();
                 model.Categories = await _dbContext.Categories.ToListAsync();
-                var Subscriptions = await _dbContext.UserMembershipSubscriptions.Where(x => x.UserId == userid).FirstOrDefaultAsync();
+                var subscriptions = await _dbContext.UserMembershipSubscriptions.Where(x => x.UserId == userid).FirstOrDefaultAsync();
 
-                var benifitsPlan = await _dbContext.MembershipBenefitsPlan.FindAsync(Subscriptions.PlanId);
-                if (benifitsPlan.Title == "Diamond")
+                var benifitsPlan = await _dbContext.MembershipBenefitsPlan.FindAsync(subscriptions.PlanId);
+
+                if (benifitsPlan == null)
+                {
+                    benifitsPlan = new MembershipBenifitsPlan();
+                }
+
+                if (benifitsPlan != null && benifitsPlan?.Title == "Diamond")
                 {
                     var customplan = await _dbContext.CustomZipcodesRequest.Where(x => x.UserId == userid).SingleOrDefaultAsync();
                     if (customplan != null)
@@ -1044,7 +1050,7 @@ namespace KopkeHome_BusinessLayer.Services
                     model.LimitZipCodes = Convert.ToInt32(benifitsPlan.ZipCodes);
                 }
 
-                model.PlanId = Subscriptions.PlanId;
+                model.PlanId = subscriptions.PlanId;
 
                 model.UserMembershipCategories = await _dbContext.UserMembershipCategories.Where(x => x.UserId == userid).ToListAsync();
                 model.UserMembershipZipcodes = await _dbContext.UserMembershipZipcodes.Where(x => x.UserId == userid).ToListAsync();
