@@ -232,25 +232,7 @@
 
 
 
-                        <div class="form-group col-md-6 col-lg-4  ">
-                            <div class=" rgstr-input-form-box">
-                                <label for="CommercialLocation">@Localizer["Do you have a commercial location where Other Contractors can meet with you?"]</label>
-                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
-                                    <div class="custom-radio ">
-                                        <input asp-for="CommercialLocation" id="credit5" class="custom-control-input" type="radio" value="true" />
-                                        <label class="custom-control-label" for="credit5">@Localizer["Yes"] </label>
-                                        <span asp-for="CommercialLocation" class="text-danger"></span>
-                                    </div>
-                                    <div class="custom-radio">
-                                        <input asp-for="CommercialLocation" id="credit6" class="custom-control-input" type="radio" value="false" />
-                                        <label class="custom-control-label" for="credit6">@Localizer["No"]</label>
-                                        <span asp-for="CommercialLocation" class="text-danger"></span>
-                                    </div>
-                                </div>
 
-                                <span name="CommercialLocation1" class="text-danger field-validation-valid" data-valmsg-for="CommercialLocation"></span>
-                            </div>
-                        </div>
 
 
                         <div class="form-group col-md-6 col-lg-4  ">
@@ -263,13 +245,7 @@
 
 
 
-                        <div class="form-group col-md-6 col-lg-4  ">
-                            <div class=" rgstr-input-form-box">
-                                <label for="JobSiteCrews">@Localizer["How many job site crews do you have?"]</label>
-                                <input type="number" asp-for="JobSiteCrews" value="@Model.JobSiteCrews" placeholder="@Localizer["Enter number of job site crews"]" class="form-control" />
-                                <span asp-validation-for="JobSiteCrews" class="text-danger"></span>
-                            </div>
-                        </div>
+             
 
                         <div class="form-group col-md-6 col-lg-4  ">
                             <div class=" rgstr-input-form-box">
@@ -295,52 +271,8 @@
 
 
 
-                        <div class="form-group col-md-6 col-lg-4  ">
-                            <div class="rgstr-input-form-box">
-                                <label for="NormalBusinessHours">@Localizer["What are your normal business hours?"]</label>
-                                <input maxLength="50" type="text" value="@Model.NormalBusinessHours" asp-for="NormalBusinessHours" placeholder="@Localizer["Enter your normal business hours"]" class="form-control" />
-                                <span asp-validation-for="NormalBusinessHours" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-6 col-lg-4  ">
-                            <div class=" rgstr-input-form-box">
-                                <label for="Is24HoursPhoneAnswering">@Localizer["Do you have 24 hour phone answering?"] </label>
-                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
-                                    <div class="custom-radio ">
-                                        <input asp-for="Is24HoursPhoneAnswering" id="credit9" class="custom-control-input" type="radio" value="true" />
-                                        <label class="custom-control-label" for="credit9">@Localizer["Yes"] </label>
-                                        <span asp-for="Is24HoursPhoneAnswering" class="text-danger"></span>
-                                    </div>
-                                    <div class="custom-radio">
-                                        <input asp-for="Is24HoursPhoneAnswering" id="credit10" class="custom-control-input" type="radio" value="false" />
-                                        <label class="custom-control-label" for="credit10">@Localizer["No"]</label>
-                                        <span asp-for="Is24HoursPhoneAnswering" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <span name="Is24HoursPhoneAnswering1" class="text-danger field-validation-valid" data-valmsg-for="Is24HoursPhoneAnswering"></span>
-                            </div>
-                        </div>
 
 
-                        <div class="form-group col-md-6 col-lg-4  ">
-                            <div class=" rgstr-input-form-box">
-                                <label for="IsOfferEmergencyServices">@Localizer["Do you offer emergency services?"]</label>
-                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
-                                    <div class="custom-radio ">
-                                        <input asp-for="IsOfferEmergencyServices" id="credit11" class="custom-control-input" type="radio" value="true" />
-                                        <label class="custom-control-label" for="credit11">@Localizer["Yes"] </label>
-                                        <span asp-for="IsOfferEmergencyServices" class="text-danger"></span>
-                                    </div>
-                                    <div class="custom-radio">
-                                        <input asp-for="IsOfferEmergencyServices" id="credit12" class="custom-control-input" type="radio" value="false" />
-                                        <label class="custom-control-label" for="credit12">@Localizer["No"]</label>
-                                        <span asp-for="IsOfferEmergencyServices" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <span name="IsOfferEmergencyServices1" class="text-danger field-validation-valid" data-valmsg-for="IsOfferEmergencyServices"></span>
-                            </div>
-                        </div>
 
                         <div class="form-group col-md-6 col-lg-4  ">
                             <div class=" rgstr-input-form-box">
@@ -606,136 +538,15 @@
 
 
 
-                        <div class="form-group col-md-6 col-lg-4  ">
-                            <div class=" rgstr-input-form-box">
-                                <label for="IsEstimateCharge">@Localizer["Do you give “Free Estimates”?"]</label>
-                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
-                                    <div class="custom-radio ">
-                                        <input asp-for="IsEstimateCharge" id="credit19" class="custom-control-input" type="radio" value="true" />
-                                        <label class="custom-control-label" for="credit19">@Localizer["Yes"] </label>
-                                        <span asp-for="IsEstimateCharge" class="text-danger"></span>
-                                    </div>
-                                    <div class="custom-radio">
-                                        <input asp-for="IsEstimateCharge" id="credit20" class="custom-control-input" type="radio" value="false" />
-                                        <label class="custom-control-label" for="credit20">@Localizer["No"]</label>
-                                        <span asp-for="IsEstimateCharge" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <span name="IsEstimateCharge1" class="text-danger field-validation-valid" data-valmsg-for="IsEstimateCharge"></span>
-                            </div>
-                        </div>
+    
 
-                        @{
-                            var IsEstimateCharge = Model.IsEstimateCharge;
-                            if (IsEstimateCharge)
-                            {
-                                <div class="form-group col-md-6 col-lg-4" id="webEstimateCharge" style="display:none">
-                                    <div class=" rgstr-input-form-box">
-                                        <label for="EstimateCharge">@Localizer["If No, what do you charge for an estimate?"]</label>
-                                        <input type="number" asp-for="EstimateCharge" placeholder="@Localizer["$0.00"]" class="form-control" />
-                                        <span asp-validation-for="EstimateCharge" class="text-danger"></span>
-                                    </div>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="form-group col-md-6 col-lg-4" id="webEstimateCharge">
-                                    <div class=" rgstr-input-form-box">
-                                        <label for="EstimateCharge">@Localizer["If No, what do you charge for an estimate?"]</label>
-                                        <input type="number" asp-for="EstimateCharge" placeholder="@Localizer["$0.00"]" class="form-control" />
-                                        <span asp-validation-for="EstimateCharge" class="text-danger"></span>
-                                    </div>
-                                </div>
-
-                            }
-                        }
-
-                        <div class="form-group col-md-6 col-lg-4  ">
-                            <div class=" rgstr-input-form-box">
-                                <label for="IsDesignServices">@Localizer["Do you offer design services?"]</label>
-                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
-                                    <div class="custom-radio ">
-                                        <input asp-for="IsDesignServices" id="credit21" class="custom-control-input" type="radio" value="true" />
-                                        <label class="custom-control-label" for="credit21">@Localizer["Yes"] </label>
-                                        <span asp-for="IsDesignServices" class="text-danger"></span>
-                                    </div>
-                                    <div class="custom-radio">
-                                        <input asp-for="IsDesignServices" id="credit22" class="custom-control-input" type="radio" value="false" />
-                                        <label class="custom-control-label" for="credit22">@Localizer["No"]</label>
-                                        <span asp-for="IsDesignServices" class="text-danger"></span>
-                                    </div>
-                                </div>
-
-                                <span name="IsDesignServices1" class="text-danger field-validation-valid" data-valmsg-for="IsDesignServices"></span>
-                            </div>
-                        </div>
-
-                        @{
-                            var IsDesignServices = Model.IsDesignServices;
-                            if (IsDesignServices)
-                            {
-                                <div class="form-group col-md-6 col-lg-4  " id="webDesignServices">
-                                    <div class=" rgstr-input-form-box">
-                                        <label for="DesignServices">@Localizer["If Yes, what do you charge for design services?"]</label>
-                                        <input type="number" asp-for="DesignServices" placeholder="@Localizer["$0.00"]" class="form-control" />
-                                        <span asp-validation-for="DesignServices" class="text-danger"></span>
-                                    </div>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="form-group col-md-6 col-lg-4  " id="webDesignServices" style="display:none">
-                                    <div class=" rgstr-input-form-box">
-                                        <label for="DesignServices">@Localizer["If Yes, what do you charge for design services?"]</label>
-                                        <input type="number" asp-for="DesignServices" placeholder="@Localizer["$0.00"]" class="form-control" />
-                                        <span asp-validation-for="DesignServices" class="text-danger"></span>
-                                    </div>
-                                </div>
-                            }
-
-                        }
+        
 
 
 
 
-                        <div class="form-group col-md-6 col-lg-4  ">
-                            <div class=" rgstr-input-form-box">
-                                <label for="IsContactedByHomeowners">@Localizer["Do you want to be contacted directly by Homeowners?"] </label>
-                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
-                                    <div class="custom-radio ">
-                                        <input asp-for="IsContactedByHomeowners" id="credit23" class="custom-control-input" type="radio" value="true" />
-                                        <label class="custom-control-label" for="credit23">@Localizer["Yes"] </label>
-                                        <span asp-for="IsContactedByHomeowners" class="text-danger"></span>
-                                    </div>
-                                    <div class="custom-radio">
-                                        <input asp-for="IsContactedByHomeowners" id="credit24" class="custom-control-input" type="radio" value="false" />
-                                        <label class="custom-control-label" for="credit24">@Localizer["No"]</label>
-                                        <span asp-for="IsContactedByHomeowners" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <span name="IsContactedByHomeowners1" class="text-danger field-validation-valid" data-valmsg-for="IsContactedByHomeowners"></span>
-                            </div>
-                        </div>
 
-                        <div class="form-group col-md-6 col-lg-4  ">
-                            <div class=" rgstr-input-form-box">
-                                <label for="IsContactedBySubcontractors">@Localizer["Do you want to be contacted directly by Other Contractors?"]</label>
-                                <div class="d-flex justify-content-between w-50 question-text-radio-btn">
-                                    <div class="custom-radio ">
-                                        <input asp-for="IsContactedBySubcontractors" id="credit25" class="custom-control-input" type="radio" value="true" />
-                                        <label class="custom-control-label" for="credit25">@Localizer["Yes"] </label>
-                                        <span asp-for="IsContactedBySubcontractors" class="text-danger"></span>
-                                    </div>
-                                    <div class="custom-radio">
-                                        <input asp-for="IsContactedBySubcontractors" id="credit26" class="custom-control-input" type="radio" value="false" />
-                                        <label class="custom-control-label" for="credit26">@Localizer["No"]</label>
-                                        <span asp-for="IsContactedBySubcontractors" class="text-danger"></span>
-                                    </div>
-                                </div>
 
-                                <span name="IsContactedBySubcontractors1" class="text-danger field-validation-valid" data-valmsg-for="IsContactedBySubcontractors"></span>
-                            </div>
-                        </div>
 
 
                     </div>
