@@ -30,7 +30,7 @@
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationVersion>10</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
@@ -38,7 +38,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
-		<AndroidSigningKeyStore>prohz.jks</AndroidSigningKeyStore>
+		<AndroidSigningKeyStore>prohz.keystore</AndroidSigningKeyStore>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-ios|AnyCPU'">
@@ -47,12 +47,12 @@
 	  <CodesignKey>Apple Development: CRISTYAN CRESPO (UKWK2GRQ7X)</CodesignKey>
 	  <MtouchLink>SdkOnly</MtouchLink>
 	  <ApplicationDisplayVersion>1.3</ApplicationDisplayVersion>
-	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationVersion>10</ApplicationVersion>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	  <ApplicationDisplayVersion>1.3</ApplicationDisplayVersion>
-	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationVersion>10</ApplicationVersion>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 	  <WarningLevel>4</WarningLevel>
@@ -66,41 +66,41 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-maccatalyst|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	  <ApplicationDisplayVersion>1.3</ApplicationDisplayVersion>
-	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationVersion>10</ApplicationVersion>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|AnyCPU'">
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	  <AndroidPackageFormat>aab</AndroidPackageFormat>
 	  <ApplicationDisplayVersion>1.3</ApplicationDisplayVersion>
-	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationVersion>10</ApplicationVersion>
 	  <AndroidKeyStore>True</AndroidKeyStore>
-	  <AndroidSigningKeyStore>C:\Users\Percival\source\repos\Prohz\KopkeHomeMobile-FMRS\KopkeHome-FMRS\prohz.jks</AndroidSigningKeyStore>
-	  <AndroidSigningKeyAlias>mykey</AndroidSigningKeyAlias>
-		<AndroidSigningKeyPass >prohzisgreat</AndroidSigningKeyPass >
-		<AndroidSigningStorePass>prohzisgreat</AndroidSigningStorePass>
+	  <AndroidSigningKeyStore>C:\Users\Percival\source\repos\Prohz\KopkeHomeMobile-FMRS\KopkeHome-FMRS\prohz.keystore</AndroidSigningKeyStore>
+	  <AndroidSigningKeyAlias>prohz</AndroidSigningKeyAlias>
+		<AndroidSigningKeyPass >yayprohz </AndroidSigningKeyPass >
+		<AndroidSigningStorePass>yayprohz </AndroidSigningStorePass>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android|AnyCPU'">
 	  <DebugSymbols>True</DebugSymbols>
 	  <ApplicationDisplayVersion>1.3</ApplicationDisplayVersion>
-	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationVersion>10</ApplicationVersion>
 	  <AndroidKeyStore>True</AndroidKeyStore>
-		<AndroidSigningKeyStore>C:\Users\Percival\source\repos\Prohz\KopkeHomeMobile-FMRS\KopkeHome-FMRS\prohz.jks</AndroidSigningKeyStore>
-		<AndroidSigningKeyAlias>mykey</AndroidSigningKeyAlias>
-		<AndroidSigningKeyPass >prohzisgreat</AndroidSigningKeyPass >
-		<AndroidSigningStorePass>prohzisgreat</AndroidSigningStorePass>
+		<AndroidSigningKeyStore>C:\Users\Percival\source\repos\Prohz\KopkeHomeMobile-FMRS\KopkeHome-FMRS\prohz.keystore</AndroidSigningKeyStore>
+		<AndroidSigningKeyAlias>prohz</AndroidSigningKeyAlias>
+		<AndroidSigningKeyPass >yayprohz</AndroidSigningKeyPass >
+		<AndroidSigningStorePass>yayprohz</AndroidSigningStorePass>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationDisplayVersion>1.3</ApplicationDisplayVersion>
-	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationVersion>10</ApplicationVersion>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-maccatalyst|AnyCPU'">
 	  <ApplicationDisplayVersion>1.3</ApplicationDisplayVersion>
-	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationVersion>10</ApplicationVersion>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationDisplayVersion>1.3</ApplicationDisplayVersion>
-	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationVersion>10</ApplicationVersion>
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
