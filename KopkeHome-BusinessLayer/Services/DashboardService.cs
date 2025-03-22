@@ -51,7 +51,7 @@ namespace KopkeHome_BusinessLayer.Services
                     }
 
                 }
-                
+
 
                 return zips;
             }
@@ -68,7 +68,7 @@ namespace KopkeHome_BusinessLayer.Services
         /// </summary>
         /// <param name="Prefix"></param>
         /// <returns></returns>
-        /// 
+        ///
         public async Task<List<Categories>> GetCategoriesList(string Prefix, string zipcode)
         {
             try
@@ -273,22 +273,6 @@ namespace KopkeHome_BusinessLayer.Services
                                     {
                                         continue;
                                     }
-                                    if (CurrentuserType.RoleId == Constant.HomeOwner && BusinessDetailsz.IsContactedByHomeowners == false)
-                                    {
-                                        continue;
-                                    }
-                                    else if (CurrentuserType.RoleId == Constant.Contractor && BusinessDetailsz.IsContactedBySubcontractors == false)
-                                    {
-                                        continue;
-                                    }
-                                    else if (CurrentuserType.RoleId == Constant.IndependentContractor && BusinessDetailsz.IsContactedBySubcontractors == false)
-                                    {
-                                        continue;
-                                    }
-                                    else if (CurrentuserType.RoleId == Constant.SubContractor && BusinessDetailsz.IsContactedBySubcontractors == false)
-                                    {
-                                        continue;
-                                    }
 
                                     VM.ProfilePic = BusinessDetailsz.ProfilePicture;
                                     VM.ContractorType = "Contractor";
@@ -300,22 +284,7 @@ namespace KopkeHome_BusinessLayer.Services
                                     {
                                         continue;
                                     }
-                                    if (CurrentuserType.RoleId == Constant.HomeOwner && BusinessDetailsz.IsContactedByHomeowners == false)
-                                    {
-                                        continue;
-                                    }
-                                    else if (CurrentuserType.RoleId == Constant.Contractor && BusinessDetailsz.IsContactedByContractors == false)
-                                    {
-                                        continue;
-                                    }
-                                    else if (CurrentuserType.RoleId == Constant.IndependentContractor && BusinessDetailsz.IsContactedByContractors == false)
-                                    {
-                                        continue;
-                                    }
-                                    else if (CurrentuserType.RoleId == Constant.SubContractor && BusinessDetailsz.IsContactedByContractors == false)
-                                    {
-                                        continue;
-                                    }
+
                                     VM.ProfilePic = BusinessDetailsz.ProfilePicture;
                                     if (Contarctor.RoleId == Constant.SubContractor)
                                     {
@@ -354,7 +323,7 @@ namespace KopkeHome_BusinessLayer.Services
                 //var IsLikedContractorsOnTop = contract.OrderByDescending(x => x.IsLiked == true).ThenBy(x=>x.IsDisLiked==false).ToList();
                 var IsLikedContractorsOnTop = contract.OrderBy(x => x.WorkStatus).ThenByDescending(x => x.WorkStatusUpdated).ToList();
                 var nextFilter = IsLikedContractorsOnTop.OrderByDescending(x => x.IsLiked == true).ToList();
-                //var ak= nextFilter.RemoveAll(x=>x.IsDisLiked==true);   
+                //var ak= nextFilter.RemoveAll(x=>x.IsDisLiked==true);
                 return nextFilter;
 
 
