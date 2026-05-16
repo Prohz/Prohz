@@ -66,6 +66,9 @@ bld/
 *.log
 /KopkeHome-FMRS_API/logs/
 
+# If your file is inside project folder:
+KopkeHome-FMRS_API/appsettings.json
+
 # Project specific ignores
 /KopkeHome-FMRS/.vs/
 **/obj/Debug/
