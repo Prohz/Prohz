@@ -31,7 +31,7 @@ $.validator.addMethod("regx", function (value, element, regexpr) {
 $(function () {
     // Initialize form validation on the registration form.
     // It has the name attribute "registration"
-    $("#homeownerform").validate({
+    $("form[name='homeownerform']").validate({
         // Specify validation rules
         rules: {
             // The key name on the left side is the name attribute
@@ -164,7 +164,7 @@ $(document).ready(function () {
     var ProhzGreyLogo = '<img style="height: 90px;" src="' + urlprefix + '/images/ProhzGreyLogo.new.png">';
 
     $("Input#ZipCodeHo").on("keyup", function (event) {
-        
+
         if (this.value.length == this.getAttribute('maxlength')) {
             if ($(this).valid()) {
 
@@ -204,18 +204,18 @@ $(document).ready(function () {
     $("#HeardAboutUsContrcactor").change(function (e) {
         e.stopImmediatePropagation();
         if ($(this).val() == 2) {
-            
+
             $('.ClosedSalesAsst').css("display", "none");
             $('input[name="SalesAssociate"]').val('');
         }
         else if ($(this).val() == 14) {
             $('.ClosedSalesAsst').css("display", "block");
-            
-        
+
+
         }
         else {
             $('.ClosedSalesAsst').css("display", "none");
-        
+
             $('input[name="SalesAssociate"]').val('');
         }
         //console.log($(this).val());
@@ -543,7 +543,6 @@ function RegstrHomeOwner(form) {
         $.ajax({
             type: 'POST',
             url: urlprefix + '/user/HomeOwnerSignUp',
-            // url: '/User/HomeOwnerSignUp',
             data: $(form).serialize(),
 
             success: function (res) {
@@ -799,7 +798,7 @@ function checkPhoneNumberIsNotNull() {
 
     var PhoneNumberOffice = $.trim($('#PhoneNumberOffice').val());
     var PhoneNumber = $.trim($('#PhoneNumber').val());
-   
+
     // Check if empty or not
     if (PhoneNumber === '' && PhoneNumberOffice === '') {
 
@@ -847,13 +846,20 @@ function ddlNext(form) {
 
     $.validator.unobtrusive.parse(form);
     if ($(form).valid() && a == true && ddl == true) {
+        // $.ajax({
+        //     type: 'POST',
+        //     url: urlprefix + '/user/SignUp',
+        //     data: $(form).serialize(),
         $.ajax({
             type: 'POST',
             url: urlprefix + '/user/SignUp',
+            headers: {
+                'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+            },
             data: $(form).serialize(),
             success: function (res) {
                 if (res != "") {
-                   
+
                     const result = JSON.parse(res);
                     if (result["statuscode"] == "200") {
                         $("#contactorModal").modal('show');
