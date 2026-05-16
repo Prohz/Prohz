@@ -377,8 +377,10 @@ namespace KopkeHome_BusinessLayer.Services
                     // ------------
 
                     var uniqueStr = UniqueId.ToString();
-                    var str = uniqueStr.Length > 4 
-                        ? uniqueStr.Substring(uniqueStr.Length - (uniqueStr.Length - 4)) 
+
+                // SAFE: always take last 4 digits only if possible
+                    var str = uniqueStr.Length > 4
+                        ? uniqueStr.Substring(uniqueStr.Length - 4)
                         : uniqueStr;
 
                     // ------------
