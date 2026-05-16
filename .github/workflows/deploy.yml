@@ -35,3 +35,5 @@ jobs:
             sudo systemctl restart kopke-web
 
             echo ">>> Deployment completed"
+
+            
