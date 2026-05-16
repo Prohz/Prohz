@@ -1011,12 +1011,15 @@ namespace KopkeHome_BusinessLayer.Services
             CurrentYear = dt.ToString("yy");
             long CurrentId = await _dbContext.UniqueMemberId.Select(x => x.MemberId).FirstOrDefaultAsync();
             var CurrentState = await _dbContext.State.Where(x => x.StateName.Contains(StateId)).FirstOrDefaultAsync();
-            var GeneratedId = CurrentYear + CurrentState.USAStateCode + CurrentId.ToString();
+            
+            // var GeneratedId = CurrentYear + CurrentState.USAStateCode + CurrentId.ToString();
             // UniqueMemberId = (long)Convert.ToDouble(GeneratedId);
 
+            var GeneratedId = CurrentYear + CurrentState.USAStateCode + CurrentId.ToString();
+
             // -------------
-            UniqueMemberId = long.Parse(GeneratedId)
-            // -----------
+            UniqueMemberId = long.Parse(GeneratedId);
+            // -------------
 
             return UniqueMemberId + 1;
 
