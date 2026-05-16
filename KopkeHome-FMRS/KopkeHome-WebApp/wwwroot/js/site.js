@@ -854,7 +854,7 @@ function ddlNext(form) {
             type: 'POST',
             url: urlprefix + '/user/SignUp',
             headers: {
-                'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                '__RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
             },
             data: $(form).serialize(),
             success: function (res) {
