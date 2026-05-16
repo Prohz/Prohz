@@ -94,6 +94,14 @@ namespace KopkeHome_FMRS_API.Controllers
                         response.Message = Resources.REGS_SUCCESS;
                         response.Data = userDataModel;
                         return response;
+
+                        // return Ok(new
+                        // {
+                        //     statuscode = 200,
+                        //     status = "Success",
+                        //     message = "OK_TEST",
+                        //     data = userDataModel.EmailHo
+                        // });
                     }
                     else
                     {
@@ -279,6 +287,14 @@ namespace KopkeHome_FMRS_API.Controllers
                         response.Message = Resources.REGS_SUCCESS;
                         response.Data = userDataModel;
                         return response;
+
+                        // return Ok(new
+                        // {
+                        //     statuscode = 200,
+                        //     status = "Success",
+                        //     message = "OK_TEST",
+                        //     data = userDataModel.EmailHo
+                        // });
                     }
                     else
                     {

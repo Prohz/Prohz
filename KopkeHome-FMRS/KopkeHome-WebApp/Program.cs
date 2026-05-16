@@ -96,7 +96,11 @@ if (!app.Environment.IsDevelopment())
 app.UseCors(X => X.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 
-app.UseHttpsRedirection();
+// ------------
+
+// app.UseHttpsRedirection();
+
+// ------------
 app.UseStaticFiles();
 //app.UseExceptionHandlerMiddleware();
 

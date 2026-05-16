@@ -371,7 +371,17 @@ namespace KopkeHome_BusinessLayer.Services
                     {
                         var saveSales = await ProhzSalesAssciates(model.SalesAssociate, userId.UniqueMemberId, userId.Email, userId.FirstName + " " + userId.LastName);
                     }
-                    var str = UniqueId.ToString().Remove(0, 4);
+
+                    // var str = UniqueId.ToString().Remove(0, 4);
+
+                    // ------------
+
+                    var uniqueStr = UniqueId.ToString();
+                    var str = uniqueStr.Length > 4 
+                        ? uniqueStr.Substring(uniqueStr.Length - (uniqueStr.Length - 4)) 
+                        : uniqueStr;
+
+                    // ------------
                     var mID = await _dbContext.UniqueMemberId.FirstOrDefaultAsync();
 
                     mID.MemberId = (long)Convert.ToDouble(str);

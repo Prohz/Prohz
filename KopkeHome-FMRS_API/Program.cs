@@ -77,7 +77,10 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IBusinessProfile, BusinessProfileService>();
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+// builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddAutoMapper(typeof(Program));
+
 builder.Services.AddScoped(typeof(DapperRepository<>));
 builder.Services.AddScoped<DapperContext>();
 builder.Services.AddScoped<IEmailService, EmailService>();
@@ -130,7 +133,32 @@ builder.Services.AddIdentity<User, Role>(options =>
     options.Password.RequireLowercase = false;
 }).AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+
+
+
+// --------------------
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Events.OnRedirectToLogin = context =>
+    {
+        context.Response.StatusCode = 401;
+        return Task.CompletedTask;
+    };
+
+    options.Events.OnRedirectToAccessDenied = context =>
+    {
+        context.Response.StatusCode = 403;
+        return Task.CompletedTask;
+    };
+});
+
+// --------------------
+
+
+
 var app = builder.Build();
+
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
 
@@ -144,9 +172,15 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 }
 
 app.UseCors(X => X.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-app.UseHttpsRedirection();
+
+// app.UseHttpsRedirection();
+
+
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseCookiePolicy();
+
+// app.UseCookiePolicy();
+
+
 app.MapControllers();
 app.Run();
