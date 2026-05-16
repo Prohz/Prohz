@@ -31,7 +31,7 @@ $.validator.addMethod("regx", function (value, element, regexpr) {
 $(function () {
     // Initialize form validation on the registration form.
     // It has the name attribute "registration"
-    $("form[name='homeownerform']").validate({
+    $("#homeownerform").validate({
         // Specify validation rules
         rules: {
             // The key name on the left side is the name attribute
@@ -543,6 +543,7 @@ function RegstrHomeOwner(form) {
         $.ajax({
             type: 'POST',
             url: urlprefix + '/user/HomeOwnerSignUp',
+            // url: '/User/HomeOwnerSignUp',
             data: $(form).serialize(),
 
             success: function (res) {
