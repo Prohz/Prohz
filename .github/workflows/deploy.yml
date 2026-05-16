@@ -1,0 +1,35 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 76.13.24.232
+          username: developer
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+          script: |
+            cd ~/Prohz
+
+            git pull origin main
+
+            cd KopkeHome-FMRS_API
+
+            dotnet publish -c Release -o ~/publish/backend
+
+            sudo systemctl restart kopke-api
+
+            cd ../KopkeHome-WebApp
+
+            dotnet publish -c Release -o ~/publish/frontend
+
+            sudo systemctl restart kopke-web
