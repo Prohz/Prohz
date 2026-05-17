@@ -1003,49 +1003,19 @@ namespace KopkeHome_BusinessLayer.Services
         }
 
 
-        // public async Task<long> GenerateUniquememberID(string StateId)
-        // {
-        //     long UniqueMemberId = 0;
-        //     string CurrentYear = string.Empty;
-        //     DateTime dt = DateTime.Now;
-        //     CurrentYear = dt.ToString("yy");
-        //     long CurrentId = await _dbContext.UniqueMemberId.Select(x => x.MemberId).FirstOrDefaultAsync();
-        //     var CurrentState = await _dbContext.State.Where(x => x.StateName.Contains(StateId)).FirstOrDefaultAsync();
-            
-        //     // var GeneratedId = CurrentYear + CurrentState.USAStateCode + CurrentId.ToString();
-        //     // UniqueMemberId = (long)Convert.ToDouble(GeneratedId);
+        public async Task<long> GenerateUniquememberID(string StateId)
+        {
+            long UniqueMemberId = 0;
+            string CurrentYear = string.Empty;
+            DateTime dt = DateTime.Now;
+            CurrentYear = dt.ToString("yy");
+            long CurrentId = await _dbContext.UniqueMemberId.Select(x => x.MemberId).FirstOrDefaultAsync();
+            var CurrentState = await _dbContext.State.Where(x => x.StateName.Contains(StateId)).FirstOrDefaultAsync();
+            var GeneratedId = CurrentYear + CurrentState.USAStateCode + CurrentId.ToString();
+            UniqueMemberId = (long)Convert.ToDouble(GeneratedId);
+            return UniqueMemberId + 1;
 
-        //     var GeneratedId = CurrentYear + CurrentState.USAStateCode + CurrentId.ToString();
-
-        //     // -------------
-        //     UniqueMemberId = long.Parse(GeneratedId);
-        //     // -------------
-
-        //     return UniqueMemberId + 1;
-
-        // }
-        
-
-        public async Task<string> GenerateUniqueMemberID(string stateCode)
-{
-    if (string.IsNullOrWhiteSpace(stateCode))
-        throw new ArgumentException("StateCode is required.");
-
-    string year = DateTime.UtcNow.ToString("yy");
-
-    var state = await _dbContext.State
-        .FirstOrDefaultAsync(x => x.USAStateCode == stateCode);
-
-    if (state == null)
-        throw new Exception($"State not found for code: {stateCode}");
-
-    long lastId = await _dbContext.UniqueMemberId
-        .MaxAsync(x => (long?)x.MemberId) ?? 0;
-
-    long nextId = lastId + 1;
-
-    return $"{year}{state.USAStateCode}{nextId:D6}";
-}
+        }
 
         public async Task<ZipcodesAndCategoriesViewModel> StatesCategoriesAndStatesList(int userid)
         {
