@@ -151,10 +151,8 @@ namespace KopkeHome_WebApp.Models
         // PHONE (FIXED)
         // -------------------------
 
-        [Required(ErrorMessage = "Phone number is required.")]
-        [RegularExpression(@"^\+?[0-9]{10,15}$",
-            ErrorMessage = "Enter a valid Phone Number")]
-        public string PhoneNumber { get; set; }
+        // OPTIONAL PHONE NUMBER (FINAL FIX)
+        public string? PhoneNumber { get; set; }
 
         // OPTIONAL OFFICE PHONE (FIXED)
         public string PhoneNumberOffice { get; set; }
