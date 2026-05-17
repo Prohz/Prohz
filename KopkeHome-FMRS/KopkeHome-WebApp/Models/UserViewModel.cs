@@ -21,11 +21,16 @@ namespace KopkeHome_WebApp.Models
 
         [StringLength(12, ErrorMessage = "Enter a valid Phone Number", MinimumLength = 12)]
         [Required(ErrorMessage = "Phone number office is required.")]
-        public string PhoneNumberOffice { get; set; }
+        public string? PhoneNumberOffice { get; set; }
 
-        [StringLength(12, ErrorMessage = "Enter a valid Phone Number", MinimumLength = 12)]
+        // [StringLength(12, ErrorMessage = "Enter a valid Phone Number", MinimumLength = 12)]
+        // [Required(ErrorMessage = "Phone number is required.")]
+        // public string? PhoneNumber { get; set; }
+
         [Required(ErrorMessage = "Phone number is required.")]
-        public string PhoneNumber { get; set; }
+        [RegularExpression(@"^\+?[0-9]{10,15}$", ErrorMessage = "Enter a valid Phone Number")]
+        public string? PhoneNumber { get; set; }
+
         //[RegularExpression("True|true", ErrorMessage = "At least one field must be given a value")]
 
         //public bool Any => PhoneNumber != null || PhoneNumberOffice != null;
@@ -41,7 +46,7 @@ namespace KopkeHome_WebApp.Models
         [StringLength(50, ErrorMessage = "Maximum {2} characters exceeded")]
         public string SalesAssociate { get; set; }
         [StringLength(10, ErrorMessage = "Enter a valid member id", MinimumLength = 10)]
-        public string MemberReferralId { get; set; }
+        public string? MemberReferralId { get; set; }
 
         [Required(ErrorMessage = "City is required")]
         [StringLength(40, ErrorMessage = "City is required")]
