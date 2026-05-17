@@ -1024,40 +1024,36 @@ namespace KopkeHome_BusinessLayer.Services
         //     return UniqueMemberId + 1;
 
         // }
+        
 
-        public async Task<string> GenerateUniquememberID(string stateName)
+        public async Task<string> GenerateUniqueMemberID(string stateId)
 {
-    try
-    {
-        if (string.IsNullOrWhiteSpace(stateName))
-            throw new ArgumentException("State name is required");
+    if (string.IsNullOrWhiteSpace(stateId))
+        throw new ArgumentException("StateId is required.");
 
-        var currentState = await _dbContext.State
-            .FirstOrDefaultAsync(x => x.StateName == stateName);
+    // Get current year (2 digits)
+    string year = DateTime.UtcNow.ToString("yy");
 
-        if (currentState == null)
-            throw new Exception($"State not found: {stateName}");
+    // Get state
+    var state = await _dbContext.State
+        .FirstOrDefaultAsync(x => x.StateName.Contains(stateId));
 
-        // Get last sequence safely (fallback to 0 if null)
-        long currentId = await _dbContext.UniqueMemberId
-            .Select(x => x.MemberId)
-            .FirstOrDefaultAsync();
+    if (state == null)
+        throw new Exception($"State not found for: {stateId}");
 
-        long nextId = currentId + 1;
+    if (string.IsNullOrWhiteSpace(state.USAStateCode))
+        throw new Exception("State code is missing.");
 
-        string year = DateTime.UtcNow.ToString("yy");
-        string stateCode = currentState.USAStateCode ?? "XX";
+    // Get last MemberId safely
+    long lastId = await _dbContext.UniqueMemberId
+        .MaxAsync(x => (long?)x.MemberId) ?? 0;
 
-        // SAFE ID (NO PARSING, NO OVERFLOW)
-        string uniqueMemberId = $"{year}{stateCode}{nextId:D6}";
+    long nextId = lastId + 1;
 
-        return uniqueMemberId;
-    }
-    catch (Exception ex)
-    {
-        _logger.LogError(ex, "Error generating unique member ID");
-        throw;
-    }
+    // Optional padding for consistency
+    string generatedId = $"{year}{state.USAStateCode}{nextId:D6}";
+
+    return generatedId;
 }
 
         public async Task<ZipcodesAndCategoriesViewModel> StatesCategoriesAndStatesList(int userid)
