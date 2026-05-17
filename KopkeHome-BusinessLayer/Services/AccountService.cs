@@ -1026,34 +1026,25 @@ namespace KopkeHome_BusinessLayer.Services
         // }
         
 
-        public async Task<string> GenerateUniqueMemberID(string stateId)
+        public async Task<string> GenerateUniqueMemberID(string stateCode)
 {
-    if (string.IsNullOrWhiteSpace(stateId))
-        throw new ArgumentException("StateId is required.");
+    if (string.IsNullOrWhiteSpace(stateCode))
+        throw new ArgumentException("StateCode is required.");
 
-    // Get current year (2 digits)
     string year = DateTime.UtcNow.ToString("yy");
 
-    // Get state
     var state = await _dbContext.State
-        .FirstOrDefaultAsync(x => x.StateName.Contains(stateId));
+        .FirstOrDefaultAsync(x => x.USAStateCode == stateCode);
 
     if (state == null)
-        throw new Exception($"State not found for: {stateId}");
+        throw new Exception($"State not found for code: {stateCode}");
 
-    if (string.IsNullOrWhiteSpace(state.USAStateCode))
-        throw new Exception("State code is missing.");
-
-    // Get last MemberId safely
     long lastId = await _dbContext.UniqueMemberId
         .MaxAsync(x => (long?)x.MemberId) ?? 0;
 
     long nextId = lastId + 1;
 
-    // Optional padding for consistency
-    string generatedId = $"{year}{state.USAStateCode}{nextId:D6}";
-
-    return generatedId;
+    return $"{year}{state.USAStateCode}{nextId:D6}";
 }
 
         public async Task<ZipcodesAndCategoriesViewModel> StatesCategoriesAndStatesList(int userid)
