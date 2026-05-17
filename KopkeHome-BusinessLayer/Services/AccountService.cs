@@ -1003,27 +1003,62 @@ namespace KopkeHome_BusinessLayer.Services
         }
 
 
-        public async Task<long> GenerateUniquememberID(string StateId)
-        {
-            long UniqueMemberId = 0;
-            string CurrentYear = string.Empty;
-            DateTime dt = DateTime.Now;
-            CurrentYear = dt.ToString("yy");
-            long CurrentId = await _dbContext.UniqueMemberId.Select(x => x.MemberId).FirstOrDefaultAsync();
-            var CurrentState = await _dbContext.State.Where(x => x.StateName.Contains(StateId)).FirstOrDefaultAsync();
+        // public async Task<long> GenerateUniquememberID(string StateId)
+        // {
+        //     long UniqueMemberId = 0;
+        //     string CurrentYear = string.Empty;
+        //     DateTime dt = DateTime.Now;
+        //     CurrentYear = dt.ToString("yy");
+        //     long CurrentId = await _dbContext.UniqueMemberId.Select(x => x.MemberId).FirstOrDefaultAsync();
+        //     var CurrentState = await _dbContext.State.Where(x => x.StateName.Contains(StateId)).FirstOrDefaultAsync();
             
-            // var GeneratedId = CurrentYear + CurrentState.USAStateCode + CurrentId.ToString();
-            // UniqueMemberId = (long)Convert.ToDouble(GeneratedId);
+        //     // var GeneratedId = CurrentYear + CurrentState.USAStateCode + CurrentId.ToString();
+        //     // UniqueMemberId = (long)Convert.ToDouble(GeneratedId);
 
-            var GeneratedId = CurrentYear + CurrentState.USAStateCode + CurrentId.ToString();
+        //     var GeneratedId = CurrentYear + CurrentState.USAStateCode + CurrentId.ToString();
 
-            // -------------
-            UniqueMemberId = long.Parse(GeneratedId);
-            // -------------
+        //     // -------------
+        //     UniqueMemberId = long.Parse(GeneratedId);
+        //     // -------------
 
-            return UniqueMemberId + 1;
+        //     return UniqueMemberId + 1;
 
-        }
+        // }
+
+        public async Task<string> GenerateUniquememberID(string stateName)
+{
+    try
+    {
+        if (string.IsNullOrWhiteSpace(stateName))
+            throw new ArgumentException("State name is required");
+
+        var currentState = await _dbContext.State
+            .FirstOrDefaultAsync(x => x.StateName == stateName);
+
+        if (currentState == null)
+            throw new Exception($"State not found: {stateName}");
+
+        // Get last sequence safely (fallback to 0 if null)
+        long currentId = await _dbContext.UniqueMemberId
+            .Select(x => x.MemberId)
+            .FirstOrDefaultAsync();
+
+        long nextId = currentId + 1;
+
+        string year = DateTime.UtcNow.ToString("yy");
+        string stateCode = currentState.USAStateCode ?? "XX";
+
+        // SAFE ID (NO PARSING, NO OVERFLOW)
+        string uniqueMemberId = $"{year}{stateCode}{nextId:D6}";
+
+        return uniqueMemberId;
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError(ex, "Error generating unique member ID");
+        throw;
+    }
+}
 
         public async Task<ZipcodesAndCategoriesViewModel> StatesCategoriesAndStatesList(int userid)
         {
