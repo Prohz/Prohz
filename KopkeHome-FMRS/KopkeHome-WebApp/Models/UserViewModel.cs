@@ -184,5 +184,6 @@ namespace KopkeHome_WebApp.Models
         public bool IsRegistrationSuccess { get; set; }
 
         public List<State> States { get; set; }
+        
     }
 }
