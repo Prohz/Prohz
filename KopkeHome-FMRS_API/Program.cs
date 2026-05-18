@@ -59,9 +59,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
   });
 builder.Services.AddCors();
 builder.Services.AddControllers();
+
 builder.Services.AddDbContext<ApplicationDbContext>(options => { options.UseSqlServer(builder.Configuration.GetConnectionString("KopkeHome_WebContext"));
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 }) ;
+
+var conn = builder.Configuration.GetConnectionString("KopkeHome_WebContext");
+Console.WriteLine("DB CONNECTION: " + conn);
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
@@ -159,6 +163,39 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 var app = builder.Build();
 
+// Apply any pending EF Core migrations and ensure database is created when running locally
+using (var scope = app.Services.CreateScope())
+{
+    var dbLogger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+
+    try
+    {
+        var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+        dbLogger.LogInformation("Checking database connection...");
+
+        bool canConnect = db.Database.CanConnect();
+
+        if (canConnect)
+        {
+            dbLogger.LogInformation("Database connection SUCCESSFUL.");
+        }
+        else
+        {
+            dbLogger.LogWarning("Database connection FAILED.");
+        }
+
+        dbLogger.LogInformation("Applying migrations...");
+        db.Database.Migrate();
+
+        dbLogger.LogInformation("Database migration completed successfully.");
+    }
+    catch (Exception ex)
+    {
+        dbLogger.LogError(ex, "Database initialization FAILED.");
+    }
+}
+
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
 
@@ -170,6 +207,16 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 
     });
 }
+
+// -------------------------------
+
+// var env = app.Environment.EnvironmentName;
+// Console.WriteLine("Environment: " + env);
+
+// var conn = builder.Configuration.GetConnectionString("KopkeHome_WebContext");
+// Console.WriteLine("Connection: " + conn);
+
+// ----------------------------------
 
 app.UseCors(X => X.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
@@ -184,3 +231,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.Run();
+
+
+

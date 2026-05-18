@@ -61,12 +61,29 @@ namespace KopkeHome_BusinessLayer.Services
                 Response response = new Response();
 
 
+                // var user = await _userManager.FindByEmailAsync(model.Email);
+
                 var user = await _userManager.FindByEmailAsync(model.Email);
-                var isOld = await _userManager.CheckPasswordAsync(user, model.NewPassword);
+
+                if (user == null)
+                {
+                    return new Response
+                    {
+                        Error = true,
+                        Statuscode = System.Net.HttpStatusCode.NotFound,
+                        Message = "User not found"
+                    };
+                }
+
+                // var isOld = await _userManager.CheckPasswordAsync(user, model.NewPassword);
+
+                var isOld = await _userManager.CheckPasswordAsync(user, model.OldPassword);
+
                 if (isOld)
                 {
 
-                    response.Error = true;
+                    // response.Error = true;
+                    response.Error = false;
                     response.Statuscode = System.Net.HttpStatusCode.AlreadyReported;
                     response.Message = ResourceBusinessLayer.SamePassword;
                     return response;
@@ -112,6 +129,15 @@ namespace KopkeHome_BusinessLayer.Services
                 if (result.Any())
                 {
                     _user = await _userManager.FindByEmailAsync(ISignIn.Email);
+
+                    if (_user == null)
+                    {
+                        response.Statuscode = System.Net.HttpStatusCode.NotFound;
+                        response.Status = "Incorrect email address.";
+                        response.Message = "Incorrect email address.";
+                        return response;
+                    }
+
                     var isAuthenticated = await _userManager.CheckPasswordAsync(_user, ISignIn.Password);
                     response.WorkStatus = _user.WorkStatus;
 
@@ -371,7 +397,11 @@ namespace KopkeHome_BusinessLayer.Services
                     {
                         var saveSales = await ProhzSalesAssciates(model.SalesAssociate, userId.UniqueMemberId, userId.Email, userId.FirstName + " " + userId.LastName);
                     }
-                    var str = UniqueId.ToString().Remove(0, 4);
+                    // var str = UniqueId.ToString().Remove(0, 4);
+
+                    var uid = UniqueId.ToString();
+                    var str = uid.Length > 4 ? uid.Substring(4) : uid;
+
                     var mID = await _dbContext.UniqueMemberId.FirstOrDefaultAsync();
 
                     mID.MemberId = (long)Convert.ToDouble(str);
@@ -494,7 +524,8 @@ namespace KopkeHome_BusinessLayer.Services
                 if (item != null)
                 {
                     _dbContext.VerifyOTP.Remove(item);
-                    _dbContext.SaveChanges();
+                    // _dbContext.SaveChanges();
+                    await _dbContext.SaveChangesAsync();
                 }
 
                 VerifyOTP oTP = new()

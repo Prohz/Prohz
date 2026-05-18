@@ -445,7 +445,7 @@ function ForgotPasswordLinkSend() {
                 },
                 success: function (res) {
                     const result = JSON.parse(res);
-                    if (result["statuscode"] == "200") {
+                    if (Number(result["statuscode"]) === 200) {
 
                         $("#PwdResetLinkModal").modal('show');
                         $('#PwdResetLinkModal').modal({
@@ -479,7 +479,7 @@ function CreateNewPassword(form) {
             data: $(form).serialize(),
             success: function (res) {
                 const result = JSON.parse(res);
-                if (result["statuscode"] == "200") {
+                if (Number(result["statuscode"]) === 200) {
 
                     $("#CreateNewPasswordModal").modal('show');
                     $('#CreateNewPasswordModal').modal({
@@ -548,7 +548,7 @@ function RegstrHomeOwner(form) {
             success: function (res) {
 
                 const result = JSON.parse(res);
-                if (result["statuscode"] == "200") {
+                if (Number(result["statuscode"]) === 200) {
                     $("#contactorModal").modal('show');
                     $('#contactorModal').modal({
                         backdrop: 'static',
@@ -560,7 +560,7 @@ function RegstrHomeOwner(form) {
 
 
                 }
-                else if (result["statuscode"] == "208") {
+                else if (Number(result["statuscode"]) === 208) {
 
                     $('#idEmailmessageHO').css('color', 'red');
                     $('#idEmailmessageHO').text(localizer("This email is already being used.", "Este correo electrónico ya se está utilizando", $('#ProhzLangDDL option:selected').val()));
@@ -861,7 +861,7 @@ function ddlNext(form) {
                 if (res != "") {
 
                     const result = JSON.parse(res);
-                    if (result["statuscode"] == "200") {
+                    if (Number(result["statuscode"]) === 200) {
                         $("#contactorModal").modal('show');
                         $('#contactorModal').modal({
                             backdrop: 'static',
@@ -871,7 +871,7 @@ function ddlNext(form) {
                         $("#VerificationEmail1").html(result["data"]["email"]);
 
                     }
-                    else if (result["statuscode"] == "208") {
+                    else if (Number(result["statuscode"]) === 208) {
 
                         $('#idEmailmessage').css('color', 'red');
                         $('#idEmailmessage').text("This email is already being used.");
