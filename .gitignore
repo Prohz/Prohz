@@ -85,7 +85,7 @@ KopkeHome-FMRS_API/appsettings.json
 !launchSettings.json
 !.config/**/*.json
 !global.json
-!appsettings.json
+**/appsettings.json
 !appsettings.Development.json
 !package.json
 !package-lock.json
