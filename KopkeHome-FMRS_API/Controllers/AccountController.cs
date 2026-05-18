@@ -246,7 +246,8 @@ namespace KopkeHome_FMRS_API.Controllers
         /// <param name="userDataModel"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<Response> BasicInfo(UserViewModel userDataModel)
+        // public async Task<Response> BasicInfo(UserViewModel userDataModel)
+        public async Task<Response> BasicInfo([FromForm] UserViewModel userDataModel)
         {
             try
             {
