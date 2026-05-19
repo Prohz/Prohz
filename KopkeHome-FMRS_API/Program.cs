@@ -438,7 +438,9 @@ app.UseForwardedHeaders();
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "Web API");
+    // c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "Web API");
+    
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Web API");
     c.RoutePrefix = "swagger";
 });
 
