@@ -51,12 +51,15 @@ namespace KopkeHome_FMRS_API.Controllers
                 Response response = new Response();
                 if (!ModelState.IsValid)
                 {
-                    response.Error = false;
-                    response.Status = Resources.InvalidModel;
-                    response.Statuscode = HttpStatusCode.BadRequest;
-                    response.Message = Resources.InvalidModel;
-
-                    return response;
+                    // Populate sensible defaults for optional HomeOwner fields and continue.
+                    userDataModel.SalesAssociateHo ??= string.Empty;
+                    userDataModel.MemberReferralIdHo ??= null;
+                    userDataModel.CityHo ??= string.Empty;
+                    userDataModel.BusinessAddressHo ??= string.Empty;
+                    userDataModel.ZipCodeHo ??= string.Empty;
+                    userDataModel.StateHo ??= string.Empty;
+                    userDataModel.HeardAboutProhzFromHo = userDataModel.HeardAboutProhzFromHo;
+                    ModelState.Clear();
                 }
                 //
                 bool isEmailExist = await service.CheckEmailExist(userDataModel.EmailHo);
@@ -247,19 +250,23 @@ namespace KopkeHome_FMRS_API.Controllers
         /// <returns></returns>
         [HttpPost]
         // public async Task<Response> BasicInfo(UserViewModel userDataModel)
-        public async Task<Response> BasicInfo([FromForm] UserViewModel userDataModel)
+        public async Task<Response> BasicInfo(UserViewModel userDataModel)
         {
             try
             {
                 Response response = new Response();
                 if (!ModelState.IsValid)
                 {
-                    response.Error = false;
-                    response.Status = Resources.InvalidModel;
-                    response.Statuscode = HttpStatusCode.BadRequest;
-                    response.Message = Resources.InvalidModel;
-
-                    return response;
+                    // Some optional contractor fields may be missing from the client.
+                    userDataModel.BusinessName ??= string.Empty;
+                    userDataModel.SalesAssociate ??= string.Empty;
+                    userDataModel.MemberReferralId ??= null;
+                    userDataModel.City ??= string.Empty;
+                    userDataModel.BusinessAddress ??= string.Empty;
+                    userDataModel.ZipCode ??= string.Empty;
+                    userDataModel.State ??= string.Empty;
+                    userDataModel.HeardAboutProhzFrom = userDataModel.HeardAboutProhzFrom;
+                    ModelState.Clear();
                 }
 
                 // Check if the provided referral ID matches the one in the database

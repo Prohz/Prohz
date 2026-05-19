@@ -846,22 +846,42 @@ function ddlNext(form) {
 
     $.validator.unobtrusive.parse(form);
     if ($(form).valid() && a == true && ddl == true) {
-        // $.ajax({
-        //     type: 'POST',
-        //     url: urlprefix + '/user/SignUp',
-        //     data: $(form).serialize(),
         $.ajax({
             type: 'POST',
             url: urlprefix + '/user/SignUp',
-            headers: {
-                '__RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
-            },
+            data: $(form).serialize(),
+        // $.ajax({
+        //     type: 'POST',
+        //     url: urlprefix + '/user/SignUp',
+        //     headers: {
+        //         '__RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+        //     },
             data: $(form).serialize(),
             success: function (res) {
                 if (res != "") {
+                    let result = null;
+                    try {
+                        result = JSON.parse(res);
+                    } catch (e) {
+                        // If response is not JSON, show raw text
+                        alert(res);
+                        return;
+                    }
 
-                    const result = JSON.parse(res);
-                    if (Number(result["statuscode"]) === 200) {
+                    // If API returned model validation errors (ASP.NET automatic 400), it'll have an 'errors' object
+                    if (result && result.errors) {
+                        // Collect first validation messages and show them
+                        let msgs = [];
+                        for (const key in result.errors) {
+                            if (Array.isArray(result.errors[key]) && result.errors[key].length > 0) {
+                                msgs.push(result.errors[key][0]);
+                            }
+                        }
+                        alert(msgs.join('\n'));
+                        return;
+                    }
+
+                    if (result && Number(result["statuscode"]) === 200) {
                         $("#contactorModal").modal('show');
                         $('#contactorModal').modal({
                             backdrop: 'static',

@@ -330,7 +330,8 @@ namespace KopkeHome_BusinessLayer.Services
                     LastName = model.LastName,
                     PhoneNumberOffice = model.PhoneNumberOffice,
                     PhoneNumber = model.PhoneNumber,
-                    EmailConfirmed = true,
+                    EmailConfirmed = false,
+                    IsEmailVerified = false,
                     Email = model.Email,
                     BusinessName = model.BusinessName,
                     City = model.City,
@@ -356,7 +357,8 @@ namespace KopkeHome_BusinessLayer.Services
                     emp.LastName = model.LastName;
                     emp.PhoneNumberOffice = model.PhoneNumberOffice;
                     emp.PhoneNumber = model.PhoneNumber;
-                    emp.EmailConfirmed = true;
+                    emp.EmailConfirmed = false;
+                    emp.IsEmailVerified = false;
                     emp.Email = model.Email;
                     emp.BusinessName = model.BusinessName;
                     emp.City = model.City;
@@ -975,7 +977,7 @@ namespace KopkeHome_BusinessLayer.Services
             try
             {
                 bool isEmailExist = false;
-                var result = await _iRepository.FindAllByCondition(a => a.Email.Equals(email) && a.IsEmailVerified == true);
+                var result = await _iRepository.FindAllByCondition(a => a.Email.Equals(email) && a.IsDeleted == false);
                 if (result.Count > 0)
                 {
                     isEmailExist = true;
