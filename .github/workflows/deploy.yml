@@ -16,6 +16,7 @@ jobs:
           host: 76.13.24.232
           username: developer
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          debug: true
 
           script: |
             set -e
