@@ -852,7 +852,8 @@ function ddlNext(form) {
         //     data: $(form).serialize(),
         $.ajax({
             type: 'POST',
-            url: urlprefix + '/user/SignUp',
+            // url: urlprefix + '/user/SignUp',
+            url: urlprefix + '/api/user/SignUp',
             headers: {
                 '__RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
             },
