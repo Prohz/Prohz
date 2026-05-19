@@ -440,6 +440,8 @@ app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     // c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "Web API");
+
+    string swaggerJsonBasePath = string.IsNullOrWhiteSpace(c.RoutePrefix) ? "." : "..";
     c.SwaggerEndpoint($"{swaggerJsonBasePath}/swagger/v1/swagger.json", "Web API");
     c.RoutePrefix = "swagger";
 });
