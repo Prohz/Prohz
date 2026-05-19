@@ -432,14 +432,12 @@ using (var scope = app.Services.CreateScope())
 // IMPORTANT: must be FIRST if using reverse proxy (/api)
 app.UseForwardedHeaders();
 
-
 // app.UsePathBase("/api");
 
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Web API");
-    // c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "Web API");
     c.RoutePrefix = "swagger";
 });
 
