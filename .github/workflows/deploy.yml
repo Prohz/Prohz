@@ -18,22 +18,94 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           script: |
+            set -e
 
-            echo ">>> Starting deployment"
+            echo ">>> Deployment started"
 
             cd ~/Prohz || exit 1
-            git pull origin main
 
-            echo ">>> Publishing Backend"
+            echo ">>> Cleaning local changes"
+            git reset --hard
+            git clean -fd
+
+            echo ">>> Syncing with GitHub"
+            git fetch origin
+            git checkout main
+            git reset --hard origin/main
+
+            echo ">>> Backend publish"
             cd KopkeHome-FMRS_API || exit 1
             dotnet publish -c Release -o /home/developer/publish/backend
+
             sudo systemctl restart kopke-api
 
-            echo ">>> Publishing Frontend"
+            echo ">>> Frontend publish"
             cd ../KopkeHome-FMRS/KopkeHome-WebApp || exit 1
             dotnet publish -c Release -o /home/developer/publish/frontend
+
             sudo systemctl restart kopke-web
 
-            echo ">>> Deployment completed"
+            echo ">>> Deployment successful"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: Deploy KopkeHome
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Deploy to VPS via SSH
+#         uses: appleboy/ssh-action@v1.0.3
+#         with:
+#           host: 76.13.24.232
+#           username: developer
+#           key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+#           script: |
+
+#             echo ">>> Starting deployment"
+
+#             cd ~/Prohz || exit 1
+#             git pull origin main
+
+#             echo ">>> Publishing Backend"
+#             cd KopkeHome-FMRS_API || exit 1
+#             dotnet publish -c Release -o /home/developer/publish/backend
+#             sudo systemctl restart kopke-api
+
+#             echo ">>> Publishing Frontend"
+#             cd ../KopkeHome-FMRS/KopkeHome-WebApp || exit 1
+#             dotnet publish -c Release -o /home/developer/publish/frontend
+#             sudo systemctl restart kopke-web
+
+#             echo ">>> Deployment completed"
 
             

@@ -239,11 +239,6 @@
 
 
 
-
-// global using KopkeHome_BusinessLayer.Interface;
-
-
-
 global using KopkeHome_BusinessLayer.Interface;
 global using KopkeHome_BusinessLayer.Services;
 using KopkeHome_DataAccessLayer;
