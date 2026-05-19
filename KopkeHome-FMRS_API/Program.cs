@@ -222,6 +222,7 @@ app.UseCors(X => X.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 // app.UseHttpsRedirection();
 
+app.UsePathBase("/api");
 
 app.UseAuthentication();
 app.UseAuthorization();
