@@ -1,5 +1,7 @@
 using KopkeHome_UtilityLayer;
 using KopkeHome_UtilityLayer.ExceptionHandler;
+using System.Net.Http;
+using System.IO;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Options;
 using Serilog;
@@ -99,6 +101,57 @@ app.UseCors(X => X.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 // ------------
 
 // app.UseHttpsRedirection();
+
+// Simple dev proxy: forward requests that start with "/api" to the backend API
+// so calls to https://localhost:7047/api/* reach the API running on localhost:5215.
+var httpClient = new HttpClient(new HttpClientHandler { ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator });
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path.StartsWithSegments("/api", out var remaining))
+    {
+        var targetBase = "http://localhost:5215"; // backend dev address
+        var targetUri = new Uri(targetBase + context.Request.Path + context.Request.QueryString);
+
+        using var requestMessage = new HttpRequestMessage(new HttpMethod(context.Request.Method), targetUri);
+
+        // Copy request headers
+        foreach (var header in context.Request.Headers)
+        {
+            if (!requestMessage.Headers.TryAddWithoutValidation(header.Key, (IEnumerable<string>)header.Value))
+            {
+                requestMessage.Content ??= new StreamContent(Stream.Null);
+                requestMessage.Content.Headers.TryAddWithoutValidation(header.Key, (IEnumerable<string>)header.Value);
+            }
+        }
+
+        // Copy body if present
+        if (context.Request.ContentLength > 0)
+        {
+            requestMessage.Content = new StreamContent(context.Request.Body);
+        }
+
+        var resp = await httpClient.SendAsync(requestMessage);
+
+        context.Response.StatusCode = (int)resp.StatusCode;
+
+        foreach (var header in resp.Headers)
+            context.Response.Headers[header.Key] = header.Value.ToArray();
+        if (resp.Content != null)
+        {
+            foreach (var header in resp.Content.Headers)
+                context.Response.Headers[header.Key] = header.Value.ToArray();
+
+            // Prevent duplicate content-length header handling by Kestrel
+            context.Response.Headers.Remove("transfer-encoding");
+
+            await resp.Content.CopyToAsync(context.Response.Body);
+        }
+
+        return;
+    }
+
+    await next();
+});
 
 // ------------
 app.UseStaticFiles();
