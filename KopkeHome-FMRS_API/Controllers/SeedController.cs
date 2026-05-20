@@ -10,10 +10,6 @@ namespace KopkeHome_FMRS_API.Controllers
     {
         private readonly ApplicationDbContext _context;
 
-        // In-memory cache for dependency handling
-        private List<State> _statesCache = new();
-        private List<Role> _rolesCache = new();
-
         public SeedController(ApplicationDbContext context)
         {
             _context = context;
@@ -28,21 +24,31 @@ namespace KopkeHome_FMRS_API.Controllers
             try
             {
                 SeedRoles();
-                SeedStates();
-                SeedCities();
-                SeedCategories();
-                SeedMembershipPlans();
-                SeedUniqueMemberIds();
-
                 _context.SaveChanges();
+
+                SeedStates();
+                _context.SaveChanges();
+
+                SeedCities();
+                _context.SaveChanges();
+
+                SeedCategories();
+                _context.SaveChanges();
+
+                SeedMembershipPlans();
+                _context.SaveChanges();
+
+                SeedUniqueMemberIds();
+                _context.SaveChanges();
+
                 transaction.Commit();
 
-                return Ok("Database seeded successfully from scratch.");
+                return Ok("Database seeded successfully.");
             }
             catch (Exception ex)
             {
                 transaction.Rollback();
-                return StatusCode(500, "Seeding failed: " + ex.Message);
+                return StatusCode(500, ex.ToString());
             }
         }
 
@@ -69,7 +75,7 @@ namespace KopkeHome_FMRS_API.Controllers
             catch (Exception ex)
             {
                 transaction.Rollback();
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, ex.ToString());
             }
         }
 
@@ -79,16 +85,13 @@ namespace KopkeHome_FMRS_API.Controllers
             if (_context.Set<Role>().Any())
                 return;
 
-            _rolesCache = new List<Role>
-            {
+            _context.Set<Role>().AddRange(
                 new Role { IsActive = true, Name = "Contractor", NormalizedName = "CONTRACTOR" },
                 new Role { IsActive = true, Name = "Sub-Contractor", NormalizedName = "SUB-CONTRACTOR" },
                 new Role { IsActive = true, Name = "Independent Contractor", NormalizedName = "INDEPENDENT CONTRACTOR" },
                 new Role { IsActive = true, Name = "Home Owner", NormalizedName = "HOME OWNER" },
                 new Role { IsActive = true, Name = "Admin", NormalizedName = "ADMIN" }
-            };
-
-            _context.Set<Role>().AddRange(_rolesCache);
+            );
         }
 
         // ===================== STATES =====================
@@ -97,8 +100,7 @@ namespace KopkeHome_FMRS_API.Controllers
             if (_context.State.Any())
                 return;
 
-            _statesCache = new List<State>
-            {
+            _context.State.AddRange(
                 new State { StateName = "Alaska", CountryId = 2, USAStateCode = "49" },
                 new State { StateName = "California", CountryId = 2, USAStateCode = "31" },
                 new State { StateName = "Florida", CountryId = 2, USAStateCode = "27" },
@@ -111,9 +113,7 @@ namespace KopkeHome_FMRS_API.Controllers
                 new State { StateName = "Delaware", CountryId = 2, USAStateCode = "01" },
                 new State { StateName = "Georgia", CountryId = 2, USAStateCode = "04" },
                 new State { StateName = "Hawaii", CountryId = 2, USAStateCode = null }
-            };
-
-            _context.State.AddRange(_statesCache);
+            );
         }
 
         // ===================== CITIES =====================
@@ -122,15 +122,18 @@ namespace KopkeHome_FMRS_API.Controllers
             if (_context.City.Any())
                 return;
 
-            var alaska = _statesCache.First(x => x.StateName == "Alaska");
-            var arizona = _statesCache.First(x => x.StateName == "Arizona");
+            var alaska = _context.State.FirstOrDefault(x => x.StateName == "Alaska");
+            var arizona = _context.State.FirstOrDefault(x => x.StateName == "Arizona");
+
+            if (alaska == null || arizona == null)
+                throw new Exception("States not found in database. Ensure states are seeded first.");
 
             _context.City.AddRange(
-                new City { CityName = "Anchorage", State = alaska },
-                new City { CityName = "Jber", State = alaska },
-                new City { CityName = "Ajo", State = arizona },
-                new City { CityName = "Alpine", State = arizona },
-                new City { CityName = "Amado", State = arizona }
+                new City { CityName = "Anchorage", StateId = alaska.StateId },
+                new City { CityName = "Jber", StateId = alaska.StateId },
+                new City { CityName = "Ajo", StateId = arizona.StateId },
+                new City { CityName = "Alpine", StateId = arizona.StateId },
+                new City { CityName = "Amado", StateId = arizona.StateId }
             );
         }
 
@@ -155,11 +158,11 @@ namespace KopkeHome_FMRS_API.Controllers
             if (_context.MembershipBenefitsPlan.Any())
                 return;
 
-            var contractorRole = _rolesCache.FirstOrDefault(x => x.Name == "Contractor")
-                ?? _context.Set<Role>().FirstOrDefault(x => x.Name == "Contractor");
+            var contractorRole = _context.Set<Role>()
+                .FirstOrDefault(x => x.Name == "Contractor");
 
             if (contractorRole == null)
-                throw new Exception("Roles must be seeded before plans.");
+                throw new Exception("Contractor role not found.");
 
             _context.MembershipBenefitsPlan.AddRange(
                 new MembershipBenifitsPlan
