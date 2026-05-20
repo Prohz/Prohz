@@ -68,8 +68,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => { options.UseSqlS
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 }) ;
 
-var conn = builder.Configuration.GetConnectionString("KopkeHome_WebContext");
-Console.WriteLine("DB CONNECTION: " + conn);
+var connectionString = builder.Configuration.GetConnectionString("KopkeHome_WebContext");
+Console.WriteLine("DB CONNECTION: " + connectionString);
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
