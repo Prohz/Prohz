@@ -36,8 +36,9 @@ namespace KopkeHome_FMRS_API.Controllers
 
             try
             {
-                // 1. Ensure role exists
+                // 1. Ensure Admin role exists
                 var roleExists = await _roleManager.RoleExistsAsync(roleName);
+
                 if (!roleExists)
                 {
                     var roleCreate = await _roleManager.CreateAsync(new Role
@@ -51,22 +52,25 @@ namespace KopkeHome_FMRS_API.Controllers
                         return BadRequest(roleCreate.Errors);
                 }
 
-                // 2. Remove existing user (clean seed)
+                // 2. Check if user already exists
                 var existingUser = await _userManager.FindByEmailAsync(email);
+
                 if (existingUser != null)
                 {
+                    // remove old user to ensure clean seed
                     var deleteResult = await _userManager.DeleteAsync(existingUser);
+
                     if (!deleteResult.Succeeded)
                         return BadRequest(deleteResult.Errors);
                 }
 
-                // 3. Create NEW Identity user (IMPORTANT)
+                // 3. Create Identity User (NO RoleId HERE)
                 var user = new User
                 {
                     UserName = email,
                     Email = email,
 
-                    EmailConfirmed = true,   // IMPORTANT for login flows
+                    EmailConfirmed = true,
                     PhoneNumberConfirmed = true,
 
                     FirstName = "Saqib",
@@ -81,7 +85,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     State = "Punjab",
                     ZipCode = "54000",
 
-                    RoleId = 10, // Admin role
                     IsEmailVerified = true,
                     IsDocumentsVerified = true,
 
@@ -90,13 +93,13 @@ namespace KopkeHome_FMRS_API.Controllers
                     ModifiedOn = DateTime.UtcNow
                 };
 
-                // 4. CREATE USER (this hashes password correctly)
+                // 4. Create user with hashed password
                 var createResult = await _userManager.CreateAsync(user, password);
 
                 if (!createResult.Succeeded)
                     return BadRequest(createResult.Errors);
 
-                // 5. Assign role
+                // 5. Assign Admin Role (THIS is what makes admin work)
                 var roleResult = await _userManager.AddToRoleAsync(user, roleName);
 
                 if (!roleResult.Succeeded)
@@ -120,7 +123,7 @@ namespace KopkeHome_FMRS_API.Controllers
         {
             string email = "saqib@gmail.com";
 
-            var user = await _userManager.FindByEmailAsync(email);
+            var user = await _userManager.FindByEmailByEmailAsync(email);
 
             if (user == null)
                 return NotFound("Admin not found");
@@ -134,6 +137,202 @@ namespace KopkeHome_FMRS_API.Controllers
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// using Microsoft.AspNetCore.Mvc;
+// using Microsoft.AspNetCore.Identity;
+// using KopkeHome_ModelLayer.DataModel;
+// using System;
+// using System.Threading.Tasks;
+
+// namespace KopkeHome_FMRS_API.Controllers
+// {
+//     [Route("api/seed")]
+//     [ApiController]
+//     public class AdminSeedController : ControllerBase
+//     {
+//         private readonly UserManager<User> _userManager;
+//         private readonly RoleManager<Role> _roleManager;
+
+//         public AdminSeedController(
+//             UserManager<User> userManager,
+//             RoleManager<Role> roleManager)
+//         {
+//             _userManager = userManager;
+//             _roleManager = roleManager;
+//         }
+
+//         [HttpGet("ping")]
+//         public IActionResult Ping()
+//         {
+//             return Ok("WORKING");
+//         }
+
+//         [HttpGet("admin")]
+//         public async Task<IActionResult> SeedAdmin()
+//         {
+//             string email = "saqib@gmail.com";
+//             string password = "12345678";
+//             string roleName = "Admin";
+
+//             try
+//             {
+//                 // 1. Ensure role exists
+//                 var roleExists = await _roleManager.RoleExistsAsync(roleName);
+//                 if (!roleExists)
+//                 {
+//                     var roleCreate = await _roleManager.CreateAsync(new Role
+//                     {
+//                         Name = roleName,
+//                         NormalizedName = roleName.ToUpper(),
+//                         IsActive = true
+//                     });
+
+//                     if (!roleCreate.Succeeded)
+//                         return BadRequest(roleCreate.Errors);
+//                 }
+
+//                 // 2. Remove existing user (clean seed)
+//                 var existingUser = await _userManager.FindByEmailAsync(email);
+//                 if (existingUser != null)
+//                 {
+//                     var deleteResult = await _userManager.DeleteAsync(existingUser);
+//                     if (!deleteResult.Succeeded)
+//                         return BadRequest(deleteResult.Errors);
+//                 }
+
+//                 // 3. Create NEW Identity user (IMPORTANT)
+//                 var user = new User
+//                 {
+//                     UserName = email,
+//                     Email = email,
+
+//                     EmailConfirmed = true,   // IMPORTANT for login flows
+//                     PhoneNumberConfirmed = true,
+
+//                     FirstName = "Saqib",
+//                     LastName = "Asghar",
+
+//                     PhoneNumber = "3000000000",
+//                     PhoneNumberOffice = "3000000000",
+
+//                     BusinessName = "Seed Business",
+//                     BusinessAddress = "Seed Address",
+//                     City = "Lahore",
+//                     State = "Punjab",
+//                     ZipCode = "54000",
+
+//                     RoleId = 10, // Admin role
+//                     IsEmailVerified = true,
+//                     IsDocumentsVerified = true,
+
+//                     WorkStatus = 0,
+//                     CreatedOn = DateTime.UtcNow,
+//                     ModifiedOn = DateTime.UtcNow
+//                 };
+
+//                 // 4. CREATE USER (this hashes password correctly)
+//                 var createResult = await _userManager.CreateAsync(user, password);
+
+//                 if (!createResult.Succeeded)
+//                     return BadRequest(createResult.Errors);
+
+//                 // 5. Assign role
+//                 var roleResult = await _userManager.AddToRoleAsync(user, roleName);
+
+//                 if (!roleResult.Succeeded)
+//                     return BadRequest(roleResult.Errors);
+
+//                 return Ok(new
+//                 {
+//                     message = "Admin seeded successfully",
+//                     email,
+//                     password
+//                 });
+//             }
+//             catch (Exception ex)
+//             {
+//                 return StatusCode(500, ex.Message);
+//             }
+//         }
+
+//         [HttpGet("delete-admin")]
+//         public async Task<IActionResult> DeleteAdmin()
+//         {
+//             string email = "saqib@gmail.com";
+
+//             var user = await _userManager.FindByEmailAsync(email);
+
+//             if (user == null)
+//                 return NotFound("Admin not found");
+
+//             var result = await _userManager.DeleteAsync(user);
+
+//             if (!result.Succeeded)
+//                 return BadRequest(result.Errors);
+
+//             return Ok("Admin deleted");
+//         }
+//     }
+// }
 
 
 
