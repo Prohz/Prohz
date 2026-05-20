@@ -123,7 +123,7 @@ namespace KopkeHome_FMRS_API.Controllers
         {
             string email = "saqib@gmail.com";
 
-            var user = await _userManager.FindByEmailByEmailAsync(email);
+            var user = await _userManager.FindByEmailAsync(email);
 
             if (user == null)
                 return NotFound("Admin not found");
