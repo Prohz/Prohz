@@ -167,6 +167,40 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 var app = builder.Build();
 
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbLogger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+    try
+    {
+        dbLogger.LogInformation("==== DB DEBUG START ====");
+
+        db.Database.OpenConnection();
+
+        var conn = db.Database.GetDbConnection();
+
+        dbLogger.LogInformation("DATA SOURCE (SERVER): {server}", conn.DataSource);
+        dbLogger.LogInformation("DATABASE NAME: {db}", conn.Database);
+
+        using var cmd = conn.CreateCommand();
+        cmd.CommandText = "SELECT DB_NAME()";
+
+        var result = cmd.ExecuteScalar();
+
+        dbLogger.LogInformation("SQL ACTUAL DB_NAME(): {result}", result);
+
+        db.Database.CloseConnection();
+
+        dbLogger.LogInformation("==== DB DEBUG END ====");
+    }
+    catch (Exception ex)
+    {
+        dbLogger.LogError(ex, "DB DEBUG FAILED");
+    }
+}
+
 // Apply any pending EF Core migrations and ensure database is created when running locally
 using (var scope = app.Services.CreateScope())
 {
