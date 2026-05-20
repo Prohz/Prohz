@@ -28,7 +28,6 @@ delegate (object sender, X509Certificate certificate, X509Chain chain, SslPolicy
 };
 //IApplicationBuilder configuration = app.Configure;
 
-
 // using serilog.
 var logger = new LoggerConfiguration()
   .ReadFrom.Configuration(builder.Configuration)
