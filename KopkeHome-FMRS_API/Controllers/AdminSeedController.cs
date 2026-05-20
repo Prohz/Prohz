@@ -81,8 +81,7 @@ namespace KopkeHome_FMRS_API.Controllers
                     State = "Punjab",
                     ZipCode = "54000",
 
-                    // RoleId = 5, // ⚠️ For local
-                    RoleId = 14, // ⚠️ For Production (Admin role)
+                    RoleId = 5, // Admin role
                     IsEmailVerified = true,
                     IsDocumentsVerified = true,
 
