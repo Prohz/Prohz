@@ -85,7 +85,7 @@ $(document).ready(function () {
             }
         }
         else {
-            ('#fileUploadAdminSpan').text('File size is too big.File should be under 50 MB');
+            $('#fileUploadAdminSpan').text('File size is too big.File should be under 50 MB');
             this.value = '';
         }
 
