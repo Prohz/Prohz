@@ -119,7 +119,7 @@
                                                 CurrentUserName=HttpContextAccessor.HttpContext.Request.Cookies["CurrentUserName"];
                                             }
                                         }
-                                        <img src="~/Uploads/@profile" onerror="this.src='../images/DefaultProfile.png'" alt="" class="w-100">
+                                        <img src="~/Uploads/@profile" onerror="this.src='/Dashboard/images/DefaultProfile.png'" alt="" class="w-100">
                                     </div>
                                     <div class="dropdown ms-2">
                                     <a class="nav-link dropdown-toggle profile-toggle text-white h-100 d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">@CurrentUserName</a>
