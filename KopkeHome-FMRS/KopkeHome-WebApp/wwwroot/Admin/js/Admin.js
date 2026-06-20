@@ -274,16 +274,17 @@ $(document).ready(function () {
         });
     });
 });
-document.onreadystatechange = function () {
-    if (document.readyState !== "complete") {
 
-        document.querySelector(".logo-loader").style.visibility = "visible";
-    } else {
+// document.onreadystatechange = function () {
+//     if (document.readyState !== "complete") {
 
-        document.querySelector("body").style.visibility = "visible";
-        document.querySelector(".logo-loader").style.display = "none";
-    }
-};
+//         document.querySelector(".logo-loader").style.visibility = "visible";
+//     } else {
+
+//         document.querySelector("body").style.visibility = "visible";
+//         document.querySelector(".logo-loader").style.display = "none";
+//     }
+// };
 
 $(function () {
 

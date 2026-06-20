@@ -208,10 +208,17 @@ var ProhzGreyLogo = '<img style="height: 90px;" src="' + urlprefix + '/images/Pr
     // }, 5000);
 
 
+    $(document).ready(function () {
+        document.querySelector('body').style.visibility = 'visible';
+    });
+
     $(window).on('load', function () {
         setTimeout(function () {
-            $('.logo-loader').fadeOut();
-        }, 300);
+            var loader = document.querySelector('.logo-loader');
+            if (loader) {
+                loader.style.display = 'none';
+            }
+        }, 2000);
     });
 
     </script>
