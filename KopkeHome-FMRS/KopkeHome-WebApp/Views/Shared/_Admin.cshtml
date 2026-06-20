@@ -202,6 +202,18 @@ var ProhzGreyLogo = '<img style="height: 90px;" src="' + urlprefix + '/images/Pr
 
     
 //});
+
+    // setTimeout(function () {
+    //     $('.logo-loader').hide();
+    // }, 5000);
+
+
+    $(window).on('load', function () {
+        setTimeout(function () {
+            $('.logo-loader').fadeOut();
+        }, 300);
+    });
+
     </script>
 </body>
 
