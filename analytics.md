@@ -194,3 +194,14 @@ The system is ready for frontend development, testing, and deployment phases.
 *Analytics generated on: 2026-05-20*
 
 ##Backup_code
+
+
+Mail-configurations hostinger:
+
+"EmailConfig": {
+  "EmailSender": "info@prohz.net",
+  "Username": "info@prohz.net",
+  "Password": "YOUR_EMAIL_PASSWORD",
+  "host": "smtp.hostinger.com",
+  "port": 465
+}

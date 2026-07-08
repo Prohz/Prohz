@@ -34,13 +34,28 @@ namespace KopkeHome_UtilityLayer
                         mailMessage.Subject = subject;
                         mailMessage.Body = MailBody;
                         mailMessage.IsBodyHtml = true;
+
+                        Console.WriteLine($"Host: {_config["EmailConfig:host"]}");
+                        Console.WriteLine($"Port: {_config["EmailConfig:port"]}");
+                        Console.WriteLine($"Username: {_config["EmailConfig:Username"]}");
+                        Console.WriteLine($"Sender: {_config["EmailConfig:EmailSender"]}");
+
+                        smtpClient.Timeout = 10000;
+
+                        Console.WriteLine("About to send...");
+
                         smtpClient.Send(mailMessage);
+
+                        Console.WriteLine("Mail sent.");
+
                         isSend = true;
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                // throw;
+                Console.WriteLine(ex.ToString());
                 throw;
             }
             return isSend;
@@ -54,8 +69,10 @@ namespace KopkeHome_UtilityLayer
                 string AuthenticationCode = Convert.ToString(r);
                 return AuthenticationCode;
             }
-            catch
+            catch(Exception ex)
             {
+                // throw;
+                Console.WriteLine(ex.ToString());
                 throw;
             }
 
