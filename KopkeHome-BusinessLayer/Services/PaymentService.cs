@@ -59,21 +59,21 @@ namespace KopkeHome_BusinessLayer.Services
                     var respo = await _iRepository.Add(model);
                     if (respo != null)
                     {
-                        var accountSid = _configuration.GetSection("Twilio")["accountSid"];
-                        string authToken = _configuration.GetSection("Twilio")["authToken"];
+                        // var accountSid = _configuration.GetSection("Twilio")["accountSid"];
+                        // string authToken = _configuration.GetSection("Twilio")["authToken"];
 
-                        TwilioClient.Init(accountSid, authToken);
+                        // TwilioClient.Init(accountSid, authToken);
 
-                        var message = MessageResource.Create(
-                            body: "New " + Constant.GetNames(userid.RoleId) + " joined Prohz.Member id is " + userid.UniqueMemberId,
-
-
+                        // var message = MessageResource.Create(
+                        //     body: "New " + Constant.GetNames(userid.RoleId) + " joined Prohz.Member id is " + userid.UniqueMemberId,
 
 
-                            from: new Twilio.Types.PhoneNumber(_configuration.GetSection("Twilio")["TwilioFromNumber"]),
 
-                            to: new Twilio.Types.PhoneNumber(_configuration.GetSection("Twilio")["TwilioToNumber"])
-                        );
+
+                        //     from: new Twilio.Types.PhoneNumber(_configuration.GetSection("Twilio")["TwilioFromNumber"]),
+
+                        //     to: new Twilio.Types.PhoneNumber(_configuration.GetSection("Twilio")["TwilioToNumber"])
+                        // );
 
                         var Referal = _dbContext.ProhzReferral.Where(X => X.UserId == userid.Id).FirstOrDefault();
                         if (Referal != null)

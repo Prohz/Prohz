@@ -173,6 +173,10 @@
 
             double percentgl = 0;
             var Gold = Model.Plans.Where(x => x.Title.Contains("Gold")).FirstOrDefault();
+            
+            var ProhzConnect = Model.Plans.FirstOrDefault(x => x.Title == "Connect");
+            int PlanIdProhzConnect = ProhzConnect.Id;
+
             int PlanIdGold = Gold.Id;
             double Gold_PricePerMonth = Gold.PricePerMonth;
             string Gold_Categories = Gold.Categories;
@@ -291,6 +295,31 @@
                     <div class="col">
                         <div class="card-wrapper">
                             <div class="title-wrapper">
+                                <h3>Connect Plan</h3>
+                                <p>Get your business connected with the Prohz network for free.</p>
+
+                                <p class="promo-price" style="margin: 7px;">FREE</p>
+                                <p>No verification fee required</p>
+                                <p class="disclaimer">A simple way to establish your presence on Prohz.</p>
+
+                                <button onclick="ProhzConnectRadio()">Join Connect for Free</button>
+
+                                <div class="card-meta">
+                                    <ul>
+                                        <li>Company listed in the Prohz directory</li>
+                                        <li>Basic business profile</li>
+                                        <li>Appear in relevant contractor searches</li>
+                                        <li>Connect with potential customers</li>
+                                        <li>Upgrade anytime for additional visibility and features</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card-wrapper">
+                            <div class="title-wrapper">
                                 <h3>Basic Plan</h3>
                                 <p>Best plan for those companies that want to stay small and local.</p>
                                 <s><p>$324<span class="disclaimer"> per year</p></s>
@@ -332,7 +361,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col" style="display: none;">
                         <div class="card-wrapper">
                             <div class="title-wrapper">
                                 <h3>Prohz+ Plan</h3>
@@ -354,6 +383,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -577,6 +607,45 @@
 
                 });
 
+
+            }
+
+            function ProhzConnectRadio() {
+
+                $("#CSTMLOADER").show();
+
+                var priceId = "price_1TxuVxILheuScUW2Vuo31tzs";
+                var dataId = @PlanIdProhzConnect;
+
+                $.ajax({
+
+                    type: 'GET',
+
+                    url: urlprefix +
+                        '/Membership/PaymentCard?priceId=' +
+                        priceId +
+                        '&planId=' +
+                        dataId,
+
+                    success: function (res) {
+
+                        if (res == 1) {
+
+                            window.location =
+                                urlprefix + "/Membership/Payment/";
+
+                        }
+                        else {
+
+                            $("#CSTMLOADER").hide();
+
+                            alert("Something went wrong.");
+
+                        }
+
+                    }
+
+                });
 
             }
 
