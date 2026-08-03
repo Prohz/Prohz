@@ -206,5 +206,3 @@ Mail-configurations hostinger:
   "port": 465
 }
 
-Live-stripe keys
-
