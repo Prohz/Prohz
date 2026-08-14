@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KopkeHome_DataAccessLayer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221117111101_AddUniquemEmberId2")]
-    partial class AddUniquemEmberId2
+    [Migration("20260813135036_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -140,6 +140,9 @@ namespace KopkeHome_DataAccessLayer.Migrations
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VerificationStatus")
                         .HasColumnType("int");
 
                     b.Property<int>("Visa")
@@ -286,6 +289,9 @@ namespace KopkeHome_DataAccessLayer.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
+                    b.Property<int>("VerificationStatus")
+                        .HasColumnType("int");
+
                     b.Property<int>("Visa")
                         .HasColumnType("int");
 
@@ -305,7 +311,7 @@ namespace KopkeHome_DataAccessLayer.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BusinessProfileSubContractors");
+                    b.ToTable("BusinessProfileOtherContractors");
                 });
 
             modelBuilder.Entity("KopkeHome_ModelLayer.DataModel.Categories", b =>
@@ -317,7 +323,6 @@ namespace KopkeHome_DataAccessLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -335,7 +340,6 @@ namespace KopkeHome_DataAccessLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("CityName")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -371,6 +375,63 @@ namespace KopkeHome_DataAccessLayer.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("ContractorsReview");
+                });
+
+            modelBuilder.Entity("KopkeHome_ModelLayer.DataModel.DocumentsVerificationStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DocumentsVerificationStatus");
+                });
+
+            modelBuilder.Entity("KopkeHome_ModelLayer.DataModel.FAQ", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Answer")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Question")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FAQ");
+                });
+
+            modelBuilder.Entity("KopkeHome_ModelLayer.DataModel.HeardAboutProhz", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("HeardFrom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HeardAboutProhz");
                 });
 
             modelBuilder.Entity("KopkeHome_ModelLayer.DataModel.MembershipBenefits", b =>
@@ -415,18 +476,47 @@ namespace KopkeHome_DataAccessLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Descrption")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<bool>("IsPlanCreated")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsYearly")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("MobileApp")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("NumberOfCategories")
+                        .HasColumnType("int");
 
                     b.Property<int>("NumberOfZipcodes")
                         .HasColumnType("int");
 
+                    b.Property<double>("PriceMonthly")
+                        .HasColumnType("float");
+
+                    b.Property<double>("PriceYearly")
+                        .HasColumnType("float");
+
+                    b.Property<string>("StripePriceMonthly")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("StripePriceYearly")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("WebApp")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
-                    b.ToTable("CustomZipcodesRequest");
+                    b.ToTable("CustomMembershipPlanRequest");
                 });
 
             modelBuilder.Entity("KopkeHome_ModelLayer.DataModel.MembershipBenifits.UserMembershipCategories", b =>
@@ -471,16 +561,14 @@ namespace KopkeHome_DataAccessLayer.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ZipCodeId")
-                        .HasColumnType("int");
+                    b.Property<string>("ZipCodeId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("PlanId");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("ZipCodeId");
 
                     b.ToTable("UserMembershipZipcodes");
                 });
@@ -494,16 +582,13 @@ namespace KopkeHome_DataAccessLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("AnnuallyStripePriceId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Categories")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("MonthlyStripePriceId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("PhoneApp")
@@ -519,7 +604,6 @@ namespace KopkeHome_DataAccessLayer.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -527,7 +611,6 @@ namespace KopkeHome_DataAccessLayer.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ZipCodes")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -558,6 +641,9 @@ namespace KopkeHome_DataAccessLayer.Migrations
                     b.Property<string>("Email")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("Extensions")
+                        .HasColumnType("int");
 
                     b.Property<string>("InvoiceNumber")
                         .HasMaxLength(250)
@@ -612,6 +698,113 @@ namespace KopkeHome_DataAccessLayer.Migrations
                     b.ToTable("UserMembershipSubscriptions");
                 });
 
+            modelBuilder.Entity("KopkeHome_ModelLayer.DataModel.ProhzLegalFiles", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("FilePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FileType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProhzLegalFiles");
+                });
+
+            modelBuilder.Entity("KopkeHome_ModelLayer.DataModel.ProhzReferral", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("IsRegistrationComplete")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("MemberId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("SalesPersonName")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProhzReferral");
+                });
+
+            modelBuilder.Entity("KopkeHome_ModelLayer.DataModel.ProhzSalesAssciates", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("IsRegistred")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("JoinedMemberEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("JoinedMemberMemberId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("JoinedMemberName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("JoinedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SalesPersonName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProhzSalesAssciates");
+                });
+
+            modelBuilder.Entity("KopkeHome_ModelLayer.DataModel.PromoVideos", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("FileName")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("FilePath")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("OriginalName")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PromoVideos");
+                });
+
             modelBuilder.Entity("KopkeHome_ModelLayer.DataModel.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -657,9 +850,12 @@ namespace KopkeHome_DataAccessLayer.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("StateName")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("USAStateCode")
+                        .HasMaxLength(2)
+                        .HasColumnType("nvarchar(2)");
 
                     b.HasKey("StateId");
 
@@ -718,6 +914,15 @@ namespace KopkeHome_DataAccessLayer.Migrations
 
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("HeardAboutProhzFrom")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDocumentsVerified")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsEmailVerified")
                         .HasColumnType("bit");
@@ -836,7 +1041,6 @@ namespace KopkeHome_DataAccessLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
@@ -861,8 +1065,8 @@ namespace KopkeHome_DataAccessLayer.Migrations
                     b.Property<int>("CityId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Zipcode")
-                        .HasColumnType("int");
+                    b.Property<string>("Zipcode")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -1094,17 +1298,9 @@ namespace KopkeHome_DataAccessLayer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("KopkeHome_ModelLayer.DataModel.ZipCode", "ZipCode")
-                        .WithMany()
-                        .HasForeignKey("ZipCodeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("MembershipBenifitsPlan");
 
                     b.Navigation("User");
-
-                    b.Navigation("ZipCode");
                 });
 
             modelBuilder.Entity("KopkeHome_ModelLayer.DataModel.MembershipBenifitsPlan", b =>
