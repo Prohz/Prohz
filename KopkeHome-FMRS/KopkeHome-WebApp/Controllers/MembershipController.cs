@@ -457,7 +457,7 @@ public async Task<IActionResult> JoinFreePlan(int planId)
                 apiStatus = apiResponse?.Statuscode.ToString();
             });
         }
-    }
+    } 
     catch (Exception ex)
     {
         _logger.LogError(
