@@ -816,113 +816,113 @@
 
             }
 
-            // function ProhzConnectRadio() {
-
-            //     $("#CSTMLOADER").show();
-
-            //     // var priceId = "price_1TxuVxILheuScUW2Vuo31tzs";
-            //     var priceId = "price_1Tjj8IILheuScUW28zFBCBDi";
-
-            //     var dataId = @PlanIdProhzConnect;
-
-            //     $.ajax({
-
-            //         type: 'GET',
-
-            //         url: urlprefix +
-            //             '/Membership/PaymentCard?priceId=' +
-            //             priceId +
-            //             '&planId=' +
-            //             dataId,
-
-            //         success: function (res) {
-
-            //             if (res == 1) {
-
-            //                 window.location =
-            //                     urlprefix + "/Membership/Payment/";
-
-            //             }
-            //             else {
-
-            //                 $("#CSTMLOADER").hide();
-
-            //                 alert("Something went wrong.");
-
-            //             }
-
-            //         }
-
-            //     });
-
-            // }
-
             function ProhzConnectRadio() {
 
                 $("#CSTMLOADER").show();
 
-                var planId = @PlanIdProhzConnect;
+                // var priceId = "price_1TxuVxILheuScUW2Vuo31tzs";
+                var priceId = "price_1Tjj8IILheuScUW28zFBCBDi";
 
-                console.log("Free plan ID:", planId);
+                var dataId = @PlanIdProhzConnect;
 
                 $.ajax({
-                    type: 'POST',
-                    url: urlprefix + '/Membership/JoinFreePlan',
-                    data: {
-                        planId: planId
-                    },
+
+                    type: 'GET',
+
+                    url: urlprefix +
+                        '/Membership/PaymentCard?priceId=' +
+                        priceId +
+                        '&planId=' +
+                        dataId,
 
                     success: function (res) {
 
-                        console.log("JoinFreePlan response:", res);
-
-                        if (res.success && res.code === 1) {
+                        if (res == 1) {
 
                             window.location =
-                                urlprefix + "/Membership/selectzipcodesandcategories";
-
-                        }
-                        else if (res.code === 2) {
-
-                            $("#CSTMLOADER").hide();
-
-                            Swal.fire({
-                                icon: 'info',
-                                title: 'Already a member',
-                                text: 'You already have a membership plan.'
-                            });
+                                urlprefix + "/Membership/Payment/";
 
                         }
                         else {
 
                             $("#CSTMLOADER").hide();
 
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Something went wrong',
-                                text: res.message || 'Unable to join the free plan.'
-                            });
+                            alert("Something went wrong.");
 
-                            console.log("JoinFreePlan failure:", res);
                         }
 
-                    },
-
-                    error: function (xhr) {
-
-                        $("#CSTMLOADER").hide();
-
-                        console.log("JoinFreePlan AJAX error:", xhr);
-                        console.log("Response:", xhr.responseText);
-
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Something went wrong',
-                            text: xhr.responseText || 'Unable to process your request.'
-                        });
                     }
+
                 });
+
             }
+
+            // function ProhzConnectRadio() {
+
+            //     $("#CSTMLOADER").show();
+
+            //     var planId = @PlanIdProhzConnect;
+
+            //     console.log("Free plan ID:", planId);
+
+            //     $.ajax({
+            //         type: 'POST',
+            //         url: urlprefix + '/Membership/JoinFreePlan',
+            //         data: {
+            //             planId: planId
+            //         },
+
+            //         success: function (res) {
+
+            //             console.log("JoinFreePlan response:", res);
+
+            //             if (res.success && res.code === 1) {
+
+            //                 window.location =
+            //                     urlprefix + "/Membership/selectzipcodesandcategories";
+
+            //             }
+            //             else if (res.code === 2) {
+
+            //                 $("#CSTMLOADER").hide();
+
+            //                 Swal.fire({
+            //                     icon: 'info',
+            //                     title: 'Already a member',
+            //                     text: 'You already have a membership plan.'
+            //                 });
+
+            //             }
+            //             else {
+
+            //                 $("#CSTMLOADER").hide();
+
+            //                 Swal.fire({
+            //                     icon: 'error',
+            //                     title: 'Something went wrong',
+            //                     text: res.message || 'Unable to join the free plan.'
+            //                 });
+
+            //                 console.log("JoinFreePlan failure:", res);
+            //             }
+
+            //         },
+
+            //         error: function (xhr) {
+
+            //             $("#CSTMLOADER").hide();
+
+            //             console.log("JoinFreePlan AJAX error:", xhr);
+            //             console.log("Response:", xhr.responseText);
+
+            //             Swal.fire({
+            //                 icon: 'error',
+            //                 title: 'Something went wrong',
+            //                 text: xhr.responseText || 'Unable to process your request.'
+            //             });
+            //         }
+            //     });
+            // }
 
             function ExpandRadio() {
                 $("#CSTMLOADER").show();
