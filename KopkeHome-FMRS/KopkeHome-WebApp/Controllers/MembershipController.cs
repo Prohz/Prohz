@@ -197,6 +197,283 @@ namespace KopkeHome_WebApp.Controllers
         }
 
 
+        // [HttpPost]
+        // public async Task<IActionResult> JoinFreePlan(int planId)
+        // {
+        //     try
+        //     {
+        //         var email = HttpContext.Request.Cookies["Email"];
+
+        //         if (string.IsNullOrEmpty(email))
+        //         {
+        //             return Json(0);
+        //         }
+
+        //         // Get logged-in user
+        //         User user;
+
+        //         using (var client = new HttpClient())
+        //         {
+        //             client.BaseAddress = new Uri(
+        //                 _configuration.GetValue<string>("WebApi:API_URL") + "/Account/"
+        //             );
+
+        //             var content = new FormUrlEncodedContent(new[]
+        //             {
+        //                 new KeyValuePair<string, string>("email", email)
+        //             });
+
+        //             var response = await client.PostAsync("GetUserByEmail", content);
+
+        //             if (!response.IsSuccessStatusCode)
+        //             {
+        //                 return Json(0);
+        //             }
+
+        //             var result = await response.Content.ReadAsStringAsync();
+        //             user = JsonConvert.DeserializeObject<User>(result);
+        //         }
+
+        //         if (user == null)
+        //         {
+        //             return Json(0);
+        //         }
+
+        //         // Store current user
+        //         HttpContext.Session.Set<User>("CurrentUser", user);
+
+        //         // Call API to create free membership
+        //         using (var client = new HttpClient())
+        //         {
+        //             client.BaseAddress = new Uri(
+        //                 _configuration.GetValue<string>("WebApi:API_URL") + "/Payment/"
+        //             );
+
+        //             var request = new
+        //             {
+        //                 UserId = user.Id,
+        //                 PlanId = planId
+        //             };
+
+        //             var response = await client.PostAsJsonAsync(
+        //                 "SubscribeToFreePlan",
+        //                 request
+        //             );
+
+        //             if (!response.IsSuccessStatusCode)
+        //             {
+        //                 return Json(0);
+        //             }
+
+        //             var result = await response.Content.ReadAsStringAsync();
+
+        //             var apiResponse = JsonConvert.DeserializeObject<Response>(result);
+
+        //             if (apiResponse?.Statuscode == HttpStatusCode.OK)
+        //             {
+        //                 return Json(1);
+        //             }
+
+        //             if (apiResponse?.Statuscode == HttpStatusCode.BadRequest)
+        //             {
+        //                 return Json(2);
+        //             }
+
+        //             return Json(0);
+        //         }
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         _logger.LogError(ex, "Error joining free membership plan.");
+        //         return Json(0);
+        //     }
+        // }
+
+        [HttpPost]
+public async Task<IActionResult> JoinFreePlan(int planId)
+{
+    try
+    {
+        var email = HttpContext.Request.Cookies["Email"];
+
+        _logger.LogInformation("JoinFreePlan started. PlanId: {PlanId}, Email: {Email}",
+            planId, email);
+
+        if (string.IsNullOrEmpty(email))
+        {
+            _logger.LogWarning("JoinFreePlan failed: Email cookie is empty.");
+
+            return Json(new
+            {
+                success = false,
+                step = "email",
+                message = "Email cookie is missing."
+            });
+        }
+
+        // -----------------------------------------
+        // 1. Get logged-in user
+        // -----------------------------------------
+
+        User user;
+
+        using (var client = new HttpClient())
+        {
+            client.BaseAddress = new Uri(
+                _configuration.GetValue<string>("WebApi:API_URL") + "/Account/"
+            );
+
+            var content = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("email", email)
+            });
+
+            var response = await client.PostAsync(
+                "GetUserByEmail",
+                content
+            );
+
+            var result = await response.Content.ReadAsStringAsync();
+
+            _logger.LogInformation(
+                "GetUserByEmail Status: {StatusCode}, Response: {Response}",
+                response.StatusCode,
+                result
+            );
+
+            if (!response.IsSuccessStatusCode)
+            {
+                return Json(new
+                {
+                    success = false,
+                    step = "get-user",
+                    statusCode = (int)response.StatusCode,
+                    message = result
+                });
+            }
+
+            user = JsonConvert.DeserializeObject<User>(result);
+        }
+
+        if (user == null)
+        {
+            _logger.LogWarning("JoinFreePlan failed: User could not be deserialized.");
+
+            return Json(new
+            {
+                success = false,
+                step = "user-null",
+                message = "User was not found."
+            });
+        }
+
+        _logger.LogInformation(
+            "User found. UserId: {UserId}, Email: {Email}",
+            user.Id,
+            user.Email
+        );
+
+        // Store current user
+        HttpContext.Session.Set<User>("CurrentUser", user);
+
+        // -----------------------------------------
+        // 2. Subscribe user to free plan
+        // -----------------------------------------
+
+        using (var client = new HttpClient())
+        {
+            client.BaseAddress = new Uri(
+                _configuration.GetValue<string>("WebApi:API_URL") + "/Payment/"
+            );
+
+            var request = new
+            {
+                UserId = user.Id,
+                PlanId = planId
+            };
+
+            _logger.LogInformation(
+                "Calling SubscribeToFreePlan. UserId: {UserId}, PlanId: {PlanId}",
+                user.Id,
+                planId
+            );
+
+            var response = await client.PostAsJsonAsync(
+                "SubscribeToFreePlan",
+                request
+            );
+
+            var result = await response.Content.ReadAsStringAsync();
+
+            _logger.LogInformation(
+                "SubscribeToFreePlan Status: {StatusCode}, Response: {Response}",
+                response.StatusCode,
+                result
+            );
+
+            if (!response.IsSuccessStatusCode)
+            {
+                return Json(new
+                {
+                    success = false,
+                    step = "subscribe-api",
+                    statusCode = (int)response.StatusCode,
+                    message = result
+                });
+            }
+
+            var apiResponse =
+                JsonConvert.DeserializeObject<Response>(result);
+
+            _logger.LogInformation(
+                "SubscribeToFreePlan API Response StatusCode: {StatusCode}",
+                apiResponse?.Statuscode
+            );
+
+            if (apiResponse?.Statuscode == HttpStatusCode.OK)
+            {
+                return Json(new
+                {
+                    success = true,
+                    code = 1
+                });
+            }
+
+            if (apiResponse?.Statuscode == HttpStatusCode.BadRequest)
+            {
+                return Json(new
+                {
+                    success = false,
+                    code = 2,
+                    message = "User already has a membership."
+                });
+            }
+
+            return Json(new
+            {
+                success = false,
+                code = 0,
+                message = "Unexpected API response.",
+                apiStatus = apiResponse?.Statuscode?.ToString()
+            });
+        }
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError(
+            ex,
+            "Error joining free membership plan."
+        );
+
+        return Json(new
+        {
+            success = false,
+            code = 0,
+            message = ex.Message
+        });
+    }
+}
+
         public IActionResult PaymentCard(string priceId, string planId)
         {
             HttpContext.Session.SetString("PlanId", planId);

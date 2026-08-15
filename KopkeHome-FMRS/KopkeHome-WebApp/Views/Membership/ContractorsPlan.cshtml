@@ -20,6 +20,8 @@
 
     <!-- Custom CSS -->
     <link href="~/HomePageAssets/assets/css/style.css" rel="stylesheet">
+    <link href="~/HomePageAssets/assets/css/planstyling.css" rel="stylesheet">
+
 
     <link rel="stylesheet" href="~/css/master.css" asp-append-version="true" />
 
@@ -300,7 +302,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+
+                    <!-- <div class="col">
                         <div class="card-wrapper">
                             <div class="title-wrapper">
                                 <h3>Connect Plan</h3>
@@ -356,7 +359,6 @@
                         </div>
                     </div>
 
-
                     <div class="col">
                         <div class="card-wrapper best-value">
                             <div class="title-wrapper">
@@ -384,7 +386,120 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+
+                    <!-- Connect Plan -->
+<div class="col">
+    <div class="card-wrapper">
+        <div class="title-wrapper">
+            <div class="plan-header">
+                <h3>Prohz Connect</h3>
+                <p>Get your business connected to the PROHZ network for free.</p>
+            </div>
+
+                <span class="price-note">No credit card required</span>
+            
+
+            <div class="card-meta">
+                <ul>
+                    <li>2 Categories</li>
+                    <li>10 Service Areas</li>
+                    <li>Business Profile</li>
+                    <li>Unlimited Searches</li>
+                    <li>Upgrade anytime for additional Categories and Service Areas</li>
+                </ul>
+            </div>
+
+            <div class="price-block">
+                <span class="promo-price">0.00</span>
+            </div>
+
+            <button type="button" onclick="ProhzConnectRadio()">
+                Join Now
+            </button>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Expand Plan -->
+<div class="col">
+    <div class="card-wrapper best-value">
+        <div class="title-wrapper">
+
+            <div class="plan-header">
+
+                <h3>Prohz Expand</h3>
+                <p>
+                    Perfect for companies expanding into additional
+                    Categories and Service Areas.
+                </p>
+            </div>
+
+            
+
+            <div class="card-meta">
+                <ul>
+                    <li>10 Categories</li>
+                    <li>30 Service Areas</li>
+                    <li>Business Profile</li>
+                    <li>Unlimited Searches</li>
+                    <li>Upgrade or downgrade anytime</li>
+                </ul>
+            </div>
+
+            <div class="price-block">
+                <span class="promo-price">$275.00</span>
+                
+            </div>
+
+            <button type="button" onclick="ExpandRadio()">
+                Join Now
+            </button>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Maximize Plan -->
+<div class="col">
+    <div class="card-wrapper">
+        <div class="title-wrapper">
+            <div class="plan-header">
+                <h3>Prohz Maximize</h3>
+                <p>
+                    Perfect for growing businesses that want maximum
+                    exposure and reach.
+                </p>
+            </div>
+
+            
+
+            <div class="card-meta">
+                <ul>
+                    <li>20 Categories</li>
+                    <li>100 Service Areas</li>
+                    <li>Business Profile</li>
+                    <li>Unlimited Searches</li>
+                    <li>Downgrade anytime</li>
+                </ul>
+            </div>
+
+
+            <div class="price-block">
+                <span class="promo-price">$575.00</span>
+                
+            </div>
+
+            <button type="button" onclick="MaximizeRadio()">
+                Join Now
+            </button>
+
+        </div>
+    </div>
+</div>
 
                     <div class="col" style="display: none;">
                         <div class="card-wrapper">
@@ -701,47 +816,113 @@
 
             }
 
+            // function ProhzConnectRadio() {
+
+            //     $("#CSTMLOADER").show();
+
+            //     // var priceId = "price_1TxuVxILheuScUW2Vuo31tzs";
+            //     var priceId = "price_1Tjj8IILheuScUW28zFBCBDi";
+
+            //     var dataId = @PlanIdProhzConnect;
+
+            //     $.ajax({
+
+            //         type: 'GET',
+
+            //         url: urlprefix +
+            //             '/Membership/PaymentCard?priceId=' +
+            //             priceId +
+            //             '&planId=' +
+            //             dataId,
+
+            //         success: function (res) {
+
+            //             if (res == 1) {
+
+            //                 window.location =
+            //                     urlprefix + "/Membership/Payment/";
+
+            //             }
+            //             else {
+
+            //                 $("#CSTMLOADER").hide();
+
+            //                 alert("Something went wrong.");
+
+            //             }
+
+            //         }
+
+            //     });
+
+            // }
+
             function ProhzConnectRadio() {
 
                 $("#CSTMLOADER").show();
 
-                // var priceId = "price_1TxuVxILheuScUW2Vuo31tzs";
-                var priceId = "price_1Tjj8IILheuScUW28zFBCBDi";
+                var planId = @PlanIdProhzConnect;
 
-                var dataId = @PlanIdProhzConnect;
+                console.log("Free plan ID:", planId);
 
                 $.ajax({
-
-                    type: 'GET',
-
-                    url: urlprefix +
-                        '/Membership/PaymentCard?priceId=' +
-                        priceId +
-                        '&planId=' +
-                        dataId,
+                    type: 'POST',
+                    url: urlprefix + '/Membership/JoinFreePlan',
+                    data: {
+                        planId: planId
+                    },
 
                     success: function (res) {
 
-                        if (res == 1) {
+                        console.log("JoinFreePlan response:", res);
+
+                        if (res.success && res.code === 1) {
 
                             window.location =
-                                urlprefix + "/Membership/Payment/";
+                                urlprefix + "/Membership/selectzipcodesandcategories";
+
+                        }
+                        else if (res.code === 2) {
+
+                            $("#CSTMLOADER").hide();
+
+                            Swal.fire({
+                                icon: 'info',
+                                title: 'Already a member',
+                                text: 'You already have a membership plan.'
+                            });
 
                         }
                         else {
 
                             $("#CSTMLOADER").hide();
 
-                            alert("Something went wrong.");
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Something went wrong',
+                                text: res.message || 'Unable to join the free plan.'
+                            });
 
+                            console.log("JoinFreePlan failure:", res);
                         }
 
+                    },
+
+                    error: function (xhr) {
+
+                        $("#CSTMLOADER").hide();
+
+                        console.log("JoinFreePlan AJAX error:", xhr);
+                        console.log("Response:", xhr.responseText);
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Something went wrong',
+                            text: xhr.responseText || 'Unable to process your request.'
+                        });
                     }
-
                 });
-
             }
-
 
             function ExpandRadio() {
                 $("#CSTMLOADER").show();

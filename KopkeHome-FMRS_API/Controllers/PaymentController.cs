@@ -1907,6 +1907,107 @@ namespace KopkeHome_FMRS_API.Controllers
             }
         }
 
+
+        [HttpPost]
+        public async Task<Response> SubscribeToFreePlan(FreeMembershipRequest model)
+        {
+            try
+            {
+                Response response = new Response();
+
+                var user = await _Userservice.GetUserByID(model.UserId);
+
+                if (user == null)
+                {
+                    response.Status = Resources.FailureMsg;
+                    response.Message = Resources.RegisterYourself;
+                    response.Statuscode = System.Net.HttpStatusCode.NotFound;
+
+                    return response;
+                }
+
+                // Check whether user already has a membership
+                var existingSubscription =
+                    await GetSubscriptionDetailByUserId(user.Id.ToString());
+
+                if (existingSubscription != null)
+                {
+                    response.Status = Resources.isSubscribed;
+                    response.Message = Resources.SubscriptionMsg;
+                    response.Statuscode = System.Net.HttpStatusCode.BadRequest;
+
+                    return response;
+                }
+
+                // Get membership plans
+                var membershipPlans = await _Membership.GetMembershipPlans();
+
+                var membershipPlan = membershipPlans
+                    .FirstOrDefault(x => x.Id == model.PlanId);
+
+                if (membershipPlan == null)
+                {
+                    response.Status = Resources.FailureMsg;
+                    response.Message = "Membership plan not found.";
+                    response.Statuscode = System.Net.HttpStatusCode.NotFound;
+
+                    return response;
+                }
+
+                // IMPORTANT:
+                // Only allow this endpoint for a FREE plan.
+                if (membershipPlan.PricePerYear != 0)
+                {
+                    response.Status = Resources.FailureMsg;
+                    response.Message = "This is not a free membership plan.";
+                    response.Statuscode = System.Net.HttpStatusCode.BadRequest;
+
+                    return response;
+                }
+
+                // Create free membership record
+                UserMembershipSubscriptions subscription =
+                    new UserMembershipSubscriptions();
+
+                subscription.PlanId = membershipPlan.Id;
+                subscription.Email = user.Email;
+
+                subscription.PaymentStatus = "Paid";
+                subscription.StripeStatus = "complete";
+
+                subscription.StripeSubscriptionId = null;
+                subscription.StripeCustomerID = null;
+                subscription.StripePriceId = null;
+
+                subscription.PeriodStartDate = DateTime.UtcNow;
+                subscription.PeriodEndDate = DateTime.UtcNow.AddYears(1);
+
+                var result =
+                    await AddPaymentTransactionDetails(subscription);
+
+                if (result != null)
+                {
+                    response.Status = Resources.SuccessMsg;
+                    response.Message = "Free membership activated successfully.";
+                    response.Statuscode = System.Net.HttpStatusCode.OK;
+                    response.Data = result;
+
+                    return response;
+                }
+
+                response.Status = Resources.FailureMsg;
+                response.Message = "Unable to create membership.";
+                response.Statuscode = System.Net.HttpStatusCode.InternalServerError;
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
+        }
+
         [NonAction]
         public Customer CreateCustomer(User _User)
         {
