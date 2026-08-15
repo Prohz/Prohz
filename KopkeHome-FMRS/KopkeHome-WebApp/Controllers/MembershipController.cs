@@ -454,7 +454,8 @@ public async Task<IActionResult> JoinFreePlan(int planId)
                 success = false,
                 code = 0,
                 message = "Unexpected API response.",
-                apiStatus = apiResponse?.Statuscode?.ToString()
+                // apiStatus = apiResponse?.Statuscode?.ToString()
+                apiStatus = apiResponse?.Statuscode.ToString();
             });
         }
     }
