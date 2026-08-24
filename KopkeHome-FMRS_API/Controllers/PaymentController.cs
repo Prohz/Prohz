@@ -1249,9 +1249,7 @@ namespace KopkeHome_FMRS_API.Controllers
                         Mode =
                             "subscription",
 
-                        // Always require a payment method.
-                        PaymentMethodCollection =
-                            "always",
+                    
 
                         SuccessUrl =
                             _configuration.GetValue<string>(
@@ -1437,8 +1435,6 @@ namespace KopkeHome_FMRS_API.Controllers
                         Mode =
                             "subscription",
 
-                        PaymentMethodCollection =
-                            "always",
 
                         SuccessUrl =
                             _configuration.GetValue<string>(
@@ -2267,8 +2263,6 @@ namespace KopkeHome_FMRS_API.Controllers
                         Mode =
                             "subscription",
 
-                        PaymentMethodCollection =
-                            "always",
 
                         SuccessUrl =
                             _configuration.GetValue<string>(
@@ -2503,8 +2497,6 @@ namespace KopkeHome_FMRS_API.Controllers
                         Mode =
                             "subscription",
 
-                        PaymentMethodCollection =
-                            "always",
 
                         SuccessUrl =
                             _configuration.GetValue<string>(
