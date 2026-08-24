@@ -870,7 +870,6 @@
 // }
 
 
-
 using KopkeHome_FMRS_API.Properties;
 using KopkeHome_ModelLayer;
 using KopkeHome_ModelLayer.DataModel;
@@ -920,8 +919,9 @@ namespace KopkeHome_FMRS_API.Controllers
         // ============================================================
 
         [HttpPost]
-        public async Task<UserMembershipSubscriptions> AddPaymentTransactionDetails(
-            UserMembershipSubscriptions model)
+        public async Task<UserMembershipSubscriptions>
+            AddPaymentTransactionDetails(
+                UserMembershipSubscriptions model)
         {
             try
             {
@@ -929,14 +929,18 @@ namespace KopkeHome_FMRS_API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error adding payment transaction details.");
+                _logger.LogError(
+                    ex,
+                    "Error adding payment transaction details.");
+
                 throw;
             }
         }
 
         [HttpPost]
-        public async Task<UserMembershipSubscriptions> UpdatePaymentTransactionInfo(
-            UserMembershipSubscriptions model)
+        public async Task<UserMembershipSubscriptions>
+            UpdatePaymentTransactionInfo(
+                UserMembershipSubscriptions model)
         {
             try
             {
@@ -944,7 +948,10 @@ namespace KopkeHome_FMRS_API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error updating payment transaction details.");
+                _logger.LogError(
+                    ex,
+                    "Error updating payment transaction details.");
+
                 throw;
             }
         }
@@ -954,8 +961,9 @@ namespace KopkeHome_FMRS_API.Controllers
         // ============================================================
 
         [HttpPost]
-        public async Task<UserMembershipSubscriptions> GetSubscriptionDetailByUserId(
-            [FromForm] string UserId)
+        public async Task<UserMembershipSubscriptions>
+            GetSubscriptionDetailByUserId(
+                [FromForm] string UserId)
         {
             try
             {
@@ -964,14 +972,18 @@ namespace KopkeHome_FMRS_API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error getting subscription by user ID.");
+                _logger.LogError(
+                    ex,
+                    "Error getting subscription by user ID.");
+
                 throw;
             }
         }
 
         [HttpGet]
-        public async Task<MembershipPlanViewmodelApp> GetSubscriptionDetailByUserIdApp(
-            string UserId)
+        public async Task<MembershipPlanViewmodelApp>
+            GetSubscriptionDetailByUserIdApp(
+                string UserId)
         {
             try
             {
@@ -980,7 +992,10 @@ namespace KopkeHome_FMRS_API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error getting subscription app details.");
+                _logger.LogError(
+                    ex,
+                    "Error getting subscription app details.");
+
                 throw;
             }
         }
@@ -990,8 +1005,9 @@ namespace KopkeHome_FMRS_API.Controllers
         // ============================================================
 
         [HttpPost]
-        public async Task<Response> CheckUserHaveSubscriptionOrNotByEmail(
-            [FromForm] string Email)
+        public async Task<Response>
+            CheckUserHaveSubscriptionOrNotByEmail(
+                [FromForm] string Email)
         {
             try
             {
@@ -1000,30 +1016,41 @@ namespace KopkeHome_FMRS_API.Controllers
                     Data = false
                 };
 
-                var user = _Userservice.GetUserByEmail(Email);
+                var userTask =
+                    _Userservice.GetUserByEmail(Email);
+
+                var user = await userTask;
 
                 if (user != null)
                 {
-                    var plans = await GetSubscriptionDetailByUserId(
-                        user.Result.Id.ToString());
+                    var plans =
+                        await GetSubscriptionDetailByUserId(
+                            user.Id.ToString());
 
                     if (plans != null)
                     {
-                        httpResponse.Message = Resources.SubscriptionMsg;
+                        httpResponse.Message =
+                            Resources.SubscriptionMsg;
+
                         httpResponse.Data = true;
+
                         httpResponse.Statuscode =
                             System.Net.HttpStatusCode.BadRequest;
                     }
                     else
                     {
-                        httpResponse.Message = Resources.IsSubscription;
+                        httpResponse.Message =
+                            Resources.IsSubscription;
+
                         httpResponse.Statuscode =
                             System.Net.HttpStatusCode.NotFound;
                     }
                 }
                 else
                 {
-                    httpResponse.Message = Resources.UserNotFound;
+                    httpResponse.Message =
+                        Resources.UserNotFound;
+
                     httpResponse.Statuscode =
                         System.Net.HttpStatusCode.NotFound;
                 }
@@ -1032,7 +1059,10 @@ namespace KopkeHome_FMRS_API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error checking user subscription.");
+                _logger.LogError(
+                    ex,
+                    "Error checking user subscription.");
+
                 throw;
             }
         }
@@ -1042,20 +1072,55 @@ namespace KopkeHome_FMRS_API.Controllers
         // ============================================================
 
         [HttpPost]
-        public async Task<Response> SubscribeToAPlan(SubscribeToAPlanModel model)
+        public async Task<Response>
+            SubscribeToAPlan(
+                SubscribeToAPlanModel model)
         {
             try
             {
                 Response response = new Response();
 
-                BillingModel userBilling = new();
+                if (model == null)
+                {
+                    response.Status =
+                        Resources.FailureMsg;
 
-                var user = await _Userservice.GetUserByID(model.UserID);
+                    response.Message =
+                        "Invalid subscription request.";
+
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.BadRequest;
+
+                    return response;
+                }
+
+                if (string.IsNullOrWhiteSpace(
+                    model.StripePriceId))
+                {
+                    response.Status =
+                        Resources.FailureMsg;
+
+                    response.Message =
+                        "Stripe Price ID is required.";
+
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.BadRequest;
+
+                    return response;
+                }
+
+                var user =
+                    await _Userservice.GetUserByID(
+                        model.UserID);
 
                 if (user == null)
                 {
-                    response.Status = Resources.FailureMsg;
-                    response.Message = Resources.RegisterYourself;
+                    response.Status =
+                        Resources.FailureMsg;
+
+                    response.Message =
+                        Resources.RegisterYourself;
+
                     response.Statuscode =
                         System.Net.HttpStatusCode.NotFound;
 
@@ -1063,171 +1128,10 @@ namespace KopkeHome_FMRS_API.Controllers
                 }
 
                 var existingSubscription =
-                    await GetSubscriptionDetailByUserId(user.Id.ToString());
-
-                if (existingSubscription != null)
-                {
-                    response.Message = Resources.SubscriptionMsg;
-                    response.Status = Resources.isSubscribed;
-                    response.Statuscode =
-                        System.Net.HttpStatusCode.BadRequest;
-
-                    return response;
-                }
-
-                userBilling.User = user;
-
-                userBilling.BillingName =
-                    user.FirstName + " " + user.LastName;
-
-                userBilling.BillingEmail = user.Email;
-                userBilling.BillingAddress = user.BusinessAddress;
-                userBilling.BillingPhoneNumber = user.PhoneNumber;
-
-                var priceService = new PriceService();
-
-                Price price = await priceService.GetAsync(
-                    model.StripePriceId);
-
-                userBilling.Interval =
-                    price.Recurring?.Interval;
-
-                userBilling.PriceInCent =
-                    price.UnitAmount;
-
-                userBilling.PriceInDollar =
-                    Convert.ToDecimal(
-                        price.UnitAmountDecimal / 100)
-                    .ToString("0.00");
-
-                userBilling.Currency = price.Currency;
-                userBilling.ProductId = price.ProductId;
-
-                var stripeCustomer = CreateCustomer(user);
-
-                var lineItems =
-                    new List<SessionLineItemOptions>
-                    {
-                        new SessionLineItemOptions
-                        {
-                            Price = model.StripePriceId,
-                            Quantity = 1
-                        }
-                    };
-
-                // ====================================================
-                // SERVICE / VERIFICATION FEE
-                // ====================================================
-
-                string verificationPriceId =
-                    _configuration.GetValue<string>(
-                        "Stripe:PriceId");
-
-                bool isFreePlan =
-                    !price.UnitAmount.HasValue ||
-                    price.UnitAmount.Value == 0;
-
-                if (!isFreePlan &&
-                    !string.IsNullOrWhiteSpace(verificationPriceId) &&
-                    !string.Equals(
-                        verificationPriceId,
-                        model.StripePriceId,
-                        StringComparison.OrdinalIgnoreCase))
-                {
-                    lineItems.Add(
-                        new SessionLineItemOptions
-                        {
-                            Price = verificationPriceId,
-                            Quantity = 1
-                        });
-                }
-                else
-                {
-                    _logger.LogInformation(
-                        "Skipping verification fee for plan {PriceId}. IsFreePlan={IsFreePlan}",
-                        model.StripePriceId,
-                        isFreePlan);
-                }
-
-                var options =
-                    new SessionCreateOptions
-                    {
-                        LineItems = lineItems,
-
-                        Customer = stripeCustomer.Id,
-
-                        AllowPromotionCodes = false,
-
-                        Mode = "subscription",
-
-                        // IMPORTANT:
-                        // Always collect a payment method.
-                        // This means even a $0 Connect subscription
-                        // requires the customer to attach a card.
-                        PaymentMethodCollection = "always",
-
-                        SuccessUrl =
-                            _configuration.GetValue<string>(
-                                "PaymentUrl:PaymentSuccessURLWeb")
-                            + "?session_id={CHECKOUT_SESSION_ID}",
-
-                        CancelUrl =
-                            _configuration.GetValue<string>(
-                                "PaymentUrl:PaymentFailUrl")
-                    };
-
-                var sessionService = new SessionService();
-
-                Session session =
-                    await sessionService.CreateAsync(options);
-
-                response.Statuscode =
-                    System.Net.HttpStatusCode.OK;
-
-                response.Message = Resources.FollowUrl;
-                response.Data = session.Url;
-
-                return response;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error creating subscription Checkout.");
-                throw;
-            }
-        }
-
-        // ============================================================
-        // CUSTOM PLAN
-        // ============================================================
-
-        [HttpPost]
-        public async Task<Response> SubscribeToAPlanCustom(
-            SubscribeToAPlanModel model)
-        {
-            try
-            {
-                Response response = new Response();
-
-                BillingModel userBilling = new();
-
-                var user =
-                    await _Userservice.GetUserByID(model.UserID);
-
-                if (user == null)
-                {
-                    response.Status = Resources.FailureMsg;
-                    response.Message = Resources.RegisterYourself;
-                    response.Statuscode =
-                        System.Net.HttpStatusCode.NotFound;
-
-                    return response;
-                }
-
-                var plans =
                     await GetSubscriptionDetailByUserId(
                         user.Id.ToString());
 
-                if (plans != null && plans.PlanId == 13)
+                if (existingSubscription != null)
                 {
                     response.Message =
                         Resources.SubscriptionMsg;
@@ -1241,34 +1145,270 @@ namespace KopkeHome_FMRS_API.Controllers
                     return response;
                 }
 
-                userBilling.User = user;
+                // ----------------------------------------------------
+                // Get Stripe Price
+                // ----------------------------------------------------
 
-                userBilling.BillingName =
-                    user.FirstName + " " + user.LastName;
-
-                userBilling.BillingEmail = user.Email;
-                userBilling.BillingAddress = user.BusinessAddress;
-                userBilling.BillingPhoneNumber = user.PhoneNumber;
-
-                var priceService = new PriceService();
+                var priceService =
+                    new PriceService();
 
                 Price price =
                     await priceService.GetAsync(
                         model.StripePriceId);
 
-                userBilling.Interval =
-                    price.Recurring?.Interval;
+                if (price == null)
+                {
+                    response.Status =
+                        Resources.FailureMsg;
 
-                userBilling.PriceInCent =
-                    price.UnitAmount;
+                    response.Message =
+                        "Stripe price was not found.";
 
-                userBilling.PriceInDollar =
-                    Convert.ToDecimal(
-                        price.UnitAmountDecimal / 100)
-                    .ToString("0.00");
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.NotFound;
 
-                userBilling.Currency = price.Currency;
-                userBilling.ProductId = price.ProductId;
+                    return response;
+                }
+
+                // ----------------------------------------------------
+                // Create Stripe Customer
+                // ----------------------------------------------------
+
+                var stripeCustomer =
+                    CreateCustomer(user);
+
+                // ----------------------------------------------------
+                // Main subscription price
+                // ----------------------------------------------------
+
+                var lineItems =
+                    new List<SessionLineItemOptions>
+                    {
+                        new SessionLineItemOptions
+                        {
+                            Price =
+                                model.StripePriceId,
+
+                            Quantity = 1
+                        }
+                    };
+
+                // ----------------------------------------------------
+                // Verification / Service Fee
+                // ----------------------------------------------------
+
+                string verificationPriceId =
+                    _configuration.GetValue<string>(
+                        "Stripe:PriceId");
+
+                bool isFreePlan =
+                    !price.UnitAmount.HasValue ||
+                    price.UnitAmount.Value == 0;
+
+                if (!isFreePlan &&
+                    !string.IsNullOrWhiteSpace(
+                        verificationPriceId) &&
+                    !string.Equals(
+                        verificationPriceId,
+                        model.StripePriceId,
+                        StringComparison.OrdinalIgnoreCase))
+                {
+                    lineItems.Add(
+                        new SessionLineItemOptions
+                        {
+                            Price =
+                                verificationPriceId,
+
+                            Quantity = 1
+                        });
+                }
+                else
+                {
+                    _logger.LogInformation(
+                        "Verification fee skipped. PriceId={PriceId}, IsFreePlan={IsFreePlan}",
+                        model.StripePriceId,
+                        isFreePlan);
+                }
+
+                // ----------------------------------------------------
+                // Checkout Session
+                // ----------------------------------------------------
+
+                var options =
+                    new SessionCreateOptions
+                    {
+                        LineItems =
+                            lineItems,
+
+                        Customer =
+                            stripeCustomer.Id,
+
+                        AllowPromotionCodes =
+                            false,
+
+                        Mode =
+                            "subscription",
+
+                        // Always require a payment method.
+                        PaymentMethodCollection =
+                            "always",
+
+                        SuccessUrl =
+                            _configuration.GetValue<string>(
+                                "PaymentUrl:PaymentSuccessURLWeb")
+                            + "?session_id={CHECKOUT_SESSION_ID}",
+
+                        CancelUrl =
+                            _configuration.GetValue<string>(
+                                "PaymentUrl:PaymentFailUrl")
+                    };
+
+                var sessionService =
+                    new SessionService();
+
+                Session session =
+                    await sessionService.CreateAsync(
+                        options);
+
+                response.Statuscode =
+                    System.Net.HttpStatusCode.OK;
+
+                response.Message =
+                    Resources.FollowUrl;
+
+                response.Data =
+                    session.Url;
+
+                return response;
+            }
+            catch (StripeException ex)
+            {
+                _logger.LogError(
+                    ex,
+                    "Stripe error creating subscription Checkout.");
+
+                return new Response
+                {
+                    Status =
+                        Resources.FailureMsg,
+
+                    Message =
+                        ex.StripeError?.Message ??
+                        ex.Message,
+
+                    Statuscode =
+                        System.Net.HttpStatusCode.BadRequest
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(
+                    ex,
+                    "Error creating subscription Checkout.");
+
+                throw;
+            }
+        }
+
+        // ============================================================
+        // CUSTOM PLAN
+        // ============================================================
+
+        [HttpPost]
+        public async Task<Response>
+            SubscribeToAPlanCustom(
+                SubscribeToAPlanModel model)
+        {
+            try
+            {
+                Response response = new Response();
+
+                if (model == null)
+                {
+                    response.Status =
+                        Resources.FailureMsg;
+
+                    response.Message =
+                        "Invalid subscription request.";
+
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.BadRequest;
+
+                    return response;
+                }
+
+                if (string.IsNullOrWhiteSpace(
+                    model.StripePriceId))
+                {
+                    response.Status =
+                        Resources.FailureMsg;
+
+                    response.Message =
+                        "Stripe Price ID is required.";
+
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.BadRequest;
+
+                    return response;
+                }
+
+                var user =
+                    await _Userservice.GetUserByID(
+                        model.UserID);
+
+                if (user == null)
+                {
+                    response.Status =
+                        Resources.FailureMsg;
+
+                    response.Message =
+                        Resources.RegisterYourself;
+
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.NotFound;
+
+                    return response;
+                }
+
+                var plans =
+                    await GetSubscriptionDetailByUserId(
+                        user.Id.ToString());
+
+                if (plans != null &&
+                    plans.PlanId == 13)
+                {
+                    response.Message =
+                        Resources.SubscriptionMsg;
+
+                    response.Status =
+                        Resources.isSubscribed;
+
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.BadRequest;
+
+                    return response;
+                }
+
+                var priceService =
+                    new PriceService();
+
+                Price price =
+                    await priceService.GetAsync(
+                        model.StripePriceId);
+
+                if (price == null)
+                {
+                    response.Status =
+                        Resources.FailureMsg;
+
+                    response.Message =
+                        "Stripe price was not found.";
+
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.NotFound;
+
+                    return response;
+                }
 
                 var stripeCustomer =
                     CreateCustomer(user);
@@ -1281,18 +1421,24 @@ namespace KopkeHome_FMRS_API.Controllers
                             {
                                 new SessionLineItemOptions
                                 {
-                                    Price = model.StripePriceId,
+                                    Price =
+                                        model.StripePriceId,
+
                                     Quantity = 1
                                 }
                             },
 
-                        Customer = stripeCustomer.Id,
+                        Customer =
+                            stripeCustomer.Id,
 
-                        AllowPromotionCodes = false,
+                        AllowPromotionCodes =
+                            false,
 
-                        Mode = "subscription",
+                        Mode =
+                            "subscription",
 
-                        PaymentMethodCollection = "always",
+                        PaymentMethodCollection =
+                            "always",
 
                         SuccessUrl =
                             _configuration.GetValue<string>(
@@ -1304,22 +1450,49 @@ namespace KopkeHome_FMRS_API.Controllers
                                 "PaymentUrl:PaymentFailUrl")
                     };
 
-                var service2 = new SessionService();
+                var sessionService =
+                    new SessionService();
 
                 Session session =
-                    await service2.CreateAsync(options);
+                    await sessionService.CreateAsync(
+                        options);
 
                 response.Statuscode =
                     System.Net.HttpStatusCode.OK;
 
-                response.Message = Resources.FollowUrl;
-                response.Data = session.Url;
+                response.Message =
+                    Resources.FollowUrl;
+
+                response.Data =
+                    session.Url;
 
                 return response;
             }
+            catch (StripeException ex)
+            {
+                _logger.LogError(
+                    ex,
+                    "Stripe error creating custom plan.");
+
+                return new Response
+                {
+                    Status =
+                        Resources.FailureMsg,
+
+                    Message =
+                        ex.StripeError?.Message ??
+                        ex.Message,
+
+                    Statuscode =
+                        System.Net.HttpStatusCode.BadRequest
+                };
+            }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error creating custom plan.");
+                _logger.LogError(
+                    ex,
+                    "Error creating custom plan.");
+
                 throw;
             }
         }
@@ -1329,20 +1502,40 @@ namespace KopkeHome_FMRS_API.Controllers
         // ============================================================
 
         [HttpPost]
-        public async Task<Response> SubscribeToFreePlan(
-            FreeMembershipRequest model)
+        public async Task<Response>
+            SubscribeToFreePlan(
+                FreeMembershipRequest model)
         {
             try
             {
                 Response response = new Response();
 
+                if (model == null)
+                {
+                    response.Status =
+                        Resources.FailureMsg;
+
+                    response.Message =
+                        "Invalid free membership request.";
+
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.BadRequest;
+
+                    return response;
+                }
+
                 var user =
-                    await _Userservice.GetUserByID(model.UserId);
+                    await _Userservice.GetUserByID(
+                        model.UserId);
 
                 if (user == null)
                 {
-                    response.Status = Resources.FailureMsg;
-                    response.Message = Resources.RegisterYourself;
+                    response.Status =
+                        Resources.FailureMsg;
+
+                    response.Message =
+                        Resources.RegisterYourself;
+
                     response.Statuscode =
                         System.Net.HttpStatusCode.NotFound;
 
@@ -1355,8 +1548,12 @@ namespace KopkeHome_FMRS_API.Controllers
 
                 if (existingSubscription != null)
                 {
-                    response.Status = Resources.isSubscribed;
-                    response.Message = Resources.SubscriptionMsg;
+                    response.Status =
+                        Resources.isSubscribed;
+
+                    response.Message =
+                        Resources.SubscriptionMsg;
+
                     response.Statuscode =
                         System.Net.HttpStatusCode.BadRequest;
 
@@ -1372,7 +1569,9 @@ namespace KopkeHome_FMRS_API.Controllers
 
                 if (membershipPlan == null)
                 {
-                    response.Status = Resources.FailureMsg;
+                    response.Status =
+                        Resources.FailureMsg;
+
                     response.Message =
                         "Membership plan not found.";
 
@@ -1384,7 +1583,9 @@ namespace KopkeHome_FMRS_API.Controllers
 
                 if (membershipPlan.PricePerYear != 0)
                 {
-                    response.Status = Resources.FailureMsg;
+                    response.Status =
+                        Resources.FailureMsg;
+
                     response.Message =
                         "This is not a free membership plan.";
 
@@ -1395,26 +1596,35 @@ namespace KopkeHome_FMRS_API.Controllers
                 }
 
                 UserMembershipSubscriptions subscription =
-                    new UserMembershipSubscriptions();
+                    new UserMembershipSubscriptions
+                    {
+                        PlanId =
+                            membershipPlan.Id,
 
-                subscription.PlanId =
-                    membershipPlan.Id;
+                        Email =
+                            user.Email,
 
-                subscription.Email =
-                    user.Email;
+                        PaymentStatus =
+                            "Paid",
 
-                subscription.PaymentStatus = "Paid";
-                subscription.StripeStatus = "complete";
+                        StripeStatus =
+                            "complete",
 
-                subscription.StripeSubscriptionId = null;
-                subscription.StripeCustomerID = null;
-                subscription.StripePriceId = null;
+                        StripeSubscriptionId =
+                            null,
 
-                subscription.PeriodStartDate =
-                    DateTime.UtcNow;
+                        StripeCustomerID =
+                            null,
 
-                subscription.PeriodEndDate =
-                    DateTime.UtcNow.AddYears(1);
+                        StripePriceId =
+                            null,
+
+                        PeriodStartDate =
+                            DateTime.UtcNow,
+
+                        PeriodEndDate =
+                            DateTime.UtcNow.AddYears(1)
+                    };
 
                 var result =
                     await AddPaymentTransactionDetails(
@@ -1431,7 +1641,8 @@ namespace KopkeHome_FMRS_API.Controllers
                     response.Statuscode =
                         System.Net.HttpStatusCode.OK;
 
-                    response.Data = result;
+                    response.Data =
+                        result;
 
                     return response;
                 }
@@ -1449,7 +1660,10 @@ namespace KopkeHome_FMRS_API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error activating free plan.");
+                _logger.LogError(
+                    ex,
+                    "Error activating free plan.");
+
                 throw;
             }
         }
@@ -1464,31 +1678,39 @@ namespace KopkeHome_FMRS_API.Controllers
             AddressOptions address =
                 new AddressOptions
                 {
-                    State = _User.State,
+                    State =
+                        _User.State,
 
-                    // Keep your existing behaviour.
-                    Country = "US",
+                    // Existing application behaviour retained.
+                    Country =
+                        "US",
 
-                    City = _User.City,
+                    City =
+                        _User.City,
 
-                    PostalCode = _User.ZipCode,
+                    PostalCode =
+                        _User.ZipCode,
 
-                    Line1 = _User.BusinessAddress,
+                    Line1 =
+                        _User.BusinessAddress,
 
-                    Line2 = _User.BusinessAddress
+                    Line2 =
+                        _User.BusinessAddress
                 };
 
             ShippingOptions shippingOptions =
                 new ShippingOptions
                 {
-                    Address = address,
+                    Address =
+                        address,
 
                     Name =
                         _User.FirstName +
                         " " +
                         _User.LastName,
 
-                    Phone = _User.PhoneNumber
+                    Phone =
+                        _User.PhoneNumber
                 };
 
             CustomerCreateOptions customerCreateOptions =
@@ -1499,16 +1721,21 @@ namespace KopkeHome_FMRS_API.Controllers
                         " " +
                         _User.LastName,
 
-                    Email = _User.Email,
+                    Email =
+                        _User.Email,
 
-                    Address = address,
+                    Address =
+                        address,
 
-                    Shipping = shippingOptions
+                    Shipping =
+                        shippingOptions
                 };
 
-            var service = new CustomerService();
+            var service =
+                new CustomerService();
 
-            return service.Create(customerCreateOptions);
+            return service.Create(
+                customerCreateOptions);
         }
 
         // ============================================================
@@ -1518,7 +1745,7 @@ namespace KopkeHome_FMRS_API.Controllers
         [HttpGet]
         public async Task<UserMembershipSubscriptions>
             GetCustomerByStripCustomerId(
-                [FromForm] string StripeCustomerId)
+                [FromQuery] string StripeCustomerId)
         {
             try
             {
@@ -1541,13 +1768,15 @@ namespace KopkeHome_FMRS_API.Controllers
         // ============================================================
 
         [HttpPost]
-        public async Task<UserMembershipSubscriptions> PaymentSuccess(
-            PaymentSuccessAPIModel Datamodel)
+        public async Task<UserMembershipSubscriptions>
+            PaymentSuccess(
+                PaymentSuccessAPIModel Datamodel)
         {
             UserMembershipSubscriptions model =
                 new UserMembershipSubscriptions();
 
-            string invoiceNumber = string.Empty;
+            string invoiceNumber =
+                string.Empty;
 
             try
             {
@@ -1558,6 +1787,10 @@ namespace KopkeHome_FMRS_API.Controllers
                     throw new ArgumentException(
                         "Stripe Checkout session ID is required.");
                 }
+
+                // ----------------------------------------------------
+                // Retrieve Checkout Session
+                // ----------------------------------------------------
 
                 var sessionService =
                     new SessionService();
@@ -1572,29 +1805,49 @@ namespace KopkeHome_FMRS_API.Controllers
                         "Stripe Checkout session not found.");
                 }
 
-                // ====================================================
-                // IMPORTANT:
-                // Get the old subscription from Checkout metadata.
-                // ====================================================
+                // ----------------------------------------------------
+                // Read replacement metadata
+                // ----------------------------------------------------
 
-                string oldSubscriptionId = null;
+                string oldSubscriptionId =
+                    null;
 
                 if (session.Metadata != null &&
                     session.Metadata.ContainsKey(
                         "OldSubscriptionId"))
                 {
                     oldSubscriptionId =
-                        session.Metadata["OldSubscriptionId"];
+                        session.Metadata[
+                            "OldSubscriptionId"];
                 }
 
-                // ====================================================
-                // CUSTOMER
-                // ====================================================
+                string changeType =
+                    null;
+
+                if (session.Metadata != null &&
+                    session.Metadata.ContainsKey(
+                        "ChangeType"))
+                {
+                    changeType =
+                        session.Metadata[
+                            "ChangeType"];
+                }
+
+                _logger.LogInformation(
+                    "Processing Stripe Checkout success. Session={SessionId}, ChangeType={ChangeType}, OldSubscription={OldSubscriptionId}",
+                    Datamodel.SessionId,
+                    changeType,
+                    oldSubscriptionId);
+
+                // ----------------------------------------------------
+                // Customer
+                // ----------------------------------------------------
 
                 string stripeCustomerId =
                     session.CustomerId;
 
-                Customer customer = null;
+                Customer customer =
+                    null;
 
                 if (!string.IsNullOrWhiteSpace(
                     stripeCustomerId))
@@ -1610,15 +1863,16 @@ namespace KopkeHome_FMRS_API.Controllers
                 string email =
                     customer?.Email;
 
-                if (string.IsNullOrWhiteSpace(email))
+                if (string.IsNullOrWhiteSpace(
+                    email))
                 {
                     email =
                         session.CustomerDetails?.Email;
                 }
 
-                // ====================================================
-                // SESSION DETAILS
-                // ====================================================
+                // ----------------------------------------------------
+                // Session details
+                // ----------------------------------------------------
 
                 string stripeStatus =
                     session.Status;
@@ -1629,16 +1883,16 @@ namespace KopkeHome_FMRS_API.Controllers
                 string paymentStatus =
                     session.PaymentStatus;
 
-                // ====================================================
-                // VALIDATE NEW SUBSCRIPTION
-                // ====================================================
-
                 if (string.IsNullOrWhiteSpace(
                     stripeSubscriptionId))
                 {
                     throw new Exception(
                         "Stripe Checkout completed without a subscription ID.");
                 }
+
+                // ----------------------------------------------------
+                // Validate subscription
+                // ----------------------------------------------------
 
                 var subscriptionService =
                     new SubscriptionService();
@@ -1659,70 +1913,82 @@ namespace KopkeHome_FMRS_API.Controllers
                 DateTime periodEndDate =
                     subscriptionResult.CurrentPeriodEnd;
 
-                string priceId = null;
+                // ----------------------------------------------------
+                // Get price ID
+                // ----------------------------------------------------
+
+                string priceId =
+                    null;
 
                 if (subscriptionResult.Items != null &&
                     subscriptionResult.Items.Data != null &&
                     subscriptionResult.Items.Data.Count > 0)
                 {
-                    priceId =
-                        subscriptionResult
-                            .Items
-                            .Data[0]
-                            .Price
-                            .Id;
+                    var firstItem =
+                        subscriptionResult.Items.Data[0];
+
+                    if (firstItem?.Price != null)
+                    {
+                        priceId =
+                            firstItem.Price.Id;
+                    }
                 }
 
-                // ====================================================
-                // INVOICE
-                // ====================================================
+                if (string.IsNullOrWhiteSpace(
+                    priceId))
+                {
+                    _logger.LogWarning(
+                        "Unable to determine Stripe Price ID from subscription {SubscriptionId}.",
+                        stripeSubscriptionId);
+                }
+
+                // ----------------------------------------------------
+                // Invoice
+                // ----------------------------------------------------
 
                 try
                 {
-                    if (!string.IsNullOrWhiteSpace(
-                        stripeSubscriptionId))
-                    {
-                        var invoiceOptions =
-                            new InvoiceListOptions
-                            {
-                                Subscription =
-                                    stripeSubscriptionId,
-                                Limit = 1
-                            };
-
-                        var invoiceService =
-                            new InvoiceService();
-
-                        StripeList<Invoice> invoices =
-                            await invoiceService.ListAsync(
-                                invoiceOptions);
-
-                        if (invoices != null &&
-                            invoices.Data != null &&
-                            invoices.Data.Count > 0)
+                    var invoiceOptions =
+                        new InvoiceListOptions
                         {
-                            invoiceNumber =
-                                invoices.Data[0].Number;
+                            Subscription =
+                                stripeSubscriptionId,
 
-                            model.InvoiceUrl =
-                                invoices.Data[0].InvoicePdf;
-                        }
+                            Limit = 1
+                        };
+
+                    var invoiceService =
+                        new InvoiceService();
+
+                    StripeList<Invoice> invoices =
+                        await invoiceService.ListAsync(
+                            invoiceOptions);
+
+                    if (invoices != null &&
+                        invoices.Data != null &&
+                        invoices.Data.Count > 0)
+                    {
+                        Invoice invoice =
+                            invoices.Data[0];
+
+                        invoiceNumber =
+                            invoice.Number;
+
+                        model.InvoiceUrl =
+                            invoice.InvoicePdf;
                     }
                 }
                 catch (Exception invoiceEx)
                 {
-                    // Do not fail the entire subscription
-                    // activation simply because invoice retrieval
-                    // failed.
                     _logger.LogWarning(
                         invoiceEx,
                         "Unable to retrieve invoice for subscription {SubscriptionId}.",
                         stripeSubscriptionId);
                 }
 
-                // ====================================================
-                // BUILD MEMBERSHIP RECORD
-                // ====================================================
+                // ----------------------------------------------------
+                // Build membership record
+                // ----------------------------------------------------
 
                 model.PaymentStatus =
                     paymentStatus;
@@ -1751,9 +2017,9 @@ namespace KopkeHome_FMRS_API.Controllers
                 model.Email =
                     email;
 
-                // ====================================================
-                // MAP STRIPE PRICE TO MEMBERSHIP PLAN
-                // ====================================================
+                // ----------------------------------------------------
+                // Map Stripe Price -> Membership Plan
+                // ----------------------------------------------------
 
                 var membershipPlans =
                     await _Membership.GetMembershipPlans();
@@ -1761,8 +2027,10 @@ namespace KopkeHome_FMRS_API.Controllers
                 var membershipPlan =
                     membershipPlans.FirstOrDefault(
                         x =>
-                            x.AnnuallyStripePriceId == priceId ||
-                            x.MonthlyStripePriceId == priceId);
+                            x.AnnuallyStripePriceId ==
+                                priceId ||
+                            x.MonthlyStripePriceId ==
+                                priceId);
 
                 if (membershipPlan != null)
                 {
@@ -1771,22 +2039,33 @@ namespace KopkeHome_FMRS_API.Controllers
                 }
                 else
                 {
-                    model.PlanId = 0;
+                    model.PlanId =
+                        0;
+
+                    _logger.LogWarning(
+                        "No membership plan found for Stripe Price {PriceId}.",
+                        priceId);
                 }
 
-                // ====================================================
+                // ----------------------------------------------------
                 // IMPORTANT:
-                // FIRST create/update the NEW subscription record.
-                // ====================================================
+                // Save the NEW subscription first.
+                // ----------------------------------------------------
 
                 var result =
                     await AddPaymentTransactionDetails(
                         model);
 
-                // ====================================================
-                // ONLY AFTER SUCCESSFUL NEW SUBSCRIPTION:
-                // CANCEL OLD SUBSCRIPTION
-                // ====================================================
+                if (result == null)
+                {
+                    throw new Exception(
+                        "New subscription could not be saved to the database.");
+                }
+
+                // ----------------------------------------------------
+                // Cancel old subscription ONLY after new one
+                // has successfully been saved.
+                // ----------------------------------------------------
 
                 if (!string.IsNullOrWhiteSpace(
                     oldSubscriptionId) &&
@@ -1802,10 +2081,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     }
                     catch (Exception cancelEx)
                     {
-                        // Important:
-                        // New subscription already exists.
-                        // Do not destroy successful upgrade just
-                        // because old subscription cancellation failed.
                         _logger.LogError(
                             cancelEx,
                             "New subscription {NewSubscriptionId} succeeded, but old subscription {OldSubscriptionId} could not be cancelled.",
@@ -1815,6 +2090,14 @@ namespace KopkeHome_FMRS_API.Controllers
                 }
 
                 return result;
+            }
+            catch (StripeException ex)
+            {
+                _logger.LogError(
+                    ex,
+                    "Stripe error processing PaymentSuccess.");
+
+                throw;
             }
             catch (Exception ex)
             {
@@ -1831,8 +2114,9 @@ namespace KopkeHome_FMRS_API.Controllers
         // ============================================================
 
         [HttpPost]
-        public async Task<Response> UpgradeSubscription(
-            UpgradeSubscriptionRequestModel model)
+        public async Task<Response>
+            UpgradeSubscription(
+                UpgradeSubscriptionRequestModel model)
         {
             try
             {
@@ -1840,8 +2124,12 @@ namespace KopkeHome_FMRS_API.Controllers
                 {
                     return new Response
                     {
-                        Status = Resources.FailureMsg,
-                        Message = "Invalid upgrade request.",
+                        Status =
+                            Resources.FailureMsg,
+
+                        Message =
+                            "Invalid upgrade request.",
+
                         Statuscode =
                             System.Net.HttpStatusCode.BadRequest
                     };
@@ -1852,8 +2140,12 @@ namespace KopkeHome_FMRS_API.Controllers
                 {
                     return new Response
                     {
-                        Status = Resources.FailureMsg,
-                        Message = "Stripe Price ID is required.",
+                        Status =
+                            Resources.FailureMsg,
+
+                        Message =
+                            "Stripe Price ID is required.",
+
                         Statuscode =
                             System.Net.HttpStatusCode.BadRequest
                     };
@@ -1864,8 +2156,12 @@ namespace KopkeHome_FMRS_API.Controllers
                 {
                     return new Response
                     {
-                        Status = Resources.FailureMsg,
-                        Message = "Stripe Customer ID is required.",
+                        Status =
+                            Resources.FailureMsg,
+
+                        Message =
+                            "Stripe Customer ID is required.",
+
                         Statuscode =
                             System.Net.HttpStatusCode.BadRequest
                     };
@@ -1876,14 +2172,21 @@ namespace KopkeHome_FMRS_API.Controllers
                 {
                     return new Response
                     {
-                        Status = Resources.FailureMsg,
-                        Message = "Current Stripe Subscription ID is required.",
+                        Status =
+                            Resources.FailureMsg,
+
+                        Message =
+                            "Current Stripe Subscription ID is required.",
+
                         Statuscode =
                             System.Net.HttpStatusCode.BadRequest
                     };
                 }
 
-                // Verify the new price exists.
+                // ----------------------------------------------------
+                // Verify price
+                // ----------------------------------------------------
+
                 var priceService =
                     new PriceService();
 
@@ -1895,19 +2198,49 @@ namespace KopkeHome_FMRS_API.Controllers
                 {
                     return new Response
                     {
-                        Status = Resources.FailureMsg,
-                        Message = "Stripe price was not found.",
+                        Status =
+                            Resources.FailureMsg,
+
+                        Message =
+                            "Stripe price was not found.",
+
                         Statuscode =
                             System.Net.HttpStatusCode.NotFound
                     };
                 }
 
-                // ====================================================
+                // ----------------------------------------------------
+                // Verify current subscription exists
+                // ----------------------------------------------------
+
+                var subscriptionService =
+                    new SubscriptionService();
+
+                Subscription oldSubscription =
+                    await subscriptionService.GetAsync(
+                        model.StripesubId);
+
+                if (oldSubscription == null)
+                {
+                    return new Response
+                    {
+                        Status =
+                            Resources.FailureMsg,
+
+                        Message =
+                            "Current Stripe subscription was not found.",
+
+                        Statuscode =
+                            System.Net.HttpStatusCode.NotFound
+                    };
+                }
+
+                // ----------------------------------------------------
                 // DO NOT CANCEL OLD SUBSCRIPTION HERE.
                 //
-                // The old subscription stays active until the user
-                // successfully completes the new Checkout.
-                // ====================================================
+                // The old subscription remains active until the new
+                // Checkout has completed successfully.
+                // ----------------------------------------------------
 
                 var options =
                     new SessionCreateOptions
@@ -1919,20 +2252,23 @@ namespace KopkeHome_FMRS_API.Controllers
                                 {
                                     Price =
                                         model.StripePriceId,
-                                    Quantity = 1
+
+                                    Quantity =
+                                        1
                                 }
                             },
 
                         Customer =
                             model.StripeCusId,
 
-                        AllowPromotionCodes = false,
+                        AllowPromotionCodes =
+                            false,
 
-                        Mode = "subscription",
+                        Mode =
+                            "subscription",
 
-                        // IMPORTANT:
-                        // Connect = $0 but card is mandatory.
-                        PaymentMethodCollection = "always",
+                        PaymentMethodCollection =
+                            "always",
 
                         SuccessUrl =
                             _configuration.GetValue<string>(
@@ -2017,8 +2353,9 @@ namespace KopkeHome_FMRS_API.Controllers
         // ============================================================
 
         [HttpPost]
-        public async Task<Response> DowngradeSubscription(
-            DowngradeSubscriptionRequestModel model)
+        public async Task<Response>
+            DowngradeSubscription(
+                DowngradeSubscriptionRequestModel model)
         {
             try
             {
@@ -2026,8 +2363,12 @@ namespace KopkeHome_FMRS_API.Controllers
                 {
                     return new Response
                     {
-                        Status = Resources.FailureMsg,
-                        Message = "Invalid downgrade request.",
+                        Status =
+                            Resources.FailureMsg,
+
+                        Message =
+                            "Invalid downgrade request.",
+
                         Statuscode =
                             System.Net.HttpStatusCode.BadRequest
                     };
@@ -2038,8 +2379,12 @@ namespace KopkeHome_FMRS_API.Controllers
                 {
                     return new Response
                     {
-                        Status = Resources.FailureMsg,
-                        Message = "Stripe Price ID is required.",
+                        Status =
+                            Resources.FailureMsg,
+
+                        Message =
+                            "Stripe Price ID is required.",
+
                         Statuscode =
                             System.Net.HttpStatusCode.BadRequest
                     };
@@ -2050,8 +2395,12 @@ namespace KopkeHome_FMRS_API.Controllers
                 {
                     return new Response
                     {
-                        Status = Resources.FailureMsg,
-                        Message = "Stripe Customer ID is required.",
+                        Status =
+                            Resources.FailureMsg,
+
+                        Message =
+                            "Stripe Customer ID is required.",
+
                         Statuscode =
                             System.Net.HttpStatusCode.BadRequest
                     };
@@ -2062,14 +2411,21 @@ namespace KopkeHome_FMRS_API.Controllers
                 {
                     return new Response
                     {
-                        Status = Resources.FailureMsg,
-                        Message = "Current Stripe Subscription ID is required.",
+                        Status =
+                            Resources.FailureMsg,
+
+                        Message =
+                            "Current Stripe Subscription ID is required.",
+
                         Statuscode =
                             System.Net.HttpStatusCode.BadRequest
                     };
                 }
 
-                // Verify the new price exists.
+                // ----------------------------------------------------
+                // Verify price
+                // ----------------------------------------------------
+
                 var priceService =
                     new PriceService();
 
@@ -2081,16 +2437,46 @@ namespace KopkeHome_FMRS_API.Controllers
                 {
                     return new Response
                     {
-                        Status = Resources.FailureMsg,
-                        Message = "Stripe price was not found.",
+                        Status =
+                            Resources.FailureMsg,
+
+                        Message =
+                            "Stripe price was not found.",
+
                         Statuscode =
                             System.Net.HttpStatusCode.NotFound
                     };
                 }
 
-                // ====================================================
-                // DO NOT CANCEL OLD SUBSCRIPTION HERE.
-                // ====================================================
+                // ----------------------------------------------------
+                // Verify current subscription
+                // ----------------------------------------------------
+
+                var subscriptionService =
+                    new SubscriptionService();
+
+                Subscription oldSubscription =
+                    await subscriptionService.GetAsync(
+                        model.StripesubId);
+
+                if (oldSubscription == null)
+                {
+                    return new Response
+                    {
+                        Status =
+                            Resources.FailureMsg,
+
+                        Message =
+                            "Current Stripe subscription was not found.",
+
+                        Statuscode =
+                            System.Net.HttpStatusCode.NotFound
+                    };
+                }
+
+                // ----------------------------------------------------
+                // Do not cancel old subscription yet.
+                // ----------------------------------------------------
 
                 var options =
                     new SessionCreateOptions
@@ -2102,19 +2488,23 @@ namespace KopkeHome_FMRS_API.Controllers
                                 {
                                     Price =
                                         model.StripePriceId,
-                                    Quantity = 1
+
+                                    Quantity =
+                                        1
                                 }
                             },
 
                         Customer =
                             model.StripeCusId,
 
-                        AllowPromotionCodes = false,
+                        AllowPromotionCodes =
+                            false,
 
-                        Mode = "subscription",
+                        Mode =
+                            "subscription",
 
-                        // Connect = $0 but card is mandatory.
-                        PaymentMethodCollection = "always",
+                        PaymentMethodCollection =
+                            "always",
 
                         SuccessUrl =
                             _configuration.GetValue<string>(
@@ -2199,12 +2589,14 @@ namespace KopkeHome_FMRS_API.Controllers
         // ============================================================
 
         [HttpPost]
-        public async Task<Response> CancelSubscription(
-            [FromForm] string subId)
+        public async Task<Response>
+            CancelSubscription(
+                [FromForm] string subId)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(subId))
+                if (string.IsNullOrWhiteSpace(
+                    subId))
                 {
                     return new Response
                     {
@@ -2235,7 +2627,7 @@ namespace KopkeHome_FMRS_API.Controllers
         }
 
         // ============================================================
-        // INTERNAL CANCEL AFTER SUCCESSFUL REPLACEMENT
+        // INTERNAL CANCEL
         // ============================================================
 
         [NonAction]
@@ -2247,11 +2639,27 @@ namespace KopkeHome_FMRS_API.Controllers
             var response =
                 new Response();
 
+            if (string.IsNullOrWhiteSpace(
+                subId))
+            {
+                response.Status =
+                    Resources.FailureMsg;
+
+                response.Message =
+                    "Subscription ID is required.";
+
+                response.Statuscode =
+                    System.Net.HttpStatusCode.BadRequest;
+
+                return response;
+            }
+
             var service =
                 new SubscriptionService();
 
             Subscription subscription =
-                await service.GetAsync(subId);
+                await service.GetAsync(
+                    subId);
 
             if (subscription == null)
             {
@@ -2267,14 +2675,17 @@ namespace KopkeHome_FMRS_API.Controllers
                 return response;
             }
 
-            // If already cancelled at period end,
-            // there is nothing more to do.
-            if (!subscription.CancelAtPeriodEnd)
+            // --------------------------------------------------------
+            // Cancel at period end.
+            // --------------------------------------------------------
+
+            if (subscription.CancelAtPeriodEnd != true)
             {
                 var options =
                     new SubscriptionUpdateOptions
                     {
-                        CancelAtPeriodEnd = true
+                        CancelAtPeriodEnd =
+                            true
                     };
 
                 subscription =
@@ -2283,16 +2694,23 @@ namespace KopkeHome_FMRS_API.Controllers
                         options);
             }
 
+            // --------------------------------------------------------
+            // Update local database.
+            // --------------------------------------------------------
+
             if (updateDatabase)
             {
                 UserMembershipSubscriptions model =
                     new UserMembershipSubscriptions
                     {
-                        StripeSubscriptionId = subId,
+                        StripeSubscriptionId =
+                            subId,
 
-                        StripeStatus = "Cancelled",
+                        StripeStatus =
+                            "Cancelled",
 
-                        CancelledOn = DateTime.Now
+                        CancelledOn =
+                            DateTime.Now
                     };
 
                 var result =
@@ -2319,6 +2737,9 @@ namespace KopkeHome_FMRS_API.Controllers
                 response.Statuscode =
                     System.Net.HttpStatusCode.NotFound;
 
+                response.Message =
+                    "Subscription was cancelled in Stripe, but the local record could not be updated.";
+
                 return response;
             }
 
@@ -2335,7 +2756,7 @@ namespace KopkeHome_FMRS_API.Controllers
         }
 
         // ============================================================
-        // CANCEL OLD SUBSCRIPTION AFTER UPGRADE/DOWNGRADE
+        // CANCEL OLD SUBSCRIPTION AFTER SUCCESSFUL REPLACEMENT
         // ============================================================
 
         [NonAction]
@@ -2365,12 +2786,24 @@ namespace KopkeHome_FMRS_API.Controllers
                 return;
             }
 
-            if (!oldSubscription.CancelAtPeriodEnd)
+            // --------------------------------------------------------
+            // Do not modify an already cancelled subscription.
+            // --------------------------------------------------------
+
+            if (oldSubscription.Status ==
+                "canceled")
+            {
+                _logger.LogInformation(
+                    "Old subscription {SubscriptionId} is already cancelled.",
+                    oldSubscriptionId);
+            }
+            else if (oldSubscription.CancelAtPeriodEnd != true)
             {
                 var options =
                     new SubscriptionUpdateOptions
                     {
-                        CancelAtPeriodEnd = true
+                        CancelAtPeriodEnd =
+                            true
                     };
 
                 await service.UpdateAsync(
@@ -2378,7 +2811,10 @@ namespace KopkeHome_FMRS_API.Controllers
                     options);
             }
 
-            // Update old membership record as cancelled.
+            // --------------------------------------------------------
+            // Update old membership record.
+            // --------------------------------------------------------
+
             UserMembershipSubscriptions oldModel =
                 new UserMembershipSubscriptions
                 {
@@ -2414,6 +2850,20 @@ namespace KopkeHome_FMRS_API.Controllers
                 Response response =
                     new Response();
 
+                if (Model == null)
+                {
+                    response.Status =
+                        Resources.FailureMsg;
+
+                    response.Message =
+                        "Invalid custom plan request.";
+
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.BadRequest;
+
+                    return response;
+                }
+
                 var user =
                     await _Userservice.GetUserByID(
                         Model.UserId);
@@ -2432,10 +2882,44 @@ namespace KopkeHome_FMRS_API.Controllers
                     return response;
                 }
 
+                if (string.IsNullOrWhiteSpace(
+                    Model.Price))
+                {
+                    response.Status =
+                        Resources.FailureMsg;
+
+                    response.Message =
+                        "Price is required.";
+
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.BadRequest;
+
+                    return response;
+                }
+
+                decimal decimalPrice;
+
+                if (!decimal.TryParse(
+                    Model.Price,
+                    out decimalPrice) ||
+                    decimalPrice <= 0)
+                {
+                    response.Status =
+                        Resources.FailureMsg;
+
+                    response.Message =
+                        "Invalid custom plan price.";
+
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.BadRequest;
+
+                    return response;
+                }
+
                 long price =
-                    (long)(
-                        Convert.ToDouble(
-                            Model.Price) * 100);
+                    (long)Math.Round(
+                        decimalPrice * 100m,
+                        MidpointRounding.AwayFromZero);
 
                 string interval =
                     Model.IsYearly
@@ -2487,13 +2971,21 @@ namespace KopkeHome_FMRS_API.Controllers
                             "PaymentUrl:CurrentDomain")
                         + "images/Kopke-brand-logo.png");
 
-                var html = body;
+                var html =
+                    body;
 
                 var isSent =
                     _email.SendEmail(
                         user.Email,
                         Resources.CustomMembershipPlanEmailHeader,
                         html);
+
+                if (!isSent)
+                {
+                    _logger.LogWarning(
+                        "Custom plan created successfully, but email could not be sent to {Email}.",
+                        user.Email);
+                }
 
                 response.Statuscode =
                     System.Net.HttpStatusCode.OK;
@@ -2507,42 +2999,62 @@ namespace KopkeHome_FMRS_API.Controllers
                 response.Data =
                     createResponse;
 
-                CustomZipcodesRequest customZipcodesRequest =
-                    new CustomZipcodesRequest
-                    {
-                        WebApp =
-                            Model.WebApp,
+                CustomZipcodesRequest
+                    customZipcodesRequest =
+                        new CustomZipcodesRequest
+                        {
+                            WebApp =
+                                Model.WebApp,
 
-                        MobileApp =
-                            Model.MobileApp,
+                            MobileApp =
+                                Model.MobileApp,
 
-                        NumberOfCategories =
-                            Model.NumberOfCategories,
+                            NumberOfCategories =
+                                Model.NumberOfCategories,
 
-                        NumberOfZipcodes =
-                            Model.NumberOfZipcodes,
+                            NumberOfZipcodes =
+                                Model.NumberOfZipcodes,
 
-                        PriceMonthly =
-                            Model.Price,
+                            PriceMonthly =
+                                Model.Price,
 
-                        StripePriceYearly =
-                            createResponse.Id,
+                            StripePriceYearly =
+                                createResponse.Id,
 
-                        StripePriceMonthly =
-                            createResponse.Id,
+                            StripePriceMonthly =
+                                createResponse.Id,
 
-                        PriceYearly =
-                            Model.Price,
+                            PriceYearly =
+                                Model.Price,
 
-                        UserId =
-                            Model.UserId
-                    };
+                            UserId =
+                                Model.UserId
+                        };
 
                 await _Membership
                     .UpdateCustomZipcodeRequest(
                         customZipcodesRequest);
 
                 return response;
+            }
+            catch (StripeException ex)
+            {
+                _logger.LogError(
+                    ex,
+                    "Stripe error creating custom price subscription.");
+
+                return new Response
+                {
+                    Status =
+                        Resources.FailureMsg,
+
+                    Message =
+                        ex.StripeError?.Message ??
+                        ex.Message,
+
+                    Statuscode =
+                        System.Net.HttpStatusCode.BadRequest
+                };
             }
             catch (Exception ex)
             {
