@@ -870,6 +870,18 @@
 // }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 using KopkeHome_FMRS_API.Properties;
 using KopkeHome_ModelLayer;
 using KopkeHome_ModelLayer.DataModel;
@@ -1145,10 +1157,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     return response;
                 }
 
-                // ----------------------------------------------------
-                // Get Stripe Price
-                // ----------------------------------------------------
-
                 var priceService =
                     new PriceService();
 
@@ -1170,16 +1178,8 @@ namespace KopkeHome_FMRS_API.Controllers
                     return response;
                 }
 
-                // ----------------------------------------------------
-                // Create Stripe Customer
-                // ----------------------------------------------------
-
                 var stripeCustomer =
                     CreateCustomer(user);
-
-                // ----------------------------------------------------
-                // Main subscription price
-                // ----------------------------------------------------
 
                 var lineItems =
                     new List<SessionLineItemOptions>
@@ -1192,10 +1192,6 @@ namespace KopkeHome_FMRS_API.Controllers
                             Quantity = 1
                         }
                     };
-
-                // ----------------------------------------------------
-                // Verification / Service Fee
-                // ----------------------------------------------------
 
                 string verificationPriceId =
                     _configuration.GetValue<string>(
@@ -1230,10 +1226,6 @@ namespace KopkeHome_FMRS_API.Controllers
                         isFreePlan);
                 }
 
-                // ----------------------------------------------------
-                // Checkout Session
-                // ----------------------------------------------------
-
                 var options =
                     new SessionCreateOptions
                     {
@@ -1248,8 +1240,6 @@ namespace KopkeHome_FMRS_API.Controllers
 
                         Mode =
                             "subscription",
-
-                    
 
                         SuccessUrl =
                             _configuration.GetValue<string>(
@@ -1434,7 +1424,6 @@ namespace KopkeHome_FMRS_API.Controllers
 
                         Mode =
                             "subscription",
-
 
                         SuccessUrl =
                             _configuration.GetValue<string>(
@@ -1677,7 +1666,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     State =
                         _User.State,
 
-                    // Existing application behaviour retained.
                     Country =
                         "US",
 
@@ -1784,10 +1772,6 @@ namespace KopkeHome_FMRS_API.Controllers
                         "Stripe Checkout session ID is required.");
                 }
 
-                // ----------------------------------------------------
-                // Retrieve Checkout Session
-                // ----------------------------------------------------
-
                 var sessionService =
                     new SessionService();
 
@@ -1800,10 +1784,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     throw new Exception(
                         "Stripe Checkout session not found.");
                 }
-
-                // ----------------------------------------------------
-                // Read replacement metadata
-                // ----------------------------------------------------
 
                 string oldSubscriptionId =
                     null;
@@ -1835,10 +1815,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     changeType,
                     oldSubscriptionId);
 
-                // ----------------------------------------------------
-                // Customer
-                // ----------------------------------------------------
-
                 string stripeCustomerId =
                     session.CustomerId;
 
@@ -1866,10 +1842,6 @@ namespace KopkeHome_FMRS_API.Controllers
                         session.CustomerDetails?.Email;
                 }
 
-                // ----------------------------------------------------
-                // Session details
-                // ----------------------------------------------------
-
                 string stripeStatus =
                     session.Status;
 
@@ -1885,10 +1857,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     throw new Exception(
                         "Stripe Checkout completed without a subscription ID.");
                 }
-
-                // ----------------------------------------------------
-                // Validate subscription
-                // ----------------------------------------------------
 
                 var subscriptionService =
                     new SubscriptionService();
@@ -1908,10 +1876,6 @@ namespace KopkeHome_FMRS_API.Controllers
 
                 DateTime periodEndDate =
                     subscriptionResult.CurrentPeriodEnd;
-
-                // ----------------------------------------------------
-                // Get price ID
-                // ----------------------------------------------------
 
                 string priceId =
                     null;
@@ -1937,10 +1901,6 @@ namespace KopkeHome_FMRS_API.Controllers
                         "Unable to determine Stripe Price ID from subscription {SubscriptionId}.",
                         stripeSubscriptionId);
                 }
-
-                // ----------------------------------------------------
-                // Invoice
-                // ----------------------------------------------------
 
                 try
                 {
@@ -1982,10 +1942,6 @@ namespace KopkeHome_FMRS_API.Controllers
                         stripeSubscriptionId);
                 }
 
-                // ----------------------------------------------------
-                // Build membership record
-                // ----------------------------------------------------
-
                 model.PaymentStatus =
                     paymentStatus;
 
@@ -2013,10 +1969,6 @@ namespace KopkeHome_FMRS_API.Controllers
                 model.Email =
                     email;
 
-                // ----------------------------------------------------
-                // Map Stripe Price -> Membership Plan
-                // ----------------------------------------------------
-
                 var membershipPlans =
                     await _Membership.GetMembershipPlans();
 
@@ -2043,11 +1995,6 @@ namespace KopkeHome_FMRS_API.Controllers
                         priceId);
                 }
 
-                // ----------------------------------------------------
-                // IMPORTANT:
-                // Save the NEW subscription first.
-                // ----------------------------------------------------
-
                 var result =
                     await AddPaymentTransactionDetails(
                         model);
@@ -2057,11 +2004,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     throw new Exception(
                         "New subscription could not be saved to the database.");
                 }
-
-                // ----------------------------------------------------
-                // Cancel old subscription ONLY after new one
-                // has successfully been saved.
-                // ----------------------------------------------------
 
                 if (!string.IsNullOrWhiteSpace(
                     oldSubscriptionId) &&
@@ -2179,10 +2121,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     };
                 }
 
-                // ----------------------------------------------------
-                // Verify price
-                // ----------------------------------------------------
-
                 var priceService =
                     new PriceService();
 
@@ -2205,10 +2143,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     };
                 }
 
-                // ----------------------------------------------------
-                // Verify current subscription exists
-                // ----------------------------------------------------
-
                 var subscriptionService =
                     new SubscriptionService();
 
@@ -2230,13 +2164,6 @@ namespace KopkeHome_FMRS_API.Controllers
                             System.Net.HttpStatusCode.NotFound
                     };
                 }
-
-                // ----------------------------------------------------
-                // DO NOT CANCEL OLD SUBSCRIPTION HERE.
-                //
-                // The old subscription remains active until the new
-                // Checkout has completed successfully.
-                // ----------------------------------------------------
 
                 var options =
                     new SessionCreateOptions
@@ -2262,7 +2189,6 @@ namespace KopkeHome_FMRS_API.Controllers
 
                         Mode =
                             "subscription",
-
 
                         SuccessUrl =
                             _configuration.GetValue<string>(
@@ -2416,10 +2342,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     };
                 }
 
-                // ----------------------------------------------------
-                // Verify price
-                // ----------------------------------------------------
-
                 var priceService =
                     new PriceService();
 
@@ -2442,10 +2364,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     };
                 }
 
-                // ----------------------------------------------------
-                // Verify current subscription
-                // ----------------------------------------------------
-
                 var subscriptionService =
                     new SubscriptionService();
 
@@ -2467,10 +2385,6 @@ namespace KopkeHome_FMRS_API.Controllers
                             System.Net.HttpStatusCode.NotFound
                     };
                 }
-
-                // ----------------------------------------------------
-                // Do not cancel old subscription yet.
-                // ----------------------------------------------------
 
                 var options =
                     new SessionCreateOptions
@@ -2496,7 +2410,6 @@ namespace KopkeHome_FMRS_API.Controllers
 
                         Mode =
                             "subscription",
-
 
                         SuccessUrl =
                             _configuration.GetValue<string>(
@@ -2667,10 +2580,6 @@ namespace KopkeHome_FMRS_API.Controllers
                 return response;
             }
 
-            // --------------------------------------------------------
-            // Cancel at period end.
-            // --------------------------------------------------------
-
             if (subscription.CancelAtPeriodEnd != true)
             {
                 var options =
@@ -2685,10 +2594,6 @@ namespace KopkeHome_FMRS_API.Controllers
                         subId,
                         options);
             }
-
-            // --------------------------------------------------------
-            // Update local database.
-            // --------------------------------------------------------
 
             if (updateDatabase)
             {
@@ -2778,10 +2683,6 @@ namespace KopkeHome_FMRS_API.Controllers
                 return;
             }
 
-            // --------------------------------------------------------
-            // Do not modify an already cancelled subscription.
-            // --------------------------------------------------------
-
             if (oldSubscription.Status ==
                 "canceled")
             {
@@ -2802,10 +2703,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     oldSubscriptionId,
                     options);
             }
-
-            // --------------------------------------------------------
-            // Update old membership record.
-            // --------------------------------------------------------
 
             UserMembershipSubscriptions oldModel =
                 new UserMembershipSubscriptions
@@ -2874,27 +2771,13 @@ namespace KopkeHome_FMRS_API.Controllers
                     return response;
                 }
 
-                if (string.IsNullOrWhiteSpace(
-                    Model.Price))
-                {
-                    response.Status =
-                        Resources.FailureMsg;
+                // ====================================================
+                // Model.Price is DOUBLE.
+                // Do not use string.IsNullOrWhiteSpace() or
+                // decimal.TryParse() here.
+                // ====================================================
 
-                    response.Message =
-                        "Price is required.";
-
-                    response.Statuscode =
-                        System.Net.HttpStatusCode.BadRequest;
-
-                    return response;
-                }
-
-                decimal decimalPrice;
-
-                if (!decimal.TryParse(
-                    Model.Price,
-                    out decimalPrice) ||
-                    decimalPrice <= 0)
+                if (Model.Price <= 0)
                 {
                     response.Status =
                         Resources.FailureMsg;
@@ -2908,10 +2791,26 @@ namespace KopkeHome_FMRS_API.Controllers
                     return response;
                 }
 
+                // Stripe expects the amount in the smallest
+                // currency unit (cents for USD).
                 long price =
                     (long)Math.Round(
-                        decimalPrice * 100m,
+                        Model.Price * 100d,
                         MidpointRounding.AwayFromZero);
+
+                if (price <= 0)
+                {
+                    response.Status =
+                        Resources.FailureMsg;
+
+                    response.Message =
+                        "Custom plan price must be greater than zero.";
+
+                    response.Statuscode =
+                        System.Net.HttpStatusCode.BadRequest;
+
+                    return response;
+                }
 
                 string interval =
                     Model.IsYearly
