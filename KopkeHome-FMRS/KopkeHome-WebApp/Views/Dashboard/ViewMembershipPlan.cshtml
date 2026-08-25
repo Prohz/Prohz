@@ -300,6 +300,25 @@
                 }
                 else if (result.isDenied) {
 
+                    if (PlanId == @PlanIdBronze) {
+                        $.ajax({
+                            type: 'POST',
+                            url: urlprefix + '/Membership/JoinFreePlan?planId=' + PlanId + '&replaceExisting=true',
+                            success: function (res) {
+                                if (res.success) {
+                                    location.reload(true);
+                                }
+                                else {
+                                    Swal.fire(localizer('Unable to change plan.', 'No se puede cambiar el plan.', $('#ProhzLangDDL option:selected').val()), res.message || '', 'error');
+                                }
+                            },
+                            error: function () {
+                                Swal.fire(localizer('Network Issue!', '¡Problema de red!', $('#ProhzLangDDL option:selected').val()), '', 'error');
+                            }
+                        });
+                        return;
+                    }
+
                     if (PrevPlanId < PlanId || PrevPlanId == PlanId) {
                         $("#CSTMLOADER").show();
                         $.ajax({
@@ -398,6 +417,25 @@
                 }
                 else if (result.isDenied) {
 
+                    if (PlanId == @PlanIdBronze) {
+                        $.ajax({
+                            type: 'POST',
+                            url: urlprefix + '/Membership/JoinFreePlan?planId=' + PlanId + '&replaceExisting=true',
+                            success: function (res) {
+                                if (res.success) {
+                                    location.reload(true);
+                                }
+                                else {
+                                    Swal.fire(localizer('Unable to change plan.', 'No se puede cambiar el plan.', $('#ProhzLangDDL option:selected').val()), res.message || '', 'error');
+                                }
+                            },
+                            error: function () {
+                                Swal.fire(localizer('Network Issue!', '¡Problema de red!', $('#ProhzLangDDL option:selected').val()), '', 'error');
+                            }
+                        });
+                        return;
+                    }
+
                     if (PrevPlanId < PlanId || PrevPlanId == PlanId) {
                         $("#CSTMLOADER").show();
                         $.ajax({
@@ -470,7 +508,6 @@
             })
         }
         else {
-            debugger
             if (PrevPlanId < PlanId || PrevPlanId == PlanId) {
                 Msg = localizer("Upgrade", "Potenciar", $('#ProhzLangDDL option:selected').val());
                 MsgFor = localizer("Subscription Plan will be Upgraded", "El plan de suscripción se actualizará", $('#ProhzLangDDL option:selected').val());

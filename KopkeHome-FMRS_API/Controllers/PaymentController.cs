@@ -412,7 +412,7 @@ namespace KopkeHome_FMRS_API.Controllers
                 var existingSubscription =
                     await GetSubscriptionDetailByUserId(user.Id.ToString());
 
-                if (existingSubscription != null)
+                if (existingSubscription != null && !model.ReplaceExisting)
                 {
                     response.Status = Resources.isSubscribed;
                     response.Message = Resources.SubscriptionMsg;
@@ -445,6 +445,12 @@ namespace KopkeHome_FMRS_API.Controllers
                     response.Statuscode = System.Net.HttpStatusCode.BadRequest;
 
                     return response;
+                }
+
+                if (existingSubscription?.StripeSubscriptionId != null)
+                {
+                    var subscriptionService = new SubscriptionService();
+                    await subscriptionService.CancelAsync(existingSubscription.StripeSubscriptionId);
                 }
 
                 // Create free membership record
@@ -560,21 +566,6 @@ namespace KopkeHome_FMRS_API.Controllers
                 var sessionService = new SessionService();
                 Session session = await sessionService.GetAsync(Datamodel.SessionId);
 
-                if (session.PaymentStatus != "paid")
-                {
-                    throw new Exception(
-                        $"Stripe payment was not completed. PaymentStatus: {session.PaymentStatus}"
-                    );
-                }
-
-                string oldSubscriptionId = null;
-
-                if (session.Metadata != null &&
-                    session.Metadata.TryGetValue("OldSubscriptionId", out var metadataSubscriptionId))
-                {
-                    oldSubscriptionId = metadataSubscriptionId;
-                }
-
                 var customerService = new CustomerService();
                 Customer customer = await customerService.GetAsync(session.CustomerId);
                 //if (session.StripeResponse.StatusCode)
@@ -586,6 +577,7 @@ namespace KopkeHome_FMRS_API.Controllers
                 string PaymentStatus = session.PaymentStatus;
                 string StripeCustomerId = session.CustomerId;
                 string Email = customer.Email;
+                var existingSubscription = await _service.GetSubscriptionByStripCustomerId(StripeCustomerId);
 
                 var options = new InvoiceListOptions
                 {
@@ -641,16 +633,19 @@ namespace KopkeHome_FMRS_API.Controllers
                 }
 
 
-                // return await AddPaymentTransactionDetails(modelvar result = await AddPaymentTransactionDetails(model););
                 var result = await AddPaymentTransactionDetails(model);
 
-                if (result != null &&
-                    !string.IsNullOrWhiteSpace(oldSubscriptionId))
+                if (result != null
+                    && existingSubscription?.StripeSubscriptionId != null
+                    && existingSubscription.StripeSubscriptionId != StripeSubscriptionId)
                 {
-                    await CancelSubscription(oldSubscriptionId);
+                    var subscriptionService = new SubscriptionService();
+                    await subscriptionService.CancelAsync(existingSubscription.StripeSubscriptionId);
                 }
 
                 return result;
+
+
 
             }
 
@@ -671,35 +666,30 @@ namespace KopkeHome_FMRS_API.Controllers
 
             var options = new Stripe.Checkout.SessionCreateOptions
             {
+
+
                 LineItems = new List<SessionLineItemOptions>
-                {
-                    new SessionLineItemOptions
                     {
-                        Price = model.StripePriceId,
-                        Quantity = 1,
+                        new SessionLineItemOptions
+                        {
+                            Price = model.StripePriceId,
+                            Quantity = 1,
+
+                        },
                     },
-                },
-
                 Customer = model.StripeCusId,
-
                 AllowPromotionCodes = false,
 
                 Mode = "subscription",
 
-                Metadata = new Dictionary<string, string>
-                {
-                    { "OldSubscriptionId", model.StripesubId },
-                    { "NewPlanId", model.PlanId }
-                },
-
-                SuccessUrl = _configuration.GetValue<string>("PaymentUrl:PaymentSuccessURLWeb")
-                    + "?session_id={CHECKOUT_SESSION_ID}",
-
+                SuccessUrl = _configuration.GetValue<string>("PaymentUrl:PaymentSuccessURLWeb") + "?session_id={CHECKOUT_SESSION_ID}",
                 CancelUrl = _configuration.GetValue<string>("PaymentUrl:PaymentFailUrl"),
+
             };
             var service2 = new SessionService();
 
             Session session = await service2.CreateAsync(options);
+
 
             response.Statuscode = System.Net.HttpStatusCode.OK;
             response.Status = Resources.SuccessMsg;
@@ -817,7 +807,6 @@ namespace KopkeHome_FMRS_API.Controllers
             var service2 = new SessionService();
 
             Session session = await service2.CreateAsync(options2);
-            var cancelSub = await CancelSubscription(Model.StripesubId);
             response.Statuscode = System.Net.HttpStatusCode.OK;
             response.Status = Resources.SuccessMsg;
             response.Data = session.Url;

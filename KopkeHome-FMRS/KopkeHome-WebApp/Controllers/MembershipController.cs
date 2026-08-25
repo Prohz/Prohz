@@ -290,7 +290,7 @@ namespace KopkeHome_WebApp.Controllers
         // }
 
         [HttpPost]
-public async Task<IActionResult> JoinFreePlan(int planId)
+public async Task<IActionResult> JoinFreePlan(int planId, bool replaceExisting = false)
 {
     try
     {
@@ -389,7 +389,8 @@ public async Task<IActionResult> JoinFreePlan(int planId)
             var request = new
             {
                 UserId = user.Id,
-                PlanId = planId
+                PlanId = planId,
+                ReplaceExisting = replaceExisting
             };
 
             _logger.LogInformation(

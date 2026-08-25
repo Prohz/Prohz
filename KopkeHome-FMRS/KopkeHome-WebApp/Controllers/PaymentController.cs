@@ -87,62 +87,6 @@ namespace KopkeHome_WebApp.Controllers
 
 
         }
-        
-        [Route("Membership/PaymentSuccess")]
-        public async Task<IActionResult> PaymentSuccess(string session_id)
-        {
-            try
-            {
-                if (string.IsNullOrWhiteSpace(session_id))
-                {
-                    return RedirectToAction("ViewMembershipPlan", "Dashboard");
-                }
-
-                using (var client = new HttpClient())
-                {
-                    client.BaseAddress = new Uri(
-                        _configuration.GetValue<string>("WebApi:API_URL") + "/Payment/"
-                    );
-
-                    var model = new PaymentSuccessAPIModel
-                    {
-                        SessionId = session_id
-                    };
-
-                    var response = await client.PostAsJsonAsync(
-                        "PaymentSuccess",
-                        model
-                    );
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        return RedirectToAction(
-                            "ViewMembershipPlan",
-                            "Dashboard"
-                        );
-                    }
-
-                    _logger.LogError(
-                        "Stripe PaymentSuccess API returned status code: {StatusCode}",
-                        response.StatusCode
-                    );
-
-                    return RedirectToAction(
-                        "ViewMembershipPlan",
-                        "Dashboard"
-                    );
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error processing Stripe payment success.");
-
-                return RedirectToAction(
-                    "ViewMembershipPlan",
-                    "Dashboard"
-                );
-            }
-        }
 
 
         public async Task<IActionResult> CancelSubscription(string subId)

@@ -11,5 +11,7 @@ namespace KopkeHome_ModelLayer.ViewModels.PaymentModels
         public int UserId { get; set; }
 
         public int PlanId { get; set; }
+
+        public bool ReplaceExisting { get; set; }
     }
 }
