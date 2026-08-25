@@ -342,7 +342,8 @@
 
         var customerId = "@(Model.SubscriptionsStripeData?.StripeCustomerID ?? "")";
 
-        var lastDate = "@(Model.SubscriptionsStripeData?.PeriodEndDate ?? "")";
+        // var lastDate = "@(Model.SubscriptionsStripeData?.PeriodEndDate ?? "")";
+        var lastDate = "@(Model.SubscriptionsStripeData?.PeriodEndDate?.ToString("MM/dd/yyyy") ?? "")";
 
 
         // --------------------------------------------------------
