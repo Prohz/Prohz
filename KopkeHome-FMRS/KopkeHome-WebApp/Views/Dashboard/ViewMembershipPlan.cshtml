@@ -303,8 +303,9 @@
                     if (PrevPlanId < PlanId || PrevPlanId == PlanId) {
                         $("#CSTMLOADER").show();
                         $.ajax({
-                            type: 'Get',
-                            url: urlprefix + '/Payment/UpgradeSubscription?subId=' + subId + '&CusId=' + CusId + '&PriceId=' + PriceId + '&PlanId=' + PlanId,
+                            type: 'POST',
+                            url: urlprefix + '/Payment/UpgradeSubscription',
+                            data: { StripeSubscriptionId: subId, StripeCusId: CusId, StripePriceId: PriceId, PlanId: PlanId },
                             success: function (res) {
 
                                 window.location = res;
@@ -324,8 +325,9 @@
                     else {
                         $("#CSTMLOADER").show();
                         $.ajax({
-                            type: 'Get',
-                            url: urlprefix + '/Payment/DowngradeSubscription?subId=' + subId + '&CusId=' + CusId + '&PriceId=' + PriceId + '&PlanId=' + PlanId,
+                            type: 'POST',
+                            url: urlprefix + '/Payment/DowngradeSubscription',
+                            data: { StripeSubscriptionId: subId, StripeCusId: CusId, StripePriceId: PriceId, PlanId: PlanId },
                             success: function (res) {
 
                                 window.location = res;
@@ -401,8 +403,9 @@
                     if (PrevPlanId < PlanId || PrevPlanId == PlanId) {
                         $("#CSTMLOADER").show();
                         $.ajax({
-                            type: 'Get',
-                            url: urlprefix + '/Payment/UpgradeSubscription?subId=' + subId + '&CusId=' + CusId + '&PriceId=' + PriceId + '&PlanId=' + PlanId,
+                            type: 'POST',
+                            url: urlprefix + '/Payment/UpgradeSubscription',
+                            data: { StripeSubscriptionId: subId, StripeCusId: CusId, StripePriceId: PriceId, PlanId: PlanId },
                             success: function (res) {
 
                                 window.location = res;
@@ -422,8 +425,9 @@
                     else {
                         $("#CSTMLOADER").show();
                         $.ajax({
-                            type: 'Get',
-                            url: urlprefix + '/Payment/DowngradeSubscription?subId=' + subId + '&CusId=' + CusId + '&PriceId=' + PriceId + '&PlanId=' + PlanId,
+                            type: 'POST',
+                            url: urlprefix + '/Payment/DowngradeSubscription',
+                            data: { StripeSubscriptionId: subId, StripeCusId: CusId, StripePriceId: PriceId, PlanId: PlanId },
                             success: function (res) {
 
                                 window.location = res;
@@ -497,8 +501,9 @@
                     if (PrevPlanId < PlanId || PrevPlanId == PlanId) {
                         $("#CSTMLOADER").show();
                         $.ajax({
-                            type: 'Get',
-                            url: urlprefix + '/Payment/UpgradeSubscription?subId=' + subId + '&CusId=' + CusId + '&PriceId=' + PriceId + '&PlanId=' + PlanId,
+                            type: 'POST',
+                            url: urlprefix + '/Payment/UpgradeSubscription',
+                            data: { StripeSubscriptionId: subId, StripeCusId: CusId, StripePriceId: PriceId, PlanId: PlanId },
                             success: function (res) {
 
                                 window.location = res;
@@ -518,8 +523,9 @@
                     else {
                         $("#CSTMLOADER").show();
                         $.ajax({
-                            type: 'Get',
-                            url: urlprefix + '/Payment/DowngradeSubscription?subId=' + subId + '&CusId=' + CusId + '&PriceId=' + PriceId + '&PlanId=' + PlanId,
+                            type: 'POST',
+                            url: urlprefix + '/Payment/DowngradeSubscription',
+                            data: { StripeSubscriptionId: subId, StripeCusId: CusId, StripePriceId: PriceId, PlanId: PlanId },
                             success: function (res) {
 
                                 window.location = res;

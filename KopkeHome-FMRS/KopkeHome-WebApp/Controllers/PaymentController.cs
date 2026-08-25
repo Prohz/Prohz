@@ -281,18 +281,18 @@ namespace KopkeHome_WebApp.Controllers
         // ============================================================
         // DOWNGRADE SUBSCRIPTION
         // ============================================================
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> DowngradeSubscription(
-            string subId,
-            string CusId,
-            string PriceID,
-            string PlanId)
+            [FromForm] string StripeSubscriptionId,
+            [FromForm] string StripeCusId,
+            [FromForm] string StripePriceId,
+            [FromForm] string PlanId)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(subId) ||
-                    string.IsNullOrWhiteSpace(CusId) ||
-                    string.IsNullOrWhiteSpace(PriceID) ||
+                if (string.IsNullOrWhiteSpace(StripeSubscriptionId) ||
+                    string.IsNullOrWhiteSpace(StripeCusId) ||
+                    string.IsNullOrWhiteSpace(StripePriceId) ||
                     string.IsNullOrWhiteSpace(PlanId))
                 {
                     return Json(new
@@ -308,11 +308,10 @@ namespace KopkeHome_WebApp.Controllers
                 DowngradeSubscriptionRequestModel model =
                     new DowngradeSubscriptionRequestModel();
 
-                model.StripesubId = subId;
-                model.StripePriceId = PriceID;
+                model.StripesubId = StripeSubscriptionId;
+                model.StripePriceId = StripePriceId;
                 model.PlanId = PlanId;
-                model.StripeCusId = CusId;
-                model.Email = HttpContext.Request.Cookies["Email"];
+                model.StripeCusId = StripeCusId;
                 model.Email = HttpContext.Request.Cookies["Email"];
 
                 using (var client = new HttpClient())
