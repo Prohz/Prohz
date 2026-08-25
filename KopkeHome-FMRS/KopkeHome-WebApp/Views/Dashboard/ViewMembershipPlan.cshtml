@@ -217,6 +217,19 @@
     }
     var ProhzGreyLogo = '<img style="height: 90px;" src="' + urlprefix + '/images/ProhzGreyLogo.new.png">';
 
+    function redirectToCheckout(response) {
+        if (response && response.success && response.data) {
+            window.location.href = response.data;
+            return;
+        }
+
+        Swal.fire(
+            localizer('Unable to open checkout.', 'No se puede abrir el pago.', $('#ProhzLangDDL option:selected').val()),
+            response && response.message ? response.message : '',
+            'error');
+        $("#CSTMLOADER").hide();
+    }
+
     function CancelSubscription(d) {
         var id = d.getAttribute("id");
         var EndDate = "";
@@ -308,7 +321,7 @@
                             data: { StripeSubscriptionId: subId, StripeCusId: CusId, StripePriceId: PriceId, PlanId: PlanId },
                             success: function (res) {
 
-                                window.location = res;
+                                redirectToCheckout(res);
                                 if (res == "1") {
                                     Swal.fire(localizer('Subscription Upgraded!', '¡Suscripción actualizada!', $('#ProhzLangDDL option:selected').val()), '', 'success')
                                     setTimeout(function () {
@@ -330,7 +343,7 @@
                             data: { StripeSubscriptionId: subId, StripeCusId: CusId, StripePriceId: PriceId, PlanId: PlanId },
                             success: function (res) {
 
-                                window.location = res;
+                                redirectToCheckout(res);
                                 if (res == "1") {
                                     Swal.fire(localizer('Subscription Downgraded!', '¡Suscripción degradada!', $('#ProhzLangDDL option:selected').val()), '', 'success')
                                     setTimeout(function () {
@@ -408,7 +421,7 @@
                             data: { StripeSubscriptionId: subId, StripeCusId: CusId, StripePriceId: PriceId, PlanId: PlanId },
                             success: function (res) {
 
-                                window.location = res;
+                                redirectToCheckout(res);
                                 if (res == "1") {
                                     Swal.fire(localizer('Subscription Upgraded!', '¡Suscripción actualizada!', $('#ProhzLangDDL option:selected').val()), '', 'success')
                                     setTimeout(function () {
@@ -430,7 +443,7 @@
                             data: { StripeSubscriptionId: subId, StripeCusId: CusId, StripePriceId: PriceId, PlanId: PlanId },
                             success: function (res) {
 
-                                window.location = res;
+                                redirectToCheckout(res);
                                 if (res == "1") {
                                     Swal.fire(localizer('Subscription Downgraded!', '¡Suscripción degradada!', $('#ProhzLangDDL option:selected').val()), '', 'success')
                                     setTimeout(function () {
@@ -506,7 +519,7 @@
                             data: { StripeSubscriptionId: subId, StripeCusId: CusId, StripePriceId: PriceId, PlanId: PlanId },
                             success: function (res) {
 
-                                window.location = res;
+                                redirectToCheckout(res);
                                 if (res == "1") {
                                     Swal.fire(localizer('Subscription Upgraded!', '¡Suscripción actualizada!', $('#ProhzLangDDL option:selected').val()), '', 'success')
                                     setTimeout(function () {
@@ -528,7 +541,7 @@
                             data: { StripeSubscriptionId: subId, StripeCusId: CusId, StripePriceId: PriceId, PlanId: PlanId },
                             success: function (res) {
 
-                                window.location = res;
+                                redirectToCheckout(res);
                                 if (res == "1") {
                                     Swal.fire(localizer('Subscription Downgraded!', '¡Suscripción degradada!', $('#ProhzLangDDL option:selected').val()), '', 'success')
                                     setTimeout(function () {
