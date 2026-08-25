@@ -639,7 +639,6 @@ namespace KopkeHome_FMRS_API.Controllers
                     && existingSubscription?.StripeSubscriptionId != null
                     && existingSubscription.StripeSubscriptionId != StripeSubscriptionId)
                 {
-                    var subscriptionService = new SubscriptionService();
                     await subscriptionService.CancelAsync(existingSubscription.StripeSubscriptionId);
                 }
 
