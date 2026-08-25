@@ -560,6 +560,21 @@ namespace KopkeHome_FMRS_API.Controllers
                 var sessionService = new SessionService();
                 Session session = await sessionService.GetAsync(Datamodel.SessionId);
 
+                if (session.PaymentStatus != "paid")
+                {
+                    throw new Exception(
+                        $"Stripe payment was not completed. PaymentStatus: {session.PaymentStatus}"
+                    );
+                }
+
+                string oldSubscriptionId = null;
+
+                if (session.Metadata != null &&
+                    session.Metadata.TryGetValue("OldSubscriptionId", out var metadataSubscriptionId))
+                {
+                    oldSubscriptionId = metadataSubscriptionId;
+                }
+
                 var customerService = new CustomerService();
                 Customer customer = await customerService.GetAsync(session.CustomerId);
                 //if (session.StripeResponse.StatusCode)
@@ -626,9 +641,16 @@ namespace KopkeHome_FMRS_API.Controllers
                 }
 
 
-                return await AddPaymentTransactionDetails(model);
+                // return await AddPaymentTransactionDetails(modelvar result = await AddPaymentTransactionDetails(model););
+                var result = await AddPaymentTransactionDetails(model);
 
+                if (result != null &&
+                    !string.IsNullOrWhiteSpace(oldSubscriptionId))
+                {
+                    await CancelSubscription(oldSubscriptionId);
+                }
 
+                return result;
 
             }
 
@@ -639,206 +661,54 @@ namespace KopkeHome_FMRS_API.Controllers
             }
 
         }
-        // [HttpPost]
-        // public async Task<Response> UpgradeSubscription(UpgradeSubscriptionRequestModel model)
-        // {
-        //     Response response = new Response();
-        //     // var s = await CancelSubscription(model.StripesubId);
-
-
-
-        //     var options = new Stripe.Checkout.SessionCreateOptions
-        //     {
-
-
-        //         LineItems = new List<SessionLineItemOptions>
-        //             {
-        //                 new SessionLineItemOptions
-        //                 {
-        //                     Price = model.StripePriceId,
-        //                     Quantity = 1,
-
-        //                 },
-        //             },
-        //         Customer = model.StripeCusId,
-        //         AllowPromotionCodes = false,
-
-        //         Mode = "subscription",
-
-        //         SuccessUrl = _configuration.GetValue<string>("PaymentUrl:PaymentSuccessURLWeb") + "?session_id={CHECKOUT_SESSION_ID}",
-        //         CancelUrl = _configuration.GetValue<string>("PaymentUrl:PaymentFailUrl"),
-
-        //     };
-        //     var service2 = new SessionService();
-
-        //     Session session = await service2.CreateAsync(options);
-
-
-        //     var cancelSub = await CancelSubscription(model.StripesubId);
-        //     response.Statuscode = System.Net.HttpStatusCode.OK;
-        //     response.Status = Resources.SuccessMsg;
-        //     response.Data = session.Url;
-
-
-        //     return response;
-
-
-        // }
-
         [HttpPost]
-        public async Task<Response> UpgradeSubscription(
-            UpgradeSubscriptionRequestModel model)
+        public async Task<Response> UpgradeSubscription(UpgradeSubscriptionRequestModel model)
         {
-            try
+            Response response = new Response();
+            // var s = await CancelSubscription(model.StripesubId);
+
+
+
+            var options = new Stripe.Checkout.SessionCreateOptions
             {
-                Response response = new Response();
-
-                if (string.IsNullOrWhiteSpace(model.StripesubId))
+                LineItems = new List<SessionLineItemOptions>
                 {
-                    response.Status = Resources.FailureMsg;
-                    response.Message = "Stripe subscription ID is required.";
-                    response.Statuscode = System.Net.HttpStatusCode.BadRequest;
-                    return response;
-                }
-
-                if (string.IsNullOrWhiteSpace(model.StripePriceId))
-                {
-                    response.Status = Resources.FailureMsg;
-                    response.Message = "Stripe price ID is required.";
-                    response.Statuscode = System.Net.HttpStatusCode.BadRequest;
-                    return response;
-                }
-
-                var subscriptionService = new SubscriptionService();
-
-                // Get the existing subscription.
-                var subscription =
-                    await subscriptionService.GetAsync(model.StripesubId);
-
-                if (subscription == null)
-                {
-                    response.Status = Resources.FailureMsg;
-                    response.Message = "Stripe subscription not found.";
-                    response.Statuscode = System.Net.HttpStatusCode.NotFound;
-                    return response;
-                }
-
-                if (subscription.Items == null ||
-                    subscription.Items.Data == null ||
-                    !subscription.Items.Data.Any())
-                {
-                    response.Status = Resources.FailureMsg;
-                    response.Message = "Subscription does not contain a subscription item.";
-                    response.Statuscode = System.Net.HttpStatusCode.BadRequest;
-                    return response;
-                }
-
-                var currentItem = subscription.Items.Data[0];
-
-                // Make sure the requested plan is actually different.
-                if (string.Equals(
-                        currentItem.Price.Id,
-                        model.StripePriceId,
-                        StringComparison.OrdinalIgnoreCase))
-                {
-                    response.Status = Resources.FailureMsg;
-                    response.Message = "The selected plan is already active.";
-                    response.Statuscode = System.Net.HttpStatusCode.BadRequest;
-                    return response;
-                }
-
-                // Remove any pending cancellation.
-                // This is important if the user previously clicked Cancel.
-                var updateOptions = new SubscriptionUpdateOptions
-                {
-                    CancelAtPeriodEnd = false,
-
-                    Items = new List<SubscriptionItemOptions>
+                    new SessionLineItemOptions
                     {
-                        new SubscriptionItemOptions
-                        {
-                            Id = currentItem.Id,
-                            Price = model.StripePriceId
-                        }
+                        Price = model.StripePriceId,
+                        Quantity = 1,
                     },
+                },
 
-                    // Upgrade takes effect immediately.
-                    // Stripe calculates the prorated amount.
-                    ProrationBehavior = "always_invoice"
-                };
+                Customer = model.StripeCusId,
 
-                var updatedSubscription =
-                    await subscriptionService.UpdateAsync(
-                        model.StripesubId,
-                        updateOptions);
+                AllowPromotionCodes = false,
 
-                if (updatedSubscription == null)
+                Mode = "subscription",
+
+                Metadata = new Dictionary<string, string>
                 {
-                    response.Status = Resources.FailureMsg;
-                    response.Message = "Unable to update Stripe subscription.";
-                    response.Statuscode =
-                        System.Net.HttpStatusCode.InternalServerError;
+                    { "OldSubscriptionId", model.StripesubId },
+                    { "NewPlanId", model.PlanId }
+                },
 
-                    return response;
-                }
+                SuccessUrl = _configuration.GetValue<string>("PaymentUrl:PaymentSuccessURLWeb")
+                    + "?session_id={CHECKOUT_SESSION_ID}",
 
-                // Update membership information in our database.
-                var membership = new UserMembershipSubscriptions
-                {
-                    StripeSubscriptionId = updatedSubscription.Id,
-                    StripeCustomerID = updatedSubscription.CustomerId,
-                    StripePriceId = model.StripePriceId,
-                    StripeStatus = updatedSubscription.Status,
-                    PaymentStatus = "Paid",
-                    PlanId = Convert.ToInt32(model.PlanId)
-                };
+                CancelUrl = _configuration.GetValue<string>("PaymentUrl:PaymentFailUrl"),
+            };
+            var service2 = new SessionService();
 
-                var dbResult =
-                    await UpdatePaymentTransactionInfo(membership);
+            Session session = await service2.CreateAsync(options);
 
-                response.Status = Resources.SuccessMsg;
-                response.Message = "Subscription upgraded successfully.";
-                response.Statuscode = System.Net.HttpStatusCode.OK;
+            response.Statuscode = System.Net.HttpStatusCode.OK;
+            response.Status = Resources.SuccessMsg;
+            response.Data = session.Url;
 
-                // No Checkout URL is required anymore.
-                response.Data = new
-                {
-                    SubscriptionId = updatedSubscription.Id,
-                    PriceId = model.StripePriceId,
-                    PlanId = model.PlanId,
-                    Status = updatedSubscription.Status,
-                    CurrentPeriodStart = updatedSubscription.CurrentPeriodStart,
-                    CurrentPeriodEnd = updatedSubscription.CurrentPeriodEnd
-                };
 
-                return response;
-            }
-            catch (StripeException ex)
-            {
-                _logger.LogError(ex, "Stripe error while upgrading subscription.");
+            return response;
 
-                Response response = new Response
-                {
-                    Status = Resources.FailureMsg,
-                    Message = ex.StripeError?.Message ?? ex.Message,
-                    Statuscode = System.Net.HttpStatusCode.BadRequest
-                };
 
-                return response;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error while upgrading subscription.");
-
-                Response response = new Response
-                {
-                    Status = Resources.FailureMsg,
-                    Message = "Unable to upgrade subscription.",
-                    Statuscode = System.Net.HttpStatusCode.InternalServerError
-                };
-
-                return response;
-            }
         }
 
         [HttpPost]
@@ -911,243 +781,52 @@ namespace KopkeHome_FMRS_API.Controllers
 
         }
 
-        // [HttpPost]
-        // public async Task<Response> DowngradeSubscription(DowngradeSubscriptionRequestModel Model)
-        // {
-        //     Response response = new Response();
-        //     var SUB = new SubscriptionService();
-        //     var res = SUB.Get(Model.StripesubId);
-        //     var endsAt = res.CurrentPeriodEnd;
-
-        //     //payment link generation.
-
-        //     var options2 = new Stripe.Checkout.SessionCreateOptions
-        //     {
-
-
-        //         LineItems = new List<SessionLineItemOptions>
-        //             {
-        //                 new SessionLineItemOptions
-        //                 {
-        //                     Price = Model.StripePriceId,
-        //                     Quantity = 1,
-
-        //                 },
-        //             },
-        //         Customer = Model.StripeCusId,
-        //         AllowPromotionCodes = false,
-
-        //         Mode = "subscription",
-
-        //         ////Local url
-        //         SuccessUrl = _configuration.GetValue<string>("PaymentUrl:PaymentSuccessURLWeb") + "?session_id={CHECKOUT_SESSION_ID}",
-        //         CancelUrl = _configuration.GetValue<string>("PaymentUrl:PaymentFailUrl"),
-
-        //     };
-        //     var service2 = new SessionService();
-
-        //     Session session = await service2.CreateAsync(options2);
-        //     var cancelSub = await CancelSubscription(Model.StripesubId);
-        //     response.Statuscode = System.Net.HttpStatusCode.OK;
-        //     response.Status = Resources.SuccessMsg;
-        //     response.Data = session.Url;
-        //     return response;
-
-
-
-        // }
-
-
-    [HttpPost]
-    public async Task<Response> DowngradeSubscription(
-        DowngradeSubscriptionRequestModel model)
-    {
-        try
+        [HttpPost]
+        public async Task<Response> DowngradeSubscription(DowngradeSubscriptionRequestModel Model)
         {
             Response response = new Response();
+            var SUB = new SubscriptionService();
+            var res = SUB.Get(Model.StripesubId);
+            var endsAt = res.CurrentPeriodEnd;
 
-            if (string.IsNullOrWhiteSpace(model.StripesubId))
+            //payment link generation.
+
+            var options2 = new Stripe.Checkout.SessionCreateOptions
             {
-                response.Status = Resources.FailureMsg;
-                response.Message = "Stripe subscription ID is required.";
-                response.Statuscode = System.Net.HttpStatusCode.BadRequest;
-                return response;
-            }
 
-            if (string.IsNullOrWhiteSpace(model.StripePriceId))
-            {
-                response.Status = Resources.FailureMsg;
-                response.Message = "Stripe price ID is required.";
-                response.Statuscode = System.Net.HttpStatusCode.BadRequest;
-                return response;
-            }
 
-            var subscriptionService = new SubscriptionService();
-
-            var subscription =
-                await subscriptionService.GetAsync(model.StripesubId);
-
-            if (subscription == null)
-            {
-                response.Status = Resources.FailureMsg;
-                response.Message = "Stripe subscription not found.";
-                response.Statuscode = System.Net.HttpStatusCode.NotFound;
-                return response;
-            }
-
-            if (subscription.Items == null ||
-                subscription.Items.Data == null ||
-                !subscription.Items.Data.Any())
-            {
-                response.Status = Resources.FailureMsg;
-                response.Message = "Subscription does not contain a subscription item.";
-                response.Statuscode = System.Net.HttpStatusCode.BadRequest;
-                return response;
-            }
-
-            var currentItem = subscription.Items.Data[0];
-
-            if (string.Equals(
-                    currentItem.Price.Id,
-                    model.StripePriceId,
-                    StringComparison.OrdinalIgnoreCase))
-            {
-                response.Status = Resources.FailureMsg;
-                response.Message = "The selected plan is already active.";
-                response.Statuscode = System.Net.HttpStatusCode.BadRequest;
-                return response;
-            }
-
-            /*
-            * DOWNGRADE:
-            *
-            * Do NOT change the current subscription immediately.
-            *
-            * Keep the current plan until CurrentPeriodEnd.
-            *
-            * At CurrentPeriodEnd Stripe switches the subscription
-            * to the requested lower-price plan.
-            */
-
-            var scheduleService = new SubscriptionScheduleService();
-
-            SubscriptionSchedule schedule;
-
-            // Check whether the subscription already has a schedule.
-            if (!string.IsNullOrWhiteSpace(subscription.ScheduleId))
-            {
-                schedule =
-                    await scheduleService.GetAsync(subscription.ScheduleId);
-            }
-            else
-            {
-                var scheduleOptions =
-                    new SubscriptionScheduleCreateOptions
+                LineItems = new List<SessionLineItemOptions>
                     {
-                        FromSubscription = subscription.Id
-                    };
+                        new SessionLineItemOptions
+                        {
+                            Price = Model.StripePriceId,
+                            Quantity = 1,
 
-                schedule =
-                    await scheduleService.CreateAsync(scheduleOptions);
-            }
+                        },
+                    },
+                Customer = Model.StripeCusId,
+                AllowPromotionCodes = false,
 
-            var phase = new SubscriptionSchedulePhaseOptions
-            {
-                StartDate = subscription.CurrentPeriodStart,
-                EndDate = subscription.CurrentPeriodEnd,
+                Mode = "subscription",
 
-                Items = new List<SubscriptionSchedulePhaseItemOptions>
-                {
-                    new SubscriptionSchedulePhaseItemOptions
-                    {
-                        Price = currentItem.Price.Id,
-                        Quantity = currentItem.Quantity
-                    }
-                }
+                ////Local url
+                SuccessUrl = _configuration.GetValue<string>("PaymentUrl:PaymentSuccessURLWeb") + "?session_id={CHECKOUT_SESSION_ID}",
+                CancelUrl = _configuration.GetValue<string>("PaymentUrl:PaymentFailUrl"),
+
             };
+            var service2 = new SessionService();
 
-            var downgradePhase = new SubscriptionSchedulePhaseOptions
-            {
-                StartDate = subscription.CurrentPeriodEnd,
-
-                Items = new List<SubscriptionSchedulePhaseItemOptions>
-                {
-                    new SubscriptionSchedulePhaseItemOptions
-                    {
-                        Price = model.StripePriceId,
-                        Quantity = 1
-                    }
-                }
-            };
-
-            var scheduleUpdateOptions =
-                new SubscriptionScheduleUpdateOptions
-                {
-                    EndBehavior = "release",
-
-                    Phases = new List<SubscriptionSchedulePhaseOptions>
-                    {
-                        phase,
-                        downgradePhase
-                    }
-                };
-
-            var updatedSchedule =
-                await scheduleService.UpdateAsync(
-                    schedule.Id,
-                    scheduleUpdateOptions);
-
-            if (updatedSchedule == null)
-            {
-                response.Status = Resources.FailureMsg;
-                response.Message = "Unable to schedule subscription downgrade.";
-                response.Statuscode =
-                    System.Net.HttpStatusCode.InternalServerError;
-
-                return response;
-            }
-
-            response.Status = Resources.SuccessMsg;
-            response.Message =
-                "Downgrade scheduled successfully. Your current plan will remain active until the end of the current billing period.";
-
+            Session session = await service2.CreateAsync(options2);
+            var cancelSub = await CancelSubscription(Model.StripesubId);
             response.Statuscode = System.Net.HttpStatusCode.OK;
-
-            response.Data = new
-            {
-                SubscriptionId = subscription.Id,
-                ScheduleId = updatedSchedule.Id,
-                CurrentPlanPriceId = currentItem.Price.Id,
-                NewPlanPriceId = model.StripePriceId,
-                EffectiveDate = subscription.CurrentPeriodEnd,
-                PlanId = model.PlanId
-            };
-
+            response.Status = Resources.SuccessMsg;
+            response.Data = session.Url;
             return response;
-        }
-        catch (StripeException ex)
-        {
-            _logger.LogError(ex, "Stripe error while scheduling downgrade.");
 
-            return new Response
-            {
-                Status = Resources.FailureMsg,
-                Message = ex.StripeError?.Message ?? ex.Message,
-                Statuscode = System.Net.HttpStatusCode.BadRequest
-            };
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error while scheduling subscription downgrade.");
 
-            return new Response
-            {
-                Status = Resources.FailureMsg,
-                Message = "Unable to schedule subscription downgrade.",
-                Statuscode = System.Net.HttpStatusCode.InternalServerError
-            };
+
         }
-    }
+
 
         [HttpPost]
         public async Task<Response> CreateCustomPriceSubscription(CustomPlanViewModel Model)
