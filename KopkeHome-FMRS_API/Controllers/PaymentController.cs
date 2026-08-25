@@ -1061,7 +1061,7 @@ namespace KopkeHome_FMRS_API.Controllers
                     new SubscriptionSchedulePhaseItemOptions
                     {
                         Price = currentItem.Price.Id,
-                        Quantity = currentItem.Quantity ?? 1
+                        Quantity = currentItem.Quantity
                     }
                 }
             };
