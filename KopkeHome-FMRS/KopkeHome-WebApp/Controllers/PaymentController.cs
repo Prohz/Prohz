@@ -25,68 +25,70 @@ namespace KopkeHome_WebApp.Controllers
 
         }
 
-        public async Task<IActionResult> UpgradeSubscription(string subId, string CusId, string PriceId, string PlanId)
-        {
-            HttpContext.Session.Remove("PlanId");
-            HttpContext.Session.SetString("PlanId", PlanId);
-            //var s = await CancelSubscription(subId);
-            //var CurrentDomain = _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + _httpContextAccessor.HttpContext.Request.PathBase;
+        // public async Task<IActionResult> UpgradeSubscription(string subId, string CusId, string PriceId, string PlanId)
+        // {
+        //     HttpContext.Session.Remove("PlanId");
+        //     HttpContext.Session.SetString("PlanId", PlanId);
+        //     //var s = await CancelSubscription(subId);
+        //     //var CurrentDomain = _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + _httpContextAccessor.HttpContext.Request.PathBase;
 
-            //var options = new Stripe.Checkout.SessionCreateOptions
-            //{
-
-
-            //    LineItems = new List<SessionLineItemOptions>
-            //        {
-            //            new SessionLineItemOptions
-            //            {
-            //                Price = PriceId,
-            //                Quantity = 1,
-
-            //            },
-            //        },
-            //    Customer = CusId,
-            //    AllowPromotionCodes = false,
-
-            //    Mode = "subscription",
-
-            //    ////Local url
-            //    SuccessUrl = CurrentDomain + "/Membership/PaymentSuccess" + "?session_id={CHECKOUT_SESSION_ID}",
-            //    CancelUrl = CurrentDomain + "/HOME/Paymentfailed",
-
-            //};
-            //var service2 = new SessionService();
-
-            //Session session = await service2.CreateAsync(options);
-
-            UpgradeSubscriptionRequestModel model = new UpgradeSubscriptionRequestModel();
-            model.StripesubId = subId;
-            model.StripePriceId = PriceId;
-            model.PlanId = PlanId;
-            model.StripeCusId = CusId;
-
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(_configuration.GetValue<string>("WebApi:API_URL") + "/Payment/");
-                var httpResponse = await client.PostAsJsonAsync<UpgradeSubscriptionRequestModel>("UpgradeSubscription", model);
-                var content = await httpResponse.Content.ReadAsStringAsync();
-                if (httpResponse.IsSuccessStatusCode)
-                {
-                    var paymentResponse = JsonConvert.DeserializeObject<Response>(content);
-                    string Url = JsonConvert.SerializeObject(paymentResponse.Data);
-                    Url = Regex.Replace(Url, "^\"|\"$", "");
-                    return Json(Url);
-
-                }
-                else
-                {
-                    return Json(content);
-                }
-            }
-            // return Json(session.Url);
+        //     //var options = new Stripe.Checkout.SessionCreateOptions
+        //     //{
 
 
-        }
+        //     //    LineItems = new List<SessionLineItemOptions>
+        //     //        {
+        //     //            new SessionLineItemOptions
+        //     //            {
+        //     //                Price = PriceId,
+        //     //                Quantity = 1,
+
+        //     //            },
+        //     //        },
+        //     //    Customer = CusId,
+        //     //    AllowPromotionCodes = false,
+
+        //     //    Mode = "subscription",
+
+        //     //    ////Local url
+        //     //    SuccessUrl = CurrentDomain + "/Membership/PaymentSuccess" + "?session_id={CHECKOUT_SESSION_ID}",
+        //     //    CancelUrl = CurrentDomain + "/HOME/Paymentfailed",
+
+        //     //};
+        //     //var service2 = new SessionService();
+
+        //     //Session session = await service2.CreateAsync(options);
+
+        //     UpgradeSubscriptionRequestModel model = new UpgradeSubscriptionRequestModel();
+        //     model.StripesubId = subId;
+        //     model.StripePriceId = PriceId;
+        //     model.PlanId = PlanId;
+        //     model.StripeCusId = CusId;
+
+        //     using (var client = new HttpClient())
+        //     {
+        //         client.BaseAddress = new Uri(_configuration.GetValue<string>("WebApi:API_URL") + "/Payment/");
+        //         var httpResponse = await client.PostAsJsonAsync<UpgradeSubscriptionRequestModel>("UpgradeSubscription", model);
+        //         var content = await httpResponse.Content.ReadAsStringAsync();
+        //         if (httpResponse.IsSuccessStatusCode)
+        //         {
+        //             var paymentResponse = JsonConvert.DeserializeObject<Response>(content);
+        //             string Url = JsonConvert.SerializeObject(paymentResponse.Data);
+        //             Url = Regex.Replace(Url, "^\"|\"$", "");
+        //             return Json(Url);
+
+        //         }
+        //         else
+        //         {
+        //             return Json(content);
+        //         }
+        //     }
+        //     // return Json(session.Url);
+
+
+        // }
+
+
 
 
         public async Task<IActionResult> CancelSubscription(string subId)
@@ -184,106 +186,239 @@ namespace KopkeHome_WebApp.Controllers
         }
 
 
-        public async Task<IActionResult> DowngradeSubscription(string subId, string CusId, string PriceID, string PlanId)
-        {
+        // public async Task<IActionResult> DowngradeSubscription(string subId, string CusId, string PriceID, string PlanId)
+        // {
 
+        //     try
+        //     {
+        //         //STEP-1 CANCELS SUBSCRIPTION CURRENT.
+        //         HttpContext.Session.Remove("PlanId");
+        //         HttpContext.Session.SetString("PlanId", PlanId);
+
+        //         // var SUB = new SubscriptionService();
+        //         //var res= SUB.Get(subId);
+        //         // var endsAt = res.CurrentPeriodEnd;
+        //         // var startsubAt = DateTimeOffset.FromUnixTimeSeconds(Startdate).UtcDateTime;
+        //         //var options = new SubscriptionScheduleCreateOptions
+        //         //{
+        //         //    Customer = CusId,
+        //         //    StartDate = endsAt,
+        //         //    EndBehavior = "release",
+        //         //    Phases = new List<SubscriptionSchedulePhaseOptions>
+        //         //    {
+        //         //      new SubscriptionSchedulePhaseOptions
+        //         //      {
+        //         //        Items = new List<SubscriptionSchedulePhaseItemOptions>
+        //         //        {
+        //         //          new SubscriptionSchedulePhaseItemOptions
+        //         //          {
+        //         //            Price = PriceID,
+        //         //            Quantity = 1,
+        //         //          },
+        //         //        },
+        //         //        //Iterations = 12,
+        //         //      },
+        //         //    },
+        //         //};
+        //         //var service = new SubscriptionScheduleService();
+        //         //service.Create(options);
+
+        //         //payment link generation.
+        //         //var CurrentDomain = _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + _httpContextAccessor.HttpContext.Request.PathBase;
+
+        //         //var options2 = new Stripe.Checkout.SessionCreateOptions
+        //         //{
+
+
+        //         //    LineItems = new List<SessionLineItemOptions>
+        //         //        {
+        //         //            new SessionLineItemOptions
+        //         //            {
+        //         //                Price = PriceID,
+        //         //                Quantity = 1,
+
+        //         //            },
+        //         //        },
+        //         //    Customer = CusId,
+        //         //    AllowPromotionCodes = false,
+
+        //         //    Mode = "subscription",
+
+        //         //    ////Local url
+        //         //    SuccessUrl = CurrentDomain + "/Membership/PaymentSuccess" + "?session_id={CHECKOUT_SESSION_ID}",
+        //         //    CancelUrl = CurrentDomain + "/HOME/Paymentfailed",
+
+        //         //};
+        //         //var service2 = new SessionService();
+
+        //         //Session session = await service2.CreateAsync(options2);
+        //         //var cancelSub = await CancelSubscription(subId);
+        //         DowngradeSubscriptionRequestModel model = new DowngradeSubscriptionRequestModel();
+        //         model.StripesubId = subId;
+        //         model.StripePriceId = PriceID;
+        //         model.PlanId = PlanId;
+        //         model.StripeCusId = CusId;
+
+        //         using (var client = new HttpClient())
+        //         {
+        //             client.BaseAddress = new Uri(_configuration.GetValue<string>("WebApi:API_URL") + "/Payment/");
+        //             var httpResponse = await client.PostAsJsonAsync<DowngradeSubscriptionRequestModel>("DowngradeSubscription", model);
+        //             var content = await httpResponse.Content.ReadAsStringAsync();
+        //             if (httpResponse.IsSuccessStatusCode)
+        //             {
+        //                 var paymentResponse = JsonConvert.DeserializeObject<Response>(content);
+        //                 string Url = JsonConvert.SerializeObject(paymentResponse.Data);
+        //                 Url = Regex.Replace(Url, "^\"|\"$", "");
+        //                 return Json(Url);
+
+        //             }
+        //             else
+        //             {
+        //                 return Json(content);
+        //             }
+        //         }
+        //         //return Json(session.Url);
+        //     }
+        //     catch (Exception ex)
+        //     {
+
+        //         _logger.LogError(ex.Message);
+        //         throw;
+        //     }
+
+        // }
+
+
+
+        public async Task<IActionResult> UpgradeSubscription(
+            string subId,
+            string CusId,
+            string PriceId,
+            string PlanId)
+        {
             try
             {
-                //STEP-1 CANCELS SUBSCRIPTION CURRENT.
+                if (string.IsNullOrWhiteSpace(subId) ||
+                    string.IsNullOrWhiteSpace(PriceId) ||
+                    string.IsNullOrWhiteSpace(PlanId))
+                {
+                    return Json("Invalid subscription upgrade information.");
+                }
+
                 HttpContext.Session.Remove("PlanId");
                 HttpContext.Session.SetString("PlanId", PlanId);
 
-                // var SUB = new SubscriptionService();
-                //var res= SUB.Get(subId);
-                // var endsAt = res.CurrentPeriodEnd;
-                // var startsubAt = DateTimeOffset.FromUnixTimeSeconds(Startdate).UtcDateTime;
-                //var options = new SubscriptionScheduleCreateOptions
-                //{
-                //    Customer = CusId,
-                //    StartDate = endsAt,
-                //    EndBehavior = "release",
-                //    Phases = new List<SubscriptionSchedulePhaseOptions>
-                //    {
-                //      new SubscriptionSchedulePhaseOptions
-                //      {
-                //        Items = new List<SubscriptionSchedulePhaseItemOptions>
-                //        {
-                //          new SubscriptionSchedulePhaseItemOptions
-                //          {
-                //            Price = PriceID,
-                //            Quantity = 1,
-                //          },
-                //        },
-                //        //Iterations = 12,
-                //      },
-                //    },
-                //};
-                //var service = new SubscriptionScheduleService();
-                //service.Create(options);
-
-                //payment link generation.
-                //var CurrentDomain = _httpContextAccessor.HttpContext.Request.Scheme + "://" + _httpContextAccessor.HttpContext.Request.Host + _httpContextAccessor.HttpContext.Request.PathBase;
-
-                //var options2 = new Stripe.Checkout.SessionCreateOptions
-                //{
-
-
-                //    LineItems = new List<SessionLineItemOptions>
-                //        {
-                //            new SessionLineItemOptions
-                //            {
-                //                Price = PriceID,
-                //                Quantity = 1,
-
-                //            },
-                //        },
-                //    Customer = CusId,
-                //    AllowPromotionCodes = false,
-
-                //    Mode = "subscription",
-
-                //    ////Local url
-                //    SuccessUrl = CurrentDomain + "/Membership/PaymentSuccess" + "?session_id={CHECKOUT_SESSION_ID}",
-                //    CancelUrl = CurrentDomain + "/HOME/Paymentfailed",
-
-                //};
-                //var service2 = new SessionService();
-
-                //Session session = await service2.CreateAsync(options2);
-                //var cancelSub = await CancelSubscription(subId);
-                DowngradeSubscriptionRequestModel model = new DowngradeSubscriptionRequestModel();
-                model.StripesubId = subId;
-                model.StripePriceId = PriceID;
-                model.PlanId = PlanId;
-                model.StripeCusId = CusId;
+                var model = new UpgradeSubscriptionRequestModel
+                {
+                    StripesubId = subId,
+                    StripePriceId = PriceId,
+                    PlanId = PlanId,
+                    StripeCusId = CusId
+                };
 
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(_configuration.GetValue<string>("WebApi:API_URL") + "/Payment/");
-                    var httpResponse = await client.PostAsJsonAsync<DowngradeSubscriptionRequestModel>("DowngradeSubscription", model);
+                    client.BaseAddress = new Uri(
+                        _configuration.GetValue<string>("WebApi:API_URL") + "/Payment/");
+
+                    var httpResponse = await client.PostAsJsonAsync(
+                        "UpgradeSubscription",
+                        model);
+
                     var content = await httpResponse.Content.ReadAsStringAsync();
+
                     if (httpResponse.IsSuccessStatusCode)
                     {
-                        var paymentResponse = JsonConvert.DeserializeObject<Response>(content);
-                        string Url = JsonConvert.SerializeObject(paymentResponse.Data);
-                        Url = Regex.Replace(Url, "^\"|\"$", "");
-                        return Json(Url);
+                        var paymentResponse =
+                            JsonConvert.DeserializeObject<Response>(content);
 
+                        if (paymentResponse?.Data == null)
+                        {
+                            return Json("Subscription upgrade completed.");
+                        }
+
+                        string result =
+                            JsonConvert.SerializeObject(paymentResponse.Data);
+
+                        result = Regex.Replace(result, "^\"|\"$", "");
+
+                        return Json(result);
                     }
-                    else
-                    {
-                        return Json(content);
-                    }
+
+                    return Json(content);
                 }
-                //return Json(session.Url);
             }
             catch (Exception ex)
             {
-
-                _logger.LogError(ex.Message);
-                throw;
+                _logger.LogError(ex, "Error while upgrading subscription.");
+                return Json("Unable to upgrade subscription.");
             }
+        }
 
+
+        public async Task<IActionResult> DowngradeSubscription(
+            string subId,
+            string CusId,
+            string PriceID,
+            string PlanId)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(subId) ||
+                    string.IsNullOrWhiteSpace(PriceID) ||
+                    string.IsNullOrWhiteSpace(PlanId))
+                {
+                    return Json("Invalid subscription downgrade information.");
+                }
+
+                HttpContext.Session.Remove("PlanId");
+                HttpContext.Session.SetString("PlanId", PlanId);
+
+                var model = new DowngradeSubscriptionRequestModel
+                {
+                    StripesubId = subId,
+                    StripePriceId = PriceID,
+                    PlanId = PlanId,
+                    StripeCusId = CusId
+                };
+
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(
+                        _configuration.GetValue<string>("WebApi:API_URL") + "/Payment/");
+
+                    var httpResponse = await client.PostAsJsonAsync(
+                        "DowngradeSubscription",
+                        model);
+
+                    var content = await httpResponse.Content.ReadAsStringAsync();
+
+                    if (httpResponse.IsSuccessStatusCode)
+                    {
+                        var paymentResponse =
+                            JsonConvert.DeserializeObject<Response>(content);
+
+                        if (paymentResponse?.Data == null)
+                        {
+                            return Json("Downgrade scheduled successfully.");
+                        }
+
+                        string result =
+                            JsonConvert.SerializeObject(paymentResponse.Data);
+
+                        result = Regex.Replace(result, "^\"|\"$", "");
+
+                        return Json(result);
+                    }
+
+                    return Json(content);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while downgrading subscription.");
+                return Json("Unable to schedule subscription downgrade.");
+            }
         }
 
     }
