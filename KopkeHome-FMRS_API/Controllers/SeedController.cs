@@ -155,8 +155,18 @@ namespace KopkeHome_FMRS_API.Controllers
         // ===================== MEMBERSHIP PLANS =====================
         private void SeedMembershipPlans()
         {
-            if (_context.MembershipBenefitsPlan.Any())
+            var existingContractorPlans = _context.MembershipBenefitsPlan
+                .Where(x => x.RoleId == 1)
+                .OrderBy(x => x.Id)
+                .ToList();
+
+            if (existingContractorPlans.Count >= 3)
+            {
+                existingContractorPlans[0].Title = "Connect";
+                existingContractorPlans[1].Title = "Expand";
+                existingContractorPlans[2].Title = "Maximize";
                 return;
+            }
 
             var contractorRole = _context.Set<Role>()
                 .FirstOrDefault(x => x.Name == "Contractor");
@@ -168,7 +178,7 @@ namespace KopkeHome_FMRS_API.Controllers
                 new MembershipBenifitsPlan
                 {
                     RoleId = contractorRole.Id,
-                    Title = "Bronze",
+                    Title = "Connect",
                     Categories = "1",
                     ZipCodes = "10",
                     PricePerMonth = 0,
@@ -179,7 +189,7 @@ namespace KopkeHome_FMRS_API.Controllers
                 new MembershipBenifitsPlan
                 {
                     RoleId = contractorRole.Id,
-                    Title = "Silver",
+                    Title = "Expand",
                     Categories = "3",
                     ZipCodes = "30",
                     PricePerMonth = 150,
@@ -190,7 +200,7 @@ namespace KopkeHome_FMRS_API.Controllers
                 new MembershipBenifitsPlan
                 {
                     RoleId = contractorRole.Id,
-                    Title = "Gold",
+                    Title = "Maximize",
                     Categories = "10",
                     ZipCodes = "100",
                     PricePerMonth = 500,

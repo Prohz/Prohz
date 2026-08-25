@@ -123,12 +123,12 @@ namespace KopkeHome_WebApp.Controllers
                         model.Plans = JsonConvert.DeserializeObject<List<MembershipPlanViewmodel>>(content);
                         foreach (var item in model.Plans)
                         {
-                            if (item.Title == "Bronze" && item.RoleId == Constant.Contractor)
+                            if (item.Title == "Connect" && item.RoleId == Constant.Contractor)
                             {
                                 model.PriceMonthlyBronzeID = item.MonthlyStripePriceId;
                                 model.PriceYearlyBronzeID = item.AnnuallyStripePriceId;
                             }
-                            else if (item.Title == "Silver" && item.RoleId == Constant.Contractor)
+                            else if (item.Title == "Expand" && item.RoleId == Constant.Contractor)
                             {
                                 // Adjusting Silver plan if referrals are not empty
                                 if (referral != null)
@@ -153,7 +153,7 @@ namespace KopkeHome_WebApp.Controllers
                                 }
 
                             }
-                            else if (item.Title == "Gold" && item.RoleId == Constant.Contractor)
+                            else if (item.Title == "Maximize" && item.RoleId == Constant.Contractor)
                             {
                                 model.PriceMonthlyGoldID = item.MonthlyStripePriceId;
                                 model.PriceYearlyGoldID = item.AnnuallyStripePriceId;

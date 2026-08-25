@@ -449,8 +449,8 @@ namespace KopkeHome_FMRS_API.Controllers
 
                 if (existingSubscription?.StripeSubscriptionId != null)
                 {
-                    var subscriptionService = new SubscriptionService();
-                    await subscriptionService.CancelAsync(existingSubscription.StripeSubscriptionId);
+                    var previousSubscriptionService = new SubscriptionService();
+                    await previousSubscriptionService.CancelAsync(existingSubscription.StripeSubscriptionId);
                 }
 
                 // Create free membership record
@@ -639,7 +639,8 @@ namespace KopkeHome_FMRS_API.Controllers
                     && existingSubscription?.StripeSubscriptionId != null
                     && existingSubscription.StripeSubscriptionId != StripeSubscriptionId)
                 {
-                    await subscriptionService.CancelAsync(existingSubscription.StripeSubscriptionId);
+                    var previousSubscriptionService = new SubscriptionService();
+                    await previousSubscriptionService.CancelAsync(existingSubscription.StripeSubscriptionId);
                 }
 
                 return result;
@@ -660,6 +661,15 @@ namespace KopkeHome_FMRS_API.Controllers
         {
             Response response = new Response();
             // var s = await CancelSubscription(model.StripesubId);
+
+            if (string.IsNullOrWhiteSpace(model.StripeCusId))
+            {
+                var user = await _Userservice.GetUserByEmail(model.Email);
+                if (user == null)
+                    return new Response { Statuscode = System.Net.HttpStatusCode.NotFound };
+
+                model.StripeCusId = CreateCustomer(user).Id;
+            }
 
 
 
@@ -774,6 +784,15 @@ namespace KopkeHome_FMRS_API.Controllers
         public async Task<Response> DowngradeSubscription(DowngradeSubscriptionRequestModel Model)
         {
             Response response = new Response();
+            if (string.IsNullOrWhiteSpace(Model.StripeCusId))
+            {
+                var user = await _Userservice.GetUserByEmail(Model.Email);
+                if (user == null)
+                    return new Response { Statuscode = System.Net.HttpStatusCode.NotFound };
+
+                Model.StripeCusId = CreateCustomer(user).Id;
+            }
+
             var SUB = new SubscriptionService();
             var res = SUB.Get(Model.StripesubId);
             var endsAt = res.CurrentPeriodEnd;

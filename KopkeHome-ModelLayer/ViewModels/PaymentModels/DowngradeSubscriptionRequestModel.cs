@@ -6,5 +6,6 @@
         public string StripeCusId { get; set; }
         public string StripePriceId { get; set; }
         public string PlanId { get; set; }
+        public string Email { get; set; }
     }
 }

@@ -113,7 +113,7 @@
 
         @{
             double percentbr = 0;
-            var bronze = Model.Plans.Where(x => x.Title.Contains("Bronze")).FirstOrDefault();
+            var bronze = Model.Plans.Where(x => x.Title.Contains("Connect")).FirstOrDefault();
             int PlanIdBronze = bronze.Id;
             double bronzeprice_PricePerMonth = bronze.PricePerMonth;
             string bronze_Categories = bronze.Categories;
@@ -146,7 +146,7 @@
 
 
             double percentsl = 0;
-            var silver = Model.Plans.Where(x => x.Title.Contains("Silver")).FirstOrDefault();
+            var silver = Model.Plans.Where(x => x.Title.Contains("Expand")).FirstOrDefault();
             int PlanIdSilver = silver.Id;
             double silver_PricePerMonth = Model.priceYearlySilver;
             string silver_Categories = silver.Categories;
@@ -174,7 +174,7 @@
             }
 
             double percentgl = 0;
-            var Gold = Model.Plans.Where(x => x.Title.Contains("Gold")).FirstOrDefault();
+            var Gold = Model.Plans.Where(x => x.Title.Contains("Maximize")).FirstOrDefault();
             
             var ProhzConnect = Model.Plans.FirstOrDefault(x => x.Title == "Connect");
             int PlanIdProhzConnect = ProhzConnect.Id;

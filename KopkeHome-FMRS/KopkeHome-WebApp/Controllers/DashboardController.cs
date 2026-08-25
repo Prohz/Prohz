@@ -1307,17 +1307,17 @@ namespace KopkeHome_WebApp.Controllers
                         model.Plans = res;
                         foreach (var item in model.Plans)
                         {
-                            if (item.Title == "Bronze" && item.RoleId == Constant.Contractor)
+                            if (item.Title == "Connect" && item.RoleId == Constant.Contractor)
                             {//price_1LL6DNKoRZM2RthNZvGLTqEx
                                 model.PriceMonthlyBronzeID = item.MonthlyStripePriceId;
                                 model.PriceYearlyBronzeID = item.AnnuallyStripePriceId;
                             }
-                            else if (item.Title == "Silver" && item.RoleId == Constant.Contractor)
+                            else if (item.Title == "Expand" && item.RoleId == Constant.Contractor)
                             {
                                 model.PriceMonthlySilverID = item.MonthlyStripePriceId;
                                 model.PriceYearlySilverID = item.AnnuallyStripePriceId;
                             }
-                            else if (item.Title == "Gold" && item.RoleId == Constant.Contractor)
+                            else if (item.Title == "Maximize" && item.RoleId == Constant.Contractor)
                             {
                                 model.PriceMonthlyGoldID = item.MonthlyStripePriceId;
                                 model.PriceYearlyGoldID = item.AnnuallyStripePriceId;
