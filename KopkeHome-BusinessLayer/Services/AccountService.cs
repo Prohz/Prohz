@@ -184,19 +184,24 @@ namespace KopkeHome_BusinessLayer.Services
                     var UserSubs = await _dbContext.UserMembershipSubscriptions.Where(x => x.UserId.Equals(userModel.Id) && x.IsActive == true).FirstOrDefaultAsync();
                     if (UserSubs != null)
                     {
-                        var service = new SubscriptionService();
-                        Subscription StripeSubscriptionDetails = await service.GetAsync(UserSubs.StripeSubscriptionId);
-                        //15-12-2022 + 2 months extention
-                        if (StripeSubscriptionDetails.CurrentPeriodEnd > UserSubs.PeriodEndDate)
+                        if (!string.IsNullOrWhiteSpace(UserSubs.StripeSubscriptionId))
                         {
-                            //When plan is auto deducted the money/auto renewd.
+                            var service = new SubscriptionService();
+                            Subscription StripeSubscriptionDetails = await service.GetAsync(UserSubs.StripeSubscriptionId);
+                            //15-12-2022 + 2 months extention
+                            if (StripeSubscriptionDetails != null && StripeSubscriptionDetails.CurrentPeriodEnd > UserSubs.PeriodEndDate)
+                            {
+                                //When plan is auto deducted the money/auto renewd.
 
-                            UserSubs.PeriodEndDate = StripeSubscriptionDetails.CurrentPeriodEnd;
-                            await _dbContext.SaveChangesAsync();
+                                UserSubs.PeriodEndDate = StripeSubscriptionDetails.CurrentPeriodEnd;
+                                await _dbContext.SaveChangesAsync();
 
+                            }
                         }
 
-                        if (UserSubs.StripeStatus.Contains("Cancelled") && UserSubs.PeriodEndDate <= DateTime.Now)
+                        if (!string.IsNullOrWhiteSpace(UserSubs.StripeStatus)
+                            && UserSubs.StripeStatus.Contains("Cancelled")
+                            && UserSubs.PeriodEndDate <= DateTime.Now)
                         {
                             return null;
                         }

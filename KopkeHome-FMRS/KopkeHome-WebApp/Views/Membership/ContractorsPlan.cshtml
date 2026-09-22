@@ -864,6 +864,73 @@
 
             }
 
+            // function ProhzConnectRadio() {
+
+            //     $("#CSTMLOADER").show();
+
+            //     var planId = @PlanIdProhzConnect;
+
+            //     console.log("Free plan ID:", planId);
+
+            //     $.ajax({
+            //         type: 'POST',
+            //         url: urlprefix + '/Membership/JoinFreePlan',
+            //         data: {
+            //             planId: planId
+            //         },
+
+            //         success: function (res) {
+
+            //             console.log("JoinFreePlan response:", res);
+
+            //             if (res.success && res.code === 1) {
+
+            //                 window.location =
+            //                     urlprefix + "/Membership/selectzipcodesandcategories";
+
+            //             }
+            //             else if (res.code === 2) {
+
+            //                 $("#CSTMLOADER").hide();
+
+            //                 Swal.fire({
+            //                     icon: 'info',
+            //                     title: 'Already a member',
+            //                     text: 'You already have a membership plan.'
+            //                 });
+
+            //             }
+            //             else {
+
+            //                 $("#CSTMLOADER").hide();
+
+            //                 Swal.fire({
+            //                     icon: 'error',
+            //                     title: 'Something went wrong',
+            //                     text: res.message || 'Unable to join the free plan.'
+            //                 });
+
+            //                 console.log("JoinFreePlan failure:", res);
+            //             }
+
+            //         },
+
+            //         error: function (xhr) {
+
+            //             $("#CSTMLOADER").hide();
+
+            //             console.log("JoinFreePlan AJAX error:", xhr);
+            //             console.log("Response:", xhr.responseText);
+
+            //             Swal.fire({
+            //                 icon: 'error',
+            //                 title: 'Something went wrong',
+            //                 text: xhr.responseText || 'Unable to process your request.'
+            //             });
+            //         }
+            //     });
+            // }
+
             function ExpandRadio() {
                 $("#CSTMLOADER").show();
 

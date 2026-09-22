@@ -457,11 +457,12 @@ namespace KopkeHome_FMRS_API.Controllers
                 UserMembershipSubscriptions subscription =
                     new UserMembershipSubscriptions();
 
+                subscription.UserId = user.Id;
                 subscription.PlanId = membershipPlan.Id;
                 subscription.Email = user.Email;
 
-                subscription.PaymentStatus = "Paid";
-                subscription.StripeStatus = "complete";
+                subscription.PaymentStatus = "Free";
+                subscription.StripeStatus = "Free";
 
                 subscription.StripeSubscriptionId = null;
                 subscription.StripeCustomerID = null;
@@ -469,6 +470,8 @@ namespace KopkeHome_FMRS_API.Controllers
 
                 subscription.PeriodStartDate = DateTime.UtcNow;
                 subscription.PeriodEndDate = DateTime.UtcNow.AddYears(1);
+                subscription.CreatedOn = DateTime.UtcNow;
+                subscription.IsActive = true;
 
                 var result =
                     await AddPaymentTransactionDetails(subscription);
