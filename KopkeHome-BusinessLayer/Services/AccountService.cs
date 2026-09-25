@@ -977,30 +977,49 @@ namespace KopkeHome_BusinessLayer.Services
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        public async Task<bool> CheckEmailExist(string email)
-        {
-            try
-            {
-                bool isEmailExist = false;
-                var result = await _iRepository.FindAllByCondition(a => a.Email.Equals(email) && a.IsDeleted == false);
-                if (result.Count > 0)
-                {
-                    isEmailExist = true;
-                }
-                else
-                {
-                    isEmailExist = false;
-                }
-                return isEmailExist;
-            }
+        // public async Task<bool> CheckEmailExist(string email)
+        // {
+        //     try
+        //     {
+        //         bool isEmailExist = false;
+        //         var result = await _iRepository.FindAllByCondition(a => a.Email.Equals(email) && a.IsDeleted == false);
+        //         if (result.Count > 0)
+        //         {
+        //             isEmailExist = true;
+        //         }
+        //         else
+        //         {
+        //             isEmailExist = false;
+        //         }
+        //         return isEmailExist;
+        //     }
 
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message);
-                throw ex;
-            }
-        }
+        //     catch (Exception ex)
+        //     {
+        //         _logger.LogError(ex.Message);
+        //         throw ex;
+        //     }
+        // }
 
+
+            public async Task<bool> CheckEmailExist(string email)
+            {
+                try
+                {
+                    var result = await _iRepository.FindAllByCondition(
+                        a => a.Email == email
+                            && a.IsEmailVerified == true
+                            && a.IsDeleted == false
+                    );
+
+                    return result.Any();
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error checking email existence.");
+                    throw;
+                }
+            }
 
 
         /// <summary>
