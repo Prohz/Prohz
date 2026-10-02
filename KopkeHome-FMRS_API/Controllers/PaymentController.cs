@@ -795,9 +795,11 @@ namespace KopkeHome_FMRS_API.Controllers
                 Model.StripeCusId = CreateCustomer(user).Id;
             }
 
-            var SUB = new SubscriptionService();
-            var res = SUB.Get(Model.StripesubId);
-            var endsAt = res.CurrentPeriodEnd;
+            if (!string.IsNullOrWhiteSpace(Model.StripesubId))
+            {
+                var subscriptionService = new SubscriptionService();
+                await subscriptionService.GetAsync(Model.StripesubId);
+            }
 
             //payment link generation.
 

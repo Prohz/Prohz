@@ -40,24 +40,6 @@ namespace KopkeHome_WebApp.Controllers
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(StripeSubscriptionId))
-                {
-                    return Json(new
-                    {
-                        success = false,
-                        message = "Stripe subscription ID is missing."
-                    });
-                }
-
-                if (string.IsNullOrWhiteSpace(StripeCusId))
-                {
-                    return Json(new
-                    {
-                        success = false,
-                        message = "Stripe customer ID is missing."
-                    });
-                }
-
                 if (string.IsNullOrWhiteSpace(StripePriceId))
                 {
                     return Json(new
@@ -91,6 +73,17 @@ namespace KopkeHome_WebApp.Controllers
                 model.StripePriceId = StripePriceId;
                 model.PlanId = PlanId;
                 model.StripeCusId = StripeCusId;
+                model.Email = HttpContext.Request.Cookies["Email"] ?? User.Identity?.Name;
+
+                if (string.IsNullOrWhiteSpace(model.StripeCusId) &&
+                    string.IsNullOrWhiteSpace(model.Email))
+                {
+                    return Json(new
+                    {
+                        success = false,
+                        message = "Account email is required to create a Stripe customer."
+                    });
+                }
 
                 string apiUrl =
                     _configuration.GetValue<string>("WebApi:API_URL");
@@ -290,15 +283,13 @@ namespace KopkeHome_WebApp.Controllers
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(StripeSubscriptionId) ||
-                    string.IsNullOrWhiteSpace(StripeCusId) ||
-                    string.IsNullOrWhiteSpace(StripePriceId) ||
+                if (string.IsNullOrWhiteSpace(StripePriceId) ||
                     string.IsNullOrWhiteSpace(PlanId))
                 {
                     return Json(new
                     {
                         success = false,
-                        message = "Required subscription information is missing."
+                        message = "Stripe price ID or plan ID is missing."
                     });
                 }
 
@@ -312,7 +303,17 @@ namespace KopkeHome_WebApp.Controllers
                 model.StripePriceId = StripePriceId;
                 model.PlanId = PlanId;
                 model.StripeCusId = StripeCusId;
-                model.Email = HttpContext.Request.Cookies["Email"];
+                model.Email = HttpContext.Request.Cookies["Email"] ?? User.Identity?.Name;
+
+                if (string.IsNullOrWhiteSpace(model.StripeCusId) &&
+                    string.IsNullOrWhiteSpace(model.Email))
+                {
+                    return Json(new
+                    {
+                        success = false,
+                        message = "Account email is required to create a Stripe customer."
+                    });
+                }
 
                 using (var client = new HttpClient())
                 {
